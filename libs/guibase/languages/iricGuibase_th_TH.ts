@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>เส้นกริด</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">ทั้งหมด</translation>
+        <translation>ทั้งหมด</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">เค้าร่างเท่านั้น</translation>
+        <translation>โครงร่างเท่านั้น</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>ดัชนีกริด</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">มองเห็นได้</translation>
+        <translation>มองเห็นได้</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: &quot; %5.2f&quot; สำหรับ 3.141592 --&gt; 3.14&quot; %4.2e&quot; สำหรับ 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: " %5.2f" สำหรับ 3.141592 --&gt; 3.14" %4.2e" สำหรับ 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

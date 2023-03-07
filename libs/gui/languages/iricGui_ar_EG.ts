@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>حدد Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر &quot;موافق&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر "موافق".</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>تنسيق النص</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>الإحداثيات في شريط الحالة</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>منازل عشرية:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>متصفح السمات</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>منازل عشرية</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>إحداثيات:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>قيمة:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد &quot;%1&quot;. تم تجاهل هذا الحل. %2</translation>
+        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد "%1". تم تجاهل هذا الحل. %2</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1441,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>يبدو أن هذا المشروع قد تم فتحه بواسطة نافذة iRIC GUI أخرى. لا يمكنك فتح مجلد مشروع من نوافذ متعددة لواجهة المستخدم الرسومية.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>لا يتم نسخ المشروع المفتوح إلى دليل العمل ، وستضطر إلى حفظ التعديلات التي تجريها على هذا المشروع. إذا كنت تريد الاحتفاظ بالمشروع الحالي ، فيرجى حفظه في مشروع آخر أولاً.</translation>
     </message>
     <message>
@@ -1603,8 +1601,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>لا تدعم النافذة الفرعية النشطة حاليًا تصدير الشكل المحيطي.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>ملف الإعداد (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>لتصدير ملف الشكل ، بدّل وضع اللون إلى "الوضع المنفصل".</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,7 +2117,7 @@ Option -&gt; Preferences</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>

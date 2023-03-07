@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Ääriviivojen asetus (solun keskusta)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Alue</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Muotojen asetus (solukeskus)</translation>
+        <translation type="vanished">Muotojen asetus (solukeskus)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Arvo:</translation>
+        <translation type="vanished">Arvo:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Alueet</translation>
+        <translation type="vanished">Alueet</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisätä (&amp;A)</translation>
+        <translation type="vanished">Lisätä (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Poista (&amp;R)</translation>
+        <translation type="vanished">Poista (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Alue %1</translation>
+        <translation type="vanished">Alue %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Enintään neljä muotoa voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä muotoa voidaan määrittää.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisätä (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Poista (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Alue %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Kasvot</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Muoto</translation>
+        <translation type="vanished">Muoto</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Muotojen asetus</translation>
+        <translation type="vanished">Muotojen asetus</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Ääriviivan asetus (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Kasvot %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Ääriviivojen asetus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Kasvot</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Muotojen asetus</translation>
+        <translation type="vanished">Muotojen asetus</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyysinen arvo:</translation>
+        <translation type="vanished">Fyysinen arvo:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Kasvot</translation>
+        <translation type="vanished">Kasvot</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisätä (&amp;A)</translation>
+        <translation type="vanished">Lisätä (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Poista (&amp;R)</translation>
+        <translation type="vanished">Poista (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Kasvot %1</translation>
+        <translation type="vanished">Kasvot %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Enintään neljä muotoa voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä muotoa voidaan määrittää.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objektiselaimen kohteen muutos</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisätä (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Poista (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Kasvot %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suunta</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>minä</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Alue</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Olen mukana</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Minä Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Käytössä</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Ruudukon muoto</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ruudukkomuodon näyttöasetus</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
+        <translation type="vanished">Kasvot</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Kasvot %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Kasvot %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nuolien asetus</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Perus</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Pituus Legenda</translation>
+    </message>
+    <message>
+        <source>Faces</source>
         <translation>Kasvot</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisätä (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Poista (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Kasvot %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Pituus Legenda</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Enintään neljä nuolta voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä nuolta voidaan määrittää.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Hiukkasten skalaariasetus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pistekoko:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Muokkaa hiukkasasetusta</translation>
+        <translation type="vanished">Muokkaa hiukkasasetusta</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorin ominaisuus Valitse Muuta</translation>
+        <translation type="vanished">Vektorin ominaisuus Valitse Muuta</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Päivitä vektori -asetus</translation>
+        <translation type="vanished">Päivitä vektori -asetus</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow Fyysisen arvon muutos</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Hiukkasten vektoriasetus</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Päivittää</translation>
+        <translation type="vanished">Päivittää</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Luo ääriviiva</translation>
+        <translation type="vanished">Luo ääriviiva</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Päivitä ruudukon muotoasetus</translation>
+        <translation type="vanished">Päivitä ruudukon muotoasetus</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Päivitä hiukkasten skalaari -asetus</translation>
+        <translation type="vanished">Päivitä hiukkasten skalaari -asetus</translation>
     </message>
 </context>
 </TS>

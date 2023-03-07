@@ -1,5 +1,202 @@
 <TS version="2.1" language="sl_SI">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Po skalarni vrednosti</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Uredi (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Nastavitev barvne karte (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Po skalarni vrednosti</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Oblika</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vidnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Ko je izbrano</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Nenehno</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikoli</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavitev pisave:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Dolžina</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Oblika:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Dolžina:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ozadje:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost in položaj</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Dolžina</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Avto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standardna vrednost:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[gospa]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Dolžina na zaslonu:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Najmanjša vrednost za črpanje:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vrednost:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda dolžine</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Osnovno</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Oblika puščice</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Velikost puščice:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Širina črte:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>V datoteki %1, prirastek koordinate x na slikovno piko in prirastek koordinate y na slikovno piko. To je sprejemljivo, lahko pa tudi napačno.</translation>
+        <translation type="vanished">V datoteki %1, prirastek koordinate x na slikovno piko in prirastek koordinate y na slikovno piko. To je sprejemljivo, lahko pa tudi napačno.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Izberite ustrezno točko v glavnem oknu.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Popravi položaj slike</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vidnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Ko je izbrano</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Nenehno</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikoli</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavitev pisave:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Oznaka:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ozadje:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost in položaj</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Barve</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Nastavitev barvne vrstice</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Izberite datoteko za uvoz</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavitev barvne karte (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Vnesite ime datoteke za izvoz</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Pri odpiranju je prišlo do napake %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrednost</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Pregleden</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vidnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Ko je izbrano</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Nenehno</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikoli</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavitev pisave:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Oblika:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Oznaka:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ozadje:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost in položaj</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavitev barvne karte</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Prednastavitve:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Razmerje med vrednostmi in barvami</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Samodejna prilagoditev glede na obseg vrednosti</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Nastavite ročno</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Razpon vrednosti</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Samodejno</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Barve</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Napolnite spodnji del</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Izpolnite zgornji del</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Stikalo</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Nastavitev barvne vrstice</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Izberite datoteko za uvoz</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavitev barvne karte (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Vnesite ime datoteke za izvoz</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Pri odpiranju je prišlo do napake %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Prosimo, izberite element za uporabo)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Preklopite na diskretni način</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Preklopite v način gradacije</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Opozorilo</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrednost</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Najmanjša vrednost</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Največja vrednost</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Pregleden</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Preklopite v pogovorno okno za diskretni način</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Število barv, ki jih je treba vstaviti v vsak del</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorčenje</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Vsa oglišča</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Stopnja vzorčenja:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Določite število vozlišč</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>V pogovornem oknu Georeference izberite točko.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Izbriši točke</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Nastavitev konture</translation>
+        <translation type="vanished">Nastavitev konture</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Položaj</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Vodoravni rob:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Navpični rob:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Premer:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Višina:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Oddaljenost od leve</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Oddaljenost od desne</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Razdalja od vrha</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Razdalja od dna</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Prosimo, izberite datoteko CGNS za branje mreže.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Datoteka CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Neobravnavan pripomoček v ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Shrani in zapri (&amp;S)</translation>
+        <translation type="vanished">Shrani in zapri (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Pri shranjevanju je prišlo do napake.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Odpiranje datoteke CGNS ni uspelo.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Izberite Datoteka</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Ime datoteke mora biti sestavljeno samo iz angleških znakov.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Izberite Datoteka</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Ime datoteke mora biti sestavljeno samo iz angleških znakov.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Izberite Imenik</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Ime mape mora biti sestavljeno samo iz angleških znakov.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Ni podatkov za uvoz.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Izberite predlogo za uvoz)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Opozorilo</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Vsebina v besedilnem območju je prepisana s predlogo</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Skrij podrobnosti (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
+        <translation type="vanished">Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Pri shranjevanju je prišlo do napake %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Shranjevanje rezultata izračuna kot datotek TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
+        <translation type="vanished">Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atribut mreže višine ni določen za vrsto mreže %1. Vhodno/izhodne funkcije mreže, funkcije ustvarjanja mreže morda ne bodo delovale pravilno za te vrste omrežij.</translation>
+        <translation type="vanished">Atribut mreže višine ni določen za vrsto mreže %1. Vhodno/izhodne funkcije mreže, funkcije ustvarjanja mreže morda ne bodo delovale pravilno za te vrste omrežij.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Rešitev %1 že obstaja.</translation>
+        <translation type="vanished">Rešitev %1 že obstaja.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Datoteke CGNS, katere ime vsebuje druge znake, razen abeced in številk, ni mogoče uvoziti.</translation>
+        <translation type="vanished">Datoteke CGNS, katere ime vsebuje druge znake, razen abeced in številk, ni mogoče uvoziti.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Shranjevanje projektne datoteke ni uspelo.</translation>
+        <translation type="vanished">%1 Shranjevanje projektne datoteke ni uspelo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Te projektne datoteke ni mogoče prebrati, ker jo je ustvaril prestar iRIC (različica %1 ).</translation>
+        <translation type="vanished">Te projektne datoteke ni mogoče prebrati, ker jo je ustvaril prestar iRIC (različica %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Ta datoteka je za reševanje %1 %2. Ni združljiv z reševalcem, ki ga uporabljate, zato uvoz te datoteke morda ne bo uspel. Ali res želite uvoziti to datoteko?</translation>
+        <translation type="vanished">Ta datoteka je za reševanje %1 %2. Ni združljiv z reševalcem, ki ga uporabljate, zato uvoz te datoteke morda ne bo uspel. Ali res želite uvoziti to datoteko?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinatni sistem ni izbran.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Pri odpiranju datoteke CGNS v projektni datoteki je prišlo do napake: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kopiranje slike %1 do %2 ni uspelo.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Oblika prikaza časa</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Časovni pas:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Celotna regija</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktivna regija</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Regija po meri</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>jaz min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Jaz Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Celice, pri katerih sprememba dolžine celic vzdolž smeri j presega %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorčenje</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Vsa oglišča</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Stopnja vzorčenja:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-smer</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-smer</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorčenje</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Vsa oglišča</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Stopnja vzorčenja:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-smer</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-smer</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-smer</translation>
     </message>
 </context>
 <context>

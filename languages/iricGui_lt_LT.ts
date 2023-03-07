@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Praleidimo norma:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Šiuo metu nepasirinktas joks langas.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Nuolatinis momentinis vaizdas / filmas / „Google“ žemės eksportavimo vedlys</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Fono tinklelis</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Numatytasis šriftas</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Teksto formatas</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Tarp skerspjūvių:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Dažnas</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Tinklelio forma / tinklelio indeksai</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Spalvų juosta</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketės</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Rodyklės ilgio legenda</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Išankstinio apdorojimo langas</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Prieš srovę / pasroviui</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Upių tyrimo duomenys Skerspjūvių pavadinimai</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Ribinių sąlygų pavadinimai</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizacijos langai</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketės:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>„Windows“ diagrama</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramos pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendos:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ašies pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ašies žymės:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Atidarę nukopijuokite aplanko projektą į darbo katalogą</translation>
+        <translation type="vanished">Atidarę nukopijuokite aplanko projektą į darbo katalogą</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinatės būsenos juostoje</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Dešimtainės vietos:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Atributų naršyklė</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Skaičiai po kablelio</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordinatės:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vertė:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Nenurodyta)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Išvesties nustatymas</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Išvesties skaičiavimo rezultatai atskiruose failuose</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - „iRIC“ %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - „iRIC“ %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
+        <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Momentinė nuotrauka sėkmingai išsaugota %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Visi failai %1 yra ištrintas.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Nustatymo failas (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Norėdami eksportuoti formos failą, perjunkite spalvų režimą į „Diskretus režimas“.</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Geografiniai duomenys (iš žiniatinklio)</translation>
+        <translation type="vanished">Geografiniai duomenys (iš žiniatinklio)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Iš naujo įkelkite CGNS failą (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Iš naujo įkelkite CGNS failą</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Geografiniai duomenys (aukštis iš žiniatinklio)</translation>
     </message>
 </context>
 </TS>

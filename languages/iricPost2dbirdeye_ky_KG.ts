@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Axes</translation>
+        <translation type="vanished">Axes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Скаляр</translation>
+        <translation type="vanished">Скаляр</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Контурдун жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Контурдун жөндөөсүн жаңыртуу</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скаляр (клетканын борбору)</translation>
+        <translation type="vanished">Скаляр (клетканын борбору)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Максимум төрт контур аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярдык жөндөө</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Бийиктик үчүн скалярдык маани</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Түс жөндөө</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Скалярдык маани боюнча</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Скалярдык маани:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Display Setting</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Регион орнотуу (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Түс тилкесин орнотуу (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Ката</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Маани диапазону үчүн максималдуу маани минималдуу мааниден кичине.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Контур жөндөөсү жеткиликтүү эмес, анткени бул жыйынтыкта уячалардын скалярдык мааниси жок.</translation>
+        <translation type="vanished">Контур жөндөөсү жеткиликтүү эмес, анткени бул жыйынтыкта уячалардын скалярдык мааниси жок.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Тор формасынын дисплей жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Elevation үчүн скалярдык маани</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Контурдун жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Контурдун жөндөөсүн жаңыртуу</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярдык жөндөө (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Скалярдык маани боюнча</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Максимум төрт контур аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Контур түзүү</translation>
+        <translation type="vanished">Контур түзүү</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Тор формасынын жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Тор формасынын жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

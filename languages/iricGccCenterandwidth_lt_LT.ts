@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Pašalinkite centro linijos viršūnę</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekrano nustatymas</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

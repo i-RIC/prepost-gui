@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>AnimationController</name>
@@ -451,7 +449,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Vyberte Řešitel</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Když vytváříte nový projekt, musíte vybrat řešič, který se použije pro výpočet. Vyberte prosím řešitele a stiskněte tlačítko „OK“.</translation>
     </message>
 </context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Textový formát</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulář</translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Souřadnice ve stavovém řádku</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>desetinná místa:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohlížeč atributů</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>Desetinná místa</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>Souřadnice:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hodnota:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě &quot;%1&quot;. Tento řešitel je ignorován.&quot; %2</translation>
+        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě "%1". Tento řešitel je ignorován." %2</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1441,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdá se, že tento projekt otevírá jiné okno GUI iRIC. Složku projektu nelze otevřít z více oken GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otevřený projekt není zkopírován do pracovního adresáře a budete nuceni uložit změny, které v tomto projektu provedete. Pokud chcete zachovat aktuální projekt, uložte jej nejprve do jiného projektu.</translation>
     </message>
     <message>
@@ -1603,7 +1601,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuálně aktivní podokno nepodporuje export obrysového obrázku.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
     <message>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>Nastavení souboru (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Chcete-li exportovat soubor tvaru, přepněte barevný režim na „Diskrétní režim“.</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,8 +2117,8 @@ Option -&gt; Preferences</source>
         <translation>Otevřete nové okno 2D zpracování</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Otevřete nové okno postprocesingu 2D Bird&apos;s Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Otevřete nové okno postprocesingu 2D Bird's Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

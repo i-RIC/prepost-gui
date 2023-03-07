@@ -1,5 +1,27 @@
 <TS version="2.1" language="nb_NO">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Velg Koordinatsystem for data for å importere</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatsystem</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Redigere...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

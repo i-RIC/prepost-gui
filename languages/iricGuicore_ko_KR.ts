@@ -1,5 +1,202 @@
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>편집하다 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>컬러맵 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">형태</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>시계</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>선택 시</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>언제나</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>절대</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>제목 :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>글꼴 설정:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>길이</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>체재:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>제목:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>길이:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>배경:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>크기와 위치</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>길이</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>자동</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>표준 값:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[m/초]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>화면 길이:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[픽셀]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>그릴 최소값:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>값:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>길이 범례</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>기초적인</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>화살표 모양</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>화살표 크기:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>선의 폭:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>파일에 %1, 픽셀당 x 좌표 증분 및 픽셀당 y 좌표 증분 불일치. 그것은 받아 들일 수 있지만 틀릴 수 있습니다.</translation>
+        <translation type="vanished">파일에 %1, 픽셀당 x 좌표 증분 및 픽셀당 y 좌표 증분 불일치. 그것은 받아 들일 수 있지만 틀릴 수 있습니다.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>메인 창에서 해당 지점을 선택합니다.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>이미지 위치 수정</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>시계</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>선택 시</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>언제나</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>절대</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>제목 :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>글꼴 설정:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>라벨 표시</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>제목:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>상표:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>배경:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>크기와 위치</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>가져올 때 색상 막대 설정 무시</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>그림 물감</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>색상 막대 설정</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>가져올 파일 선택</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>컬러맵 설정 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>내보낼 파일 이름 입력</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>여는 중 오류가 발생했습니다. %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>투명한</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>시계</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>선택 시</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>언제나</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>절대</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>제목 :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>글꼴 설정:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>라벨 표시</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>체재:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>제목:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>상표:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>배경:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>크기와 위치</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">대화</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>컬러맵 설정</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>사전 설정:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>가져올 때 색상 막대 설정 무시</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>값과 색상의 관계</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>값 범위에 따라 자동으로 조정</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>수동으로 설정</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>값 범위</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>자동적 인</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>최대:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>최소:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>그림 물감</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>아래쪽 영역 채우기</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>상단 영역 채우기</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>스위치</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>색상 막대 설정</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>가져올 파일 선택</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>컬러맵 설정 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>내보낼 파일 이름 입력</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>여는 중 오류가 발생했습니다. %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(적용할 항목을 선택해주세요)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>이산 모드로 전환</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>그라데이션 모드로 전환</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>경고</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>최소값</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>최대값</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>투명한</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>그라데이션 모드로 전환 시 각 구간의 중간 값으로 값이 설정됩니다.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>불연속 모드로 전환 대화상자</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>최대:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>최소:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>각 섹션에 삽입할 색상 수</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>견본 추출</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>모든 정점</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>샘플링 속도:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>정점 수 지정</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>지리 참조 대화 상자에서 점을 선택합니다.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>포인트 삭제</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>윤곽 설정</translation>
+        <translation type="vanished">윤곽 설정</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>가로 여백:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>세로 여백:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>너비:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>키:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>왼쪽으로부터의 거리</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>오른쪽으로부터의 거리</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>정상까지의 거리</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>바닥으로부터의 거리</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>그리드를 읽을 CGNS 파일을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS 파일</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>ActionSetValue에서 처리되지 않은 위젯</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>저장하고 닫습니다 (&amp;S)</translation>
+        <translation type="vanished">저장하고 닫습니다 (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>수정 사항이 삭제됩니다.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS 파일을 열지 못했습니다.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>파일 선택</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>파일 이름은 영문자로만 구성되어야 합니다.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>파일 선택</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>파일 이름은 영문자로만 구성되어야 합니다.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>디렉토리 선택</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>폴더 이름은 영어로만 구성되어야 합니다.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>편집하다</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>가져올 데이터가 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(가져올 템플릿 선택)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>경고</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>텍스트 영역의 내용을 템플릿으로 덮어씁니다.</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>세부 정보 숨기기 (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>계산 결과를 로드하는 동안 오류가 발생했습니다.</translation>
+        <translation type="vanished">계산 결과를 로드하는 동안 오류가 발생했습니다.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>저장하는 동안 오류가 발생했습니다. %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>계산 결과를 TPO 파일로 저장 중...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>계산 결과를 로드하는 동안 오류가 발생했습니다.</translation>
+        <translation type="vanished">계산 결과를 로드하는 동안 오류가 발생했습니다.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>그리드 유형에 대한 표고 그리드 속성이 정의되지 않았습니다. %1. 그리드 I/O 기능, 그리드 생성 기능은 이러한 그리드 유형에 대해 올바르게 작동하지 않을 수 있습니다.</translation>
+        <translation type="vanished">그리드 유형에 대한 표고 그리드 속성이 정의되지 않았습니다. %1. 그리드 I/O 기능, 그리드 생성 기능은 이러한 그리드 유형에 대해 올바르게 작동하지 않을 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>해결책 %1 이미 존재 함.</translation>
+        <translation type="vanished">해결책 %1 이미 존재 함.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>이름에 알파벳과 숫자 이외의 문자가 포함된 CGNS 파일은 가져올 수 없습니다.</translation>
+        <translation type="vanished">이름에 알파벳과 숫자 이외의 문자가 포함된 CGNS 파일은 가져올 수 없습니다.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 프로젝트 파일을 저장하지 못했습니다.</translation>
+        <translation type="vanished">%1 프로젝트 파일을 저장하지 못했습니다.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>이 프로젝트 파일은 너무 오래된 iRIC(버전 %1 ).</translation>
+        <translation type="vanished">이 프로젝트 파일은 너무 오래된 iRIC(버전 %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>이 파일은 솔버용입니다. %1 %2. 사용 중인 솔버와 호환되지 않으므로 이 파일을 가져오지 못할 수 있습니다. 이 파일을 가져오시겠습니까?</translation>
+        <translation type="vanished">이 파일은 솔버용입니다. %1 %2. 사용 중인 솔버와 호환되지 않으므로 이 파일을 가져오지 못할 수 있습니다. 이 파일을 가져오시겠습니까?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>좌표계가 선택되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>프로젝트 파일에서 CGNS 파일을 여는 동안 오류가 발생했습니다: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>이미지 복사 중 %1 에게 %2 실패한.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>시간 표시 형식</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>시간대:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>전체 지역</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>활성 지역</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>맞춤 지역</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>나는 ~ 안에있다:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>나는 최대:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>제이민:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J 맥스:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* j 방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>견본 추출</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>모든 정점</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>샘플링 속도:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I 방향</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J 방향</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>견본 추출</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>모든 정점</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>샘플링 속도:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I 방향</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J 방향</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K 방향</translation>
     </message>
 </context>
 <context>

@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Fisier text (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Fisier text (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Fisier text (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Nume de fișier:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem de coordonate</translation>
     </message>
 </context>
 <context>

@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>المحاور</translation>
+        <translation type="vanished">المحاور</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>العددية</translation>
+        <translation type="vanished">العددية</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>تحديث إعداد الكونتور</translation>
+        <translation type="vanished">تحديث إعداد الكونتور</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>عددي (مركز الخلية)</translation>
+        <translation type="vanished">عددي (مركز الخلية)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">ضبط عددي</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">القيمة العددية للارتفاع</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">إعداد اللون</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">لون مخصص</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">حسب القيمة العددية</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">القيمة العددية:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">إعداد عرض</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">إعداد المنطقة (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">خطأ</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">بالنسبة لنطاق القيمة ، تكون القيمة القصوى أصغر من القيمة الدنيا.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>لا يتوفر إعداد المحيط ، لأن هذه النتيجة لا تحتوي على قيم عددية للخلية.</translation>
+        <translation type="vanished">لا يتوفر إعداد المحيط ، لأن هذه النتيجة لا تحتوي على قيم عددية للخلية.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>إعداد عرض شكل الشبكة</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>القيمة العددية للارتفاع</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>تحديث إعداد الكونتور</translation>
+        <translation type="vanished">تحديث إعداد الكونتور</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>الإعداد العددي (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>حوار</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>حسب القيمة العددية</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>إنشاء كونتور</translation>
+        <translation type="vanished">إنشاء كونتور</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>تحديث إعداد شكل الشبكة</translation>
+        <translation type="vanished">تحديث إعداد شكل الشبكة</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

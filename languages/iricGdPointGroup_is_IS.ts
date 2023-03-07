@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Punktur (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Bæta við nýjum punkti (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Litastilling Breyta</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Sýnastilling punktahóps</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktastærð:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Villa kom upp við að lesa „gildi“ gildi í línu %1. „gildi“ ætti að vera raungildi en „ %2 “er tilgreint.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Breyta skjástillingu</translation>
     </message>
 </context>
 <context>

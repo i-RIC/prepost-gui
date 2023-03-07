@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Partikulen ezarpena</translation>
+        <translation type="vanished">Partikulen ezarpena</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Neurria:</translation>
+        <translation type="vanished">Neurria:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Partikula eskalaren ezarpena</translation>
+        <translation type="vanished">Partikula eskalaren ezarpena</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Kolorea atributuaren balioaren arabera</translation>
+        <translation type="vanished">Kolorea atributuaren balioaren arabera</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributu:</translation>
+        <translation type="vanished">Atributu:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Neurria:</translation>
+        <translation type="vanished">Neurria:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Geziaren ezarpena</translation>
+        <translation type="vanished">Geziaren ezarpena</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Atributuaren balioa:</translation>
+        <translation type="vanished">Atributuaren balioa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Luzera</translation>
+        <translation type="vanished">Luzera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Balio estandarra:</translation>
+        <translation type="vanished">Balio estandarra:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[anderea]</translation>
+        <translation type="vanished">[anderea]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pantailan luzera:</translation>
+        <translation type="vanished">Pantailan luzera:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Marrazteko gutxieneko balioa:</translation>
+        <translation type="vanished">Marrazteko gutxieneko balioa:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Laginketa</translation>
+        <translation type="vanished">Laginketa</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Partikula guztiak</translation>
+        <translation type="vanished">Partikula guztiak</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Laginketa-tasa:</translation>
+        <translation type="vanished">Laginketa-tasa:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Zehaztu partikula kopurua</translation>
+        <translation type="vanished">Zehaztu partikula kopurua</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarraren arabera</translation>
+        <translation type="vanished">Balio eskalarraren arabera</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Gezi forma</translation>
+        <translation type="vanished">Gezi forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Geziaren tamaina:</translation>
+        <translation type="vanished">Geziaren tamaina:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lerro zabalera:</translation>
+        <translation type="vanished">Lerro zabalera:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Poligonoen ezarpena</translation>
+        <translation type="vanished">Poligonoen ezarpena</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linearen zabalera:</translation>
+        <translation type="vanished">Linearen zabalera:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Poligonoen ezarpena</translation>
+        <translation type="vanished">Poligonoen ezarpena</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Kolorea atributuaren balioaren arabera</translation>
+        <translation type="vanished">Kolorea atributuaren balioaren arabera</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributu:</translation>
+        <translation type="vanished">Atributu:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Linearen zabalera</translation>
+        <translation type="vanished">Linearen zabalera</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Hautatu Helburuko emaitza</translation>
     </message>
 </context>
 <context>

@@ -127,178 +127,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ベクトル設定</translation>
+        <translation type="vanished">ベクトル設定</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長さ</translation>
+        <translation type="vanished">長さ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>基準値:</translation>
+        <translation type="vanished">基準値:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>画面上での長さ:</translation>
+        <translation type="vanished">画面上での長さ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>表示する最小値:</translation>
+        <translation type="vanished">表示する最小値:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>サンプリング</translation>
+        <translation type="vanished">サンプリング</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>全頂点に表示</translation>
+        <translation type="vanished">全頂点に表示</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I方向</translation>
+        <translation type="vanished">I方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>矢印形状</translation>
+        <translation type="vanished">矢印形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>矢印サイズ:</translation>
+        <translation type="vanished">矢印サイズ:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>線の太さ:</translation>
+        <translation type="vanished">線の太さ:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>領域設定(&amp;R)</translation>
+        <translation type="vanished">領域設定(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ベクトル設定</translation>
+        <translation type="vanished">ベクトル設定</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長さ</translation>
+        <translation type="vanished">長さ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>基準値:</translation>
+        <translation type="vanished">基準値:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>画面上での長さ:</translation>
+        <translation type="vanished">画面上での長さ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>表示する最小値:</translation>
+        <translation type="vanished">表示する最小値:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>サンプリング</translation>
+        <translation type="vanished">サンプリング</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>全頂点に表示</translation>
+        <translation type="vanished">全頂点に表示</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>表示点数を指定</translation>
+        <translation type="vanished">表示点数を指定</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>矢印形状</translation>
+        <translation type="vanished">矢印形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>矢印サイズ:</translation>
+        <translation type="vanished">矢印サイズ:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>線の太さ:</translation>
+        <translation type="vanished">線の太さ:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>領域設定(&amp;R)</translation>
+        <translation type="vanished">領域設定(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -389,27 +389,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>スカラー (セル中心)</translation>
+        <translation type="vanished">スカラー (セル中心)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>ストリートビュー用のKML をエクスポートするには、面塗りコンターを描画して下さい。</translation>
+        <translation type="vanished">ストリートビュー用のKML をエクスポートするには、面塗りコンターを描画して下さい。</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
+        <translation type="vanished">ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
+        <translation type="vanished">ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
     </message>
 </context>
 <context>
@@ -420,50 +447,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>コンターは最大で4つまでしか描画できません。</translation>
+        <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>シェープファイルをエクスポートするには、表示設定を "面塗りコンター" に切り替えてください。</translation>
+        <translation type="vanished">シェープファイルをエクスポートするには、表示設定を "面塗りコンター" に切り替えてください。</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>スカラー設定</translation>
+        <translation type="vanished">スカラー設定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>表示設定</translation>
+        <translation type="vanished">表示設定</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>領域設定(&amp;R)</translation>
+        <translation type="vanished">領域設定(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
+        <translation type="vanished">値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
 </context>
 <context>
@@ -520,6 +547,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>地理情報</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>参照情報</translation>
     </message>
 </context>
 <context>
@@ -659,6 +690,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>格子形状表示設定</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -713,11 +751,11 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
+        <translation type="vanished">ストリートビュー用のKML をエクスポートするには、コンターを描画して下さい。</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
@@ -733,18 +771,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
+        <translation type="vanished">ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>ストリートビュー用のKML をエクスポートするには、"区間別モード" に切り替えて描画してください。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">スカラー</translation>
+        <translation>スカラー</translation>
     </message>
     <message>
         <source>Add...</source>
@@ -752,7 +821,7 @@
     </message>
     <message>
         <source>Scalar (node)</source>
-        <translation>スカラー (格子点)</translation>
+        <translation type="vanished">スカラー (格子点)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -768,7 +837,11 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>シェープファイルをエクスポートするには、表示設定を "面塗りコンター" に切り替えてください。</translation>
+        <translation type="vanished">シェープファイルをエクスポートするには、表示設定を "面塗りコンター" に切り替えてください。</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>シェープファイルをエクスポートするには、表示設定を "区間別モード" に切り替えてください。</translation>
     </message>
 </context>
 <context>
@@ -779,21 +852,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>矢印 物理量変更</translation>
+        <translation type="vanished">矢印 物理量変更</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>ベクトルの設定変更</translation>
+        <translation type="vanished">ベクトルの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>ベクトル設定</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>領域</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>ベクトルの設定変更</translation>
+        <translation type="vanished">ベクトルの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>ベクトル設定</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>領域</translation>
     </message>
 </context>
 <context>
@@ -1162,10 +1271,53 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>パーティクルのスカラー設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>パーティクル設定の変更</translation>
+        <translation type="vanished">パーティクル設定の変更</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>属性ブラウザの表示</translation>
     </message>
 </context>
 <context>
@@ -1176,11 +1328,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>ベクトル属性の変更</translation>
+        <translation type="vanished">ベクトル属性の変更</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>ベクトル設定の変更</translation>
+        <translation type="vanished">ベクトル設定の変更</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>矢印 物理量変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>パーティクルのベクトル設定</translation>
     </message>
 </context>
 <context>
@@ -1236,7 +1399,46 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>ポリゴンの設定変更</translation>
+        <translation type="vanished">ポリゴンの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>ポリゴンの表示設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="obsolete">色を指定</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の太さ:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
     </message>
 </context>
 <context>
@@ -1467,7 +1669,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>格子形状の設定変更</translation>
+        <translation type="vanished">格子形状の設定変更</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -1507,19 +1709,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>パーティクルのスカラー設定の変更</translation>
+        <translation type="vanished">パーティクルのスカラー設定の変更</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>コンターの作成</translation>
+        <translation type="vanished">コンターの作成</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>セルコンターの作成</translation>
+        <translation type="vanished">セルコンターの作成</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>ポリゴンの値設定の更新</translation>
+        <translation type="vanished">ポリゴンの値設定の更新</translation>
     </message>
 </context>
 </TS>

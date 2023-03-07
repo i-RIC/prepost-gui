@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按标量值</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑 (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色图设置 (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按标量值</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>进口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>出口 (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -62,140 +60,140 @@
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>能见度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>选择时</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>总是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>绝不</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>标题</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>标题 ：</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>字体设置：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">格式:</translation>
+        <translation>格式：</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>标题：</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>长度：</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景：</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>大小和位置</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>汽车</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>标准值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>屏幕长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>绘制的最小值：</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>价值：</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>长度图例</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>基本的</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>箭头形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>箭头大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>行宽：</translation>
     </message>
 </context>
 <context>
@@ -306,348 +304,348 @@
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>能见度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>选择时</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>总是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>绝不</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>标题</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>标题 ：</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>字体设置：</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>标签展示</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>标题：</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>标签：</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景：</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>大小和位置</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>导入时忽略颜色条设置</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>彩条设置</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>选择要导入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>色图设置 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>输入要导出的文件名</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>打开时出现错误 %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">数值</translation>
+        <translation>价值</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>透明的</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>能见度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>选择时</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>总是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>绝不</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>标题</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>标题 ：</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>字体设置：</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>标签展示</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">格式:</translation>
+        <translation>格式：</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>标题：</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>标签：</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景：</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>大小和位置</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>进口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">彩色地图设置</translation>
+        <translation>颜色映射设置</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="unfinished"></translation>
+        <translation>预设：</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>导入时忽略颜色条设置</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>值和颜色之间的关系</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation type="unfinished"></translation>
+        <translation>根据取值范围自动调整</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation type="unfinished"></translation>
+        <translation>手动设置</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>取值范围</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished">自动</translation>
+        <translation>自动的</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">最大:</translation>
+        <translation>最大限度：</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">最小:</translation>
+        <translation>分钟：</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished">填充下部:</translation>
+        <translation>填充下部区域</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished">填充上部</translation>
+        <translation>填充上部区域</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>转变</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>彩条设置</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>选择要导入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>色图设置 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>输入要导出的文件名</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>打开时出现错误 %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="unfinished"></translation>
+        <translation>(请选择要申请的项目)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到离散模式</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到渐变模式</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">数值</translation>
+        <translation>价值</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation type="unfinished"></translation>
+        <translation>最小值</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation type="unfinished"></translation>
+        <translation>最大值</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>透明的</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到渐变模式时，值设置为每个部分的中间值。</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>切换到离散模式对话框</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">最大:</translation>
+        <translation>最大限度：</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">最小:</translation>
+        <translation>分钟：</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="unfinished"></translation>
+        <translation>每个部分要插入的颜色数</translation>
     </message>
 </context>
 <context>
@@ -688,23 +686,23 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>采样率：</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>指定顶点数</translation>
     </message>
 </context>
 <context>
@@ -1006,43 +1004,43 @@ Parse error %2 at %3, column %4</source>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>水平边距：</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直边距：</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>宽度：</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>高度：</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation type="unfinished"></translation>
+        <translation>距左侧的距离</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation type="unfinished"></translation>
+        <translation>与右侧的距离</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation type="unfinished"></translation>
+        <translation>距顶部的距离</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>离底部的距离</translation>
     </message>
 </context>
 <context>
@@ -1079,12 +1077,12 @@ Parse error %2 at %3, column %4</source>
         <translation>定义节点未被储存</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>设置了错误数值种类&quot;%1&quot; </translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>设置了错误数值种类"%1" </translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>设置了错误条件种类&quot;%1&quot; </translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>设置了错误条件种类"%1" </translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,7 +1355,7 @@ Do you really want to import this file?</source>
         <translation>信息</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>您可以使用快捷键“Ctrl + C”和“Ctrl + V”复制和粘贴值</translation>
     </message>
     <message>
@@ -1428,15 +1426,15 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>（选择要导入的模板）</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation type="unfinished"></translation>
+        <translation>文本区域的内容被模板覆盖</translation>
     </message>
 </context>
 <context>
@@ -1485,8 +1483,8 @@ Do you really want to import this file?</source>
         <translation>打开文件时出现错误</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>前两列必须为&quot;X&quot; and &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>前两列必须为"X" and "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1651,8 +1649,8 @@ Do you really want to import this file?</source>
         <translation>变量定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1730,8 +1728,8 @@ Do you really want to import this file?</source>
         <translation>&amp;下移</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2060,8 +2058,8 @@ Do you really want to import this file?</source>
         <translation type="obsolete">&amp;编辑...</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2123,8 +2121,8 @@ Do you really want to import this file?</source>
         <translation>输出定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text - 装饰：下划线；颜色：#0000ff;&quot;&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text - 装饰：下划线；颜色：#0000ff;"&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2378,8 +2376,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Workspace &quot;%1&quot;具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Workspace "%1"具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2487,35 +2485,35 @@ Do you really want to import this file?</source>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>全区</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>活动区域</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义区域</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>算我一个：</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>我最大：</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J敏：</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J 马克斯：</translation>
     </message>
 </context>
 <context>
@@ -2595,58 +2593,58 @@ Do you really want to import this file?</source>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>采样率：</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J方向</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>采样率：</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J方向</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>K向</translation>
     </message>
 </context>
 <context>

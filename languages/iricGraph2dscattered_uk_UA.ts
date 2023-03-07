@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Налаштування малювання (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Налаштування шрифту (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Налаштування малювання</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Налаштування шрифту</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Назва діаграми:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенди:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Вісь X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Назва:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>галочки:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Вісь Y:</translation>
     </message>
 </context>
 <context>

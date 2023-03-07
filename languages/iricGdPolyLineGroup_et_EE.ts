@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Rida %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Lisa uus rida (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Värviseade Redigeerimine</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Polyline Group Display Setting</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Joone laius:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV -fail (read) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Muutke kuvaseadet</translation>
     </message>
 </context>
 <context>

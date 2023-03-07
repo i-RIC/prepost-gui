@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Төмөнкү файлдар импорттолот. Жакшыбы?</translation>
+        <translation type="vanished">Төмөнкү файлдар импорттолот. Жакшыбы?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Сураныч, импорттолуучу файлдарды тандаңыз.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Баарын тандаңыз (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Баарын тандоо (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Эскертүү</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Тандалган файлдардын ортосундагы убакыт аралыгы бирдей эмес.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Файлдын аты үлгүгө дал келбейт</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Убакыт зонасы:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Убакыт дал келбестиги үчүн өлчөмдөр.</translation>
+        <translation type="vanished">Убакыт дал келбестиги үчүн өлчөмдөр.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Координаттар системасы үчүн көрсөтүлгөн эмес %1. Сураныч, координаттар системасын кол менен тандаңыз.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Убакыт сериясынын растр маалыматтары мурунтан эле импорттолгон. Башка дайындарды импорттоону кааласаңыз, алгач импорттолгон дайындарды жок кылыңыз.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Ачылышы %1 ишке ашпай калды.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Үчүн өлчөм баалуулуктары %1 дал келбөө.</translation>
+        <translation type="vanished">Үчүн өлчөм баалуулуктары %1 дал келбөө.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Убакыт аныктамасын талдоодо ката кетти: %1</translation>
+        <translation type="vanished">Убакыт аныктамасын талдоодо ката кетти: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 узундук, кеңдик же x, y маалыматтары жок.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Убакыт сериясынын растр маалыматтары мурунтан эле импорттолгон. Башка дайындарды импорттоону кааласаңыз, алгач импорттолгон дайындарды жок кылыңыз.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Баштапкы убакыт:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Убакыт зонасы:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Маалымат</translation>
+        <translation type="vanished">Маалымат</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 папкадагы файлдар %2 импорттолот.</translation>
+        <translation type="vanished">%1 папкадагы файлдар %2 импорттолот.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Убакыт дал келбестиги үчүн өлчөмдөр.</translation>
+        <translation type="vanished">Убакыт дал келбестиги үчүн өлчөмдөр.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Убакыт сериясынын растр маалыматтары мурунтан эле импорттолгон. Башка дайындарды импорттоону кааласаңыз, алгач импорттолгон дайындарды жок кылыңыз.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Конверттелген дайындарды импорттоодо ката кетти %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Ачууда ката кетти %1.</translation>
     </message>
 </context>
 </TS>

@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>बिंदु (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>नया बिंदु जोड़ें (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>रंग सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>बिंदु समूह प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
     </message>
 </context>
 <context>

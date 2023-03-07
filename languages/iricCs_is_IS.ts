@@ -1,5 +1,27 @@
 <TS version="2.1" language="is_IS">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Veldu Hnitkerfi gagna til að flytja inn</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hnitkerfi</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Breyta...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

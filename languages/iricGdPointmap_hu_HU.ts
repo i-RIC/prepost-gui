@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Szöveges fájl (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Szöveges fájl (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Szöveges fájl (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Fájl név:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordináta-rendszer</translation>
     </message>
 </context>
 <context>

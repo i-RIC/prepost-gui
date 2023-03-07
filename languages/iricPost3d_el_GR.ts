@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Ρύθμιση περιγράμματος (κέντρο κυψέλης)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Ρύθμιση περιγράμματος (κέντρο κυψελών)</translation>
+        <translation type="vanished">Ρύθμιση περιγράμματος (κέντρο κυψελών)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Αξία:</translation>
+        <translation type="vanished">Αξία:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Περιφέρειες</translation>
+        <translation type="vanished">Περιφέρειες</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Προσθήκη (&amp;A)</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Αφαιρώ (&amp;R)</translation>
+        <translation type="vanished">Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Εύρος %1</translation>
+        <translation type="vanished">Εύρος %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+        <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Προσθήκη (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Αφαιρώ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Εύρος %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Πρόσωπο</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Περίγραμμα</translation>
+        <translation type="vanished">Περίγραμμα</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Ρύθμιση περιγράμματος</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Ρύθμιση περιγράμματος (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Πρόσωπο %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Ρύθμιση περιγράμματος</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Πρόσωπα</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Ρύθμιση περιγράμματος</translation>
+        <translation type="vanished">Ρύθμιση περιγράμματος</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Φυσική αξία:</translation>
+        <translation type="vanished">Φυσική αξία:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Πρόσωπα</translation>
+        <translation type="vanished">Πρόσωπα</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Προσθήκη (&amp;A)</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Αφαιρώ (&amp;R)</translation>
+        <translation type="vanished">Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Πρόσωπο %1</translation>
+        <translation type="vanished">Πρόσωπο %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+        <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Αλλαγή αντικειμένου προγράμματος περιήγησης αντικειμένου</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Προσθήκη (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Αφαιρώ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Πρόσωπο %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Κατεύθυνση</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>Εγώ</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>κ</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Είμαι μέσα</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>I Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>Κ Ελάχ</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Ενεργοποιημένο</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Σχήμα πλέγματος</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης σχήματος πλέγματος</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Πρόσωπο</translation>
+        <translation type="vanished">Πρόσωπο</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Πρόσωπο %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Πρόσωπο %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Ρύθμιση βέλους</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Βασικός</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Length Legend</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Πρόσωπα</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Προσθήκη (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Πρόσωπο %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Length Legend</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Μπορούν να οριστούν έως τέσσερα βέλη.</translation>
+        <translation type="vanished">Μπορούν να οριστούν έως τέσσερα βέλη.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Ρύθμιση βαθμωτών σωματιδίων</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Επεξεργασία ρύθμισης σωματιδίων</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης σωματιδίων</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Διανυσματικό χαρακτηριστικό Επιλέξτε Αλλαγή</translation>
+        <translation type="vanished">Διανυσματικό χαρακτηριστικό Επιλέξτε Αλλαγή</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Ενημέρωση διανυσματικών ρυθμίσεων</translation>
+        <translation type="vanished">Ενημέρωση διανυσματικών ρυθμίσεων</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Βέλος Αλλαγή φυσικής αξίας</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Ρύθμιση διάνυσμα σωματιδίων</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Εκσυγχρονίζω</translation>
+        <translation type="vanished">Εκσυγχρονίζω</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Δημιουργία περιγράμματος</translation>
+        <translation type="vanished">Δημιουργία περιγράμματος</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Ενημέρωση Scalar Setting Particles</translation>
+        <translation type="vanished">Ενημέρωση Scalar Setting Particles</translation>
     </message>
 </context>
 </TS>

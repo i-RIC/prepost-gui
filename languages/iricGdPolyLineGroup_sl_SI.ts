@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Linija %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Dodaj novo vrstico (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Urejanje barvnih nastavitev</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Nastavitev prikaza skupine poličrt</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>Datoteka CSV (vrstice) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Uredi nastavitev zaslona</translation>
     </message>
 </context>
 <context>

@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Sokszögek (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Új sokszög hozzáadása (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Színbeállítás szerkesztése</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Sokszögcsoport megjelenítési beállítása</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Hiba történt a sor olvasása közben %1. Az "értéknek" azonosnak kell lennie azoknál a soroknál, ahol a "pid" értékek azonosak.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Megjelenítési beállítás szerkesztése</translation>
     </message>
 </context>
 <context>

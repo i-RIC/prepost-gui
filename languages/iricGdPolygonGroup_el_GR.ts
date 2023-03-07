@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Πολύγωνα (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Προσθήκη νέου πολυγώνου (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης ομάδας πολυγώνων</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Η "τιμή" πρέπει να είναι η ίδια για τις γραμμές όπου οι τιμές "pid" είναι ίδιες.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
     </message>
 </context>
 <context>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Rácsvonalak</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Minden</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Csak vázlat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Szín:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Rácsindexek</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Látható</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A következő szimbólumokkal határozhatja meg az egyéni időformátumot: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Év: ÉÉÉÉ, ÉÉ &lt;/li&gt; &lt;li&gt; Hónap: H, HH, MMM, MMMM (MMM január, stb., MMMM január stb.) &lt;/li&gt; &lt;li&gt; Nap: d, dd, ddd, dddd (ddd hétfőre, dddd hétfőre stb.) &lt;/Li &gt; &lt;li&gt; Óra: H, HH, h, hh (h, hh AM/PM kijelző esetén) &lt;/li&gt; &lt;li&gt; perc: m, mm &lt;/li&gt; &lt;li&gt; Második: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Időzóna megjelenítése</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Kérlek várj</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Kérlek várj...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Kérlek várj...</translation>

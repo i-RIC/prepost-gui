@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,8 +9,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Post-elaborazione a volo d&apos;uccello (2D): %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Post-elaborazione a volo d'uccello (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -95,7 +93,7 @@
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valore scalare per l&apos;elevazione</translation>
+        <translation type="vanished">Valore scalare per l'elevazione</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -131,7 +129,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per l&apos;intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -142,11 +140,11 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
+        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="vanished">L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
+        <translation type="vanished">L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -168,11 +166,11 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della visualizzazione della forma della griglia</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore scalare per Elevazione</translation>
     </message>
 </context>
 <context>
@@ -187,38 +185,38 @@
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione scalare (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Colore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Colore personalizzato</translation>
+        <translation>Colore personalizzato</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">Per valore scalare</translation>
+        <translation>Per valore scalare</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importare (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportare (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Allineare</translation>
     </message>
 </context>
 <context>
@@ -244,7 +242,7 @@
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="vanished">Aggiorna l&apos;impostazione della forma della griglia</translation>
+        <translation type="vanished">Aggiorna l'impostazione della forma della griglia</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

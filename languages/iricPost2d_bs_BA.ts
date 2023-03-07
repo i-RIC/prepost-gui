@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Postavka strelice</translation>
+        <translation type="vanished">Postavka strelice</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizička vrijednost:</translation>
+        <translation type="vanished">Fizička vrijednost:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Dužina</translation>
+        <translation type="vanished">Dužina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatski</translation>
+        <translation type="vanished">Automatski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardna vrijednost:</translation>
+        <translation type="vanished">Standardna vrijednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[gospođa]</translation>
+        <translation type="vanished">[gospođa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Dužina na ekranu:</translation>
+        <translation type="vanished">Dužina na ekranu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna vrijednost za izvlačenje:</translation>
+        <translation type="vanished">Minimalna vrijednost za izvlačenje:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Uzorkovanje</translation>
+        <translation type="vanished">Uzorkovanje</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Svi vrhovi</translation>
+        <translation type="vanished">Svi vrhovi</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Stopa uzorkovanja:</translation>
+        <translation type="vanished">Stopa uzorkovanja:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-smjer</translation>
+        <translation type="vanished">I-smjer</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-smjer</translation>
+        <translation type="vanished">J-smjer</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Prema skalarnoj vrijednosti</translation>
+        <translation type="vanished">Prema skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Oblik strelice</translation>
+        <translation type="vanished">Oblik strelice</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Veličina strelice:</translation>
+        <translation type="vanished">Veličina strelice:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Region Setting (&amp;R)</translation>
+        <translation type="vanished">Region Setting (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Postavka strelice</translation>
+        <translation type="vanished">Postavka strelice</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizička vrijednost:</translation>
+        <translation type="vanished">Fizička vrijednost:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Dužina</translation>
+        <translation type="vanished">Dužina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatski</translation>
+        <translation type="vanished">Automatski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardna vrijednost:</translation>
+        <translation type="vanished">Standardna vrijednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[gospođa]</translation>
+        <translation type="vanished">[gospođa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Dužina na ekranu:</translation>
+        <translation type="vanished">Dužina na ekranu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna vrijednost za izvlačenje:</translation>
+        <translation type="vanished">Minimalna vrijednost za izvlačenje:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Uzorkovanje</translation>
+        <translation type="vanished">Uzorkovanje</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Svi vrhovi</translation>
+        <translation type="vanished">Svi vrhovi</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Stopa uzorkovanja:</translation>
+        <translation type="vanished">Stopa uzorkovanja:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Odredite broj vrhova</translation>
+        <translation type="vanished">Odredite broj vrhova</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Prema skalarnoj vrijednosti</translation>
+        <translation type="vanished">Prema skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Oblik strelice</translation>
+        <translation type="vanished">Oblik strelice</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Veličina strelice:</translation>
+        <translation type="vanished">Veličina strelice:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Region Setting (&amp;R)</translation>
+        <translation type="vanished">Region Setting (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalarno (centar ćelija)</translation>
+        <translation type="vanished">Skalarno (centar ćelija)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ažurirajte postavku konture</translation>
+        <translation type="vanished">Ažurirajte postavku konture</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Upozorenje</translation>
+        <translation type="vanished">Upozorenje</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Za izvoz KML -a za prikaz ulice, prikažite sa konturnom slikom.</translation>
+        <translation type="vanished">Za izvoz KML -a za prikaz ulice, prikažite sa konturnom slikom.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Za izvoz KML -a za prikaz ulica, raspon vrijednosti treba postaviti ručno.</translation>
+        <translation type="vanished">Za izvoz KML -a za prikaz ulica, raspon vrijednosti treba postaviti ručno.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Za izvoz KML -a za prikaz ulice potrebno je navesti koordinatni sistem.</translation>
+        <translation type="vanished">Za izvoz KML -a za prikaz ulice potrebno je navesti koordinatni sistem.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Postavka skalara (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dijalog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Domet</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Upozorenje</translation>
+        <translation type="vanished">Upozorenje</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Mogu se definirati najviše četiri konture.</translation>
+        <translation type="vanished">Mogu se definirati najviše četiri konture.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalarna postavka</translation>
+        <translation type="vanished">Skalarna postavka</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizička vrijednost:</translation>
+        <translation type="vanished">Fizička vrijednost:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Postavke ekrana</translation>
+        <translation type="vanished">Postavke ekrana</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Region Setting (&amp;R)</translation>
+        <translation type="vanished">Region Setting (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Za raspon vrijednosti, maksimalna vrijednost je manja od minimalne vrijednosti.</translation>
+        <translation type="vanished">Za raspon vrijednosti, maksimalna vrijednost je manja od minimalne vrijednosti.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografski podaci</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referentne informacije</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Postavka prikaza oblika mreže</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ažurirajte postavku konture</translation>
+        <translation type="vanished">Ažurirajte postavku konture</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Za izvoz KML -a za prikaz ulice, prikažite sa konturnom slikom.</translation>
+        <translation type="vanished">Za izvoz KML -a za prikaz ulice, prikažite sa konturnom slikom.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Za izvoz KML -a za prikaz ulica, raspon vrijednosti treba postaviti ručno.</translation>
+        <translation type="vanished">Za izvoz KML -a za prikaz ulica, raspon vrijednosti treba postaviti ručno.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Za izvoz KML -a za prikaz ulice potrebno je navesti koordinatni sistem.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Postavka skalara (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Za izvoz KML-a za prikaz ulice, Colormode mora biti "Discrete Mode"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dijalog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Domet</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalarno (čvor)</translation>
+        <translation type="vanished">Skalarno (čvor)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Za izvoz datoteke oblika, prebacite postavku boje na "Discrete Mode".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Promjena fizičke vrijednosti strelice</translation>
+        <translation type="vanished">Promjena fizičke vrijednosti strelice</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ažuriraj postavku strelice</translation>
+        <translation type="vanished">Ažuriraj postavku strelice</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Podešavanje strelica</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ažuriraj postavku strelice</translation>
+        <translation type="vanished">Ažuriraj postavku strelice</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Podešavanje strelica</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Postavka skalara čestica</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap Setting</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Veličina tačke:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Uredi postavku čestica</translation>
+        <translation type="vanished">Uredi postavku čestica</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Prikaži preglednik atributa</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Atribut vektora Odaberite Promijeni</translation>
+        <translation type="vanished">Atribut vektora Odaberite Promijeni</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Ažurirajte vektorsku postavku</translation>
+        <translation type="vanished">Ažurirajte vektorsku postavku</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Promjena fizičke vrijednosti strelice</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Particles Vector Setting</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Uredite postavku poligona</translation>
+        <translation type="vanished">Uredite postavku poligona</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Postavka prikaza podataka poligona</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap Setting</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina linije:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Kreirajte konturu ćelije</translation>
+        <translation type="vanished">Kreirajte konturu ćelije</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kreiraj konturu</translation>
+        <translation type="vanished">Kreiraj konturu</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Ažurirajte postavku oblika mreže</translation>
+        <translation type="vanished">Ažurirajte postavku oblika mreže</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Ažurirajte skalarnu postavku čestica</translation>
+        <translation type="vanished">Ažurirajte skalarnu postavku čestica</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Ažurirajte skalarnu postavku poligona</translation>
+        <translation type="vanished">Ažurirajte skalarnu postavku poligona</translation>
     </message>
 </context>
 </TS>

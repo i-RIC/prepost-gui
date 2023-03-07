@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Текстов файл (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Текстов файл (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Текстов файл (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Име на файл:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Координатна система</translation>
     </message>
 </context>
 <context>

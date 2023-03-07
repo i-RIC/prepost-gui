@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>पाठ फ़ाइल (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">पाठ फ़ाइल (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>पाठ फ़ाइल (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>फ़ाइल का नाम:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>समन्वय प्रणाली</translation>
     </message>
 </context>
 <context>

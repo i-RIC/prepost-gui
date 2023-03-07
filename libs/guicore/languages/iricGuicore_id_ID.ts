@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Dengan nilai skalar</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunting (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Peta Warna (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Dengan nilai skalar</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspor (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -62,140 +60,140 @@
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Setelan Fon:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Panjang</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Panjang:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Latar belakang:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran dan Posisi</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai minimum untuk menggambar:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Legenda Panjang</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Dasar</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Bentuk Panah</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran panah:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar garis:</translation>
     </message>
 </context>
 <context>
@@ -306,178 +304,178 @@
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Setelan Fon:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilan Label</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Label:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Latar belakang:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran dan Posisi</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Bilah Warna</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file untuk diimpor</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Masukkan nama file untuk diekspor</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat membuka %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Nilai</translation>
+        <translation>Nilai</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparan</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Fon:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilan Label</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Label:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Latar belakang:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran dan Posisi</translation>
     </message>
 </context>
 <context>
@@ -488,170 +486,170 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">Pengaturan Peta Warna</translation>
+        <translation>Pengaturan Peta Warna</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="unfinished"></translation>
+        <translation>Preset:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Hubungan antara nilai dan warna</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesuaikan secara otomatis berdasarkan rentang nilai</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation type="unfinished"></translation>
+        <translation>Atur Secara Manual</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rentang Nilai</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished">Otomatis</translation>
+        <translation>Otomatis</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Maks:</translation>
+        <translation>Maks:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+        <translation>Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished">Isi area bawah</translation>
+        <translation>Isi area bawah</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished">Isi area atas</translation>
+        <translation>Isi area atas</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Mengalihkan</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Bilah Warna</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file untuk diimpor</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Masukkan nama file untuk diekspor</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat membuka %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Silakan pilih item untuk diterapkan)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Beralih ke Mode Diskrit</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Beralih ke Mode Gradasi</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Peringatan</translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Nilai</translation>
+        <translation>Nilai</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai minimal</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai maks</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparan</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Beralih ke Dialog Mode Diskrit</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Maks:</translation>
+        <translation>Maks:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="unfinished"></translation>
+        <translation>Jumlah warna untuk disisipkan di setiap bagian</translation>
     </message>
 </context>
 <context>
@@ -692,23 +690,23 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentukan jumlah simpul</translation>
     </message>
 </context>
 <context>
@@ -1010,43 +1008,43 @@ Parse error %2 at %3, column %4</source>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posisi</translation>
+        <translation>Posisi</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Batas Horisontal:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Batas Vertikal:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinggi:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarak dari kiri</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarak dari kanan</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarak dari atas</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarak dari bawah</translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1081,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Node definisi tidak disimpan</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>NilaiTipe salah &quot;%1&quot; sudah diatur.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Kondisi salahTipe &quot;%1&quot; sudah diatur.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1359,8 +1357,8 @@ Do you really want to import this file?</source>
         <translation>Informasi</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan &quot;Ctrl + C&quot; dan &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1428,15 +1426,15 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Pilih template untuk diimpor)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Peringatan</translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation type="unfinished"></translation>
+        <translation>Konten di area teks akan ditimpa dengan template</translation>
     </message>
 </context>
 <context>
@@ -1485,8 +1483,8 @@ Do you really want to import this file?</source>
         <translation>Terjadi kesalahan saat membuka file.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Dua kolom pertama harus &quot;X&quot; dan &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1651,8 +1649,8 @@ Do you really want to import this file?</source>
         <translation>Definisi variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1730,8 +1728,8 @@ Do you really want to import this file?</source>
         <translation>Turun (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2084,8 +2082,8 @@ Do you really want to import this file?</source>
         <translation>Definisi keluaran</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2339,8 +2337,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja &quot;%1&quot; memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2448,35 +2446,35 @@ Do you really want to import this file?</source>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilayah Penuh</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Wilayah Aktif</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Daerah Pabean</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>saya Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>saya maks:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maks:</translation>
     </message>
 </context>
 <context>
@@ -2556,58 +2554,58 @@ Do you really want to import this file?</source>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>arah-I</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-arah</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>arah-I</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-arah</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>K-arah</translation>
     </message>
 </context>
 <context>

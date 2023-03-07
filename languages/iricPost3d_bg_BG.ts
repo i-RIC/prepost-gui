@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Контурна настройка (клетъчен център)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Настройка на контура (клетъчен център)</translation>
+        <translation type="vanished">Настройка на контура (клетъчен център)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Стойност:</translation>
+        <translation type="vanished">Стойност:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Региони</translation>
+        <translation type="vanished">Региони</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавяне (&amp;A)</translation>
+        <translation type="vanished">Добавяне (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Премахване (&amp;R)</translation>
+        <translation type="vanished">Премахване (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Обхват %1</translation>
+        <translation type="vanished">Обхват %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Могат да се определят максимум четири контура.</translation>
+        <translation type="vanished">Могат да се определят максимум четири контура.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Обхват %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Лице</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Контур</translation>
+        <translation type="vanished">Контур</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Настройка на контура</translation>
+        <translation type="vanished">Настройка на контура</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Настройка на контур (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Лице %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Контурна настройка</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>лица</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Настройка на контура</translation>
+        <translation type="vanished">Настройка на контура</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Лица</translation>
+        <translation type="vanished">Лица</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавяне (&amp;A)</translation>
+        <translation type="vanished">Добавяне (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Премахване (&amp;R)</translation>
+        <translation type="vanished">Премахване (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Лице %1</translation>
+        <translation type="vanished">Лице %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Могат да се определят максимум четири контура.</translation>
+        <translation type="vanished">Могат да се определят максимум четири контура.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Промяна на елемента в браузъра на обекти</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Лице %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Посока</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>аз</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Дж</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>К</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Аз съм в</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Аз Макс</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Мин</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Макс</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K мин</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Макс</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Активирано</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Форма на решетката</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Настройка на дисплея на формата на мрежата</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Лице</translation>
+        <translation type="vanished">Лице</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Лице %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Лице %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Настройка на стрелките</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Основен</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Легенда за дължина</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>лица</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Лице %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Легенда за дължина</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Могат да се определят максимум четири стрелки.</translation>
+        <translation type="vanished">Могат да се определят максимум четири стрелки.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Скаларна настройка на частиците</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка на цветна карта</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер на точката:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Редактиране на настройката за частици</translation>
+        <translation type="vanished">Редактиране на настройката за частици</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Атрибут на вектор Изберете Промяна</translation>
+        <translation type="vanished">Атрибут на вектор Изберете Промяна</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Актуализиране на векторната настройка</translation>
+        <translation type="vanished">Актуализиране на векторната настройка</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Промяна на физическата стойност на стрелката</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Векторна настройка на частици</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Актуализиране</translation>
+        <translation type="vanished">Актуализиране</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Създайте контур</translation>
+        <translation type="vanished">Създайте контур</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Актуализирайте настройката на формата на мрежата</translation>
+        <translation type="vanished">Актуализирайте настройката на формата на мрежата</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Актуализирайте скаларната настройка на частиците</translation>
+        <translation type="vanished">Актуализирайте скаларната настройка на частиците</translation>
     </message>
 </context>
 </TS>

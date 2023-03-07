@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Скалярдык маани боюнча</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Түзөтүү (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасынын жөндөөсү (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Скалярдык маани боюнча</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -62,140 +60,140 @@
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Title</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Title :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт жөндөөсү:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Узундук</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Формат:</translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аталышы:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Узундугу:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Өлчөмү жана абалы</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Узундук</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Экрандагы узундук:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тартуу үчүн минималдуу маани:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Length Legend</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Негизги</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Жебе формасы</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Жебе өлчөмү:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сызыктын туурасы:</translation>
     </message>
 </context>
 <context>
@@ -306,178 +304,178 @@
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Title</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Title :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт жөндөөсү:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Энбелги дисплей</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аталышы:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Энбелги:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Өлчөмү жана абалы</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Түстөр</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс тилкесин орнотуу</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ката</translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорттоо үчүн файлдын атын киргизиңиз</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ачып жатканда ката кетти %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Мааниси</translation>
+        <translation>Нарк</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ачык</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Title</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Title :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт жөндөөсү:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Белги дисплей</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Формат:</translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аталышы:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Энбелги:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Өлчөмү жана абалы</translation>
     </message>
 </context>
 <context>
@@ -488,170 +486,170 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">Түстөр картасынын жөндөөсү</translation>
+        <translation>Түс картасынын жөндөөсү</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="unfinished"></translation>
+        <translation>Алдын ала орнотуулар:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Баалуулуктар менен түстөрдүн ортосундагы байланыш</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Нарк диапазонунун негизинде автоматтык түрдө тууралоо</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation type="unfinished"></translation>
+        <translation>Кол менен орнотуу</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Нарк диапазону</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished">Автоматтык</translation>
+        <translation>Автоматтык</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Максимум:</translation>
+        <translation>Макс:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Мин:</translation>
+        <translation>Мин:</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Түстөр</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Кошуу (&amp;A)</translation>
+        <translation>кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished">Төмөнкү аймакты толтуруңуз</translation>
+        <translation>Төмөнкү аймакты толтуруңуз</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished">Жогорку аймакты толтуруңуз</translation>
+        <translation>Жогорку аймакты толтуруңуз</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Которуу</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс тилкесин орнотуу</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорттоо үчүн файлдын атын киргизиңиз</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ачып жатканда ката кетти %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ката</translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Колдонуу үчүн нерсени тандаңыз)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Дискреттик режимге өтүү</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Градация режимине которулуу</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Эскертүү</translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Мааниси</translation>
+        <translation>Нарк</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation type="unfinished"></translation>
+        <translation>Минималдуу маани</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation type="unfinished"></translation>
+        <translation>Максималдуу маани</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ачык</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Дискреттик режим диалогуна которулуу</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Максимум:</translation>
+        <translation>Макс:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Мин:</translation>
+        <translation>Мин:</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="unfinished"></translation>
+        <translation>Ар бир бөлүмгө киргизүү үчүн түстөрдүн саны</translation>
     </message>
 </context>
 <context>
@@ -692,23 +690,23 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Бардык чокулары</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Чокулардын санын көрсөтүңүз</translation>
     </message>
 </context>
 <context>
@@ -1010,43 +1008,43 @@ Parse error %2 at %3, column %4</source>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиция</translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Горизонталдык маржа:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикал маржа:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Туурасы:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Бийиктиги:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation type="unfinished"></translation>
+        <translation>Солдон алыстык</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation type="unfinished"></translation>
+        <translation>Оңдон алыстык</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation type="unfinished"></translation>
+        <translation>Жогорудан алыстык</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Төмөндөн аралык</translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1081,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Аныктоо түйүнү сакталбайт</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Туура эмес valueType &quot;%1&quot;коюлган.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Туура эмес valueType "%1"коюлган.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Түрү туура эмес &quot;%1&quot;коюлган.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Түрү туура эмес "%1"коюлган.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1359,8 +1357,8 @@ Do you really want to import this file?</source>
         <translation>Файл %1 эсептөө шартына киргизилгенден кийин жаңыртылат %2. Жаңыртылган файлды импорттоону каалайсызбы?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>&quot;Ctrl + C&quot; жана &quot;Ctrl + V&quot; жарлыктары менен баалуулуктарды көчүрүп, чаптай аласыз.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>"Ctrl + C" жана "Ctrl + V" жарлыктары менен баалуулуктарды көчүрүп, чаптай аласыз.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1428,15 +1426,15 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Импорттоо үчүн шаблонду тандаңыз)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Эскертүү</translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст аймагындагы мазмун шаблон менен үстүнө жазылат</translation>
     </message>
 </context>
 <context>
@@ -1489,8 +1487,8 @@ Do you really want to import this file?</source>
         <translation>Файлды ачууда ката кетти.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Биринчи эки мамыча &quot;X&quot; жана &quot;Y&quot; болушу керек.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Биринчи эки мамыча "X" жана "Y" болушу керек.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1651,8 +1649,8 @@ Do you really want to import this file?</source>
         <translation>Өзгөрмөнүн аныктамасы</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1730,8 +1728,8 @@ Do you really want to import this file?</source>
         <translation>Down (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2084,8 +2082,8 @@ Do you really want to import this file?</source>
         <translation>Чыгаруунун аныктамасы</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2339,8 +2337,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Жумуш мейкиндиги &quot;%1&quot;бар %2 мындан ары колдонулбай турган долбоор папкалары. Аларды алып салгыңыз келеби?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Жумуш мейкиндиги "%1"бар %2 мындан ары колдонулбай турган долбоор папкалары. Аларды алып салгыңыз келеби?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2448,35 +2446,35 @@ Do you really want to import this file?</source>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Толук аймак</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Активдүү аймак</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Ыңгайлаштырылган аймак</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен Мин:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен Макс:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Мин:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Макс:</translation>
     </message>
 </context>
 <context>
@@ -2556,58 +2554,58 @@ Do you really want to import this file?</source>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Бардык чокулары</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-багыт</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-багыты</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Бардык чокулары</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-багыт</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-багыты</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>K-багыты</translation>
     </message>
 </context>
 <context>

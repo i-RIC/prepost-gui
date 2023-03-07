@@ -38,34 +38,85 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>スカラー設定</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>実測値:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>点の表示設定</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>表示設定</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>補間した面</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により設定</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>点のサイズ:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">スカラー設定</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">実測値:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">表示設定</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">点のサイズ:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
+        <translation type="vanished">値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
 </context>
 <context>
@@ -80,62 +131,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>ベクトルの設定変更</translation>
+        <translation type="vanished">ベクトルの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>実測値の矢印設定</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ベクトル設定</translation>
+        <translation type="vanished">ベクトル設定</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長さ</translation>
+        <translation type="vanished">長さ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>基準値:</translation>
+        <translation type="vanished">基準値:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>画面上での長さ:</translation>
+        <translation type="vanished">画面上での長さ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>表示する最小値:</translation>
+        <translation type="vanished">表示する最小値:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>表示色</translation>
+        <translation type="vanished">表示色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
 </context>
 </TS>

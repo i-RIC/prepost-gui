@@ -2,24 +2,20 @@
 <context>
     <name>Unstructured2dGridVtkImporter</name>
     <message>
-        <location filename="../unstructured2dgridvtkimporter.cpp" line="24" />
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished" />
+        <translation>VTK-Dateien (*.vtk)</translation>
     </message>
     <message>
-        <location filename="../unstructured2dgridvtkimporter.cpp" line="30" />
         <source>VTK file</source>
-        <translation type="unfinished" />
+        <translation>VTK-Datei</translation>
     </message>
     <message>
-        <location filename="../unstructured2dgridvtkimporter.cpp" line="45" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../unstructured2dgridvtkimporter.cpp" line="45" />
         <source>Copying %1 to %2 failed.</source>
-        <translation type="unfinished" />
+        <translation>Kopieren %1 Zu %2 fehlgeschlagen.</translation>
     </message>
 </context>
 </TS>

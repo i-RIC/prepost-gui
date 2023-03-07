@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>แต่ละ</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>คุณไม่สามารถระบุคอลัมน์เดียวกันสำหรับทั้งชื่อและค่า</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>ระบบพิกัด:</translation>
     </message>
 </context>
 </TS>

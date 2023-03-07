@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>çokgenler (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Yeni Çokgen Ekle (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Renk Ayarı Düzenleme</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Poligon Grubu Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Satır okunurken hata oluştu %1. "pid" değerlerinin aynı olduğu satırlar için "değer" aynı olmalıdır.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Görüntü ayarını düzenle</translation>
     </message>
 </context>
 <context>

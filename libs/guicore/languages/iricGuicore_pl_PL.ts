@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Niestandardowy kolor</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Według wartości skalarnej</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytować (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie mapy kolorów (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Niestandardowy kolor</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Według wartości skalarnej</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -62,140 +60,140 @@
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Widoczność</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Po wybraniu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Nigdy</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie czcionki:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tło:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar i położenie</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatyczny</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wartość standardowa:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[SM]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość na ekranie:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimalna wartość do wylosowania:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wartość:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Legenda długości</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Podstawowy</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Kształt strzały</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielkość strzały:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szerokość linii:</translation>
     </message>
 </context>
 <context>
@@ -306,178 +304,178 @@
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Widoczność</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Po wybraniu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Nigdy</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie czcionki:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyświetlanie etykiet</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etykieta:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tło:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar i pozycja</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoruj ustawienia paska kolorów podczas importowania</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Zabarwienie</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie paska kolorów</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz plik do zaimportowania</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie mapy kolorów (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Podczas ładowania wystąpił błąd %1 Błąd przetwarzania %2 Na %3, kolumna %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wprowadź nazwę pliku do wyeksportowania</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas otwierania %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Wartość</translation>
+        <translation>Wartość</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Przezroczysty</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Widoczność</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Po wybraniu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Nigdy</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie czcionki:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyświetlanie etykiet</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tytuł:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etykieta:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tło:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar i położenie</translation>
     </message>
 </context>
 <context>
@@ -488,170 +486,170 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">Ustawienie mapy kolorów</translation>
+        <translation>Ustawienie mapy kolorów</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="unfinished"></translation>
+        <translation>Presety:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoruj ustawienie paska kolorów podczas importowania</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Związek między wartościami a kolorami</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatycznie dostosuj na podstawie zakresu wartości</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustaw ręcznie</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakres wartości</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished">Automatyczny</translation>
+        <translation>Automatyczny</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Maks.:</translation>
+        <translation>Maks.:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min.:</translation>
+        <translation>min:</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Zabarwienie</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Dodać (&amp;A)</translation>
+        <translation>Dodać (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Usunąć (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished">Wypełnij dolny obszar</translation>
+        <translation>Wypełnij dolny obszar</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished">Wypełnij górny obszar</translation>
+        <translation>Wypełnij górny obszar</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącznik</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie paska kolorów</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz plik do zaimportowania</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie mapy kolorów (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wprowadź nazwę pliku do wyeksportowania</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas otwierania %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Podczas ładowania wystąpił błąd %1 Błąd przetwarzania %2 Na %3, kolumna %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Proszę wybrać przedmiot do zastosowania)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącz na tryb dyskretny</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącz na tryb stopniowania</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Ostrzeżenie</translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Wartość</translation>
+        <translation>Wartość</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimalna wartość</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation type="unfinished"></translation>
+        <translation>maksymalna wartość</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Przezroczysty</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podczas przełączania w tryb gradacji wartości są ustawiane na środkową wartość każdej sekcji.</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącz do okna dialogowego trybu dyskretnego</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Maks.:</translation>
+        <translation>Maks.:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min.:</translation>
+        <translation>min:</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba kolorów do wstawienia w każdej sekcji</translation>
     </message>
 </context>
 <context>
@@ -692,23 +690,23 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbowanie</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie wierzchołki</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Częstotliwość próbkowania:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Określ liczbę wierzchołków</translation>
     </message>
 </context>
 <context>
@@ -1010,43 +1008,43 @@ Parse error %2 at %3, column %4</source>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozycja</translation>
+        <translation>Pozycja</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Margines poziomy:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Margines pionowy:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szerokość:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wysokość:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation type="unfinished"></translation>
+        <translation>Odległość od lewej</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation type="unfinished"></translation>
+        <translation>Odległość od prawej</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation type="unfinished"></translation>
+        <translation>Odległość od góry</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Odległość od dołu</translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1081,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Węzeł definicji nie jest przechowywany</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Nieprawidłowa wartośćType &quot; %1 jest ustawiony.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Nieprawidłowa wartośćType " %1 jest ustawiony.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Zły warunekTyp &quot;%1&quot;jest ustawiony.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Zły warunekTyp "%1"jest ustawiony.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1359,7 +1357,7 @@ Do you really want to import this file?</source>
         <translation>Plik %1 jest aktualizowany po zaimportowaniu do warunku obliczeniowego %2. Czy chcesz zaimportować zaktualizowany plik?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Możesz kopiować i wklejać wartości za pomocą skrótu „Ctrl + C” i „Ctrl + V”</translation>
     </message>
     <message>
@@ -1428,15 +1426,15 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Wybierz szablon do zaimportowania)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Ostrzeżenie</translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawartość w obszarze tekstowym zostanie zastąpiona szablonem</translation>
     </message>
 </context>
 <context>
@@ -1489,7 +1487,7 @@ Do you really want to import this file?</source>
         <translation>Wystąpił błąd podczas otwierania pliku.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>Pierwsze dwie kolumny muszą zawierać „X” i „Y”.</translation>
     </message>
     <message>
@@ -1651,8 +1649,8 @@ Do you really want to import this file?</source>
         <translation>Definicja zmiennej</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1730,8 +1728,8 @@ Do you really want to import this file?</source>
         <translation>W dół (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2084,8 +2082,8 @@ Do you really want to import this file?</source>
         <translation>Definicja wyjścia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2339,8 +2337,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Obszar roboczy &quot;%1&quot; ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Obszar roboczy "%1" ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2448,35 +2446,35 @@ Do you really want to import this file?</source>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Pełny region</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region aktywny</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region niestandardowy</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jestem w:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>ja maks:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maks:</translation>
     </message>
 </context>
 <context>
@@ -2556,58 +2554,58 @@ Do you really want to import this file?</source>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbowanie</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie wierzchołki</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Częstotliwość próbkowania:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-kierunek</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Kierunek J</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formularz</translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbowanie</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie wierzchołki</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Częstotliwość próbkowania:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-kierunek</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Kierunek J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Kierunek K</translation>
     </message>
 </context>
 <context>

@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Økser</translation>
+        <translation type="vanished">Økser</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Skalar</translation>
+        <translation type="vanished">Skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Oppdater konturinnstilling</translation>
+        <translation type="vanished">Oppdater konturinnstilling</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (cellesenter)</translation>
+        <translation type="vanished">Skalar (cellesenter)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimalt fire konturer kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire konturer kan defineres.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalarinnstilling</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Skalarverdi for høyde</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Fargeinnstilling</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Etter skalarverdi</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Skalarverdi:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Skjerminnstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Regioninnstilling (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Fargelinjeinnstilling (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Feil</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">For verdiområde er maks verdi mindre enn min verdi.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Konturinnstilling er ikke tilgjengelig, fordi dette resultatet ikke inneholder celleskalarverdier.</translation>
+        <translation type="vanished">Konturinnstilling er ikke tilgjengelig, fordi dette resultatet ikke inneholder celleskalarverdier.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Visningsinnstilling for rutenettform</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Skalarverdi for Høyde</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Oppdater konturinnstilling</translation>
+        <translation type="vanished">Oppdater konturinnstilling</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalarinnstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Etter skalarverdi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Område</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimalt fire konturer kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire konturer kan defineres.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Lag kontur</translation>
+        <translation type="vanished">Lag kontur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Oppdater innstilling for rutenettform</translation>
+        <translation type="vanished">Oppdater innstilling for rutenettform</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

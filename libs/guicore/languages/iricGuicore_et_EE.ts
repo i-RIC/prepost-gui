@@ -1,54 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalaarväärtuse järgi</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda (&amp;E)</translation>
     </message>
     <message>
         <source>Colormap Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvikaardi seadistus (%1)</translation>
     </message>
 </context>
 <context>
     <name>ArrowsColorSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalaarväärtuse järgi</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspordi (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -62,140 +60,140 @@
     <name>ArrowsLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondi seadistus:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkus</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Vorming:</translation>
+        <translation>Vorming:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkus:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taust:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurus ja asend</translation>
     </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaatne</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardväärtus:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Prl]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkus ekraanil:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimaalne joonistatav väärtus:</translation>
     </message>
 </context>
 <context>
     <name>ArrowsSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtus:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikkuse legend</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Põhiline</translation>
     </message>
 </context>
 <context>
     <name>ArrowsShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Noole kuju</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Noole suurus:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Joone laius:</translation>
     </message>
 </context>
 <context>
@@ -306,178 +304,178 @@
     <name>ColorMapEnumerateLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondi seadistus:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Sildi kuvamine</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Silt:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taust:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurus ja asend</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoreeri importimisel värviriba sätteid</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvid</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Värviriba seadistus</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige imporditav fail</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvikaardi seadistus (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisestage eksporditava faili nimi</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Avamisel ilmnes viga %1</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Väärtus</translation>
+        <translation>Väärtus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Läbipaistev</translation>
     </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Visibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondi seadistus:</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Sildi kuvamine</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished">Vorming:</translation>
+        <translation>Vorming:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pealkiri:</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Silt:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taust:</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurus ja asend</translation>
     </message>
 </context>
 <context>
@@ -488,170 +486,170 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspordi (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">Värvikaardi seadistus</translation>
+        <translation>Värvikaardi seadistus</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Presets:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelseaded:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignoreeri importimisel värviriba sätteid</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtuste ja värvide suhe</translation>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Reguleerige automaatselt vastavalt väärtusvahemikule</translation>
     </message>
     <message>
         <source>Setup Manually</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadistamine käsitsi</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtusvahemik</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished">Automaatne</translation>
+        <translation>Automaatne</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Max:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvid</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Lisama (&amp;A)</translation>
+        <translation>Lisama (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda (&amp;R)</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished">Täitke alumine ala</translation>
+        <translation>Täitke alumine ala</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished">Täitke ülemine ala</translation>
+        <translation>Täitke ülemine ala</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Lüliti</translation>
     </message>
     <message>
         <source>Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Värviriba seadistus</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige imporditav fail</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvikaardi seadistus (*.cmsetting)</translation>
     </message>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisestage eksporditava faili nimi</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Avamisel ilmnes viga %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="unfinished"></translation>
+        <translation>Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Palun valige rakendatav üksus)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Lülituge diskreetrežiimile</translation>
     </message>
     <message>
         <source>Switch to Gradation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Lülituge gradatsioonirežiimile</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Väärtus</translation>
+        <translation>Väärtus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Min value</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimaalne väärtus</translation>
     </message>
     <message>
         <source>Max value</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimaalne väärtus</translation>
     </message>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Läbipaistev</translation>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gradatsioonirežiimile lülitumisel seatakse väärtused iga sektsiooni keskmisele väärtusele.</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Lülitage diskreetrežiimi dialoogiaknasse</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Max:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation type="unfinished"></translation>
+        <translation>Igasse sektsiooni sisestatavate värvide arv</translation>
     </message>
 </context>
 <context>
@@ -692,23 +690,23 @@ Parse error %2 at %3, column %4</source>
     <name>GeneralFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovide võtmine</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik tipud</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovivõtu sagedus:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Määrake tippude arv</translation>
     </message>
 </context>
 <context>
@@ -1010,43 +1008,43 @@ Parse error %2 at %3, column %4</source>
     <name>ImageSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Asend</translation>
+        <translation>positsioon</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontaalne marginaal:</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikaalne veeris:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Laius:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõrgus:</translation>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaugus vasakult</translation>
     </message>
     <message>
         <source>Distance from right</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaugus paremalt</translation>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaugus tipust</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaugus põhjast</translation>
     </message>
 </context>
 <context>
@@ -1083,12 +1081,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitsioonisõlme ei salvestata</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Vale väärtustüüp &quot;%1&quot;on seatud.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Vale väärtustüüp "%1"on seatud.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Vale seisunditüüp &quot;%1&quot;on seatud.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Vale seisunditüüp "%1"on seatud.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1359,8 +1357,8 @@ Do you really want to import this file?</source>
         <translation>Fail %1 värskendatakse pärast arvutusseisundisse importimist %2. Kas soovite värskendatud faili importida?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega "Ctrl + C" ja "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1428,15 +1426,15 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>(Select template to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Valige importimiseks mall)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstiala sisu kirjutatakse malliga üle</translation>
     </message>
 </context>
 <context>
@@ -1489,8 +1487,8 @@ Do you really want to import this file?</source>
         <translation>Faili avamisel ilmnes viga.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Esimesed kaks veergu peavad olema &quot;X&quot; ja &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Esimesed kaks veergu peavad olema "X" ja "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1651,8 +1649,8 @@ Do you really want to import this file?</source>
         <translation>Muutuja määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1730,8 +1728,8 @@ Do you really want to import this file?</source>
         <translation>Alla (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2084,8 +2082,8 @@ Do you really want to import this file?</source>
         <translation>Väljundi määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2339,8 +2337,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Tööruum &quot;%1&quot;on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Tööruum "%1"on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2448,35 +2446,35 @@ Do you really want to import this file?</source>
     <name>Region2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Täielik piirkond</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiivne piirkond</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud piirkond</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma olen sees:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -2556,58 +2554,58 @@ Do you really want to import this file?</source>
     <name>Structured2dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovide võtmine</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik tipud</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovivõtu sagedus:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-suund</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-suund</translation>
     </message>
 </context>
 <context>
     <name>Structured3dFilteringSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovide võtmine</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik tipud</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Proovivõtu sagedus:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>I-suund</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J-suund</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>K-suund</translation>
     </message>
 </context>
 <context>
@@ -2634,19 +2632,19 @@ Do you really want to import this file?</source>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation>Google&apos;i kaart (maantee)</translation>
+        <translation>Google'i kaart (maantee)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation>Google&apos;i kaart (satelliit)</translation>
+        <translation>Google'i kaart (satelliit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation>Google&apos;i kaart (hübriid)</translation>
+        <translation>Google'i kaart (hübriid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation>Google&apos;i kaart (maastik)</translation>
+        <translation>Google'i kaart (maastik)</translation>
     </message>
     <message>
         <source>Open Street Map</source>

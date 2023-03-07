@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Tiks importēti šādi faili. Vai tas ir labi?</translation>
+        <translation type="vanished">Tiks importēti šādi faili. Vai tas ir labi?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Lūdzu, atlasiet importējamos failus.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Izvēlēties visus (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Atsijāt visu (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Brīdinājums</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Laika intervāls starp atlasītajiem failiem nav vienāds.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Faila nosaukums neatbilst modelim</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laika zona:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Izmēru vērtības laika neatbilstībai.</translation>
+        <translation type="vanished">Izmēru vērtības laika neatbilstībai.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinātu sistēma nav norādīta %1. Lūdzu, manuāli izvēlieties koordinātu sistēmu.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Atvēršana %1 neizdevās.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Izmēru vērtības domēnam %1 neatbilstība.</translation>
+        <translation type="vanished">Izmēru vērtības domēnam %1 neatbilstība.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Analizējot laika definīciju, radās kļūda: %1</translation>
+        <translation type="vanished">Analizējot laika definīciju, radās kļūda: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nav garuma, platuma un x, y datu.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Sākotnējais laiks:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laika zona:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informācija</translation>
+        <translation type="vanished">Informācija</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 failus mapē %2 tiek importēti.</translation>
+        <translation type="vanished">%1 failus mapē %2 tiek importēti.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Izmēru vērtības laika neatbilstībai.</translation>
+        <translation type="vanished">Izmēru vērtības laika neatbilstībai.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laika rindas rastra dati jau ir importēti. Ja vēlaties importēt citus datus, lūdzu, vispirms izdzēsiet jau importētos datus.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Importējot datus, kas konvertēti no, radās kļūda %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Atverot radās kļūda %1.</translation>
     </message>
 </context>
 </TS>

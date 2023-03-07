@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Dalelių nustatymas</translation>
+        <translation type="vanished">Dalelių nustatymas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Dydis:</translation>
+        <translation type="vanished">Dydis:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Dalelių skaliaro nustatymas</translation>
+        <translation type="vanished">Dalelių skaliaro nustatymas</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Spalvokite pagal atributo vertę</translation>
+        <translation type="vanished">Spalvokite pagal atributo vertę</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributas:</translation>
+        <translation type="vanished">Atributas:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Dydis:</translation>
+        <translation type="vanished">Dydis:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Rodyklės nustatymas</translation>
+        <translation type="vanished">Rodyklės nustatymas</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Atributo vertė:</translation>
+        <translation type="vanished">Atributo vertė:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Ilgis</translation>
+        <translation type="vanished">Ilgis</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standartinė vertė:</translation>
+        <translation type="vanished">Standartinė vertė:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ilgis ekrane:</translation>
+        <translation type="vanished">Ilgis ekrane:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikselis]</translation>
+        <translation type="vanished">[pikselis]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimali nupiešiama vertė:</translation>
+        <translation type="vanished">Minimali nupiešiama vertė:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mėginių ėmimas</translation>
+        <translation type="vanished">Mėginių ėmimas</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Visos dalelės</translation>
+        <translation type="vanished">Visos dalelės</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mėginių ėmimo dažnis:</translation>
+        <translation type="vanished">Mėginių ėmimo dažnis:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Nurodykite dalelių skaičių</translation>
+        <translation type="vanished">Nurodykite dalelių skaičių</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Rodyklės forma</translation>
+        <translation type="vanished">Rodyklės forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Rodyklės dydis:</translation>
+        <translation type="vanished">Rodyklės dydis:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Daugiakampio nustatymas</translation>
+        <translation type="vanished">Daugiakampio nustatymas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Daugiakampio nustatymas</translation>
+        <translation type="vanished">Daugiakampio nustatymas</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Spalvokite pagal atributo vertę</translation>
+        <translation type="vanished">Spalvokite pagal atributo vertę</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributas:</translation>
+        <translation type="vanished">Atributas:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Linijos plotis</translation>
+        <translation type="vanished">Linijos plotis</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Pasirinkite Tikslinis rezultatas</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Xanela de vista de cuadrícula</translation>
     </message>
 </context>
@@ -210,66 +208,66 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished">Editar escala en dirección Z</translation>
+        <translation>Editar escala de dirección Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished">Introduce unha nova escala de dirección Z.</translation>
+        <translation>Introduza unha nova escala de dirección Z.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de visualización</translation>
     </message>
     <message>
         <source>Elevation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación:</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished">Cor da reixa</translation>
+        <translation>Cor da reixa</translation>
     </message>
     <message>
         <source>Cusom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor personalizada</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor por valor</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración do mapa de cores</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Importar (&amp;I)...</translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportar (&amp;E)...</translation>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished">Eixos</translation>
+        <translation>Machados</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Visible</translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Cor:</translation>
+        <translation>Cor:</translation>
     </message>
     <message>
         <source>Background Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor de fondo:</translation>
     </message>
     <message>
         <source>Z-direction scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala de dirección Z:</translation>
     </message>
 </context>
 <context>
@@ -358,7 +356,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de visualización</translation>
     </message>
 </context>
 <context>
@@ -465,11 +463,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBcGroupSettingDialog</name>
     <message>
         <source>Boundary Condition Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de condicións de límite</translation>
     </message>
     <message>
         <source>Font setting for names</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fontes para os nomes</translation>
     </message>
 </context>
 <context>
@@ -663,8 +661,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 non se mapean despois de editalos a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuración da condición límite &quot;%1&quot;non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración da condición límite "%1"non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -874,53 +872,53 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit &amp;Variation Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de variación (&amp;V)...</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Por defecto</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Diálogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Importar (&amp;I)...</translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportar (&amp;E)...</translation>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
     <message>
         <source>Variation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de variación</translation>
     </message>
     <message>
         <source>Enable variation</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar a variación</translation>
     </message>
     <message>
         <source>Variation to pass to solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variación para pasar ao solucionador:</translation>
     </message>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation type="unfinished"></translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: Cando a variación está activada, créase unha variación chamada "Predeterminada" e todos os datos xeográficos móvense a ela. Podes engadir, renomear ou eliminar variacións do "Navegador de obxectos". Pode mover, copiar datos xeográficos entre variacións. Os datos do atributo de grade creados a partir da variación que selecciona con "Variación para pasar ao solucionador" pásanse ao solucionador. Podes preparar varias variacións, cambiar cales pasar ao solucionador e asegurarte de que o efecto da diferenza.</translation>
     </message>
 </context>
 <context>
@@ -1064,15 +1062,15 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">Configuración de visualización do atributo da cela de rede</translation>
+        <translation>Configuración de visualización de atributos de cela da cuadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Importar (&amp;I)...</translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportar (&amp;E)...</translation>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1135,9 +1133,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú &quot;Reixa&quot; -&gt; &quot;Asignación de atributos&quot; -&gt; &quot;Executar&quot;.</translation>
+        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú "Reixa" -&gt; "Asignación de atributos" -&gt; "Executar".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1156,12 +1154,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Rematou o mapeado de datos xeográficos</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>O atributo da grade &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>O atributo da grade "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A condición límite &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A condición límite "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
 </context>
 <context>
@@ -1179,20 +1177,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automático</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú &quot;Executar&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú "Executar".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1327,15 +1325,15 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished">Configuración da visualización do atributo do nó da rede</translation>
+        <translation>Configuración de visualización de atributos do nodo de cuadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Importar (&amp;I)...</translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportar (&amp;E)...</translation>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1609,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurar a barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Abre a xanela de vista de paxaro (&amp;B)</translation>
     </message>
     <message>

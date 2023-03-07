@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Configuração de Partículas</translation>
+        <translation type="vanished">Configuração de Partículas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor:</translation>
+        <translation type="vanished">Cor:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Tamanho:</translation>
+        <translation type="vanished">Tamanho:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Configuração Escalar de Partículas</translation>
+        <translation type="vanished">Configuração Escalar de Partículas</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Cor customizada</translation>
+        <translation type="vanished">Cor customizada</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Cor por valor de atributo</translation>
+        <translation type="vanished">Cor por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributo:</translation>
+        <translation type="vanished">Atributo:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Tamanho:</translation>
+        <translation type="vanished">Tamanho:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuração da barra de cores (&amp;C)</translation>
+        <translation type="vanished">Configuração da barra de cores (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuração de seta</translation>
+        <translation type="vanished">Configuração de seta</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Valor do atributo:</translation>
+        <translation type="vanished">Valor do atributo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Comprimento</translation>
+        <translation type="vanished">Comprimento</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor padrão:</translation>
+        <translation type="vanished">Valor padrão:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[em]</translation>
+        <translation type="vanished">[em]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Comprimento na tela:</translation>
+        <translation type="vanished">Comprimento na tela:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor mínimo para desenhar:</translation>
+        <translation type="vanished">Valor mínimo para desenhar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Amostragem</translation>
+        <translation type="vanished">Amostragem</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Todas as partículas</translation>
+        <translation type="vanished">Todas as partículas</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taxa de amostragem:</translation>
+        <translation type="vanished">Taxa de amostragem:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Especifique o número de partículas</translation>
+        <translation type="vanished">Especifique o número de partículas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Cor customizada</translation>
+        <translation type="vanished">Cor customizada</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma de seta</translation>
+        <translation type="vanished">Forma de seta</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Tamanho da seta:</translation>
+        <translation type="vanished">Tamanho da seta:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Espessura da linha:</translation>
+        <translation type="vanished">Espessura da linha:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Configuração de polígono</translation>
+        <translation type="vanished">Configuração de polígono</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor:</translation>
+        <translation type="vanished">Cor:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Espessura da linha:</translation>
+        <translation type="vanished">Espessura da linha:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Configuração de polígono</translation>
+        <translation type="vanished">Configuração de polígono</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Cor customizada</translation>
+        <translation type="vanished">Cor customizada</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Cor por valor de atributo</translation>
+        <translation type="vanished">Cor por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atributo:</translation>
+        <translation type="vanished">Atributo:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Espessura da linha</translation>
+        <translation type="vanished">Espessura da linha</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuração da barra de cores (&amp;C)</translation>
+        <translation type="vanished">Configuração da barra de cores (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Selecione o Resultado Alvo</translation>
     </message>
 </context>
 <context>

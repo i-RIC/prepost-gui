@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Налаштування частинок</translation>
+        <translation type="vanished">Налаштування частинок</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Колір:</translation>
+        <translation type="vanished">Колір:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Розмір:</translation>
+        <translation type="vanished">Розмір:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Скалярна установка частинок</translation>
+        <translation type="vanished">Скалярна установка частинок</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Колір за значенням атрибута</translation>
+        <translation type="vanished">Колір за значенням атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Розмір:</translation>
+        <translation type="vanished">Розмір:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Налаштування стрілки</translation>
+        <translation type="vanished">Налаштування стрілки</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Значення атрибута:</translation>
+        <translation type="vanished">Значення атрибута:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Довжина</translation>
+        <translation type="vanished">Довжина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартне значення:</translation>
+        <translation type="vanished">Стандартне значення:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Довжина на екрані:</translation>
+        <translation type="vanished">Довжина на екрані:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[піксель]</translation>
+        <translation type="vanished">[піксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Мінімальне значення для розіграшу:</translation>
+        <translation type="vanished">Мінімальне значення для розіграшу:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вибірка</translation>
+        <translation type="vanished">Вибірка</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Усі частинки</translation>
+        <translation type="vanished">Усі частинки</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Частота дискретизації:</translation>
+        <translation type="vanished">Частота дискретизації:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Вкажіть кількість частинок</translation>
+        <translation type="vanished">Вкажіть кількість частинок</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>За скалярним значенням</translation>
+        <translation type="vanished">За скалярним значенням</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма стрілки</translation>
+        <translation type="vanished">Форма стрілки</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Розмір стрілки:</translation>
+        <translation type="vanished">Розмір стрілки:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Налаштування полігону</translation>
+        <translation type="vanished">Налаштування полігону</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Колір:</translation>
+        <translation type="vanished">Колір:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Налаштування полігону</translation>
+        <translation type="vanished">Налаштування полігону</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Колір за значенням атрибута</translation>
+        <translation type="vanished">Колір за значенням атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Ширина лінії</translation>
+        <translation type="vanished">Ширина лінії</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Виберіть Цільовий результат</translation>
     </message>
 </context>
 <context>

@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Testu fitxategia (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Testu fitxategia (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Testu fitxategia (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Fitxategi izena:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordenatu Sistema</translation>
     </message>
 </context>
 <context>

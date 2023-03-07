@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Részecskék beállítása</translation>
+        <translation type="vanished">Részecskék beállítása</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Méret:</translation>
+        <translation type="vanished">Méret:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Részecske skalár beállítása</translation>
+        <translation type="vanished">Részecske skalár beállítása</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Színezés attribútumérték szerint</translation>
+        <translation type="vanished">Színezés attribútumérték szerint</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Tulajdonság:</translation>
+        <translation type="vanished">Tulajdonság:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Méret:</translation>
+        <translation type="vanished">Méret:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nyilak beállítása</translation>
+        <translation type="vanished">Nyilak beállítása</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Attribútum értéke:</translation>
+        <translation type="vanished">Attribútum értéke:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Hossz</translation>
+        <translation type="vanished">Hossz</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard érték:</translation>
+        <translation type="vanished">Standard érték:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Kisasszony]</translation>
+        <translation type="vanished">[Kisasszony]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Hossz a képernyőn:</translation>
+        <translation type="vanished">Hossz a képernyőn:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[képpont]</translation>
+        <translation type="vanished">[képpont]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimális rajzolható érték:</translation>
+        <translation type="vanished">Minimális rajzolható érték:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mintavétel</translation>
+        <translation type="vanished">Mintavétel</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Minden részecske</translation>
+        <translation type="vanished">Minden részecske</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mintavételi arány:</translation>
+        <translation type="vanished">Mintavételi arány:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Adja meg a részecskék számát</translation>
+        <translation type="vanished">Adja meg a részecskék számát</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nyíl Alak</translation>
+        <translation type="vanished">Nyíl Alak</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nyíl méret:</translation>
+        <translation type="vanished">Nyíl méret:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Sokszög beállítása</translation>
+        <translation type="vanished">Sokszög beállítása</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Sokszög beállítása</translation>
+        <translation type="vanished">Sokszög beállítása</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Színezés attribútumérték szerint</translation>
+        <translation type="vanished">Színezés attribútumérték szerint</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Tulajdonság:</translation>
+        <translation type="vanished">Tulajdonság:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Vonalvastagság</translation>
+        <translation type="vanished">Vonalvastagság</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Válassza a Cél eredmény lehetőséget</translation>
     </message>
 </context>
 <context>

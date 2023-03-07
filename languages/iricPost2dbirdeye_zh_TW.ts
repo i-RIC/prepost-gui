@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>軸</translation>
+        <translation type="vanished">軸</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>標量</translation>
+        <translation type="vanished">標量</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>更新輪廓設置</translation>
+        <translation type="vanished">更新輪廓設置</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>標量（單元格中心）</translation>
+        <translation type="vanished">標量（單元格中心）</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多可以定義四個輪廓。</translation>
+        <translation type="vanished">最多可以定義四個輪廓。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">標量設置</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">標高的標量值</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">顏色設置</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">自定義顏色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">按標量值</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">標量值：</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">顯示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">區域設置 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">彩條設置 (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">錯誤</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">對於取值範圍，最大值小於最小值。</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>輪廓設置不可用，因為此結果不包含單元標量值。</translation>
+        <translation type="vanished">輪廓設置不可用，因為此結果不包含單元標量值。</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>網格形狀顯示設置</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>高程的標量值</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>更新輪廓設置</translation>
+        <translation type="vanished">更新輪廓設置</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>對話</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>按標量值</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多可以定義四個輪廓。</translation>
+        <translation type="vanished">最多可以定義四個輪廓。</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>創建輪廓</translation>
+        <translation type="vanished">創建輪廓</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>更新網格形狀設置</translation>
+        <translation type="vanished">更新網格形狀設置</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

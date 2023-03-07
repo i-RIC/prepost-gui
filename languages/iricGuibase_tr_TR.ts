@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Izgara Çizgileri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tüm</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Yalnızca Anahat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Izgara İndeksleri</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Özel zaman biçimini tanımlamak için aşağıdaki sembolleri kullanabilirsiniz:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Yıl: YYYY, YY&lt;/li&gt;&lt;li&gt;Ay: A, AA, MMM, MMMM (Ocak vb. için MMMM, Ocak için MMMM vb.)&lt;/li&gt;&lt;li&gt;Gün: d, gg, ddd, dddd (Pzt için ddd, Pazartesi için dddd vb.)&lt;/li &gt;&lt;li&gt;Saat: S, SS, s, s (AM / PM ekranı için s, s)&lt;/li&gt;&lt;li&gt;Dakika: m, mm&lt;/li&gt;&lt;li&gt;Saniye: s, ss&lt;/li &gt;&lt;li&gt;ÖÖ / ÖS: A, bir&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Saat Dilimini Göster</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Lütfen bekle</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Lütfen bekle...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Lütfen bekle...</translation>

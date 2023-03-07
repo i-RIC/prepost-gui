@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Кесилиш маалыматы булут маалыматтарынын жардамы менен түзүлөт. Эгерде сиз кесилиштин абалын тууралоону жана чекит маалыматын кайра картага түшүрүүнү кааласаңыз, "Map point cloud data" колдоно аласыз.</translation>
+        <translation type="vanished">Кесилиш маалыматы булут маалыматтарынын жардамы менен түзүлөт. Эгерде сиз кесилиштин абалын тууралоону жана чекит маалыматын кайра картага түшүрүүнү кааласаңыз, "Map point cloud data" колдоно аласыз.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Булуттагы чекиттүү маалыматтарды түзүү</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Кесилген маалыматтар чекиттүү булут маалыматтарын колдонуу менен түзүлөт. Эгер сиз кесилишинин абалын жана карта чекитинин булут дайындарын кайра тууралоону кааласаңыз, "Карта чекитинин булут маалыматтарын" колдонсоңуз болот.</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Кесилген маалыматтар чекиттүү булут маалыматтарын колдонуу менен түзүлөт. Кээ бир региондордо чекиттин булут маалыматтарында маалымат жок болгон жана ал пункттар үчүн 0 мааниси түзүлгөн. Эгер сиз кесилишинин абалын жана карта чекитинин булут дайындарын кайра тууралоону кааласаңыз, "Карта чекитинин булут маалыматтарын" колдонсоңуз болот.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Аспект катышы: 1 /</translation>
+        <translation type="vanished">Аспект катышы: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Cross-Section Data</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Аспект катышы (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Аспект катышы: 1 / %1</translation>
+        <translation type="vanished">Аспект катышы: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Дисплей жөндөөнү түзөтүү</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Аспект катышы (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Аты-жөнү</translation>
     </message>
 </context>
 <context>

@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>윤곽 설정(셀 중앙)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>윤곽 설정(셀 중심)</translation>
+        <translation type="vanished">윤곽 설정(셀 중심)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>값:</translation>
+        <translation type="vanished">값:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>지역</translation>
+        <translation type="vanished">지역</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>범위 %1</translation>
+        <translation type="vanished">범위 %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+        <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>범위 %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>얼굴</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>윤곽</translation>
+        <translation type="vanished">윤곽</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">윤곽 설정</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>윤곽선 설정(%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>얼굴 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>윤곽 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>얼굴</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>윤곽 설정</translation>
+        <translation type="vanished">윤곽 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>얼굴</translation>
+        <translation type="vanished">얼굴</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>얼굴 %1</translation>
+        <translation type="vanished">얼굴 %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+        <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>개체 브라우저 항목 변경</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>얼굴 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>방향</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>나</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>제이</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>케이</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>나는 ~ 안에있다</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>아이 맥스</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>제이민</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>제이맥스</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K 분</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>케이 맥스</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>사용</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>격자 모양</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>그리드 모양 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
+        <translation type="vanished">얼굴</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>얼굴 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>얼굴 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>화살표 설정</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>기초적인</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>길이 범례</translation>
+    </message>
+    <message>
+        <source>Faces</source>
         <translation>얼굴</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>제거하다 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>얼굴 %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>길이 범례</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>최대 4개의 화살표를 정의할 수 있습니다.</translation>
+        <translation type="vanished">최대 4개의 화살표를 정의할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>파티클 스칼라 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>컬러맵 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>입자 설정 편집</translation>
+        <translation type="vanished">입자 설정 편집</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>벡터 속성 선택 변경</translation>
+        <translation type="vanished">벡터 속성 선택 변경</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>벡터 설정 업데이트</translation>
+        <translation type="vanished">벡터 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>화살표 물리적 값 변경</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>입자 벡터 설정</translation>
     </message>
 </context>
 <context>
@@ -894,7 +1146,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>그리드 모양 설정 업데이트</translation>
+        <translation type="vanished">그리드 모양 설정 업데이트</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -902,15 +1154,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>입자 스칼라 설정 업데이트</translation>
+        <translation type="vanished">입자 스칼라 설정 업데이트</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>업데이트</translation>
+        <translation type="vanished">업데이트</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>윤곽 만들기</translation>
+        <translation type="vanished">윤곽 만들기</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

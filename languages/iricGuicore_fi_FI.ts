@@ -1,5 +1,202 @@
 <TS version="2.1" language="fi_FI">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Skalaariarvon mukaan</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Muokata (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Värikartan asetus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Skalaariarvon mukaan</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Lomake</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Näkyvyys</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kun valittu</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ei koskaan</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonttiasetukset:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Pituus</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Muoto:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Pituus:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Tausta:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Koko ja sijainti</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Pituus</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Vakioarvo:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[neiti]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Pituus näytöllä:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pikseli]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Pienin piirrettävä arvo:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Pituus Legenda</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Perus</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Nuolen muoto</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Nuolen koko:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Viivan leveys:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Tiedostossa %1, x-koordinaatin lisäys pikseliä kohti ja y-koordinaatin lisäys kuvapistettä kohti. Se on hyväksyttävää, mutta se voi olla väärin.</translation>
+        <translation type="vanished">Tiedostossa %1, x-koordinaatin lisäys pikseliä kohti ja y-koordinaatin lisäys kuvapistettä kohti. Se on hyväksyttävää, mutta se voi olla väärin.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Valitse vastaava piste pääikkunasta.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Korjaa kuvan sijainti</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Näkyvyys</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kun valittu</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ei koskaan</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonttiasetukset:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Tunniste:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Tausta:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Koko ja sijainti</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>värit</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Väripalkin asetus</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Valitse tuotava tiedosto</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Värikartan asetus (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Syötä vietävän tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Avattaessa tapahtui virhe %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Läpinäkyvä</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Näkyvyys</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kun valittu</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ei koskaan</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonttiasetukset:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Muoto:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Tunniste:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Tausta:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Koko ja sijainti</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialogi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Esiasetukset:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Arvojen ja värien välinen suhde</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Säädä automaattisesti arvoalueen perusteella</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Määritä manuaalisesti</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Arvoalue</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automaattinen</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>värit</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisätä (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Poista (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Täytä alempi alue</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Täytä yläosa</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Vaihtaa</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Väripalkin asetus</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Valitse tuotava tiedosto</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Värikartan asetus (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Syötä vietävän tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Avattaessa tapahtui virhe %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Valitse käytettävä kohde)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Vaihda diskreettitilaan</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Vaihda sävytystilaan</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varoitus</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimiarvo</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Suurin arvo</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Läpinäkyvä</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Vaihda Discrete Mode -valintaikkunaan</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Jokaiseen osioon lisättävien värien määrä</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Näytteenotto</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Kaikki kärjet</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Näytteenottotaajuus:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Määritä kärkien lukumäärä</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Valitse piste Georeference -valintaikkunasta.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Poista pisteitä</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogi</translation>
+        <translation type="vanished">Dialogi</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogi</translation>
+        <translation type="vanished">Dialogi</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Muotojen asetus</translation>
+        <translation type="vanished">Muotojen asetus</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>asema</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Vaakamarginaali:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Pystymarginaali:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Leveys:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Korkeus:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Etäisyys vasemmalta</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Etäisyys oikealta</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Etäisyys ylhäältä</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Etäisyys pohjasta</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Valitse, mistä CGNS -tiedostosta ruudukko luetaan.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS tiedosto</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Käsittelemätön widget ActionSetValueessa</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Tallenna ja sulje (&amp;S)</translation>
+        <translation type="vanished">Tallenna ja sulje (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Virhe tallennettaessa.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS-tiedoston avaaminen epäonnistui.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Valitse tiedosto</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Tiedoston nimen tulee sisältää vain englanninkielisiä merkkejä.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Valitse tiedosto</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Tiedoston nimen tulee sisältää vain englanninkielisiä merkkejä.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Valitse Hakemisto</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Kansion nimen tulee sisältää vain englanninkielisiä merkkejä.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Muokata</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Ei tuotavia tietoja.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Valitse tuotava malli)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varoitus</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Tekstialueen sisältö korvataan mallilla</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Piilota tiedot (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Virhe ladattaessa laskentatulosta.</translation>
+        <translation type="vanished">Virhe ladattaessa laskentatulosta.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Virhe tallennettaessa %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Tallennetaan laskentatulosta TPO-tiedostoina...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Virhe ladattaessa laskentatulosta.</translation>
+        <translation type="vanished">Virhe ladattaessa laskentatulosta.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Korkeusruudukon määritettä ei ole määritetty ruudukkotyypille %1. Ruudukon I/O -toiminnot, ruudukon luontitoiminnot eivät ehkä toimi oikein näillä ruudukkotyypeillä.</translation>
+        <translation type="vanished">Korkeusruudukon määritettä ei ole määritetty ruudukkotyypille %1. Ruudukon I/O -toiminnot, ruudukon luontitoiminnot eivät ehkä toimi oikein näillä ruudukkotyypeillä.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Ratkaisu %1 on jo olemassa.</translation>
+        <translation type="vanished">Ratkaisu %1 on jo olemassa.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS -tiedostoa, jonka nimi sisältää muita merkkejä kuin aakkosia ja numeroita, ei voida tuoda.</translation>
+        <translation type="vanished">CGNS -tiedostoa, jonka nimi sisältää muita merkkejä kuin aakkosia ja numeroita, ei voida tuoda.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Projektitiedoston tallennus epäonnistui.</translation>
+        <translation type="vanished">%1 Projektitiedoston tallennus epäonnistui.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Tätä projektitiedostoa ei voi lukea, koska sen on luonut liian vanha iRIC (versio %1 ).</translation>
+        <translation type="vanished">Tätä projektitiedostoa ei voi lukea, koska sen on luonut liian vanha iRIC (versio %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Tämä tiedosto on ratkaisijalle %1 %2. Se ei ole yhteensopiva käyttämäsi ratkaisijan kanssa, joten ehkä tämän tiedoston tuonti epäonnistuu. Haluatko todella tuoda tämän tiedoston?</translation>
+        <translation type="vanished">Tämä tiedosto on ratkaisijalle %1 %2. Se ei ole yhteensopiva käyttämäsi ratkaisijan kanssa, joten ehkä tämän tiedoston tuonti epäonnistuu. Haluatko todella tuoda tämän tiedoston?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinaattijärjestelmää ei ole valittu.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Tapahtui virhe avattaessa CGNS-tiedostoa projektitiedostossa: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kopioidaan kuvaa %1 to %2 epäonnistunut.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Ajan näyttömuoto</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Aikavyöhyke:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Koko alue</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktiivinen alue</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Mukautettu alue</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Olen mukana:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Minä Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Solut, joissa solun pituuden vaihtelu j-suunnassa ylittää %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Näytteenotto</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Kaikki kärjet</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Näytteenottotaajuus:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-suunta</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-suunta</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Näytteenotto</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Kaikki kärjet</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Näytteenottotaajuus:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-suunta</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-suunta</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-suuntaan</translation>
     </message>
 </context>
 <context>

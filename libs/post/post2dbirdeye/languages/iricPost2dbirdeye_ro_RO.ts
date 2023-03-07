@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,8 +9,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Post-procesare Bird&apos;s-Eye (2D): %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Post-procesare Bird's-Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -168,11 +166,11 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea de afișare a formei grilei</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare scalară pentru cotă</translation>
     </message>
 </context>
 <context>
@@ -187,38 +185,38 @@
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Setare scalară (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Culoare personalizată</translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">După valoarea scalară</translation>
+        <translation>După valoarea scalară</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Gamă</translation>
     </message>
 </context>
 <context>

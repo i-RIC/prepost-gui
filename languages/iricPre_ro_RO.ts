@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Acest fișier CGNS nu are informații despre soluționare. Nu putem verifica dacă acest fișier CGNS este compatibil cu soluția. Dacă nu este compatibil, poate fi importată doar o parte a grilei. Doriți cu adevărat să importați grila din acest fișier?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Acest fișier nu conține grilă care poate fi importată.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Selectați grila</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Selectați grila de importat.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,42 +139,119 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Setarea axelor</translation>
+        <translation type="vanished">Setarea axelor</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="vanished">Arata setarile</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Culoare grilă</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Atribut nod</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Atributul celulei</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Axe</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Vizibil</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Culoare:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Editați scala în direcția Z</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Scala direcției Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Introduceți o nouă scală în direcția Z.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Editați setarea culorii</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Editați scara direcției Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Introduceți o nouă scară în direcția Z.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Editați setarea afișajului</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Altitudine:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Culoare grilă</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Atribut nod</translation>
-    </message>
-    <message>
-        <source>Cell attribute</source>
-        <translation>Atributul celulei</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
+        <source>Cusom Color</source>
         <translation>Culoare personalizată</translation>
     </message>
     <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Setarea hărții de culori</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Axes</source>
-        <translation>Axe</translation>
+        <translation>Topoare</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Culoare:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Editați scala în direcția Z</translation>
+        <source>Background Color:</source>
+        <translation>Culoare de fundal:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Scala direcției Z</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Introduceți o nouă scală în direcția Z.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Editați setarea culorii</translation>
+        <source>Z-direction scale:</source>
+        <translation>Scara direcției Z:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Sigur doriți să ștergeți toate condițiile la graniță?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Editați setarea afișajului</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Setarea de afișare a condițiilor de limită</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Setarea fontului pentru nume</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Selectați caz</translation>
+        <translation type="vanished">Selectați caz</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Vă rugăm să selectați din care caz %1 pentru a importa condițiile de calcul.</translation>
+        <translation type="vanished">Vă rugăm să selectați din care caz %1 pentru a importa condițiile de calcul.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Date Pointset (&amp;O)</translation>
+        <translation type="vanished">Date Pointset (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importați de pe web (&amp;I)...</translation>
+        <translation type="vanished">Importați de pe web (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Configurați Scalarbar...</translation>
+        <translation type="vanished">Configurați Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Importul de date din %1 a eșuat.</translation>
+        <translation type="vanished">Importul de date din %1 a eșuat.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Pentru a importa datele geografice, specificați mai întâi sistemul de coordonate.</translation>
+        <translation type="vanished">Pentru a importa datele geografice, specificați mai întâi sistemul de coordonate.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Import (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importați cota de pe web (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Pentru a importa datele geografice, specificați mai întâi sistemul de coordonate pentru proiect.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Editați setarea variației (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Mod implicit</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Setarea variației</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Activați variația</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Varianta de transmis la rezolvator:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Notă: Când variația este activată, este creată varianta numită „Implicit” și toate datele geografice sunt mutate în aceasta. Puteți adăuga, redenumi, elimina variații din „Browser de obiecte”. Puteți muta, copia date geografice între variații. Datele atributelor de grilă create din variația pe care o selectați cu „Variație de transmis la rezolvator” sunt transmise solutorului. Puteți pregăti mai multe variante, puteți schimba pe care să le transmiteți solutorului și vă asigurați că efectul diferenței.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Setarea afișării atributului celulei de rețea</translation>
+        <translation type="vanished">Setarea afișării atributului celulei de rețea</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generați date cloud de puncte</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Setarea de afișare a atributului celulei grilă</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Setarea afișării atributului nodului de rețea</translation>
+        <translation type="vanished">Setarea afișării atributului nodului de rețea</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generați date cloud de puncte</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Setarea de afișare a atributului nodului grilă</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Setarea legendei culorii</translation>
+        <translation type="vanished">Setarea legendei culorii</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Setarea Scalarbar</translation>
+        <translation type="vanished">Setarea Scalarbar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valoare</translation>
+        <translation type="vanished">Valoare</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editați | ×...</translation>
+        <translation type="vanished">Editați | ×...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formă</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titlu</translation>
+        <translation type="vanished">Titlu</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titlu :</translation>
+        <translation type="vanished">Titlu :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setarea fontului:</translation>
+        <translation type="vanished">Setarea fontului:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editați | ×...</translation>
+        <translation type="vanished">Editați | ×...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Afișare etichetă</translation>
+        <translation type="vanished">Afișare etichetă</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Număr de etichete:</translation>
+        <translation type="vanished">Număr de etichete:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientare:</translation>
+        <translation type="vanished">Orientare:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Orizontală</translation>
+        <translation type="vanished">Orizontală</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>mărimea</translation>
+        <translation type="vanished">mărimea</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Specificați dimensiunea barei de culoare ca rată față de dimensiunea ferestrei.</translation>
+        <translation type="vanished">Specificați dimensiunea barei de culoare ca rată față de dimensiunea ferestrei.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Latime:</translation>
+        <translation type="vanished">Latime:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Dacă specificați 1, lățimea barei de culoare este aceeași cu lățimea ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 1, lățimea barei de culoare este aceeași cu lățimea ferestrei.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Înălțime:</translation>
+        <translation type="vanished">Înălțime:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Dacă specificați 1, înălțimea barei de culoare este aceeași cu înălțimea ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 1, înălțimea barei de culoare este aceeași cu înălțimea ferestrei.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Poziţie</translation>
+        <translation type="vanished">Poziţie</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Specificați poziția din partea stângă a barei de culoare ca rată față de dimensiunea ferestrei.</translation>
+        <translation type="vanished">Specificați poziția din partea stângă a barei de culoare ca rată față de dimensiunea ferestrei.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Dacă specificați 0, marginea stângă a barei de culoare se află la marginea stângă a ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 0, marginea stângă a barei de culoare se află la marginea stângă a ferestrei.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Dacă specificați 0, partea de jos a barei de culoare se află în partea de jos a ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 0, partea de jos a barei de culoare se află în partea de jos a ferestrei.</translation>
     </message>
 </context>
 <context>

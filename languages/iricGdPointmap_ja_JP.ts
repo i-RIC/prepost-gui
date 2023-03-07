@@ -649,7 +649,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>テキストファイル (*.csv *.txt, *.xyz)</translation>
+        <translation type="vanished">テキストファイル (*.csv *.txt, *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>テキストファイル (*.tpo *.csv *.txt, *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -793,6 +797,10 @@
     <message>
         <source>File name:</source>
         <translation>ファイル名:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>座標系</translation>
     </message>
 </context>
 <context>

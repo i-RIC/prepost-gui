@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Eftirfarandi skrár verða fluttar inn. Er það í lagi?</translation>
+        <translation type="vanished">Eftirfarandi skrár verða fluttar inn. Er það í lagi?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Vinsamlegast veldu skrárnar sem á að flytja inn.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Velja allt (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Afvelja allt (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Viðvörun</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Tímabilið á milli valinna skráa er ekki það sama.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Skráarnafn passar ekki við mynstrið</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tímabelti:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Víddargildi fyrir misræmi í tíma.</translation>
+        <translation type="vanished">Víddargildi fyrir misræmi í tíma.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Hnitakerfi er ekki tilgreint fyrir %1. Vinsamlegast veldu hnitakerfi handvirkt.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Opnun %1 mistókst.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Víddargildi fyrir %1 misræmi.</translation>
+        <translation type="vanished">Víddargildi fyrir %1 misræmi.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Villa kom upp við tímaskilgreiningu: %1</translation>
+        <translation type="vanished">Villa kom upp við tímaskilgreiningu: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 hefur ekki lengdargráðu, breiddargráðu né x, y gögn.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Upphaflegur tími:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tímabelti:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Upplýsingar</translation>
+        <translation type="vanished">Upplýsingar</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 skrár í möppunni %2 eru flutt inn.</translation>
+        <translation type="vanished">%1 skrár í möppunni %2 eru flutt inn.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Víddargildi fyrir misræmi í tíma.</translation>
+        <translation type="vanished">Víddargildi fyrir misræmi í tíma.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastergögn tímaraðar eru þegar flutt inn. Ef þú vilt flytja inn önnur gögn, vinsamlegast eyddu þeim gögnum sem þegar voru flutt inn fyrst.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Villa kom upp við innflutning á gögnum sem breytt var úr %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Villa kom upp við opnun %1.</translation>
     </message>
 </context>
 </TS>

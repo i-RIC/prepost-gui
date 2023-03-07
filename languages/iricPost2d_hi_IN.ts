@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>तीर सेटिंग</translation>
+        <translation type="vanished">तीर सेटिंग</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>लंबाई</translation>
+        <translation type="vanished">लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>मानक मूल्य:</translation>
+        <translation type="vanished">मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[एमएस]</translation>
+        <translation type="vanished">[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>स्क्रीन पर लंबाई:</translation>
+        <translation type="vanished">स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[पिक्सेल]</translation>
+        <translation type="vanished">[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+        <translation type="vanished">आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>सैम्पलिंग</translation>
+        <translation type="vanished">सैम्पलिंग</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>सभी कोने</translation>
+        <translation type="vanished">सभी कोने</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>नमूनाकरण दर:</translation>
+        <translation type="vanished">नमूनाकरण दर:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>मैं-दिशा</translation>
+        <translation type="vanished">मैं-दिशा</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>जे-दिशा</translation>
+        <translation type="vanished">जे-दिशा</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>अदिश मान द्वारा</translation>
+        <translation type="vanished">अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>तीर आकार</translation>
+        <translation type="vanished">तीर आकार</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>तीर आकार:</translation>
+        <translation type="vanished">तीर आकार:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>तीर सेटिंग</translation>
+        <translation type="vanished">तीर सेटिंग</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>लंबाई</translation>
+        <translation type="vanished">लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>मानक मूल्य:</translation>
+        <translation type="vanished">मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[एमएस]</translation>
+        <translation type="vanished">[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>स्क्रीन पर लंबाई:</translation>
+        <translation type="vanished">स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[पिक्सेल]</translation>
+        <translation type="vanished">[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+        <translation type="vanished">आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>सैम्पलिंग</translation>
+        <translation type="vanished">सैम्पलिंग</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>सभी कोने</translation>
+        <translation type="vanished">सभी कोने</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>नमूनाकरण दर:</translation>
+        <translation type="vanished">नमूनाकरण दर:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>शीर्षों की संख्या निर्दिष्ट करें</translation>
+        <translation type="vanished">शीर्षों की संख्या निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>अदिश मान द्वारा</translation>
+        <translation type="vanished">अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>तीर आकार</translation>
+        <translation type="vanished">तीर आकार</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>तीर आकार:</translation>
+        <translation type="vanished">तीर आकार:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>अदिश (कोशिका केंद्र)</translation>
+        <translation type="vanished">अदिश (कोशिका केंद्र)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>कंटूर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कंटूर सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, कंटूर चित्र के साथ प्रदर्शित करें।</translation>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए, कंटूर चित्र के साथ प्रदर्शित करें।</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, मान श्रेणी को मैन्युअल रूप से सेट किया जाना चाहिए।</translation>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए, मान श्रेणी को मैन्युअल रूप से सेट किया जाना चाहिए।</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, समन्वय प्रणाली निर्दिष्ट की जानी चाहिए।</translation>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए, समन्वय प्रणाली निर्दिष्ट की जानी चाहिए।</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>अदिश सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>संवाद</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+        <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>अदिश सेटिंग</translation>
+        <translation type="vanished">अदिश सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>डिस्प्ले सेटिंग</translation>
+        <translation type="vanished">डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>मान श्रेणी के लिए, अधिकतम मान न्यूनतम मान से छोटा होता है।</translation>
+        <translation type="vanished">मान श्रेणी के लिए, अधिकतम मान न्यूनतम मान से छोटा होता है।</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>भौगोलिक डेटा</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>संदर्भ सूचना</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>ग्रिड आकार प्रदर्शन सेटिंग</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>कंटूर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कंटूर सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, कंटूर चित्र के साथ प्रदर्शित करें।</translation>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए, कंटूर चित्र के साथ प्रदर्शित करें।</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, मान श्रेणी को मैन्युअल रूप से सेट किया जाना चाहिए।</translation>
+        <translation type="vanished">सड़क दृश्य के लिए KML निर्यात करने के लिए, मान श्रेणी को मैन्युअल रूप से सेट किया जाना चाहिए।</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए, समन्वय प्रणाली निर्दिष्ट की जानी चाहिए।</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>अदिश सेटिंग (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>सड़क दृश्य के लिए KML निर्यात करने के लिए Colormode को "डिस्क्रीट मोड" होना चाहिए</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>संवाद</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>अदिश (नोड)</translation>
+        <translation type="vanished">अदिश (नोड)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>अदिश</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग सेटिंग को "असतत मोड" पर स्विच करें।</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>एरो फिजिकल वैल्यू चेंज</translation>
+        <translation type="vanished">एरो फिजिकल वैल्यू चेंज</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>तीर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">तीर सेटिंग अपडेट करें</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>तीर सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>तीर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">तीर सेटिंग अपडेट करें</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>तीर सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>कण स्केलर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>कण सेटिंग संपादित करें</translation>
+        <translation type="vanished">कण सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>विशेषता ब्राउज़र दिखाएं</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>वेक्टर विशेषता परिवर्तन का चयन करें</translation>
+        <translation type="vanished">वेक्टर विशेषता परिवर्तन का चयन करें</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>वेक्टर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">वेक्टर सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>एरो फिजिकल वैल्यू चेंज</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>कण वेक्टर सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>बहुभुज सेटिंग संपादित करें</translation>
+        <translation type="vanished">बहुभुज सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>बहुभुज डेटा प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>सेल कंटूर बनाएं</translation>
+        <translation type="vanished">सेल कंटूर बनाएं</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>कंटूर बनाएं</translation>
+        <translation type="vanished">कंटूर बनाएं</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>ग्रिड आकार सेटिंग अपडेट करें</translation>
+        <translation type="vanished">ग्रिड आकार सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>अद्यतन कण अदिश सेटिंग</translation>
+        <translation type="vanished">अद्यतन कण अदिश सेटिंग</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>पॉलीगॉन स्केलर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">पॉलीगॉन स्केलर सेटिंग अपडेट करें</translation>
     </message>
 </context>
 </TS>

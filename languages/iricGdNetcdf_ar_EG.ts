@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>سيتم استيراد الملفات التالية. هل الامور على ما يرام؟</translation>
+        <translation type="vanished">سيتم استيراد الملفات التالية. هل الامور على ما يرام؟</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>الرجاء تحديد الملفات المراد استيرادها.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>اختر الكل (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>الغاء تحديد الكل (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>تحذير</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>الفاصل الزمني بين الملفات المحددة ليس هو نفسه.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>اسم الملف لا يتطابق مع النمط</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>وحدة زمنية:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>قيم الأبعاد لعدم تطابق الوقت.</translation>
+        <translation type="vanished">قيم الأبعاد لعدم تطابق الوقت.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>لم يتم تحديد نظام الإحداثيات لـ %1. الرجاء تحديد نظام الإحداثيات يدويًا.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>تم بالفعل استيراد البيانات النقطية للسلاسل الزمنية. إذا كنت ترغب في استيراد بيانات أخرى ، يرجى حذف البيانات التي تم استيرادها بالفعل أولاً.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>افتتاح %1 باءت بالفشل.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>قيم الأبعاد لـ %1 عدم تطابق.</translation>
+        <translation type="vanished">قيم الأبعاد لـ %1 عدم تطابق.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>حدث خطأ أثناء تحليل تعريف الوقت: %1</translation>
+        <translation type="vanished">حدث خطأ أثناء تحليل تعريف الوقت: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 ليس لديه بيانات خطوط الطول والعرض ولا س ، ص.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>تم بالفعل استيراد البيانات النقطية للسلاسل الزمنية. إذا كنت ترغب في استيراد بيانات أخرى ، يرجى حذف البيانات التي تم استيرادها بالفعل أولاً.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>الوقت الأصلي:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>وحدة زمنية:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>معلومة</translation>
+        <translation type="vanished">معلومة</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 الملفات الموجودة في المجلد %2 يتم استيرادها.</translation>
+        <translation type="vanished">%1 الملفات الموجودة في المجلد %2 يتم استيرادها.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>قيم الأبعاد لعدم تطابق الوقت.</translation>
+        <translation type="vanished">قيم الأبعاد لعدم تطابق الوقت.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>تم بالفعل استيراد البيانات النقطية للسلاسل الزمنية. إذا كنت ترغب في استيراد بيانات أخرى ، يرجى حذف البيانات التي تم استيرادها بالفعل أولاً.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>حدث خطأ أثناء استيراد البيانات المحولة من %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>حدث خطأ عند الفتح %1.</translation>
     </message>
 </context>
 </TS>

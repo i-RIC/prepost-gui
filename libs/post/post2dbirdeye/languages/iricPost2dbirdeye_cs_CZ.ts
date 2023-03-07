@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,8 +9,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Post-processing Bird&apos;s Eye (2D): %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Post-processing Bird's Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -168,11 +166,11 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení zobrazení tvaru mřížky</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalární hodnota pro Elevation</translation>
     </message>
 </context>
 <context>
@@ -187,38 +185,38 @@
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalární nastavení (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Vlastní barva</translation>
+        <translation>Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">Podle skalární hodnoty</translation>
+        <translation>Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozsah</translation>
     </message>
 </context>
 <context>

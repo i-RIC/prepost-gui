@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Izlaišanas ātrums:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Pašlaik nav atlasīts neviens logs.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Nepārtraukts momentuzņēmums/filma/Google Earth eksportēšanas vednis</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Fona režģis</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fonts pēc noklusējuma</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Teksta formāts</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Starp šķērsgriezumiem:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Bieži</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Režģa forma/režģa indeksi</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Krāsu josla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiķetes</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Bultas garuma leģenda</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Priekšapstrādes logs</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Augšup straumi / Lejup straumi</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Upju apsekojuma datu Šķērsgriezumu nosaukumi</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Robežnosacījumu nosaukumi</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizācijas logi</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiķetes:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Diagramma Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammas nosaukums:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leģendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ass nosaukums:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ass atzīmes:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Atverot, kopējiet mapes projektu darba direktorijā</translation>
+        <translation type="vanished">Atverot, kopējiet mapes projektu darba direktorijā</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinātas statusa joslā</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Cipari aiz komata:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Atribūtu pārlūks</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Cipari aiz komata</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordinātas:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vērtība:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Nav precizēts)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Izvades iestatījums</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Izvada aprēķinu rezultātus atsevišķos failos</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Momentuzņēmums veiksmīgi saglabāts mapē %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Visi faili iekšā %1 ir dzēsts.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Iestatījumu fails (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Lai eksportētu formas failu, pārslēdziet krāsu režīmu uz "Diskrēts režīms".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Ģeogrāfiskie dati (no tīmekļa)</translation>
+        <translation type="vanished">Ģeogrāfiskie dati (no tīmekļa)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Pārlādēt CGNS failu (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Pārlādēt CGNS failu</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Ģeogrāfiskie dati (augstums no tīmekļa)</translation>
     </message>
 </context>
 </TS>

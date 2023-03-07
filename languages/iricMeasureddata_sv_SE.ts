@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalärinställning</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Uppmätt värde:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Inställningsdialog för poängvisning</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Skärminställning</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Poäng</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Yta</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Inställning för färgkarta</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportera (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Punktstorlek:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Anpassad färg</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalärinställning</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Uppmätt värde:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Skärminställning</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktstorlek:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fel</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>För värdeintervall är maxvärdet mindre än minvärdet.</translation>
+        <translation type="vanished">För värdeintervall är maxvärdet mindre än minvärdet.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Uppdatera pilinställning</translation>
+        <translation type="vanished">Uppdatera pilinställning</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Uppmätt data pilinställning</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinställning</translation>
+        <translation type="vanished">Pilinställning</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysiskt värde:</translation>
+        <translation type="vanished">Fysiskt värde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Längd</translation>
+        <translation type="vanished">Längd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Bil</translation>
+        <translation type="vanished">Bil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardvärde:</translation>
+        <translation type="vanished">Standardvärde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Längd på skärmen:</translation>
+        <translation type="vanished">Längd på skärmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minsta värde att dra:</translation>
+        <translation type="vanished">Minsta värde att dra:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Med skalvärde</translation>
+        <translation type="vanished">Med skalvärde</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
     </message>
 </context>
 </TS>

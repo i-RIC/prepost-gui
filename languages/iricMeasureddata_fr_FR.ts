@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Paramètre scalaire</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>La valeur de mesure:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Boîte de dialogue Paramètres d'affichage des points</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Réglage de l'affichage</translation>
+        <translation>Paramètre d'affichage</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Points</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Surface</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Réglage de la palette de couleurs</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
         <translation>Taille des points :</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Paramètre scalaire</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">La valeur de mesure:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Réglage de l'affichage</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Taille des points :</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Réglage de la barre de couleur (&amp;C)</translation>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erreur</translation>
+        <translation type="vanished">Erreur</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
+        <translation type="vanished">Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Mettre à jour le paramètre de flèche</translation>
+        <translation type="vanished">Mettre à jour le paramètre de flèche</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Réglage de la flèche des données mesurées</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Réglage de la flèche</translation>
+        <translation type="vanished">Réglage de la flèche</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valeur physique :</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longueur</translation>
+        <translation type="vanished">Longueur</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valeur standard:</translation>
+        <translation type="vanished">Valeur standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mme]</translation>
+        <translation type="vanished">[Mme]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Durée à l'écran :</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valeur minimale à tirer :</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Couleur personnalisée</translation>
+        <translation type="vanished">Couleur personnalisée</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Par valeur scalaire</translation>
+        <translation type="vanished">Par valeur scalaire</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Réglage de la barre de couleur (&amp;C)</translation>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
     </message>
 </context>
 </TS>

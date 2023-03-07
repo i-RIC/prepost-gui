@@ -1,5 +1,202 @@
 <TS version="2.1" language="eu_ES">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Editatu (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Kolore maparen ezarpena (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Forma</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ikusgarritasuna</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Hautatzen denean</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Beti</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Inoiz ez</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Izenburua :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Letra-tipoaren ezarpena:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Luzera</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formatua:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Izenburua:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Luzera:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Aurrekariak:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaina eta posizioa</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Luzera</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Autoa</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Balio estandarra:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[anderea]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Luzera pantailan:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Marraztu beharreko gutxieneko balioa:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Balioa:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Luzera Kondaira</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Oinarrizkoa</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Gezi Forma</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Geziaren tamaina:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Fitxategian %1, pixel bakoitzeko x-koordenatuaren gehikuntza eta pixel bakoitzeko y-koordenatuaren gehikuntza. Onargarria da, baina oker egon daiteke.</translation>
+        <translation type="vanished">Fitxategian %1, pixel bakoitzeko x-koordenatuaren gehikuntza eta pixel bakoitzeko y-koordenatuaren gehikuntza. Onargarria da, baina oker egon daiteke.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Aukeratu dagokion puntu bat Leiho nagusian.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Konpondu irudiaren posizioa</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ikusgarritasuna</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Hautatzen denean</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Beti</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Inoiz ez</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Izenburua :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Letra-tipoaren ezarpena:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketa bistaratzea</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Izenburua:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiketa:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Aurrekariak:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaina eta posizioa</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Koloreak</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Kolore-barraren ezarpena</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Hautatu inportatzeko fitxategia</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Kolore maparen ezarpena (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errorea</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Idatzi fitxategiaren izena esportatzeko</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Errore bat gertatu da irekitzean %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Balioa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gardena</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ikusgarritasuna</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Hautatzen denean</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Beti</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Inoiz ez</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Izenburua :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Letra-tipoaren ezarpena:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketa bistaratzea</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formatua:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Izenburua:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiketa:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Aurrekariak:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaina eta posizioa</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Elkarrizketa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Kolore maparen ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Aurrez aurreko ezarpenak:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Balioen eta koloreen arteko erlazioa</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Doitu automatikoki balio-barrutiaren arabera</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Konfiguratu eskuz</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Balio-barrutia</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatikoa</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Gehienez:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Koloreak</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kendu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Bete beheko eremua</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Bete goiko eremua</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Aldatu</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Kolore-barraren ezarpena</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Hautatu inportatzeko fitxategia</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Kolore maparen ezarpena (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Idatzi fitxategiaren izena esportatzeko</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Errore bat gertatu da irekitzean %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errorea</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Mesedez, hautatu aplikatu beharreko elementua)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Aldatu modu diskretura</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Aldatu graduazio modura</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Abisua</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Balioa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Balio minimoa</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Gehienezko balioa</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gardena</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Graduazio modura aldatzean, balioak atal bakoitzaren erdiko balioan ezartzen dira.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Aldatu modu diskretuko elkarrizketa-koadroa</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Gehienez:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Atal bakoitzean txertatzeko kolore kopurua</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Laginketa</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Erpin guztiak</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Laginketa-tasa:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Zehaztu erpin kopurua</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Aukeratu puntu bat Georreferentzia elkarrizketan.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Ezabatu puntuak</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Sestra ezarpena</translation>
+        <translation type="vanished">Sestra ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posizioa</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Marjina horizontala:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Marjina bertikala:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Zabalera:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Altuera:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Ezkerretik distantzia</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Eskuinetik distantzia</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Goitik distantzia</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Behetik distantzia</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Mesedez, aukeratu zein CGNS fitxategitik irakurri behar duzun sareta.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS fitxategia</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Kudeatu gabeko widget-a ActionSetValue-n</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Gorde eta itxi (&amp;S)</translation>
+        <translation type="vanished">Gorde eta itxi (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Errore bat gertatu da gordetzean.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS fitxategia irekitzean huts egin du.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Aukeratu Fitxategia</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Fitxategiaren izenak ingelesezko karaktereez osatuta egon behar du.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Aukeratu Fitxategia</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Fitxategiaren izenak ingelesezko karaktereez osatuta egon behar du.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Aukeratu direktorioa</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Karpeta izenak ingelesezko karaktereez osatuta egon behar du.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editatu</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Ez dago inportatzeko daturik.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Hautatu inportatzeko txantiloia)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Abisua</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Testu-eremuko edukia txantiloiarekin gainidazten da</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Ezkutatu xehetasuna (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Errorea gertatu da kalkuluaren emaitza kargatzean.</translation>
+        <translation type="vanished">Errorea gertatu da kalkuluaren emaitza kargatzean.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Errore bat gertatu da gordetzean %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Kalkuluaren emaitza TPO fitxategi gisa gordetzen...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Errorea gertatu da kalkuluaren emaitza kargatzean.</translation>
+        <translation type="vanished">Errorea gertatu da kalkuluaren emaitza kargatzean.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Kota saretaren atributua ez dago zehaztuta sareta motarako %1. Sareta I / O funtzioak, sareak sortzeko funtzioak agian ez dabiltza sareta mota hauetarako.</translation>
+        <translation type="vanished">Kota saretaren atributua ez dago zehaztuta sareta motarako %1. Sareta I / O funtzioak, sareak sortzeko funtzioak agian ez dabiltza sareta mota hauetarako.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Irtenbidea %1 dagoeneko badago.</translation>
+        <translation type="vanished">Irtenbidea %1 dagoeneko badago.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Ezin dira inportatu izenak alfabetoak eta zenbakiak ez diren karaktereak dituen CGNS fitxategia.</translation>
+        <translation type="vanished">Ezin dira inportatu izenak alfabetoak eta zenbakiak ez diren karaktereak dituen CGNS fitxategia.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Proiektuaren fitxategia gordetzeak huts egin du.</translation>
+        <translation type="vanished">%1 Proiektuaren fitxategia gordetzeak huts egin du.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Proiektuaren fitxategi hau ezin da irakurri, iRIC zaharregia delako sortu baitu (bertsioa %1 ).</translation>
+        <translation type="vanished">Proiektuaren fitxategi hau ezin da irakurri, iRIC zaharregia delako sortu baitu (bertsioa %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Fitxategi hau konponketarako da %1 %2. Ez da bateragarria erabiltzen ari zaren konpontzailearekin; beraz, agian fitxategi hau inportatzeak huts egingo du. Ziur fitxategia inportatu nahi duzula?</translation>
+        <translation type="vanished">Fitxategi hau konponketarako da %1 %2. Ez da bateragarria erabiltzen ari zaren konpontzailearekin; beraz, agian fitxategi hau inportatzeak huts egingo du. Ziur fitxategia inportatu nahi duzula?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordenatu sistema ez da hautatu.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Errore bat gertatu da proiektuaren fitxategian CGNS fitxategia irekitzean: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Irudia kopiatzen %1 to %2 huts egin zuen.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Ordua bistaratzeko formatua</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ordu eremu:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Eskualde osoa</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Eskualde Aktiboa</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Eskualde pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>I Min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* J norabidean zehar gelaxkaren luzeraren aldakuntza gainditzen duten gelaxkak %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Laginketa</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Erpin guztiak</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Laginketa-tasa:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-norabidea</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-norabidea</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Laginketa</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Erpin guztiak</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Laginketa-tasa:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-norabidea</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-norabidea</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K norabidea</translation>
     </message>
 </context>
 <context>

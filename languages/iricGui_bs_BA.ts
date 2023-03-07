@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Stopa preskakanja:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Trenutno nije odabran nijedan prozor.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Čarobnjak za izvoz kontinuiranog snimka / filma / Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Mreža pozadine</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Font Default</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Format teksta</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Između poprečnih presjeka:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Često</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Oblik mreže / Indeksi mreže</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Color Bar</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etikete</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda dužine strelice</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Prozor za prethodnu obradu</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Uzvodno / Nizvodno</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nazivi presjeka podataka istraživanja rijeke</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nazivi graničnih uslova</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizacija Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Oznake:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Chart Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Naziv grafikona:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Naslov osi:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis Ticks:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Kopirajte projekt fascikle u radni imenik kada se otvori</translation>
+        <translation type="vanished">Kopirajte projekt fascikle u radni imenik kada se otvori</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinate u statusnoj traci</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Decimalna mjesta:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Pregledač atributa</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Decimalna mjesta</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>koordinate:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>vrijednost:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Nije određeno)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Output Setting</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Rezultati proračuna izlaza u odvojenim datotekama</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Snimak je uspješno sačuvan u %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Svi fajlovi unutra %1 je obrisan.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Podešavanje fajla (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Da biste izvezli datoteku oblika, prebacite način boje na "Discrete Mode".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Geografski podaci (s weba)</translation>
+        <translation type="vanished">Geografski podaci (s weba)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Ponovo učitajte CGNS datoteku (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Ponovo učitajte CGNS datoteku</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Geografski podaci (visina s weba)</translation>
     </message>
 </context>
 </TS>

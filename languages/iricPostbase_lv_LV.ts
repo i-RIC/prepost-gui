@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Daļiņu iestatīšana</translation>
+        <translation type="vanished">Daļiņu iestatīšana</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Izmērs:</translation>
+        <translation type="vanished">Izmērs:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Daļiņu skalāra iestatīšana</translation>
+        <translation type="vanished">Daļiņu skalāra iestatīšana</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Krāsojiet pēc atribūta vērtības</translation>
+        <translation type="vanished">Krāsojiet pēc atribūta vērtības</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribūts:</translation>
+        <translation type="vanished">Atribūts:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Izmērs:</translation>
+        <translation type="vanished">Izmērs:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Bultas iestatīšana</translation>
+        <translation type="vanished">Bultas iestatīšana</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Atribūta vērtība:</translation>
+        <translation type="vanished">Atribūta vērtība:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Garums</translation>
+        <translation type="vanished">Garums</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standarta vērtība:</translation>
+        <translation type="vanished">Standarta vērtība:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[jaunkundze]</translation>
+        <translation type="vanished">[jaunkundze]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Garums ekrānā:</translation>
+        <translation type="vanished">Garums ekrānā:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimālā zīmējamā vērtība:</translation>
+        <translation type="vanished">Minimālā zīmējamā vērtība:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Paraugu ņemšana</translation>
+        <translation type="vanished">Paraugu ņemšana</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Visas daļiņas</translation>
+        <translation type="vanished">Visas daļiņas</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Paraugu ņemšanas ātrums:</translation>
+        <translation type="vanished">Paraugu ņemšanas ātrums:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Norādiet daļiņu skaitu</translation>
+        <translation type="vanished">Norādiet daļiņu skaitu</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bultas forma</translation>
+        <translation type="vanished">Bultas forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Bultas izmērs:</translation>
+        <translation type="vanished">Bultas izmērs:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Daudzstūra iestatīšana</translation>
+        <translation type="vanished">Daudzstūra iestatīšana</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Daudzstūra iestatīšana</translation>
+        <translation type="vanished">Daudzstūra iestatīšana</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Krāsojiet pēc atribūta vērtības</translation>
+        <translation type="vanished">Krāsojiet pēc atribūta vērtības</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribūts:</translation>
+        <translation type="vanished">Atribūts:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Līnijas platums</translation>
+        <translation type="vanished">Līnijas platums</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Atlasiet Mērķa rezultāts</translation>
     </message>
 </context>
 <context>

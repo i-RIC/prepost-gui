@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis Kisi</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Semua</translation>
+        <translation>Semua</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Garis Besar Saja</translation>
+        <translation>Garis Besar Saja</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Warna:</translation>
+        <translation>Warna:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks Kisi</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Bisa dilihat</translation>
+        <translation>Bisa dilihat</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Tentukan format angka dalam format printf. Sebagai contoh: &quot; %5.2f&quot; untuk 3,141592 --&gt; 3,14&quot; %4.2e&quot; untuk 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Tentukan format angka dalam format printf. Sebagai contoh: " %5.2f" untuk 3,141592 --&gt; 3,14" %4.2e" untuk 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

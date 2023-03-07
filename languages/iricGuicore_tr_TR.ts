@@ -1,5 +1,202 @@
 <TS version="2.1" language="tr_TR">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>skaler değere göre</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Düzenlemek (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Renk Haritası Ayarı (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>skaler değere göre</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Biçim</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>görünürlük</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>seçildiğinde</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Her zaman</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Asla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Başlık :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Yazı Tipi Ayarı:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Uzunluk</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Biçim:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Başlık:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Uzunluk:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Arka plan:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Boyut ve Konum</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Uzunluk</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Oto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standart değer:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Hanım]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Ekrandaki uzunluk:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[piksel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Çizilecek minimum değer:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Değer:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Uzunluk Efsanesi</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Temel</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Ok Şekli</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Ok boyutu:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Dosyada %1, piksel başına x koordinatı artışı ve piksel uyuşmazlığı başına y koordinatı artışı. Kabul edilebilir, ancak yanlış olabilir.</translation>
+        <translation type="vanished">Dosyada %1, piksel başına x koordinatı artışı ve piksel uyuşmazlığı başına y koordinatı artışı. Kabul edilebilir, ancak yanlış olabilir.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Ana Pencerede ilgili bir nokta seçin.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Görüntü konumunu düzelt</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>görünürlük</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>seçildiğinde</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Her zaman</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Asla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Başlık :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Yazı Tipi Ayarı:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiket Ekranı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Başlık:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiket:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Arka plan:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Boyut ve Konum</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>İçe aktarırken Renk çubuğu ayarını yoksay</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Renkler</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Renk Çubuğu Ayarı</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Renk haritası ayarı (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Dışa aktarılacak dosya adını girin</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Açılırken hata oluştu %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Şeffaf</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>görünürlük</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>seçildiğinde</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Her zaman</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Asla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Başlık :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Yazı Tipi Ayarı:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiket Ekranı</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Biçim:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Başlık:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiket:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Arka plan:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Boyut ve Konum</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">iletişim kutusu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Renk Haritası Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>ön ayarlar:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>İçe aktarırken Renk çubuğu ayarını yoksay</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Değerler ve renkler arasındaki ilişki</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Değer aralığına göre otomatik olarak ayarla</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Manuel Kurulum</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Değer aralığı</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Otomatik</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>dakika:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Renkler</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Eklemek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kaldırmak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Alt alanı doldurun</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Üst alanı doldurun</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Anahtar</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Renk Çubuğu Ayarı</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Renk haritası ayarı (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Dışa aktarılacak dosya adını girin</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Açılırken hata oluştu %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Lütfen uygulanacak öğeyi seçin)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Ayrık Moda Geç</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Derecelendirme Moduna Geç</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Uyarı</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimum değer</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>maksimum değer</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Şeffaf</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Derecelendirme Moduna geçerken, değerler her bölümün orta değerine ayarlanır.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Ayrık Mod İletişim Kutusuna Geç</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>dakika:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Her bölüme eklenecek renk sayısı</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Örnekleme</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Tüm köşeler</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Örnekleme oranı:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Köşe sayısını belirtin</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Georeference iletişim kutusunda bir nokta seçin.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Puanları Sil</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>iletişim kutusu</translation>
+        <translation type="vanished">iletişim kutusu</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>iletişim kutusu</translation>
+        <translation type="vanished">iletişim kutusu</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Kontur ayarı</translation>
+        <translation type="vanished">Kontur ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Yatay Kenar Boşluğu:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Dikey Kenar Boşluğu:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Genişlik:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Yükseklik:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Soldan uzaklık</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Sağdan uzaklık</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Yukarıdan uzaklık</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Alttan uzaklık</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Lütfen kılavuzun hangi CGNS dosyasından okunacağını seçin.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS Dosyası</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>ActionSetValue'da işlenmeyen pencere öğesi</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Kaydet ve kapat (&amp;S)</translation>
+        <translation type="vanished">Kaydet ve kapat (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Kaydederken hata oluştu.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS dosyası açılamadı.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Dosya Seç</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Dosya adı sadece İngilizce karakterlerden oluşmalıdır.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Dosya Seç</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Dosya adı sadece İngilizce karakterlerden oluşmalıdır.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Dizin Seç</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Klasör adı yalnızca İngilizce karakterlerden oluşmalıdır.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Düzenlemek</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>İçe aktarılacak veri yok.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(İçe aktarılacak şablonu seçin)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Uyarı</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Metin alanındaki içeriğin üzerine şablon yazılır</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Detayı Gizle (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Hesaplama sonucu yüklenirken hata oluştu.</translation>
+        <translation type="vanished">Hesaplama sonucu yüklenirken hata oluştu.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Kaydederken hata oluştu %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Hesaplama sonucu TPO dosyaları olarak kaydediliyor...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Hesaplama sonucu yüklenirken hata oluştu.</translation>
+        <translation type="vanished">Hesaplama sonucu yüklenirken hata oluştu.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Izgara türü için yükseklik ızgarası özelliği tanımlı değil %1. Izgara G/Ç işlevleri, ızgara oluşturma işlevleri bu ızgara türleri için doğru çalışmayabilir.</translation>
+        <translation type="vanished">Izgara türü için yükseklik ızgarası özelliği tanımlı değil %1. Izgara G/Ç işlevleri, ızgara oluşturma işlevleri bu ızgara türleri için doğru çalışmayabilir.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Çözüm %1 zaten var.</translation>
+        <translation type="vanished">Çözüm %1 zaten var.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Adı alfabe ve rakamlardan farklı karakterler içeren CGNS dosyası içe aktarılamaz.</translation>
+        <translation type="vanished">Adı alfabe ve rakamlardan farklı karakterler içeren CGNS dosyası içe aktarılamaz.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Proje dosyası kaydedilemedi.</translation>
+        <translation type="vanished">%1 Proje dosyası kaydedilemedi.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Bu proje dosyası okunamıyor çünkü çok eski iRIC (sürüm %1 ).</translation>
+        <translation type="vanished">Bu proje dosyası okunamıyor çünkü çok eski iRIC (sürüm %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Bu dosya çözücü içindir %1 %2. Kullanmakta olduğunuz çözücü ile uyumlu değil, bu nedenle bu dosyayı içe aktarma başarısız olabilir. Bu dosyayı gerçekten içe aktarmak istiyor musunuz?</translation>
+        <translation type="vanished">Bu dosya çözücü içindir %1 %2. Kullanmakta olduğunuz çözücü ile uyumlu değil, bu nedenle bu dosyayı içe aktarma başarısız olabilir. Bu dosyayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinat sistemi seçilmedi.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Proje dosyasında CGNS dosyası açılırken hata oluştu: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>resim kopyalanıyor %1 ile %2 arızalı.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Zaman görüntüleme formatı</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Saat dilimi:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Tam Bölge</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktif Bölge</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Özel Bölge</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Varım:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Maks:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* J-yönü boyunca hücre uzunluğu varyasyonunun aşıldığı hücreler %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Örnekleme</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Tüm köşeler</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Örnekleme oranı:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I yönü</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J yönü</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Örnekleme</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Tüm köşeler</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Örnekleme oranı:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I yönü</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J yönü</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K yönü</translation>
     </message>
 </context>
 <context>

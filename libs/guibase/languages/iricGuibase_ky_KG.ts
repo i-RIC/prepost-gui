@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Тор линиялары</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Баары</translation>
+        <translation>Баары</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Кыскача гана</translation>
+        <translation>Контур гана</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Түс:</translation>
+        <translation>Түс:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Тор индекстери</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Көрүнөө</translation>
+        <translation>Көрүнүүчү</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Printf форматындагы сан форматын көрсөтүңүз. Мисалы: &quot; %5.2f &quot;үчүн 3.141592 -&gt; 3.14&quot; %4.2e &quot;үчүн 12300 -&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Printf форматындагы сан форматын көрсөтүңүз. Мисалы: " %5.2f "үчүн 3.141592 -&gt; 3.14" %4.2e "үчүн 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

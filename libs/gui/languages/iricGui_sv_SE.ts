@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Välj Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>När du skapar ett nytt projekt måste du välja den lösare som ska användas för beräkning. Välj en lösare och tryck på &quot;OK&quot; -knappen.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>När du skapar ett nytt projekt måste du välja den lösare som ska användas för beräkning. Välj en lösare och tryck på "OK" -knappen.</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Textformat</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinater i statusfältet</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Decimaler:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributwebbläsare</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>Decimaler</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinater:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Värde:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varning</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ett fel uppstod när lösningsdefinitionsfilen skulle laddas i mappen &quot;%1&quot;. Den här lösaren ignoreras. %2</translation>
+        <translation>Ett fel uppstod när lösningsdefinitionsfilen skulle laddas i mappen "%1". Den här lösaren ignoreras. %2</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1441,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Det här projektet verkar öppnas av ett annat iRIC GUI -fönster. Du kan inte öppna en projektmapp från flera GUI -fönster.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Det öppnade projektet kopieras inte till arbetskatalogen och du kommer att tvingas spara de ändringar du gör i detta projekt. Om du vill behålla det aktuella projektet, spara det först i ett annat projekt.</translation>
     </message>
     <message>
@@ -1603,8 +1601,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuellt subfönster stöder inte export av kontursiffror.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">För att exportera formfil, växla &quot;Displayinställning&quot; till &quot;Konturfigur&quot;, inte &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">För att exportera formfil, växla "Displayinställning" till "Konturfigur", inte "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>Inställningsfil (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>För att exportera formfil, byt färgläge till "Diskret läge".</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,7 +2117,7 @@ Option -&gt; Preferences</source>
         <translation>Öppna nytt 2D-efterbehandlingsfönster</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Öppna nytt 2D fågelperspektiv efter bearbetningsfönster</translation>
     </message>
     <message>

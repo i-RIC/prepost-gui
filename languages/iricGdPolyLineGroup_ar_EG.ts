@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>خط %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>أضف سطر جديد (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>تحرير إعداد اللون</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>إعداد عرض مجموعة Polyline</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>اللون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>ملف CSV (خطوط) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>تحرير إعداد العرض</translation>
     </message>
 </context>
 <context>

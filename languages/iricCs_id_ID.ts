@@ -1,5 +1,27 @@
 <TS version="2.1" language="id_ID">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Pilih Koordinat Sistem data yang akan diimpor</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistem koordinasi</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Mengedit...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

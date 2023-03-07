@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Línia %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Afegeix una nova línia (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Edita la configuració del color</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Configuració de visualització del grup de polilínies</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>Fitxer CSV (línies) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Edita la configuració de la pantalla</translation>
     </message>
 </context>
 <context>

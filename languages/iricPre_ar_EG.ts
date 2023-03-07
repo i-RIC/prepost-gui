@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>لا يحتوي ملف CGNS هذا على معلومات حلال. لا يمكننا التحقق مما إذا كان ملف CGNS هذا متوافقًا مع الحل. إذا لم يكن متوافقًا ، فربما يتم استيراد جزء من الشبكة فقط. هل تريد حقًا استيراد الشبكة من هذا الملف؟</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>لا يحتوي هذا الملف على شبكة يمكن استيرادها.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>حدد الشبكة</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>حدد الشبكة للاستيراد.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>إعداد المحاور</translation>
+        <translation type="vanished">إعداد المحاور</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>مرئي</translation>
+        <translation type="vanished">مرئي</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>اللون:</translation>
+        <translation type="vanished">اللون:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>إعداد عرض</translation>
+        <translation type="vanished">إعداد عرض</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">لون الشبكة</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">سمة العقدة</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">سمة الخلية</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">لون مخصص</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">المحاور</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">مرئي</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">اللون:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">تحرير مقياس الاتجاه Z</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">مقياس الاتجاه Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">إدخال مقياس اتجاه Z جديد.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">تحرير إعداد اللون</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>تحرير مقياس الاتجاه Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>إدخال مقياس اتجاه Z جديد.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>تحرير إعداد العرض</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>ارتفاع:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>لون الشبكة</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>سمة العقدة</translation>
+        <source>Cusom Color</source>
+        <translation>لون كوسوم</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>سمة الخلية</translation>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <source>Colormap Setting</source>
+        <translation>إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -170,26 +259,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Color:</source>
-        <translation>اللون:</translation>
-    </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
-    <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>تحرير مقياس الاتجاه Z</translation>
+        <translation>لون:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>مقياس الاتجاه Z</translation>
+        <source>Background Color:</source>
+        <translation>لون الخلفية:</translation>
     </message>
     <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>إدخال مقياس اتجاه Z جديد.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>تحرير إعداد اللون</translation>
+        <source>Z-direction scale:</source>
+        <translation>مقياس اتجاه Z:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>هل أنت متأكد أنك تريد حذف جميع شروط الحدود؟</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>تحرير إعداد العرض</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>إعداد عرض حالة الحدود</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>إعداد الخط للأسماء</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>إختر حالة</translation>
+        <translation type="vanished">إختر حالة</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>يرجى الاختيار من أي حالة في %1 لاستيراد شروط الحساب.</translation>
+        <translation type="vanished">يرجى الاختيار من أي حالة في %1 لاستيراد شروط الحساب.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>بيانات Pointset (&amp;O)</translation>
+        <translation type="vanished">بيانات Pointset (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>الاستيراد من الويب (&amp;I)...</translation>
+        <translation type="vanished">الاستيراد من الويب (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>إعداد Scalarbar...</translation>
+        <translation type="vanished">إعداد Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>استيراد البيانات من %1 باءت بالفشل.</translation>
+        <translation type="vanished">استيراد البيانات من %1 باءت بالفشل.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>لاستيراد البيانات الجغرافية ، حدد النظام الإحداثي أولاً.</translation>
+        <translation type="vanished">لاستيراد البيانات الجغرافية ، حدد النظام الإحداثي أولاً.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>يستورد (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>استيراد الارتفاع من الويب (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>لاستيراد البيانات الجغرافية ، حدد النظام الإحداثي للمشروع أولاً.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>تحرير إعداد التباين (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>تقصير</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>حوار</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>إعداد التباين</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>تمكين الاختلاف</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>التباين لتمريره إلى حلال:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى "افتراضي" ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من "Object Browser". يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام "التباين للتمرير إلى الحل" إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>إعداد عرض سمة خلية الشبكة</translation>
+        <translation type="vanished">إعداد عرض سمة خلية الشبكة</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>إنشاء بيانات سحابة النقطة</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>إعداد عرض سمة خلية الشبكة</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>إعداد عرض سمة عقدة الشبكة</translation>
+        <translation type="vanished">إعداد عرض سمة عقدة الشبكة</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>إنشاء بيانات سحابة النقطة</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>إعداد عرض سمة عقدة الشبكة</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>إعداد أسطورة اللون</translation>
+        <translation type="vanished">إعداد أسطورة اللون</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>إعداد Scalarbar</translation>
+        <translation type="vanished">إعداد Scalarbar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>مرئي</translation>
+        <translation type="vanished">مرئي</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>قيمة</translation>
+        <translation type="vanished">قيمة</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>يحرر...</translation>
+        <translation type="vanished">يحرر...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>مرئي</translation>
+        <translation type="vanished">مرئي</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>عنوان</translation>
+        <translation type="vanished">عنوان</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>عنوان :</translation>
+        <translation type="vanished">عنوان :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>إعداد الخط:</translation>
+        <translation type="vanished">إعداد الخط:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>يحرر...</translation>
+        <translation type="vanished">يحرر...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>عرض التسمية</translation>
+        <translation type="vanished">عرض التسمية</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>عدد الملصقات:</translation>
+        <translation type="vanished">عدد الملصقات:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>صيغة:</translation>
+        <translation type="vanished">صيغة:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>توجيه :</translation>
+        <translation type="vanished">توجيه :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>عمودي</translation>
+        <translation type="vanished">عمودي</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>أفقي</translation>
+        <translation type="vanished">أفقي</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>مقاس</translation>
+        <translation type="vanished">مقاس</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>حدد حجم شريط اللون كمعدل مقابل حجم النافذة.</translation>
+        <translation type="vanished">حدد حجم شريط اللون كمعدل مقابل حجم النافذة.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>عرض :</translation>
+        <translation type="vanished">عرض :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>إذا حددت 1 ، فسيكون عرض شريط اللون هو نفسه لعرض النافذة.</translation>
+        <translation type="vanished">إذا حددت 1 ، فسيكون عرض شريط اللون هو نفسه لعرض النافذة.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>ارتفاع :</translation>
+        <translation type="vanished">ارتفاع :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>إذا حددت 1 ، فسيكون ارتفاع شريط الألوان هو نفسه ارتفاع النافذة.</translation>
+        <translation type="vanished">إذا حددت 1 ، فسيكون ارتفاع شريط الألوان هو نفسه ارتفاع النافذة.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>موقع</translation>
+        <translation type="vanished">موقع</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>حدد الموضع السفلي الأيسر لشريط اللون كمعدل مقابل حجم النافذة.</translation>
+        <translation type="vanished">حدد الموضع السفلي الأيسر لشريط اللون كمعدل مقابل حجم النافذة.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>إذا حددت 0 ، فإن الحافة اليسرى لشريط الألوان تقع عند الحافة اليسرى للنافذة.</translation>
+        <translation type="vanished">إذا حددت 0 ، فإن الحافة اليسرى لشريط الألوان تقع عند الحافة اليسرى للنافذة.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>ص:</translation>
+        <translation type="vanished">ص:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>إذا حددت 0 ، فسيكون أسفل شريط اللون موجودًا في أسفل النافذة.</translation>
+        <translation type="vanished">إذا حددت 0 ، فسيكون أسفل شريط اللون موجودًا في أسفل النافذة.</translation>
     </message>
 </context>
 <context>

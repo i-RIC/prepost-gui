@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Kiekvienam</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>vardas</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Negalite nurodyti to paties stulpelio pavadinimui ir vertei.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Koordinačių sistema:</translation>
     </message>
 </context>
 </TS>

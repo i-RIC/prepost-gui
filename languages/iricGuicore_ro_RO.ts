@@ -1,5 +1,202 @@
 <TS version="2.1" language="ro_RO">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>După valoarea scalară</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Editați | × (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Setare hartă de culori (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>După valoarea scalară</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Formă</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vizibilitate</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Când este selectat</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mereu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titlu</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titlu :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Setarea fontului:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lungime</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titlu:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lungime:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fundal:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Mărime și poziție</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lungime</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Valoare standard:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Domnișoară]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Lungimea pe ecran:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Valoarea minimă de extras:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda lungimii</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>De bază</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Forma săgeată</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Dimensiunea săgeții:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Lățimea liniei:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>În dosar %1, creșterea coordonatelor x pe pixel și creșterea coordonatelor y pe pixel nepotrivite. Este acceptabil, dar poate fi greșit.</translation>
+        <translation type="vanished">În dosar %1, creșterea coordonatelor x pe pixel și creșterea coordonatelor y pe pixel nepotrivite. Este acceptabil, dar poate fi greșit.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Selectați un punct corespunzător din fereastra principală.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Fixați poziția imaginii</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vizibilitate</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Când este selectat</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mereu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titlu</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titlu :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Setarea fontului:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Afișare etichetă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titlu:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Eticheta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fundal:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Mărime și poziție</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorați setarea barei de culoare la import</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Culori</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Setarea barei de culori</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Selectați fișierul de importat</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Setare hartă de culori (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Introduceți numele fișierului de exportat</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>A apărut o eroare la deschidere %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparent</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Vizibilitate</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Când este selectat</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mereu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titlu</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titlu :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Setarea fontului:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Afișare etichetă</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titlu:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Eticheta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fundal:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Mărime și poziție</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Setarea hărții de culori</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Presetari:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorați setarea barei de culoare la import</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Relația dintre valori și culori</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Ajustați automat în funcție de intervalul de valori</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Configurați manual</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Interval de valori</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automat</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Culori</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adăuga (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Elimina (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Umpleți zona inferioară</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Umpleți zona superioară</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Intrerupator</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Setarea barei de culori</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Selectați fișierul de importat</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Setare hartă de culori (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Introduceți numele fișierului de exportat</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>A apărut o eroare la deschidere %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Vă rugăm să selectați articolul de aplicat)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Comutați la modul discret</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Comutați la modul de gradare</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Avertizare</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Valoare minimă</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Valoarea maximă</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparent</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Când treceți la modul de gradare, valorile sunt setate la valoarea de mijloc a fiecărei secțiuni.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Comutați la dialogul de mod discret</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Numărul de culori de inserat la fiecare secțiune</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prelevarea de probe</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Toate vârfurile</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Rata de eșantionare:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Specificați numărul de vârfuri</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Selectați un punct din dialogul Georeference.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Șterge puncte</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Setarea conturului</translation>
+        <translation type="vanished">Setarea conturului</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Poziţie</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Marja orizontală:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Marja verticală:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Lăţime:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Înălţime:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Distanța de la stânga</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Distanța de la dreapta</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Distanța de sus</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Distanța de jos</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Vă rugăm să selectați din ce fișier CGNS să citiți grila.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Fișierul CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Widget netratat în ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Salveaza si inchide (&amp;S)</translation>
+        <translation type="vanished">Salveaza si inchide (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>A apărut o eroare la salvare.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Deschiderea fișierului CGNS a eșuat.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selectați Fișier</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Numele fișierului trebuie să conțină numai caractere englezești.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selectați Fișier</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Numele fișierului trebuie să conțină numai caractere englezești.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Selectați Director</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Numele folderului trebuie să conțină numai caractere englezești.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editați | ×</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Nu există date de importat.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Selectați șablonul de importat)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Avertizare</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Conținutul din zona de text este suprascris cu șablonul</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Ascunde detaliile (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>A apărut o eroare la încărcarea rezultatului calculului.</translation>
+        <translation type="vanished">A apărut o eroare la încărcarea rezultatului calculului.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>A apărut o eroare la salvare %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Se salvează rezultatul calculului ca fișiere TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>A apărut o eroare la încărcarea rezultatului calculului.</translation>
+        <translation type="vanished">A apărut o eroare la încărcarea rezultatului calculului.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atributul grilei de înălțime nu este definit pentru tipul grilei %1. Funcțiile I / O ale rețelei, funcțiile de creare a rețelei pot să nu funcționeze corect pentru aceste tipuri de rețele.</translation>
+        <translation type="vanished">Atributul grilei de înălțime nu este definit pentru tipul grilei %1. Funcțiile I / O ale rețelei, funcțiile de creare a rețelei pot să nu funcționeze corect pentru aceste tipuri de rețele.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Soluţie %1 deja exista.</translation>
+        <translation type="vanished">Soluţie %1 deja exista.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Fișierul CGNS al cărui nume conține alte caractere decât alfabete și numere nu poate fi importat.</translation>
+        <translation type="vanished">Fișierul CGNS al cărui nume conține alte caractere decât alfabete și numere nu poate fi importat.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Salvarea fișierului proiect nu a reușit.</translation>
+        <translation type="vanished">%1 Salvarea fișierului proiect nu a reușit.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Acest fișier de proiect nu poate fi citit, deoarece a fost creat de iRIC prea vechi (versiunea %1 ).</translation>
+        <translation type="vanished">Acest fișier de proiect nu poate fi citit, deoarece a fost creat de iRIC prea vechi (versiunea %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Acest fișier este pentru rezolvator %1 %2. Nu este compatibil cu soluția pe care o utilizați, deci poate că importul acestui fișier va eșua. Doriți cu adevărat să importați acest fișier?</translation>
+        <translation type="vanished">Acest fișier este pentru rezolvator %1 %2. Nu este compatibil cu soluția pe care o utilizați, deci poate că importul acestui fișier va eșua. Doriți cu adevărat să importați acest fișier?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Sistemul de coordonate nu este selectat.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>A apărut o eroare la deschiderea fișierului CGNS în fișierul de proiect: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Copierea imaginii %1 la %2 a eșuat.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Format de afișare a orei</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Fus orar:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Regiunea plină</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Regiunea activă</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Regiunea personalizată</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Sunt în:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Celule în care variația lungimii celulei de-a lungul direcției j depășește %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prelevarea de probe</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Toate vârfurile</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Rata de eșantionare:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-direcția</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>Direcția J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prelevarea de probe</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Toate vârfurile</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Rata de eșantionare:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-direcția</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>Direcția J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>Direcția K</translation>
     </message>
 </context>
 <context>

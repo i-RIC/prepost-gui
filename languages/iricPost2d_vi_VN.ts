@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Cài đặt mũi tên</translation>
+        <translation type="vanished">Cài đặt mũi tên</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Giá trị vật lý:</translation>
+        <translation type="vanished">Giá trị vật lý:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Chiều dài</translation>
+        <translation type="vanished">Chiều dài</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Tự động</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Giá trị tiêu chuẩn:</translation>
+        <translation type="vanished">Giá trị tiêu chuẩn:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[bệnh đa xơ cứng]</translation>
+        <translation type="vanished">[bệnh đa xơ cứng]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Độ dài trên màn hình:</translation>
+        <translation type="vanished">Độ dài trên màn hình:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Giá trị tối thiểu để rút ra:</translation>
+        <translation type="vanished">Giá trị tối thiểu để rút ra:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Lấy mẫu</translation>
+        <translation type="vanished">Lấy mẫu</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tất cả các đỉnh</translation>
+        <translation type="vanished">Tất cả các đỉnh</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tỷ lệ lấy mẫu:</translation>
+        <translation type="vanished">Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Tôi hướng</translation>
+        <translation type="vanished">Tôi hướng</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>Hướng J</translation>
+        <translation type="vanished">Hướng J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Theo giá trị vô hướng</translation>
+        <translation type="vanished">Theo giá trị vô hướng</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Hình mũi tên</translation>
+        <translation type="vanished">Hình mũi tên</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Kích thước mũi tên:</translation>
+        <translation type="vanished">Kích thước mũi tên:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Thiết lập khu vực (&amp;R)</translation>
+        <translation type="vanished">Thiết lập khu vực (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Cài đặt mũi tên</translation>
+        <translation type="vanished">Cài đặt mũi tên</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Giá trị vật lý:</translation>
+        <translation type="vanished">Giá trị vật lý:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Chiều dài</translation>
+        <translation type="vanished">Chiều dài</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Tự động</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Giá trị tiêu chuẩn:</translation>
+        <translation type="vanished">Giá trị tiêu chuẩn:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[bệnh đa xơ cứng]</translation>
+        <translation type="vanished">[bệnh đa xơ cứng]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Độ dài trên màn hình:</translation>
+        <translation type="vanished">Độ dài trên màn hình:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Giá trị tối thiểu để rút ra:</translation>
+        <translation type="vanished">Giá trị tối thiểu để rút ra:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Lấy mẫu</translation>
+        <translation type="vanished">Lấy mẫu</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tất cả các đỉnh</translation>
+        <translation type="vanished">Tất cả các đỉnh</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tỷ lệ lấy mẫu:</translation>
+        <translation type="vanished">Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Chỉ định số đỉnh</translation>
+        <translation type="vanished">Chỉ định số đỉnh</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Theo giá trị vô hướng</translation>
+        <translation type="vanished">Theo giá trị vô hướng</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Hình mũi tên</translation>
+        <translation type="vanished">Hình mũi tên</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Kích thước mũi tên:</translation>
+        <translation type="vanished">Kích thước mũi tên:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Thiết lập khu vực (&amp;R)</translation>
+        <translation type="vanished">Thiết lập khu vực (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Vô hướng (trung tâm tế bào)</translation>
+        <translation type="vanished">Vô hướng (trung tâm tế bào)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Cập nhật cài đặt đường viền</translation>
+        <translation type="vanished">Cập nhật cài đặt đường viền</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Để xuất KML cho chế độ xem phố, hãy hiển thị với Hình đường viền.</translation>
+        <translation type="vanished">Để xuất KML cho chế độ xem phố, hãy hiển thị với Hình đường viền.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Để xuất KML cho chế độ xem phố, phạm vi giá trị phải được thiết lập theo cách thủ công.</translation>
+        <translation type="vanished">Để xuất KML cho chế độ xem phố, phạm vi giá trị phải được thiết lập theo cách thủ công.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Để xuất KML cho chế độ xem phố, hệ thống tọa độ phải được chỉ định.</translation>
+        <translation type="vanished">Để xuất KML cho chế độ xem phố, hệ thống tọa độ phải được chỉ định.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Cài đặt vô hướng (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>hộp thoại</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Có thể xác định tối đa bốn đường bao.</translation>
+        <translation type="vanished">Có thể xác định tối đa bốn đường bao.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Cài đặt vô hướng</translation>
+        <translation type="vanished">Cài đặt vô hướng</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Giá trị vật lý:</translation>
+        <translation type="vanished">Giá trị vật lý:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Thiết lập màn hình</translation>
+        <translation type="vanished">Thiết lập màn hình</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Thiết lập khu vực (&amp;R)</translation>
+        <translation type="vanished">Thiết lập khu vực (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Đối với phạm vi giá trị, giá trị tối đa nhỏ hơn giá trị tối thiểu.</translation>
+        <translation type="vanished">Đối với phạm vi giá trị, giá trị tối đa nhỏ hơn giá trị tối thiểu.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Dữ liệu địa lý</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Thông tin tham khảo</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Cài đặt hiển thị hình dạng lưới</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +715,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Cập nhật cài đặt đường viền</translation>
+        <translation type="vanished">Cập nhật cài đặt đường viền</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Để xuất KML cho chế độ xem phố, hãy hiển thị với Hình đường viền.</translation>
+        <translation type="vanished">Để xuất KML cho chế độ xem phố, hãy hiển thị với Hình đường viền.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,18 +727,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Để xuất KML cho chế độ xem phố, phạm vi giá trị phải được thiết lập theo cách thủ công.</translation>
+        <translation type="vanished">Để xuất KML cho chế độ xem phố, phạm vi giá trị phải được thiết lập theo cách thủ công.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Để xuất KML cho chế độ xem phố, hệ thống tọa độ phải được chỉ định.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Cài đặt vô hướng (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Để xuất KML cho chế độ xem phố, Chế độ màu cần phải là "Chế độ rời rạc"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>hộp thoại</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Vô hướng (nút)</translation>
+        <translation type="vanished">Vô hướng (nút)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Vô hướng</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Để xuất tệp hình dạng, hãy chuyển cài đặt màu sang "Chế độ rời rạc".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Thay đổi giá trị vật lý của mũi tên</translation>
+        <translation type="vanished">Thay đổi giá trị vật lý của mũi tên</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Cập nhật cài đặt mũi tên</translation>
+        <translation type="vanished">Cập nhật cài đặt mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Cài đặt mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Vùng đất</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Cập nhật cài đặt mũi tên</translation>
+        <translation type="vanished">Cập nhật cài đặt mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Cài đặt mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Vùng đất</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Thiết lập vô hướng hạt</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Chỉnh sửa cài đặt hạt</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hạt</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Hiển thị trình duyệt thuộc tính</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Thay đổi chọn thuộc tính vectơ</translation>
+        <translation type="vanished">Thay đổi chọn thuộc tính vectơ</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Cập nhật cài đặt vectơ</translation>
+        <translation type="vanished">Cập nhật cài đặt vectơ</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Thay đổi giá trị vật lý mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Cài đặt Vector hạt</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Chỉnh sửa cài đặt đa giác</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt đa giác</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Cài đặt hiển thị dữ liệu đa giác</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1504,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Cập nhật cài đặt hình dạng lưới</translation>
+        <translation type="vanished">Cập nhật cài đặt hình dạng lưới</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1314,19 +1512,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Cập nhật cài đặt vô hướng của hạt</translation>
+        <translation type="vanished">Cập nhật cài đặt vô hướng của hạt</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Tạo đường viền</translation>
+        <translation type="vanished">Tạo đường viền</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Tạo đường viền ô</translation>
+        <translation type="vanished">Tạo đường viền ô</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Cập nhật cài đặt vô hướng đa giác</translation>
+        <translation type="vanished">Cập nhật cài đặt vô hướng đa giác</translation>
     </message>
 </context>
 </TS>

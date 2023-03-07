@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Les dades de secció transversal es generen mitjançant dades del núvol de punts. Si voleu ajustar de nou la posició de la secció transversal i les dades del mapa de punts, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
+        <translation type="vanished">Les dades de secció transversal es generen mitjançant dades del núvol de punts. Si voleu ajustar de nou la posició de la secció transversal i les dades del mapa de punts, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Generar dades del núvol de punts</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. En algunes regions, les dades no existien a les dades del núvol de punts i es va assignar el valor 0 per a aquests punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Relació d'aspecte: 1 /</translation>
+        <translation type="vanished">Relació d'aspecte: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Dades de secció transversal</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Relació d'aspecte (V/H): 1/</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Relació d'aspecte: 1 / %1</translation>
+        <translation type="vanished">Relació d'aspecte: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Edita la configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Relació d'aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Noms de seccions transversals</translation>
     </message>
 </context>
 <context>

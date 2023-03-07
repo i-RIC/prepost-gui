@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Gluggi fyrir fugl og augu frá rist</translation>
     </message>
 </context>
@@ -210,66 +208,66 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished">Breyta Z-áttavigt</translation>
+        <translation>Breyta Z-átt mælikvarða</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished">Settu inn nýjan Z-áttavigt.</translation>
+        <translation>Settu inn nýja Z-átt kvarða.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta skjástillingu</translation>
     </message>
     <message>
         <source>Elevation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hæð:</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished">Ristarlitur</translation>
+        <translation>Grid Litur</translation>
     </message>
     <message>
         <source>Cusom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cusom litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Litur eftir gildi</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Litakortsstilling</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+        <translation>Flytja inn (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished">Ása</translation>
+        <translation>Ásar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Sýnilegt</translation>
+        <translation>Sýnilegt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Litur:</translation>
+        <translation>Litur:</translation>
     </message>
     <message>
         <source>Background Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunns litur:</translation>
     </message>
     <message>
         <source>Z-direction scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-átt kvarði:</translation>
     </message>
 </context>
 <context>
@@ -358,7 +356,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta skjástillingu</translation>
     </message>
 </context>
 <context>
@@ -465,11 +463,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBcGroupSettingDialog</name>
     <message>
         <source>Boundary Condition Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Stilling mörkaskilyrða</translation>
     </message>
     <message>
         <source>Font setting for names</source>
-        <translation type="unfinished"></translation>
+        <translation>Leturstilling fyrir nöfn</translation>
     </message>
 </context>
 <context>
@@ -663,8 +661,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 eru ekki kortlagðar eftir að þeim var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Stilling marka &quot;%1&quot;er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Stilling marka "%1"er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -874,53 +872,53 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit &amp;Variation Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta tilbrigðisstillingu (&amp;V)...</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjálfgefið</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Valmynd</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+        <translation>Flytja inn (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
     <message>
         <source>Variation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilbrigði stilling</translation>
     </message>
     <message>
         <source>Enable variation</source>
-        <translation type="unfinished"></translation>
+        <translation>Virkja afbrigði</translation>
     </message>
     <message>
         <source>Variation to pass to solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbrigði til að senda til leysa:</translation>
     </message>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation type="unfinished"></translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Athugið: Þegar afbrigði er virkt er tilbrigði sem heitir "Sjálfgefið" búið til og öll landfræðileg gögn eru færð til þess. Þú getur bætt við, endurnefna, fjarlægt afbrigði úr "Object Browser". Þú getur flutt, afritað landfræðileg gögn á milli afbrigða. Gögnin fyrir töflueiginleika sem eru búin til úr afbrigðinu sem þú velur með "Afbrigði til að senda til leysir" eru send til leysir. Þú getur undirbúið mörg afbrigði, skipt um það sem á að senda til leysisins og gengið úr skugga um áhrif mismunarins.</translation>
     </message>
 </context>
 <context>
@@ -1064,15 +1062,15 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">Stilling skjáa eiginleika ristafars</translation>
+        <translation>Skjástillingar fyrir eiginleika hnitakerfis</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+        <translation>Flytja inn (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1135,9 +1133,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Framkvæma (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1156,12 +1154,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Kortlagningu landfræðilegra gagna lokið</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Eiginleiki ristarinnar &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Eiginleiki ristarinnar "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Skilyrðin &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Skilyrðin "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
 </context>
 <context>
@@ -1179,19 +1177,19 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Sjálfvirk</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handbók</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
         <translation>Eignakortlagning er aðeins framkvæmd þegar þú velur valmyndina „Framkvæma“ handvirkt.</translation>
     </message>
     <message>
@@ -1327,15 +1325,15 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished">Stilling hnútareiginleika birtingarstillingar</translation>
+        <translation>Skjástillingar fyrir hnút eigind</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+        <translation>Flytja inn (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1609,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Setja upp skalastiku (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Opnaðu fuglaskoðunargluggann (&amp;B)</translation>
     </message>
     <message>

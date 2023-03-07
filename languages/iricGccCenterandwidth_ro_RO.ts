@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Eliminați vârful liniei centrale</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Arata setarile</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

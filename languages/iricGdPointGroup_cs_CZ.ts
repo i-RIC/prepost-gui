@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Směřovat (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Přidat nový bod (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Úprava nastavení barev</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Nastavení zobrazení skupiny bodů</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost bodu:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Při čtení hodnoty "hodnoty" v řádku došlo k chybě %1. „hodnota“ by měla být skutečná hodnota, ale „ %2 “je specifikováno.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Upravit nastavení zobrazení</translation>
     </message>
 </context>
 <context>

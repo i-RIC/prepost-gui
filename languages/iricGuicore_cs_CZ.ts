@@ -1,5 +1,202 @@
 <TS version="2.1" language="cs_CZ">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Podle skalární hodnoty</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Upravit (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Nastavení barevné mapy (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Podle skalární hodnoty</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Formulář</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Viditelnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Při výběru</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vždy</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikdy</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Název :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavení písma:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Délka</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formát:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Délka:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Pozadí:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost a poloha</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Délka</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standardní hodnota:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[slečna]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Délka na obrazovce:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimální hodnota k vykreslení:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Délka Legenda</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Základní</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Tvar šipky</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Velikost šípu:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Šířka čáry:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>V souboru %1, přírůstek souřadnic x na pixel a přírůstek souřadnic y na pixel nesouhlasí. Je to přijatelné, ale může to být špatně.</translation>
+        <translation type="vanished">V souboru %1, přírůstek souřadnic x na pixel a přírůstek souřadnic y na pixel nesouhlasí. Je to přijatelné, ale může to být špatně.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Vyberte odpovídající bod v hlavním okně.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Opravit pozici obrázku</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Viditelnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Při výběru</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vždy</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikdy</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Název :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavení písma:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Zobrazení štítků</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Označení:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Pozadí:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost a poloha</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Při importu ignorujte nastavení barevného pruhu</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Barvy</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Nastavení barevného pruhu</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Vyberte soubor k importu</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavení barevné mapy (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Zadejte název souboru pro export</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Při otevírání došlo k chybě %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Průhledný</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Viditelnost</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Při výběru</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vždy</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikdy</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Název :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Nastavení písma:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Zobrazení štítků</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formát:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Označení:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Pozadí:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost a poloha</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavení barevné mapy</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Předvolby:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Při importu ignorujte nastavení barevného pruhu</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Vztah mezi hodnotami a barvami</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Automaticky nastavit na základě rozsahu hodnot</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Nastavení ručně</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rozsah hodnot</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatický</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Barvy</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Vyplňte spodní oblast</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Vyplňte horní oblast</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Přepínač</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Nastavení barevného pruhu</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Vyberte soubor k importu</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavení barevné mapy (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Zadejte název souboru pro export</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Při otevírání došlo k chybě %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Vyberte položku, kterou chcete použít)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Přepněte do diskrétního režimu</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Přepněte do režimu gradace</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varování</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Min. hodnota</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Maximální hodnota</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Průhledný</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Přepněte do dialogového okna diskrétního režimu</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Počet barev pro vložení do každé sekce</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorkování</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Všechny vrcholy</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Vzorkovací frekvence:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Zadejte počet vrcholů</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Vyberte bod v dialogu Georeference.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Smazat body</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Nastavení obrysu</translation>
+        <translation type="vanished">Nastavení obrysu</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozice</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Horizontální okraj:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Vertikální okraj:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Šířka:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Výška:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Vzdálenost zleva</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Vzdálenost zprava</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Vzdálenost od vrcholu</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Vzdálenost ode dna</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Vyberte, ze kterého souboru CGNS chcete číst mřížku.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Soubor CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Neošetřený widget v ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Uložit a zavřít (&amp;S)</translation>
+        <translation type="vanished">Uložit a zavřít (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Při ukládání došlo k chybě.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Otevření souboru CGNS se nezdařilo.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Zvolte soubor</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Název souboru musí obsahovat pouze anglické znaky.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Zvolte soubor</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Název souboru musí obsahovat pouze anglické znaky.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Vyberte adresář</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Název složky musí obsahovat pouze anglické znaky.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Upravit</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Žádná data k importu.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Vyberte šablonu k importu)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varování</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Obsah v textové oblasti se přepíše šablonou</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Skrýt detaily (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Při načítání výsledku výpočtu došlo k chybě.</translation>
+        <translation type="vanished">Při načítání výsledku výpočtu došlo k chybě.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Při ukládání došlo k chybě %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Ukládání výsledku výpočtu jako souborů TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Při načítání výsledku výpočtu došlo k chybě.</translation>
+        <translation type="vanished">Při načítání výsledku výpočtu došlo k chybě.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atribut výškové mřížky není pro typ mřížky definován %1. Funkce I/O mřížky, funkce vytváření mřížky nemusí pro tyto typy mřížky fungovat správně.</translation>
+        <translation type="vanished">Atribut výškové mřížky není pro typ mřížky definován %1. Funkce I/O mřížky, funkce vytváření mřížky nemusí pro tyto typy mřížky fungovat správně.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Řešení %1 již existuje.</translation>
+        <translation type="vanished">Řešení %1 již existuje.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Soubor CGNS, jehož název obsahuje jiné znaky než abecedy a čísla, nelze importovat.</translation>
+        <translation type="vanished">Soubor CGNS, jehož název obsahuje jiné znaky než abecedy a čísla, nelze importovat.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Uložení souboru projektu se nezdařilo.</translation>
+        <translation type="vanished">%1 Uložení souboru projektu se nezdařilo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Tento soubor projektu nelze přečíst, protože byl vytvořen příliš starým iRIC (verze %1 ).</translation>
+        <translation type="vanished">Tento soubor projektu nelze přečíst, protože byl vytvořen příliš starým iRIC (verze %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Tento soubor je pro řešitele %1 %2. Není kompatibilní s řešením, které používáte, takže import tohoto souboru možná selže. Opravdu chcete importovat tento soubor?</translation>
+        <translation type="vanished">Tento soubor je pro řešitele %1 %2. Není kompatibilní s řešením, které používáte, takže import tohoto souboru možná selže. Opravdu chcete importovat tento soubor?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Souřadnicový systém není vybrán.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Při otevírání souboru CGNS v souboru projektu došlo k chybě: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kopírování obrázku %1 na %2 nepodařilo.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Formát zobrazení času</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Časové pásmo:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Úplný kraj</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktivní region</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Vlastní oblast</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Jdu do toho:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Buňky, kde kolísá délka buňky ve směru j %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorkování</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Všechny vrcholy</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Vzorkovací frekvence:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-směr</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>Směr J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Vzorkování</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Všechny vrcholy</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Vzorkovací frekvence:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-směr</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>Směr J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>Směr K</translation>
     </message>
 </context>
 <context>

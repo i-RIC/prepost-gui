@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Piešimo nustatymas (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Šrifto nustatymas (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Piešimo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Šrifto nustatymas</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramos pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendos:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ašis:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Varnelės:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ašis:</translation>
     </message>
 </context>
 <context>

@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Phạm vi trục Y bên phải không hợp lệ.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Giây</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Phút</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Giờ</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Ngày</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Dòng</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>giây</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>phút</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>giờ</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>ngày</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Xuất CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Cài đặt phông chữ (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Bên ngoài</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Cài đặt phông chữ biểu đồ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tiêu đề biểu đồ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Truyền thuyết:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>trục X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tiêu đề:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Bọ ve:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>trục Y:</translation>
     </message>
 </context>
 <context>

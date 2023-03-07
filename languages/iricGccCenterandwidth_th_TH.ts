@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>เส้นพิกัด</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>การตั้งค่าการแสดงผล</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

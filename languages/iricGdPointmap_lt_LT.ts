@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Teksto failas (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Teksto failas (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Tekstinis failas (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Failo pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinačių sistema</translation>
     </message>
 </context>
 <context>

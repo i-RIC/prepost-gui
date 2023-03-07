@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Kontuuri seadistus (lahtri keskel)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Vahemik</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Kontuuri seadistamine (lahtri keskus)</translation>
+        <translation type="vanished">Kontuuri seadistamine (lahtri keskus)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Väärtus:</translation>
+        <translation type="vanished">Väärtus:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Piirkonnad</translation>
+        <translation type="vanished">Piirkonnad</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisama (&amp;A)</translation>
+        <translation type="vanished">Lisama (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eemalda (&amp;R)</translation>
+        <translation type="vanished">Eemalda (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Vahemik %1</translation>
+        <translation type="vanished">Vahemik %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Määrata saab maksimaalselt neli kontuuri.</translation>
+        <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisama (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eemalda (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Vahemik %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Nägu</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontuur</translation>
+        <translation type="vanished">Kontuur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontuuri seadistamine</translation>
+        <translation type="vanished">Kontuuri seadistamine</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Kontuuri seadistus (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Nägu %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Kontuuride seadistus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Näod</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontuuri seadistamine</translation>
+        <translation type="vanished">Kontuuri seadistamine</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Füüsiline väärtus:</translation>
+        <translation type="vanished">Füüsiline väärtus:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Näod</translation>
+        <translation type="vanished">Näod</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisama (&amp;A)</translation>
+        <translation type="vanished">Lisama (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eemalda (&amp;R)</translation>
+        <translation type="vanished">Eemalda (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Nägu %1</translation>
+        <translation type="vanished">Nägu %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Määrata saab maksimaalselt neli kontuuri.</translation>
+        <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objekti brauseri üksuse muutmine</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisama (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eemalda (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Nägu %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suund</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Vahemik</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Ma olen sees</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Ma Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Lubatud</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Võrgu kuju</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ruudustiku kuju kuvaseade</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Nägu</translation>
+        <translation type="vanished">Nägu</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Nägu %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Nägu %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Noolte seadistus</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Põhiline</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Pikkuse legend</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Näod</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lisama (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eemalda (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Nägu %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Pikkuse legend</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Määrata saab maksimaalselt neli noolt.</translation>
+        <translation type="vanished">Määrata saab maksimaalselt neli noolt.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Osakeste skalaarseade</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värvikaardi seadistus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Muuda osakeste seadistust</translation>
+        <translation type="vanished">Muuda osakeste seadistust</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektori atribuut Valige Muuda</translation>
+        <translation type="vanished">Vektori atribuut Valige Muuda</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Uuenda vektori seadistust</translation>
+        <translation type="vanished">Uuenda vektori seadistust</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Noole füüsilise väärtuse muutus</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Osakeste vektori seadistus</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Värskenda</translation>
+        <translation type="vanished">Värskenda</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Loo kontuur</translation>
+        <translation type="vanished">Loo kontuur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Uuenda ruudustiku kuju seadistust</translation>
+        <translation type="vanished">Uuenda ruudustiku kuju seadistust</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Värskenda osakeste skalaari seadistust</translation>
+        <translation type="vanished">Värskenda osakeste skalaari seadistust</translation>
     </message>
 </context>
 </TS>

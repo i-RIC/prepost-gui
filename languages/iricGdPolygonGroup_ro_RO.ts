@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Poligoane (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Adăugați un nou poligon (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Editare setări de culoare</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Setare de afișare a grupului de poligon</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>A apărut o eroare la citirea liniei %1. „valoare” ar trebui să fie aceeași pentru liniile în care valorile „pid” sunt aceleași.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Editați setarea afișajului</translation>
     </message>
 </context>
 <context>

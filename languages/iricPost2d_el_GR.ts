@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ρύθμιση βέλους</translation>
+        <translation type="vanished">Ρύθμιση βέλους</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Φυσική αξία:</translation>
+        <translation type="vanished">Φυσική αξία:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Μήκος</translation>
+        <translation type="vanished">Μήκος</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Αυτο</translation>
+        <translation type="vanished">Αυτο</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Τυπική τιμή:</translation>
+        <translation type="vanished">Τυπική τιμή:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Κυρία]</translation>
+        <translation type="vanished">[Κυρία]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Μήκος στην οθόνη:</translation>
+        <translation type="vanished">Μήκος στην οθόνη:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[εικονοκύτταρο]</translation>
+        <translation type="vanished">[εικονοκύτταρο]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Ελάχιστη τιμή για κλήρωση:</translation>
+        <translation type="vanished">Ελάχιστη τιμή για κλήρωση:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Δειγματοληψία</translation>
+        <translation type="vanished">Δειγματοληψία</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Όλες οι κορυφές</translation>
+        <translation type="vanished">Όλες οι κορυφές</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Ρυθμός δειγματοληψίας:</translation>
+        <translation type="vanished">Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-κατεύθυνση</translation>
+        <translation type="vanished">I-κατεύθυνση</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-διεύθυνση</translation>
+        <translation type="vanished">J-διεύθυνση</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Με κλιμακωτή αξία</translation>
+        <translation type="vanished">Με κλιμακωτή αξία</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Σχήμα βέλους</translation>
+        <translation type="vanished">Σχήμα βέλους</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Μέγεθος βέλους:</translation>
+        <translation type="vanished">Μέγεθος βέλους:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Ρύθμιση περιοχής (&amp;R)</translation>
+        <translation type="vanished">Ρύθμιση περιοχής (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ρύθμιση βέλους</translation>
+        <translation type="vanished">Ρύθμιση βέλους</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Φυσική αξία:</translation>
+        <translation type="vanished">Φυσική αξία:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Μήκος</translation>
+        <translation type="vanished">Μήκος</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Αυτο</translation>
+        <translation type="vanished">Αυτο</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Τυπική τιμή:</translation>
+        <translation type="vanished">Τυπική τιμή:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Κυρία]</translation>
+        <translation type="vanished">[Κυρία]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Μήκος στην οθόνη:</translation>
+        <translation type="vanished">Μήκος στην οθόνη:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[εικονοκύτταρο]</translation>
+        <translation type="vanished">[εικονοκύτταρο]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Ελάχιστη τιμή για κλήρωση:</translation>
+        <translation type="vanished">Ελάχιστη τιμή για κλήρωση:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Δειγματοληψία</translation>
+        <translation type="vanished">Δειγματοληψία</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Όλες οι κορυφές</translation>
+        <translation type="vanished">Όλες οι κορυφές</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Ρυθμός δειγματοληψίας:</translation>
+        <translation type="vanished">Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Καθορίστε τον αριθμό των κορυφών</translation>
+        <translation type="vanished">Καθορίστε τον αριθμό των κορυφών</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Με κλιμακωτή αξία</translation>
+        <translation type="vanished">Με κλιμακωτή αξία</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Σχήμα βέλους</translation>
+        <translation type="vanished">Σχήμα βέλους</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Μέγεθος βέλους:</translation>
+        <translation type="vanished">Μέγεθος βέλους:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Ρύθμιση περιοχής (&amp;R)</translation>
+        <translation type="vanished">Ρύθμιση περιοχής (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (κέντρο κυττάρων)</translation>
+        <translation type="vanished">Scalar (κέντρο κυττάρων)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ενημέρωση ρύθμισης περιγράμματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης περιγράμματος</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Για εξαγωγή KML για προβολή δρόμου, εμφανίστε με το σχήμα περιγράμματος.</translation>
+        <translation type="vanished">Για εξαγωγή KML για προβολή δρόμου, εμφανίστε με το σχήμα περιγράμματος.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Για την εξαγωγή KML για προβολή δρόμου, το εύρος τιμών θα πρέπει να ρυθμιστεί με μη αυτόματο τρόπο.</translation>
+        <translation type="vanished">Για την εξαγωγή KML για προβολή δρόμου, το εύρος τιμών θα πρέπει να ρυθμιστεί με μη αυτόματο τρόπο.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Για εξαγωγή KML για προβολή δρόμου, πρέπει να καθοριστεί το σύστημα συντεταγμένων.</translation>
+        <translation type="vanished">Για εξαγωγή KML για προβολή δρόμου, πρέπει να καθοριστεί το σύστημα συντεταγμένων.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ρύθμιση Scalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Διάλογος</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+        <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Scalar Setting</translation>
+        <translation type="vanished">Scalar Setting</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Φυσική αξία:</translation>
+        <translation type="vanished">Φυσική αξία:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ρύθμιση οθόνης</translation>
+        <translation type="vanished">Ρύθμιση οθόνης</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Ρύθμιση περιοχής (&amp;R)</translation>
+        <translation type="vanished">Ρύθμιση περιοχής (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Για το εύρος τιμών, η μέγιστη τιμή είναι μικρότερη από την ελάχιστη τιμή.</translation>
+        <translation type="vanished">Για το εύρος τιμών, η μέγιστη τιμή είναι μικρότερη από την ελάχιστη τιμή.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Γεωγραφικά δεδομένα</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Πηγή πληροφοριών</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης σχήματος πλέγματος</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ενημέρωση ρύθμισης περιγράμματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης περιγράμματος</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Για εξαγωγή KML για προβολή δρόμου, εμφανίστε με το σχήμα περιγράμματος.</translation>
+        <translation type="vanished">Για εξαγωγή KML για προβολή δρόμου, εμφανίστε με το σχήμα περιγράμματος.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Για την εξαγωγή KML για προβολή δρόμου, το εύρος τιμών θα πρέπει να ρυθμιστεί με μη αυτόματο τρόπο.</translation>
+        <translation type="vanished">Για την εξαγωγή KML για προβολή δρόμου, το εύρος τιμών θα πρέπει να ρυθμιστεί με μη αυτόματο τρόπο.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Για εξαγωγή KML για προβολή δρόμου, πρέπει να καθοριστεί το σύστημα συντεταγμένων.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ρύθμιση Scalar (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Για να εξαγάγετε KML για προβολή δρόμου, το Colormode πρέπει να είναι "Discrete Mode"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Διάλογος</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Scalar (κόμβος)</translation>
+        <translation type="vanished">Scalar (κόμβος)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Βαθμωτό μέγεθος</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε τη ρύθμιση χρώματος σε "Διακριτή λειτουργία".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Βέλος Αλλαγή φυσικής αξίας</translation>
+        <translation type="vanished">Βέλος Αλλαγή φυσικής αξίας</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ενημέρωση ρύθμισης βέλους</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης βέλους</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Ρύθμιση βέλους</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ενημέρωση ρύθμισης βέλους</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης βέλους</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Ρύθμιση βέλους</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Ρύθμιση βαθμωτών σωματιδίων</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Επεξεργασία ρύθμισης σωματιδίων</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης σωματιδίων</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Εμφάνιση προγράμματος περιήγησης χαρακτηριστικών</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Διανυσματικό χαρακτηριστικό Επιλέξτε Αλλαγή</translation>
+        <translation type="vanished">Διανυσματικό χαρακτηριστικό Επιλέξτε Αλλαγή</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Ενημέρωση διανυσματικών ρυθμίσεων</translation>
+        <translation type="vanished">Ενημέρωση διανυσματικών ρυθμίσεων</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Βέλος Αλλαγή φυσικής αξίας</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Ρύθμιση διάνυσμα σωματιδίων</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Επεξεργασία ρύθμισης πολυγώνου</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης πολυγώνου</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης δεδομένων πολυγώνου</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Δημιουργήστε περίγραμμα κυττάρων</translation>
+        <translation type="vanished">Δημιουργήστε περίγραμμα κυττάρων</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Δημιουργία περιγράμματος</translation>
+        <translation type="vanished">Δημιουργία περιγράμματος</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Ενημέρωση Scalar Setting Particles</translation>
+        <translation type="vanished">Ενημέρωση Scalar Setting Particles</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Ενημέρωση κλιμακωτής ρύθμισης πολυγώνου</translation>
+        <translation type="vanished">Ενημέρωση κλιμακωτής ρύθμισης πολυγώνου</translation>
     </message>
 </context>
 </TS>

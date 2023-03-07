@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>입자 설정</translation>
+        <translation type="vanished">입자 설정</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>크기:</translation>
+        <translation type="vanished">크기:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>입자 스칼라 설정</translation>
+        <translation type="vanished">입자 스칼라 설정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>속성 값에 따른 색상 지정</translation>
+        <translation type="vanished">속성 값에 따른 색상 지정</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>기인하다:</translation>
+        <translation type="vanished">기인하다:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>크기:</translation>
+        <translation type="vanished">크기:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>속성 값:</translation>
+        <translation type="vanished">속성 값:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>모든 입자</translation>
+        <translation type="vanished">모든 입자</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>입자 수 지정</translation>
+        <translation type="vanished">입자 수 지정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>다각형 설정</translation>
+        <translation type="vanished">다각형 설정</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>다각형 설정</translation>
+        <translation type="vanished">다각형 설정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>속성 값에 따른 색상 지정</translation>
+        <translation type="vanished">속성 값에 따른 색상 지정</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>기인하다:</translation>
+        <translation type="vanished">기인하다:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>선폭</translation>
+        <translation type="vanished">선폭</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>대상 결과 선택</translation>
     </message>
 </context>
 <context>

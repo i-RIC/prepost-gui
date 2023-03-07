@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>सेंटर लाइन वर्टेक्स निकालें</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>डिस्प्ले सेटिंग</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

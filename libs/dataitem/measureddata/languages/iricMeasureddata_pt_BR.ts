@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -43,47 +41,47 @@
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo de Configuração de Exibição de Pontos</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Configuracao de exibicao</translation>
+        <translation>Configuração de Exibição</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontos</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Superfície</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Cor</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor por valor</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuração do mapa de cores</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportar (&amp;E)...</translation>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Dimensao do ponto :</translation>
+        <translation>Tamanho do Ponto:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor customizada</translation>
     </message>
 </context>
 <context>
@@ -136,7 +134,7 @@
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuração da seta de dados medidos</translation>
     </message>
 </context>
 <context>

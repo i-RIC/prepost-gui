@@ -1,5 +1,27 @@
 <TS version="2.1" language="lt_LT">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Pasirinkite importuotinų duomenų koordinačių sistemą</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinačių sistema</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Redaguoti...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

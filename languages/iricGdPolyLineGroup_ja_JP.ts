@@ -133,6 +133,18 @@
         <source>Line%1</source>
         <translation>ライン%1</translation>
     </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="vanished">新しい %1 の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>新しい線の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>表示色設定</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupAttributeBrowser</name>
@@ -180,15 +192,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">色</translation>
+        <translation>色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">値により自動設定</translation>
+        <translation>値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">色を指定</translation>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>折れ線グループ表示設定</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 <context>
@@ -365,6 +385,13 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation type="vanished">すべて解除 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>表示設定の編集</translation>
     </message>
 </context>
 <context>

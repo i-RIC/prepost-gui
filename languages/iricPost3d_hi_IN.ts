@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>कंटूर सेटिंग (सेल सेंटर)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">कंटूर सेटिंग (सेल सेंटर)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>मूल्य:</translation>
+        <translation type="vanished">मूल्य:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>क्षेत्रों</translation>
+        <translation type="vanished">क्षेत्रों</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>श्रेणी %1</translation>
+        <translation type="vanished">श्रेणी %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+        <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>श्रेणी %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>चेहरा</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>कंटूर</translation>
+        <translation type="vanished">कंटूर</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">कंटूर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>कंटूर सेटिंग (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>चेहरा %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>कंटूर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>चेहरे के</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>कंटूर सेटिंग</translation>
+        <translation type="vanished">कंटूर सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>चेहरे के</translation>
+        <translation type="vanished">चेहरे के</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>चेहरा %1</translation>
+        <translation type="vanished">चेहरा %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+        <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>ऑब्जेक्ट ब्राउज़र आइटम बदलें</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>चेहरा %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>दिशा</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>मैं</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>जे</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>क</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>मैं भी शामिल</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>मैं मैक्स</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>जे मिन</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>जे मैक्स</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>के मिन</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>के मैक्स</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>सक्रिय</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>ग्रिड आकार</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>ग्रिड आकार प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>चेहरा</translation>
+        <translation type="vanished">चेहरा</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>चेहरा %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>चेहरा %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>तीर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>लंबाई किंवदंती</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>चेहरे के</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>चेहरा %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>लंबाई किंवदंती</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>अधिकतम चार तीर परिभाषित किए जा सकते हैं।</translation>
+        <translation type="vanished">अधिकतम चार तीर परिभाषित किए जा सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>कण स्केलर सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>कण सेटिंग संपादित करें</translation>
+        <translation type="vanished">कण सेटिंग संपादित करें</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>वेक्टर विशेषता परिवर्तन का चयन करें</translation>
+        <translation type="vanished">वेक्टर विशेषता परिवर्तन का चयन करें</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>वेक्टर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">वेक्टर सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>एरो फिजिकल वैल्यू चेंज</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>कण वेक्टर सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>अद्यतन</translation>
+        <translation type="vanished">अद्यतन</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>कंटूर बनाएं</translation>
+        <translation type="vanished">कंटूर बनाएं</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>ग्रिड आकार सेटिंग अपडेट करें</translation>
+        <translation type="vanished">ग्रिड आकार सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>अद्यतन कण अदिश सेटिंग</translation>
+        <translation type="vanished">अद्यतन कण अदिश सेटिंग</translation>
     </message>
 </context>
 </TS>

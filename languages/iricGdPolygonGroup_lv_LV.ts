@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Daudzstūri (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Pievienot jaunu daudzstūri (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Krāsu iestatījumu rediģēšana</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Daudzstūru grupas displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Lasot rindiņu, radās kļūda %1. “Vērtībai” jābūt vienādai rindās, kur “pid” vērtības ir vienādas.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Rediģēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>

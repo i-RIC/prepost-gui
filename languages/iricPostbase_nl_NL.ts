@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Deeltjesinstelling</translation>
+        <translation type="vanished">Deeltjesinstelling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Maat:</translation>
+        <translation type="vanished">Maat:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Deeltjes scalaire instelling</translation>
+        <translation type="vanished">Deeltjes scalaire instelling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Kleur op attribuutwaarde</translation>
+        <translation type="vanished">Kleur op attribuutwaarde</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribuut:</translation>
+        <translation type="vanished">Attribuut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Maat:</translation>
+        <translation type="vanished">Maat:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pijlinstelling</translation>
+        <translation type="vanished">Pijlinstelling</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Attribuutwaarde:</translation>
+        <translation type="vanished">Attribuutwaarde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengte</translation>
+        <translation type="vanished">Lengte</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standaard waarde:</translation>
+        <translation type="vanished">Standaard waarde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mevrouw]</translation>
+        <translation type="vanished">[Mevrouw]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengte op scherm:</translation>
+        <translation type="vanished">Lengte op scherm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimale waarde om te tekenen:</translation>
+        <translation type="vanished">Minimale waarde om te tekenen:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sampling</translation>
+        <translation type="vanished">Sampling</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Alle deeltjes</translation>
+        <translation type="vanished">Alle deeltjes</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Bemonsteringsfrequentie:</translation>
+        <translation type="vanished">Bemonsteringsfrequentie:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Specificeer aantal deeltjes</translation>
+        <translation type="vanished">Specificeer aantal deeltjes</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pijlvorm</translation>
+        <translation type="vanished">Pijlvorm</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pijl grootte:</translation>
+        <translation type="vanished">Pijl grootte:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Veelhoekinstelling</translation>
+        <translation type="vanished">Veelhoekinstelling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Veelhoekinstelling</translation>
+        <translation type="vanished">Veelhoekinstelling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Kleur op attribuutwaarde</translation>
+        <translation type="vanished">Kleur op attribuutwaarde</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribuut:</translation>
+        <translation type="vanished">Attribuut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Lijnbreedte</translation>
+        <translation type="vanished">Lijnbreedte</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Selecteer Doelresultaat</translation>
     </message>
 </context>
 <context>

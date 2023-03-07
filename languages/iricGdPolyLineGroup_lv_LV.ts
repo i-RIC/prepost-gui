@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Līnija %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Pievienot jaunu rindu (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Krāsu iestatījumu rediģēšana</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Polyline Group displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV fails (rindas) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Rediģēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>

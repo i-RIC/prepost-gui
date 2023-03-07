@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Kendu erdiko lerroaren erpina</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Bistaratzeko ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Τα παρακάτω αρχεία θα εισαχθούν. Είναι εντάξει?</translation>
+        <translation type="vanished">Τα παρακάτω αρχεία θα εισαχθούν. Είναι εντάξει?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Επιλέξτε τα αρχεία που θα εισαχθούν.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Επιλογή όλων (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Αποεπιλογή όλων (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Το χρονικό διάστημα μεταξύ των επιλεγμένων αρχείων δεν είναι το ίδιο.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Το όνομα αρχείου δεν ταιριάζει με το μοτίβο</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ζώνη ώρας:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Τιμές διαστάσεων για χρονική αναντιστοιχία.</translation>
+        <translation type="vanished">Τιμές διαστάσεων για χρονική αναντιστοιχία.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Το σύστημα συντεταγμένων δεν έχει καθοριστεί για %1 Το Επιλέξτε χειροκίνητα το σύστημα συντεταγμένων.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Τα δεδομένα ράστερ χρονοσειρών έχουν ήδη εισαχθεί. Εάν θέλετε να εισαγάγετε άλλα δεδομένα, διαγράψτε πρώτα τα δεδομένα που έχουν ήδη εισαχθεί.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Ανοιγμα %1 απέτυχε.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Τιμές διαστάσεων για %1 αναντιστοιχία.</translation>
+        <translation type="vanished">Τιμές διαστάσεων για %1 αναντιστοιχία.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάλυση του ορισμού ώρας: %1</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά την ανάλυση του ορισμού ώρας: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 δεν έχει δεδομένα γεωγραφικού πλάτους, γεωγραφικού πλάτους ούτε x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Τα δεδομένα ράστερ χρονοσειρών έχουν ήδη εισαχθεί. Εάν θέλετε να εισαγάγετε άλλα δεδομένα, διαγράψτε πρώτα τα δεδομένα που έχουν ήδη εισαχθεί.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Αρχική ώρα:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ζώνη ώρας:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Πληροφορίες</translation>
+        <translation type="vanished">Πληροφορίες</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 αρχεία στο φάκελο %2 εισάγονται.</translation>
+        <translation type="vanished">%1 αρχεία στο φάκελο %2 εισάγονται.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Τιμές διαστάσεων για χρονική αναντιστοιχία.</translation>
+        <translation type="vanished">Τιμές διαστάσεων για χρονική αναντιστοιχία.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Τα δεδομένα ράστερ χρονοσειρών έχουν ήδη εισαχθεί. Εάν θέλετε να εισαγάγετε άλλα δεδομένα, διαγράψτε πρώτα τα δεδομένα που έχουν ήδη εισαχθεί.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την εισαγωγή δεδομένων από τη μετατροπή %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1.</translation>
     </message>
 </context>
 </TS>

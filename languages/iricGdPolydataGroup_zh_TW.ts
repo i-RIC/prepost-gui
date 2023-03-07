@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>對於每個</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>您不能為 Name 和 Value 指定相同的列。</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>坐標系：</translation>
     </message>
 </context>
 </TS>

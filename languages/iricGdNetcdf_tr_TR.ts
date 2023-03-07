@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Aşağıdaki dosyalar içe aktarılacaktır. Tamam mı?</translation>
+        <translation type="vanished">Aşağıdaki dosyalar içe aktarılacaktır. Tamam mı?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Lütfen içe aktarılacak dosyaları seçin.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Hepsini seç (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Hiçbirini seçme (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Uyarı</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Seçilen dosyalar arasındaki zaman aralığı aynı değil.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Dosya adı kalıpla eşleşmiyor</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Saat dilimi:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Zaman uyuşmazlığı için boyut değerleri.</translation>
+        <translation type="vanished">Zaman uyuşmazlığı için boyut değerleri.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinat sistemi için belirtilmemiş %1. Lütfen koordinat sistemini manuel olarak seçin.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Zaman serisi tarama verileri zaten içe aktarıldı. Diğer verileri içe aktarmak istiyorsanız, lütfen önce içe aktarılan verileri silin.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>açılış %1 arızalı.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>için boyut değerleri %1 uyumsuzluk.</translation>
+        <translation type="vanished">için boyut değerleri %1 uyumsuzluk.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Zaman tanımı ayrıştırılırken hata oluştu: %1</translation>
+        <translation type="vanished">Zaman tanımı ayrıştırılırken hata oluştu: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 boylam, enlem veya x, y verisine sahip değildir.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Zaman serisi tarama verileri zaten içe aktarıldı. Diğer verileri içe aktarmak istiyorsanız, lütfen önce içe aktarılan verileri silin.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Orijinal zaman:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Saat dilimi:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Bilgi</translation>
+        <translation type="vanished">Bilgi</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 klasördeki dosyalar %2 ithal edilmektedir.</translation>
+        <translation type="vanished">%1 klasördeki dosyalar %2 ithal edilmektedir.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Zaman uyuşmazlığı için boyut değerleri.</translation>
+        <translation type="vanished">Zaman uyuşmazlığı için boyut değerleri.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Zaman serisi tarama verileri zaten içe aktarıldı. Diğer verileri içe aktarmak istiyorsanız, lütfen önce içe aktarılan verileri silin.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Dönüştürülen veriler içe aktarılırken hata oluştu %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Açılırken hata oluştu %1.</translation>
     </message>
 </context>
 </TS>

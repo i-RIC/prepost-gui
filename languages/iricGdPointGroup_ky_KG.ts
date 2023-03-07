@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Пункт (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Жаңы чекит кошуу (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Color Setting Edit</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Point Group Display Setting</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>"Value" маанисин сапта окуп жатканда ката кетти %1. "баалуулук" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Дисплей жөндөөсүн түзөтүү</translation>
     </message>
 </context>
 <context>

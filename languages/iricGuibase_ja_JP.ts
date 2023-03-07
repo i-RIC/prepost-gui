@@ -275,6 +275,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>格子線</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>外枠のみ</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>格子インデックス</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -715,6 +746,10 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;カスタム書式は、以下の記号を使って定義します。&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;年: YYYY, YY&lt;/li&gt;&lt;li&gt;月: M, MM, MMM, MMMM (MMM は Jan など, MMMM は January など)&lt;/li&gt;&lt;li&gt;日: D, DD, DDD, DDDD (DDD は Mon など, DDDD は Monday など)&lt;/li&gt;&lt;li&gt;時間: H, HH, h, hh (h, hh は AM / PM 表示用)&lt;/li&gt;&lt;li&gt;分: m, mm&lt;/li&gt;&lt;li&gt;秒: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>タイムゾーンを表示</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -745,7 +780,7 @@
     <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
-        <translation type="obsolete">お待ちください...</translation>
+        <translation>お待ちください...</translation>
     </message>
 </context>
 <context>

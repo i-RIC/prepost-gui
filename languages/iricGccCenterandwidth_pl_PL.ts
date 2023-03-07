@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Usuń wierzchołek linii środkowej</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ustawienia wyświetlania</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

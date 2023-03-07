@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Konturinställning (cellcentrum)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportera (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Räckvidd</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Konturinställning (cellens centrum)</translation>
+        <translation type="vanished">Konturinställning (cellens centrum)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Värde:</translation>
+        <translation type="vanished">Värde:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regioner</translation>
+        <translation type="vanished">Regioner</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Räckvidd %1</translation>
+        <translation type="vanished">Räckvidd %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Högst fyra konturer kan definieras.</translation>
+        <translation type="vanished">Högst fyra konturer kan definieras.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lägg till (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Avlägsna (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Räckvidd %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Ansikte</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontur</translation>
+        <translation type="vanished">Kontur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Konturinställning</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Konturinställning (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikte %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Konturinställning</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportera (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Ansikten</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Konturinställning</translation>
+        <translation type="vanished">Konturinställning</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysiskt värde:</translation>
+        <translation type="vanished">Fysiskt värde:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Ansikten</translation>
+        <translation type="vanished">Ansikten</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Ansikte %1</translation>
+        <translation type="vanished">Ansikte %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Högst fyra konturer kan definieras.</translation>
+        <translation type="vanished">Högst fyra konturer kan definieras.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objektbläddrare Ändra objekt</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lägg till (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Avlägsna (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikte %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Riktning</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>jag</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Räckvidd</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Jag är i</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Jag Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Aktiverad</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Rutform</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Visningsinställning för rutnätsform</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Ansikte</translation>
+        <translation type="vanished">Ansikte</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikte %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikte %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pilinställning</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grundläggande</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Längd Legend</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Ansikten</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lägg till (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Avlägsna (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Ansikte %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Längd Legend</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Högst fyra pilar kan definieras.</translation>
+        <translation type="vanished">Högst fyra pilar kan definieras.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Partiklar skalär inställning</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Inställning för färgkarta</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportera (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstorlek:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Anpassad färg</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Redigera partikelinställning</translation>
+        <translation type="vanished">Redigera partikelinställning</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorattribut Välj Ändra</translation>
+        <translation type="vanished">Vektorattribut Välj Ändra</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Uppdatera vektorinställning</translation>
+        <translation type="vanished">Uppdatera vektorinställning</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Pil Fysisk värdeförändring</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Partiklar vektor inställning</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Uppdatering</translation>
+        <translation type="vanished">Uppdatering</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Skapa kontur</translation>
+        <translation type="vanished">Skapa kontur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Uppdatera inställning av rutnätform</translation>
+        <translation type="vanished">Uppdatera inställning av rutnätform</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Uppdatera partiklar skalärinställning</translation>
+        <translation type="vanished">Uppdatera partiklar skalärinställning</translation>
     </message>
 </context>
 </TS>

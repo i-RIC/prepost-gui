@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Kontúrbeállítás (cella közepén)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Hatótávolság</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Kontúr beállítás (cellaközpont)</translation>
+        <translation type="vanished">Kontúr beállítás (cellaközpont)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Érték:</translation>
+        <translation type="vanished">Érték:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Régiók</translation>
+        <translation type="vanished">Régiók</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Hozzáadás (&amp;A)</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eltávolítás (&amp;R)</translation>
+        <translation type="vanished">Eltávolítás (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Hatótávolság %1</translation>
+        <translation type="vanished">Hatótávolság %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Legfeljebb négy kontúr definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Hozzáadás (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Távolítsa el (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Hatótávolság %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Arc</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Körvonal</translation>
+        <translation type="vanished">Körvonal</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Kontúr beállítása</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Kontúr beállítása (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Arc %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Kontúr beállítása</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Arcok</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontúr beállítása</translation>
+        <translation type="vanished">Kontúr beállítása</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Arcok</translation>
+        <translation type="vanished">Arcok</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Hozzáadás (&amp;A)</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eltávolítás (&amp;R)</translation>
+        <translation type="vanished">Eltávolítás (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Arc %1</translation>
+        <translation type="vanished">Arc %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Legfeljebb négy kontúr definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objektum böngésző elem módosítása</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Hozzáadás (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Távolítsa el (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Arc %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Irány</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>én</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Hatótávolság</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Én benne vagyok</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Én Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Engedélyezve</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Rács alakja</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Rács alakzat megjelenítési beállítása</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Arc</translation>
+        <translation type="vanished">Arc</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Arc %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Arc %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nyilak beállítása</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Alapvető</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Hossz Legend</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Arcok</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Hozzáadás (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Távolítsa el (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Arc %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Hossz Legend</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Legfeljebb négy nyíl definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy nyíl definiálható.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Részecskék skaláris beállítása</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Színtérkép beállítása</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pontméret:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Részecske -beállítás szerkesztése</translation>
+        <translation type="vanished">Részecske -beállítás szerkesztése</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektoros attribútum Válassza a Módosítás lehetőséget</translation>
+        <translation type="vanished">Vektoros attribútum Válassza a Módosítás lehetőséget</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vektorbeállítás frissítése</translation>
+        <translation type="vanished">Vektorbeállítás frissítése</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow fizikai érték változás</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Részecskék vektor beállítása</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Frissítés</translation>
+        <translation type="vanished">Frissítés</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kontúr létrehozása</translation>
+        <translation type="vanished">Kontúr létrehozása</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Frissítse a rács alakzat beállítását</translation>
+        <translation type="vanished">Frissítse a rács alakzat beállítását</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Frissítse a részecskék skalár beállítását</translation>
+        <translation type="vanished">Frissítse a részecskék skalár beállítását</translation>
     </message>
 </context>
 </TS>

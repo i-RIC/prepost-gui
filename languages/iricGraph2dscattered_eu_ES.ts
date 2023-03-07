@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Marraztu ezarpena (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Letra-tipoaren ezarpena (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Marraztu ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Letra-tipoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Kondairak:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ardatza:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Izenburua:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tikak:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ardatza:</translation>
     </message>
 </context>
 <context>

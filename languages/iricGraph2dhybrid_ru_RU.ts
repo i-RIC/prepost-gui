@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Диапазон правой оси Y недопустим.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Секунды</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Минуты</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Часы</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Дни</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Линии</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>секунды</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>минуты</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>часы</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>дни</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV экспорт (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Настройка шрифта (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Внешний</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Настройка шрифта диаграммы</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Название диаграммы:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенды:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Ось X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Тики:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Ось Y:</translation>
     </message>
 </context>
 <context>

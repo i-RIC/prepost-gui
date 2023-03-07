@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Чечүүчү тандоо</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Жаңы долбоор түзгөндө, эсептөө үчүн колдонуу үчүн чечимди тандоо керек. Сураныч, чечимди тандап, &quot;OK&quot; баскычын басыңыз.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Жаңы долбоор түзгөндө, эсептөө үчүн колдонуу үчүн чечимди тандоо керек. Сураныч, чечимди тандап, "OK" баскычын басыңыз.</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст форматы</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Статус тилкесиндеги координаттар</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ондук орундар:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут браузери</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>Ондук орундар</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттары:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Чечүүчү аныктоочу файлды папкага жүктөө учурунда ката кетти &quot;%1&quot;. Бул чечүүчү эске алынбайт. %2</translation>
+        <translation>Чечүүчү аныктоочу файлды папкага жүктөө учурунда ката кетти "%1". Бул чечүүчү эске алынбайт. %2</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1441,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Бул долбоор башка iRIC GUI терезеси менен ачылган окшойт. Сиз бир нече GUI терезелеринен долбоордун папкасын ача албайсыз.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Ачылган долбоор жумуш каталогуна көчүрүлбөйт жана сиз бул долбоорго киргизилген өзгөртүүлөрдү сактоого аргасыз болосуз. Эгерде сиз учурдагы долбоорду сактап калгыңыз келсе, алгач аны башка долбоорго сактап коюңуз.</translation>
     </message>
     <message>
@@ -1603,8 +1601,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Учурда активдүү суб-терезе контур фигурасын экспорттоону колдобойт.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Форма файлын экспорттоо үчүн, &quot;Дисплейдин жөндөөсүн&quot; &quot;Түс кыркасына&quot; же &quot;Изолиндерге&quot; эмес, &quot;Контур фигурасына&quot; которуңуз.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>Орнотуу файлы (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Форма файлын экспорттоо үчүн Түс режимин "Дискреттүү режимге" которуңуз.</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,8 +2117,8 @@ Option -&gt; Preferences</source>
         <translation>Жаңы 2D иштетүүдөн кийинки терезени ачыңыз</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Жаңы 2D Bird&apos;s Eye Post-Processing терезесин ачыңыз</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Жаңы 2D Bird's Eye Post-Processing терезесин ачыңыз</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

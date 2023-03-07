@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -43,47 +41,47 @@
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta Görüntüleme Ayarı İletişim Kutusu</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ekran ayarı</translation>
+        <translation>Ekran ayarı</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puanlar</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Yüzey</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>değere göre renk</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Haritası Ayarı</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">İhracat (&amp;E)...</translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puan Boyutu:</translation>
+        <translation>Puan Boyutu:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel renk</translation>
     </message>
 </context>
 <context>
@@ -136,7 +134,7 @@
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ölçülen Veri Ok Ayarı</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -43,47 +41,47 @@
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstillingsdialog for visning af punkter</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Displayindstilling</translation>
+        <translation>Displayindstilling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Overflade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farve</translation>
+        <translation>Farve</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve efter værdi</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af farvekort</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importere (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Eksport (&amp;E)...</translation>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstørrelse:</translation>
+        <translation>Punktstørrelse:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Brugerdefineret farve</translation>
     </message>
 </context>
 <context>
@@ -136,7 +134,7 @@
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling for målte data</translation>
     </message>
 </context>
 <context>

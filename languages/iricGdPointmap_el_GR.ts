@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Αρχείο κειμένου (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Αρχείο κειμένου (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Αρχείο κειμένου (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Ονομα αρχείου:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Σύστημα Συντεταγμένων</translation>
     </message>
 </context>
 <context>

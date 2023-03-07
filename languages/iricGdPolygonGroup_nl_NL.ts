@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Veelhoeken (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Nieuwe polygoon toevoegen (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Kleurinstelling bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Weergave-instelling polygoongroep</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "value" moet hetzelfde zijn voor regels waar de "pid"-waarden hetzelfde zijn.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Weergave-instelling bewerken</translation>
     </message>
 </context>
 <context>

@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Следующие файлы будут импортированы. Это нормально?</translation>
+        <translation type="vanished">Следующие файлы будут импортированы. Это нормально?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Пожалуйста, выберите файлы для импорта.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Выбрать все (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Убрать выделение со всего (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Предупреждение</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Временной интервал между выбранными файлами не совпадает.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Имя файла не соответствует шаблону</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Часовой пояс:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Значения размеров для рассогласования по времени.</translation>
+        <translation type="vanished">Значения размеров для рассогласования по времени.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Система координат не указана для %1. Пожалуйста, выберите систему координат вручную.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Растровые данные временных рядов уже импортированы. Если вы хотите импортировать другие данные, сначала удалите уже импортированные данные.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Открытие %1 не удалось.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Значения размеров для %1 несоответствие.</translation>
+        <translation type="vanished">Значения размеров для %1 несоответствие.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Произошла ошибка при анализе определения времени: %1</translation>
+        <translation type="vanished">Произошла ошибка при анализе определения времени: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 не имеет данных о долготе, широте и x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Растровые данные временных рядов уже импортированы. Если вы хотите импортировать другие данные, сначала удалите уже импортированные данные.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Исходное время:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Часовой пояс:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Информация</translation>
+        <translation type="vanished">Информация</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 файлы в папке %2 импортируются.</translation>
+        <translation type="vanished">%1 файлы в папке %2 импортируются.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Значения размеров для рассогласования по времени.</translation>
+        <translation type="vanished">Значения размеров для рассогласования по времени.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Растровые данные временных рядов уже импортированы. Если вы хотите импортировать другие данные, сначала удалите уже импортированные данные.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Произошла ошибка при импорте данных, преобразованных из %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Произошла ошибка при открытии %1.</translation>
     </message>
 </context>
 </TS>

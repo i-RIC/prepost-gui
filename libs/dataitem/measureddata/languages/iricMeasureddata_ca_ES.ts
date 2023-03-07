@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -43,47 +41,47 @@
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diàleg de configuració de visualització de punts</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Configuració de la pantalla</translation>
+        <translation>Configuració de la pantalla</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Punts</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Superfície</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Color per valor</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del mapa de colors</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exporta (&amp;E)...</translation>
+        <translation>Exporta (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Mida del punt:</translation>
+        <translation>Mida del punt:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalitzat</translation>
     </message>
 </context>
 <context>
@@ -114,7 +112,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -136,7 +134,7 @@
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la fletxa de dades mesurades</translation>
     </message>
 </context>
 <context>

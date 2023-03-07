@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Линия %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Добавить новую строку (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Изменение настройки цвета</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Настройка отображения группы полилиний</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина линии:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV файл (строки) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Изменить настройку дисплея</translation>
     </message>
 </context>
 <context>

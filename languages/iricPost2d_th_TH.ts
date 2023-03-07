@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ตั้งค่าลูกศร</translation>
+        <translation type="vanished">ตั้งค่าลูกศร</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>มูลค่าทางกายภาพ:</translation>
+        <translation type="vanished">มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>ความยาว</translation>
+        <translation type="vanished">ความยาว</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>รถยนต์</translation>
+        <translation type="vanished">รถยนต์</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>ค่ามาตรฐาน:</translation>
+        <translation type="vanished">ค่ามาตรฐาน:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[นางสาว]</translation>
+        <translation type="vanished">[นางสาว]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>ความยาวบนหน้าจอ:</translation>
+        <translation type="vanished">ความยาวบนหน้าจอ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[พิกเซล]</translation>
+        <translation type="vanished">[พิกเซล]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>มูลค่าขั้นต่ำในการวาด:</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำในการวาด:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>สุ่มตัวอย่าง</translation>
+        <translation type="vanished">สุ่มตัวอย่าง</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>จุดยอดทั้งหมด</translation>
+        <translation type="vanished">จุดยอดทั้งหมด</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+        <translation type="vanished">อัตราการสุ่มตัวอย่าง:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-ทิศทาง</translation>
+        <translation type="vanished">I-ทิศทาง</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-ทิศทาง</translation>
+        <translation type="vanished">J-ทิศทาง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>ตามค่าสเกลาร์</translation>
+        <translation type="vanished">ตามค่าสเกลาร์</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>รูปร่างลูกศร</translation>
+        <translation type="vanished">รูปร่างลูกศร</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>ขนาดลูกศร:</translation>
+        <translation type="vanished">ขนาดลูกศร:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>การตั้งค่าภูมิภาค (&amp;R)</translation>
+        <translation type="vanished">การตั้งค่าภูมิภาค (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ตั้งค่าลูกศร</translation>
+        <translation type="vanished">ตั้งค่าลูกศร</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>มูลค่าทางกายภาพ:</translation>
+        <translation type="vanished">มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>ความยาว</translation>
+        <translation type="vanished">ความยาว</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>รถยนต์</translation>
+        <translation type="vanished">รถยนต์</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>ค่ามาตรฐาน:</translation>
+        <translation type="vanished">ค่ามาตรฐาน:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[นางสาว]</translation>
+        <translation type="vanished">[นางสาว]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>ความยาวบนหน้าจอ:</translation>
+        <translation type="vanished">ความยาวบนหน้าจอ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[พิกเซล]</translation>
+        <translation type="vanished">[พิกเซล]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>มูลค่าขั้นต่ำในการวาด:</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำในการวาด:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>สุ่มตัวอย่าง</translation>
+        <translation type="vanished">สุ่มตัวอย่าง</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>จุดยอดทั้งหมด</translation>
+        <translation type="vanished">จุดยอดทั้งหมด</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+        <translation type="vanished">อัตราการสุ่มตัวอย่าง:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>ระบุจำนวนจุดยอด</translation>
+        <translation type="vanished">ระบุจำนวนจุดยอด</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>ตามค่าสเกลาร์</translation>
+        <translation type="vanished">ตามค่าสเกลาร์</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>รูปร่างลูกศร</translation>
+        <translation type="vanished">รูปร่างลูกศร</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>ขนาดลูกศร:</translation>
+        <translation type="vanished">ขนาดลูกศร:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>การตั้งค่าภูมิภาค (&amp;R)</translation>
+        <translation type="vanished">การตั้งค่าภูมิภาค (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>สเกลาร์ (ศูนย์เซลล์)</translation>
+        <translation type="vanished">สเกลาร์ (ศูนย์เซลล์)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>อัปเดตการตั้งค่าคอนทัวร์</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าคอนทัวร์</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>หากต้องการส่งออก KML สำหรับมุมมองถนน ให้แสดงด้วย Contour Figure</translation>
+        <translation type="vanished">หากต้องการส่งออก KML สำหรับมุมมองถนน ให้แสดงด้วย Contour Figure</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>หากต้องการส่งออก KML สำหรับมุมมองถนน ควรตั้งค่าช่วงค่าด้วยตนเอง</translation>
+        <translation type="vanished">หากต้องการส่งออก KML สำหรับมุมมองถนน ควรตั้งค่าช่วงค่าด้วยตนเอง</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>ในการส่งออก KML สำหรับมุมมองถนน ควรระบุระบบพิกัด</translation>
+        <translation type="vanished">ในการส่งออก KML สำหรับมุมมองถนน ควรระบุระบบพิกัด</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>กล่องโต้ตอบ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+        <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>การตั้งค่าสเกลาร์</translation>
+        <translation type="vanished">การตั้งค่าสเกลาร์</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>มูลค่าทางกายภาพ:</translation>
+        <translation type="vanished">มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>การตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">การตั้งค่าการแสดงผล</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>การตั้งค่าภูมิภาค (&amp;R)</translation>
+        <translation type="vanished">การตั้งค่าภูมิภาค (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>สำหรับช่วงค่า ค่าสูงสุดจะน้อยกว่าค่าต่ำสุด</translation>
+        <translation type="vanished">สำหรับช่วงค่า ค่าสูงสุดจะน้อยกว่าค่าต่ำสุด</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>ข้อมูลทางภูมิศาสตร์</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>ข้อมูลอ้างอิง</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>การตั้งค่าการแสดงรูปร่างตาราง</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +715,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>อัปเดตการตั้งค่าคอนทัวร์</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าคอนทัวร์</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>หากต้องการส่งออก KML สำหรับมุมมองถนน ให้แสดงด้วย Contour Figure</translation>
+        <translation type="vanished">หากต้องการส่งออก KML สำหรับมุมมองถนน ให้แสดงด้วย Contour Figure</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,18 +727,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>หากต้องการส่งออก KML สำหรับมุมมองถนน ควรตั้งค่าช่วงค่าด้วยตนเอง</translation>
+        <translation type="vanished">หากต้องการส่งออก KML สำหรับมุมมองถนน ควรตั้งค่าช่วงค่าด้วยตนเอง</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ในการส่งออก KML สำหรับมุมมองถนน ควรระบุระบบพิกัด</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น "โหมดแยก"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>กล่องโต้ตอบ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>สเกลาร์ (โหนด)</translation>
+        <translation type="vanished">สเกลาร์ (โหนด)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>สเกลาร์</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนการตั้งค่าสีเป็น "โหมดแยก"</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>การเปลี่ยนแปลงมูลค่าทางกายภาพของลูกศร</translation>
+        <translation type="vanished">การเปลี่ยนแปลงมูลค่าทางกายภาพของลูกศร</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>อัปเดตการตั้งค่าลูกศร</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าลูกศร</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>การตั้งค่าลูกศร</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>อัปเดตการตั้งค่าลูกศร</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าลูกศร</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>การตั้งค่าลูกศร</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>การตั้งค่าเกลาอนุภาค</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามมูลค่า</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>การตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดจุด:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>แก้ไขการตั้งค่าอนุภาค</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าอนุภาค</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>แสดงแอตทริบิวต์เบราว์เซอร์</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>แอตทริบิวต์เวกเตอร์เลือกการเปลี่ยนแปลง</translation>
+        <translation type="vanished">แอตทริบิวต์เวกเตอร์เลือกการเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>อัปเดตการตั้งค่าเวกเตอร์</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าเวกเตอร์</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow การเปลี่ยนแปลงค่าทางกายภาพ</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>การตั้งค่าเวกเตอร์อนุภาค</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>แก้ไขการตั้งค่ารูปหลายเหลี่ยม</translation>
+        <translation type="vanished">แก้ไขการตั้งค่ารูปหลายเหลี่ยม</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>การตั้งค่าการแสดงข้อมูลรูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามมูลค่า</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>การตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1504,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>อัปเดตการตั้งค่ารูปร่างกริด</translation>
+        <translation type="vanished">อัปเดตการตั้งค่ารูปร่างกริด</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1314,19 +1512,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>อัปเดตการตั้งค่าสเกลาร์อนุภาค</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าสเกลาร์อนุภาค</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>สร้างคอนทัวร์</translation>
+        <translation type="vanished">สร้างคอนทัวร์</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>สร้างโครงร่างเซลล์</translation>
+        <translation type="vanished">สร้างโครงร่างเซลล์</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>อัปเดตการตั้งค่าสเกลาร์รูปหลายเหลี่ยม</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าสเกลาร์รูปหลายเหลี่ยม</translation>
     </message>
 </context>
 </TS>

@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Budou importovány následující soubory. Je to v pořádku?</translation>
+        <translation type="vanished">Budou importovány následující soubory. Je to v pořádku?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Vyberte soubory, které chcete importovat.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Vybrat vše (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Odznačit vše (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varování</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Časový interval mezi vybranými soubory není stejný.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Název souboru neodpovídá vzoru</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Časové pásmo:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Hodnoty dimenzí pro časový nesoulad.</translation>
+        <translation type="vanished">Hodnoty dimenzí pro časový nesoulad.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Souřadnicový systém není určen pro %1. Vyberte souřadný systém ručně.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Otevírací %1 nepodařilo.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Hodnoty dimenzí pro %1 nesoulad.</translation>
+        <translation type="vanished">Hodnoty dimenzí pro %1 nesoulad.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Při definici času analýzy došlo k chybě: %1</translation>
+        <translation type="vanished">Při definici času analýzy došlo k chybě: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nemá data zeměpisné délky, šířky ani x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Původní čas:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Časové pásmo:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informace</translation>
+        <translation type="vanished">Informace</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 soubory ve složce %2 jsou importovány.</translation>
+        <translation type="vanished">%1 soubory ve složce %2 jsou importovány.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Hodnoty dimenzí pro časový nesoulad.</translation>
+        <translation type="vanished">Hodnoty dimenzí pro časový nesoulad.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rastrová data časové řady jsou již importována. Chcete-li importovat další data, smažte nejprve data, která již byla importována.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Při importu dat převedených z došlo k chybě %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Při otevírání došlo k chybě %1.</translation>
     </message>
 </context>
 </TS>

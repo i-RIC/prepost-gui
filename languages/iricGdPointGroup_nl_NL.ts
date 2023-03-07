@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Punt (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Nieuw punt toevoegen (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Kleurinstelling bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Instelling puntgroepweergave</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Weergave-instelling bewerken</translation>
     </message>
 </context>
 <context>

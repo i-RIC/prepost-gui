@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalaariasetus</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Mitattu arvo:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Pistenäytön asetusikkuna</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Näyttöasetus</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Pisteet</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Pinta</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
-        <translation>Pisteen koko:</translation>
+        <translation>Pistekoko:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalaariasetus</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Mitattu arvo:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Pisteen koko:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Arvoalueella maksimiarvo on pienempi kuin miniarvo.</translation>
+        <translation type="vanished">Arvoalueella maksimiarvo on pienempi kuin miniarvo.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Päivitä nuoliasetus</translation>
+        <translation type="vanished">Päivitä nuoliasetus</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Mitattujen tietojen nuoliasetus</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nuoliasetus</translation>
+        <translation type="vanished">Nuoliasetus</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyysinen arvo:</translation>
+        <translation type="vanished">Fyysinen arvo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pituus</translation>
+        <translation type="vanished">Pituus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Vakioarvo:</translation>
+        <translation type="vanished">Vakioarvo:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[neiti]</translation>
+        <translation type="vanished">[neiti]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pituus näytöllä:</translation>
+        <translation type="vanished">Pituus näytöllä:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseli]</translation>
+        <translation type="vanished">[pikseli]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Pienin piirrettävä arvo:</translation>
+        <translation type="vanished">Pienin piirrettävä arvo:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarisen arvon mukaan</translation>
+        <translation type="vanished">Skalaarisen arvon mukaan</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
 </context>
 </TS>

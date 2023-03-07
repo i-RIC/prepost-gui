@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Nastavení kontury (střed buňky)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Nastavení obrysu (střed buňky)</translation>
+        <translation type="vanished">Nastavení obrysu (střed buňky)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Hodnota:</translation>
+        <translation type="vanished">Hodnota:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regiony</translation>
+        <translation type="vanished">Regiony</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Rozsah %1</translation>
+        <translation type="vanished">Rozsah %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Lze definovat maximálně čtyři obrysy.</translation>
+        <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Rozsah %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Tvář</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Obrys</translation>
+        <translation type="vanished">Obrys</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Nastavení obrysu</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Nastavení obrysu (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Tvář %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Nastavení obrysu</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Tváře</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Nastavení obrysu</translation>
+        <translation type="vanished">Nastavení obrysu</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Tváře</translation>
+        <translation type="vanished">Tváře</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Tvář %1</translation>
+        <translation type="vanished">Tvář %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Lze definovat maximálně čtyři obrysy.</translation>
+        <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Změna položky prohlížeče objektů</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Tvář %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Směr</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>já</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Jdu do toho</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Já Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Povoleno</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Tvar mřížky</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Nastavení zobrazení tvaru mřížky</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Tvář</translation>
+        <translation type="vanished">Tvář</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Tvář %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Tvář %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nastavení šipek</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Základní</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Délka Legenda</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Tváře</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Tvář %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Délka Legenda</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Mohou být definovány maximálně čtyři šipky.</translation>
+        <translation type="vanished">Mohou být definovány maximálně čtyři šipky.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Nastavení skalárních částic</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavení barevné mapy</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Upravit nastavení částic</translation>
+        <translation type="vanished">Upravit nastavení částic</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vector Attribute Select Change</translation>
+        <translation type="vanished">Vector Attribute Select Change</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Aktualizovat vektorové nastavení</translation>
+        <translation type="vanished">Aktualizovat vektorové nastavení</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Šipka Změna fyzické hodnoty</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Nastavení vektoru částic</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Aktualizace</translation>
+        <translation type="vanished">Aktualizace</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Vytvořte obrys</translation>
+        <translation type="vanished">Vytvořte obrys</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Aktualizovat nastavení tvaru mřížky</translation>
+        <translation type="vanished">Aktualizovat nastavení tvaru mřížky</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Aktualizujte skalární nastavení částic</translation>
+        <translation type="vanished">Aktualizujte skalární nastavení částic</translation>
     </message>
 </context>
 </TS>

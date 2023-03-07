@@ -53,6 +53,14 @@
         <source>P&amp;olygons</source>
         <translation>Polígonos (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Adicionar novo polígono (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Editar configuração de cores</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
@@ -62,15 +70,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Cor</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">Configuracao automatica pelo valor </translation>
+        <translation>Configuracao automatica pelo valor </translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">Especificacao de cor</translation>
+        <translation>Especificacao de cor</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Configuração de Exibição do Grupo Polígono</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Espessura da linha:</translation>
     </message>
 </context>
 <context>
@@ -227,6 +243,13 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation type="vanished">Limpar tudo (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Editar configuração de exibição</translation>
     </message>
 </context>
 <context>

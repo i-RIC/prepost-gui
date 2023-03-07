@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nastavení šipky</translation>
+        <translation type="vanished">Nastavení šipky</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Délka</translation>
+        <translation type="vanished">Délka</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardní hodnota:</translation>
+        <translation type="vanished">Standardní hodnota:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[slečna]</translation>
+        <translation type="vanished">[slečna]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Délka na obrazovce:</translation>
+        <translation type="vanished">Délka na obrazovce:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimální hodnota pro čerpání:</translation>
+        <translation type="vanished">Minimální hodnota pro čerpání:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Vzorkování</translation>
+        <translation type="vanished">Vzorkování</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Všechny vrcholy</translation>
+        <translation type="vanished">Všechny vrcholy</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Vzorkovací frekvence:</translation>
+        <translation type="vanished">Vzorkovací frekvence:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-směr</translation>
+        <translation type="vanished">I-směr</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-směr</translation>
+        <translation type="vanished">J-směr</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Podle skalární hodnoty</translation>
+        <translation type="vanished">Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Tvar šipky</translation>
+        <translation type="vanished">Tvar šipky</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Velikost šípu:</translation>
+        <translation type="vanished">Velikost šípu:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nastavení šipky</translation>
+        <translation type="vanished">Nastavení šipky</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Délka</translation>
+        <translation type="vanished">Délka</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardní hodnota:</translation>
+        <translation type="vanished">Standardní hodnota:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[slečna]</translation>
+        <translation type="vanished">[slečna]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Délka na obrazovce:</translation>
+        <translation type="vanished">Délka na obrazovce:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimální hodnota pro čerpání:</translation>
+        <translation type="vanished">Minimální hodnota pro čerpání:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Vzorkování</translation>
+        <translation type="vanished">Vzorkování</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Všechny vrcholy</translation>
+        <translation type="vanished">Všechny vrcholy</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Vzorkovací frekvence:</translation>
+        <translation type="vanished">Vzorkovací frekvence:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Zadejte počet vrcholů</translation>
+        <translation type="vanished">Zadejte počet vrcholů</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Podle skalární hodnoty</translation>
+        <translation type="vanished">Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Tvar šipky</translation>
+        <translation type="vanished">Tvar šipky</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Velikost šípu:</translation>
+        <translation type="vanished">Velikost šípu:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalární (střed buňky)</translation>
+        <translation type="vanished">Skalární (střed buňky)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizujte nastavení obrysu</translation>
+        <translation type="vanished">Aktualizujte nastavení obrysu</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Chcete -li exportovat KML pro zobrazení ulic, zobrazte pomocí obrysového obrázku.</translation>
+        <translation type="vanished">Chcete -li exportovat KML pro zobrazení ulic, zobrazte pomocí obrysového obrázku.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Chcete -li exportovat KML pro zobrazení ulic, rozsah hodnot by měl být nastaven ručně.</translation>
+        <translation type="vanished">Chcete -li exportovat KML pro zobrazení ulic, rozsah hodnot by měl být nastaven ručně.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>K exportu KML pro zobrazení ulic by měl být zadán souřadnicový systém.</translation>
+        <translation type="vanished">K exportu KML pro zobrazení ulic by měl být zadán souřadnicový systém.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalární nastavení (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Lze definovat maximálně čtyři obrysy.</translation>
+        <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
+        <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalární nastavení</translation>
+        <translation type="vanished">Skalární nastavení</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavení zobrazení</translation>
+        <translation type="vanished">Nastavení zobrazení</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
+        <translation type="vanished">Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografická data</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referenční informace</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Nastavení zobrazení tvaru mřížky</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizujte nastavení obrysu</translation>
+        <translation type="vanished">Aktualizujte nastavení obrysu</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Chcete -li exportovat KML pro zobrazení ulic, zobrazte pomocí obrysového obrázku.</translation>
+        <translation type="vanished">Chcete -li exportovat KML pro zobrazení ulic, zobrazte pomocí obrysového obrázku.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Chcete -li exportovat KML pro zobrazení ulic, rozsah hodnot by měl být nastaven ručně.</translation>
+        <translation type="vanished">Chcete -li exportovat KML pro zobrazení ulic, rozsah hodnot by měl být nastaven ručně.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>K exportu KML pro zobrazení ulic by měl být zadán souřadnicový systém.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalární nastavení (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Chcete-li exportovat KML pro zobrazení ulic, Colormode musí být „Diskrétní režim“</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalární (uzel)</translation>
+        <translation type="vanished">Skalární (uzel)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
+        <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalární</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Chcete-li exportovat soubor tvaru, přepněte nastavení barev na "Diskrétní režim".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Změna fyzické hodnoty šipky</translation>
+        <translation type="vanished">Změna fyzické hodnoty šipky</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Aktualizovat nastavení šipky</translation>
+        <translation type="vanished">Aktualizovat nastavení šipky</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nastavení šipek</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Kraj</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Aktualizovat nastavení šipky</translation>
+        <translation type="vanished">Aktualizovat nastavení šipky</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nastavení šipek</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Kraj</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Nastavení skalárních částic</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavení barevné mapy</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Upravit nastavení částic</translation>
+        <translation type="vanished">Upravit nastavení částic</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Zobrazit prohlížeč atributů</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vector Attribute Select Change</translation>
+        <translation type="vanished">Vector Attribute Select Change</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Aktualizovat vektorové nastavení</translation>
+        <translation type="vanished">Aktualizovat vektorové nastavení</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Šipka Změna fyzické hodnoty</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Nastavení vektoru částic</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Upravit nastavení polygonu</translation>
+        <translation type="vanished">Upravit nastavení polygonu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Nastavení zobrazení dat polygonu</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavení barevné mapy</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Šířka čáry:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Vytvořte obrys buňky</translation>
+        <translation type="vanished">Vytvořte obrys buňky</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Vytvořte obrys</translation>
+        <translation type="vanished">Vytvořte obrys</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Aktualizovat nastavení tvaru mřížky</translation>
+        <translation type="vanished">Aktualizovat nastavení tvaru mřížky</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Aktualizujte skalární nastavení částic</translation>
+        <translation type="vanished">Aktualizujte skalární nastavení částic</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Aktualizujte skalární nastavení polygonu</translation>
+        <translation type="vanished">Aktualizujte skalární nastavení polygonu</translation>
     </message>
 </context>
 </TS>

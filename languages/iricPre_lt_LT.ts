@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Šiame CGNS faile nėra informacijos apie sprendėjus. Negalime patikrinti, ar šis CGNS failas yra suderinamas su sprendėju. Jei jis nesuderinamas, galbūt bus importuota tik tam tikra tinklelio dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Šiame faile nėra tinklelio, kurį būtų galima importuoti.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Pasirinkite tinklelį</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Pasirinkite tinklelį, kurį norite importuoti.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Ašių nustatymas</translation>
+        <translation type="vanished">Ašių nustatymas</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Matomas</translation>
+        <translation type="vanished">Matomas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Ekrano nustatymas</translation>
+        <translation type="vanished">Ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Tinklelio spalva</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Mazgo atributas</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Ląstelės atributas</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Kirviai</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Matomas</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Spalva:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Redaguoti Z krypties skalę</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z krypties skalė</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Įveskite naują Z krypties skalę.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Redaguoti spalvų nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Redaguoti Z krypties skalę</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Įveskite naują Z krypties skalę.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Redaguoti ekrano nustatymus</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Aukštis:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Tinklelio spalva</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Mazgo atributas</translation>
+        <source>Cusom Color</source>
+        <translation>Individuali spalva</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>Ląstelės atributas</translation>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>Individualizuota spalva</translation>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Spalva:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Redaguoti Z krypties skalę</translation>
+        <source>Background Color:</source>
+        <translation>Fono spalva:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z krypties skalė</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Įveskite naują Z krypties skalę.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Redaguoti spalvų nustatymą</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z krypties skalė:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Ar tikrai norite ištrinti visas ribines sąlygas?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Redaguoti ekrano nustatymus</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Ribinės sąlygos ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Vardų šrifto nustatymas</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Pasirinkite atvejį</translation>
+        <translation type="vanished">Pasirinkite atvejį</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Pasirinkite, iš kurio atvejo %1 importuoti skaičiavimo sąlygas.</translation>
+        <translation type="vanished">Pasirinkite, iš kurio atvejo %1 importuoti skaičiavimo sąlygas.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pointset duomenys (&amp;O)</translation>
+        <translation type="vanished">Pointset duomenys (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importuoti iš žiniatinklio (&amp;I)...</translation>
+        <translation type="vanished">Importuoti iš žiniatinklio (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Nustatyti „Scalarbar“...</translation>
+        <translation type="vanished">Nustatyti „Scalarbar“...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Importuojami duomenys iš %1 nepavyko.</translation>
+        <translation type="vanished">Importuojami duomenys iš %1 nepavyko.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Norėdami importuoti geografinius duomenis, pirmiausia nurodykite koordinačių sistemą.</translation>
+        <translation type="vanished">Norėdami importuoti geografinius duomenis, pirmiausia nurodykite koordinačių sistemą.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Importuoti (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importuoti aukštį iš žiniatinklio (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Norėdami importuoti geografinius duomenis, pirmiausia nurodykite projekto koordinačių sistemą.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Redaguoti varianto nustatymą (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Numatytas</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variacijos nustatymas</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Įgalinti variantą</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Variantas, perduodamas sprendėjui:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Pastaba: kai įgalintas variantas, sukuriamas variantas pavadinimu „Numatytasis“ ir visi geografiniai duomenys perkeliami į jį. Galite pridėti, pervardyti, pašalinti variantus iš "Objektų naršyklės". Galite perkelti, kopijuoti geografinius duomenis iš vieno varianto į kitą. Tinklelio atributo duomenys, sukurti iš varianto, kurį pasirinkote su „Variantas, kurį reikia perduoti sprendėjui“, perduodami sprendėjui. Galite paruošti kelis variantus, perjungti, kuriuos perduoti sprendėjui, ir įsitikinti skirtumo poveikiu.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Tinklelio langelio atributo rodymo nustatymas</translation>
+        <translation type="vanished">Tinklelio langelio atributo rodymo nustatymas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Sukurkite taškų debesies duomenis</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Tinklelio langelio atributo rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Tinklelio mazgo atributo rodymo nustatymas</translation>
+        <translation type="vanished">Tinklelio mazgo atributo rodymo nustatymas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Sukurkite taškų debesies duomenis</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Tinklelio mazgo atributo rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Spalvų legendos nustatymas</translation>
+        <translation type="vanished">Spalvų legendos nustatymas</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>„Scalarbar“ nustatymas</translation>
+        <translation type="vanished">„Scalarbar“ nustatymas</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Matomas</translation>
+        <translation type="vanished">Matomas</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vertė</translation>
+        <translation type="vanished">Vertė</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Redaguoti...</translation>
+        <translation type="vanished">Redaguoti...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Matomas</translation>
+        <translation type="vanished">Matomas</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Pavadinimas</translation>
+        <translation type="vanished">Pavadinimas</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Pavadinimas:</translation>
+        <translation type="vanished">Pavadinimas:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Šrifto nustatymas:</translation>
+        <translation type="vanished">Šrifto nustatymas:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Redaguoti...</translation>
+        <translation type="vanished">Redaguoti...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Etikečių ekranas</translation>
+        <translation type="vanished">Etikečių ekranas</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Etikečių skaičius:</translation>
+        <translation type="vanished">Etikečių skaičius:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Formatas:</translation>
+        <translation type="vanished">Formatas:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientacija:</translation>
+        <translation type="vanished">Orientacija:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikaliai</translation>
+        <translation type="vanished">Vertikaliai</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontalus</translation>
+        <translation type="vanished">Horizontalus</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Dydis</translation>
+        <translation type="vanished">Dydis</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Nurodykite spalvų juostos dydį kaip lango dydį.</translation>
+        <translation type="vanished">Nurodykite spalvų juostos dydį kaip lango dydį.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Plotis:</translation>
+        <translation type="vanished">Plotis:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Jei nurodysite 1, spalvų juostos plotis yra toks pat kaip lango pločio.</translation>
+        <translation type="vanished">Jei nurodysite 1, spalvų juostos plotis yra toks pat kaip lango pločio.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Aukštis:</translation>
+        <translation type="vanished">Aukštis:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Jei nurodysite 1, spalvų juostos aukštis yra toks pat kaip lango aukštis.</translation>
+        <translation type="vanished">Jei nurodysite 1, spalvų juostos aukštis yra toks pat kaip lango aukštis.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozicija</translation>
+        <translation type="vanished">Pozicija</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Nurodykite spalvų juostos kairę apatinę padėtį kaip normą pagal lango dydį.</translation>
+        <translation type="vanished">Nurodykite spalvų juostos kairę apatinę padėtį kaip normą pagal lango dydį.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Jei nurodysite 0, kairioji spalvų juosta yra lango kairiajame krašte.</translation>
+        <translation type="vanished">Jei nurodysite 0, kairioji spalvų juosta yra lango kairiajame krašte.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Jei nurodysite 0, spalvų juostos apačia yra lango apačioje.</translation>
+        <translation type="vanished">Jei nurodysite 0, spalvų juostos apačia yra lango apačioje.</translation>
     </message>
 </context>
 <context>

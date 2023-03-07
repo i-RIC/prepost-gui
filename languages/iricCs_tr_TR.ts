@@ -1,5 +1,27 @@
 <TS version="2.1" language="tr_TR">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>İçe aktarılacak verilerin Koordinat Sistemini seçin</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinat sistemi</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Düzenlemek...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

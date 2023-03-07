@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Sellel CGNS -failil puudub lahendaja teave. Me ei saa kontrollida, kas see CGNS -fail ühildub lahendajaga. Kui see ei ühildu, imporditakse võib -olla ainult osa ruudustikust. Kas soovite tõesti sellest failist ruudustikku importida?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>See fail ei sisalda ruudustikku, mida saaks importida.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Valige ruudustik</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Valige importimiseks ruudustik.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Telgede seadistamine</translation>
+        <translation type="vanished">Telgede seadistamine</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Nähtav</translation>
+        <translation type="vanished">Nähtav</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Värv:</translation>
+        <translation type="vanished">Värv:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Ekraani seadistus</translation>
+        <translation type="vanished">Ekraani seadistus</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Võrgu värv</translation>
+        <translation type="vanished">Võrgu värv</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Sõlme atribuut</translation>
+        <translation type="vanished">Sõlme atribuut</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Lahtri atribuut</translation>
+        <translation type="vanished">Lahtri atribuut</translation>
     </message>
     <message>
         <source>Custom Color</source>
+        <translation type="vanished">Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Kirved</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Nähtav</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Värv:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Muutke Z-suuna skaalat</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-suuna skaala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Sisestage uus Z-suuna skaala.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Muuda värvisätet</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Redigeerige Z-suuna skaala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Sisestage uus Z-suuna skaala.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Redigeeri kuvasätteid</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Kõrgendus:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Võre värv</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
         <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värvikaardi seadistus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Värv:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Muutke Z-suuna skaalat</translation>
+        <source>Background Color:</source>
+        <translation>Taustavärv:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-suuna skaala</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Sisestage uus Z-suuna skaala.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Muuda värvisätet</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z-suuna skaala:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Kas soovite kindlasti kõik piiritingimused kustutada?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Redigeeri kuvasätteid</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Piirtingimuste kuva seadistus</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Nimede fondi seadistus</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Valige juhtum</translation>
+        <translation type="vanished">Valige juhtum</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Palun valige, millisel juhul %1 arvutustingimuste importimiseks.</translation>
+        <translation type="vanished">Palun valige, millisel juhul %1 arvutustingimuste importimiseks.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Punktiandmed (&amp;O)</translation>
+        <translation type="vanished">Punktiandmed (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importimine veebist (&amp;I)...</translation>
+        <translation type="vanished">Importimine veebist (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Scalarbar seadistamine...</translation>
+        <translation type="vanished">Scalarbar seadistamine...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Andmete importimine asukohast %1 ebaõnnestus.</translation>
+        <translation type="vanished">Andmete importimine asukohast %1 ebaõnnestus.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Geograafiliste andmete importimiseks määrake kõigepealt koordinaatsüsteem.</translation>
+        <translation type="vanished">Geograafiliste andmete importimiseks määrake kõigepealt koordinaatsüsteem.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Import (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Impordi kõrgus veebist (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Geograafiliste andmete importimiseks määrake esmalt projekti koordinaatsüsteem.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Redigeeri variatsiooniseadet (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Vaikimisi</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variatsiooni seadistus</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Luba variatsioon</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Lahendajale edastatav variatsioon:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Märkus. Kui variatsioon on lubatud, luuakse variatsioon nimega "Vaikimisi" ja kõik geograafilised andmed teisaldatakse sinna. Saate lisada, ümber nimetada, eemaldada variatsioone "Objektibrauseris". Geograafilisi andmeid saate variatsioonide vahel teisaldada ja kopeerida. Variatsioonist, mille valite valikuga „Variatsioon lahendajale edastamiseks”, loodud ruudustiku atribuudi andmed edastatakse lahendajale. Saate valmistada mitu varianti, vahetada need, mis edastatakse lahendajale, ja veenduda erinevuse mõjus.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Võrgu lahtri atribuudi kuva seadistus</translation>
+        <translation type="vanished">Võrgu lahtri atribuudi kuva seadistus</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktpilve andmete genereerimine</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Võrgustiku lahtri atribuutide kuvamise seade</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Võrgusõlme atribuudi kuva seadistus</translation>
+        <translation type="vanished">Võrgusõlme atribuudi kuva seadistus</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktpilve andmete genereerimine</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Võrgusõlme atribuudi kuvamise säte</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspordi (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Värvi legendi seadistus</translation>
+        <translation type="vanished">Värvi legendi seadistus</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar seadistus</translation>
+        <translation type="vanished">Scalarbar seadistus</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Nähtav</translation>
+        <translation type="vanished">Nähtav</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Väärtus</translation>
+        <translation type="vanished">Väärtus</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Muuda...</translation>
+        <translation type="vanished">Muuda...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation type="vanished">Vorm</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Nähtav</translation>
+        <translation type="vanished">Nähtav</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Pealkiri</translation>
+        <translation type="vanished">Pealkiri</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Pealkiri:</translation>
+        <translation type="vanished">Pealkiri:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Fondi seadistamine:</translation>
+        <translation type="vanished">Fondi seadistamine:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Muuda...</translation>
+        <translation type="vanished">Muuda...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Siltide kuvamine</translation>
+        <translation type="vanished">Siltide kuvamine</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Siltide arv:</translation>
+        <translation type="vanished">Siltide arv:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Vorming:</translation>
+        <translation type="vanished">Vorming:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orienteerumine:</translation>
+        <translation type="vanished">Orienteerumine:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikaalne</translation>
+        <translation type="vanished">Vertikaalne</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontaalne</translation>
+        <translation type="vanished">Horisontaalne</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Suurus</translation>
+        <translation type="vanished">Suurus</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Määrake värviriba suurus akna suuruse suhtes.</translation>
+        <translation type="vanished">Määrake värviriba suurus akna suuruse suhtes.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Laius:</translation>
+        <translation type="vanished">Laius:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Kui määrate 1, on värviriba laius sama kui akna laius.</translation>
+        <translation type="vanished">Kui määrate 1, on värviriba laius sama kui akna laius.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Kõrgus:</translation>
+        <translation type="vanished">Kõrgus:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Kui määrate 1, on värviriba kõrgus sama kui akna kõrgus.</translation>
+        <translation type="vanished">Kui määrate 1, on värviriba kõrgus sama kui akna kõrgus.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Asend</translation>
+        <translation type="vanished">Asend</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Määrake värviriba vasak alumine asend akna suuruse suhtes.</translation>
+        <translation type="vanished">Määrake värviriba vasak alumine asend akna suuruse suhtes.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Kui määrate väärtuse 0, asub värviriba vasak serv akna vasakus servas.</translation>
+        <translation type="vanished">Kui määrate väärtuse 0, asub värviriba vasak serv akna vasakus servas.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Kui määrate väärtuse 0, asub värviriba põhi akna allosas.</translation>
+        <translation type="vanished">Kui määrate väärtuse 0, asub värviriba põhi akna allosas.</translation>
     </message>
 </context>
 <context>

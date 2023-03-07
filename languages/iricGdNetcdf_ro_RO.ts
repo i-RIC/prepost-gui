@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Următoarele fișiere vor fi importate. Este bine?</translation>
+        <translation type="vanished">Următoarele fișiere vor fi importate. Este bine?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Vă rugăm să selectați fișierele de importat.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Selectează tot (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deselectați Toate (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Avertizare</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Intervalul de timp dintre fișierele selectate nu este același.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Numele fișierului nu se potrivește cu modelul</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Fus orar:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valorile dimensiunii pentru nepotrivirea timpului.</translation>
+        <translation type="vanished">Valorile dimensiunii pentru nepotrivirea timpului.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Sistemul de coordonate nu este specificat pentru %1. Vă rugăm să selectați manual sistemul de coordonate.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Deschidere %1 a eșuat.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Valorile dimensiunii pentru %1 nepotrivire.</translation>
+        <translation type="vanished">Valorile dimensiunii pentru %1 nepotrivire.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>A apărut o eroare la analizarea definiției timpului: %1</translation>
+        <translation type="vanished">A apărut o eroare la analizarea definiției timpului: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nu are longitudine, latitudine și nici date x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Ora inițială:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Fus orar:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>informație</translation>
+        <translation type="vanished">informație</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 fișiere din dosar %2 sunt importate.</translation>
+        <translation type="vanished">%1 fișiere din dosar %2 sunt importate.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valorile dimensiunii pentru nepotrivirea timpului.</translation>
+        <translation type="vanished">Valorile dimensiunii pentru nepotrivirea timpului.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Datele raster din seria temporală sunt deja importate. Dacă doriți să importați alte date, vă rugăm să ștergeți mai întâi datele deja importate.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>A apărut o eroare la importarea datelor convertite din %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>A apărut o eroare la deschidere %1.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Obrazac</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežne linije</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Sve</translation>
+        <translation>Sve</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Samo Outline</translation>
+        <translation>Outline Only</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Boja:</translation>
+        <translation>Boja:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežni indeksi</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Vidljivo</translation>
+        <translation>Vidljivo</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Navedite format broja u formatu printf. Na primjer: &quot; %5.2f &quot;za 3.141592 -&gt; 3.14&quot; %4.2e &quot;za 12300 -&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Navedite format broja u formatu printf. Na primjer: " %5.2f "za 3.141592 -&gt; 3.14" %4.2e "za 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

@@ -1,5 +1,202 @@
 <TS version="2.1" language="nb_NO">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Etter skalarverdi</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Redigere (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Fargekartinnstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Etter skalarverdi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Skjema</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Synlighet</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Når valgt</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltid</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldri</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tittel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Skriftinnstilling:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengde</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lengde:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunn:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Størrelse og plassering</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengde</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standardverdi:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[m/s]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Lengde på skjermen:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[piksel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimumsverdi å tegne:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Verdi:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengdeforklaring</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grunnleggende</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Pilform</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Pilstørrelse:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Linje bredde:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>I filen %1, x-koordinat-økning per piksel og y-koordinat-inkrement per piksel-mismatch. Det er akseptabelt, men det kan være feil.</translation>
+        <translation type="vanished">I filen %1, x-koordinat-økning per piksel og y-koordinat-inkrement per piksel-mismatch. Det er akseptabelt, men det kan være feil.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Velg et tilsvarende punkt i hovedvinduet.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Fiks bildeposisjon</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Synlighet</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Når valgt</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltid</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldri</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tittel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Skriftinnstilling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etikettskjerm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Merkelapp:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunn:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Størrelse og plassering</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorer innstillingen for fargelinje ved import</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Farger</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Fargelinjeinnstilling</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Velg filen som skal importeres</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Fargekartinnstilling (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Det oppsto en feil under lasting %1 Parse feil %2 på %3, kolonne %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Feil</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Skriv inn filnavn for eksport</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Det oppsto en feil under åpning %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Verdi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gjennomsiktig</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Synlighet</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Når valgt</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltid</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldri</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tittel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Skriftinnstilling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etikettskjerm</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tittel:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Merkelapp:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunn:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Størrelse og plassering</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Fargekartinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Forhåndsinnstillinger:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorer innstillingen for fargelinje ved import</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Forholdet mellom verdier og farger</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Juster automatisk basert på verdiområde</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Oppsett manuelt</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Verdiområde</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisk</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Farger</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Legg til (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjerne (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Fyll nedre område</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Fyll det øvre området</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Bytte om</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Fargelinjeinnstilling</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Velg filen som skal importeres</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Fargekartinnstilling (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Skriv inn filnavn for eksport</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Det oppsto en feil under åpning %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Feil</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Det oppsto en feil under lasting %1 Parse feil %2 på %3, kolonne %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Velg varen du vil bruke)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Bytt til diskret modus</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Bytt til graderingsmodus</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advarsel</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Verdi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Min verdi</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Maks verdi</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gjennomsiktig</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Når du bytter til graderingsmodus, settes verdiene til den midterste verdien for hver seksjon.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Bytt til diskret modusdialog</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Antall farger som skal settes inn i hver seksjon</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prøvetaking</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hjørner</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sampling rate:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Angi antall toppunkter</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Velg et punkt i dialogboksen Georeferanse.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Slett poeng</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Konturinnstilling</translation>
+        <translation type="vanished">Konturinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posisjon</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Horisontal margin:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Vertikal margin:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Bredde:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Høyde:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Avstand fra venstre</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Avstand fra høyre</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Avstand fra toppen</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Avstand fra bunnen</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Velg hvilken CGNS -fil du vil lese rutenettet.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS-fil</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Ubehandlet widget i ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Lagre og lukk (&amp;S)</translation>
+        <translation type="vanished">Lagre og lukk (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Det oppsto en feil under lagring.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Åpning av CGNS-filen mislyktes.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Velg Fil</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Filnavnet må kun bestå av engelske tegn.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Velg Fil</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Filnavnet må kun bestå av engelske tegn.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Velg Katalog</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Mappenavnet må kun bestå av engelske tegn.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Redigere</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Ingen data å importere.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Velg mal for å importere)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advarsel</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Innholdet i tekstområdet overskrives med malen</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Skjul detalj (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Det oppsto en feil under lasting av beregningsresultat.</translation>
+        <translation type="vanished">Det oppsto en feil under lasting av beregningsresultat.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Det oppsto en feil under lagring %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Lagrer beregningsresultatet som TPO-filer...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Det oppsto en feil under lasting av beregningsresultat.</translation>
+        <translation type="vanished">Det oppsto en feil under lasting av beregningsresultat.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Høydenettattributtet er ikke definert for rutenettet %1. I/O -funksjoner i rutenettet, det kan hende at funksjoner for nettopprettelse ikke fungerer som de skal for disse rutetypene.</translation>
+        <translation type="vanished">Høydenettattributtet er ikke definert for rutenettet %1. I/O -funksjoner i rutenettet, det kan hende at funksjoner for nettopprettelse ikke fungerer som de skal for disse rutetypene.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Løsning %1 eksisterer allerede.</translation>
+        <translation type="vanished">Løsning %1 eksisterer allerede.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS -fil hvis navn inneholder andre tegn enn alfabeter og tall, kan ikke importeres.</translation>
+        <translation type="vanished">CGNS -fil hvis navn inneholder andre tegn enn alfabeter og tall, kan ikke importeres.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Lagring av prosjektfil mislyktes.</translation>
+        <translation type="vanished">%1 Lagring av prosjektfil mislyktes.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Denne prosjektfilen kan ikke leses, fordi den ble opprettet av for gammel iRIC (versjon %1 ).</translation>
+        <translation type="vanished">Denne prosjektfilen kan ikke leses, fordi den ble opprettet av for gammel iRIC (versjon %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Denne filen er for solver %1 %2. Det er ikke kompatibelt med løseren du bruker, så kanskje import av denne filen vil mislykkes. Vil du virkelig importere denne filen?</translation>
+        <translation type="vanished">Denne filen er for solver %1 %2. Det er ikke kompatibelt med løseren du bruker, så kanskje import av denne filen vil mislykkes. Vil du virkelig importere denne filen?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinatsystem ikke valgt.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Det oppstod en feil under åpning av CGNS-fil i prosjektfil: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kopierer bilde %1 til %2 mislyktes.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Visningsformat for tid</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tidssone:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Full region</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktiv region</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Egendefinert region</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Jeg er med:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Maks:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Celler hvor variasjon av cellelengde langs j-retning overstiger %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prøvetaking</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hjørner</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sampling rate:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-retning</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-retning</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Prøvetaking</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hjørner</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sampling rate:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-retning</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-retning</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-retning</translation>
     </message>
 </context>
 <context>

@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Höger Y-axelintervall är ogiltigt.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekunder</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minuter</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Timmar</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>dagar</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Rader</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekunder</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minuter</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>timmar</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dagar</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV -export (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Teckensnittsinställning (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Extern</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Inställning för diagramteckensnitt</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-axel:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Fästingar:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-axel:</translation>
     </message>
 </context>
 <context>

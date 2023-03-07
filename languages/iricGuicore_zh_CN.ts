@@ -1,5 +1,202 @@
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>按标量值</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>编辑 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>颜色图设置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>按标量值</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">形式</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>能见度</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>选择时</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>总是</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>绝不</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>标题</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>标题 ：</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>字体设置：</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>长度</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>格式：</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>标题：</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>长度：</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景：</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>大小和位置</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>长度</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽车</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>标准值：</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[多发性硬化症]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>屏幕长度：</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[像素]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>绘制的最小值：</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>价值：</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>长度图例</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>箭头形状</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>箭头大小：</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>行宽：</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>在文件%1中，每个像素的x坐标增量和每个像素的y坐标增量不匹配。 这是可以接受的，但可能是错误的。</translation>
+        <translation type="vanished">在文件%1中，每个像素的x坐标增量和每个像素的y坐标增量不匹配。 这是可以接受的，但可能是错误的。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>在主页面中选择相应的点</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>固定图像位置</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,354 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>能见度</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>选择时</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>总是</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>绝不</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>标题</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>标题 ：</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>字体设置：</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>标签展示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>标题：</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>标签：</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景：</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>大小和位置</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>导入时忽略颜色条设置</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>彩条设置</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>选择要导入的文件</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>色图设置 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>输入要导出的文件名</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>打开时出现错误 %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>透明的</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>能见度</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>选择时</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>总是</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>绝不</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>标题</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>标题 ：</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>字体设置：</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>标签展示</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>格式：</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>标题：</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>标签：</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景：</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>大小和位置</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>颜色映射设置</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>预设：</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>导入时忽略颜色条设置</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>值和颜色之间的关系</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>根据取值范围自动调整</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>手动设置</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>取值范围</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自动的</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>最大限度：</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>分钟：</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>填充下部区域</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>填充上部区域</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>转变</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>彩条设置</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>选择要导入的文件</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>色图设置 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>输入要导出的文件名</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>打开时出现错误 %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(请选择要申请的项目)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>切换到离散模式</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>切换到渐变模式</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>最小值</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>最大值</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>透明的</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>切换到渐变模式时，值设置为每个部分的中间值。</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>切换到离散模式对话框</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>最大限度：</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>分钟：</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>每个部分要插入的颜色数</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +680,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>采样</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>所有顶点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>采样率：</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>指定顶点数</translation>
     </message>
 </context>
 <context>
@@ -210,6 +782,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>在地理参考对话框中选择一个点</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>删除点</translation>
     </message>
 </context>
 <context>
@@ -323,7 +899,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>对话框</translation>
+        <translation type="vanished">对话框</translation>
     </message>
 </context>
 <context>
@@ -417,11 +993,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>对话框</translation>
+        <translation type="vanished">对话框</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>轮廓设置</translation>
+        <translation type="vanished">轮廓设置</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>水平边距：</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>垂直边距：</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>宽度：</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高度：</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>距左侧的距离</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>与右侧的距离</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>距顶部的距离</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>离底部的距离</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1064,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>请选择从哪个 CGNS 文件中读取网格。</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS 文件</translation>
     </message>
 </context>
 <context>
@@ -473,6 +1096,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>ActionSetValue 中未处理的小部件</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -480,7 +1110,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>&amp;保存并关闭</translation>
+        <translation type="vanished">&amp;保存并关闭</translation>
     </message>
     <message>
         <source>Error</source>
@@ -519,6 +1149,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>您所做的修改将被丢弃。</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>打开 CGNS 文件失败。</translation>
     </message>
 </context>
 <context>
@@ -574,6 +1208,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>选择文件</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>文件名只能由英文字符组成。</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -599,12 +1237,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>选择文件</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>文件名只能由英文字符组成。</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>选择词典</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>文件夹名称必须仅包含英文字符。</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>编辑</translation>
     </message>
 </context>
 <context>
@@ -759,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>无导入数据</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>（选择要导入的模板）</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>文本区域的内容被模板覆盖</translation>
     </message>
 </context>
 <context>
@@ -1206,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>&amp;隐藏细节</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>加载计算结果是错误</translation>
+        <translation type="vanished">加载计算结果是错误</translation>
     </message>
 </context>
 <context>
@@ -1267,6 +1947,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>保存%1时发生错误</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>将计算结果保存为 TPO 文件...</translation>
     </message>
 </context>
 <context>
@@ -1481,11 +2165,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>加载计算结果时发生错误</translation>
+        <translation type="vanished">加载计算结果时发生错误</translation>
     </message>
 </context>
 <context>
@@ -1537,11 +2221,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
+        <translation type="vanished">未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1560,11 +2244,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>解法%1已存在</translation>
+        <translation type="vanished">解法%1已存在</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>其名称中包含字母和数字以外的字符的CGNS文件无法导入。</translation>
+        <translation type="vanished">其名称中包含字母和数字以外的字符的CGNS文件无法导入。</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1588,7 +2272,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>保存项目文件%1失败</translation>
+        <translation type="vanished">保存项目文件%1失败</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1612,7 +2296,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>无法读取此项目文件，因为它是由较旧的iRIC（版本%1）创建的。</translation>
+        <translation type="vanished">无法读取此项目文件，因为它是由较旧的iRIC（版本%1）创建的。</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1632,7 +2316,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>该文件用于求解器%1%2。 它与您使用的求解器不兼容，因此导入此文件可能会失败。 您真的要导入该文件吗？</translation>
+        <translation type="vanished">该文件用于求解器%1%2。 它与您使用的求解器不兼容，因此导入此文件可能会失败。 您真的要导入该文件吗？</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1645,6 +2329,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>未选择坐标系</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>在项目文件中打开 CGNS 文件时发生错误：Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>复制图像 %1 到 %2 失败的。</translation>
     </message>
 </context>
 <context>
@@ -1675,6 +2367,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>时间显示格式</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>时区：</translation>
     </message>
 </context>
 <context>
@@ -1786,6 +2482,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>全区</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>活动区域</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>自定义区域</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>算我一个：</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>我最大：</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J敏：</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J 马克斯：</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1856,6 +2587,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>*像元长度沿j方向变化超过%1的像元</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>采样</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>所有顶点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>采样率：</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I方向</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J方向</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>采样</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>所有顶点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>采样率：</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I方向</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J方向</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K向</translation>
     </message>
 </context>
 <context>

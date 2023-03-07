@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Sare-lerroak</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Denak</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Eskema soilik</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Sare-indizeak</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Sinbolo hauek erabil ditzakezu ordu formatu pertsonalizatua definitzeko: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Urtea: AAAA, AA &lt;/li&gt; &lt;li&gt; Hilabetea: M, MM, MMM, MMMM (MMM urtarrilerako, MMMM urtarrilerako eta abar) &lt;/li&gt; &lt;li&gt; Eguna: d, dd, ddd, dddd (ddd astearteko, dddd asteleheneko etab.) &lt;/ Li &gt; &lt;li&gt; Ordua: H, HH, h, hh (h, hh AM / PM pantailarako) &lt;/li&gt; &lt;li&gt; Minutu: m, mm &lt;/li&gt; &lt;li&gt; Bigarrena: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Erakutsi ordu-eremua</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Itxaron mesedez</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Itxaron mesedez...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Itxaron mesedez...</translation>

@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Полигондор (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Жаңы көп бурчтук кошуу (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Color Setting Edit</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Көп бурчтуу топтун дисплей жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Сапты окуу учурунда ката кетти %1. "мааниси" "pid" мааниси бирдей болгон саптар үчүн бирдей болушу керек.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Дисплей жөндөөсүн түзөтүү</translation>
     </message>
 </context>
 <context>

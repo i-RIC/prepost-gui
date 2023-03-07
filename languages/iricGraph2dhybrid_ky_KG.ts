@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Оң Y огунун диапазону жараксыз.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>секунд</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Мүнөттөр</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Саат</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>күндөр</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Саптар</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>секунд</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>мүнөт</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>саат</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>күн</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV экспорту (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Font Setting (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Тышкы</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Диаграмма шрифтин орнотуу</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Диаграмманын аталышы:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легендалар:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X огу:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Аталышы:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Кенелер:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y огу:</translation>
     </message>
 </context>
 <context>

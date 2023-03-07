@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>網格線</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">全部</translation>
+        <translation>全部</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">僅大綱</translation>
+        <translation>僅大綱</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">顏色：</translation>
+        <translation>顏色：</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>網格指數</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">可見的</translation>
+        <translation>可見的</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>以 printf 格式指定數字格式。例如： ” %5.2f&quot; 為 3.141592 --&gt; 3.14&quot; %4.2e&quot; 代表 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>以 printf 格式指定數字格式。例如： ” %5.2f" 為 3.141592 --&gt; 3.14" %4.2e" 代表 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

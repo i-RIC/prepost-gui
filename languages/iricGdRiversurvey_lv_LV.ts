@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu klona datus, varat izmantot opciju “Kartes punktu mākoņa dati”.</translation>
+        <translation type="vanished">Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu klona datus, varat izmantot opciju “Kartes punktu mākoņa dati”.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Ģenerējiet punktu mākoņa datus</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot "Kartes punktu mākoņa datus".</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Dažos reģionos dati nepastāvēja punktu mākoņa datos, un šiem punktiem tika kartēta vērtība 0. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot "Kartes punktu mākoņa datus".</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Malu attiecība: 1 /</translation>
+        <translation type="vanished">Malu attiecība: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Šķērsgriezuma dati</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Malu attiecība (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Malu attiecība: 1 / %1</translation>
+        <translation type="vanished">Malu attiecība: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Rediģēt displeja iestatījumus</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Malu attiecība (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Šķērsgriezumu nosaukumi</translation>
     </message>
 </context>
 <context>

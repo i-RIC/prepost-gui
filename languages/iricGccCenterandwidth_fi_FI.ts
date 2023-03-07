@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Poista keskiviivan kärki</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Näyttöasetus</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

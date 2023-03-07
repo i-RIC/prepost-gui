@@ -2,24 +2,20 @@
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="24" />
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished" />
+        <translation>वीटीके फाइलें (*.vtk)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="30" />
         <source>VTK file</source>
-        <translation type="unfinished" />
+        <translation>वीटीके फ़ाइल</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation>गलती</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Copying %1 to %2 failed.</source>
-        <translation type="unfinished" />
+        <translation>प्रतिलिपि बनाई जा रही %1 को %2 असफल।</translation>
     </message>
 </context>
 </TS>

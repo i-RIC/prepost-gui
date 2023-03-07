@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Textový soubor (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Textový soubor (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Textový soubor (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Název souboru:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Souřadnicový systém</translation>
     </message>
 </context>
 <context>

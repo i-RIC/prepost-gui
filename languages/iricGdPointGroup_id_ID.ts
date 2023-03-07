@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Titik (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Tambahkan Poin Baru (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Edit Pengaturan Warna</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Pengaturan Tampilan Grup Titik</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Titik:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Edit pengaturan tampilan</translation>
     </message>
 </context>
 <context>

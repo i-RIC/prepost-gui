@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Polygones (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Ajouter un nouveau polygone (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Réglage des couleurs Modifier</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Paramètre d'affichage du groupe de polygones</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Largeur de ligne:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Une erreur s'est produite lors de la lecture de la ligne %1. "value" doit être le même pour les lignes où les valeurs "pid" sont les mêmes.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Modifier le paramètre d'affichage</translation>
     </message>
 </context>
 <context>

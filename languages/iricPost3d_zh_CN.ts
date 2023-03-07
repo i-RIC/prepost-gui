@@ -165,34 +165,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>轮廓设置（单元中心）</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>范围</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>轮廓设置（单元格中心）</translation>
+        <translation type="vanished">轮廓设置（单元格中心）</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>价值：</translation>
+        <translation type="vanished">价值：</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>地区</translation>
+        <translation type="vanished">地区</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>添加 (&amp;A)</translation>
+        <translation type="vanished">添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>消除 (&amp;R)</translation>
+        <translation type="vanished">消除 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>彩条设置 (&amp;C)</translation>
+        <translation type="vanished">彩条设置 (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>范围 %1</translation>
+        <translation type="vanished">范围 %1</translation>
     </message>
 </context>
 <context>
@@ -203,11 +226,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多可以定义四个轮廓。</translation>
+        <translation type="vanished">最多可以定义四个轮廓。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>范围 %1</translation>
     </message>
 </context>
 <context>
@@ -250,45 +292,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>脸</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>轮廓</translation>
+        <translation type="vanished">轮廓</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">轮廓设置</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>轮廓设置（ %1 )</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>脸 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>轮廓设置</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>面孔</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>轮廓设置</translation>
+        <translation type="vanished">轮廓设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值：</translation>
+        <translation type="vanished">物理值：</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>面</translation>
+        <translation type="vanished">面</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;色彩条设置</translation>
+        <translation type="vanished">&amp;色彩条设置</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>面%1</translation>
+        <translation type="vanished">面%1</translation>
     </message>
 </context>
 <context>
@@ -299,11 +379,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多可定义四个轮廓</translation>
+        <translation type="vanished">最多可定义四个轮廓</translation>
     </message>
 </context>
 <context>
@@ -322,6 +402,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>对象浏览器项目更改</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>脸 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>我</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>杰</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>钾</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>范围</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>算我一个</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>我最大</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J敏</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J 马克斯</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>最小值</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>最大钾</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>启用</translation>
     </message>
 </context>
 <context>
@@ -384,6 +538,13 @@
     <message>
         <source>Grid shape</source>
         <translation>网格形状</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>网格形状显示设置</translation>
     </message>
 </context>
 <context>
@@ -582,7 +743,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>脸</translation>
+        <translation type="vanished">脸</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>脸 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>脸 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>箭头设置</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>长度图例</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>面孔</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -643,6 +845,10 @@
         <source>Face%1</source>
         <translation>脸 %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>长度图例</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -652,11 +858,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>最多可以定义四个箭头。</translation>
+        <translation type="vanished">最多可以定义四个箭头。</translation>
     </message>
 </context>
 <context>
@@ -871,6 +1077,41 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>粒子标量设置</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值着色</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>颜色映射设置</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点大小：</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定义颜色</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Particles</source>
@@ -878,7 +1119,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>编辑粒子设置</translation>
+        <translation type="vanished">编辑粒子设置</translation>
     </message>
 </context>
 <context>
@@ -889,11 +1130,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>向量属性选择变更</translation>
+        <translation type="vanished">向量属性选择变更</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>更新向量设置</translation>
+        <translation type="vanished">更新向量设置</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>箭头实物价值变化</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>粒子矢量设置</translation>
     </message>
 </context>
 <context>
@@ -1022,7 +1274,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>更新网格形状设置</translation>
+        <translation type="vanished">更新网格形状设置</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -1038,15 +1290,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>更新粒子标量设置</translation>
+        <translation type="vanished">更新粒子标量设置</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>更新</translation>
+        <translation type="vanished">更新</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>创建轮廓</translation>
+        <translation type="vanished">创建轮廓</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

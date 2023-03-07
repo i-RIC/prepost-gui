@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Stilla agnir</translation>
+        <translation type="vanished">Stilla agnir</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Litur:</translation>
+        <translation type="vanished">Litur:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Stærð:</translation>
+        <translation type="vanished">Stærð:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Stærð agna</translation>
+        <translation type="vanished">Stærð agna</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Litur eftir eigindargildi</translation>
+        <translation type="vanished">Litur eftir eigindargildi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Eiginleiki:</translation>
+        <translation type="vanished">Eiginleiki:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Stærð:</translation>
+        <translation type="vanished">Stærð:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Örstilling</translation>
+        <translation type="vanished">Örstilling</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Eigindagildi:</translation>
+        <translation type="vanished">Eigindagildi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengd</translation>
+        <translation type="vanished">Lengd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Sjálfvirk</translation>
+        <translation type="vanished">Sjálfvirk</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Staðlað gildi:</translation>
+        <translation type="vanished">Staðlað gildi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengd á skjá:</translation>
+        <translation type="vanished">Lengd á skjá:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixla]</translation>
+        <translation type="vanished">[pixla]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Lágmarksgildi til að draga:</translation>
+        <translation type="vanished">Lágmarksgildi til að draga:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sýnataka</translation>
+        <translation type="vanished">Sýnataka</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Allar agnir</translation>
+        <translation type="vanished">Allar agnir</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Sýnatökuhlutfall:</translation>
+        <translation type="vanished">Sýnatökuhlutfall:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Tilgreindu fjölda agna</translation>
+        <translation type="vanished">Tilgreindu fjölda agna</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Eftir stigstærð</translation>
+        <translation type="vanished">Eftir stigstærð</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Örform</translation>
+        <translation type="vanished">Örform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Örstærð:</translation>
+        <translation type="vanished">Örstærð:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Breidd línu:</translation>
+        <translation type="vanished">Breidd línu:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Marghyrningsstilling</translation>
+        <translation type="vanished">Marghyrningsstilling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Litur:</translation>
+        <translation type="vanished">Litur:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Breidd línu:</translation>
+        <translation type="vanished">Breidd línu:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Marghyrningsstilling</translation>
+        <translation type="vanished">Marghyrningsstilling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Litur eftir eigindargildi</translation>
+        <translation type="vanished">Litur eftir eigindargildi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Eiginleiki:</translation>
+        <translation type="vanished">Eiginleiki:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Breidd línu</translation>
+        <translation type="vanished">Breidd línu</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Veldu Markárangur</translation>
     </message>
 </context>
 <context>

@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Ρύθμιση σωματιδίων</translation>
+        <translation type="vanished">Ρύθμιση σωματιδίων</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation type="vanished">Χρώμα:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Μέγεθος:</translation>
+        <translation type="vanished">Μέγεθος:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Κλίμακα ρύθμισης σωματιδίων</translation>
+        <translation type="vanished">Κλίμακα ρύθμισης σωματιδίων</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Χρώμα κατά τιμή χαρακτηριστικού</translation>
+        <translation type="vanished">Χρώμα κατά τιμή χαρακτηριστικού</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Χαρακτηριστικό:</translation>
+        <translation type="vanished">Χαρακτηριστικό:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Μέγεθος:</translation>
+        <translation type="vanished">Μέγεθος:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ρύθμιση βέλους</translation>
+        <translation type="vanished">Ρύθμιση βέλους</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Τιμή χαρακτηριστικού:</translation>
+        <translation type="vanished">Τιμή χαρακτηριστικού:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Μήκος</translation>
+        <translation type="vanished">Μήκος</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Αυτο</translation>
+        <translation type="vanished">Αυτο</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Τυπική τιμή:</translation>
+        <translation type="vanished">Τυπική τιμή:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Κυρία]</translation>
+        <translation type="vanished">[Κυρία]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Μήκος στην οθόνη:</translation>
+        <translation type="vanished">Μήκος στην οθόνη:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[εικονοκύτταρο]</translation>
+        <translation type="vanished">[εικονοκύτταρο]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Ελάχιστη τιμή για κλήρωση:</translation>
+        <translation type="vanished">Ελάχιστη τιμή για κλήρωση:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Δειγματοληψία</translation>
+        <translation type="vanished">Δειγματοληψία</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Όλα τα σωματίδια</translation>
+        <translation type="vanished">Όλα τα σωματίδια</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Ρυθμός δειγματοληψίας:</translation>
+        <translation type="vanished">Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Καθορίστε τον αριθμό των σωματιδίων</translation>
+        <translation type="vanished">Καθορίστε τον αριθμό των σωματιδίων</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Με κλιμακωτή αξία</translation>
+        <translation type="vanished">Με κλιμακωτή αξία</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Σχήμα βέλους</translation>
+        <translation type="vanished">Σχήμα βέλους</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Μέγεθος βέλους:</translation>
+        <translation type="vanished">Μέγεθος βέλους:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Ρύθμιση πολυγώνου</translation>
+        <translation type="vanished">Ρύθμιση πολυγώνου</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation type="vanished">Χρώμα:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Ρύθμιση πολυγώνου</translation>
+        <translation type="vanished">Ρύθμιση πολυγώνου</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Χρώμα κατά τιμή χαρακτηριστικού</translation>
+        <translation type="vanished">Χρώμα κατά τιμή χαρακτηριστικού</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Χαρακτηριστικό:</translation>
+        <translation type="vanished">Χαρακτηριστικό:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Πλάτος γραμμής</translation>
+        <translation type="vanished">Πλάτος γραμμής</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Επιλέξτε Αποτέλεσμα στόχου</translation>
     </message>
 </context>
 <context>

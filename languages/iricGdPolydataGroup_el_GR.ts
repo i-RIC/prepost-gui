@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Για κάθε</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Ονομα</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Δεν μπορείτε να καθορίσετε την ίδια στήλη τόσο για το Όνομα όσο και για την Τιμή.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Σύστημα Συντεταγμένων:</translation>
     </message>
 </context>
 </TS>

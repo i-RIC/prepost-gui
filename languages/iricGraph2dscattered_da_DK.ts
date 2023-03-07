@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Tegn indstilling (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Skrifttypeindstilling (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Tegn indstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Skrifttypeindstilling</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-akse:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Flåter:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-akse:</translation>
     </message>
 </context>
 <context>

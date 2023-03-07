@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Sljedeće datoteke bit će uvezene. Je li u redu?</translation>
+        <translation type="vanished">Sljedeće datoteke bit će uvezene. Je li u redu?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Odaberite fajlove za uvoz.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Označi sve (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Odznači sve (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Upozorenje</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Vremenski interval između odabranih datoteka nije isti.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Naziv datoteke ne odgovara uzorku</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Vremenska zona:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Vrijednosti dimenzija za neslaganje vremena.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za neslaganje vremena.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinatni sistem nije naveden za %1. Molimo vas da ručno odaberete koordinatni sistem.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Otvaranje %1 nije uspjelo.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Vrijednosti dimenzija za %1 neusklađenost.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za %1 neusklađenost.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Došlo je do greške prilikom raščlanjivanja definicije vremena: %1</translation>
+        <translation type="vanished">Došlo je do greške prilikom raščlanjivanja definicije vremena: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nema podatke o zemljopisnoj dužini, širini niti x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Originalno vreme:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Vremenska zona:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacije</translation>
+        <translation type="vanished">Informacije</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 datoteke u fascikli %2 se uvoze.</translation>
+        <translation type="vanished">%1 datoteke u fascikli %2 se uvoze.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Vrijednosti dimenzija za neslaganje vremena.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za neslaganje vremena.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Rasterski podaci vremenske serije su već uvezeni. Ako želite uvesti druge podatke, prvo izbrišite podatke koji su već uvezeni.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Došlo je do greške prilikom uvoza podataka konvertiranih iz %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Došlo je do greške prilikom otvaranja %1.</translation>
     </message>
 </context>
 </TS>

@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Punct (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Adăugați un punct nou (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Editare setări de culoare</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Setare de afișare a grupului de puncte</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>A apărut o eroare la citirea valorii „valoare” în linie %1. „valoare” ar trebui să fie o valoare reală, dar „ %2 " este specificat.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Editați setarea afișajului</translation>
     </message>
 </context>
 <context>

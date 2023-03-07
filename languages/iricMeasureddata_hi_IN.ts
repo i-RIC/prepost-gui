@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>अदिश सेटिंग</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>मापित मान:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>अंक प्रदर्शन सेटिंग संवाद</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>डिस्प्ले सेटिंग</translation>
+        <translation>सेटिंग दिखाओ</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>अंक</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>सतह</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>बिंदु आकार:</translation>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">अदिश सेटिंग</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">मापित मान:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">डिस्प्ले सेटिंग</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">बिंदु आकार:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>मान श्रेणी के लिए, अधिकतम मान न्यूनतम मान से छोटा होता है।</translation>
+        <translation type="vanished">मान श्रेणी के लिए, अधिकतम मान न्यूनतम मान से छोटा होता है।</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>तीर सेटिंग अपडेट करें</translation>
+        <translation type="vanished">तीर सेटिंग अपडेट करें</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>मापा डेटा तीर सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>तीर सेटिंग</translation>
+        <translation type="vanished">तीर सेटिंग</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>लंबाई</translation>
+        <translation type="vanished">लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>मानक मूल्य:</translation>
+        <translation type="vanished">मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[एमएस]</translation>
+        <translation type="vanished">[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>स्क्रीन पर लंबाई:</translation>
+        <translation type="vanished">स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[पिक्सेल]</translation>
+        <translation type="vanished">[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+        <translation type="vanished">आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>अदिश मान द्वारा</translation>
+        <translation type="vanished">अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
 </context>
 </TS>

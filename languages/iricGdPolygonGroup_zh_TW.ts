@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>多邊形 (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>添加新多邊形 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>顏色設置編輯</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>多邊形組顯示設置</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值著色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>讀取行時出錯 %1.對於“pid”值相同的行，“value”應該相同。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>編輯顯示設置</translation>
     </message>
 </context>
 <context>

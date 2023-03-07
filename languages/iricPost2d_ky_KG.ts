@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Жебе жөндөөсү</translation>
+        <translation type="vanished">Жебе жөндөөсү</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандарттык маани:</translation>
+        <translation type="vanished">Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Айым]</translation>
+        <translation type="vanished">[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Экрандын узундугу:</translation>
+        <translation type="vanished">Экрандын узундугу:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Тартуу үчүн минималдуу мааниси:</translation>
+        <translation type="vanished">Тартуу үчүн минималдуу мааниси:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Үлгүлөө</translation>
+        <translation type="vanished">Үлгүлөө</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Бардык чокулар</translation>
+        <translation type="vanished">Бардык чокулар</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Тандоо ылдамдыгы:</translation>
+        <translation type="vanished">Тандоо ылдамдыгы:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-багыт</translation>
+        <translation type="vanished">I-багыт</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-багыты</translation>
+        <translation type="vanished">J-багыты</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Скалярдык мааниси боюнча</translation>
+        <translation type="vanished">Скалярдык мааниси боюнча</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Жебе формасы</translation>
+        <translation type="vanished">Жебе формасы</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Жебенин өлчөмү:</translation>
+        <translation type="vanished">Жебенин өлчөмү:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Саптын туурасы:</translation>
+        <translation type="vanished">Саптын туурасы:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Аймак жөндөө (&amp;R)</translation>
+        <translation type="vanished">Аймак жөндөө (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Жебе жөндөөсү</translation>
+        <translation type="vanished">Жебе жөндөөсү</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандарттык маани:</translation>
+        <translation type="vanished">Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Айым]</translation>
+        <translation type="vanished">[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Экрандын узундугу:</translation>
+        <translation type="vanished">Экрандын узундугу:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Тартуу үчүн минималдуу мааниси:</translation>
+        <translation type="vanished">Тартуу үчүн минималдуу мааниси:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Үлгүлөө</translation>
+        <translation type="vanished">Үлгүлөө</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Бардык чокулар</translation>
+        <translation type="vanished">Бардык чокулар</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Тандоо ылдамдыгы:</translation>
+        <translation type="vanished">Тандоо ылдамдыгы:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Чокуларынын санын көрсөтүңүз</translation>
+        <translation type="vanished">Чокуларынын санын көрсөтүңүз</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Скалярдык мааниси боюнча</translation>
+        <translation type="vanished">Скалярдык мааниси боюнча</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Жебе формасы</translation>
+        <translation type="vanished">Жебе формасы</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Жебенин өлчөмү:</translation>
+        <translation type="vanished">Жебенин өлчөмү:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Саптын туурасы:</translation>
+        <translation type="vanished">Саптын туурасы:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Аймак жөндөө (&amp;R)</translation>
+        <translation type="vanished">Аймак жөндөө (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скаляр (клетканын борбору)</translation>
+        <translation type="vanished">Скаляр (клетканын борбору)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Контурдун жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Контурдун жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн, Контур Сүрөтү менен көрсөтүү.</translation>
+        <translation type="vanished">Көчө көрүнүшү үчүн KML экспорттоо үчүн, Контур Сүрөтү менен көрсөтүү.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн, маани диапазону кол менен орнотулушу керек.</translation>
+        <translation type="vanished">Көчө көрүнүшү үчүн KML экспорттоо үчүн, маани диапазону кол менен орнотулушу керек.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн координаттар системасы көрсөтүлүшү керек.</translation>
+        <translation type="vanished">Көчө көрүнүшү үчүн KML экспорттоо үчүн координаттар системасы көрсөтүлүшү керек.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярдык жөндөө (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Максимум төрт контур аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
+        <translation type="vanished">Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Скалярдык жөндөө</translation>
+        <translation type="vanished">Скалярдык жөндөө</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Display Setting</translation>
+        <translation type="vanished">Display Setting</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Аймак жөндөө (&amp;R)</translation>
+        <translation type="vanished">Аймак жөндөө (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Маанилер диапазону үчүн максималдуу мааниси мини мааниден кичине.</translation>
+        <translation type="vanished">Маанилер диапазону үчүн максималдуу мааниси мини мааниден кичине.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Географиялык маалыматтар</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Маалымдама маалымат</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Тор формасынын дисплей жөндөөлөрү</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Контурдун жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Контурдун жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн, Контур Сүрөтү менен көрсөтүү.</translation>
+        <translation type="vanished">Көчө көрүнүшү үчүн KML экспорттоо үчүн, Контур Сүрөтү менен көрсөтүү.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн, маани диапазону кол менен орнотулушу керек.</translation>
+        <translation type="vanished">Көчө көрүнүшү үчүн KML экспорттоо үчүн, маани диапазону кол менен орнотулушу керек.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн координаттар системасы көрсөтүлүшү керек.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярдык жөндөө (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Көчө көрүнүшү үчүн KML экспорттоо үчүн Colormode "Дискреттүү режим" болушу керек</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Скаляр (түйүн)</translation>
+        <translation type="vanished">Скаляр (түйүн)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
+        <translation type="vanished">Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>скаляр</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Форма файлын экспорттоо үчүн түс жөндөөлөрүн "Дискреттүү режимге" которуңуз.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Жебенин физикалык маанисинин өзгөрүшү</translation>
+        <translation type="vanished">Жебенин физикалык маанисинин өзгөрүшү</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Жебе жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Жебе жөндөөсүн жаңыртуу</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Arrows Setting</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регион</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Жебе жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Жебе жөндөөсүн жаңыртуу</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Arrows Setting</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регион</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Бөлүкчөлөрдүн скалярдык жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Бөлүкчөлөрдүн жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн жөндөөсүн түзөтүү</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Атрибут браузерин көрсөтүү</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Вектордук атрибут Өзгөртүүнү тандаңыз</translation>
+        <translation type="vanished">Вектордук атрибут Өзгөртүүнү тандаңыз</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Вектордук жөндөөнү жаңыртуу</translation>
+        <translation type="vanished">Вектордук жөндөөнү жаңыртуу</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Жебе физикалык маанинин өзгөрүшү</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Бөлүкчөлөрдүн векторунун жөндөөлөрү</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Polygon Setting түзөтүү</translation>
+        <translation type="vanished">Polygon Setting түзөтүү</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Көп бурчтуу маалыматтар дисплей жөндөөсү</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Клетка контурун түзүү</translation>
+        <translation type="vanished">Клетка контурун түзүү</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Контур түзүү</translation>
+        <translation type="vanished">Контур түзүү</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Тор формасынын жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Тор формасынын жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Бөлүкчөлөрдүн скалярдык жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн скалярдык жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Полигон скалярдык жөндөөнү жаңыртуу</translation>
+        <translation type="vanished">Полигон скалярдык жөндөөнү жаңыртуу</translation>
     </message>
 </context>
 </TS>

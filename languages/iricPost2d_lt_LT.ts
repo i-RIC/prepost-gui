@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Rodyklės nustatymas</translation>
+        <translation type="vanished">Rodyklės nustatymas</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Ilgis</translation>
+        <translation type="vanished">Ilgis</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standartinė vertė:</translation>
+        <translation type="vanished">Standartinė vertė:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ilgis ekrane:</translation>
+        <translation type="vanished">Ilgis ekrane:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikselis]</translation>
+        <translation type="vanished">[pikselis]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimali nupiešiama vertė:</translation>
+        <translation type="vanished">Minimali nupiešiama vertė:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mėginių ėmimas</translation>
+        <translation type="vanished">Mėginių ėmimas</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Visos viršūnės</translation>
+        <translation type="vanished">Visos viršūnės</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mėginių ėmimo dažnis:</translation>
+        <translation type="vanished">Mėginių ėmimo dažnis:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Aš-kryptis</translation>
+        <translation type="vanished">Aš-kryptis</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-kryptis</translation>
+        <translation type="vanished">J-kryptis</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Rodyklės forma</translation>
+        <translation type="vanished">Rodyklės forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Rodyklės dydis:</translation>
+        <translation type="vanished">Rodyklės dydis:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Rodyklės nustatymas</translation>
+        <translation type="vanished">Rodyklės nustatymas</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Ilgis</translation>
+        <translation type="vanished">Ilgis</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standartinė vertė:</translation>
+        <translation type="vanished">Standartinė vertė:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ilgis ekrane:</translation>
+        <translation type="vanished">Ilgis ekrane:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikselis]</translation>
+        <translation type="vanished">[pikselis]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimali nupiešiama vertė:</translation>
+        <translation type="vanished">Minimali nupiešiama vertė:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mėginių ėmimas</translation>
+        <translation type="vanished">Mėginių ėmimas</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Visos viršūnės</translation>
+        <translation type="vanished">Visos viršūnės</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mėginių ėmimo dažnis:</translation>
+        <translation type="vanished">Mėginių ėmimo dažnis:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Nurodykite viršūnių skaičių</translation>
+        <translation type="vanished">Nurodykite viršūnių skaičių</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Rodyklės forma</translation>
+        <translation type="vanished">Rodyklės forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Rodyklės dydis:</translation>
+        <translation type="vanished">Rodyklės dydis:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalaras (ląstelių centras)</translation>
+        <translation type="vanished">Skalaras (ląstelių centras)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atnaujinkite kontūro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite kontūro nustatymą</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Norėdami eksportuoti KML gatvės vaizdui, rodykite jį su kontūro pav.</translation>
+        <translation type="vanished">Norėdami eksportuoti KML gatvės vaizdui, rodykite jį su kontūro pav.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Jei norite eksportuoti gatvės vaizdo KML, verčių diapazonas turi būti nustatytas rankiniu būdu.</translation>
+        <translation type="vanished">Jei norite eksportuoti gatvės vaizdo KML, verčių diapazonas turi būti nustatytas rankiniu būdu.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Norint eksportuoti gatvės vaizdo KML, reikia nurodyti koordinačių sistemą.</translation>
+        <translation type="vanished">Norint eksportuoti gatvės vaizdo KML, reikia nurodyti koordinačių sistemą.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaliarinis nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+        <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
+        <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skaliarinis nustatymas</translation>
+        <translation type="vanished">Skaliarinis nustatymas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekrano nustatymas</translation>
+        <translation type="vanished">Ekrano nustatymas</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Reikšmių diapazone maksimali vertė yra mažesnė už min.</translation>
+        <translation type="vanished">Reikšmių diapazone maksimali vertė yra mažesnė už min.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografiniai duomenys</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Nuoroda informacija</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Tinklelio formos ekrano nustatymas</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atnaujinkite kontūro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite kontūro nustatymą</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Norėdami eksportuoti KML gatvės vaizdui, rodykite jį su kontūro pav.</translation>
+        <translation type="vanished">Norėdami eksportuoti KML gatvės vaizdui, rodykite jį su kontūro pav.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Jei norite eksportuoti gatvės vaizdo KML, verčių diapazonas turi būti nustatytas rankiniu būdu.</translation>
+        <translation type="vanished">Jei norite eksportuoti gatvės vaizdo KML, verčių diapazonas turi būti nustatytas rankiniu būdu.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Norint eksportuoti gatvės vaizdo KML, reikia nurodyti koordinačių sistemą.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaliarinis nustatymas (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Norint eksportuoti KML į gatvės vaizdą, Colormode turi būti "Diskrečiasis režimas"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalaras (mazgas)</translation>
+        <translation type="vanished">Skalaras (mazgas)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
+        <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skaliarinis</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Norėdami eksportuoti formos failą, perjunkite spalvų nustatymą į „Diskretus režimas“.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Rodyklės fizinės vertės keitimas</translation>
+        <translation type="vanished">Rodyklės fizinės vertės keitimas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atnaujinkite rodyklės nustatymą</translation>
+        <translation type="vanished">Atnaujinkite rodyklės nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Rodyklės nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regionas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atnaujinkite rodyklės nustatymą</translation>
+        <translation type="vanished">Atnaujinkite rodyklės nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Rodyklės nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regionas</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Dalelių skaliarinis nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Redaguoti dalelių nustatymą</translation>
+        <translation type="vanished">Redaguoti dalelių nustatymą</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Rodyti atributų naršyklę</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorinis atributas Pasirinkite Keisti</translation>
+        <translation type="vanished">Vektorinis atributas Pasirinkite Keisti</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Atnaujinkite vektorinį nustatymą</translation>
+        <translation type="vanished">Atnaujinkite vektorinį nustatymą</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Rodyklės fizinės vertės pasikeitimas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Dalelių vektoriaus nustatymas</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Redaguoti daugiakampio nustatymą</translation>
+        <translation type="vanished">Redaguoti daugiakampio nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Daugiakampio duomenų rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Sukurkite ląstelių kontūrą</translation>
+        <translation type="vanished">Sukurkite ląstelių kontūrą</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Sukurkite kontūrą</translation>
+        <translation type="vanished">Sukurkite kontūrą</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atnaujinkite tinklelio formos nustatymą</translation>
+        <translation type="vanished">Atnaujinkite tinklelio formos nustatymą</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Atnaujinkite dalelių skaliaro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite dalelių skaliaro nustatymą</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Atnaujinkite daugiakampio skaliaro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite daugiakampio skaliaro nustatymą</translation>
     </message>
 </context>
 </TS>

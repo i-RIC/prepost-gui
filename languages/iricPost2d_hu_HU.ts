@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nyilak beállítása</translation>
+        <translation type="vanished">Nyilak beállítása</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Hossz</translation>
+        <translation type="vanished">Hossz</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard érték:</translation>
+        <translation type="vanished">Standard érték:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Kisasszony]</translation>
+        <translation type="vanished">[Kisasszony]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Hossz a képernyőn:</translation>
+        <translation type="vanished">Hossz a képernyőn:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[képpont]</translation>
+        <translation type="vanished">[képpont]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimális rajzolható érték:</translation>
+        <translation type="vanished">Minimális rajzolható érték:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mintavétel</translation>
+        <translation type="vanished">Mintavétel</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Minden csúcs</translation>
+        <translation type="vanished">Minden csúcs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mintavételi arány:</translation>
+        <translation type="vanished">Mintavételi arány:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-irány</translation>
+        <translation type="vanished">I-irány</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-irány</translation>
+        <translation type="vanished">J-irány</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nyíl Alak</translation>
+        <translation type="vanished">Nyíl Alak</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nyíl méret:</translation>
+        <translation type="vanished">Nyíl méret:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Régió beállítása (&amp;R)</translation>
+        <translation type="vanished">Régió beállítása (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nyilak beállítása</translation>
+        <translation type="vanished">Nyilak beállítása</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Hossz</translation>
+        <translation type="vanished">Hossz</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard érték:</translation>
+        <translation type="vanished">Standard érték:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Kisasszony]</translation>
+        <translation type="vanished">[Kisasszony]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Hossz a képernyőn:</translation>
+        <translation type="vanished">Hossz a képernyőn:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[képpont]</translation>
+        <translation type="vanished">[képpont]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimális rajzolható érték:</translation>
+        <translation type="vanished">Minimális rajzolható érték:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mintavétel</translation>
+        <translation type="vanished">Mintavétel</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Minden csúcs</translation>
+        <translation type="vanished">Minden csúcs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mintavételi arány:</translation>
+        <translation type="vanished">Mintavételi arány:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Adja meg a csúcsok számát</translation>
+        <translation type="vanished">Adja meg a csúcsok számát</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nyíl Alak</translation>
+        <translation type="vanished">Nyíl Alak</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nyíl méret:</translation>
+        <translation type="vanished">Nyíl méret:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Régió beállítása (&amp;R)</translation>
+        <translation type="vanished">Régió beállítása (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skaláris (sejtközpont)</translation>
+        <translation type="vanished">Skaláris (sejtközpont)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Frissítse a kontúr beállítást</translation>
+        <translation type="vanished">Frissítse a kontúr beállítást</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Ha KML -t szeretne exportálni utcaképre, jelenítse meg a Kontúr ábrával.</translation>
+        <translation type="vanished">Ha KML -t szeretne exportálni utcaképre, jelenítse meg a Kontúr ábrával.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>A KML utcaképre történő exportálásához az értéktartományt manuálisan kell beállítani.</translation>
+        <translation type="vanished">A KML utcaképre történő exportálásához az értéktartományt manuálisan kell beállítani.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>A KML utcaképre való exportálásához meg kell adni a koordinátarendszert.</translation>
+        <translation type="vanished">A KML utcaképre való exportálásához meg kell adni a koordinátarendszert.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaláris beállítás (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Párbeszéd</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Hatótávolság</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Legfeljebb négy kontúr definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skaláris beállítás</translation>
+        <translation type="vanished">Skaláris beállítás</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Kijelző beállítás</translation>
+        <translation type="vanished">Kijelző beállítás</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Régió beállítása (&amp;R)</translation>
+        <translation type="vanished">Régió beállítása (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Értéktartomány esetén a maximális érték kisebb, mint a minimális érték.</translation>
+        <translation type="vanished">Értéktartomány esetén a maximális érték kisebb, mint a minimális érték.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Földrajzi adatok</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referencia információ</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Rács alakzat megjelenítési beállítása</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Frissítse a kontúr beállítást</translation>
+        <translation type="vanished">Frissítse a kontúr beállítást</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Ha KML -t szeretne exportálni utcaképre, jelenítse meg a Kontúr ábrával.</translation>
+        <translation type="vanished">Ha KML -t szeretne exportálni utcaképre, jelenítse meg a Kontúr ábrával.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>A KML utcaképre történő exportálásához az értéktartományt manuálisan kell beállítani.</translation>
+        <translation type="vanished">A KML utcaképre történő exportálásához az értéktartományt manuálisan kell beállítani.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>A KML utcaképre való exportálásához meg kell adni a koordinátarendszert.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaláris beállítás (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>A KML utcanézethez való exportálásához a Colormode-nak "Diszkrét mód"-nak kell lennie.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Párbeszéd</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Hatótávolság</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalár (csomópont)</translation>
+        <translation type="vanished">Skalár (csomópont)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalár</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Az alakfájl exportálásához állítsa a színbeállítást "Diszkrét módra".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Nyíl Fizikai értékváltozás</translation>
+        <translation type="vanished">Nyíl Fizikai értékváltozás</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Nyílbeállítás frissítése</translation>
+        <translation type="vanished">Nyílbeállítás frissítése</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nyilak beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Vidék</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Nyílbeállítás frissítése</translation>
+        <translation type="vanished">Nyílbeállítás frissítése</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nyilak beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Vidék</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Részecskék skaláris beállítása</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Színtérkép beállítása</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pontméret:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Részecske -beállítás szerkesztése</translation>
+        <translation type="vanished">Részecske -beállítás szerkesztése</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Az Attribútumböngésző megjelenítése</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektoros attribútum Válassza a Módosítás lehetőséget</translation>
+        <translation type="vanished">Vektoros attribútum Válassza a Módosítás lehetőséget</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vektorbeállítás frissítése</translation>
+        <translation type="vanished">Vektorbeállítás frissítése</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow fizikai érték változás</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Részecskék vektor beállítása</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Sokszög beállítás szerkesztése</translation>
+        <translation type="vanished">Sokszög beállítás szerkesztése</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Sokszög adatmegjelenítési beállítás</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Színtérkép beállítása</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Cellakontúr létrehozása</translation>
+        <translation type="vanished">Cellakontúr létrehozása</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kontúr létrehozása</translation>
+        <translation type="vanished">Kontúr létrehozása</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Frissítse a rács alakzat beállítását</translation>
+        <translation type="vanished">Frissítse a rács alakzat beállítását</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Frissítse a részecskék skalár beállítását</translation>
+        <translation type="vanished">Frissítse a részecskék skalár beállítását</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>A sokszög skalár beállításának frissítése</translation>
+        <translation type="vanished">A sokszög skalár beállításának frissítése</translation>
     </message>
 </context>
 </TS>

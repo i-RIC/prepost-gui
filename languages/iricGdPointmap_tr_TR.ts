@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Metin dosyası (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Metin dosyası (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Metin dosyası (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Dosya adı:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinat sistemi</translation>
     </message>
 </context>
 <context>

@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>File berikut akan diimpor. Apakah itu baik-baik saja?</translation>
+        <translation type="vanished">File berikut akan diimpor. Apakah itu baik-baik saja?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Silakan pilih file yang akan diimpor.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Pilih Semua (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Batalkan Pilihan Semua (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Peringatan</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Interval waktu antara file yang dipilih tidak sama.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Nama file tidak sesuai dengan pola</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona waktu:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Nilai dimensi untuk ketidakcocokan waktu.</translation>
+        <translation type="vanished">Nilai dimensi untuk ketidakcocokan waktu.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Sistem koordinat tidak ditentukan untuk %1. Silakan pilih sistem koordinat secara manual.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Data raster deret waktu sudah diimpor. Jika Anda ingin mengimpor data lain, harap hapus data yang sudah diimpor terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Pembukaan %1 gagal.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Nilai dimensi untuk %1 ketidakcocokan.</translation>
+        <translation type="vanished">Nilai dimensi untuk %1 ketidakcocokan.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Terjadi kesalahan saat menguraikan definisi waktu: %1</translation>
+        <translation type="vanished">Terjadi kesalahan saat menguraikan definisi waktu: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 tidak memiliki data bujur, lintang atau x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Data raster deret waktu sudah diimpor. Jika Anda ingin mengimpor data lain, harap hapus data yang sudah diimpor terlebih dahulu.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Waktu asli:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona waktu:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasi</translation>
+        <translation type="vanished">Informasi</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 file dalam folder %2 diimpor.</translation>
+        <translation type="vanished">%1 file dalam folder %2 diimpor.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Nilai dimensi untuk ketidakcocokan waktu.</translation>
+        <translation type="vanished">Nilai dimensi untuk ketidakcocokan waktu.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Data raster deret waktu sudah diimpor. Jika Anda ingin mengimpor data lain, harap hapus data yang sudah diimpor terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Terjadi kesalahan saat mengimpor data yang dikonversi dari %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Terjadi kesalahan saat membuka %1.</translation>
     </message>
 </context>
 </TS>

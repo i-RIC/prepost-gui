@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pijlinstelling</translation>
+        <translation type="vanished">Pijlinstelling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengte</translation>
+        <translation type="vanished">Lengte</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standaard waarde:</translation>
+        <translation type="vanished">Standaard waarde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mevrouw]</translation>
+        <translation type="vanished">[Mevrouw]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengte op scherm:</translation>
+        <translation type="vanished">Lengte op scherm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimale waarde om te tekenen:</translation>
+        <translation type="vanished">Minimale waarde om te tekenen:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sampling</translation>
+        <translation type="vanished">Sampling</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hoekpunten</translation>
+        <translation type="vanished">Alle hoekpunten</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Bemonsteringsfrequentie:</translation>
+        <translation type="vanished">Bemonsteringsfrequentie:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>ik-richting</translation>
+        <translation type="vanished">ik-richting</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-richting</translation>
+        <translation type="vanished">J-richting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pijlvorm</translation>
+        <translation type="vanished">Pijlvorm</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pijl grootte:</translation>
+        <translation type="vanished">Pijl grootte:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pijlinstelling</translation>
+        <translation type="vanished">Pijlinstelling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengte</translation>
+        <translation type="vanished">Lengte</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standaard waarde:</translation>
+        <translation type="vanished">Standaard waarde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mevrouw]</translation>
+        <translation type="vanished">[Mevrouw]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengte op scherm:</translation>
+        <translation type="vanished">Lengte op scherm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimale waarde om te tekenen:</translation>
+        <translation type="vanished">Minimale waarde om te tekenen:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sampling</translation>
+        <translation type="vanished">Sampling</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hoekpunten</translation>
+        <translation type="vanished">Alle hoekpunten</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Bemonsteringsfrequentie:</translation>
+        <translation type="vanished">Bemonsteringsfrequentie:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Specificeer aantal hoekpunten</translation>
+        <translation type="vanished">Specificeer aantal hoekpunten</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pijlvorm</translation>
+        <translation type="vanished">Pijlvorm</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pijl grootte:</translation>
+        <translation type="vanished">Pijl grootte:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalair (celcentrum)</translation>
+        <translation type="vanished">Scalair (celcentrum)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Contourinstelling bijwerken</translation>
+        <translation type="vanished">Contourinstelling bijwerken</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Om KML voor Street View te exporteren, geeft u weer met Contour Figure.</translation>
+        <translation type="vanished">Om KML voor Street View te exporteren, geeft u weer met Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Om KML voor Street View te exporteren, moet het waardebereik handmatig worden ingesteld.</translation>
+        <translation type="vanished">Om KML voor Street View te exporteren, moet het waardebereik handmatig worden ingesteld.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Om KML voor Street View te exporteren, moet het coördinatensysteem worden opgegeven.</translation>
+        <translation type="vanished">Om KML voor Street View te exporteren, moet het coördinatensysteem worden opgegeven.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>scalaire instelling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoogvenster</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
+        <translation type="vanished">Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Scalaire instelling</translation>
+        <translation type="vanished">Scalaire instelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Beeldscherm instelling</translation>
+        <translation type="vanished">Beeldscherm instelling</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Voor waardebereik is de maximale waarde kleiner dan de minimale waarde.</translation>
+        <translation type="vanished">Voor waardebereik is de maximale waarde kleiner dan de minimale waarde.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografische gegevens</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referentie informatie</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Instelling rastervormweergave</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Contourinstelling bijwerken</translation>
+        <translation type="vanished">Contourinstelling bijwerken</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Om KML voor Street View te exporteren, geeft u weer met Contour Figure.</translation>
+        <translation type="vanished">Om KML voor Street View te exporteren, geeft u weer met Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Om KML voor Street View te exporteren, moet het waardebereik handmatig worden ingesteld.</translation>
+        <translation type="vanished">Om KML voor Street View te exporteren, moet het waardebereik handmatig worden ingesteld.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Om KML voor Street View te exporteren, moet het coördinatensysteem worden opgegeven.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>scalaire instelling (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Om KML voor Street View te exporteren, moet Colormode "Discrete Mode" zijn</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoogvenster</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Scalair (knooppunt)</translation>
+        <translation type="vanished">Scalair (knooppunt)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
+        <translation type="vanished">Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalair</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Om een vormbestand te exporteren, schakelt u de kleurinstelling naar "Discrete modus".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Pijl Wijziging fysieke waarde</translation>
+        <translation type="vanished">Pijl Wijziging fysieke waarde</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pijlinstelling bijwerken</translation>
+        <translation type="vanished">Pijlinstelling bijwerken</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pijlen instellen</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regio</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pijlinstelling bijwerken</translation>
+        <translation type="vanished">Pijlinstelling bijwerken</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pijlen instellen</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regio</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Deeltjes scalaire instelling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-instelling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Deeltjesinstelling bewerken</translation>
+        <translation type="vanished">Deeltjesinstelling bewerken</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Attribuutbrowser tonen</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vectorkenmerk Selectie wijzigen</translation>
+        <translation type="vanished">Vectorkenmerk Selectie wijzigen</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vectorinstelling bijwerken</translation>
+        <translation type="vanished">Vectorinstelling bijwerken</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Pijl Fysieke waardeverandering</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Deeltjes Vector Instelling</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Veelhoekinstelling bewerken</translation>
+        <translation type="vanished">Veelhoekinstelling bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Weergave-instelling veelhoekgegevens</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-instelling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Celcontour maken</translation>
+        <translation type="vanished">Celcontour maken</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Contour maken</translation>
+        <translation type="vanished">Contour maken</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Instelling rastervorm bijwerken</translation>
+        <translation type="vanished">Instelling rastervorm bijwerken</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Scalaire instelling voor deeltjes bijwerken</translation>
+        <translation type="vanished">Scalaire instelling voor deeltjes bijwerken</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Veelhoek scalaire instelling bijwerken</translation>
+        <translation type="vanished">Veelhoek scalaire instelling bijwerken</translation>
     </message>
 </context>
 </TS>

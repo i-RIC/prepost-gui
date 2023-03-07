@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>선 %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>새 줄 추가 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>색상 설정 편집</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>폴리라인 그룹 표시 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV 파일(줄) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>디스플레이 설정 수정</translation>
     </message>
 </context>
 <context>

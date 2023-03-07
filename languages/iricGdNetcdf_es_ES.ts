@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Se importarán los siguientes archivos. ¿Está bien?</translation>
+        <translation type="vanished">Se importarán los siguientes archivos. ¿Está bien?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Seleccione los archivos a importar.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Seleccionar todo (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deseleccionar todo (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>El intervalo de tiempo entre los archivos seleccionados no es el mismo.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>El nombre del archivo no coincide con el patrón</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valores de dimensión para discrepancias de tiempo.</translation>
+        <translation type="vanished">Valores de dimensión para discrepancias de tiempo.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>El sistema de coordenadas no está especificado para %1. Seleccione el sistema de coordenadas manualmente.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Apertura %1 ha fallado.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Valores de dimensión para %1 discordancia.</translation>
+        <translation type="vanished">Valores de dimensión para %1 discordancia.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Se produjo un error al analizar la definición de tiempo: %1</translation>
+        <translation type="vanished">Se produjo un error al analizar la definición de tiempo: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 no tiene datos de longitud, latitud ni x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Hora original:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacion</translation>
+        <translation type="vanished">Informacion</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 archivos en la carpeta %2 son importados.</translation>
+        <translation type="vanished">%1 archivos en la carpeta %2 son importados.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valores de dimensión para discrepancias de tiempo.</translation>
+        <translation type="vanished">Valores de dimensión para discrepancias de tiempo.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Ocurrió un error al importar datos convertidos de %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Ocurrió un error al abrir %1.</translation>
     </message>
 </context>
 </TS>

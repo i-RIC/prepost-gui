@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>poligon (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Tambahkan Poligon Baru (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Edit Pengaturan Warna</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Pengaturan Tampilan Grup Poligon</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lebar Garis:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Terjadi kesalahan saat membaca baris %1. "nilai" harus sama untuk baris di mana nilai "pid" sama.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Edit pengaturan tampilan</translation>
     </message>
 </context>
 <context>

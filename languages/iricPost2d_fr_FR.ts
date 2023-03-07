@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Réglage de la flèche</translation>
+        <translation type="vanished">Réglage de la flèche</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valeur physique :</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longueur</translation>
+        <translation type="vanished">Longueur</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valeur standard:</translation>
+        <translation type="vanished">Valeur standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mme]</translation>
+        <translation type="vanished">[Mme]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Durée à l'écran :</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valeur minimale à tirer :</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Échantillonnage</translation>
+        <translation type="vanished">Échantillonnage</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tous les sommets</translation>
+        <translation type="vanished">Tous les sommets</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taux d'échantillonnage:</translation>
+        <translation type="vanished">Taux d'échantillonnage:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-direction</translation>
+        <translation type="vanished">I-direction</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>direction J</translation>
+        <translation type="vanished">direction J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Couleur personnalisée</translation>
+        <translation type="vanished">Couleur personnalisée</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Par valeur scalaire</translation>
+        <translation type="vanished">Par valeur scalaire</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forme de flèche</translation>
+        <translation type="vanished">Forme de flèche</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Taille de la flèche:</translation>
+        <translation type="vanished">Taille de la flèche:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Largeur de ligne:</translation>
+        <translation type="vanished">Largeur de ligne:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Paramètre de région (&amp;R)</translation>
+        <translation type="vanished">Paramètre de région (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Réglage de la barre de couleur (&amp;C)</translation>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Réglage de la flèche</translation>
+        <translation type="vanished">Réglage de la flèche</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valeur physique :</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longueur</translation>
+        <translation type="vanished">Longueur</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valeur standard:</translation>
+        <translation type="vanished">Valeur standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mme]</translation>
+        <translation type="vanished">[Mme]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Durée à l'écran :</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valeur minimale à tirer :</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Échantillonnage</translation>
+        <translation type="vanished">Échantillonnage</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tous les sommets</translation>
+        <translation type="vanished">Tous les sommets</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taux d'échantillonnage:</translation>
+        <translation type="vanished">Taux d'échantillonnage:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Spécifier le nombre de sommets</translation>
+        <translation type="vanished">Spécifier le nombre de sommets</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Couleur personnalisée</translation>
+        <translation type="vanished">Couleur personnalisée</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Par valeur scalaire</translation>
+        <translation type="vanished">Par valeur scalaire</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forme de flèche</translation>
+        <translation type="vanished">Forme de flèche</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Taille de la flèche:</translation>
+        <translation type="vanished">Taille de la flèche:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Largeur de ligne:</translation>
+        <translation type="vanished">Largeur de ligne:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Paramètre de région (&amp;R)</translation>
+        <translation type="vanished">Paramètre de région (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Réglage de la barre de couleur (&amp;C)</translation>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalaire (centre cellulaire)</translation>
+        <translation type="vanished">Scalaire (centre cellulaire)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Mettre à jour le paramètre de contour</translation>
+        <translation type="vanished">Mettre à jour le paramètre de contour</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertissement</translation>
+        <translation type="vanished">Avertissement</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Pour exporter KML pour Street View, affichez avec Contour Figure.</translation>
+        <translation type="vanished">Pour exporter KML pour Street View, affichez avec Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Pour exporter KML pour Street View, la plage de valeurs doit être configurée manuellement.</translation>
+        <translation type="vanished">Pour exporter KML pour Street View, la plage de valeurs doit être configurée manuellement.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Pour exporter KML pour Street View, le système de coordonnées doit être spécifié.</translation>
+        <translation type="vanished">Pour exporter KML pour Street View, le système de coordonnées doit être spécifié.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Réglage scalaire (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogue</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamme</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertissement</translation>
+        <translation type="vanished">Avertissement</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Un maximum de quatre contours peut être défini.</translation>
+        <translation type="vanished">Un maximum de quatre contours peut être défini.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erreur</translation>
+        <translation type="vanished">Erreur</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Pour exporter le fichier de forme, passez "Paramètres d'affichage" à "Figure de contour", pas "Frange de couleur" ou "Isolines".</translation>
+        <translation type="vanished">Pour exporter le fichier de forme, passez "Paramètres d'affichage" à "Figure de contour", pas "Frange de couleur" ou "Isolines".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Paramètre scalaire</translation>
+        <translation type="vanished">Paramètre scalaire</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valeur physique :</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Réglage de l'affichage</translation>
+        <translation type="vanished">Réglage de l'affichage</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Paramètre de région (&amp;R)</translation>
+        <translation type="vanished">Paramètre de région (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Réglage de la barre de couleur (&amp;C)</translation>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erreur</translation>
+        <translation type="vanished">Erreur</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
+        <translation type="vanished">Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Données géographiques</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Informations de référence</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Paramètre d'affichage de la forme de la grille</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +715,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Mettre à jour le paramètre de contour</translation>
+        <translation type="vanished">Mettre à jour le paramètre de contour</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Pour exporter KML pour Street View, affichez avec Contour Figure.</translation>
+        <translation type="vanished">Pour exporter KML pour Street View, affichez avec Contour Figure.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,18 +727,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Pour exporter KML pour Street View, la plage de valeurs doit être configurée manuellement.</translation>
+        <translation type="vanished">Pour exporter KML pour Street View, la plage de valeurs doit être configurée manuellement.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Pour exporter KML pour Street View, le système de coordonnées doit être spécifié.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Réglage scalaire (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Pour exporter KML pour Street View, Colormode doit être "Mode discret"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogue</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamme</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Scalaire (nœud)</translation>
+        <translation type="vanished">Scalaire (nœud)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Pour exporter le fichier de forme, passez "Paramètres d'affichage" à "Figure de contour", pas "Frange de couleur" ou "Isolines".</translation>
+        <translation type="vanished">Pour exporter le fichier de forme, passez "Paramètres d'affichage" à "Figure de contour", pas "Frange de couleur" ou "Isolines".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalaire</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Pour exporter le fichier de forme, basculez le paramètre de couleur sur "Mode discret".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Flèche Changement de valeur physique</translation>
+        <translation type="vanished">Flèche Changement de valeur physique</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Mettre à jour le paramètre de flèche</translation>
+        <translation type="vanished">Mettre à jour le paramètre de flèche</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Réglage des flèches</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Région</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Mettre à jour le paramètre de flèche</translation>
+        <translation type="vanished">Mettre à jour le paramètre de flèche</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Réglage des flèches</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Région</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Réglage scalaire des particules</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Réglage de la palette de couleurs</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taille des points :</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Modifier le réglage des particules</translation>
+        <translation type="vanished">Modifier le réglage des particules</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Afficher le navigateur d'attributs</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Modification de sélection d'attribut vectoriel</translation>
+        <translation type="vanished">Modification de sélection d'attribut vectoriel</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Mettre à jour le paramètre vectoriel</translation>
+        <translation type="vanished">Mettre à jour le paramètre vectoriel</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Modification de la valeur physique de la flèche</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Réglage du vecteur de particules</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Modifier le paramètre de polygone</translation>
+        <translation type="vanished">Modifier le paramètre de polygone</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Paramètre d'affichage des données polygonales</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Réglage de la palette de couleurs</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Largeur de ligne:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1504,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Mettre à jour le paramètre de forme de grille</translation>
+        <translation type="vanished">Mettre à jour le paramètre de forme de grille</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1314,19 +1512,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Mettre à jour le paramètre scalaire des particules</translation>
+        <translation type="vanished">Mettre à jour le paramètre scalaire des particules</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Créer un contour</translation>
+        <translation type="vanished">Créer un contour</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Créer un contour de cellule</translation>
+        <translation type="vanished">Créer un contour de cellule</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Mettre à jour le paramètre scalaire de polygone</translation>
+        <translation type="vanished">Mettre à jour le paramètre scalaire de polygone</translation>
     </message>
 </context>
 </TS>

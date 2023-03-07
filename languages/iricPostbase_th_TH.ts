@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>การตั้งค่าอนุภาค</translation>
+        <translation type="vanished">การตั้งค่าอนุภาค</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>สี:</translation>
+        <translation type="vanished">สี:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>ขนาด:</translation>
+        <translation type="vanished">ขนาด:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>การตั้งค่าอนุภาคสเกลาร์</translation>
+        <translation type="vanished">การตั้งค่าอนุภาคสเกลาร์</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>สีตามค่าแอตทริบิวต์</translation>
+        <translation type="vanished">สีตามค่าแอตทริบิวต์</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>คุณลักษณะ:</translation>
+        <translation type="vanished">คุณลักษณะ:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>ขนาด:</translation>
+        <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ตั้งค่าลูกศร</translation>
+        <translation type="vanished">ตั้งค่าลูกศร</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>ค่าแอตทริบิวต์:</translation>
+        <translation type="vanished">ค่าแอตทริบิวต์:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>ความยาว</translation>
+        <translation type="vanished">ความยาว</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>รถยนต์</translation>
+        <translation type="vanished">รถยนต์</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>ค่ามาตรฐาน:</translation>
+        <translation type="vanished">ค่ามาตรฐาน:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[นางสาว]</translation>
+        <translation type="vanished">[นางสาว]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>ความยาวบนหน้าจอ:</translation>
+        <translation type="vanished">ความยาวบนหน้าจอ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[พิกเซล]</translation>
+        <translation type="vanished">[พิกเซล]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>มูลค่าขั้นต่ำในการวาด:</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำในการวาด:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>สุ่มตัวอย่าง</translation>
+        <translation type="vanished">สุ่มตัวอย่าง</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>อนุภาคทั้งหมด</translation>
+        <translation type="vanished">อนุภาคทั้งหมด</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+        <translation type="vanished">อัตราการสุ่มตัวอย่าง:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>ระบุจำนวนอนุภาค</translation>
+        <translation type="vanished">ระบุจำนวนอนุภาค</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>ตามค่าสเกลาร์</translation>
+        <translation type="vanished">ตามค่าสเกลาร์</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>รูปร่างลูกศร</translation>
+        <translation type="vanished">รูปร่างลูกศร</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>ขนาดลูกศร:</translation>
+        <translation type="vanished">ขนาดลูกศร:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>การตั้งค่ารูปหลายเหลี่ยม</translation>
+        <translation type="vanished">การตั้งค่ารูปหลายเหลี่ยม</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>สี:</translation>
+        <translation type="vanished">สี:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>การตั้งค่ารูปหลายเหลี่ยม</translation>
+        <translation type="vanished">การตั้งค่ารูปหลายเหลี่ยม</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>สีตามค่าแอตทริบิวต์</translation>
+        <translation type="vanished">สีตามค่าแอตทริบิวต์</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>คุณลักษณะ:</translation>
+        <translation type="vanished">คุณลักษณะ:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>ความกว้างของเส้น</translation>
+        <translation type="vanished">ความกว้างของเส้น</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>เลือกผลลัพธ์เป้าหมาย</translation>
     </message>
 </context>
 <context>

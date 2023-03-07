@@ -1,5 +1,27 @@
 <TS version="2.1" language="vi_VN">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Chọn Hệ tọa độ của dữ liệu cần nhập</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Chỉnh sửa...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

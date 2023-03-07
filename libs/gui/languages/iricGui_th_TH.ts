@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>เลือก Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม &quot;ตกลง&quot;</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม "ตกลง"</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปแบบข้อความ</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกัดในแถบสถานะ</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>ตำแหน่งทศนิยม:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>เบราว์เซอร์แอตทริบิวต์</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>ตำแหน่งทศนิยม</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกัด:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>ค่า:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ &quot;%1&quot; ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
+        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ "%1" ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
     </message>
 </context>
 <context>
@@ -1439,7 +1437,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ดูเหมือนว่าโปรเจ็กต์นี้จะเปิดขึ้นโดยหน้าต่าง iRIC GUI อื่น คุณไม่สามารถเปิดโฟลเดอร์โครงการจากหลายหน้าต่าง GUI</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>โปรเจ็กต์ที่เปิดอยู่จะไม่ถูกคัดลอกไปยังไดเร็กทอรีงาน และคุณจะถูกบังคับให้บันทึกการแก้ไขที่คุณทำกับโปรเจ็กต์นี้ หากคุณต้องการเก็บโปรเจ็กต์ปัจจุบันไว้ โปรดบันทึกไปที่โปรเจ็กต์อื่นก่อน</translation>
     </message>
     <message>
@@ -1607,8 +1605,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>หน้าต่างย่อยที่ใช้งานอยู่ในปัจจุบันไม่รองรับการส่งออกรูปทรงเส้นขอบ</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>ไฟล์การตั้งค่า (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น "โหมดแยก"</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,8 +2117,8 @@ Option -&gt; Preferences</source>
         <translation>เปิดหน้าต่างหลังการประมวลผล 2D ใหม่</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird&apos;s-Eye ใหม่</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird's-Eye ใหม่</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

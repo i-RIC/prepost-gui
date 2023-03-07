@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Pengaturan Partikel</translation>
+        <translation type="vanished">Pengaturan Partikel</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Ukuran:</translation>
+        <translation type="vanished">Ukuran:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Pengaturan Skalar Partikel</translation>
+        <translation type="vanished">Pengaturan Skalar Partikel</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Warnai berdasarkan nilai atribut</translation>
+        <translation type="vanished">Warnai berdasarkan nilai atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Ukuran:</translation>
+        <translation type="vanished">Ukuran:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pengaturan Panah</translation>
+        <translation type="vanished">Pengaturan Panah</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Nilai atribut:</translation>
+        <translation type="vanished">Nilai atribut:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation type="vanished">Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation type="vanished">Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation type="vanished">[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation type="vanished">Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation type="vanished">Nilai minimum untuk menggambar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation type="vanished">Contoh</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Semua partikel</translation>
+        <translation type="vanished">Semua partikel</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation type="vanished">Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Tentukan jumlah partikel</translation>
+        <translation type="vanished">Tentukan jumlah partikel</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation type="vanished">Bentuk Panah</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation type="vanished">Ukuran panah:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation type="vanished">Lebar garis:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Pengaturan Poligon</translation>
+        <translation type="vanished">Pengaturan Poligon</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation type="vanished">Lebar Garis:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Pengaturan Poligon</translation>
+        <translation type="vanished">Pengaturan Poligon</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Warnai berdasarkan nilai atribut</translation>
+        <translation type="vanished">Warnai berdasarkan nilai atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Lebar Garis</translation>
+        <translation type="vanished">Lebar Garis</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Pilih Hasil Target</translation>
     </message>
 </context>
 <context>

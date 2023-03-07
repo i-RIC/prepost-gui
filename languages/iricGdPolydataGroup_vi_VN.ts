@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Cho mỗi</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Bạn không thể chỉ định cùng một cột cho cả Tên và Giá trị.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Hệ tọa độ:</translation>
     </message>
 </context>
 </TS>

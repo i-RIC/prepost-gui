@@ -1,5 +1,202 @@
 <TS version="2.1" language="lt_LT">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Pagal skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Redaguoti (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Spalvų schemos nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Pagal skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Forma</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Matomumas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kai pasirenkamas</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Visada</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Niekada</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Šrifto nustatymas:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Ilgis</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formatas:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Ilgis:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fonas:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Dydis ir padėtis</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Ilgis</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automatinis</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standartinė vertė:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[m/s]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Ilgis ekrane:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pikselis]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimali brėžiama vertė:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vertė:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Ilgio legenda</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pagrindinis</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Rodyklės forma</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Rodyklės dydis:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Faile %1, x-koordinačių prieaugis pikseliui ir y-koordinačių prieaugis už pikselių neatitikimus. Tai priimtina, bet gali būti neteisinga.</translation>
+        <translation type="vanished">Faile %1, x-koordinačių prieaugis pikseliui ir y-koordinačių prieaugis už pikselių neatitikimus. Tai priimtina, bet gali būti neteisinga.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Pagrindiniame lange pasirinkite atitinkamą tašką.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Pataisykite vaizdo padėtį</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Matomumas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kai pasirenkamas</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Visada</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Niekada</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Šrifto nustatymas:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiketė:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fonas:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Dydis ir padėtis</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Spalvos</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Spalvų juostos nustatymas</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Colormap nustatymas (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Įveskite failo pavadinimą, kurį norite eksportuoti</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Atidarant įvyko klaida %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vertė</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Skaidrus</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Matomumas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kai pasirenkamas</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Visada</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Niekada</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Šrifto nustatymas:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formatas:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiketė:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fonas:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Dydis ir padėtis</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialogas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Išankstiniai nustatymai:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Vertybių ir spalvų santykis</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Automatiškai koreguoti pagal verčių diapazoną</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Nustatykite rankiniu būdu</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Vertės diapazonas</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatinis</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Spalvos</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Užpildykite apatinę sritį</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Užpildykite viršutinę sritį</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Perjungti</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Spalvų juostos nustatymas</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Colormap nustatymas (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Įveskite failo pavadinimą, kurį norite eksportuoti</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Atidarant įvyko klaida %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Pasirinkite taikytiną elementą)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Perjunkite į diskrečiąjį režimą</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Perjunkite į gradacijos režimą</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Įspėjimas</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vertė</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimali vertė</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Maksimali vertė</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Skaidrus</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Perjunkite į diskrečiojo režimo dialogo langą</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Kiekviename skyriuje įterptinų spalvų skaičius</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mėginių ėmimas</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visos viršūnės</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Atrankos dažnis:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Nurodykite viršūnių skaičių</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Pasirinkite tašką dialogo lange „Georeference“.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Ištrinti taškus</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Kontūro nustatymas</translation>
+        <translation type="vanished">Kontūro nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Padėtis</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Horizontali marža:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Vertikali paraštė:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Plotis:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Aukštis:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Atstumas nuo kairės</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Atstumas iš dešinės</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Atstumas nuo viršaus</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Atstumas nuo apačios</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Pasirinkite, iš kurio CGNS failo skaityti tinklelį.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS failas</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Neapdorotas valdiklis „ActionSetValue“.</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Išsaugoti ir uždaryti (&amp;S)</translation>
+        <translation type="vanished">Išsaugoti ir uždaryti (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Išsaugant įvyko klaida.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Nepavyko atidaryti CGNS failo.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Pasirinkite Failas</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Failo pavadinimą turi sudaryti tik angliški simboliai.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Pasirinkite Failas</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Failo pavadinimą turi sudaryti tik angliški simboliai.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Pasirinkite katalogą</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Aplanko pavadinimą turi sudaryti tik angliški simboliai.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Redaguoti</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Nėra importuojamų duomenų.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Pasirinkite šabloną, kurį norite importuoti)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Įspėjimas</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Teksto srities turinys perrašomas šablonu</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Slėpti išsamią informaciją (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Įkeliant skaičiavimo rezultatą įvyko klaida.</translation>
+        <translation type="vanished">Įkeliant skaičiavimo rezultatą įvyko klaida.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Išsaugant įvyko klaida %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Skaičiavimo rezultatas išsaugomas kaip TPO failas...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Įkeliant skaičiavimo rezultatą įvyko klaida.</translation>
+        <translation type="vanished">Įkeliant skaičiavimo rezultatą įvyko klaida.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Aukščio tinklelio atributas nėra apibrėžtas tinklelio tipui %1. Tinklelio įvesties/išvesties funkcijos, tinklelio kūrimo funkcijos gali netinkamai veikti šių tipų tinkleliams.</translation>
+        <translation type="vanished">Aukščio tinklelio atributas nėra apibrėžtas tinklelio tipui %1. Tinklelio įvesties/išvesties funkcijos, tinklelio kūrimo funkcijos gali netinkamai veikti šių tipų tinkleliams.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Sprendimas %1 jau egzistuoja.</translation>
+        <translation type="vanished">Sprendimas %1 jau egzistuoja.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Negalima importuoti CGNS failo, kurio pavadinime yra kitų nei abėcėlės ir skaičių simbolių.</translation>
+        <translation type="vanished">Negalima importuoti CGNS failo, kurio pavadinime yra kitų nei abėcėlės ir skaičių simbolių.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Nepavyko išsaugoti projekto failo.</translation>
+        <translation type="vanished">%1 Nepavyko išsaugoti projekto failo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Šio projekto failo negalima perskaityti, nes jį sukūrė per sena „iRIC“ (versija %1 ).</translation>
+        <translation type="vanished">Šio projekto failo negalima perskaityti, nes jį sukūrė per sena „iRIC“ (versija %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Šis failas skirtas sprendėjams %1 %2. Jis nesuderinamas su jūsų naudojamu sprendėju, todėl galbūt nepavyks importuoti šio failo. Ar tikrai norite importuoti šį failą?</translation>
+        <translation type="vanished">Šis failas skirtas sprendėjams %1 %2. Jis nesuderinamas su jūsų naudojamu sprendėju, todėl galbūt nepavyks importuoti šio failo. Ar tikrai norite importuoti šį failą?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinačių sistema nepasirinkta.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Įvyko klaida atidarant CGNS failą projekto faile: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kopijuojamas vaizdas %1 į %2 nepavyko.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Laiko rodymo formatas</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laiko zona:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Visas regionas</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktyvus regionas</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Pasirinktinis regionas</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Aš už:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Aš Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J min.:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Ląstelės, kuriose ląstelių ilgio kitimas j kryptimi viršija %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mėginių ėmimas</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visos viršūnės</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Atrankos dažnis:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>Aš kryptis</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J kryptis</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mėginių ėmimas</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visos viršūnės</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Atrankos dažnis:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>Aš kryptis</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J kryptis</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K kryptis</translation>
     </message>
 </context>
 <context>

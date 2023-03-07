@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>이 CGNS 파일에는 솔버 정보가 없습니다. 이 CGNS 파일이 솔버와 호환되는지 확인할 수 없습니다. 호환되지 않는 경우 그리드의 일부만 가져올 수 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>이 파일에는 가져올 수 있는 그리드가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>그리드 선택</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>가져올 그리드를 선택합니다.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>축 설정</translation>
+        <translation type="vanished">축 설정</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>보이는</translation>
+        <translation type="vanished">보이는</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>디스플레이 설정</translation>
+        <translation type="vanished">디스플레이 설정</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">그리드 색상</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">노드 속성</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">셀 속성</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">사용자 정의 색상</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">축</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">보이는</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">색상:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Z 방향 스케일 편집</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z 방향 스케일</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">새로운 Z 방향 스케일을 입력합니다.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">색상 설정 편집</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Z 방향 축척 편집</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>새로운 Z 방향 스케일을 입력합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>디스플레이 설정 편집</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>높이:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>그리드 색상</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>노드 속성</translation>
+        <source>Cusom Color</source>
+        <translation>맞춤 색상</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>셀 속성</translation>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>사용자 정의 색상</translation>
+        <source>Colormap Setting</source>
+        <translation>컬러맵 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>색상:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Z 방향 스케일 편집</translation>
+        <source>Background Color:</source>
+        <translation>배경색:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z 방향 스케일</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>새로운 Z 방향 스케일을 입력합니다.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>색상 설정 편집</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z 방향 눈금:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>모든 경계 조건을 삭제하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>디스플레이 설정 편집</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>경계 조건 표시 설정</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>이름의 글꼴 설정</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Select file to import</source>
@@ -393,11 +486,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>케이스 선택</translation>
+        <translation type="vanished">케이스 선택</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>다음 중 어떤 경우인지 선택하세요. %1 계산 조건을 가져옵니다.</translation>
+        <translation type="vanished">다음 중 어떤 경우인지 선택하세요. %1 계산 조건을 가져옵니다.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -465,7 +558,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>포인트셋 데이터 (&amp;O)</translation>
+        <translation type="vanished">포인트셋 데이터 (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>웹에서 가져오기 (&amp;I)...</translation>
+        <translation type="vanished">웹에서 가져오기 (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>스칼라바 설정...</translation>
+        <translation type="vanished">스칼라바 설정...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>데이터 가져오기 %1 실패한.</translation>
+        <translation type="vanished">데이터 가져오기 %1 실패한.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>지리 데이터를 가져오려면 먼저 좌표계를 지정하십시오.</translation>
+        <translation type="vanished">지리 데이터를 가져오려면 먼저 좌표계를 지정하십시오.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>수입 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>웹에서 고도 가져오기 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>지리 데이터를 가져오려면 먼저 프로젝트의 좌표계를 지정합니다.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>변형 설정 편집 (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>기본</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>대화</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>변형 설정</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>변형 사용</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>솔버에 전달할 변형:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>참고: 변형이 활성화되면 "Default"라는 변형이 생성되고 모든 지리적 데이터가 여기로 이동됩니다. "개체 브라우저"에서 변형을 추가, 이름 바꾸기, 제거할 수 있습니다. 변형 간에 지리적 데이터를 이동하고 복사할 수 있습니다. "솔버에 전달하는 변형"에서 선택한 변형에서 생성된 그리드 속성 데이터가 솔버에 전달됩니다. 여러 변형을 준비하고 솔버에 전달할 변형을 전환하고 차이의 효과를 확인할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>그리드 셀 속성 표시 설정</translation>
+        <translation type="vanished">그리드 셀 속성 표시 설정</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>그리드 셀 속성 표시 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1064,7 +1230,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>그리드 노드 속성 표시 설정</translation>
+        <translation type="vanished">그리드 노드 속성 표시 설정</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>그리드 노드 속성 표시 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>색상 범례 설정</translation>
+        <translation type="vanished">색상 범례 설정</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>스칼라바 설정</translation>
+        <translation type="vanished">스칼라바 설정</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>보이는</translation>
+        <translation type="vanished">보이는</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>값</translation>
+        <translation type="vanished">값</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>보이는</translation>
+        <translation type="vanished">보이는</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>제목</translation>
+        <translation type="vanished">제목</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>제목 :</translation>
+        <translation type="vanished">제목 :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>글꼴 설정:</translation>
+        <translation type="vanished">글꼴 설정:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>라벨 표시</translation>
+        <translation type="vanished">라벨 표시</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>라벨 수:</translation>
+        <translation type="vanished">라벨 수:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>체재:</translation>
+        <translation type="vanished">체재:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>오리엔테이션:</translation>
+        <translation type="vanished">오리엔테이션:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>수직의</translation>
+        <translation type="vanished">수직의</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>수평의</translation>
+        <translation type="vanished">수평의</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>크기</translation>
+        <translation type="vanished">크기</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>창 크기에 대한 비율로 색상 막대 크기를 지정합니다.</translation>
+        <translation type="vanished">창 크기에 대한 비율로 색상 막대 크기를 지정합니다.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>너비 :</translation>
+        <translation type="vanished">너비 :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>1을 지정하면 색상 막대 너비가 창 너비와 동일합니다.</translation>
+        <translation type="vanished">1을 지정하면 색상 막대 너비가 창 너비와 동일합니다.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>키 :</translation>
+        <translation type="vanished">키 :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>1을 지정하면 색상 막대 높이가 창 높이와 동일합니다.</translation>
+        <translation type="vanished">1을 지정하면 색상 막대 높이가 창 높이와 동일합니다.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>위치</translation>
+        <translation type="vanished">위치</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>창 크기에 대한 비율로 색상 막대 왼쪽 하단 위치를 지정합니다.</translation>
+        <translation type="vanished">창 크기에 대한 비율로 색상 막대 왼쪽 하단 위치를 지정합니다.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>NS :</translation>
+        <translation type="vanished">NS :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>0을 지정하면 색상 막대 왼쪽 가장자리가 창 왼쪽 가장자리에 위치합니다.</translation>
+        <translation type="vanished">0을 지정하면 색상 막대 왼쪽 가장자리가 창 왼쪽 가장자리에 위치합니다.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>예 :</translation>
+        <translation type="vanished">예 :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>0을 지정하면 컬러 바 하단이 창 하단에 위치합니다.</translation>
+        <translation type="vanished">0을 지정하면 컬러 바 하단이 창 하단에 위치합니다.</translation>
     </message>
 </context>
 <context>

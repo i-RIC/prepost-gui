@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,8 +112,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Grid Bird&apos;s Eye View терезеси</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Grid Bird's Eye View терезеси</translation>
     </message>
 </context>
 <context>
@@ -210,66 +208,66 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished">Z-багыт масштабын түзөтүү</translation>
+        <translation>Z-багыт шкаласын түзөтүү</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished">Киргизүү жаңы Z-багыт масштабы.</translation>
+        <translation>Жаңы Z багытынын шкаласын киргизиңиз.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисплей жөндөөлөрүн түзөтүү</translation>
     </message>
     <message>
         <source>Elevation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Бийиктиги:</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished">Тордун түсү</translation>
+        <translation>Тор түсү</translation>
     </message>
     <message>
         <source>Cusom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Custom Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани боюнча түс</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасынын жөндөөсү</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Импорттоо (&amp;I)...</translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished">Axes</translation>
+        <translation>Балталар</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Көрүнөө</translation>
+        <translation>Көрүнүүчү</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Түс:</translation>
+        <translation>Түс:</translation>
     </message>
     <message>
         <source>Background Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фондун түсү:</translation>
     </message>
     <message>
         <source>Z-direction scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Z багытынын шкаласы:</translation>
     </message>
 </context>
 <context>
@@ -358,7 +356,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисплей жөндөөлөрүн түзөтүү</translation>
     </message>
 </context>
 <context>
@@ -465,11 +463,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBcGroupSettingDialog</name>
     <message>
         <source>Boundary Condition Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Чек ара шартын көрсөтүү жөндөөлөрү</translation>
     </message>
     <message>
         <source>Font setting for names</source>
-        <translation type="unfinished"></translation>
+        <translation>Аттар үчүн шрифт жөндөөсү</translation>
     </message>
 </context>
 <context>
@@ -663,8 +661,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 акыркы жолу оңдолгондон кийин картага түшпөйт. Сиз азыр картаны аткаргыңыз келеби?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Чек ара шарттарын коюу &quot;%1&quot;акыркы жолу оңдолгондон кийин картага түшпөйт. Эми картага түшүрүүнү каалайсызбы?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Чек ара шарттарын коюу "%1"акыркы жолу оңдолгондон кийин картага түшпөйт. Эми картага түшүрүүнү каалайсызбы?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -874,53 +872,53 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit &amp;Variation Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Вариация жөндөөлөрүн түзөтүү (&amp;V)...</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Демейки</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Диалог</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Импорттоо (&amp;I)...</translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
     <message>
         <source>Variation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Variation Setting</translation>
     </message>
     <message>
         <source>Enable variation</source>
-        <translation type="unfinished"></translation>
+        <translation>Вариацияны иштетүү</translation>
     </message>
     <message>
         <source>Variation to pass to solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Чечүүчүгө өтүүчү вариация:</translation>
     </message>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation type="unfinished"></translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Эскертүү: Вариация иштетилгенде, "Демейки" деп аталган вариация түзүлөт жана бардык географиялык маалыматтар ошого жылдырылат. Сиз "Объект Браузеринен" вариацияларды кошуп, атын өзгөртүп, жок кыла аласыз. Вариациялар арасында географиялык маалыматтарды көчүрүп, жылдыра аласыз. Сиз "Чечүүчүгө өтүүчү вариация" менен тандаган вариациядан түзүлгөн тор атрибуту дайындары чечүүчүгө өткөрүлөт. Сиз бир нече вариацияларды даярдап, аны чечүүчүгө өткөрүп, айырманын эффектисин текшере аласыз.</translation>
     </message>
 </context>
 <context>
@@ -1064,15 +1062,15 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">Grid Cell Attribute Display Setting</translation>
+        <translation>Тор клетка атрибутун көрсөтүү жөндөөлөрү</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Импорттоо (&amp;I)...</translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1135,9 +1133,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Аткаруу (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Төмөнкү атрибуттар картага түшүрүлгөн жок, анткени алар үчүн сетка генераторунун чыгуучу баалуулуктары. Эгерде сиз географиялык маалыматтарды мажбурлап карта кылгыңыз келсе, &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; менюсу менен кол менен картаңыз.</translation>
+        <translation>Төмөнкү атрибуттар картага түшүрүлгөн жок, анткени алар үчүн сетка генераторунун чыгуучу баалуулуктары. Эгерде сиз географиялык маалыматтарды мажбурлап карта кылгыңыз келсе, "Grid" -&gt; "Attributes Mapping" -&gt; "Execute" менюсу менен кол менен картаңыз.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1156,12 +1154,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Географиялык маалыматтарды картага алуу аяктады</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Тор атрибуту &quot;%1&quot;кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Тор атрибуту "%1"кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Чек ара шарты &quot;%1&quot;кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Чек ара шарты "%1"кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
     </message>
 </context>
 <context>
@@ -1179,20 +1177,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Тор түзүлгөндө сизден: Атрибуттар картасын ар дайым аткаруу үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Тор түзүлгөндө сизден: Атрибуттар картасын ар дайым аткаруу үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Кол менен</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Атрибуттардын картасы &quot;Execute&quot; менюну кол менен тандап алганда гана аткарылат.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Атрибуттардын картасы "Execute" менюну кол менен тандап алганда гана аткарылат.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1327,15 +1325,15 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished">Grid Node Attribute Display Setting</translation>
+        <translation>Тор түйүнүнүн атрибуттарын көрсөтүү жөндөөлөрү</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Импорттоо (&amp;I)...</translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1609,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Скаляр тилкесин орнотуу (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Чымчыктын көзүнүн терезесин ачыңыз (&amp;B)</translation>
     </message>
     <message>

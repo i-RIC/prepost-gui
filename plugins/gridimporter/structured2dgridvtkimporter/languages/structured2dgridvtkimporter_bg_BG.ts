@@ -2,24 +2,20 @@
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="24" />
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished" />
+        <translation>VTK файлове (*.vtk)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="30" />
         <source>VTK file</source>
-        <translation type="unfinished" />
+        <translation>VTK файл</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Copying %1 to %2 failed.</source>
-        <translation type="unfinished" />
+        <translation>Копиране %1 да се %2 се провали.</translation>
     </message>
 </context>
 </TS>

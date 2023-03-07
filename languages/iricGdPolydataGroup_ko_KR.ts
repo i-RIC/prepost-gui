@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>각각</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>이름과 값 모두에 대해 동일한 열을 지정할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>좌표계:</translation>
     </message>
 </context>
 </TS>

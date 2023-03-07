@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Sare-lerroak</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Guztiak</translation>
+        <translation>Denak</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Eskema soilik</translation>
+        <translation>Eskema soilik</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Kolore:</translation>
+        <translation>Kolore:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Sare-indizeak</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Ikusgai</translation>
+        <translation>Ikusgai</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Zehaztu zenbaki formatua printf formatuan. Adibidez: &quot; %5.2f &quot;3.141592 -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1.23e + 004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Zehaztu zenbaki formatua printf formatuan. Adibidez: " %5.2f "3.141592 -&gt; 3.14" %4.2e "12300 -&gt; 1.23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>

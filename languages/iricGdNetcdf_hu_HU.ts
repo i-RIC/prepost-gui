@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>A következő fájlokat importálja. Rendben van?</translation>
+        <translation type="vanished">A következő fájlokat importálja. Rendben van?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Kérjük, válassza ki az importálandó fájlokat.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Mindet kiválaszt (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Törölje az Összes kijelölését (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Figyelem</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>A kiválasztott fájlok közötti időintervallum nem azonos.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>A fájlnév nem egyezik a mintával</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Időzóna:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimenzióértékek az időbeli eltérés miatt.</translation>
+        <translation type="vanished">Dimenzióértékek az időbeli eltérés miatt.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordináta -rendszer nincs megadva %1. Kérjük, válassza ki manuálisan a koordinátarendszert.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Az idősoros raszteradatok már importálva vannak. Ha más adatokat szeretne importálni, kérjük, először törölje a már importált adatokat.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Nyítás %1 nem sikerült.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Méretértékek a következőhöz: %1 eltérés.</translation>
+        <translation type="vanished">Méretértékek a következőhöz: %1 eltérés.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Hiba történt az idődefiníció elemzése során: %1</translation>
+        <translation type="vanished">Hiba történt az idődefiníció elemzése során: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nem rendelkezik hosszúsági, szélességi és x, y adatokkal.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Az idősoros raszteradatok már importálva vannak. Ha más adatokat szeretne importálni, kérjük, először törölje a már importált adatokat.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Eredeti idő:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Időzóna:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Információ</translation>
+        <translation type="vanished">Információ</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 fájlokat a mappában %2 importálnak.</translation>
+        <translation type="vanished">%1 fájlokat a mappában %2 importálnak.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimenzióértékek az időbeli eltérés miatt.</translation>
+        <translation type="vanished">Dimenzióértékek az időbeli eltérés miatt.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Az idősoros raszteradatok már importálva vannak. Ha más adatokat szeretne importálni, először törölje a már importált adatokat.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Hiba történt a forrásból konvertált adatok importálásakor %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Hiba történt a nyitáskor %1.</translation>
     </message>
 </context>
 </TS>

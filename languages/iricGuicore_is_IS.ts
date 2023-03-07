@@ -1,5 +1,202 @@
 <TS version="2.1" language="is_IS">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Eftir kvarðagildi</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Breyta (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Litakortsstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Sérsniðin litur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Eftir kvarðagildi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Eyðublað</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Skyggni</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Þegar valið er</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltaf</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldrei</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Leturstilling:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengd</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Snið:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lengd:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunnur:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Stærð og staðsetning</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengd</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Sjálfvirk</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Staðlað gildi:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Fröken]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Lengd á skjánum:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixla]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Lágmarksgildi til að teikna:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Gildi:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengd Legend</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Örvar lögun</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Örvar stærð:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Línubreidd:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Í skrá %1, x-hnitaukning á pixla og y-hnitaukningu á hverja pixla misræmi. Það er ásættanlegt, en það getur verið rangt.</translation>
+        <translation type="vanished">Í skrá %1, x-hnitaukning á pixla og y-hnitaukningu á hverja pixla misræmi. Það er ásættanlegt, en það getur verið rangt.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Veldu samsvarandi punkt í aðalglugganum.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Lagaðu myndstöðu</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Skyggni</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Þegar valið er</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltaf</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldrei</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Leturstilling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Merkiskjár</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Merki:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunnur:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Stærð og staðsetning</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Hunsa stillingu litastikunnar við innflutning</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Litir</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Litastikustilling</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Veldu skrá til að flytja inn</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Litakort stilling (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Sláðu inn skráarnafn til að flytja út</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Villa kom upp við opnun %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gildi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gegnsætt</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Skyggni</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Þegar valið er</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Alltaf</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Aldrei</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Leturstilling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Merkiskjár</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Snið:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Merki:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Bakgrunnur:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Stærð og staðsetning</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Litakortsstilling</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Forstillingar:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Hunsa stillingu litastikunnar við innflutning</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Tengsl gilda og lita</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Stilla sjálfkrafa byggt á gildissviði</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Uppsetning handvirkt</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Gildissvið</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Sjálfvirk</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Hámark:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Litir</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Bæta við (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjarlægja (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Fylltu neðra svæði</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Fylltu efra svæði</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Skipta</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Litastikustilling</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Veldu skrá til að flytja inn</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Litakort stilling (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Sláðu inn skráarnafn til að flytja út</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Villa kom upp við opnun %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Vinsamlegast veldu hlut til að sækja um)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Skiptu yfir í stakan ham</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Skiptu yfir í stigunarham</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Viðvörun</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gildi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Lágmarksgildi</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Hámarksgildi</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Gegnsætt</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Skiptu yfir í Discrete Mode Dialog</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Hámark:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Fjöldi lita til að setja inn í hvern hluta</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Sýnataka</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Allir hornpunktar</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sýnatökuhlutfall:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Tilgreindu fjölda hornpunkta</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Veldu punkt í Georeference glugganum.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Eyða punktum</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Línusnið</translation>
+        <translation type="vanished">Línusnið</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Lárétt spássía:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Lóðrétt spássía:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Breidd:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Hæð:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Fjarlægð frá vinstri</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Fjarlægð frá hægri</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Fjarlægð frá toppi</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Fjarlægð frá botni</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Veldu úr hvaða CGNS skrá á að lesa ristina.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS skrá</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Ómeðhöndluð græja í ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Vista og loka (&amp;S)</translation>
+        <translation type="vanished">Vista og loka (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Villa kom upp við vistun.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Mistókst að opna CGNS skrána.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Veldu File</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Skráarnafn þarf að samanstanda af enskum stöfum.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Veldu File</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Skráarnafn þarf að samanstanda af enskum stöfum.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Veldu Directory</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Nafn möppu þarf að samanstanda af enskum stöfum.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Breyta</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Engin gögn til að flytja inn.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Veldu sniðmát til að flytja inn)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Viðvörun</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Innihald textasvæðisins er skrifað yfir með sniðmátinu</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Fela smáatriði (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Villa kom upp við niðurhal útreikningsniðurstaðna.</translation>
+        <translation type="vanished">Villa kom upp við niðurhal útreikningsniðurstaðna.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Villa kom upp við vistun %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Vistar útreikningsniðurstöðu sem TPO skrár...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Villa kom upp við niðurhal útreikningsniðurstaðna.</translation>
+        <translation type="vanished">Villa kom upp við niðurhal útreikningsniðurstaðna.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Eiginleiki hæðarnets er ekki skilgreindur fyrir ristegund %1. Grid I/O aðgerðir, ristagerðaraðgerðir virka ef til vill ekki rétt fyrir þessar töflugerðir.</translation>
+        <translation type="vanished">Eiginleiki hæðarnets er ekki skilgreindur fyrir ristegund %1. Grid I/O aðgerðir, ristagerðaraðgerðir virka ef til vill ekki rétt fyrir þessar töflugerðir.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Lausn %1 er þegar til.</translation>
+        <translation type="vanished">Lausn %1 er þegar til.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Ekki er hægt að flytja inn CGNS skrá þar sem nafnið inniheldur aðra stafi en stafróf og tölustafi.</translation>
+        <translation type="vanished">Ekki er hægt að flytja inn CGNS skrá þar sem nafnið inniheldur aðra stafi en stafróf og tölustafi.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Vistun verkefnisskrár mistókst.</translation>
+        <translation type="vanished">%1 Vistun verkefnisskrár mistókst.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Ekki er hægt að lesa þessa verkefnaskrá því hún var búin til af of gömlu iRIC (útgáfu %1 ).</translation>
+        <translation type="vanished">Ekki er hægt að lesa þessa verkefnaskrá því hún var búin til af of gömlu iRIC (útgáfu %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Þessi skrá er til lausnar %1 %2. Það er ekki samhæft við leysirinn sem þú ert að nota, svo ef til vill mistakast að flytja þessa skrá inn. Viltu virkilega flytja þessa skrá inn?</translation>
+        <translation type="vanished">Þessi skrá er til lausnar %1 %2. Það er ekki samhæft við leysirinn sem þú ert að nota, svo ef til vill mistakast að flytja þessa skrá inn. Viltu virkilega flytja þessa skrá inn?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Hnitakerfi ekki valið.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Villa kom upp við að opna CGNS skrá í verkefnaskránni: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Afritar mynd %1 til %2 mistókst.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Tímaskjásnið</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tímabelti:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Fullt svæði</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Virkt svæði</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Sérsniðið svæði</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Ég er í:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Ég Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J mín:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Frumur þar sem breytileiki frumulengdar meðfram j-átt fer yfir %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Sýnataka</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Allir hornpunktar</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sýnatökuhlutfall:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-átt</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-átt</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Sýnataka</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Allir hornpunktar</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Sýnatökuhlutfall:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-átt</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-átt</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-átt</translation>
     </message>
 </context>
 <context>

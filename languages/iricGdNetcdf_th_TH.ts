@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>ไฟล์ต่อไปนี้จะถูกนำเข้า ตกลงไหม</translation>
+        <translation type="vanished">ไฟล์ต่อไปนี้จะถูกนำเข้า ตกลงไหม</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>โปรดเลือกไฟล์ที่จะนำเข้า</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>เลือกทั้งหมด (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>ยกเลิกการเลือกทั้งหมด (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>คำเตือน</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>ช่วงเวลาระหว่างไฟล์ที่เลือกไม่เท่ากัน</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>ชื่อไฟล์ไม่ตรงกับรูปแบบ</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>เขตเวลา:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>ค่ามิติสำหรับเวลาไม่ตรงกัน</translation>
+        <translation type="vanished">ค่ามิติสำหรับเวลาไม่ตรงกัน</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>ระบบพิกัดไม่ได้กำหนดไว้สำหรับ %1. กรุณาเลือกระบบพิกัดด้วยตนเอง</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>นำเข้าข้อมูลแรสเตอร์อนุกรมเวลาแล้ว หากคุณต้องการนำเข้าข้อมูลอื่น โปรดลบข้อมูลที่นำเข้าแล้วก่อน</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>เปิด %1 ล้มเหลว.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>ค่ามิติสำหรับ %1 ไม่ตรงกัน</translation>
+        <translation type="vanished">ค่ามิติสำหรับ %1 ไม่ตรงกัน</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>เกิดข้อผิดพลาดขณะแยกวิเคราะห์คำนิยามเวลา: %1</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะแยกวิเคราะห์คำนิยามเวลา: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 ไม่มีข้อมูลลองจิจูด ละติจูด หรือ x, y</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>นำเข้าข้อมูลแรสเตอร์อนุกรมเวลาแล้ว หากคุณต้องการนำเข้าข้อมูลอื่น โปรดลบข้อมูลที่นำเข้าแล้วก่อน</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>เวลาเดิม:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>เขตเวลา:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>ข้อมูล</translation>
+        <translation type="vanished">ข้อมูล</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 ไฟล์ในโฟลเดอร์ %2 ถูกนำเข้า</translation>
+        <translation type="vanished">%1 ไฟล์ในโฟลเดอร์ %2 ถูกนำเข้า</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>ค่ามิติสำหรับเวลาไม่ตรงกัน</translation>
+        <translation type="vanished">ค่ามิติสำหรับเวลาไม่ตรงกัน</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>นำเข้าข้อมูลแรสเตอร์อนุกรมเวลาแล้ว หากคุณต้องการนำเข้าข้อมูลอื่น โปรดลบข้อมูลที่นำเข้าแล้วก่อน</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>เกิดข้อผิดพลาดขณะนำเข้าข้อมูลที่แปลงจาก %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>เกิดข้อผิดพลาดขณะเปิด %1.</translation>
     </message>
 </context>
 </TS>

@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>右側 Y 軸範圍無效。</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>秒</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>分鐘</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>小時</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>天</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>線</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>秒</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>分鐘</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>小時</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>天</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV 導出 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>字體設置 (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>外部的</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>圖表字體設置</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>圖表標題：</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>傳說：</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X軸：</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>標題：</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>滴答聲：</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y軸：</translation>
     </message>
 </context>
 <context>

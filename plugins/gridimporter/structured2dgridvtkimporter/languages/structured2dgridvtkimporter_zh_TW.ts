@@ -2,24 +2,20 @@
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="24" />
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished" />
+        <translation>VTK文件 (*.vtk)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="30" />
         <source>VTK file</source>
-        <translation type="unfinished" />
+        <translation>VTK文件</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Error</source>
-        <translation type="unfinished" />
+        <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../structured2dgridvtkimporter.cpp" line="45" />
         <source>Copying %1 to %2 failed.</source>
-        <translation type="unfinished" />
+        <translation>複印 %1 到 %2 失敗的。</translation>
     </message>
 </context>
 </TS>

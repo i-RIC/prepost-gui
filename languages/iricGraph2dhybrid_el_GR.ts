@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Το εύρος των δεξιών αξόνων Υ δεν είναι έγκυρο.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Δευτερόλεπτα</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Λεπτά</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Ωρες</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Ημέρες</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Γραμμές</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>δευτερόλεπτα</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>λεπτά</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>ώρες</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>ημέρες</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV Export (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Εξωτερικός</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς γραφήματος</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Τίτλος γραφήματος:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Θρύλοι:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Άξονας Χ:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Κρότωνες:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Άξονας Υ:</translation>
     </message>
 </context>
 <context>

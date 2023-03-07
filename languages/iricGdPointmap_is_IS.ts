@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Textaskrá (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Textaskrá (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Textaskrá (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Skráarnafn:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hnitkerfi</translation>
     </message>
 </context>
 <context>

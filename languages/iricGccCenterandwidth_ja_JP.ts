@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>頂点座標</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>表示設定</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthCoordinatesEditDialog</name>

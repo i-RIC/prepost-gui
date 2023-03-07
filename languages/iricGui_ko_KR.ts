@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>건너뛰기 비율:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>현재 선택된 창이 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>연속 스냅샷/동영상/Google 어스 내보내기 마법사</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>배경 격자</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>글꼴 기본값</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>텍스트 형식</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>횡단면 사이:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>흔한</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>그리드 모양 / 그리드 인덱스</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>컬러 바</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>레이블</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>화살표 길이 범례</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>전처리 창</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>상류 하류</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>하천 측량 데이터 횡단면 이름</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>경계 조건 이름</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>시각화 창</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>라벨:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>차트 창</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>차트 제목:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>전설:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>축 제목:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>축 틱:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>폴더 프로젝트를 열 때 작업 디렉토리에 복사</translation>
+        <translation type="vanished">폴더 프로젝트를 열 때 작업 디렉토리에 복사</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>상태 표시줄의 좌표</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>소수 자릿수:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>속성 브라우저</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>소수 자릿수</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>좌표:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>값:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(명시되지 않은)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>출력 설정</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>계산 결과를 별도의 파일로 출력</translation>
     </message>
 </context>
 <context>
@@ -1457,11 +1590,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1473,7 +1606,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1502,7 +1635,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>치수</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>의 모든 파일 %1 삭제됩니다.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>설정 파일 (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>모양 파일을 내보내려면 색상 모드를 "불연속 모드"로 전환하십시오.</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>지리 데이터(웹에서)</translation>
+        <translation type="vanished">지리 데이터(웹에서)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>CGNS 파일 새로고침 (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>CGNS 파일 새로고침</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>지리 데이터(웹에서의 고도)</translation>
     </message>
 </context>
 </TS>

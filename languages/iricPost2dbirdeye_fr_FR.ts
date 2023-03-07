@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Haches</translation>
+        <translation type="vanished">Haches</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalaire</translation>
+        <translation type="vanished">Scalaire</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Mettre à jour le paramètre de contour</translation>
+        <translation type="vanished">Mettre à jour le paramètre de contour</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalaire (centre cellulaire)</translation>
+        <translation type="vanished">Scalaire (centre cellulaire)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertissement</translation>
+        <translation type="vanished">Avertissement</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Un maximum de quatre contours peut être défini.</translation>
+        <translation type="vanished">Un maximum de quatre contours peut être défini.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Réglage scalaire</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Valeur scalaire pour l'élévation</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Paramètre de couleur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Par valeur scalaire</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Valeur scalaire :</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Paramètre d'affichage</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Paramètre de région (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Réglage de la barre de couleur (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Erreur</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Le paramètre de contour n'est pas disponible, car ce résultat ne contient pas de valeurs scalaires de cellule.</translation>
+        <translation type="vanished">Le paramètre de contour n'est pas disponible, car ce résultat ne contient pas de valeurs scalaires de cellule.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,14 +163,60 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Paramètre d'affichage de la forme de la grille</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Valeur scalaire pour l'altitude</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Mettre à jour le paramètre de contour</translation>
+        <translation type="vanished">Mettre à jour le paramètre de contour</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Scalaire</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Réglage scalaire (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogue</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Par valeur scalaire</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamme</translation>
     </message>
 </context>
 <context>
@@ -134,18 +227,18 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertissement</translation>
+        <translation type="vanished">Avertissement</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Un maximum de quatre contours peut être défini.</translation>
+        <translation type="vanished">Un maximum de quatre contours peut être défini.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Mettre à jour le paramètre de forme de grille</translation>
+        <translation type="vanished">Mettre à jour le paramètre de forme de grille</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
@@ -153,7 +246,7 @@
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Créer un contour</translation>
+        <translation type="vanished">Créer un contour</translation>
     </message>
 </context>
 </TS>

@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalare Einstellung</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Messwert:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Einstellungsdialog für die Anzeige von Punkten</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Bildschirmeinstellung</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Punkte</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Oberfläche</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farbe nach Wert</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-Einstellung</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Punktgröße:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Freiwählbare Farbe</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalare Einstellung</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Messwert:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Bildschirmeinstellung</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktgröße:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Farbbalkeneinstellung (&amp;C)</translation>
+        <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="vanished">Fehler</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Für den Wertebereich ist der Höchstwert kleiner als der Mindestwert.</translation>
+        <translation type="vanished">Für den Wertebereich ist der Höchstwert kleiner als der Mindestwert.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pfeileinstellung aktualisieren</translation>
+        <translation type="vanished">Pfeileinstellung aktualisieren</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Pfeileinstellung für gemessene Daten</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pfeileinstellung</translation>
+        <translation type="vanished">Pfeileinstellung</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Physikalischer Wert:</translation>
+        <translation type="vanished">Physikalischer Wert:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Länge</translation>
+        <translation type="vanished">Länge</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardwert:</translation>
+        <translation type="vanished">Standardwert:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Frau]</translation>
+        <translation type="vanished">[Frau]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Länge auf dem Bildschirm:</translation>
+        <translation type="vanished">Länge auf dem Bildschirm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[Pixel]</translation>
+        <translation type="vanished">[Pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Mindestwert zum Zeichnen:</translation>
+        <translation type="vanished">Mindestwert zum Zeichnen:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Nach Skalarwert</translation>
+        <translation type="vanished">Nach Skalarwert</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Farbbalkeneinstellung (&amp;C)</translation>
+        <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Linie siatki</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wszystko</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Tylko zarys</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolor:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Indeksy siatki</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Widoczny</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do zdefiniowania niestandardowego formatu czasu możesz użyć następujących symboli:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Rok: RRRR, RR&lt;/li&gt;&lt;li&gt;Miesiąc: M, MM, MMM, MMMM (MMM na styczeń itp., MMMM na styczeń itp.)&lt;/li&gt;&lt;li&gt;Dzień: d, dd, ddd, dddd (ddd na poniedziałek itp., dddd na poniedziałek itp.)&lt;/li &gt;&lt;li&gt;Godzina: H, HH, h, hh (h, hh dla wyświetlania AM/PM)&lt;/li&gt;&lt;li&gt;Minuta: m, mm&lt;/li&gt;&lt;li&gt;Sekunda: s, ss&lt;/li &gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Pokaż strefę czasową</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Proszę czekać</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Proszę czekać...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Proszę czekać...</translation>

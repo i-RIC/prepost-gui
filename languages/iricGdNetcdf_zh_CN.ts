@@ -60,7 +60,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>将导入以下文件。可以吗？</translation>
+        <translation type="vanished">将导入以下文件。可以吗？</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>请选择要导入的文件。</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>全选 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>取消全选 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>所选文件之间的时间间隔不一样。</translation>
     </message>
 </context>
 <context>
@@ -96,6 +116,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>文件名与模式不匹配</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>时区：</translation>
     </message>
 </context>
 <context>
@@ -157,7 +181,7 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>时间不匹配的维度值。</translation>
+        <translation type="vanished">时间不匹配的维度值。</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
@@ -166,6 +190,14 @@
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="vanished">可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>时间序列栅格数据已导入。如需导入其他数据，请先删除已导入的数据。</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>开幕式 %1 失败的。</translation>
     </message>
 </context>
 <context>
@@ -266,15 +298,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>%1 的维度值不匹配</translation>
+        <translation type="vanished">%1 的维度值不匹配</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>解析时间定义时出错： %1</translation>
+        <translation type="vanished">解析时间定义时出错： %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 没有经度、纬度或 x、y 数据。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>时间序列栅格数据已导入。如需导入其他数据，请先删除已导入的数据。</translation>
     </message>
 </context>
 <context>
@@ -322,6 +358,10 @@
     <message>
         <source>Original time:</source>
         <translation>原始时间：</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>时区：</translation>
     </message>
 </context>
 <context>
@@ -377,11 +417,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>信息</translation>
+        <translation type="vanished">信息</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation> 已导入在 %2 文件夹中的 %1 文件</translation>
+        <translation type="vanished"> 已导入在 %2 文件夹中的 %1 文件</translation>
     </message>
     <message>
         <source>Error</source>
@@ -389,7 +429,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>时间的维度值不匹配</translation>
+        <translation type="vanished">时间的维度值不匹配</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>时间序列栅格数据已导入。如需导入其他数据，请先删除已导入的数据。</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>导入转换自的数据时发生错误 %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>打开时出现错误 %1.</translation>
     </message>
 </context>
 </TS>

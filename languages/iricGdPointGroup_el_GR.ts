@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Σημείο (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Προσθήκη νέου σημείου (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης ομάδας σημείων</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Μέγεθος σημείου:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "τιμή" στη γραμμή %1 Το Η "αξία" πρέπει να είναι πραγματική αξία αλλά "%2"καθορίζεται.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
     </message>
 </context>
 <context>

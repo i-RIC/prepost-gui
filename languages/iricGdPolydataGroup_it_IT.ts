@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Per ciascuno</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Non è possibile specificare la stessa colonna sia per Nome che per Valore.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Sistema di coordinate:</translation>
     </message>
 </context>
 </TS>

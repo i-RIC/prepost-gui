@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Seuraavat tiedostot tuodaan. Onko se okei?</translation>
+        <translation type="vanished">Seuraavat tiedostot tuodaan. Onko se okei?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Valitse tuotavat tiedostot.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Valitse kaikki (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Poista kaikki valinta (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varoitus</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Valittujen tiedostojen välinen aika ei ole sama.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Tiedostonimi ei vastaa mallia</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Aikavyöhyke:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Mitta -arvot ajan epäsuhtaan.</translation>
+        <translation type="vanished">Mitta -arvot ajan epäsuhtaan.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinaattijärjestelmää ei ole määritetty %1. Valitse koordinaattijärjestelmä manuaalisesti.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Avaaminen %1 epäonnistunut.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Mitta -arvot kohteelle %1 epäsuhta.</translation>
+        <translation type="vanished">Mitta -arvot kohteelle %1 epäsuhta.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Aikamäärityksen jäsentämisessä tapahtui virhe: %1</translation>
+        <translation type="vanished">Aikamäärityksen jäsentämisessä tapahtui virhe: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 ei ole pituus-, leveys- eikä x, y -tietoja.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Alkuperäinen aika:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Aikavyöhyke:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Tiedot</translation>
+        <translation type="vanished">Tiedot</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 kansiossa olevat tiedostot %2 tuodaan.</translation>
+        <translation type="vanished">%1 kansiossa olevat tiedostot %2 tuodaan.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Mitta -arvot ajan epäsuhtaan.</translation>
+        <translation type="vanished">Mitta -arvot ajan epäsuhtaan.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aikasarjarasteridata on jo tuotu. Jos haluat tuoda muita tietoja, poista ensin jo tuodut tiedot.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Virhe tuodaessa tietoja, jotka on muunnettu kohteesta %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Avattaessa tapahtui virhe %1.</translation>
     </message>
 </context>
 </TS>

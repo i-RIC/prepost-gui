@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Lewati tingkat:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Tidak ada jendela yang dipilih saat ini.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Snapshot Berkelanjutan / Film / Wisaya Ekspor Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Kotak Latar Belakang</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Default Font</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Format Teks</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Antar Bagian:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Umum</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Bentuk Kisi / Indeks Kisi</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Diskriminasi rasial</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda Panjang Panah</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Jendela Pra-pemrosesan</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Hulu / Hilir</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nama Penampang Data Survei Sungai</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nama Kondisi Batas</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Jendela visualisasi</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Label:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Bagan Jendela</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Judul grafik:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legenda:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Judul Sumbu:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Kutu sumbu:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Salin proyek folder ke Direktori Kerja saat dibuka</translation>
+        <translation type="vanished">Salin proyek folder ke Direktori Kerja saat dibuka</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinat di Bilah Status</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Tempat desimal:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Peramban Atribut</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Tempat desimal</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordinat:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Tidak ditentukan)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Pengaturan Keluaran</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Hasil perhitungan keluaran dalam file terpisah</translation>
     </message>
 </context>
 <context>
@@ -1457,11 +1590,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1473,7 +1606,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
+        <translation type="vanished">Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1502,7 +1635,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>Dimensi</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Semua file di %1 dihapus.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>File pengaturan (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Untuk mengekspor file bentuk, alihkan mode Warna ke "Mode Diskrit".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Data Geografis (dari web)</translation>
+        <translation type="vanished">Data Geografis (dari web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Muat ulang file CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Muat ulang file CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Data Geografis (Ketinggian dari web)</translation>
     </message>
 </context>
 </TS>

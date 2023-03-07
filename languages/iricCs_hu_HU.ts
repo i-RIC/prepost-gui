@@ -1,5 +1,27 @@
 <TS version="2.1" language="hu_HU">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Válassza az importálandó adatok koordinátarendszerét</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordináta-rendszer</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Szerkesztés...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

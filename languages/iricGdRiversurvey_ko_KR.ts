@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
+        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>종횡비: 1 /</translation>
+        <translation type="vanished">종횡비: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>단면 데이터</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>종횡비(V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>종횡비: 1 / %1</translation>
+        <translation type="vanished">종횡비: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>디스플레이 설정 편집</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>종횡비(V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>횡단면 이름</translation>
     </message>
 </context>
 <context>

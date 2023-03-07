@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>O intervalo de eixos Y dereito non é válido.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Segundos</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minutos</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Horario</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Días</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Liñas</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>segundos</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minutos</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>horas</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>días</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Exportación CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Configuración da fonte (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Externa</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Configuración da fonte do gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Título do gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Lendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Eixo X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ticks:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Eixo Y:</translation>
     </message>
 </context>
 <context>

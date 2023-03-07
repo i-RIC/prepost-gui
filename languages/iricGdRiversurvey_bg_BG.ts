@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Данните за напречното сечение се генерират с помощта на данни от облака от точки. Ако искате отново да коригирате позицията на напречното сечение и данните от облака на картата, можете да използвате „Облачни данни от точки на картата“</translation>
+        <translation type="vanished">Данните за напречното сечение се генерират с помощта на данни от облака от точки. Ако искате отново да коригирате позицията на напречното сечение и данните от облака на картата, можете да използвате „Облачни данни от точки на картата“</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Генерирайте данни от облака от точки</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Данните за напречното сечение се генерират с помощта на данни от облак от точки. Ако искате да коригирате позицията на напречното сечение и данните за облака от точки на картата отново, можете да използвате „Данни за облака от точки на картата“</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Данните за напречното сечение се генерират с помощта на данни от облак от точки. В някои региони данните не съществуват в данни за облака от точки и стойността 0 е картографирана за тези точки. Ако искате да коригирате позицията на напречното сечение и данните за облака от точки на картата отново, можете да използвате „Данни за облака от точки на картата“</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Съотношение: 1 /</translation>
+        <translation type="vanished">Съотношение: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Данни за напречното сечение</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Съотношение на страните (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Съотношение: 1 / %1</translation>
+        <translation type="vanished">Съотношение: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Редактиране на настройките на дисплея</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Съотношение на страните (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Цвят:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Имена на напречни сечения</translation>
     </message>
 </context>
 <context>

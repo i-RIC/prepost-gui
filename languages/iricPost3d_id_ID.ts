@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Pengaturan Kontur (pusat sel)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Jangkauan</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Pengaturan Kontur (pusat sel)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Nilai:</translation>
+        <translation type="vanished">Nilai:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Wilayah</translation>
+        <translation type="vanished">Wilayah</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Jangkauan %1</translation>
+        <translation type="vanished">Jangkauan %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimal empat kontur dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Jangkauan %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Menghadapi</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontur</translation>
+        <translation type="vanished">Kontur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Pengaturan Kontur</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Pengaturan Kontur (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Menghadapi %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Pengaturan Kontur</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Wajah</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Pengaturan Kontur</translation>
+        <translation type="vanished">Pengaturan Kontur</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>wajah</translation>
+        <translation type="vanished">wajah</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Wajah %1</translation>
+        <translation type="vanished">Wajah %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimal empat kontur dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Perubahan Item Browser Objek</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Menghadapi %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Arah</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>SAYA</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Jangkauan</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>saya Min</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>saya maks</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Diaktifkan</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Bentuk kotak</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Pengaturan Tampilan Bentuk Grid</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
+        <translation type="vanished">Wajah</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Menghadapi %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Menghadapi %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pengaturan Panah</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Dasar</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda Panjang</translation>
+    </message>
+    <message>
+        <source>Faces</source>
         <translation>Wajah</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Menghapus (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Wajah %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda Panjang</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Maksimal empat anak panah dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat anak panah dapat ditentukan.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Pengaturan Skalar Partikel</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Pengaturan Peta Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Poin:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Edit Pengaturan Partikel</translation>
+        <translation type="vanished">Edit Pengaturan Partikel</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Atribut Vektor Pilih Ubah</translation>
+        <translation type="vanished">Atribut Vektor Pilih Ubah</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Perbarui Pengaturan Vektor</translation>
+        <translation type="vanished">Perbarui Pengaturan Vektor</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Perubahan Nilai Fisik Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Pengaturan Vektor Partikel</translation>
     </message>
 </context>
 <context>
@@ -894,7 +1146,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Perbarui Pengaturan Bentuk Kotak</translation>
+        <translation type="vanished">Perbarui Pengaturan Bentuk Kotak</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -902,15 +1154,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Perbarui Pengaturan Skalar Partikel</translation>
+        <translation type="vanished">Perbarui Pengaturan Skalar Partikel</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Memperbarui</translation>
+        <translation type="vanished">Memperbarui</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Buat Kontur</translation>
+        <translation type="vanished">Buat Kontur</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

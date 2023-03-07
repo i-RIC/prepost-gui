@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -222,7 +220,7 @@
     <name>PostSolutionSelectDialog</name>
     <message>
         <source>Select Target Result</source>
-        <translation type="unfinished"></translation>
+        <translation>लक्ष्य परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>

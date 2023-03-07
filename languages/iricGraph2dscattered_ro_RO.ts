@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Setare desen (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Setarea fontului (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Setare desen</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Setarea fontului</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titlul diagramei:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Axa X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titlu:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Căpușe:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Axa Y:</translation>
     </message>
 </context>
 <context>

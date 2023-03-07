@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Punkt (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Dodaj nowy punkt (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Edycja ustawień kolorów</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Ustawienie wyświetlania grupy punktów</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Rozmiar punktu:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Wystąpił błąd podczas odczytu wartości "value" w linii %1. „wartość” powinna być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Edytuj ustawienie wyświetlania</translation>
     </message>
 </context>
 <context>

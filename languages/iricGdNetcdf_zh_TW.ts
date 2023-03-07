@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>將導入以下文件。可以嗎？</translation>
+        <translation type="vanished">將導入以下文件。可以嗎？</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>請選擇要導入的文件。</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>全選 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>取消全選 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>所選文件之間的時間間隔不一樣。</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>文件名與模式不匹配</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>時區：</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>時間不匹配的維度值。</translation>
+        <translation type="vanished">時間不匹配的維度值。</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>未指定坐標系 %1.請手動選擇坐標系。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時間序列柵格數據已導入。如需導入其他數據，請先刪除已導入的數據。</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>開幕式 %1 失敗的。</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>尺寸值 %1 不匹配。</translation>
+        <translation type="vanished">尺寸值 %1 不匹配。</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>解析時間定義時出錯： %1</translation>
+        <translation type="vanished">解析時間定義時出錯： %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 沒有經度、緯度或 x、y 數據。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時間序列柵格數據已導入。如需導入其他數據，請先刪除已導入的數據。</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>原時間：</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>時區：</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>信息</translation>
+        <translation type="vanished">信息</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 文件夾中的文件 %2 是進口的。</translation>
+        <translation type="vanished">%1 文件夾中的文件 %2 是進口的。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>時間不匹配的維度值。</translation>
+        <translation type="vanished">時間不匹配的維度值。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時間序列柵格數據已導入。如需導入其他數據，請先刪除已導入的數據。</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>導入轉換自的數據時發生錯誤 %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>打開時出現錯誤 %1.</translation>
     </message>
 </context>
 </TS>

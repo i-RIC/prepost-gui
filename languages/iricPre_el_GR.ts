@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Αυτό το αρχείο CGNS δεν διαθέτει πληροφορίες επίλυσης. Δεν μπορούμε να ελέγξουμε αν αυτό το αρχείο CGNS είναι συμβατό με τον επιλυτή. Εάν δεν είναι συμβατό, ίσως εισαχθεί μόνο ένα μέρος του πλέγματος. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Αυτό το αρχείο δεν περιέχει πλέγμα που μπορεί να εισαχθεί.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Επιλέξτε πλέγμα</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Επιλέξτε πλέγμα για εισαγωγή.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,42 +139,119 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Ρύθμιση αξόνων</translation>
+        <translation type="vanished">Ρύθμιση αξόνων</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Ορατός</translation>
+        <translation type="vanished">Ορατός</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation type="vanished">Χρώμα:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Ρύθμιση οθόνης</translation>
+        <translation type="vanished">Ρύθμιση οθόνης</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Χρώμα πλέγματος</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Χαρακτηριστικό κόμβου</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Χαρακτηριστικό κελιού</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Άξονες</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Ορατός</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Χρώμα:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Επεξεργασία κλίμακας κατεύθυνσης Ζ</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Κλίμακα κατεύθυνσης Ζ</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Εισαγάγετε νέα κλίμακα κατεύθυνσης Ζ.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Επεξεργαστείτε την κλίμακα Z-direction</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Εισαγάγετε νέα κλίμακα Z-κατεύθυνσης.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Ανύψωση:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Χρώμα πλέγματος</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Χαρακτηριστικό κόμβου</translation>
-    </message>
-    <message>
-        <source>Cell attribute</source>
-        <translation>Χαρακτηριστικό κελιού</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
+        <source>Cusom Color</source>
         <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Axes</source>
-        <translation>Άξονες</translation>
+        <translation>Τσεκούρια</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Χρώμα:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Επεξεργασία κλίμακας κατεύθυνσης Ζ</translation>
+        <source>Background Color:</source>
+        <translation>Χρώμα του φόντου:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Κλίμακα κατεύθυνσης Ζ</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Εισαγάγετε νέα κλίμακα κατεύθυνσης Ζ.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+        <source>Z-direction scale:</source>
+        <translation>Κλίμακα κατεύθυνσης Z:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε όλες τις οριακές συνθήκες;</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης οριακής κατάστασης</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Ρύθμιση γραμματοσειράς για ονόματα</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Επιλογή θήκης</translation>
+        <translation type="vanished">Επιλογή θήκης</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Επιλέξτε από ποια περίπτωση %1 για την εισαγωγή όρων υπολογισμού.</translation>
+        <translation type="vanished">Επιλέξτε από ποια περίπτωση %1 για την εισαγωγή όρων υπολογισμού.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Δεδομένα Pointset (&amp;O)</translation>
+        <translation type="vanished">Δεδομένα Pointset (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Εισαγωγή από τον ιστό (&amp;I)...</translation>
+        <translation type="vanished">Εισαγωγή από τον ιστό (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Ρύθμιση Scalarbar...</translation>
+        <translation type="vanished">Ρύθμιση Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Εισαγωγή δεδομένων από %1 απέτυχε.</translation>
+        <translation type="vanished">Εισαγωγή δεδομένων από %1 απέτυχε.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Για να εισαγάγετε τα γεωγραφικά δεδομένα, καθορίστε πρώτα το σύστημα συντεταγμένων.</translation>
+        <translation type="vanished">Για να εισαγάγετε τα γεωγραφικά δεδομένα, καθορίστε πρώτα το σύστημα συντεταγμένων.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Εισαγωγή (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Εισαγωγή υψομέτρου από τον ιστό (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Για να εισαγάγετε τα γεωγραφικά δεδομένα, καθορίστε πρώτα το σύστημα συντεταγμένων για το έργο.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Επεξεργασία ρύθμισης παραλλαγής (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Προκαθορισμένο</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Διάλογος</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Ρύθμιση παραλλαγής</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Ενεργοποίηση παραλλαγής</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Παραλλαγή για να περάσει στον λύτη:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Σημείωση: Όταν είναι ενεργοποιημένη η παραλλαγή, δημιουργείται η παραλλαγή με το όνομα "Προεπιλογή" και όλα τα γεωγραφικά δεδομένα μετακινούνται σε αυτήν. Μπορείτε να προσθέσετε, να μετονομάσετε, να αφαιρέσετε παραλλαγές από το "Object Browser". Μπορείτε να μετακινήσετε, να αντιγράψετε γεωγραφικά δεδομένα μεταξύ των παραλλαγών. Τα δεδομένα χαρακτηριστικού πλέγματος που δημιουργήθηκαν από την παραλλαγή που επιλέγετε με "Παραλλαγή για μετάβαση στον λύτη" μεταβιβάζονται στον λύτη. Μπορείτε να προετοιμάσετε πολλές παραλλαγές, να αλλάξετε τις οποίες θα μεταβιβάσετε στον λύτη και να βεβαιωθείτε για το αποτέλεσμα της διαφοράς.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης χαρακτηριστικού κυψέλης πλέγματος</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης χαρακτηριστικού κυψέλης πλέγματος</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Δημιουργία δεδομένων σημειακού νέφους</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κελιών πλέγματος</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης χαρακτηριστικού κόμβου πλέγματος</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης χαρακτηριστικού κόμβου πλέγματος</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Δημιουργία δεδομένων σημειακού νέφους</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κόμβου πλέγματος</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Ρύθμιση θρύλου χρώματος</translation>
+        <translation type="vanished">Ρύθμιση θρύλου χρώματος</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Ρύθμιση Scalarbar</translation>
+        <translation type="vanished">Ρύθμιση Scalarbar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Ορατός</translation>
+        <translation type="vanished">Ορατός</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>αξία</translation>
+        <translation type="vanished">αξία</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Επεξεργασία...</translation>
+        <translation type="vanished">Επεξεργασία...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation type="vanished">Μορφή</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Ορατός</translation>
+        <translation type="vanished">Ορατός</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Τίτλος</translation>
+        <translation type="vanished">Τίτλος</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Τίτλος :</translation>
+        <translation type="vanished">Τίτλος :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Ρύθμιση γραμματοσειράς:</translation>
+        <translation type="vanished">Ρύθμιση γραμματοσειράς:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Επεξεργασία...</translation>
+        <translation type="vanished">Επεξεργασία...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Εμφάνιση ετικέτας</translation>
+        <translation type="vanished">Εμφάνιση ετικέτας</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Αριθμός ετικετών:</translation>
+        <translation type="vanished">Αριθμός ετικετών:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Μορφή:</translation>
+        <translation type="vanished">Μορφή:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Προσανατολισμός:</translation>
+        <translation type="vanished">Προσανατολισμός:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Κατακόρυφος</translation>
+        <translation type="vanished">Κατακόρυφος</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Οριζόντιος</translation>
+        <translation type="vanished">Οριζόντιος</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Μέγεθος</translation>
+        <translation type="vanished">Μέγεθος</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Καθορίστε το μέγεθος της γραμμής χρώματος ως ποσοστό έναντι του μεγέθους του παραθύρου.</translation>
+        <translation type="vanished">Καθορίστε το μέγεθος της γραμμής χρώματος ως ποσοστό έναντι του μεγέθους του παραθύρου.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Πλάτος:</translation>
+        <translation type="vanished">Πλάτος:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Εάν ορίσετε 1, το πλάτος της γραμμής χρώματος είναι το ίδιο με το πλάτος του παραθύρου.</translation>
+        <translation type="vanished">Εάν ορίσετε 1, το πλάτος της γραμμής χρώματος είναι το ίδιο με το πλάτος του παραθύρου.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Υψος :</translation>
+        <translation type="vanished">Υψος :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Εάν ορίσετε 1, το ύψος της γραμμής χρώματος είναι το ίδιο με το ύψος του παραθύρου.</translation>
+        <translation type="vanished">Εάν ορίσετε 1, το ύψος της γραμμής χρώματος είναι το ίδιο με το ύψος του παραθύρου.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Θέση</translation>
+        <translation type="vanished">Θέση</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Καθορίστε τη γραμμή χρωμάτων αριστερά κάτω θέση ως ποσοστό ως προς το μέγεθος του παραθύρου.</translation>
+        <translation type="vanished">Καθορίστε τη γραμμή χρωμάτων αριστερά κάτω θέση ως ποσοστό ως προς το μέγεθος του παραθύρου.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>Χ :</translation>
+        <translation type="vanished">Χ :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Εάν καθορίσετε το 0, η αριστερή άκρη της γραμμής χρώματος βρίσκεται στο αριστερό άκρο του παραθύρου.</translation>
+        <translation type="vanished">Εάν καθορίσετε το 0, η αριστερή άκρη της γραμμής χρώματος βρίσκεται στο αριστερό άκρο του παραθύρου.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Υ:</translation>
+        <translation type="vanished">Υ:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Εάν ορίσετε 0, το κάτω μέρος της γραμμής χρώματος βρίσκεται στο κάτω μέρος του παραθύρου.</translation>
+        <translation type="vanished">Εάν ορίσετε 0, το κάτω μέρος της γραμμής χρώματος βρίσκεται στο κάτω μέρος του παραθύρου.</translation>
     </message>
 </context>
 <context>

@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Querschnittsdaten werden unter Verwendung von Punktwolkendaten erzeugt. Wenn Sie die Querschnittsposition und die Kartenpunktwolkendaten erneut anpassen möchten, können Sie "Punktwolkendaten anzeigen" verwenden.</translation>
+        <translation type="vanished">Querschnittsdaten werden unter Verwendung von Punktwolkendaten erzeugt. Wenn Sie die Querschnittsposition und die Kartenpunktwolkendaten erneut anpassen möchten, können Sie "Punktwolkendaten anzeigen" verwenden.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktwolkendaten generieren</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie "Punktwolkendaten zuordnen" verwenden.</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. In einigen Regionen waren in Punktwolkendaten keine Daten vorhanden, und für diese Punkte wurde der Wert 0 zugeordnet. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie "Punktwolkendaten zuordnen" verwenden.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Seitenverhältnis: 1 /</translation>
+        <translation type="vanished">Seitenverhältnis: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Querschnittsdaten</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Seitenverhältnis (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Seitenverhältnis: 1 / %1</translation>
+        <translation type="vanished">Seitenverhältnis: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Anzeigeeinstellungen bearbeiten</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Seitenverhältnis (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Farbe:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Querschnittsnamen</translation>
     </message>
 </context>
 <context>

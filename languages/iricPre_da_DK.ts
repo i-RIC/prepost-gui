@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Denne CGNS -fil har ikke oplysningsoplysninger. Vi kan ikke kontrollere, om denne CGNS -fil er kompatibel med opløseren. Hvis det ikke er kompatibelt, importeres måske kun en del af nettet. Vil du virkelig importere gitter fra denne fil?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Denne fil indeholder ikke gitter, der kan importeres.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Vælg gitter</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Vælg gitter for at importere.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Akseindstilling</translation>
+        <translation type="vanished">Akseindstilling</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Synlig</translation>
+        <translation type="vanished">Synlig</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farve:</translation>
+        <translation type="vanished">Farve:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Displayindstilling</translation>
+        <translation type="vanished">Displayindstilling</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Gitterfarve</translation>
+        <translation type="vanished">Gitterfarve</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Node attribut</translation>
+        <translation type="vanished">Node attribut</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Celleattribut</translation>
+        <translation type="vanished">Celleattribut</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Brugerdefineret farve</translation>
+        <translation type="vanished">Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Økser</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Synlig</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Farve:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Rediger Z-retning skala</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-retning skala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Indtast ny Z-retning skala.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Rediger farveindstilling</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Rediger Z-retningsskala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Indtast ny Z-retningsskala.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Rediger displayindstilling</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Højde:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Gitter farve</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>Cusom farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Indstilling af farvekort</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Farve:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Rediger Z-retning skala</translation>
+        <source>Background Color:</source>
+        <translation>Baggrundsfarve:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-retning skala</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Indtast ny Z-retning skala.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Rediger farveindstilling</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z-retnings skala:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Er du sikker på, at du vil slette alle randbetingelser?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Rediger displayindstilling</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Grænsetilstand Display Indstilling</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Skrifttypeindstilling for navne</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Vælg sag</translation>
+        <translation type="vanished">Vælg sag</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Vælg fra hvilket tilfælde i %1 til importberegningsbetingelser.</translation>
+        <translation type="vanished">Vælg fra hvilket tilfælde i %1 til importberegningsbetingelser.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pointset -data (&amp;O)</translation>
+        <translation type="vanished">Pointset -data (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Import fra web (&amp;I)...</translation>
+        <translation type="vanished">Import fra web (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Opsætning af skalarbar...</translation>
+        <translation type="vanished">Opsætning af skalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Import af data fra %1 mislykkedes.</translation>
+        <translation type="vanished">Import af data fra %1 mislykkedes.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>For at importere de geografiske data skal du først angive koordinatsystem.</translation>
+        <translation type="vanished">For at importere de geografiske data skal du først angive koordinatsystem.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Importere (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importer højde fra nettet (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>For at importere de geografiske data skal du først angive koordinatsystem for projektet.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Rediger variationsindstilling (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variationsindstilling</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Aktiver variation</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Variation, der skal videregives til solver:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Bemærk: Når variation er aktiveret, oprettes variant med navnet "Standard", og alle geografiske data flyttes til den. Du kan tilføje, omdøbe, fjerne variationer fra "Objektbrowser". Du kan flytte, kopiere geografiske data mellem variationer. De gitterattributdata, der er oprettet fra den variant, som du vælger med "Variation, der skal overføres til solver", videregives til solver. Du kan forberede flere variationer, skifte, hvilken der skal overføres til løseren, og sikre dig effekten af forskellen.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Indstilling af displaynet for gittercelleattribut</translation>
+        <translation type="vanished">Indstilling af displaynet for gittercelleattribut</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generer point cloud -data</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Visningsindstilling for gittercelleattribut</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Grid Node Attribute Display Indstilling</translation>
+        <translation type="vanished">Grid Node Attribute Display Indstilling</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generer point cloud -data</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Visningsindstilling for gitterknudeattribut</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Indstilling for farveforklaring</translation>
+        <translation type="vanished">Indstilling for farveforklaring</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar indstilling</translation>
+        <translation type="vanished">Scalarbar indstilling</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Synlig</translation>
+        <translation type="vanished">Synlig</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Værdi</translation>
+        <translation type="vanished">Værdi</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Redigere...</translation>
+        <translation type="vanished">Redigere...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Synlig</translation>
+        <translation type="vanished">Synlig</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titel:</translation>
+        <translation type="vanished">Titel:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Skrifttypeindstilling:</translation>
+        <translation type="vanished">Skrifttypeindstilling:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Redigere...</translation>
+        <translation type="vanished">Redigere...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Etiketvisning</translation>
+        <translation type="vanished">Etiketvisning</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Antal etiketter:</translation>
+        <translation type="vanished">Antal etiketter:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientering:</translation>
+        <translation type="vanished">Orientering:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Lodret</translation>
+        <translation type="vanished">Lodret</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vandret</translation>
+        <translation type="vanished">Vandret</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Størrelse</translation>
+        <translation type="vanished">Størrelse</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Angiv farvebjælkens størrelse som hastighed i forhold til vinduesstørrelse.</translation>
+        <translation type="vanished">Angiv farvebjælkens størrelse som hastighed i forhold til vinduesstørrelse.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Bredde:</translation>
+        <translation type="vanished">Bredde:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Hvis du angiver 1, er farvebjælkens bredde den samme som vinduesbredde.</translation>
+        <translation type="vanished">Hvis du angiver 1, er farvebjælkens bredde den samme som vinduesbredde.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Højde :</translation>
+        <translation type="vanished">Højde :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Hvis du angiver 1, er farvebjælkehøjden den samme som vindueshøjde.</translation>
+        <translation type="vanished">Hvis du angiver 1, er farvebjælkehøjden den samme som vindueshøjde.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Angiv farvebjælke venstre bundposition som hastighed i forhold til vinduesstørrelse.</translation>
+        <translation type="vanished">Angiv farvebjælke venstre bundposition som hastighed i forhold til vinduesstørrelse.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Hvis du angiver 0, er farvebjælkens venstre kant placeret i vinduets venstre kant.</translation>
+        <translation type="vanished">Hvis du angiver 0, er farvebjælkens venstre kant placeret i vinduets venstre kant.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Hvis du angiver 0, findes bunden af farvebjælken nederst i vinduet.</translation>
+        <translation type="vanished">Hvis du angiver 0, findes bunden af farvebjælken nederst i vinduet.</translation>
     </message>
 </context>
 <context>

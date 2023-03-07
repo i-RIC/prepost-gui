@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Teksta fails (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Teksta fails (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Teksta fails (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Faila nosaukums:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
     </message>
 </context>
 <context>

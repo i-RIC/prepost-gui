@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Cài đặt đường viền (trung tâm ô)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Thiết lập đường viền (trung tâm ô)</translation>
+        <translation type="vanished">Thiết lập đường viền (trung tâm ô)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Giá trị:</translation>
+        <translation type="vanished">Giá trị:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Vùng</translation>
+        <translation type="vanished">Vùng</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Thêm vào (&amp;A)</translation>
+        <translation type="vanished">Thêm vào (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Di dời (&amp;R)</translation>
+        <translation type="vanished">Di dời (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Phạm vi %1</translation>
+        <translation type="vanished">Phạm vi %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Có thể xác định tối đa bốn đường bao.</translation>
+        <translation type="vanished">Có thể xác định tối đa bốn đường bao.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Thêm vào (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Di dời (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Phạm vi %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Khuôn mặt</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Viền</translation>
+        <translation type="vanished">Viền</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Thiết lập đường viền</translation>
+        <translation type="vanished">Thiết lập đường viền</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Cài đặt đường viền (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Khuôn mặt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Cài đặt đường viền</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>khuôn mặt</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Thiết lập đường viền</translation>
+        <translation type="vanished">Thiết lập đường viền</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Giá trị vật lý:</translation>
+        <translation type="vanished">Giá trị vật lý:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Khuôn mặt</translation>
+        <translation type="vanished">Khuôn mặt</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Thêm vào (&amp;A)</translation>
+        <translation type="vanished">Thêm vào (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Di dời (&amp;R)</translation>
+        <translation type="vanished">Di dời (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Đối mặt %1</translation>
+        <translation type="vanished">Đối mặt %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Có thể xác định tối đa bốn đường bao.</translation>
+        <translation type="vanished">Có thể xác định tối đa bốn đường bao.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Thay đổi mục trình duyệt đối tượng</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Thêm vào (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Di dời (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Khuôn mặt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Phương hướng</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>TÔI</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>k</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Tôi Min</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>tôi tối đa</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J tối đa</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K tối đa</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Đã bật</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Hình dạng lưới</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Cài đặt hiển thị hình dạng lưới</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Đối mặt</translation>
+        <translation type="vanished">Đối mặt</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Khuôn mặt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Khuôn mặt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Cài đặt mũi tên</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Nền tảng</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Chú giải chiều dài</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>khuôn mặt</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Thêm vào (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Di dời (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Đối mặt %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Chú giải chiều dài</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Có thể xác định tối đa bốn mũi tên.</translation>
+        <translation type="vanished">Có thể xác định tối đa bốn mũi tên.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Thiết lập vô hướng hạt</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Chỉnh sửa cài đặt hạt</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hạt</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Thay đổi chọn thuộc tính vectơ</translation>
+        <translation type="vanished">Thay đổi chọn thuộc tính vectơ</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Cập nhật cài đặt vectơ</translation>
+        <translation type="vanished">Cập nhật cài đặt vectơ</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Thay đổi giá trị vật lý mũi tên</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Cài đặt Vector hạt</translation>
     </message>
 </context>
 <context>
@@ -894,7 +1146,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Cập nhật cài đặt hình dạng lưới</translation>
+        <translation type="vanished">Cập nhật cài đặt hình dạng lưới</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -902,15 +1154,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Cập nhật cài đặt vô hướng của hạt</translation>
+        <translation type="vanished">Cập nhật cài đặt vô hướng của hạt</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Cập nhật</translation>
+        <translation type="vanished">Cập nhật</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Tạo đường viền</translation>
+        <translation type="vanished">Tạo đường viền</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

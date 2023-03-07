@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Les données de section transversale sont générées à l'aide de données de nuage de points. Si vous souhaitez ajuster à nouveau la position de la section transversale et cartographier les données de nuages de points, vous pouvez utiliser "Carte des données de nuages de points"</translation>
+        <translation type="vanished">Les données de section transversale sont générées à l'aide de données de nuage de points. Si vous souhaitez ajuster à nouveau la position de la section transversale et cartographier les données de nuages de points, vous pouvez utiliser "Carte des données de nuages de points"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Générer des données de nuage de points</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Les données de section sont générées à l'aide de données de nuages de points. Si vous souhaitez ajuster à nouveau la position de la section transversale et mapper les données de nuage de points, vous pouvez utiliser "Carte des données de nuage de points"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Les données de section sont générées à l'aide de données de nuages de points. Dans certaines régions, les données n'existaient pas dans les données de nuages de points et la valeur 0 a été cartographiée pour ces points. Si vous souhaitez ajuster à nouveau la position de la section transversale et mapper les données de nuage de points, vous pouvez utiliser "Carte des données de nuage de points"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Rapport d'aspect : 1 /</translation>
+        <translation type="vanished">Rapport d'aspect : 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Données de section transversale</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Format d'image (V/H) : 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Rapport d'aspect : 1 / %1</translation>
+        <translation type="vanished">Rapport d'aspect : 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Modifier le paramètre d'affichage</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Format d'image (V/H) : 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Couleur:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Noms des sections</translation>
     </message>
 </context>
 <context>

@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nuoliasetus</translation>
+        <translation type="vanished">Nuoliasetus</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyysinen arvo:</translation>
+        <translation type="vanished">Fyysinen arvo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pituus</translation>
+        <translation type="vanished">Pituus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Vakioarvo:</translation>
+        <translation type="vanished">Vakioarvo:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[neiti]</translation>
+        <translation type="vanished">[neiti]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pituus näytöllä:</translation>
+        <translation type="vanished">Pituus näytöllä:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseli]</translation>
+        <translation type="vanished">[pikseli]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Pienin piirrettävä arvo:</translation>
+        <translation type="vanished">Pienin piirrettävä arvo:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Näytteenotto</translation>
+        <translation type="vanished">Näytteenotto</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Kaikki kärkipisteet</translation>
+        <translation type="vanished">Kaikki kärkipisteet</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Näytteenottotaajuus:</translation>
+        <translation type="vanished">Näytteenottotaajuus:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-suunta</translation>
+        <translation type="vanished">I-suunta</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-suunta</translation>
+        <translation type="vanished">J-suunta</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarisen arvon mukaan</translation>
+        <translation type="vanished">Skalaarisen arvon mukaan</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nuolen muoto</translation>
+        <translation type="vanished">Nuolen muoto</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nuolen koko:</translation>
+        <translation type="vanished">Nuolen koko:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Alueen asetus (&amp;R)</translation>
+        <translation type="vanished">Alueen asetus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nuoliasetus</translation>
+        <translation type="vanished">Nuoliasetus</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyysinen arvo:</translation>
+        <translation type="vanished">Fyysinen arvo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pituus</translation>
+        <translation type="vanished">Pituus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Vakioarvo:</translation>
+        <translation type="vanished">Vakioarvo:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[neiti]</translation>
+        <translation type="vanished">[neiti]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pituus näytöllä:</translation>
+        <translation type="vanished">Pituus näytöllä:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseli]</translation>
+        <translation type="vanished">[pikseli]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Pienin piirrettävä arvo:</translation>
+        <translation type="vanished">Pienin piirrettävä arvo:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Näytteenotto</translation>
+        <translation type="vanished">Näytteenotto</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Kaikki kärkipisteet</translation>
+        <translation type="vanished">Kaikki kärkipisteet</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Näytteenottotaajuus:</translation>
+        <translation type="vanished">Näytteenottotaajuus:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Määritä pisteiden määrä</translation>
+        <translation type="vanished">Määritä pisteiden määrä</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarisen arvon mukaan</translation>
+        <translation type="vanished">Skalaarisen arvon mukaan</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nuolen muoto</translation>
+        <translation type="vanished">Nuolen muoto</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nuolen koko:</translation>
+        <translation type="vanished">Nuolen koko:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Alueen asetus (&amp;R)</translation>
+        <translation type="vanished">Alueen asetus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalaari (solukeskus)</translation>
+        <translation type="vanished">Skalaari (solukeskus)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Päivitä ääriviiva -asetus</translation>
+        <translation type="vanished">Päivitä ääriviiva -asetus</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Jos haluat viedä KML: n katunäkymään, tuo näyttöön ääriviivakuvio.</translation>
+        <translation type="vanished">Jos haluat viedä KML: n katunäkymään, tuo näyttöön ääriviivakuvio.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Jos haluat viedä KML -katunäkymän, arvoalue on määritettävä manuaalisesti.</translation>
+        <translation type="vanished">Jos haluat viedä KML -katunäkymän, arvoalue on määritettävä manuaalisesti.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Jos haluat viedä KML: n katunäkymään, koordinaattijärjestelmä on määritettävä.</translation>
+        <translation type="vanished">Jos haluat viedä KML: n katunäkymään, koordinaattijärjestelmä on määritettävä.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaariasetus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Enintään neljä muotoa voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä muotoa voidaan määrittää.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalaariasetus</translation>
+        <translation type="vanished">Skalaariasetus</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyysinen arvo:</translation>
+        <translation type="vanished">Fyysinen arvo:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Näyttöasetus</translation>
+        <translation type="vanished">Näyttöasetus</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Alueen asetus (&amp;R)</translation>
+        <translation type="vanished">Alueen asetus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Arvoalueella maksimiarvo on pienempi kuin miniarvo.</translation>
+        <translation type="vanished">Arvoalueella maksimiarvo on pienempi kuin miniarvo.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Maantieteelliset tiedot</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Viitetiedot</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ruudukkomuodon näyttöasetus</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Päivitä ääriviiva -asetus</translation>
+        <translation type="vanished">Päivitä ääriviiva -asetus</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Jos haluat viedä KML: n katunäkymään, tuo näyttöön ääriviivakuvio.</translation>
+        <translation type="vanished">Jos haluat viedä KML: n katunäkymään, tuo näyttöön ääriviivakuvio.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Jos haluat viedä KML -katunäkymän, arvoalue on määritettävä manuaalisesti.</translation>
+        <translation type="vanished">Jos haluat viedä KML -katunäkymän, arvoalue on määritettävä manuaalisesti.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Jos haluat viedä KML: n katunäkymään, koordinaattijärjestelmä on määritettävä.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaariasetus (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>KML-tiedoston vieminen katunäkymää varten Colormoden on oltava "Discrete Mode"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalaari (solmu)</translation>
+        <translation type="vanished">Skalaari (solmu)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalaari</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Voit viedä muototiedoston vaihtamalla väriasetukseksi "Discrete Mode".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Nuoli Fyysisen arvon muutos</translation>
+        <translation type="vanished">Nuoli Fyysisen arvon muutos</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Päivitä nuoliasetus</translation>
+        <translation type="vanished">Päivitä nuoliasetus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nuolien asetus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Päivitä nuoliasetus</translation>
+        <translation type="vanished">Päivitä nuoliasetus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nuolien asetus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Hiukkasten skalaariasetus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pistekoko:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Muokkaa hiukkasasetusta</translation>
+        <translation type="vanished">Muokkaa hiukkasasetusta</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Näytä ominaisuusselain</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorin ominaisuus Valitse Muuta</translation>
+        <translation type="vanished">Vektorin ominaisuus Valitse Muuta</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Päivitä vektori -asetus</translation>
+        <translation type="vanished">Päivitä vektori -asetus</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow Fyysisen arvon muutos</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Hiukkasten vektoriasetus</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Muokkaa monikulmioasetusta</translation>
+        <translation type="vanished">Muokkaa monikulmioasetusta</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Polygon Data Display -asetus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Viivan leveys:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Luo solun ääriviivat</translation>
+        <translation type="vanished">Luo solun ääriviivat</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Luo ääriviiva</translation>
+        <translation type="vanished">Luo ääriviiva</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Päivitä ruudukon muotoasetus</translation>
+        <translation type="vanished">Päivitä ruudukon muotoasetus</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Päivitä hiukkasten skalaari -asetus</translation>
+        <translation type="vanished">Päivitä hiukkasten skalaari -asetus</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Päivitä Polygon Scalar -asetus</translation>
+        <translation type="vanished">Päivitä Polygon Scalar -asetus</translation>
     </message>
 </context>
 </TS>

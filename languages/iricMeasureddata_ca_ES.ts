@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Configuració escalar</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Valor mesurat:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Diàleg de configuració de visualització de punts</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Configuració de la pantalla</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Punts</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superfície</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuració del mapa de colors</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Mida del punt:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Configuració escalar</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Valor mesurat:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Mida del punt:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuració de la barra de color (&amp;C)</translation>
+        <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualitza la configuració de la fletxa</translation>
+        <translation type="vanished">Actualitza la configuració de la fletxa</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Configuració de la fletxa de dades mesurades</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuració de la fletxa</translation>
+        <translation type="vanished">Configuració de la fletxa</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Llargada</translation>
+        <translation type="vanished">Llargada</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor estàndard:</translation>
+        <translation type="vanished">Valor estàndard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Senyora]</translation>
+        <translation type="vanished">[Senyora]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud a la pantalla:</translation>
+        <translation type="vanished">Longitud a la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[píxel]</translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor mínim per dibuixar:</translation>
+        <translation type="vanished">Valor mínim per dibuixar:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valor escalar</translation>
+        <translation type="vanished">Per valor escalar</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuració de la barra de color (&amp;C)</translation>
+        <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
 </context>
 </TS>

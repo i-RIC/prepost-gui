@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Kesit verileri, nokta bulutu verileri kullanılarak oluşturulur. Kesit konumunu ve harita nokta bulutu verilerini tekrar ayarlamak isterseniz, "Map point cloud data"yı kullanabilirsiniz.</translation>
+        <translation type="vanished">Kesit verileri, nokta bulutu verileri kullanılarak oluşturulur. Kesit konumunu ve harita nokta bulutu verilerini tekrar ayarlamak isterseniz, "Map point cloud data"yı kullanabilirsiniz.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Nokta bulutu verileri oluşturun</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Kesit verileri, nokta bulutu verileri kullanılarak oluşturulur. Kesit konumunu ve harita nokta bulutu verilerini yeniden ayarlamak isterseniz, "Map point cloud data" seçeneğini kullanabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Kesit verileri, nokta bulutu verileri kullanılarak oluşturulur. Bazı bölgelerde, nokta bulutu verilerinde veri mevcut değildi ve bu noktalar için 0 değeri eşlendi. Kesit konumunu ve harita nokta bulutu verilerini yeniden ayarlamak isterseniz, "Map point cloud data" seçeneğini kullanabilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>En boy oranı: 1 /</translation>
+        <translation type="vanished">En boy oranı: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Kesit Verileri</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>En boy oranı (D/Y): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>En boy oranı: 1 / %1</translation>
+        <translation type="vanished">En boy oranı: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Görüntü Ayarını Düzenle</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>En boy oranı (D/Y): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Kesit İsimleri</translation>
     </message>
 </context>
 <context>

@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Innstilling av partikler</translation>
+        <translation type="vanished">Innstilling av partikler</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farge:</translation>
+        <translation type="vanished">Farge:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Størrelse:</translation>
+        <translation type="vanished">Størrelse:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Innstilling av partikkel skalar</translation>
+        <translation type="vanished">Innstilling av partikkel skalar</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Farge etter attributtverdi</translation>
+        <translation type="vanished">Farge etter attributtverdi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Egenskap:</translation>
+        <translation type="vanished">Egenskap:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Størrelse:</translation>
+        <translation type="vanished">Størrelse:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinnstilling</translation>
+        <translation type="vanished">Pilinnstilling</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Attributtverdi:</translation>
+        <translation type="vanished">Attributtverdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengde</translation>
+        <translation type="vanished">Lengde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard verdi:</translation>
+        <translation type="vanished">Standard verdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengde på skjermen:</translation>
+        <translation type="vanished">Lengde på skjermen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minste verdi å trekke:</translation>
+        <translation type="vanished">Minste verdi å trekke:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prøvetaking</translation>
+        <translation type="vanished">Prøvetaking</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Alle partikler</translation>
+        <translation type="vanished">Alle partikler</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Prøvetakingshastighet:</translation>
+        <translation type="vanished">Prøvetakingshastighet:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Angi antall partikler</translation>
+        <translation type="vanished">Angi antall partikler</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Etter skalarverdi</translation>
+        <translation type="vanished">Etter skalarverdi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstørrelse:</translation>
+        <translation type="vanished">Pilstørrelse:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygon -innstilling</translation>
+        <translation type="vanished">Polygon -innstilling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farge:</translation>
+        <translation type="vanished">Farge:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygon -innstilling</translation>
+        <translation type="vanished">Polygon -innstilling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Farge etter attributtverdi</translation>
+        <translation type="vanished">Farge etter attributtverdi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Egenskap:</translation>
+        <translation type="vanished">Egenskap:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Linje bredde</translation>
+        <translation type="vanished">Linje bredde</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Velg Målresultat</translation>
     </message>
 </context>
 <context>

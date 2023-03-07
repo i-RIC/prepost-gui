@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Puan (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Yeni Nokta Ekle (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Renk Ayarı Düzenleme</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Nokta Grubu Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puan Boyutu:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Satırda "değer" değeri okunurken hata oluştu %1. "değer" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Görüntü ayarını düzenle</translation>
     </message>
 </context>
 <context>

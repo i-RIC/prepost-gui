@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Intervalul axelor Y dreapta este nevalid.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>secunde</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minute</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Ore</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Zile</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Linii</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>secunde</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minute</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>ore</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>zile</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Export CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Setarea fontului (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Extern</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Setarea fontului diagramei</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titlul diagramei:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Axa X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titlu:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Căpușe:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Axa Y:</translation>
     </message>
 </context>
 <context>

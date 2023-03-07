@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>S’importaran els fitxers següents. Està bé?</translation>
+        <translation type="vanished">S’importaran els fitxers següents. Està bé?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Seleccioneu els fitxers que voleu importar.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Seleccionar tot (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deseleccionar tot (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Avís</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>L'interval de temps entre els fitxers seleccionats no és el mateix.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>El nom del fitxer no coincideix amb el patró</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Fus horari:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valors de dimensió per desajustament de temps.</translation>
+        <translation type="vanished">Valors de dimensió per desajustament de temps.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>El sistema de coordenades no està especificat per a %1. Seleccioneu el sistema de coordenades manualment.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Obertura %1 fracassat.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Valors de dimensió per a %1 desajustament.</translation>
+        <translation type="vanished">Valors de dimensió per a %1 desajustament.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>S'ha produït un error en analitzar la definició del temps: %1</translation>
+        <translation type="vanished">S'ha produït un error en analitzar la definició del temps: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 no té dades de longitud, latitud ni x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Hora original:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Fus horari:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informació</translation>
+        <translation type="vanished">Informació</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 fitxers de la carpeta %2 s’importen.</translation>
+        <translation type="vanished">%1 fitxers de la carpeta %2 s’importen.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valors de dimensió per desajustament de temps.</translation>
+        <translation type="vanished">Valors de dimensió per desajustament de temps.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>S'ha produït un error en importar les dades des de convertides %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>S'ha produït un error en obrir %1.</translation>
     </message>
 </context>
 </TS>

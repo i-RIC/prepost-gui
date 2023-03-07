@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>पहलू अनुपात: 1 /</translation>
+        <translation type="vanished">पहलू अनुपात: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>क्रॉस-सेक्शन डेटा</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>पहलू अनुपात (वी / एच): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>पहलू अनुपात: 1 / %1</translation>
+        <translation type="vanished">पहलू अनुपात: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>पहलू अनुपात (वी / एच): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>चौराहों के नाम</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,27 @@
 <TS version="2.1" language="zh_TW">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>選擇要導入的數據坐標系</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>坐標系</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>編輯...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

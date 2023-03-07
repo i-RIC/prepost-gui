@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Tekstifail (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Tekstifail (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Tekstifail (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Faili nimi:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaatide süsteem</translation>
     </message>
 </context>
 <context>

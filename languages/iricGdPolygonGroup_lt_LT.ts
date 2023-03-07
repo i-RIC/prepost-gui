@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Daugiakampiai (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Pridėti naują daugiakampį (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Spalvų nustatymo redagavimas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Daugiakampių grupės ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Skaitant eilutę įvyko klaida %1. „vertė“ turėtų būti ta pati eilutėms, kuriose „pid“ reikšmės yra vienodos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Redaguoti ekrano nustatymą</translation>
     </message>
 </context>
 <context>

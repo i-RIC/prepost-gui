@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Lomake</translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukkoviivat</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Kaikki</translation>
+        <translation>Kaikki</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Vain ääriviivat</translation>
+        <translation>Vain ääriviivat</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Väri:</translation>
+        <translation>Väri:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukkoindeksit</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Näkyvä</translation>
+        <translation>Näkyy</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Määritä numeroformaatti printf -muodossa. Esimerkiksi: &quot; %5.2f &quot;3.141592 -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1,23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Määritä numeroformaatti printf -muodossa. Esimerkiksi: " %5.2f "3.141592 -&gt; 3.14" %4.2e "12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

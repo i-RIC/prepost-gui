@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>รูปหลายเหลี่ยม (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>เพิ่มรูปหลายเหลี่ยมใหม่ (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>แก้ไขการตั้งค่าสี</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>การตั้งค่าการแสดงกลุ่มรูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. "value" ควรเหมือนกันสำหรับบรรทัดที่ค่า "pid" เหมือนกัน</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>

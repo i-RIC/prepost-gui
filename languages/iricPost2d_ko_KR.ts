@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>모든 정점</translation>
+        <translation type="vanished">모든 정점</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I 방향</translation>
+        <translation type="vanished">I 방향</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J 방향</translation>
+        <translation type="vanished">J 방향</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>모든 정점</translation>
+        <translation type="vanished">모든 정점</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>정점 수 지정</translation>
+        <translation type="vanished">정점 수 지정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>스칼라(세포 중심)</translation>
+        <translation type="vanished">스칼라(세포 중심)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>윤곽 설정 업데이트</translation>
+        <translation type="vanished">윤곽 설정 업데이트</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>스칼라 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>대화</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+        <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>스칼라 설정</translation>
+        <translation type="vanished">스칼라 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>디스플레이 설정</translation>
+        <translation type="vanished">디스플레이 설정</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>값 범위의 경우 최대값이 최소값보다 작습니다.</translation>
+        <translation type="vanished">값 범위의 경우 최대값이 최소값보다 작습니다.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>지리 데이터</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>참조 정보</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>그리드 모양 표시 설정</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +715,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>윤곽 설정 업데이트</translation>
+        <translation type="vanished">윤곽 설정 업데이트</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,18 +727,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>스칼라 설정(%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>스트리트 뷰용으로 KML을 내보내려면 색상 모드가 "불연속 모드"여야 합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>대화</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>스칼라(노드)</translation>
+        <translation type="vanished">스칼라(노드)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>스칼라</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>모양 파일을 내보내려면 색상 설정을 "불연속 모드"로 전환하십시오.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>화살표 물리적 가치 변경</translation>
+        <translation type="vanished">화살표 물리적 가치 변경</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>화살표 설정 업데이트</translation>
+        <translation type="vanished">화살표 설정 업데이트</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>화살표 설정</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>지역</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>화살표 설정 업데이트</translation>
+        <translation type="vanished">화살표 설정 업데이트</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>화살표 설정</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>지역</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>파티클 스칼라 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>컬러맵 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>입자 설정 편집</translation>
+        <translation type="vanished">입자 설정 편집</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>속성 브라우저 표시</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>벡터 속성 선택 변경</translation>
+        <translation type="vanished">벡터 속성 선택 변경</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>벡터 설정 업데이트</translation>
+        <translation type="vanished">벡터 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>화살표 물리적 값 변경</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>입자 벡터 설정</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>다각형 설정 편집</translation>
+        <translation type="vanished">다각형 설정 편집</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>다각형 데이터 표시 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>컬러맵 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1504,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>그리드 모양 설정 업데이트</translation>
+        <translation type="vanished">그리드 모양 설정 업데이트</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1314,19 +1512,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>입자 스칼라 설정 업데이트</translation>
+        <translation type="vanished">입자 스칼라 설정 업데이트</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>윤곽 만들기</translation>
+        <translation type="vanished">윤곽 만들기</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>셀 윤곽 만들기</translation>
+        <translation type="vanished">셀 윤곽 만들기</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>다각형 스칼라 설정 업데이트</translation>
+        <translation type="vanished">다각형 스칼라 설정 업데이트</translation>
     </message>
 </context>
 </TS>

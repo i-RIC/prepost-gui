@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Poligoni (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Dodaj novi poligon (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Uređivanje postavki boje</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Postavka prikaza grupe poligona</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina linije:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Došlo je do greške pri čitanju retka %1. "vrijednost" bi trebala biti ista za redove gdje su "pid" vrijednosti iste.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Uredite postavku prikaza</translation>
     </message>
 </context>
 <context>

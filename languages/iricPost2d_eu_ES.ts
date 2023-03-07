@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Geziaren ezarpena</translation>
+        <translation type="vanished">Geziaren ezarpena</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Luzera</translation>
+        <translation type="vanished">Luzera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Balio estandarra:</translation>
+        <translation type="vanished">Balio estandarra:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[anderea]</translation>
+        <translation type="vanished">[anderea]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pantailan luzera:</translation>
+        <translation type="vanished">Pantailan luzera:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Marrazteko gutxieneko balioa:</translation>
+        <translation type="vanished">Marrazteko gutxieneko balioa:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Laginketa</translation>
+        <translation type="vanished">Laginketa</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Erpin guztiak</translation>
+        <translation type="vanished">Erpin guztiak</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Laginketa-tasa:</translation>
+        <translation type="vanished">Laginketa-tasa:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-norabidea</translation>
+        <translation type="vanished">I-norabidea</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J norabidea</translation>
+        <translation type="vanished">J norabidea</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarraren arabera</translation>
+        <translation type="vanished">Balio eskalarraren arabera</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Gezi forma</translation>
+        <translation type="vanished">Gezi forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Geziaren tamaina:</translation>
+        <translation type="vanished">Geziaren tamaina:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lerro zabalera:</translation>
+        <translation type="vanished">Lerro zabalera:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Geziaren ezarpena</translation>
+        <translation type="vanished">Geziaren ezarpena</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Luzera</translation>
+        <translation type="vanished">Luzera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Balio estandarra:</translation>
+        <translation type="vanished">Balio estandarra:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[anderea]</translation>
+        <translation type="vanished">[anderea]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pantailan luzera:</translation>
+        <translation type="vanished">Pantailan luzera:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Marrazteko gutxieneko balioa:</translation>
+        <translation type="vanished">Marrazteko gutxieneko balioa:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Laginketa</translation>
+        <translation type="vanished">Laginketa</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Erpin guztiak</translation>
+        <translation type="vanished">Erpin guztiak</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Laginketa-tasa:</translation>
+        <translation type="vanished">Laginketa-tasa:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Zehaztu erpin kopurua</translation>
+        <translation type="vanished">Zehaztu erpin kopurua</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarraren arabera</translation>
+        <translation type="vanished">Balio eskalarraren arabera</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Gezi forma</translation>
+        <translation type="vanished">Gezi forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Geziaren tamaina:</translation>
+        <translation type="vanished">Geziaren tamaina:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lerro zabalera:</translation>
+        <translation type="vanished">Lerro zabalera:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Eskalarra (zelula zentroa)</translation>
+        <translation type="vanished">Eskalarra (zelula zentroa)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Eguneratu Sestra Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>KML kale-ikuspegira esportatzeko, erakutsi Sestra Irudiarekin.</translation>
+        <translation type="vanished">KML kale-ikuspegira esportatzeko, erakutsi Sestra Irudiarekin.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Street view-erako KML esportatzeko, eskala konfiguratu behar da balio-barrutia.</translation>
+        <translation type="vanished">Street view-erako KML esportatzeko, eskala konfiguratu behar da balio-barrutia.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Street view-ra KML esportatzeko, koordenatu sistema zehaztu behar da.</translation>
+        <translation type="vanished">Street view-ra KML esportatzeko, koordenatu sistema zehaztu behar da.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ezarpen eskalarra (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Elkarrizketa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Barrutia</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Gehienez lau sestra defini daitezke.</translation>
+        <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Ezarpen eskalarra</translation>
+        <translation type="vanished">Ezarpen eskalarra</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Bistaratzeko ezarpena</translation>
+        <translation type="vanished">Bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Balio barrutian, gehieneko balioa min balioa baino txikiagoa da.</translation>
+        <translation type="vanished">Balio barrutian, gehieneko balioa min balioa baino txikiagoa da.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Datu geografikoak</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Erreferentzia informazioa</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Sarearen forma bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Eguneratu Sestra Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>KML kale-ikuspegira esportatzeko, erakutsi Sestra Irudiarekin.</translation>
+        <translation type="vanished">KML kale-ikuspegira esportatzeko, erakutsi Sestra Irudiarekin.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Street view-erako KML esportatzeko, eskala konfiguratu behar da balio-barrutia.</translation>
+        <translation type="vanished">Street view-erako KML esportatzeko, eskala konfiguratu behar da balio-barrutia.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Street view-ra KML esportatzeko, koordenatu sistema zehaztu behar da.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ezarpen eskalarra (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Street Viewrako KML esportatzeko, Kolore-moduak "Modu diskretua" izan behar du</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Elkarrizketa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Barrutia</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Eskalara (nodoa)</translation>
+        <translation type="vanished">Eskalara (nodoa)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Eskalarra</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Forma fitxategia esportatzeko, aldatu kolore ezarpena "Modu diskretua".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Geziaren balio fisikoaren aldaketa</translation>
+        <translation type="vanished">Geziaren balio fisikoaren aldaketa</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Eguneratu geziaren ezarpena</translation>
+        <translation type="vanished">Eguneratu geziaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Gezien ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Eskualdea</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Eguneratu geziaren ezarpena</translation>
+        <translation type="vanished">Eguneratu geziaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Gezien ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Eskualdea</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Partikulen ezarpen eskalarra</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Kolore maparen ezarpena</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Editatu partikula ezarpena</translation>
+        <translation type="vanished">Editatu partikula ezarpena</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Erakutsi atributuen arakatzailea</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Bektore Atributua Aukeratu Aldaketa</translation>
+        <translation type="vanished">Bektore Atributua Aukeratu Aldaketa</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Eguneratu bektoreen ezarpena</translation>
+        <translation type="vanished">Eguneratu bektoreen ezarpena</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow Balio fisikoaren aldaketa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Partikulen Bektore Ezarpena</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Editatu poligonoaren ezarpena</translation>
+        <translation type="vanished">Editatu poligonoaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Poligonoaren datuak bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Kolore maparen ezarpena</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Sortu gelaxka ingurunea</translation>
+        <translation type="vanished">Sortu gelaxka ingurunea</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Ingerada sortu</translation>
+        <translation type="vanished">Ingerada sortu</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Eguneratu Sareta Forma Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sareta Forma Ezarpena</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Eguneratu partikulen eskalaren ezarpena</translation>
+        <translation type="vanished">Eguneratu partikulen eskalaren ezarpena</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Eguneratu poligonoen eskalaren ezarpena</translation>
+        <translation type="vanished">Eguneratu poligonoen eskalaren ezarpena</translation>
     </message>
 </context>
 </TS>

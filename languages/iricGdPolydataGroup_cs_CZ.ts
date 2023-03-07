@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Pro každého</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>název</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Nelze zadat stejný sloupec pro název i hodnotu.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Souřadnicový systém:</translation>
     </message>
 </context>
 </TS>

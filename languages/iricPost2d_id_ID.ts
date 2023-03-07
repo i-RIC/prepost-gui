@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pengaturan Panah</translation>
+        <translation type="vanished">Pengaturan Panah</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Nilai fisik:</translation>
+        <translation type="vanished">Nilai fisik:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation type="vanished">Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation type="vanished">Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation type="vanished">[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation type="vanished">Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation type="vanished">Nilai minimum untuk menggambar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation type="vanished">Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation type="vanished">Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation type="vanished">Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>saya-arah</translation>
+        <translation type="vanished">saya-arah</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>arah-J</translation>
+        <translation type="vanished">arah-J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation type="vanished">Bentuk Panah</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation type="vanished">Ukuran panah:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation type="vanished">Lebar garis:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pengaturan Panah</translation>
+        <translation type="vanished">Pengaturan Panah</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Nilai fisik:</translation>
+        <translation type="vanished">Nilai fisik:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation type="vanished">Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation type="vanished">Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation type="vanished">[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation type="vanished">Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation type="vanished">Nilai minimum untuk menggambar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation type="vanished">Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation type="vanished">Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation type="vanished">Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Tentukan jumlah simpul</translation>
+        <translation type="vanished">Tentukan jumlah simpul</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation type="vanished">Bentuk Panah</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation type="vanished">Ukuran panah:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation type="vanished">Lebar garis:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (pusat sel)</translation>
+        <translation type="vanished">Skalar (pusat sel)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Perbarui Pengaturan Kontur</translation>
+        <translation type="vanished">Perbarui Pengaturan Kontur</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Untuk mengekspor KML untuk tampilan jalan, tampilkan dengan Gambar Kontur.</translation>
+        <translation type="vanished">Untuk mengekspor KML untuk tampilan jalan, tampilkan dengan Gambar Kontur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Untuk mengekspor KML untuk tampilan jalan, rentang nilai harus disiapkan secara manual.</translation>
+        <translation type="vanished">Untuk mengekspor KML untuk tampilan jalan, rentang nilai harus disiapkan secara manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Untuk mengekspor KML untuk tampilan jalan, sistem koordinat harus ditentukan.</translation>
+        <translation type="vanished">Untuk mengekspor KML untuk tampilan jalan, sistem koordinat harus ditentukan.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Pengaturan skalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimal empat kontur dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
+        <translation type="vanished">Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Pengaturan Skalar</translation>
+        <translation type="vanished">Pengaturan Skalar</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Pengaturan tampilan</translation>
+        <translation type="vanished">Pengaturan tampilan</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
+        <translation type="vanished">Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Data Geografis</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Informasi referensi</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Pengaturan Tampilan Bentuk Grid</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +715,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Perbarui Pengaturan Kontur</translation>
+        <translation type="vanished">Perbarui Pengaturan Kontur</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Untuk mengekspor KML untuk tampilan jalan, tampilkan dengan Gambar Kontur.</translation>
+        <translation type="vanished">Untuk mengekspor KML untuk tampilan jalan, tampilkan dengan Gambar Kontur.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,18 +727,49 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Untuk mengekspor KML untuk tampilan jalan, rentang nilai harus disiapkan secara manual.</translation>
+        <translation type="vanished">Untuk mengekspor KML untuk tampilan jalan, rentang nilai harus disiapkan secara manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Untuk mengekspor KML untuk tampilan jalan, sistem koordinat harus ditentukan.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Pengaturan skalar (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Untuk mengekspor KML untuk tampilan jalan, Colormode harus "Mode Diskrit"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Jangkauan</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalar (simpul)</translation>
+        <translation type="vanished">Skalar (simpul)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
+        <translation type="vanished">Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Untuk mengekspor file bentuk, alihkan pengaturan warna ke "Mode Diskrit".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Perubahan Nilai Fisik Panah</translation>
+        <translation type="vanished">Perubahan Nilai Fisik Panah</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Perbarui Pengaturan Panah</translation>
+        <translation type="vanished">Perbarui Pengaturan Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pengaturan Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Wilayah</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Perbarui Pengaturan Panah</translation>
+        <translation type="vanished">Perbarui Pengaturan Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pengaturan Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Wilayah</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Pengaturan Skalar Partikel</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Pengaturan Peta Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Titik:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Edit Pengaturan Partikel</translation>
+        <translation type="vanished">Edit Pengaturan Partikel</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Tampilkan Browser Atribut</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Atribut Vektor Pilih Ubah</translation>
+        <translation type="vanished">Atribut Vektor Pilih Ubah</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Perbarui Pengaturan Vektor</translation>
+        <translation type="vanished">Perbarui Pengaturan Vektor</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Perubahan Nilai Fisik Panah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Pengaturan Vektor Partikel</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Edit Pengaturan Poligon</translation>
+        <translation type="vanished">Edit Pengaturan Poligon</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Pengaturan Tampilan Data Poligon</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Pengaturan Peta Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lebar Garis:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1504,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Perbarui Pengaturan Bentuk Kotak</translation>
+        <translation type="vanished">Perbarui Pengaturan Bentuk Kotak</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1314,19 +1512,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Perbarui Pengaturan Skalar Partikel</translation>
+        <translation type="vanished">Perbarui Pengaturan Skalar Partikel</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Buat Kontur</translation>
+        <translation type="vanished">Buat Kontur</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Buat Kontur Sel</translation>
+        <translation type="vanished">Buat Kontur Sel</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Perbarui Pengaturan Skalar Poligon</translation>
+        <translation type="vanished">Perbarui Pengaturan Skalar Poligon</translation>
     </message>
 </context>
 </TS>

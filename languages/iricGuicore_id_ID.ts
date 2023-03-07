@@ -1,5 +1,202 @@
 <TS version="2.1" language="id_ID">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Warna kustom</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Dengan nilai skalar</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Sunting (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Pengaturan Peta Warna (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Warna kustom</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Dengan nilai skalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Membentuk</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilitas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Saat dipilih</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Selalu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Tidak pernah</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Judul :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Setelan Fon:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Panjang</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Judul:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Panjang:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Latar belakang:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Ukuran dan Posisi</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Panjang</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Mobil</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Nilai standar:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[MS]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Panjang di layar:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[piksel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Nilai minimum untuk menggambar:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda Panjang</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Dasar</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Bentuk Panah</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Ukuran panah:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Lebar garis:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>dalam file %1, kenaikan koordinat x per piksel dan kenaikan koordinat y per piksel tidak cocok. Itu dapat diterima, tetapi mungkin salah.</translation>
+        <translation type="vanished">dalam file %1, kenaikan koordinat x per piksel dan kenaikan koordinat y per piksel tidak cocok. Itu dapat diterima, tetapi mungkin salah.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Pilih titik yang sesuai pada Jendela Utama.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Perbaiki posisi Gambar</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilitas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Saat dipilih</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Selalu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Tidak pernah</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Judul :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Setelan Fon:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Tampilan Label</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Judul:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Label:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Latar belakang:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Ukuran dan Posisi</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Pengaturan Bilah Warna</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Pilih file untuk diimpor</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Masukkan nama file untuk diekspor</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Terjadi kesalahan saat membuka %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparan</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilitas</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Saat dipilih</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Selalu</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Tidak pernah</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Judul :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Pengaturan Fon:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Tampilan Label</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Format:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Judul:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Label:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Latar belakang:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Ukuran dan Posisi</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Pengaturan Peta Warna</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Preset:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Hubungan antara nilai dan warna</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Sesuaikan secara otomatis berdasarkan rentang nilai</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Atur Secara Manual</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rentang Nilai</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Otomatis</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Isi area bawah</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Isi area atas</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Mengalihkan</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Pengaturan Bilah Warna</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Pilih file untuk diimpor</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Masukkan nama file untuk diekspor</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Terjadi kesalahan saat membuka %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Silakan pilih item untuk diterapkan)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Beralih ke Mode Diskrit</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Beralih ke Mode Gradasi</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Peringatan</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Nilai minimal</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Nilai maks</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparan</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Beralih ke Dialog Mode Diskrit</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Jumlah warna untuk disisipkan di setiap bagian</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Contoh</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Semua simpul</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tingkat pengambilan sampel:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Tentukan jumlah simpul</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Pilih titik pada dialog Georeferensi.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Hapus Poin</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Pengaturan kontur</translation>
+        <translation type="vanished">Pengaturan kontur</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posisi</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Batas Horisontal:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Batas Vertikal:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Lebar:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Tinggi:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Jarak dari kiri</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Jarak dari kanan</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Jarak dari atas</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Jarak dari bawah</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Silakan pilih dari file CGNS mana yang akan dibaca grid.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>File CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Widget tidak tertangani di ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Simpan dan tutup (&amp;S)</translation>
+        <translation type="vanished">Simpan dan tutup (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>Modifikasi yang Anda buat akan dibuang.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Gagal membuka file CGNS.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Pilih file</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Pilih file</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Nama file harus terdiri dari karakter bahasa Inggris saja.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Pilih Direktori</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Nama folder harus terdiri dari karakter bahasa Inggris saja.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Sunting</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Tidak ada data untuk diimpor.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Pilih template untuk diimpor)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Peringatan</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Konten di area teks akan ditimpa dengan template</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Sembunyikan Detail (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Terjadi kesalahan saat menyimpan %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Menyimpan hasil perhitungan sebagai file TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Terjadi kesalahan saat memuat hasil perhitungan.</translation>
+        <translation type="vanished">Terjadi kesalahan saat memuat hasil perhitungan.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atribut grid elevasi tidak ditentukan untuk tipe grid %1. Fungsi grid I/O, fungsi pembuatan grid mungkin tidak bekerja dengan benar untuk tipe grid ini.</translation>
+        <translation type="vanished">Atribut grid elevasi tidak ditentukan untuk tipe grid %1. Fungsi grid I/O, fungsi pembuatan grid mungkin tidak bekerja dengan benar untuk tipe grid ini.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Larutan %1 sudah ada.</translation>
+        <translation type="vanished">Larutan %1 sudah ada.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>File CGNS yang namanya mengandung karakter selain huruf dan angka tidak dapat diimpor.</translation>
+        <translation type="vanished">File CGNS yang namanya mengandung karakter selain huruf dan angka tidak dapat diimpor.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Gagal menyimpan file proyek.</translation>
+        <translation type="vanished">%1 Gagal menyimpan file proyek.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi.) yang terlalu lama %1 ).</translation>
+        <translation type="vanished">File proyek ini tidak dapat dibaca, karena dibuat oleh iRIC (versi.) yang terlalu lama %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>File ini untuk pemecah %1 %2. Ini tidak kompatibel dengan solver yang Anda gunakan, jadi mungkin mengimpor file ini akan gagal. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
+        <translation type="vanished">File ini untuk pemecah %1 %2. Ini tidak kompatibel dengan solver yang Anda gunakan, jadi mungkin mengimpor file ini akan gagal. Apakah Anda benar-benar ingin mengimpor file ini?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Sistem koordinat tidak dipilih.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Terjadi kesalahan saat membuka file CGNS di file proyek: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Menyalin gambar %1 ke %2 gagal.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Format tampilan waktu</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona waktu:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Wilayah Penuh</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Wilayah Aktif</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Daerah Pabean</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>saya Min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>saya maks:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Maks:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Contoh</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Semua simpul</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tingkat pengambilan sampel:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>arah-I</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-arah</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Contoh</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Semua simpul</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tingkat pengambilan sampel:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>arah-I</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-arah</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-arah</translation>
     </message>
 </context>
 <context>

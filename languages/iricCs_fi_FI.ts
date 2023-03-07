@@ -1,5 +1,27 @@
 <TS version="2.1" language="fi_FI">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Valitse tuottavien tietojen koordinaattijärjestelmä</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinaattijärjestelmä</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Muokata...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

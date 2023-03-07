@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Springhastighed:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Intet vindue er valgt i øjeblikket.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Kontinuerlig Snapshot / Film / Google Earth Export Wizard</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Baggrundsgitter</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Skrifttype Standard</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Tekstformat</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Mellem tværsnit:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>almindelige</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Grid Shape / Grid Indeks</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Farvebjælke</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketter</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Pillængdeforklaring</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Forbehandlingsvindue</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Navne på tværsnit af flodundersøgelsesdata</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Grænseforholdsnavne</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualisering Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketter:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Kort vinduer</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Akse titel:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Aksemærker:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Kopier mappeprojekt til Working Directory, når det åbnes</translation>
+        <translation type="vanished">Kopier mappeprojekt til Working Directory, når det åbnes</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinater i statuslinjen</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Decimaler:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Attributbrowser</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Decimaler</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordinater:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Værdi:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Ikke specificeret)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Udgangsindstilling</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Outputberegning resulterer i separate filer</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Hvis du vil eksportere formfil, skal du skifte "Displayindstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte "Displayindstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Snapshot blev gemt på %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Alle filer i %1 er slettet.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Indstillingsfil (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>For at eksportere formfil skal du skifte farvetilstand til "Diskret tilstand".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Geografiske data (fra web)</translation>
+        <translation type="vanished">Geografiske data (fra web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Genindlæs CGNS-fil (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Genindlæs CGNS-fil</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Geografiske data (højde fra nettet)</translation>
     </message>
 </context>
 </TS>

@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Piirrä asetus (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fonttiasetus (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Piirrä asetus</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonttiasetus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Kaavion otsikko:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendat:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-akseli:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tikit:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-akseli:</translation>
     </message>
 </context>
 <context>

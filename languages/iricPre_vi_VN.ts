@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Tệp CGNS này không có thông tin về bộ giải. Chúng tôi không thể kiểm tra xem tệp CGNS này có tương thích với bộ giải hay không. Nếu nó không tương thích, có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Tệp này không chứa lưới có thể được nhập.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Chọn lưới</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Chọn lưới để nhập.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,42 +139,119 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Thiết lập trục</translation>
+        <translation type="vanished">Thiết lập trục</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Dễ thấy</translation>
+        <translation type="vanished">Dễ thấy</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Màu sắc:</translation>
+        <translation type="vanished">Màu sắc:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Thiết lập màn hình</translation>
+        <translation type="vanished">Thiết lập màn hình</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Màu lưới</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Thuộc tính nút</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Thuộc tính ô</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Axes</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Dễ thấy</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Màu sắc:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Chỉnh sửa tỷ lệ hướng Z</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Thang đo hướng Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Nhập thang hướng Z mới.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Chỉnh sửa tỷ lệ hướng Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Nhập tỷ lệ hướng Z mới.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Độ cao:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Màu lưới</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Thuộc tính nút</translation>
+        <source>Cusom Color</source>
+        <translation>Màu tùy chọn</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>Thuộc tính ô</translation>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <source>Colormap Setting</source>
+        <translation>Cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Axes</translation>
+        <translation>trục</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Màu sắc:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Chỉnh sửa tỷ lệ hướng Z</translation>
+        <source>Background Color:</source>
+        <translation>Màu nền:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Thang đo hướng Z</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Nhập thang hướng Z mới.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Chỉnh sửa cài đặt màu</translation>
+        <source>Z-direction scale:</source>
+        <translation>Quy mô hướng Z:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Bạn có chắc chắn muốn xóa tất cả các điều kiện ranh giới không?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Cài đặt hiển thị điều kiện ranh giới</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Cài đặt phông chữ cho tên</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Select file to import</source>
@@ -393,11 +486,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Chọn trường hợp</translation>
+        <translation type="vanished">Chọn trường hợp</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Vui lòng chọn từ trường hợp nào trong %1 để nhập các điều kiện tính toán.</translation>
+        <translation type="vanished">Vui lòng chọn từ trường hợp nào trong %1 để nhập các điều kiện tính toán.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -465,7 +558,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Dữ liệu tập hợp con trỏ (&amp;O)</translation>
+        <translation type="vanished">Dữ liệu tập hợp con trỏ (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Nhập từ web (&amp;I)...</translation>
+        <translation type="vanished">Nhập từ web (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Thiết lập Scalarbar...</translation>
+        <translation type="vanished">Thiết lập Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Nhập dữ liệu từ %1 thất bại.</translation>
+        <translation type="vanished">Nhập dữ liệu từ %1 thất bại.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Để nhập dữ liệu địa lý, trước tiên hãy chỉ định hệ tọa độ.</translation>
+        <translation type="vanished">Để nhập dữ liệu địa lý, trước tiên hãy chỉ định hệ tọa độ.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Nhập khẩu (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Nhập độ cao từ web (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Để nhập dữ liệu địa lý, trước tiên hãy chỉ định hệ tọa độ cho dự án.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Chỉnh sửa cài đặt biến thể (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Mặc định</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>hộp thoại</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Cài đặt biến thể</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Bật biến thể</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Biến thể để chuyển đến bộ giải:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Lưu ý: Khi biến thể được bật, biến thể có tên "Mặc định" sẽ được tạo và tất cả dữ liệu địa lý được chuyển đến đó. Bạn có thể thêm, đổi tên, xóa các biến thể khỏi "Trình duyệt đối tượng". Bạn có thể di chuyển, sao chép dữ liệu địa lý giữa các biến thể. Dữ liệu thuộc tính lưới được tạo từ biến thể mà bạn chọn với "Biến thể để chuyển tới bộ giải" sẽ được chuyển tới bộ giải. Bạn có thể chuẩn bị nhiều biến thể, chuyển đổi biến thể nào để chuyển sang bộ giải và đảm bảo hiệu quả của sự khác biệt.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Cài đặt hiển thị thuộc tính ô lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính ô lưới</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Tạo dữ liệu đám mây điểm</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Cài đặt hiển thị thuộc tính ô lưới</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1064,7 +1230,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Cài đặt hiển thị thuộc tính nút lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính nút lưới</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Tạo dữ liệu đám mây điểm</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Cài đặt hiển thị thuộc tính nút lưới</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Cài đặt chú giải màu sắc</translation>
+        <translation type="vanished">Cài đặt chú giải màu sắc</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Cài đặt thanh vô hướng</translation>
+        <translation type="vanished">Cài đặt thanh vô hướng</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Dễ thấy</translation>
+        <translation type="vanished">Dễ thấy</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Giá trị</translation>
+        <translation type="vanished">Giá trị</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Chỉnh sửa...</translation>
+        <translation type="vanished">Chỉnh sửa...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Mẫu đơn</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Dễ thấy</translation>
+        <translation type="vanished">Dễ thấy</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Tiêu đề</translation>
+        <translation type="vanished">Tiêu đề</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Tiêu đề :</translation>
+        <translation type="vanished">Tiêu đề :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Cài đặt Phông chữ:</translation>
+        <translation type="vanished">Cài đặt Phông chữ:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Chỉnh sửa...</translation>
+        <translation type="vanished">Chỉnh sửa...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Hiển thị nhãn</translation>
+        <translation type="vanished">Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Số lượng nhãn:</translation>
+        <translation type="vanished">Số lượng nhãn:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Sự sắp xếp:</translation>
+        <translation type="vanished">Sự sắp xếp:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Sự định hướng :</translation>
+        <translation type="vanished">Sự định hướng :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Thẳng đứng</translation>
+        <translation type="vanished">Thẳng đứng</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Nằm ngang</translation>
+        <translation type="vanished">Nằm ngang</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Kích thước</translation>
+        <translation type="vanished">Kích thước</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Chỉ định kích thước thanh Màu như tỷ lệ so với kích thước cửa sổ.</translation>
+        <translation type="vanished">Chỉ định kích thước thanh Màu như tỷ lệ so với kích thước cửa sổ.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Chiều rộng :</translation>
+        <translation type="vanished">Chiều rộng :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Nếu bạn chỉ định 1, chiều rộng thanh Màu giống với chiều rộng cửa sổ.</translation>
+        <translation type="vanished">Nếu bạn chỉ định 1, chiều rộng thanh Màu giống với chiều rộng cửa sổ.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Chiều cao :</translation>
+        <translation type="vanished">Chiều cao :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Nếu bạn chỉ định 1, Chiều cao thanh màu giống với chiều cao cửa sổ.</translation>
+        <translation type="vanished">Nếu bạn chỉ định 1, Chiều cao thanh màu giống với chiều cao cửa sổ.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Chức vụ</translation>
+        <translation type="vanished">Chức vụ</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Chỉ định vị trí dưới cùng bên trái của thanh Màu làm tỷ lệ so với kích thước cửa sổ.</translation>
+        <translation type="vanished">Chỉ định vị trí dưới cùng bên trái của thanh Màu làm tỷ lệ so với kích thước cửa sổ.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>NS :</translation>
+        <translation type="vanished">NS :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Nếu bạn chỉ định 0, cạnh trái của Thanh màu nằm ở cạnh trái cửa sổ.</translation>
+        <translation type="vanished">Nếu bạn chỉ định 0, cạnh trái của Thanh màu nằm ở cạnh trái cửa sổ.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Nếu bạn chỉ định 0, đáy của thanh Màu nằm ở cuối cửa sổ.</translation>
+        <translation type="vanished">Nếu bạn chỉ định 0, đáy của thanh Màu nằm ở cuối cửa sổ.</translation>
     </message>
 </context>
 <context>

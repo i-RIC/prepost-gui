@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Jokaiselle</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Et voi määrittää samaa saraketta sekä nimelle että arvolle.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Koordinaattijärjestelmä:</translation>
     </message>
 </context>
 </TS>

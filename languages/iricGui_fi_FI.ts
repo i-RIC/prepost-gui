@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Ohitusaste:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Mikään ikkuna ei ole tällä hetkellä valittuna.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Jatkuva tilannekuva / elokuva / ohjattu Google Earth -vientitoiminto</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Taustaruudukko</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Oletusfontti</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Tekstin muoto</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Poikkileikkausten välillä:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Yleistä</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Ruudukkomuoto / Ruudukkoindeksit</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Väripalkki</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Tarrat</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Nuolen pituus Selite</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Esikäsittely-ikkuna</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Vastavirta myötävirta</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>River Survey Data Poikkileikkausten nimet</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Rajaehtojen nimet</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualisointi Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Tunnisteet:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Kaavio Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Kaavion otsikko:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendat:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Akselin otsikko:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Akselin tikut:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Kopioi kansioprojekti työhakemistoon, kun se avataan</translation>
+        <translation type="vanished">Kopioi kansioprojekti työhakemistoon, kun se avataan</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Koordinaatit tilapalkissa</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Desimaalin tarkkuudella:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Attribuuttien selain</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Desimaalin tarkkuudella</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordinaatit:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Ei määritelty)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Lähtöasetus</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Tulosta laskennan tulokset erillisiin tiedostoihin</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - IRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - IRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Yksittäiskuva tallennettu kohteeseen %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Kaikki tiedostot sisään %1 on poistettu.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Asetustiedosto (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Voit viedä muototiedoston vaihtamalla väritilaksi "Diskreetti tila".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Maantieteelliset tiedot (verkosta)</translation>
+        <translation type="vanished">Maantieteelliset tiedot (verkosta)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Lataa CGNS-tiedosto uudelleen (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Lataa CGNS-tiedosto uudelleen</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Maantieteelliset tiedot (korkeus verkosta)</translation>
     </message>
 </context>
 </TS>

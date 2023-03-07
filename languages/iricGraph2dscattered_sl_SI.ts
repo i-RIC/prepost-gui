@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Nastavitev risbe (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Nastavitev pisave (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Nastavitev risbe</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavitev pisave</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Naslov grafikona:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X os:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kljukice:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y os:</translation>
     </message>
 </context>
 <context>

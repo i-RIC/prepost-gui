@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Configuracao de grandeza escalar</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Valor medido:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Diálogo de Configuração de Exibição de Pontos</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuracao de exibicao</translation>
+        <translation>Configuração de Exibição</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pontos</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superfície</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Cor por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuração do mapa de cores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensao do ponto :</translation>
+        <translation>Tamanho do Ponto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Cor customizada</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Configuracao de grandeza escalar</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Valor medido:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Configuracao de exibicao</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Dimensao do ponto :</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuracao de barra das cores (&amp;C)</translation>
+        <translation type="vanished">Configuracao de barra das cores (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Para o alcance de valores, o valor maximo e menor que o valor minimo.</translation>
+        <translation type="vanished">Para o alcance de valores, o valor maximo e menor que o valor minimo.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Alterar a configuracao de vetor</translation>
+        <translation type="vanished">Alterar a configuracao de vetor</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Configuração da seta de dados medidos</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracao do vetor</translation>
+        <translation type="vanished">Configuracao do vetor</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Comprimento  </translation>
+        <translation type="vanished">Comprimento  </translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatico</translation>
+        <translation type="vanished">Automatico</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor basico :</translation>
+        <translation type="vanished">Valor basico :</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Comprimento na tela :</translation>
+        <translation type="vanished">Comprimento na tela :</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo a ser exibido :</translation>
+        <translation type="vanished">Valor minimo a ser exibido :</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Especificacao de cor</translation>
+        <translation type="vanished">Especificacao de cor</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Configurado pelo valor de grandeza escalar</translation>
+        <translation type="vanished">Configurado pelo valor de grandeza escalar</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuracao de barra das cores (&amp;C)</translation>
+        <translation type="vanished">Configuracao de barra das cores (&amp;C)</translation>
     </message>
 </context>
 </TS>

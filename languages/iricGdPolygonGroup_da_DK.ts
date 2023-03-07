@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>Polygoner (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Tilføj ny polygon (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Rediger farveindstilling</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Polygongruppevisningsindstilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredde:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Der opstod en fejl under læsning af linjen %1. "værdi" skal være den samme for linjer, hvor "pid" -værdier er de samme.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Rediger displayindstilling</translation>
     </message>
 </context>
 <context>

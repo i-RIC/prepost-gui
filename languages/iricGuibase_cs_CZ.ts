@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Mřížkové čáry</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Všechno</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Pouze obrys</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Indexy mřížky</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viditelné</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; K definování vlastního formátu času můžete použít následující symboly: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Rok: RRRR, RR &lt;/li&gt; &lt;li&gt; Měsíc: M, MM, MMM, MMMM (MMM pro leden atd., MMMM pro leden atd.) &lt;/li&gt; &lt;li&gt; Den: d, dd, ddd, dddd (ddd pro Mon atd., Dddd pro pondělí atd.) &lt;/Li &gt; &lt;li&gt; Hodina: H, HH, h, hh (h, hh pro zobrazení AM/PM) &lt;/li&gt; &lt;li&gt; Minuta: m, mm &lt;/li&gt; &lt;li&gt; Sekunda: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Zobrazit časové pásmo</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Prosím, čekejte</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Prosím, čekejte...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Prosím, čekejte...</translation>

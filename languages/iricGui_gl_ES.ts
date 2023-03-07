@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Omitir taxa:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Non hai ningunha xanela seleccionada actualmente.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Instantánea continua/Película/Asistente de exportación de Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Grella de fondo</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fonte predeterminada</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Formato de texto</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre seccións transversais:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Común</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forma de cuadrícula/Índices de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barra de cores</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiquetas</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Lenda da lonxitude da frecha</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Ventá de preprocesamento</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Aguas arriba / Abaixo</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nomes das seccións transversais de datos do levantamento fluvial</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nomes das condicións de límite</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows de visualización</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiquetas:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Windows gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Título do gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Lendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Título do eixo:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ticks do eixe:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Copia o proxecto do cartafol no directorio de traballo cando se abre</translation>
+        <translation type="vanished">Copia o proxecto do cartafol no directorio de traballo cando se abre</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Coordenadas na barra de estado</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Lugares decimais:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Navegador de atributos</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Lugares decimais</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Coordenadas:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Non especificado)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Configuración de saída</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>O cálculo da saída resulta en ficheiros separados</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - IRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - IRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Para exportar o ficheiro de forma, cambie "Configuración de visualización" a "Figura de contorno", non "Fringe de cor" ou "Isolines".</translation>
+        <translation type="vanished">Para exportar o ficheiro de forma, cambie "Configuración de visualización" a "Figura de contorno", non "Fringe de cor" ou "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Instantánea gardada en %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Todos os ficheiros en %1 está eliminado.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Ficheiro de configuración (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Para exportar o ficheiro de forma, cambia o modo de cor a "Modo discreto".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Datos xeográficos (da web)</translation>
+        <translation type="vanished">Datos xeográficos (da web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Recarga o ficheiro CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Recarga o ficheiro CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Datos xeográficos (elevación da web)</translation>
     </message>
 </context>
 </TS>

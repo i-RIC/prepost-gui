@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>दायां Y-अक्ष श्रेणी अमान्य है।</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>सेकंड</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>मिनट</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>घंटे</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>दिन</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>पंक्तियां</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>सेकंड</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>मिनट</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>घंटे</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>दिन</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>सीएसवी निर्यात (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>फ़ॉन्ट सेटिंग (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>बाहरी</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>चार्ट फ़ॉन्ट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>चार्ट शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>दंतकथाएं:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>एक्स अक्ष:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>टिक्स:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>वाई अक्ष:</translation>
     </message>
 </context>
 <context>

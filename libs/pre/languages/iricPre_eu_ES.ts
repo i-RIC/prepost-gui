@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Saretako hegazti-begi leihoa</translation>
     </message>
 </context>
@@ -210,66 +208,66 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished">Editatu Z norabidearen eskala</translation>
+        <translation>Editatu Z norabideko eskala</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished">Sartu Z norabidearen eskala berria.</translation>
+        <translation>Sartu Z norabideko eskala berria.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu pantaila-ezarpena</translation>
     </message>
     <message>
         <source>Elevation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Altuera:</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished">Sarearen kolorea</translation>
+        <translation>Sarearen kolorea</translation>
     </message>
     <message>
         <source>Cusom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore maparen ezarpena</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Inportatu (&amp;I)...</translation>
+        <translation>Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Esportatu (&amp;E)...</translation>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished">Ardatzak</translation>
+        <translation>Ardatzak</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Ikusgai</translation>
+        <translation>Ikusgai</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Kolore:</translation>
+        <translation>Kolore:</translation>
     </message>
     <message>
         <source>Background Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atzeko planoaren kolorea:</translation>
     </message>
     <message>
         <source>Z-direction scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Z norabideko eskala:</translation>
     </message>
 </context>
 <context>
@@ -358,7 +356,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu pantaila-ezarpena</translation>
     </message>
 </context>
 <context>
@@ -465,11 +463,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBcGroupSettingDialog</name>
     <message>
         <source>Boundary Condition Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Muga-baldintza bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Font setting for names</source>
-        <translation type="unfinished"></translation>
+        <translation>Izenentzako letra-tipoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -663,8 +661,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 ez dira mapatzen azken aldian editatu ondoren. Mapak gauzatu nahi dituzu orain?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Mugaren baldintza ezarpena &quot;%1&quot;ez da mapatzen azken aldian editatu ondoren. Mapaketa exekutatu nahi al duzu orain?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Mugaren baldintza ezarpena "%1"ez da mapatzen azken aldian editatu ondoren. Mapaketa exekutatu nahi al duzu orain?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -874,53 +872,53 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit &amp;Variation Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu aldaketen ezarpena (&amp;V)...</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehenetsia</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Elkarrizketa</translation>
+        <translation>Elkarrizketa</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Inportatu (&amp;I)...</translation>
+        <translation>Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Esportatu (&amp;E)...</translation>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
     <message>
         <source>Variation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Aldakuntza ezarpena</translation>
     </message>
     <message>
         <source>Enable variation</source>
-        <translation type="unfinished"></translation>
+        <translation>Gaitu aldakuntza</translation>
     </message>
     <message>
         <source>Variation to pass to solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazleari pasa beharreko aldakuntza:</translation>
     </message>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation type="unfinished"></translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Oharra: aldakuntza gaituta dagoenean, "Lehenetsia" izeneko aldakuntza sortzen da eta datu geografiko guztiak horretara eramaten dira. "Object Browser"-tik aldakuntzak gehitu, izena aldatu eta kendu ditzakezu. Datu geografikoak aldaketen artean mugitu eta kopiatu ditzakezu. "Aldakuntza konpontzaileari pasatzeko" aukerarekin hautatzen duzun aldakuntzatik sortutako sareta-atributu-datuak konpontzaileari pasatzen zaizkio. Hainbat aldaera prestatu ditzakezu, konpontzaileari zeintzuk pasatu eta diferentziaren eragina ziurtatu.</translation>
     </message>
 </context>
 <context>
@@ -1064,15 +1062,15 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">Sareta gelaxkaren atributuak bistaratzeko ezarpena</translation>
+        <translation>Sare-gelaxka-atributuak bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Inportatu (&amp;I)...</translation>
+        <translation>Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Esportatu (&amp;E)...</translation>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1135,9 +1133,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Exekutatu (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Atributu hauek ez ziren mapatu, sarearen sorgailuaren irteerako balioak direlako. Horiei buruzko datu geografikoak indarrez mapatu nahi badituzu, eskuz mapatu &quot;Sareta&quot; menuarekin -&gt; &quot;Atributuak Kartografia&quot; -&gt; &quot;Exekutatu&quot; menuarekin.</translation>
+        <translation>Atributu hauek ez ziren mapatu, sarearen sorgailuaren irteerako balioak direlako. Horiei buruzko datu geografikoak indarrez mapatu nahi badituzu, eskuz mapatu "Sareta" menuarekin -&gt; "Atributuak Kartografia" -&gt; "Exekutatu" menuarekin.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1156,12 +1154,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Datu geografikoak kartografiatzea amaitu da</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sareta atributua &quot;%1&quot;eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sareta atributua "%1"eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Muga baldintza &quot;%1&quot;eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Muga baldintza "%1"eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
     </message>
 </context>
 <context>
@@ -1179,20 +1177,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automatikoa</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sareta sortzean, galdetuko zaizu ea Attribute Mapping bakoitzean exekutatzeko. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sareta sortzean, galdetuko zaizu ea Attribute Mapping bakoitzean exekutatzeko. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Eskuzkoa</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Atributuen mapaketa &quot;Exekutatu&quot; menua eskuz aukeratzen duzunean bakarrik gauzatzen da.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Atributuen mapaketa "Exekutatu" menua eskuz aukeratzen duzunean bakarrik gauzatzen da.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1327,15 +1325,15 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished">Sareta Nodoaren atributuak bistaratzeko ezarpena</translation>
+        <translation>Sare-nodoaren atributuaren bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Inportatu (&amp;I)...</translation>
+        <translation>Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Esportatu (&amp;E)...</translation>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1609,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Konfiguratu Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Ireki hegazti-begien leihoa (&amp;B)</translation>
     </message>
     <message>

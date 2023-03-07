@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Lína %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Bæta við nýrri línu (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Litastilling Breyta</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Polyline Group Display Stilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV skrá (línur) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Breyta skjástillingu</translation>
     </message>
 </context>
 <context>

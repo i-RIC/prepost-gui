@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Her biri için</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Hem Ad hem de Değer için aynı sütunu belirtemezsiniz.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Koordinat sistemi:</translation>
     </message>
 </context>
 </TS>

@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Pravý rozsah os Y je neplatný.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekundy</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minut</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>hodiny</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Dny</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Čáry</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekundy</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minut</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>hodin</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dní</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Export CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Nastavení písma (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Externí</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Nastavení písma grafu</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Název grafu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Osa X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Klíšťata:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>osa Y:</translation>
     </message>
 </context>
 <context>

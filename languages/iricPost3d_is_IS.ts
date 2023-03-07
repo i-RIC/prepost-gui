@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Útlínustilling (frumumiðja)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Svið</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Línusnið (klefi miðja)</translation>
+        <translation type="vanished">Línusnið (klefi miðja)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Gildi:</translation>
+        <translation type="vanished">Gildi:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Svæði</translation>
+        <translation type="vanished">Svæði</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Bæta við (&amp;A)</translation>
+        <translation type="vanished">Bæta við (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjarlægðu (&amp;R)</translation>
+        <translation type="vanished">Fjarlægðu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Svið %1</translation>
+        <translation type="vanished">Svið %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Að hámarki má skilgreina fjórar útlínur.</translation>
+        <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Bæta við (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjarlægja (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Svið %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Andlit</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Útlínur</translation>
+        <translation type="vanished">Útlínur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Útlínustilling</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Útlínustilling (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Andlit %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Útlínustilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Andlit</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Útlínustilling</translation>
+        <translation type="vanished">Útlínustilling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Líkamlegt gildi:</translation>
+        <translation type="vanished">Líkamlegt gildi:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Andlit</translation>
+        <translation type="vanished">Andlit</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Bæta við (&amp;A)</translation>
+        <translation type="vanished">Bæta við (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjarlægðu (&amp;R)</translation>
+        <translation type="vanished">Fjarlægðu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Andlit %1</translation>
+        <translation type="vanished">Andlit %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Að hámarki má skilgreina fjórar útlínur.</translation>
+        <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Breyting á hlut vafra</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Bæta við (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjarlægja (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Andlit %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Stefna</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>ég</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Svið</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Ég er í</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>ég Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J mín</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K mín</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Virkt</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Lögun rist</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Skjástillingar fyrir ristform</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
+        <translation type="vanished">Andlit</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Andlit %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Andlit %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Örvar stilling</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengd Legend</translation>
+    </message>
+    <message>
+        <source>Faces</source>
         <translation>Andlit</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Bæta við (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjarlægja (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Andlit %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengd Legend</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Að hámarki er hægt að skilgreina fjórar örvar.</translation>
+        <translation type="vanished">Að hámarki er hægt að skilgreina fjórar örvar.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Agnakvarðastilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Litakortsstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktastærð:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Breyta stillingu agna</translation>
+        <translation type="vanished">Breyta stillingu agna</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektor eiginleiki Veldu Breytingu</translation>
+        <translation type="vanished">Vektor eiginleiki Veldu Breytingu</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Uppfæra vektorstillingu</translation>
+        <translation type="vanished">Uppfæra vektorstillingu</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow Líkamleg gildisbreyting</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Agna vektor stilling</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Uppfærsla</translation>
+        <translation type="vanished">Uppfærsla</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Búðu til útlínur</translation>
+        <translation type="vanished">Búðu til útlínur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Uppfæra stillingu fyrir ristform</translation>
+        <translation type="vanished">Uppfæra stillingu fyrir ristform</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Uppfæra stillingu á ögnum</translation>
+        <translation type="vanished">Uppfæra stillingu á ögnum</translation>
     </message>
 </context>
 </TS>

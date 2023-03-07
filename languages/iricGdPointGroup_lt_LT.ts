@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Taškas (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Pridėti naują tašką (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Spalvų nustatymo redagavimas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Taškų grupės ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Klaida skaitant „vertės“ reikšmę eilutėje %1. „vertė“ turėtų būti tikroji vertė, bet „ %2 "yra nurodyta.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Redaguoti ekrano nustatymą</translation>
     </message>
 </context>
 <context>

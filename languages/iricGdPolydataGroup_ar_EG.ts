@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>لكل</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>اسم</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>لا يمكنك تحديد نفس العمود لكل من الاسم والقيمة.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>نظام الإحداثيات:</translation>
     </message>
 </context>
 </TS>

@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>De volgende bestanden worden geïmporteerd. Het is ok?</translation>
+        <translation type="vanished">De volgende bestanden worden geïmporteerd. Het is ok?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Selecteer de te importeren bestanden.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Selecteer alles (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deselecteer alles (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Waarschuwing</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Het tijdsinterval tussen de geselecteerde bestanden is niet hetzelfde.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Bestandsnaam komt niet overeen met het patroon</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tijdzone:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimensiewaarden voor tijdmismatch.</translation>
+        <translation type="vanished">Dimensiewaarden voor tijdmismatch.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Coördinatensysteem is niet gespecificeerd voor: %1. Selecteer het coördinatensysteem handmatig.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Opening %1 mislukt.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Dimensiewaarden voor %1 mismatch.</translation>
+        <translation type="vanished">Dimensiewaarden voor %1 mismatch.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Er is een fout opgetreden tijdens het parseren van de tijddefinitie: %1</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het parseren van de tijddefinitie: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 heeft geen lengte-, breedtegraad of x, y-gegevens.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Oorspronkelijke tijd:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tijdzone:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informatie</translation>
+        <translation type="vanished">Informatie</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 bestanden in de map %2 worden geïmporteerd.</translation>
+        <translation type="vanished">%1 bestanden in de map %2 worden geïmporteerd.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimensiewaarden voor tijdmismatch.</translation>
+        <translation type="vanished">Dimensiewaarden voor tijdmismatch.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tijdreeksrastergegevens zijn al geïmporteerd. Als u andere gegevens wilt importeren, verwijdert u eerst de reeds geïmporteerde gegevens.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Er is een fout opgetreden bij het importeren van gegevens die zijn geconverteerd van %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Er is een fout opgetreden bij het openen %1.</translation>
     </message>
 </context>
 </TS>

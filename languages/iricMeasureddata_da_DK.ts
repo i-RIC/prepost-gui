@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalarindstilling</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Målt værdi:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Indstillingsdialog for visning af punkter</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Displayindstilling</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Points</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Overflade</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Indstilling af farvekort</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Punktstørrelse:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Brugerdefineret farve</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalarindstilling</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Målt værdi:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Displayindstilling</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktstørrelse:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Indstilling af farvebjælke (&amp;C)</translation>
+        <translation type="vanished">Indstilling af farvebjælke (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>For værdiområde er maks. Værdi mindre end min. Værdi.</translation>
+        <translation type="vanished">For værdiområde er maks. Værdi mindre end min. Værdi.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Opdater pilindstilling</translation>
+        <translation type="vanished">Opdater pilindstilling</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Indstilling for målte data</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Indstilling af pil</translation>
+        <translation type="vanished">Indstilling af pil</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysisk værdi:</translation>
+        <translation type="vanished">Fysisk værdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Længde</translation>
+        <translation type="vanished">Længde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardværdi:</translation>
+        <translation type="vanished">Standardværdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Frk]</translation>
+        <translation type="vanished">[Frk]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Længde på skærmen:</translation>
+        <translation type="vanished">Længde på skærmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Mindste værdi at trække:</translation>
+        <translation type="vanished">Mindste værdi at trække:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Brugerdefineret farve</translation>
+        <translation type="vanished">Brugerdefineret farve</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Efter skalær værdi</translation>
+        <translation type="vanished">Efter skalær værdi</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Indstilling af farvebjælke (&amp;C)</translation>
+        <translation type="vanished">Indstilling af farvebjælke (&amp;C)</translation>
     </message>
 </context>
 </TS>

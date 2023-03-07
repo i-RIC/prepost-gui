@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Toliau nurodyti failai bus importuoti. Ar gerai?</translation>
+        <translation type="vanished">Toliau nurodyti failai bus importuoti. Ar gerai?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Prašome pasirinkti failus, kuriuos norite importuoti.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Pasirinkti viską (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Atzymeti visus pasirinkimus (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Įspėjimas</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Laiko intervalas tarp pasirinktų failų nėra vienodas.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Failo pavadinimas neatitinka modelio</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laiko zona:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Laiko neatitikimo matmenų vertės.</translation>
+        <translation type="vanished">Laiko neatitikimo matmenų vertės.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinačių sistema nenurodyta %1. Prašome rankiniu būdu pasirinkti koordinačių sistemą.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laiko eilučių rastriniai duomenys jau importuoti. Jei norite importuoti kitus duomenis, pirmiausia ištrinkite jau importuotus duomenis.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Atidarymas %1 nepavyko.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Matmenų reikšmės, skirtos %1 neatitikimas.</translation>
+        <translation type="vanished">Matmenų reikšmės, skirtos %1 neatitikimas.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Analizuojant laiko apibrėžimą įvyko klaida: %1</translation>
+        <translation type="vanished">Analizuojant laiko apibrėžimą įvyko klaida: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 neturi ilgumos, platumos ir x, y duomenų.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laiko eilučių rastriniai duomenys jau importuoti. Jei norite importuoti kitus duomenis, pirmiausia ištrinkite jau importuotus duomenis.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Originalus laikas:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laiko zona:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacija</translation>
+        <translation type="vanished">Informacija</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 failus aplanke %2 yra importuojami.</translation>
+        <translation type="vanished">%1 failus aplanke %2 yra importuojami.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Laiko neatitikimo matmenų vertės.</translation>
+        <translation type="vanished">Laiko neatitikimo matmenų vertės.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Laiko eilučių rastriniai duomenys jau importuoti. Jei norite importuoti kitus duomenis, pirmiausia ištrinkite jau importuotus duomenis.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Importuojant duomenis, konvertuotus iš, įvyko klaida %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Atidarant įvyko klaida %1.</translation>
     </message>
 </context>
 </TS>

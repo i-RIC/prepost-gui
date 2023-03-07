@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>橫截面數據是使用點雲數據生成的。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
+        <translation type="vanished">橫截面數據是使用點雲數據生成的。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>生成點雲數據</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>使用點雲數據生成橫截面數據。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>使用點雲數據生成橫截面數據。在某些地區，點雲數據中不存在數據，並且為這些點映射了值 0。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>縱橫比：1 /</translation>
+        <translation type="vanished">縱橫比：1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>橫截面數據</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縱橫比（V/H）：1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>縱橫比：1 / %1</translation>
+        <translation type="vanished">縱橫比：1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>編輯顯示設置</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縱橫比（V/H）：1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>橫截面名稱</translation>
     </message>
 </context>
 <context>

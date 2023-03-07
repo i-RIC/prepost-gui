@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Tässä CGNS -tiedostossa ei ole ratkaisutietoja. Emme voi tarkistaa, onko tämä CGNS -tiedosto yhteensopiva ratkaisijan kanssa. Jos se ei ole yhteensopiva, ehkä vain osa ruudukosta tuodaan. Haluatko todella tuoda ruudukon tästä tiedostosta?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Tämä tiedosto ei sisällä ruudukkoa, jota voidaan tuoda.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Valitse ruudukko</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Valitse tuotava ruudukko.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,69 +139,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Akselien asetus</translation>
+        <translation type="vanished">Akselien asetus</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Näkyvä</translation>
+        <translation type="vanished">Näkyvä</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Näyttöasetus</translation>
+        <translation type="vanished">Näyttöasetus</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Ruudukon väri</translation>
+        <translation type="vanished">Ruudukon väri</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Solmumääritelmä</translation>
+        <translation type="vanished">Solmumääritelmä</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Solun ominaisuus</translation>
+        <translation type="vanished">Solun ominaisuus</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Kirveet</translation>
+        <translation type="vanished">Kirveet</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Näkyvä</translation>
+        <translation type="vanished">Näkyvä</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Muokkaa Z-suunnan asteikkoa</translation>
+        <translation type="vanished">Muokkaa Z-suunnan asteikkoa</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Z-suunnan asteikko</translation>
+        <translation type="vanished">Z-suunnan asteikko</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Syötä uusi Z-suunnan asteikko.</translation>
+        <translation type="vanished">Syötä uusi Z-suunnan asteikko.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Muokkaa väriasetusta</translation>
+        <translation type="vanished">Muokkaa väriasetusta</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Muokkaa Z-suunnan mittakaavaa</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Syötä uusi Z-suuntainen asteikko.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Muokkaa näyttöasetuksia</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Korkeus:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Ruudukon väri</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation>Akselit</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation>Taustaväri:</translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation>Z-suuntainen asteikko:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Haluatko varmasti poistaa kaikki reunaehdot?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Muokkaa näyttöasetuksia</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Rajaehdon näytön asetus</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Fonttiasetus nimille</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Valitse tapaus</translation>
+        <translation type="vanished">Valitse tapaus</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Valitse mistä tapauksesta %1 tuoda laskentaolosuhteet.</translation>
+        <translation type="vanished">Valitse mistä tapauksesta %1 tuoda laskentaolosuhteet.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pistejoukon tiedot (&amp;O)</translation>
+        <translation type="vanished">Pistejoukon tiedot (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Tuo verkosta (&amp;I)...</translation>
+        <translation type="vanished">Tuo verkosta (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Scalarbarin määrittäminen...</translation>
+        <translation type="vanished">Scalarbarin määrittäminen...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Tietojen tuominen kohteesta %1 epäonnistui.</translation>
+        <translation type="vanished">Tietojen tuominen kohteesta %1 epäonnistui.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Jos haluat tuoda maantieteelliset tiedot, määritä ensin koordinaatisto.</translation>
+        <translation type="vanished">Jos haluat tuoda maantieteelliset tiedot, määritä ensin koordinaatisto.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Tuonti (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Tuo Elevation verkosta (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Jos haluat tuoda maantieteelliset tiedot, määritä ensin projektin koordinaattijärjestelmä.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Muokkaa muunnelma-asetusta (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variaatioasetus</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Ota muunnelma käyttöön</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Ratkaisijalle välitettävä muunnelma:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Huomautus: Kun muunnelma on käytössä, "Oletus"-niminen muunnelma luodaan ja kaikki maantieteelliset tiedot siirretään siihen. Voit lisätä, nimetä uudelleen ja poistaa muunnelmia "Objektiselaimesta". Voit siirtää, kopioida maantieteellisiä tietoja muunnelmien välillä. "Ratkaisijalle välitettävä muunnelma" -vaihtoehdolla valitusta muunnelmasta luodut ruudukon attribuuttitiedot välitetään ratkaisijalle. Voit valmistella useita muunnelmia, vaihtaa ne välitettäväksi ratkaisijalle ja varmistaa eron vaikutuksen.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Grid Cell Attribute Display -asetus</translation>
+        <translation type="vanished">Grid Cell Attribute Display -asetus</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Luo pistepilvetietoja</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Ruudukkosolun attribuuttien näyttöasetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Ruudukon solmun attribuutin näyttöasetus</translation>
+        <translation type="vanished">Ruudukon solmun attribuutin näyttöasetus</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Luo pistepilvetietoja</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Ruudukkosolmun attribuutin näyttöasetus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Värimerkintäasetus</translation>
+        <translation type="vanished">Värimerkintäasetus</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar -asetus</translation>
+        <translation type="vanished">Scalarbar -asetus</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Näkyvä</translation>
+        <translation type="vanished">Näkyvä</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Arvo</translation>
+        <translation type="vanished">Arvo</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Muokata...</translation>
+        <translation type="vanished">Muokata...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Näkyvä</translation>
+        <translation type="vanished">Näkyvä</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Otsikko</translation>
+        <translation type="vanished">Otsikko</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Otsikko:</translation>
+        <translation type="vanished">Otsikko:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Fontin asetus:</translation>
+        <translation type="vanished">Fontin asetus:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Muokata...</translation>
+        <translation type="vanished">Muokata...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tarranäyttö</translation>
+        <translation type="vanished">Tarranäyttö</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Tarrojen määrä:</translation>
+        <translation type="vanished">Tarrojen määrä:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Muoto:</translation>
+        <translation type="vanished">Muoto:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Suuntautuminen :</translation>
+        <translation type="vanished">Suuntautuminen :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Pystysuora</translation>
+        <translation type="vanished">Pystysuora</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vaakasuora</translation>
+        <translation type="vanished">Vaakasuora</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Koko</translation>
+        <translation type="vanished">Koko</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Määritä väripalkin koko suhteessa ikkunan kokoon.</translation>
+        <translation type="vanished">Määritä väripalkin koko suhteessa ikkunan kokoon.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Leveys:</translation>
+        <translation type="vanished">Leveys:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Jos määrität 1, väripalkin leveys on sama kuin ikkunan leveys.</translation>
+        <translation type="vanished">Jos määrität 1, väripalkin leveys on sama kuin ikkunan leveys.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Korkeus:</translation>
+        <translation type="vanished">Korkeus:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Jos määrität 1, väripalkin korkeus on sama kuin ikkunan korkeus.</translation>
+        <translation type="vanished">Jos määrität 1, väripalkin korkeus on sama kuin ikkunan korkeus.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Sijainti</translation>
+        <translation type="vanished">Sijainti</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Määritä väripalkin vasen ala -asento suhteessa ikkunan kokoon.</translation>
+        <translation type="vanished">Määritä väripalkin vasen ala -asento suhteessa ikkunan kokoon.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Jos määrität 0, väripalkin vasen reuna sijaitsee ikkunan vasemmassa reunassa.</translation>
+        <translation type="vanished">Jos määrität 0, väripalkin vasen reuna sijaitsee ikkunan vasemmassa reunassa.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Jos määrität 0, väripalkin pohja sijaitsee ikkunan alareunassa.</translation>
+        <translation type="vanished">Jos määrität 0, väripalkin pohja sijaitsee ikkunan alareunassa.</translation>
     </message>
 </context>
 <context>

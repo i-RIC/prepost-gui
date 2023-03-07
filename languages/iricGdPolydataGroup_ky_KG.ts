@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Ар бирине</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>аты</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Сиз бир эле мамычаны Аты жана Мааниси үчүн көрсөтө албайсыз.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Координаттар системасы:</translation>
     </message>
 </context>
 </TS>

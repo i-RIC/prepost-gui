@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AnimationController</name>
@@ -453,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>选择解算器</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按&quot;OK&quot;按钮。</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按"OK"按钮。</translation>
     </message>
 </context>
 <context>
@@ -518,7 +516,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>文本格式</translation>
     </message>
 </context>
 <context>
@@ -925,31 +923,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>状态栏坐标</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>小数位：</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>属性浏览器</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>小数位</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>坐标：</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">数值:</translation>
+        <translation>价值：</translation>
     </message>
 </context>
 <context>
@@ -1325,9 +1323,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>在文件夹&quot;%1&quot;中加载求解器定义文件时发生错误。 该求解器将被忽略。
+        <translation>在文件夹"%1"中加载求解器定义文件时发生错误。 该求解器将被忽略。
 %2</translation>
     </message>
 </context>
@@ -1598,7 +1596,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>该项目似乎已由另一个iRIC GUI窗口打开。 您无法从多个GUI窗口打开项目文件夹。</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>已打开的项目不会复制到工作目录中，并且您将被迫保存对此项目所做的修改。 如果要保留当前项目，请先将其保存到另一个项目</translation>
     </message>
     <message>
@@ -1766,8 +1764,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>当前活动的子窗口不支持导出轮廓图。</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">要导出形状文件，请切换 "显示设置" 到 "轮廓图像", 不是 "彩色条纹" 或 "等值线"</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shape files</source>
@@ -1912,8 +1910,8 @@ Option -&gt; Preferences</source>
         <translation>设定文件 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>要导出形状文件，请将颜色模式切换为“离散模式”。</translation>
     </message>
 </context>
 <context>
@@ -2291,7 +2289,7 @@ Option -&gt; Preferences</source>
         <translation>打开新的2D后处理窗口</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>打开新的2D鸟瞰后处理窗口</translation>
     </message>
     <message>

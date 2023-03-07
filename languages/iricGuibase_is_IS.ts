@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Grid Lines</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Aðeins útlínur</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Litur:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Grid vísitölur</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sýnilegt</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur notað eftirfarandi tákn til að skilgreina sérsniðið tímasnið: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Ár: YYYY, YY &lt;/li&gt; &lt;li&gt; Mánuður: M, MM, MMM, MMMM (MMM fyrir Jan o.fl., MMMM fyrir janúar osfrv.) &lt;/li&gt; &lt;li&gt; Dagur: d, dd, ddd, dddd (ddd fyrir mán o.fl., dddd fyrir mánudag o.s.frv.) &lt;/Li &gt; &lt;li&gt; Klukkustund: H, HH, h, hh (h, hh fyrir AM/PM skjá) &lt;/li&gt; &lt;li&gt; Mínúta: m, mm &lt;/li&gt; &lt;li&gt; Í öðru lagi: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Sýna tímabelti</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Vinsamlegast bíðið</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Vinsamlegast bíðið...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Vinsamlegast bíðið...</translation>

@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Stilla stig</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Mælt gildi:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Stillingargluggi fyrir punktaskjá</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Skjástilling</translation>
+        <translation>Skjárstilling</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Stig</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Yfirborð</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Litakortsstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
         <translation>Punktastærð:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Stilla stig</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Mælt gildi:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Skjástilling</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktastærð:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Fyrir gildissvið er hámarksgildi lægra en mín.</translation>
+        <translation type="vanished">Fyrir gildissvið er hámarksgildi lægra en mín.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Uppfæra örstillingu</translation>
+        <translation type="vanished">Uppfæra örstillingu</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Stilling mæld gögn ör</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Örstilling</translation>
+        <translation type="vanished">Örstilling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Líkamlegt gildi:</translation>
+        <translation type="vanished">Líkamlegt gildi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengd</translation>
+        <translation type="vanished">Lengd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Sjálfvirk</translation>
+        <translation type="vanished">Sjálfvirk</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Staðlað gildi:</translation>
+        <translation type="vanished">Staðlað gildi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengd á skjá:</translation>
+        <translation type="vanished">Lengd á skjá:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixla]</translation>
+        <translation type="vanished">[pixla]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Lágmarksgildi til að draga:</translation>
+        <translation type="vanished">Lágmarksgildi til að draga:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Eftir stigstærð</translation>
+        <translation type="vanished">Eftir stigstærð</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Stilling litastika (&amp;C)</translation>
+        <translation type="vanished">Stilling litastika (&amp;C)</translation>
     </message>
 </context>
 </TS>

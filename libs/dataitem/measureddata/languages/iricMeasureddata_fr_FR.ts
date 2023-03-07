@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -43,47 +41,47 @@
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Boîte de dialogue Paramètres d'affichage des points</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Réglage de l&apos;affichage</translation>
+        <translation>Paramètre d'affichage</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Surface</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Couleur</translation>
+        <translation>Couleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur par valeur</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de la palette de couleurs</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Exportation (&amp;E)...</translation>
+        <translation>Exporter (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Taille des points&#xa0;:</translation>
+        <translation>Taille des points :</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur personnalisée</translation>
     </message>
 </context>
 <context>
@@ -98,11 +96,11 @@
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">Réglage de l&apos;affichage</translation>
+        <translation type="vanished">Réglage de l'affichage</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">Taille des points&#xa0;:</translation>
+        <translation type="vanished">Taille des points :</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
@@ -136,7 +134,7 @@
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de la flèche des données mesurées</translation>
     </message>
 </context>
 <context>
@@ -147,7 +145,7 @@
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="vanished">Valeur physique&#xa0;:</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
@@ -167,7 +165,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="vanished">Durée à l&apos;écran&#xa0;:</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -175,7 +173,7 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="vanished">Valeur minimale à tirer&#xa0;:</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Color</source>

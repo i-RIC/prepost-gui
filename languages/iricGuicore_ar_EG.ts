@@ -1,5 +1,202 @@
 <TS version="2.1" language="ar_EG">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>حسب القيمة العددية</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>يحرر (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>إعداد خريطة الألوان (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>حسب القيمة العددية</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">استمارة</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>الرؤية</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>عند التحديد</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>دائماً</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>أبداً</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>عنوان :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>إعداد الخط:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>طول</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>شكل:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>عنوان:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>طول:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>خلفية:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>الحجم والموقع</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>طول</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>آلي</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>قيمة قياسية:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[آنسة]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>الطول على الشاشة:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[بكسل]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>الحد الأدنى للرسم:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>قيمة:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>طول وسيلة الإيضاح</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>أساسي</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>شكل السهم</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>حجم السهم:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>في ملف %1 ، زيادة تنسيق x لكل بكسل وزيادة تنسيق y لكل بكسل غير متطابق. إنه مقبول ، لكنه قد يكون خطأ.</translation>
+        <translation type="vanished">في ملف %1 ، زيادة تنسيق x لكل بكسل وزيادة تنسيق y لكل بكسل غير متطابق. إنه مقبول ، لكنه قد يكون خطأ.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>حدد نقطة مقابلة في النافذة الرئيسية.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>إصلاح موضع الصورة</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>الرؤية</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>عند التحديد</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>دائماً</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>أبداً</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>عنوان :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>إعداد الخط:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>عرض التسمية</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>عنوان:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ملصق:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>خلفية:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>الحجم والموقع</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>تجاهل إعداد شريط الألوان عند الاستيراد</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>الألوان</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>إعداد شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>حدد ملفًا للاستيراد</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>إعداد خريطة الألوان (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>إدخال اسم ملف للتصدير</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>حدث خطأ أثناء الفتح %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>شفاف</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>الرؤية</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>عند التحديد</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>دائماً</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>أبداً</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>عنوان :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>إعداد الخط:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>عرض التسمية</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>شكل:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>عنوان:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ملصق:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>خلفية:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>الحجم والموقع</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">حوار</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>إعداد خريطة الألوان</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>الإعدادات المسبقة:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>تجاهل إعداد شريط الألوان عند الاستيراد</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>العلاقة بين القيم والألوان</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>ضبط تلقائي على أساس نطاق القيمة</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>الإعداد يدويًا</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>مدى القيمة</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>تلقائي</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>الأعلى:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>الحد الأدنى:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>الألوان</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>يضيف (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>يزيل (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>املأ المنطقة السفلية</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>املأ المنطقة العلوية</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>يُحوّل</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>إعداد شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>حدد ملفًا للاستيراد</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>إعداد خريطة الألوان (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>إدخال اسم ملف للتصدير</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>حدث خطأ أثناء الفتح %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(يرجى تحديد عنصر لتطبيقه)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>قم بالتبديل إلى الوضع المنفصل</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>قم بالتبديل إلى وضع التدرج اللوني</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>تحذير</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قيمة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>أدنى قيمة</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>قيمة الحد الأقصى</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>شفاف</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>قم بالتبديل إلى مربع حوار الوضع المنفصل</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>الأعلى:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>الحد الأدنى:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>عدد الألوان المراد إدراجها في كل قسم</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>أخذ العينات</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>كل القمم</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>معدل أخذ العينات:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>حدد عدد الرؤوس</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>حدد نقطة في حوار Georeference.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>حذف النقاط</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>حوار</translation>
+        <translation type="vanished">حوار</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>حوار</translation>
+        <translation type="vanished">حوار</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>إعداد كفاف</translation>
+        <translation type="vanished">إعداد كفاف</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>موضع</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>الهامش الأفقي:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>الهامش العمودي:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>عرض:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>ارتفاع:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>المسافة من اليسار</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>المسافة من اليمين</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>المسافة من أعلى</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>المسافة من القاع</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>يرجى تحديد ملف CGNS لقراءة الشبكة.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>ملف CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>عنصر واجهة مستخدم غير معالج في ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>احفظ وأغلق (&amp;S)</translation>
+        <translation type="vanished">احفظ وأغلق (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>حدث خطأ أثناء الحفظ.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>فشل فتح ملف CGNS.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>حدد ملف</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>يجب أن يتكون اسم الملف من أحرف إنجليزية فقط.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>حدد ملف</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>يجب أن يتكون اسم الملف من أحرف إنجليزية فقط.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>حدد الدليل</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>يجب أن يتكون اسم المجلد من أحرف إنجليزية فقط.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>يحرر</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>لا توجد بيانات لاستيرادها.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(حدد نموذجًا للاستيراد)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>تحذير</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>تتم الكتابة فوق المحتوى الموجود في منطقة النص بالقالب</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>إخفاء التفاصيل (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>-</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>حدث خطأ أثناء تحميل نتيجة الحساب.</translation>
+        <translation type="vanished">حدث خطأ أثناء تحميل نتيجة الحساب.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>حدث خطأ أثناء الحفظ %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>جاري حفظ نتيجة الحساب كملفات TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>حدث خطأ أثناء تحميل نتيجة الحساب.</translation>
+        <translation type="vanished">حدث خطأ أثناء تحميل نتيجة الحساب.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>لم يتم تحديد سمة شبكة الارتفاع لنوع الشبكة %1. وظائف إدخال / إخراج الشبكة ، قد لا تعمل وظائف إنشاء الشبكة بشكل صحيح لأنواع الشبكات هذه.</translation>
+        <translation type="vanished">لم يتم تحديد سمة شبكة الارتفاع لنوع الشبكة %1. وظائف إدخال / إخراج الشبكة ، قد لا تعمل وظائف إنشاء الشبكة بشكل صحيح لأنواع الشبكات هذه.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>حل %1 موجود أصلا.</translation>
+        <translation type="vanished">حل %1 موجود أصلا.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>لا يمكن استيراد ملف CGNS الذي يحتوي اسمه على أحرف غير الحروف الأبجدية والأرقام.</translation>
+        <translation type="vanished">لا يمكن استيراد ملف CGNS الذي يحتوي اسمه على أحرف غير الحروف الأبجدية والأرقام.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 فشل حفظ ملف المشروع.</translation>
+        <translation type="vanished">%1 فشل حفظ ملف المشروع.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>لا يمكن قراءة ملف المشروع هذا ، لأنه تم إنشاؤه بواسطة iRIC (version %1 ).</translation>
+        <translation type="vanished">لا يمكن قراءة ملف المشروع هذا ، لأنه تم إنشاؤه بواسطة iRIC (version %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>هذا الملف للحل %1 %2. إنه غير متوافق مع الحل الذي تستخدمه ، لذلك ربما يفشل استيراد هذا الملف. هل تريد حقًا استيراد هذا الملف؟</translation>
+        <translation type="vanished">هذا الملف للحل %1 %2. إنه غير متوافق مع الحل الذي تستخدمه ، لذلك ربما يفشل استيراد هذا الملف. هل تريد حقًا استيراد هذا الملف؟</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>لم يتم تحديد نظام الإحداثيات.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>حدث خطأ أثناء فتح ملف CGNS في ملف المشروع: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>نسخ الصورة %1 ل %2 باءت بالفشل.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>تنسيق عرض الوقت</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>وحدة زمنية:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>منطقة كاملة</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>منطقة نشطة</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>منطقة مخصصة</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>موافق:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>أنا ماكس:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J مين:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J ماكس:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* الخلايا التي يتجاوز فيها اختلاف طول الخلية على طول اتجاه j %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>أخذ العينات</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>كل القمم</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>معدل أخذ العينات:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>أنا الاتجاه</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>اتجاه J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>أخذ العينات</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>كل القمم</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>معدل أخذ العينات:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>أنا الاتجاه</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>اتجاه J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K- الاتجاه</translation>
     </message>
 </context>
 <context>

@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Kontūro nustatymas (ląstelių centras)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Kontūro nustatymas (ląstelių centras)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Vertė:</translation>
+        <translation type="vanished">Vertė:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regionai</translation>
+        <translation type="vanished">Regionai</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>diapazonas %1</translation>
+        <translation type="vanished">diapazonas %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+        <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>diapazonas %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Veidas</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontūras</translation>
+        <translation type="vanished">Kontūras</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Kontūro nustatymas</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Kontūro nustatymas (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Veidas %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Kontūro nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Veidai</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontūro nustatymas</translation>
+        <translation type="vanished">Kontūro nustatymas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Veidai</translation>
+        <translation type="vanished">Veidai</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Veidas %1</translation>
+        <translation type="vanished">Veidas %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+        <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objekto naršyklės elemento keitimas</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Veidas %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Kryptis</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>aš</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Aš už</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Aš Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Įjungtas</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Tinklelio forma</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Tinklelio formos ekrano nustatymas</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Veidas</translation>
+        <translation type="vanished">Veidas</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Veidas %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Veidas %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Rodyklės nustatymas</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Ilgio legenda</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Veidai</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Veidas %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Ilgio legenda</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Galima apibrėžti daugiausia keturias rodykles.</translation>
+        <translation type="vanished">Galima apibrėžti daugiausia keturias rodykles.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Dalelių skaliarinis nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Redaguoti dalelių nustatymą</translation>
+        <translation type="vanished">Redaguoti dalelių nustatymą</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorinis atributas Pasirinkite Keisti</translation>
+        <translation type="vanished">Vektorinis atributas Pasirinkite Keisti</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Atnaujinkite vektorinį nustatymą</translation>
+        <translation type="vanished">Atnaujinkite vektorinį nustatymą</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Rodyklės fizinės vertės pasikeitimas</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Dalelių vektoriaus nustatymas</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Atnaujinti</translation>
+        <translation type="vanished">Atnaujinti</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Sukurkite kontūrą</translation>
+        <translation type="vanished">Sukurkite kontūrą</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atnaujinkite tinklelio formos nustatymą</translation>
+        <translation type="vanished">Atnaujinkite tinklelio formos nustatymą</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Atnaujinkite dalelių skaliaro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite dalelių skaliaro nustatymą</translation>
     </message>
 </context>
 </TS>

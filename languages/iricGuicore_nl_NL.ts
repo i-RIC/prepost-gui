@@ -1,5 +1,202 @@
 <TS version="2.1" language="nl_NL">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Op scalaire waarde</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Bewerking (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Kleurenkaart Instelling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Op scalaire waarde</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Formulier</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Zichtbaarheid</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Wanneer geselecteerd</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Altijd</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nooit</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Lettertype-instelling:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengte</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formaat:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lengte:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Achtergrond:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Grootte en positie</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengte</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standaard waarde:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Mevr]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Lengte op het scherm:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimale waarde om te tekenen:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Waarde:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengte legende</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Eenvoudig</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Pijl vorm</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Pijl grootte:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>In bestand %1, x-coördinaat increment per pixel en y-coördinaat increment per pixel komt niet overeen. Het is acceptabel, maar het kan verkeerd zijn.</translation>
+        <translation type="vanished">In bestand %1, x-coördinaat increment per pixel en y-coördinaat increment per pixel komt niet overeen. Het is acceptabel, maar het kan verkeerd zijn.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Selecteer een corresponderend punt in het hoofdvenster.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Positie van afbeelding corrigeren</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Zichtbaarheid</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Wanneer geselecteerd</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Altijd</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nooit</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Lettertype-instelling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Labelweergave</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiket:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Achtergrond:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Grootte en positie</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Negeer de kleurenbalkinstelling bij het importeren</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Kleuren</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Instelling kleurenbalk</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Selecteer bestand om te importeren</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Instelling kleurenkaart (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Er is een fout opgetreden tijdens het laden %1 Verwerkings fout %2 bij %3, kolom %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Voer de bestandsnaam in om te exporteren</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Er is een fout opgetreden tijdens het openen %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparant</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Zichtbaarheid</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Wanneer geselecteerd</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Altijd</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nooit</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Lettertype-instelling:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Labelweergave</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formaat:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiket:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Achtergrond:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Grootte en positie</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialoogvenster</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-instelling</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Voorinstellingen:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Negeer de kleurenbalkinstelling bij het importeren</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Relatie tussen waarden en kleuren</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Automatisch aanpassen op basis van waardebereik</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Handmatig instellen</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Waardebereik</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisch</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>maximaal:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>min:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Kleuren</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Vul het onderste gebied</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Vul het bovenste gedeelte</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Schakelaar</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Instelling kleurenbalk</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Selecteer bestand om te importeren</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Instelling kleurenkaart (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Voer de bestandsnaam in om te exporteren</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Er is een fout opgetreden tijdens het openen %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Er is een fout opgetreden tijdens het laden %1 Verwerkings fout %2 bij %3, kolom %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Kies het item dat u wilt toepassen)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Schakel over naar de discrete modus</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Schakel over naar de gradatiemodus</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Waarschuwing</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimale waarde</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>maximum waarde</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparant</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Bij het overschakelen naar de gradatiemodus worden de waarden ingesteld op de middelste waarde van elke sectie.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Schakel over naar het dialoogvenster Discrete modus</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>maximaal:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>min:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Aantal kleuren dat bij elke sectie moet worden ingevoegd</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Bemonstering</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hoekpunten</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Bemonsteringsfrequentie:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Geef het aantal hoekpunten op</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Selecteer een punt in het dialoogvenster Georeferentie.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Punten verwijderen</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Contourinstelling</translation>
+        <translation type="vanished">Contourinstelling</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Positie</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Horizontale marge:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Verticale marge:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Breedte:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Hoogte:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Afstand van links</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Afstand van rechts</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Afstand van boven</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Afstand vanaf de bodem</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Selecteer uit welk CGNS-bestand u het raster wilt lezen.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS-bestand</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Niet-verwerkte widget in ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Opslaan en afsluiten (&amp;S)</translation>
+        <translation type="vanished">Opslaan en afsluiten (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Er is een fout opgetreden tijdens het opslaan.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Het openen van het CGNS-bestand is mislukt.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selecteer bestand</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Bestandsnaam mag alleen uit Engelse karakters bestaan.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selecteer bestand</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Bestandsnaam mag alleen uit Engelse karakters bestaan.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Selecteer map</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>De mapnaam mag alleen uit Engelse tekens bestaan.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerking</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Geen gegevens om te importeren.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Selecteer sjabloon om te importeren)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Waarschuwing</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>De inhoud in het tekstgebied wordt overschreven met de sjabloon</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Details verbergen (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Er is een fout opgetreden tijdens het opslaan %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Berekeningsresultaat opslaan als TPO-bestanden...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Hoogterasterkenmerk is niet gedefinieerd voor rastertype %1. Grid-I/O-functies, gridcreërende functies werken mogelijk niet correct voor deze gridtypes.</translation>
+        <translation type="vanished">Hoogterasterkenmerk is niet gedefinieerd voor rastertype %1. Grid-I/O-functies, gridcreërende functies werken mogelijk niet correct voor deze gridtypes.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Oplossing %1 bestaat al.</translation>
+        <translation type="vanished">Oplossing %1 bestaat al.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS-bestand waarvan de naam andere tekens dan alfabetten en cijfers bevat, kan niet worden geïmporteerd.</translation>
+        <translation type="vanished">CGNS-bestand waarvan de naam andere tekens dan alfabetten en cijfers bevat, kan niet worden geïmporteerd.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Het opslaan van het projectbestand is mislukt.</translation>
+        <translation type="vanished">%1 Het opslaan van het projectbestand is mislukt.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Dit projectbestand kan niet worden gelezen, omdat het is gemaakt door een te oud iRIC (versie %1 ).</translation>
+        <translation type="vanished">Dit projectbestand kan niet worden gelezen, omdat het is gemaakt door een te oud iRIC (versie %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Dit bestand is voor oplosser %1 %2. Het is niet compatibel met de oplosser die u gebruikt, dus misschien mislukt het importeren van dit bestand. Wil je dit bestand echt importeren?</translation>
+        <translation type="vanished">Dit bestand is voor oplosser %1 %2. Het is niet compatibel met de oplosser die u gebruikt, dus misschien mislukt het importeren van dit bestand. Wil je dit bestand echt importeren?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Coördinatensysteem niet geselecteerd.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Er is een fout opgetreden bij het openen van het CGNS-bestand in het projectbestand: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Afbeelding kopiëren %1 tot %2 mislukt.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Tijdweergave formaat</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tijdzone:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Volledige regio</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Actieve regio</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Aangepaste regio</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Ik doe mee:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>ik maximaal:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J maximaal:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Cellen waar variatie van cellengte langs de j-richting groter is dan %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Bemonstering</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hoekpunten</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Bemonsteringsfrequentie:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>ik-richting</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-richting</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Bemonstering</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Alle hoekpunten</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Bemonsteringsfrequentie:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>ik-richting</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-richting</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-richting</translation>
     </message>
 </context>
 <context>

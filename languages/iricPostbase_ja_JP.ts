@@ -72,163 +72,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>粒子設定</translation>
+        <translation type="vanished">粒子設定</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>サイズ:</translation>
+        <translation type="vanished">サイズ:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>スカラー設定</translation>
+        <translation type="vanished">スカラー設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>属性値により自動設定</translation>
+        <translation type="vanished">属性値により自動設定</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>属性:</translation>
+        <translation type="vanished">属性:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>サイズ:</translation>
+        <translation type="vanished">サイズ:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ベクトル設定</translation>
+        <translation type="vanished">ベクトル設定</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>属性値:</translation>
+        <translation type="vanished">属性値:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長さ</translation>
+        <translation type="vanished">長さ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>標準値:</translation>
+        <translation type="vanished">標準値:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>画面上での長さ:</translation>
+        <translation type="vanished">画面上での長さ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>表示する最小値:</translation>
+        <translation type="vanished">表示する最小値:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>サンプリング</translation>
+        <translation type="vanished">サンプリング</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>全粒子に表示</translation>
+        <translation type="vanished">全粒子に表示</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>間引き間隔:</translation>
+        <translation type="vanished">間引き間隔:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>表示する粒子数を指定:</translation>
+        <translation type="vanished">表示する粒子数を指定:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>矢印形状</translation>
+        <translation type="vanished">矢印形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>矢印の大きさ:</translation>
+        <translation type="vanished">矢印の大きさ:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>線の幅:</translation>
+        <translation type="vanished">線の幅:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>ポリゴン設定</translation>
+        <translation type="vanished">ポリゴン設定</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>線の幅:</translation>
+        <translation type="vanished">線の幅:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>ポリゴン設定</translation>
+        <translation type="vanished">ポリゴン設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>属性値により自動設定</translation>
+        <translation type="vanished">属性値により自動設定</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>属性:</translation>
+        <translation type="vanished">属性:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>線の幅:</translation>
+        <translation type="vanished">線の幅:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>計算結果の選択</translation>
     </message>
 </context>
 <context>

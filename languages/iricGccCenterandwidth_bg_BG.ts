@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Премахнете върха на централната линия</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Настройка на дисплея</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

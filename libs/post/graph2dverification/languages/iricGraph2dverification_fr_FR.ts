@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
@@ -9,11 +7,11 @@
     </message>
     <message>
         <source>No Physical Value is selected.</source>
-        <translation>Aucune valeur physique n&apos;est sélectionnée.</translation>
+        <translation>Aucune valeur physique n'est sélectionnée.</translation>
     </message>
     <message>
         <source>No Value is selected.</source>
-        <translation>Aucune valeur n&apos;est sélectionnée.</translation>
+        <translation>Aucune valeur n'est sélectionnée.</translation>
     </message>
     <message>
         <source>Verification Setting</source>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valeur physique&#xa0;:</translation>
+        <translation>Valeur physique :</translation>
     </message>
     <message>
         <source>Measured Values</source>
@@ -72,11 +70,11 @@
     </message>
     <message>
         <source>J:</source>
-        <translation>J&#xa0;:</translation>
+        <translation>J :</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K&#xa0;:</translation>
+        <translation>K :</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -92,7 +90,7 @@
     </message>
     <message>
         <source>Verification Window: %1</source>
-        <translation>Fenêtre de vérification&#xa0;: %1</translation>
+        <translation>Fenêtre de vérification : %1</translation>
     </message>
     <message>
         <source>Top</source>
@@ -157,11 +155,11 @@
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Aucun résultat de calcul n&apos;existe.</translation>
+        <translation>Aucun résultat de calcul n'existe.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n&apos;est pas chargé correctement.</translation>
+        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n'est pas chargé correctement.</translation>
     </message>
     <message>
         <source>%1 cound not be opened.</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation>Erreur quadratique moyenne&#xa0;: %1</translation>
+        <translation>Erreur quadratique moyenne : %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
@@ -208,7 +206,7 @@
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navigateur d&apos;objets</translation>
+        <translation>Navigateur d'objets</translation>
     </message>
 </context>
 <context>
@@ -219,11 +217,11 @@
     </message>
     <message>
         <source>Chart Type:</source>
-        <translation>Type de graphique&#xa0;:</translation>
+        <translation>Type de graphique :</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation>Distance au niveau du cours d&apos;eau par rapport aux valeurs mesurées et résultat du calcul</translation>
+        <translation>Distance au niveau du cours d'eau par rapport aux valeurs mesurées et résultat du calcul</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Residual Errors</source>

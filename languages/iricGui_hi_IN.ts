@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>छोड़ें दर:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>वर्तमान में कोई विंडो चयनित नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>सतत स्नैपशॉट / मूवी / Google धरती निर्यात विज़ार्ड</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>पृष्ठभूमि ग्रिड</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>फ़ॉन्ट डिफ़ॉल्ट</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>पाठ प्रारूप</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>क्रॉस सेक्शन के बीच:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>सामान्य</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>ग्रिड आकार / ग्रिड सूचकांक</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>रंग रेखा</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>तीर की लंबाई किंवदंती</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>धारा के विरुद्ध धारा के साथ</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>नदी सर्वेक्षण डेटा क्रॉस-सेक्शन नाम</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>सीमा शर्त नाम</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>विज़ुअलाइज़ेशन विंडोज</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>लेबल:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>चार्ट विंडोज़</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>चार्ट शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>दंतकथाएं:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>एक्सिस शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>एक्सिस टिक्स:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>खोले जाने पर फ़ोल्डर प्रोजेक्ट को वर्किंग डायरेक्टरी में कॉपी करें</translation>
+        <translation type="vanished">खोले जाने पर फ़ोल्डर प्रोजेक्ट को वर्किंग डायरेक्टरी में कॉपी करें</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>स्टेटस बार में निर्देशांक</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>दशमलव स्थानों:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>विशेषता ब्राउज़र</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>दशमलव स्थानों</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>निर्देशांक:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>कीमत:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(निर्दिष्ट नहीं है)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>आउटपुट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>अलग फाइलों में आउटपुट गणना परिणाम</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>आईआरआईसी %1</translation>
+        <translation type="vanished">आईआरआईसी %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - आईआरआईसी %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - आईआरआईसी %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>स्नैपशॉट सफलतापूर्वक सहेजा गया %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>सभी फ़ाइलें %1 हटा दिया गया है।</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>फ़ाइल सेट करना (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को "असतत मोड" पर स्विच करें।</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>भौगोलिक डेटा (वेब से)</translation>
+        <translation type="vanished">भौगोलिक डेटा (वेब से)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>सीजीएनएस फ़ाइल पुनः लोड करें (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>सीजीएनएस फ़ाइल पुनः लोड करें</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>भौगोलिक डेटा (वेब से ऊंचाई)</translation>
     </message>
 </context>
 </TS>

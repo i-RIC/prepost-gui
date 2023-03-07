@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge "Map point cloud data"</translation>
+        <translation type="vanished">Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge "Map point cloud data"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Generer point cloud -data</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge "Kortpunktskydata"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. I nogle regioner fandtes data ikke i punktskydata, og værdien 0 blev kortlagt for disse punkter. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge "Kortpunktskydata"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Billedformat: 1 /</translation>
+        <translation type="vanished">Billedformat: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Tværsnitsdata</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Størrelsesforhold (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Billedformat: 1 / %1</translation>
+        <translation type="vanished">Billedformat: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Rediger skærmindstilling</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Størrelsesforhold (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Farve:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Navne på tværsnit</translation>
     </message>
 </context>
 <context>

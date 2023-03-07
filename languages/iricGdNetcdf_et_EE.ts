@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Järgmised failid imporditakse. On see okei?</translation>
+        <translation type="vanished">Järgmised failid imporditakse. On see okei?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Valige imporditavad failid.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Vali kõik (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Tühistage valik Kõik (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Hoiatus</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Valitud failide vaheline ajavahemik ei ole sama.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Faili nimi ei vasta mustrile</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ajavöönd:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Mõõtmete väärtused aja ebakõla jaoks.</translation>
+        <translation type="vanished">Mõõtmete väärtused aja ebakõla jaoks.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinaatide süsteem pole määratud %1. Palun valige koordinaatsüsteem käsitsi.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aegridade rasterandmed on juba imporditud. Kui soovite importida muid andmeid, kustutage esmalt juba imporditud andmed.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Avamine %1 ebaõnnestunud.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Mõõtmete väärtused %1 kokkusobimatu.</translation>
+        <translation type="vanished">Mõõtmete väärtused %1 kokkusobimatu.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Aja määratluse sõelumisel ilmnes viga: %1</translation>
+        <translation type="vanished">Aja määratluse sõelumisel ilmnes viga: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 pole pikkus-, laius- ega x, y andmeid.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aegridade rasterandmed on juba imporditud. Kui soovite importida muid andmeid, kustutage esmalt juba imporditud andmed.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Algne aeg:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ajavöönd:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Teave</translation>
+        <translation type="vanished">Teave</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 failid kaustas %2 imporditakse.</translation>
+        <translation type="vanished">%1 failid kaustas %2 imporditakse.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Mõõtmete väärtused aja ebakõla jaoks.</translation>
+        <translation type="vanished">Mõõtmete väärtused aja ebakõla jaoks.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Aegridade rasterandmed on juba imporditud. Kui soovite importida muid andmeid, kustutage esmalt juba imporditud andmed.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Algusest teisendatud andmete importimisel ilmnes viga %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Avamisel ilmnes viga %1.</translation>
     </message>
 </context>
 </TS>

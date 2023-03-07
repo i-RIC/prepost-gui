@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Γραμμές πλέγματος</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ολα</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Μόνο περίγραμμα</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Χρώμα:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Δείκτες Πλέγματος</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ορατός</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να χρησιμοποιήσετε τα ακόλουθα σύμβολα για να ορίσετε προσαρμοσμένη μορφή ώρας: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Έτος: YYYY, YY &lt;/li&gt; &lt;li&gt; Μήνας: M, MM, MMM, MMMM (MMM για Jan κ.λπ., MMMM για Ιανουάριο κ.λπ.) &lt;/li&gt; &lt;li&gt; Ημέρα: d, dd, ddd, dddd (ddd για Δευτ. Κ.λπ., dddd για Δευτέρα κ.λπ.) &lt;/li &gt; &lt;li&gt; ourρα: H, HH, h, hh (h, hh για οθόνη AM/PM) &lt;/li&gt; &lt;li&gt; Λεπτό: m, mm &lt;/li&gt; &lt;li&gt; Δεύτερο: s, ss &lt;/li &gt; &lt;li&gt; ΠΜ/ΜΜ: Α, α &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Εμφάνιση ζώνης ώρας</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Παρακαλώ περιμένετε</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Παρακαλώ περιμένετε...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Παρακαλώ περιμένετε...</translation>

@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Contourinstelling (celcentrum)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Contourinstelling (celcentrum)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Waarde:</translation>
+        <translation type="vanished">Waarde:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regio's</translation>
+        <translation type="vanished">Regio's</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Bereik %1</translation>
+        <translation type="vanished">Bereik %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Bereik %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Gezicht</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Contour</translation>
+        <translation type="vanished">Contour</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Contourinstelling</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Contourinstelling (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Gezicht %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Contourinstelling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Gezichten</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Contourinstelling</translation>
+        <translation type="vanished">Contourinstelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Gezichten</translation>
+        <translation type="vanished">Gezichten</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Gezicht %1</translation>
+        <translation type="vanished">Gezicht %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objectbrowseritem wijzigen</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Gezicht %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Richting</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Ik doe mee</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>ik Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Ingeschakeld</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Rastervorm</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Instelling rastervormweergave</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Gezicht</translation>
+        <translation type="vanished">Gezicht</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Gezicht %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Gezicht %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pijlen instellen</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Eenvoudig</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengte legende</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Gezichten</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Verwijderen (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Gezicht %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengte legende</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Er kunnen maximaal vier pijlen worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier pijlen worden gedefinieerd.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Deeltjes scalaire instelling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-instelling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Deeltjesinstelling bewerken</translation>
+        <translation type="vanished">Deeltjesinstelling bewerken</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vectorkenmerk Selectie wijzigen</translation>
+        <translation type="vanished">Vectorkenmerk Selectie wijzigen</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vectorinstelling bijwerken</translation>
+        <translation type="vanished">Vectorinstelling bijwerken</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Pijl Fysieke waardeverandering</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Deeltjes Vector Instelling</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Update</translation>
+        <translation type="vanished">Update</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Contour maken</translation>
+        <translation type="vanished">Contour maken</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Instelling rastervorm bijwerken</translation>
+        <translation type="vanished">Instelling rastervorm bijwerken</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Scalaire instelling voor deeltjes bijwerken</translation>
+        <translation type="vanished">Scalaire instelling voor deeltjes bijwerken</translation>
     </message>
 </context>
 </TS>

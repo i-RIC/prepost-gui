@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skaláris beállítás</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Mért érték:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Pontok kijelző beállítása párbeszédablak</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Kijelző beállítás</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Pontok</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Felület</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Színtérkép beállítása</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Pontméret:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skaláris beállítás</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Mért érték:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Kijelző beállítás</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Pontméret:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Értéktartomány esetén a maximális érték kisebb, mint a minimális érték.</translation>
+        <translation type="vanished">Értéktartomány esetén a maximális érték kisebb, mint a minimális érték.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Nyílbeállítás frissítése</translation>
+        <translation type="vanished">Nyílbeállítás frissítése</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Mért adatok nyíl beállítása</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nyilak beállítása</translation>
+        <translation type="vanished">Nyilak beállítása</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Hossz</translation>
+        <translation type="vanished">Hossz</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard érték:</translation>
+        <translation type="vanished">Standard érték:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Kisasszony]</translation>
+        <translation type="vanished">[Kisasszony]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Hossz a képernyőn:</translation>
+        <translation type="vanished">Hossz a képernyőn:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[képpont]</translation>
+        <translation type="vanished">[képpont]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimális rajzolható érték:</translation>
+        <translation type="vanished">Minimális rajzolható érték:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színes sáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színes sáv beállítása (&amp;C)</translation>
     </message>
 </context>
 </TS>

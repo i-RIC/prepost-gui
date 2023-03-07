@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>रेखा %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>नई पंक्ति जोड़ें (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>रंग सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>पॉलीलाइन समूह प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>सीएसवी फ़ाइल (पंक्तियाँ) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
     </message>
 </context>
 <context>

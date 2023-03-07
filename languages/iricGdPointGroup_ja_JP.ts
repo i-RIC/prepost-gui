@@ -25,6 +25,41 @@
         <source>P&amp;oint</source>
         <translation>点データ(&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="vanished">新しい %1 の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>新しい点の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>表示色設定の編集</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>点グループ表示設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -129,6 +164,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>%1行目の "value" の読み込み中にエラーが発生しました。 "value" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>表示設定</translation>
     </message>
 </context>
 <context>

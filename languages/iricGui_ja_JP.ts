@@ -985,6 +985,10 @@ Do you really want to import grid from this file?</source>
         <source>Skip rate :</source>
         <translation>間引き: </translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -1065,7 +1069,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation type="vanished">連続スナップショット / 動画 / Google Earth 出力ウィザード</translation>
+        <translation>連続スナップショット / 動画 / Google Earth 出力ウィザード</translation>
     </message>
 </context>
 <context>
@@ -11669,6 +11673,14 @@ p, li { white-space: pre-wrap; }
         <source>Post(3D)</source>
         <translation type="obsolete">可視化ウィンドウ (3D)</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>フォントデフォルト</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>テキストフォーマット</translation>
+    </message>
 </context>
 <context>
     <name>PreferenceEditDialog</name>
@@ -11697,6 +11709,81 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>共通</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>格子形状 / 格子インデックス</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>ベクトル長さの凡例</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>プリプロセッサー</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>河川測量データ 断面名</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>境界条件の名前</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>可視化ウィンドウ</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>グラフウィンドウ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>グラフタイトル:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>凡例:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>軸タイトル:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>軸目盛り:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
@@ -11720,7 +11807,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>フォルダのプロジェクトを開いた時、作業ディレクトリにコピーする</translation>
+        <translation type="vanished">フォルダのプロジェクトを開いた時、作業ディレクトリにコピーする</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -12176,6 +12263,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>X11 Bitmap(*.xbm)</source>
         <translation type="obsolete">X11 ビットマップ (*.xbm)</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>ステータスバーの座標</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>小数点以下の桁数:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>属性ブラウザ</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>小数点以下の桁数</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>座標:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>値:</translation>
     </message>
 </context>
 <context>
@@ -12713,6 +12831,14 @@ Do you really want to import this file?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(未設定)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>出力設定</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>計算結果をタイムステップごとに別のファイルに出力する</translation>
     </message>
 </context>
 <context>
@@ -15905,11 +16031,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [%3]</translation>
+        <translation type="vanished">%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
@@ -15969,7 +16095,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
+        <translation type="vanished">&amp;%1 %2</translation>
     </message>
     <message>
         <source>Input new simulation name</source>
@@ -16057,7 +16183,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
+        <translation type="vanished">シェープファイルをエクスポートするには、「表示設定」を、「カラーフリンジ」や「コンター」ではなく、ｌ「面塗りコンター」にして下さい。</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shape files</source>
@@ -16220,6 +16346,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>次元</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>%1 にあるすべてのファイルが削除されます。</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [%4]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>設定ファイル (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>シェープファイルをエクスポートするには、表示色を "区間別モード" に切り替えてください。</translation>
     </message>
 </context>
 <context>
@@ -16689,7 +16835,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>地理情報 (Webから)</translation>
+        <translation type="vanished">地理情報 (Webから)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
@@ -17011,6 +17157,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Main ToolBar</source>
         <translation>メインツールバー</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>CGNSファイルを再読込する (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>CGNSファイルを再読込する</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>地理情報 (標高をWebから)</translation>
     </message>
 </context>
 </TS>

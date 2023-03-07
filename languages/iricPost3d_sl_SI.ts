@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Nastavitev konture (center celice)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Razpon</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Nastavitev konture (središče celice)</translation>
+        <translation type="vanished">Nastavitev konture (središče celice)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Vrednost:</translation>
+        <translation type="vanished">Vrednost:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regije</translation>
+        <translation type="vanished">Regije</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavitev barvne vrstice (&amp;C)</translation>
+        <translation type="vanished">Nastavitev barvne vrstice (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Domet %1</translation>
+        <translation type="vanished">Domet %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Določijo se lahko največ štiri konture.</translation>
+        <translation type="vanished">Določijo se lahko največ štiri konture.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Razpon %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Obraz</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Obris</translation>
+        <translation type="vanished">Obris</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Nastavitev konture</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Nastavitev konture (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Obraz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Nastavitev konture</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Obrazi</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Nastavitev konture</translation>
+        <translation type="vanished">Nastavitev konture</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizična vrednost:</translation>
+        <translation type="vanished">Fizična vrednost:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Obrazi</translation>
+        <translation type="vanished">Obrazi</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavitev barvne vrstice (&amp;C)</translation>
+        <translation type="vanished">Nastavitev barvne vrstice (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Obraz %1</translation>
+        <translation type="vanished">Obraz %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Določijo se lahko največ štiri konture.</translation>
+        <translation type="vanished">Določijo se lahko največ štiri konture.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Sprememba postavke brskalnika objektov</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Obraz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Smer</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>jaz</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Razpon</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>I Min</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Jaz Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Omogočeno</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Oblika mreže</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Nastavitev prikaza oblike mreže</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Obraz</translation>
+        <translation type="vanished">Obraz</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Obraz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Obraz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Nastavitev puščic</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Osnovno</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda dolžine</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Obrazi</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Obraz %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda dolžine</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Določijo se lahko največ štiri puščice.</translation>
+        <translation type="vanished">Določijo se lahko največ štiri puščice.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Nastavitev skalarja delcev</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavitev barvne karte</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost točke:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Barva po meri</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Uredi nastavitev delcev</translation>
+        <translation type="vanished">Uredi nastavitev delcev</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Atribut vektorja Izberite Spremeni</translation>
+        <translation type="vanished">Atribut vektorja Izberite Spremeni</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Posodobi vektorske nastavitve</translation>
+        <translation type="vanished">Posodobi vektorske nastavitve</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Sprememba fizične vrednosti puščice</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Nastavitev vektorja delcev</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Nadgradnja</translation>
+        <translation type="vanished">Nadgradnja</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Ustvari konturo</translation>
+        <translation type="vanished">Ustvari konturo</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Posodobi nastavitev oblike mreže</translation>
+        <translation type="vanished">Posodobi nastavitev oblike mreže</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Posodobi skalarno nastavitev delcev</translation>
+        <translation type="vanished">Posodobi skalarno nastavitev delcev</translation>
     </message>
 </context>
 </TS>

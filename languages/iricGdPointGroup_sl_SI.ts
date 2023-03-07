@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Točka (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Dodaj novo točko (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Urejanje barvnih nastavitev</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Nastavitev prikaza skupine točk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost točke:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Pri branju vrednosti "vrednost" v vrstici je prišlo do napake %1. "vrednost" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Uredi nastavitev zaslona</translation>
     </message>
 </context>
 <context>

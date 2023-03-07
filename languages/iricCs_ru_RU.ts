@@ -1,5 +1,27 @@
 <TS version="2.1" language="ru_RU">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Выберите систему координат данных для импорта</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Система координат</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Редактировать...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

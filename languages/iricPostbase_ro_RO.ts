@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Setarea particulelor</translation>
+        <translation type="vanished">Setarea particulelor</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Mărimea:</translation>
+        <translation type="vanished">Mărimea:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Setarea scalelor de particule</translation>
+        <translation type="vanished">Setarea scalelor de particule</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Culoare după valoarea atributului</translation>
+        <translation type="vanished">Culoare după valoarea atributului</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Mărimea:</translation>
+        <translation type="vanished">Mărimea:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Setarea săgeții</translation>
+        <translation type="vanished">Setarea săgeții</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Valoarea atributului:</translation>
+        <translation type="vanished">Valoarea atributului:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lungime</translation>
+        <translation type="vanished">Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valoare standard:</translation>
+        <translation type="vanished">Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Domnișoară]</translation>
+        <translation type="vanished">[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lungimea pe ecran:</translation>
+        <translation type="vanished">Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valoare minimă de trasat:</translation>
+        <translation type="vanished">Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prelevarea de probe</translation>
+        <translation type="vanished">Prelevarea de probe</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Toate particulele</translation>
+        <translation type="vanished">Toate particulele</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Rata de eșantionare:</translation>
+        <translation type="vanished">Rata de eșantionare:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Specificați numărul de particule</translation>
+        <translation type="vanished">Specificați numărul de particule</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
+        <translation type="vanished">După valoarea scalară</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma săgeții</translation>
+        <translation type="vanished">Forma săgeții</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Dimensiunea săgeții:</translation>
+        <translation type="vanished">Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Setarea poligonului</translation>
+        <translation type="vanished">Setarea poligonului</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Setarea poligonului</translation>
+        <translation type="vanished">Setarea poligonului</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Culoare după valoarea atributului</translation>
+        <translation type="vanished">Culoare după valoarea atributului</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Lățimea liniei</translation>
+        <translation type="vanished">Lățimea liniei</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Selectați Rezultatul țintă</translation>
     </message>
 </context>
 <context>

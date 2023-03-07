@@ -1,5 +1,202 @@
 <TS version="2.1" language="ky_KG">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Скалярдык маани боюнча</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Түзөтүү (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Түс картасынын жөндөөсү (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Скалярдык маани боюнча</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Форма</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Көрүнүү</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Тандалганда</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Ар дайым</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Эч качан</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Title :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Шрифт жөндөөсү:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Узундук</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Формат:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Аталышы:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Узундугу:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Өлчөмү жана абалы</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Узундук</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Стандарттык маани:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Айым]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Экрандагы узундук:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[пиксел]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Тартуу үчүн минималдуу маани:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Маани:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Length Legend</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Негизги</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Жебе формасы</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Жебе өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Сызыктын туурасы:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Файлда %1, пикселге x координатынын өсүшү жана пикселдин у-координатынын өсүшү дал келбейт. Бул кабыл алынат, бирок туура эмес болушу мүмкүн.</translation>
+        <translation type="vanished">Файлда %1, пикселге x координатынын өсүшү жана пикселдин у-координатынын өсүшү дал келбейт. Бул кабыл алынат, бирок туура эмес болушу мүмкүн.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Негизги терезеде тиешелүү чекитти тандаңыз.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Сүрөттүн абалын оңдоо</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Көрүнүү</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Тандалганда</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Ар дайым</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Эч качан</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Title :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Шрифт жөндөөсү:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Энбелги дисплей</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Аталышы:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Энбелги:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Өлчөмү жана абалы</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Түстөр</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Түс тилкесин орнотуу</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Экспорттоо үчүн файлдын атын киргизиңиз</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ачып жатканда ката кетти %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Нарк</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Ачык</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Көрүнүү</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Тандалганда</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Ар дайым</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Эч качан</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Title :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Шрифт жөндөөсү:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Белги дисплей</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Формат:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Аталышы:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Энбелги:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Өлчөмү жана абалы</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Алдын ала орнотуулар:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Баалуулуктар менен түстөрдүн ортосундагы байланыш</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Нарк диапазонунун негизинде автоматтык түрдө тууралоо</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Кол менен орнотуу</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Нарк диапазону</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Автоматтык</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Макс:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Мин:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Түстөр</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Төмөнкү аймакты толтуруңуз</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Жогорку аймакты толтуруңуз</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Которуу</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Түс тилкесин орнотуу</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Экспорттоо үчүн файлдын атын киргизиңиз</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ачып жатканда ката кетти %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Колдонуу үчүн нерсени тандаңыз)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Дискреттик режимге өтүү</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Градация режимине которулуу</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Эскертүү</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Нарк</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Минималдуу маани</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Максималдуу маани</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Ачык</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Дискреттик режим диалогуна которулуу</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Макс:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Мин:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Ар бир бөлүмгө киргизүү үчүн түстөрдүн саны</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Үлгү алуу</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Бардык чокулары</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Чокулардын санын көрсөтүңүз</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Georeference диалогунда бир чекитти тандаңыз.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Упайларды жок кылуу</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Контур жөндөө</translation>
+        <translation type="vanished">Контур жөндөө</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Горизонталдык маржа:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Вертикал маржа:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Туурасы:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Бийиктиги:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Солдон алыстык</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Оңдон алыстык</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Жогорудан алыстык</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Төмөндөн аралык</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Сураныч, торду окуу үчүн кайсы CGNS файлын тандаңыз.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS файлы</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>ActionSetValue ичиндеги иштетилбеген виджет</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Сактоо жана жабуу (&amp;S)</translation>
+        <translation type="vanished">Сактоо жана жабуу (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Сактоо учурунда ката кетти.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS файлы ачылбай калды.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Файлды тандаңыз</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Файлдын аты англисче гана тамгалардан турушу керек.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Файлды тандаңыз</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Файлдын аты англисче гана тамгалардан турушу керек.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Каталогду тандаңыз</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Папканын аты англисче гана тамгалардан турушу керек.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Түзөтүү</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Импорттоого маалымат жок.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Импорттоо үчүн шаблонду тандаңыз)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Эскертүү</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Текст аймагындагы мазмун шаблон менен үстүнө жазылат</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Чоо -жайын жашыруу (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Эсептөө жыйынтыгын жүктөөдө ката кетти.</translation>
+        <translation type="vanished">Эсептөө жыйынтыгын жүктөөдө ката кетти.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Сактоо учурунда ката кетти %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Эсептөө натыйжасы TPO файлдары катары сакталууда...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Эсептөө жыйынтыгын жүктөөдө ката кетти.</translation>
+        <translation type="vanished">Эсептөө жыйынтыгын жүктөөдө ката кетти.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Бийиктик сеткасынын атрибуту тордун түрү үчүн аныкталган эмес %1. Тор I/O функциялары, тор түзүү функциялары бул тор түрлөрү үчүн туура иштебеши мүмкүн.</translation>
+        <translation type="vanished">Бийиктик сеткасынын атрибуту тордун түрү үчүн аныкталган эмес %1. Тор I/O функциялары, тор түзүү функциялары бул тор түрлөрү үчүн туура иштебеши мүмкүн.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Чечим %1 мурунтан эле бар.</translation>
+        <translation type="vanished">Чечим %1 мурунтан эле бар.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Атында алфавит жана сандан башка символдор бар CGNS файлы импорттолбойт.</translation>
+        <translation type="vanished">Атында алфавит жана сандан башка символдор бар CGNS файлы импорттолбойт.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Долбоор файлы сакталбай калды.</translation>
+        <translation type="vanished">%1 Долбоор файлы сакталбай калды.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Бул проект файлын окууга болбойт, анткени ал өтө эски iRIC (версиясы) тарабынан түзүлгөн %1 ).</translation>
+        <translation type="vanished">Бул проект файлын окууга болбойт, анткени ал өтө эски iRIC (версиясы) тарабынан түзүлгөн %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Бул файл чечүүчү үчүн %1 %2. Бул сиз колдонгон чечүүчүгө шайкеш келбейт, андыктан бул файлды импорттоо ишке ашпай калышы мүмкүн. Бул файлды чын эле импорттоону каалайсызбы?</translation>
+        <translation type="vanished">Бул файл чечүүчү үчүн %1 %2. Бул сиз колдонгон чечүүчүгө шайкеш келбейт, андыктан бул файлды импорттоо ишке ашпай калышы мүмкүн. Бул файлды чын эле импорттоону каалайсызбы?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Координаттар системасы тандалган жок.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Проект файлында CGNS файлын ачууда ката кетти : Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Сүрөт көчүрүлүүдө %1 чейин %2 ишке ашпай калды.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Убакытты көрсөтүү форматы</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Убакыт зонасы:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Толук аймак</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Активдүү аймак</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Ыңгайлаштырылган аймак</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Мен Мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Мен Макс:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Мин:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Макс:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Клеткалардын j-багыты боюнча узундугу өзгөргөндөн ашып кетет %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Үлгү алуу</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Бардык чокулары</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-багыт</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-багыты</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Үлгү алуу</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Бардык чокулары</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Үлгү алуу ылдамдыгы:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-багыт</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-багыты</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-багыты</translation>
     </message>
 </context>
 <context>

@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Kontūras iestatījums (šūnas centrs)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Diapazons</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Kontūras iestatīšana (šūnu centrs)</translation>
+        <translation type="vanished">Kontūras iestatīšana (šūnu centrs)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Vērtība:</translation>
+        <translation type="vanished">Vērtība:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Reģioni</translation>
+        <translation type="vanished">Reģioni</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Pievienot (&amp;A)</translation>
+        <translation type="vanished">Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Noņemt (&amp;R)</translation>
+        <translation type="vanished">Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Diapazons %1</translation>
+        <translation type="vanished">Diapazons %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Var definēt ne vairāk kā četras kontūras.</translation>
+        <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Pievienot (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Noņemt (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Diapazons %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Seja</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontūra</translation>
+        <translation type="vanished">Kontūra</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Kontūras iestatīšana</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Kontūras iestatījums (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Seja %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Kontūras iestatīšana</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Sejas</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontūras iestatīšana</translation>
+        <translation type="vanished">Kontūras iestatīšana</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Sejas</translation>
+        <translation type="vanished">Sejas</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Pievienot (&amp;A)</translation>
+        <translation type="vanished">Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Noņemt (&amp;R)</translation>
+        <translation type="vanished">Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Seja %1</translation>
+        <translation type="vanished">Seja %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Var definēt ne vairāk kā četras kontūras.</translation>
+        <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Objekta pārlūkprogrammas vienuma maiņa</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Pievienot (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Noņemt (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Seja %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Virziens</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>es</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Dž</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Diapazons</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>ES piedalos</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Es Maks</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Iespējots</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Režģa forma</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Režģa formas displeja iestatījums</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Seja</translation>
+        <translation type="vanished">Seja</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Seja %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Seja %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Bultiņu iestatījums</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pamata</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Garuma leģenda</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Sejas</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Pievienot (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Seja %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Garuma leģenda</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Var definēt ne vairāk kā četras bultiņas.</translation>
+        <translation type="vanished">Var definēt ne vairāk kā četras bultiņas.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Daļiņu skalāra iestatījums</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Krāsu kartes iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkta lielums:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Rediģēt daļiņu iestatījumu</translation>
+        <translation type="vanished">Rediģēt daļiņu iestatījumu</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektora atribūts Izvēlieties Mainīt</translation>
+        <translation type="vanished">Vektora atribūts Izvēlieties Mainīt</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Atjaunināt vektora iestatījumu</translation>
+        <translation type="vanished">Atjaunināt vektora iestatījumu</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow fiziskās vērtības maiņa</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Daļiņu vektora iestatīšana</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Atjaunināt</translation>
+        <translation type="vanished">Atjaunināt</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Izveidojiet kontūru</translation>
+        <translation type="vanished">Izveidojiet kontūru</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atjauniniet režģa formas iestatījumu</translation>
+        <translation type="vanished">Atjauniniet režģa formas iestatījumu</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Atjauniniet daļiņu skalāra iestatījumu</translation>
+        <translation type="vanished">Atjauniniet daļiņu skalāra iestatījumu</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραμμές πλέγματος</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Ολα</translation>
+        <translation>Ολα</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Μόνο περίγραμμα</translation>
+        <translation>Μόνο περίγραμμα</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείκτες Πλέγματος</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Ορατός</translation>
+        <translation>Ορατός</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Καθορίστε τη μορφή αριθμού σε μορφή printf. Για παράδειγμα: &quot; %5.2f &quot;για 3.141592 -&gt; 3.14&quot; %4.2e &quot;για 12300 -&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Καθορίστε τη μορφή αριθμού σε μορφή printf. Για παράδειγμα: " %5.2f "για 3.141592 -&gt; 3.14" %4.2e "για 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

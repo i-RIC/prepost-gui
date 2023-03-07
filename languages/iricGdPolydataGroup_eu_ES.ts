@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Bakoitzarentzako</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Ezin duzu zutabe bera zehaztu bai Izenari bai Balioari dagokienez.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Koordenatu Sistema:</translation>
     </message>
 </context>
 </TS>

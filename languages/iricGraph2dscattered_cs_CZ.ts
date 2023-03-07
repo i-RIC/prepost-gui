@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Nastavení kreslení (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Nastavení písma (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Nastavení kreslení</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavení písma</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Název grafu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Osa X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Klíšťata:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>osa Y:</translation>
     </message>
 </context>
 <context>

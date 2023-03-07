@@ -1,5 +1,27 @@
 <TS version="2.1" language="el_GR">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Επιλέξτε Σύστημα Συντονισμού δεδομένων για εισαγωγή</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Σύστημα Συντεταγμένων</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Επεξεργασία...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

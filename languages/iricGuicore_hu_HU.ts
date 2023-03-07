@@ -1,5 +1,202 @@
 <TS version="2.1" language="hu_HU">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Skaláris érték szerint</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Szerkesztés (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Színtérkép beállítása (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Skaláris érték szerint</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Forma</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Láthatóság</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kiválasztáskor</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mindig</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Soha</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Betűtípus beállítása:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Hossz</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formátum:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Hossz:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Háttér:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Méret és pozíció</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Hossz</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Szabványos érték:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Kisasszony]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Hossz a képernyőn:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pixel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimális húzható érték:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Érték:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Hossz Legend</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Alapvető</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Nyíl alakja</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Nyíl méret:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Fájlban %1, x-koordináta-növekedés képpontonként és y-koordináta-növekedés képpontonként. Elfogadható, de lehet, hogy téved.</translation>
+        <translation type="vanished">Fájlban %1, x-koordináta-növekedés képpontonként és y-koordináta-növekedés képpontonként. Elfogadható, de lehet, hogy téved.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Válasszon egy megfelelő pontot a főablakban.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>A kép helyzetének rögzítése</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Láthatóság</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kiválasztáskor</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mindig</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Soha</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Betűtípus beállítása:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Címke kijelző</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Címke:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Háttér:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Méret és pozíció</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>A színsáv beállításának figyelmen kívül hagyása importáláskor</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Színek</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Színsáv beállítása</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Válassza ki az importálandó fájlt</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Színtérkép beállítása (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Hiba történt a betöltés során %1 Elemzési hiba %2 nál nél %3, oszlop %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Adja meg az exportálandó fájl nevét</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Hiba történt a nyitás során %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Átlátszó</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Láthatóság</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kiválasztáskor</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Mindig</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Soha</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Betűtípus beállítása:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Címke kijelző</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formátum:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Címke:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Háttér:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Méret és pozíció</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Párbeszéd</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Színtérkép beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Előbeállítások:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>A színsáv beállításának figyelmen kívül hagyása importáláskor</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Értékek és színek kapcsolata</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Automatikus beállítás az értéktartomány alapján</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Beállítás manuálisan</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Értéktartomány</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatikus</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Színek</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Hozzáadás (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Távolítsa el (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Töltse ki az alsó részt</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Töltse ki a felső részt</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Kapcsoló</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Színsáv beállítása</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Válassza ki az importálandó fájlt</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Színtérkép beállítása (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Adja meg az exportálandó fájl nevét</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Hiba történt a nyitás során %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Hiba történt a betöltés során %1 Elemzési hiba %2 nál nél %3, oszlop %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Kérjük, válassza ki az alkalmazni kívánt tételt)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Váltson Diszkrét módra</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Váltson át fokozatosság módba</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Figyelem</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimális érték</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Max érték</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Átlátszó</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>A Gradation Mode-ra váltáskor az értékek az egyes szakaszok középső értékére állnak be.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Váltson Diszkrét módú párbeszédablakra</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Az egyes szakaszokhoz beillesztendő színek száma</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mintavétel</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Minden csúcs</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Mintavételi gyakoriság:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Adja meg a csúcsok számát</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Válasszon egy pontot a Georeference párbeszédpanelen.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Pontok törlése</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation type="vanished">Párbeszéd</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation type="vanished">Párbeszéd</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Kontúr beállítása</translation>
+        <translation type="vanished">Kontúr beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozíció</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Vízszintes margó:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Függőleges margó:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Szélesség:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Magasság:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Távolság balról</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Távolság jobbról</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Távolság a tetejétől</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Távolság alulról</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Kérjük, válassza ki, melyik CGNS -fájlból olvassa el a rácsot.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS fájl</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Kezeletlen widget az ActionSetValue-ban</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Mentés és bezárás (&amp;S)</translation>
+        <translation type="vanished">Mentés és bezárás (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Hiba történt mentés közben.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>A CGNS-fájl megnyitása nem sikerült.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Válaszd ki a fájlt</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>A fájlnév csak angol karakterekből állhat.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Válaszd ki a fájlt</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>A fájlnév csak angol karakterekből állhat.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Válassza a Könyvtár lehetőséget</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>A mappanév csak angol karakterekből állhat.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Szerkesztés</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Nincs importálható adat.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Válassza ki az importálandó sablont)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Figyelem</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>A szöveges területen lévő tartalmat felülírja a sablon</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Részletek elrejtése (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Hiba történt a számítási eredmény betöltése közben.</translation>
+        <translation type="vanished">Hiba történt a számítási eredmény betöltése közben.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Hiba történt mentés közben %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Számítási eredmény mentése TPO-fájlként...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Hiba történt a számítási eredmény betöltése közben.</translation>
+        <translation type="vanished">Hiba történt a számítási eredmény betöltése közben.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>A magasságrács attribútum nincs megadva a rács típusához %1. A rács I/O funkciói, a rács létrehozó funkciók nem feltétlenül működnek megfelelően ezeknél a rácstípusoknál.</translation>
+        <translation type="vanished">A magasságrács attribútum nincs megadva a rács típusához %1. A rács I/O funkciói, a rács létrehozó funkciók nem feltétlenül működnek megfelelően ezeknél a rácstípusoknál.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Megoldás %1 már létezik.</translation>
+        <translation type="vanished">Megoldás %1 már létezik.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Nem importálható az a CGNS -fájl, amelynek neve az ábécén és a számokon kívül más karaktereket is tartalmaz.</translation>
+        <translation type="vanished">Nem importálható az a CGNS -fájl, amelynek neve az ábécén és a számokon kívül más karaktereket is tartalmaz.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 A projektfájl mentése nem sikerült.</translation>
+        <translation type="vanished">%1 A projektfájl mentése nem sikerült.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Ez a projektfájl nem olvasható, mert túl régi iRIC (verzió) hozta létre %1 ).</translation>
+        <translation type="vanished">Ez a projektfájl nem olvasható, mert túl régi iRIC (verzió) hozta létre %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Ez a fájl a megoldók számára készült %1 %2. Nem kompatibilis az Ön által használt megoldóval, ezért előfordulhat, hogy a fájl importálása sikertelen lesz. Valóban importálni szeretné ezt a fájlt?</translation>
+        <translation type="vanished">Ez a fájl a megoldók számára készült %1 %2. Nem kompatibilis az Ön által használt megoldóval, ezért előfordulhat, hogy a fájl importálása sikertelen lesz. Valóban importálni szeretné ezt a fájlt?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>A koordinátarendszer nincs kiválasztva.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Hiba történt a CGNS-fájl megnyitásakor a következő projektfájlban: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Kép másolása %1 nak nek %2 nem sikerült.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Idő megjelenítési formátum</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Időzóna:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Teljes régió</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktív régió</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Egyedi régió</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Én benne vagyok:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Én Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Azok a sejtek, ahol a sejthossz j-irányú eltérése meghaladja %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mintavétel</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Minden csúcs</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Mintavételi gyakoriság:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-irány</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-irány</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Mintavétel</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Minden csúcs</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Mintavételi gyakoriság:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-irány</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-irány</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-irány</translation>
     </message>
 </context>
 <context>

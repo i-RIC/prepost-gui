@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Jooniseade (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fondi seadistus (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Jooniseade</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fondi seadistus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammi pealkiri:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendid:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-telg:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pealkiri:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Puugid:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-telg:</translation>
     </message>
 </context>
 <context>

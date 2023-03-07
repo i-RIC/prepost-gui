@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>نقطة (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>أضف نقطة جديدة (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>تحرير إعداد اللون</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>ضبط عرض مجموعة نقطة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>اللون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>حجم النقطة:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>حدث خطأ أثناء قراءة قيمة "القيمة" في السطر %1. يجب أن تكون "القيمة" قيمة حقيقية ولكن "%2" محدد.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>تحرير إعداد العرض</translation>
     </message>
 </context>
 <context>

@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Dane przekroju są generowane przy użyciu danych chmury punktów. Jeśli chcesz ponownie dostosować położenie przekroju i dane chmury punktów mapy, możesz użyć „Dane chmury punktów mapy”</translation>
+        <translation type="vanished">Dane przekroju są generowane przy użyciu danych chmury punktów. Jeśli chcesz ponownie dostosować położenie przekroju i dane chmury punktów mapy, możesz użyć „Dane chmury punktów mapy”</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Generuj dane chmury punktów</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Dane przekrojowe są generowane przy użyciu danych chmury punktów. Jeśli chcesz ponownie dostosować położenie przekroju i dane chmury punktów mapy, możesz użyć opcji „Dane chmury punktów mapy”</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Dane przekrojowe są generowane przy użyciu danych chmury punktów. W niektórych regionach dane nie istniały w danych chmury punktów i dla tych punktów odwzorowano wartość 0. Jeśli chcesz ponownie dostosować położenie przekroju i dane chmury punktów mapy, możesz użyć opcji „Dane chmury punktów mapy”</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Proporcje obrazu: 1 /</translation>
+        <translation type="vanished">Proporcje obrazu: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Dane przekrojowe</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Format obrazu (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Proporcje obrazu: 1 / %1</translation>
+        <translation type="vanished">Proporcje obrazu: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Edytuj ustawienia wyświetlania</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Format obrazu (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Kolor:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nazwy przekrojów</translation>
     </message>
 </context>
 <context>

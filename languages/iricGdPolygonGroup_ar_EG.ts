@@ -13,6 +13,37 @@
         <source>P&amp;olygons</source>
         <translation>المضلعات (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>أضف مضلع جديد (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>تحرير إعداد اللون</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>إعداد عرض مجموعة المضلع</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>اللون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
@@ -141,6 +172,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تكون "القيمة" هي نفسها بالنسبة للأسطر التي تكون فيها قيم "pid" هي نفسها.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>تحرير إعداد العرض</translation>
     </message>
 </context>
 <context>

@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Бөлүкчөлөрдү жөндөө</translation>
+        <translation type="vanished">Бөлүкчөлөрдү жөндөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Көлөм:</translation>
+        <translation type="vanished">Көлөм:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Бөлүкчөлөрдүн скалярдык жөндөөсү</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн скалярдык жөндөөсү</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Атрибут мааниси боюнча түс</translation>
+        <translation type="vanished">Атрибут мааниси боюнча түс</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Көлөм:</translation>
+        <translation type="vanished">Көлөм:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Жебе жөндөөсү</translation>
+        <translation type="vanished">Жебе жөндөөсү</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Атрибут мааниси:</translation>
+        <translation type="vanished">Атрибут мааниси:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандарттык маани:</translation>
+        <translation type="vanished">Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Айым]</translation>
+        <translation type="vanished">[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Экрандын узундугу:</translation>
+        <translation type="vanished">Экрандын узундугу:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Тартуу үчүн минималдуу мааниси:</translation>
+        <translation type="vanished">Тартуу үчүн минималдуу мааниси:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Үлгүлөө</translation>
+        <translation type="vanished">Үлгүлөө</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Бардык бөлүкчөлөр</translation>
+        <translation type="vanished">Бардык бөлүкчөлөр</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Тандоо ылдамдыгы:</translation>
+        <translation type="vanished">Тандоо ылдамдыгы:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Бөлүкчөлөрдүн санын көрсөтүңүз</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн санын көрсөтүңүз</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Скалярдык мааниси боюнча</translation>
+        <translation type="vanished">Скалярдык мааниси боюнча</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Жебе формасы</translation>
+        <translation type="vanished">Жебе формасы</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Жебенин өлчөмү:</translation>
+        <translation type="vanished">Жебенин өлчөмү:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Саптын туурасы:</translation>
+        <translation type="vanished">Саптын туурасы:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Көп бурчтуу жөндөө</translation>
+        <translation type="vanished">Көп бурчтуу жөндөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Сызык туурасы:</translation>
+        <translation type="vanished">Сызык туурасы:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Көп бурчтуу жөндөө</translation>
+        <translation type="vanished">Көп бурчтуу жөндөө</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Атрибут мааниси боюнча түс</translation>
+        <translation type="vanished">Атрибут мааниси боюнча түс</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Line Width</translation>
+        <translation type="vanished">Line Width</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Максаттуу натыйжаны тандаңыз</translation>
     </message>
 </context>
 <context>

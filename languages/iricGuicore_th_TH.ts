@@ -1,5 +1,202 @@
 <TS version="2.1" language="th_TH">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>โดยค่าสเกลาร์</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>แก้ไข (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>การตั้งค่าแผนที่สี (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>โดยค่าสเกลาร์</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">รูปร่าง</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>ทัศนวิสัย</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>เมื่อเลือกแล้ว</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>เสมอ</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>ไม่เคย</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>ชื่อ :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>การตั้งค่าแบบอักษร:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>ความยาว</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>รูปแบบ:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>ความยาว:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>พื้นหลัง:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>ความยาว</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>ค่ามาตรฐาน:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[นางสาว]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>ความยาวบนหน้าจอ:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[พิกเซล]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>มูลค่าขั้นต่ำในการวาด:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>ค่า:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>ตำนานความยาว</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>ขั้นพื้นฐาน</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>รูปร่างลูกศร</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>ขนาดลูกศร:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>ในไฟล์ %1, การเพิ่มพิกัด x ต่อพิกเซล และ การเพิ่มพิกัด y ต่อพิกเซลที่ไม่ตรงกัน เป็นที่ยอมรับ แต่อาจผิด</translation>
+        <translation type="vanished">ในไฟล์ %1, การเพิ่มพิกัด x ต่อพิกเซล และ การเพิ่มพิกัด y ต่อพิกเซลที่ไม่ตรงกัน เป็นที่ยอมรับ แต่อาจผิด</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>เลือกจุดที่เกี่ยวข้องในหน้าต่างหลัก</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>แก้ไขตำแหน่งภาพ</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>ทัศนวิสัย</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>เมื่อเลือกแล้ว</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>เสมอ</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>ไม่เคย</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>ชื่อ :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>การตั้งค่าแบบอักษร:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ฉลาก:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>พื้นหลัง:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>การตั้งค่าแถบสี</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>ใส่ชื่อไฟล์ที่จะส่งออก</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>เกิดข้อผิดพลาดขณะเปิด %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ค่า</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>โปร่งใส</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>ทัศนวิสัย</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>เมื่อเลือกแล้ว</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>เสมอ</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>ไม่เคย</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>ชื่อ :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>การตั้งค่าแบบอักษร:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>รูปแบบ:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ฉลาก:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>พื้นหลัง:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">ไดอะล็อก</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>การตั้งค่าแผนที่สี</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>ที่ตั้งไว้ล่วงหน้า:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>ความสัมพันธ์ระหว่างค่าและสี</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>ปรับอัตโนมัติตามช่วงค่า</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>ตั้งค่าด้วยตนเอง</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>ช่วงค่า</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>สูงสุด:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>นาที:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>เพิ่ม (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>ลบ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>เติมพื้นที่ด้านล่าง</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>เติมพื้นที่ด้านบน</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>สวิตช์</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>การตั้งค่าแถบสี</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>ใส่ชื่อไฟล์ที่จะส่งออก</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>เกิดข้อผิดพลาดขณะเปิด %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(กรุณาเลือกรายการที่ต้องการสมัคร)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>เปลี่ยนเป็นโหมดแยก</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>เปลี่ยนเป็นโหมดไล่สี</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>คำเตือน</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ค่า</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>ค่าต่ำสุด</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>มูลค่าสูงสุด</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>โปร่งใส</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>เปลี่ยนเป็นไดอะล็อกโหมดแยก</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>สูงสุด:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>นาที:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>จำนวนสีที่จะแทรกในแต่ละส่วน</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>การสุ่มตัวอย่าง</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>จุดยอดทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>ระบุจำนวนจุด</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>เลือกจุดบนกล่องโต้ตอบ Georeference</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>ลบคะแนน</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ไดอะล็อก</translation>
+        <translation type="vanished">ไดอะล็อก</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ไดอะล็อก</translation>
+        <translation type="vanished">ไดอะล็อก</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>การตั้งค่าคอนทัวร์</translation>
+        <translation type="vanished">การตั้งค่าคอนทัวร์</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>ระยะขอบแนวนอน:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>ระยะขอบแนวตั้ง:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>ความกว้าง:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>ความสูง:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>ระยะห่างจากซ้าย</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>ระยะทางจากขวา</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>ระยะทางจากด้านบน</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>ระยะห่างจากด้านล่าง</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>โปรดเลือกไฟล์ CGNS ที่จะอ่านกริด</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>ไฟล์ CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>วิดเจ็ตที่ไม่มีการจัดการใน ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>บันทึกและปิด (&amp;S)</translation>
+        <translation type="vanished">บันทึกและปิด (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>การปรับเปลี่ยนที่คุณทำจะถูกยกเลิก</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>การเปิดไฟล์ CGNS ล้มเหลว</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>เลือกไฟล์</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>ชื่อไฟล์ต้องประกอบด้วยตัวอักษรภาษาอังกฤษเท่านั้น</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>เลือกไฟล์</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>ชื่อไฟล์ต้องประกอบด้วยตัวอักษรภาษาอังกฤษเท่านั้น</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>เลือกไดเรกทอรี</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>ชื่อโฟลเดอร์ต้องประกอบด้วยตัวอักษรภาษาอังกฤษเท่านั้น</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>แก้ไข</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>ไม่มีข้อมูลที่จะนำเข้า</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(เลือกเทมเพลตที่จะนำเข้า)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>คำเตือน</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>เนื้อหาในพื้นที่ข้อความถูกเขียนทับด้วยเทมเพลต</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>ซ่อนรายละเอียด (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดผลการคำนวณ</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลดผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>เกิดข้อผิดพลาดขณะบันทึก %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>กำลังบันทึกผลการคำนวณเป็นไฟล์ TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดผลการคำนวณ</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลดผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>แอตทริบิวต์กริดระดับความสูงไม่ได้กำหนดไว้สำหรับประเภทกริด %1. ฟังก์ชัน Grid I/O ฟังก์ชันการสร้างกริดอาจทำงานไม่ถูกต้องสำหรับประเภทกริดเหล่านี้</translation>
+        <translation type="vanished">แอตทริบิวต์กริดระดับความสูงไม่ได้กำหนดไว้สำหรับประเภทกริด %1. ฟังก์ชัน Grid I/O ฟังก์ชันการสร้างกริดอาจทำงานไม่ถูกต้องสำหรับประเภทกริดเหล่านี้</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>สารละลาย %1 มีอยู่แล้ว.</translation>
+        <translation type="vanished">สารละลาย %1 มีอยู่แล้ว.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>ไฟล์ CGNS ที่มีชื่อมีอักขระอื่นที่ไม่ใช่ตัวอักษรและตัวเลขไม่สามารถนำเข้าได้</translation>
+        <translation type="vanished">ไฟล์ CGNS ที่มีชื่อมีอักขระอื่นที่ไม่ใช่ตัวอักษรและตัวเลขไม่สามารถนำเข้าได้</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 การบันทึกไฟล์โครงการล้มเหลว</translation>
+        <translation type="vanished">%1 การบันทึกไฟล์โครงการล้มเหลว</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>ไม่สามารถอ่านไฟล์โครงการนี้ได้ เนื่องจากไฟล์นี้สร้างโดย iRIC ที่เก่าเกินไป (เวอร์ชัน %1 ).</translation>
+        <translation type="vanished">ไม่สามารถอ่านไฟล์โครงการนี้ได้ เนื่องจากไฟล์นี้สร้างโดย iRIC ที่เก่าเกินไป (เวอร์ชัน %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>ไฟล์นี้ใช้สำหรับตัวแก้ปัญหา %1 %2. มันเข้ากันไม่ได้กับโปรแกรมแก้ไขที่คุณใช้อยู่ ดังนั้นการนำเข้าไฟล์นี้อาจล้มเหลว คุณต้องการนำเข้าไฟล์นี้หรือไม่?</translation>
+        <translation type="vanished">ไฟล์นี้ใช้สำหรับตัวแก้ปัญหา %1 %2. มันเข้ากันไม่ได้กับโปรแกรมแก้ไขที่คุณใช้อยู่ ดังนั้นการนำเข้าไฟล์นี้อาจล้มเหลว คุณต้องการนำเข้าไฟล์นี้หรือไม่?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>ไม่ได้เลือกระบบพิกัด</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>เกิดข้อผิดพลาดขณะเปิดไฟล์ CGNS ในไฟล์โครงการ : Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>กำลังคัดลอกรูปภาพ %1 ถึง %2 ล้มเหลว.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>รูปแบบการแสดงเวลา</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>เขตเวลา:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>ภาคเต็ม</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>ภูมิภาคที่ใช้งานอยู่</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>ภูมิภาคที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>ไอมิน:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>ฉันแม็กซ์:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>จีมิน:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>เจ แม็กซ์:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* เซลล์ที่การเปลี่ยนแปลงของความยาวเซลล์ตามทิศทาง j เกิน %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>การสุ่มตัวอย่าง</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>จุดยอดทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-ทิศทาง</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>ทิศทาง J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>การสุ่มตัวอย่าง</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>จุดยอดทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>อัตราการสุ่มตัวอย่าง:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-ทิศทาง</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>ทิศทาง J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-ทิศทาง</translation>
     </message>
 </context>
 <context>

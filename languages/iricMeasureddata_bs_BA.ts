@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalarna postavka</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Izmjerena vrijednost:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Points Display Setting Dialog</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Postavke ekrana</translation>
+        <translation>Display Setting</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poeni</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Površina</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap Setting</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
         <translation>Veličina tačke:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalarna postavka</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Izmjerena vrijednost:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Postavke ekrana</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Veličina tačke:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Za raspon vrijednosti, maksimalna vrijednost je manja od minimalne vrijednosti.</translation>
+        <translation type="vanished">Za raspon vrijednosti, maksimalna vrijednost je manja od minimalne vrijednosti.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ažuriraj postavku strelice</translation>
+        <translation type="vanished">Ažuriraj postavku strelice</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Postavka strelice za mjerene podatke</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Postavka strelice</translation>
+        <translation type="vanished">Postavka strelice</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizička vrijednost:</translation>
+        <translation type="vanished">Fizička vrijednost:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Dužina</translation>
+        <translation type="vanished">Dužina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatski</translation>
+        <translation type="vanished">Automatski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardna vrijednost:</translation>
+        <translation type="vanished">Standardna vrijednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[gospođa]</translation>
+        <translation type="vanished">[gospođa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Dužina na ekranu:</translation>
+        <translation type="vanished">Dužina na ekranu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna vrijednost za izvlačenje:</translation>
+        <translation type="vanished">Minimalna vrijednost za izvlačenje:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Prema skalarnoj vrijednosti</translation>
+        <translation type="vanished">Prema skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
 </context>
 </TS>

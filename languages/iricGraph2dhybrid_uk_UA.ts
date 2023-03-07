@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Діапазон правих осей Y недійсний.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>секунд</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>хвилин</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>години</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>днів</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Лінії</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>секунд</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>хвилин</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>години</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>днів</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Експорт CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Налаштування шрифту (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Зовнішні</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Налаштування шрифту діаграми</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Назва діаграми:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенди:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Вісь X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Назва:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>галочки:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Вісь Y:</translation>
     </message>
 </context>
 <context>

@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>assen</translation>
+        <translation type="vanished">assen</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>scalair</translation>
+        <translation type="vanished">scalair</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Contourinstelling bijwerken</translation>
+        <translation type="vanished">Contourinstelling bijwerken</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalair (celcentrum)</translation>
+        <translation type="vanished">Scalair (celcentrum)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">scalaire instelling</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Scalaire waarde voor hoogte</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Kleurinstelling</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Op scalaire waarde</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">scalaire waarde:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Beeldscherm instelling</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Fout</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Voor waardebereik is de maximale waarde kleiner dan de minimale waarde.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Contourinstelling is niet beschikbaar, omdat dit resultaat geen scalaire celwaarden bevat.</translation>
+        <translation type="vanished">Contourinstelling is niet beschikbaar, omdat dit resultaat geen scalaire celwaarden bevat.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Instelling rastervormweergave</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Scalaire waarde voor Hoogte</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Contourinstelling bijwerken</translation>
+        <translation type="vanished">Contourinstelling bijwerken</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>scalaire instelling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoogvenster</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Op scalaire waarde</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+        <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Contour maken</translation>
+        <translation type="vanished">Contour maken</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Instelling rastervorm bijwerken</translation>
+        <translation type="vanished">Instelling rastervorm bijwerken</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

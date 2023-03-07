@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Tỷ lệ bỏ qua:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>-</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Hiện không có cửa sổ nào được chọn.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Chụp nhanh liên tục / Phim / Trình hướng dẫn xuất Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Lưới nền</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Phông chữ Mặc định</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Định dạng văn bản</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Giữa các phần chéo:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Phổ thông</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Hình dạng lưới / Chỉ số lưới</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Thanh màu</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tiêu đề</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>nhãn</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Chiều dài mũi tên</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Cửa sổ tiền xử lý</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Ngược dòng hạ lưu</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Dữ liệu khảo sát sông Tên mặt cắt ngang</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Tên điều kiện ranh giới</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Cửa sổ trực quan</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Nhãn:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Cửa sổ biểu đồ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tiêu đề biểu đồ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Truyền thuyết:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Tiêu đề trục:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Bọ ve trục:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Sao chép dự án thư mục vào Thư mục làm việc khi mở</translation>
+        <translation type="vanished">Sao chép dự án thư mục vào Thư mục làm việc khi mở</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Tọa độ trong Thanh trạng thái</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Số thập phân:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Trình duyệt thuộc tính</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>chữ số thập phân</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>tọa độ:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Giá trị:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Không được chỉ định)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Cài đặt đầu ra</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Xuất kết quả tính toán trong các tệp riêng biệt</translation>
     </message>
 </context>
 <context>
@@ -1457,11 +1590,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1473,7 +1606,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1502,7 +1635,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>Kích thước</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Tất cả các tệp trong %1 bị xóa.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Tập tin cài đặt (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành "Chế độ rời rạc".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Dữ liệu địa lý (từ web)</translation>
+        <translation type="vanished">Dữ liệu địa lý (từ web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Tải lại tệp CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Tải lại tệp CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Dữ liệu địa lý (Độ cao từ web)</translation>
     </message>
 </context>
 </TS>

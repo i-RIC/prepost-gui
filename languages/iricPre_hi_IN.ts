@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>इस सीजीएनएस फाइल में सॉल्वर की जानकारी नहीं है। हम यह जांच नहीं सकते कि यह सीजीएनएस फाइल सॉल्वर के अनुकूल है या नहीं। यदि यह संगत नहीं है, तो शायद ग्रिड का केवल कुछ हिस्सा ही आयात किया जाएगा। क्या आप वाकई इस फ़ाइल से ग्रिड आयात करना चाहते हैं?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>इस फ़ाइल में ग्रिड नहीं है जिसे आयात किया जा सकता है।</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>ग्रिड का चयन करें</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>आयात करने के लिए ग्रिड का चयन करें।</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>अक्ष सेटिंग</translation>
+        <translation type="vanished">अक्ष सेटिंग</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>दृश्यमान</translation>
+        <translation type="vanished">दृश्यमान</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>डिस्प्ले सेटिंग</translation>
+        <translation type="vanished">डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>ग्रिड रंग</translation>
+        <translation type="vanished">ग्रिड रंग</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>नोड विशेषता</translation>
+        <translation type="vanished">नोड विशेषता</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>सेल विशेषता</translation>
+        <translation type="vanished">सेल विशेषता</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">कुल्हाड़ियों</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">दृश्यमान</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">रंग:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Z-दिशा स्केल संपादित करें</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">जेड-दिशा स्केल</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">इनपुट नया Z-दिशा पैमाना।</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>जेड-दिशा स्केल संपादित करें</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>इनपुट नया जेड-दिशा पैमाना।</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>ऊंचाई:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>ग्रिड का रंग</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>कुसुम रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>रंग:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Z-दिशा स्केल संपादित करें</translation>
+        <source>Background Color:</source>
+        <translation>पृष्ठभूमि का रंग:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>जेड-दिशा स्केल</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>इनपुट नया Z-दिशा पैमाना।</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <source>Z-direction scale:</source>
+        <translation>जेड-दिशा स्केल:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>क्या आप वाकई सभी सीमा शर्तों को हटाना चाहते हैं?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>सीमा स्थिति प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>नामों के लिए फ़ॉन्ट सेटिंग</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>मामले का चयन करें</translation>
+        <translation type="vanished">मामले का चयन करें</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>कृपया किस मामले में से चुनें %1 गणना शर्तों को आयात करने के लिए।</translation>
+        <translation type="vanished">कृपया किस मामले में से चुनें %1 गणना शर्तों को आयात करने के लिए।</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>पॉइंटसेट डेटा (&amp;O)</translation>
+        <translation type="vanished">पॉइंटसेट डेटा (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>वेब से आयात करें (&amp;I)...</translation>
+        <translation type="vanished">वेब से आयात करें (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>स्केलरबार सेट करें...</translation>
+        <translation type="vanished">स्केलरबार सेट करें...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>से डेटा आयात करना %1 अनुत्तीर्ण होना।</translation>
+        <translation type="vanished">से डेटा आयात करना %1 अनुत्तीर्ण होना।</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>भौगोलिक डेटा आयात करने के लिए, पहले समन्वय प्रणाली निर्दिष्ट करें।</translation>
+        <translation type="vanished">भौगोलिक डेटा आयात करने के लिए, पहले समन्वय प्रणाली निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>आयात (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>वेब से ऊंचाई आयात करें (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>भौगोलिक डेटा आयात करने के लिए, पहले परियोजना के लिए समन्वय प्रणाली निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>विविधता सेटिंग संपादित करें (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>गलती करना</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>संवाद</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>विविधता सेटिंग</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>भिन्नता सक्षम करें</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>सॉल्वर को पास करने के लिए बदलाव:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>नोट: जब वेरिएशन सक्षम होता है, तो "डिफ़ॉल्ट" नाम का वेरिएशन बनाया जाता है, और सभी भौगोलिक डेटा को उसमें ले जाया जाता है। आप "ऑब्जेक्ट ब्राउज़र" से विविधताएं जोड़ सकते हैं, नाम बदल सकते हैं, हटा सकते हैं। आप विविधताओं के बीच भौगोलिक डेटा को स्थानांतरित, कॉपी कर सकते हैं। आपके द्वारा "सॉल्वर को पास करने के लिए वेरिएशन" के साथ चुने गए वेरिएशन से बनाया गया ग्रिड एट्रिब्यूट डेटा सॉल्वर को दिया जाता है। आप कई विविधताएं तैयार कर सकते हैं, जो सॉल्वर को पास करने के लिए स्विच कर सकते हैं और अंतर के प्रभाव को सुनिश्चित कर सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>ग्रिड सेल विशेषता प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">ग्रिड सेल विशेषता प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>ग्रिड सेल विशेषता प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>ग्रिड नोड विशेषता प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">ग्रिड नोड विशेषता प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>ग्रिड नोड विशेषता प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>रंग किंवदंती सेटिंग</translation>
+        <translation type="vanished">रंग किंवदंती सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>अदिश पट्टी सेटिंग</translation>
+        <translation type="vanished">अदिश पट्टी सेटिंग</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>दृश्यमान</translation>
+        <translation type="vanished">दृश्यमान</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>मूल्य</translation>
+        <translation type="vanished">मूल्य</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <translation type="vanished">संपादित करें...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>दृश्यमान</translation>
+        <translation type="vanished">दृश्यमान</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>शीर्षक</translation>
+        <translation type="vanished">शीर्षक</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>शीर्षक :</translation>
+        <translation type="vanished">शीर्षक :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>फ़ॉन्ट सेटिंग:</translation>
+        <translation type="vanished">फ़ॉन्ट सेटिंग:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <translation type="vanished">संपादित करें...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>लेबल प्रदर्शन</translation>
+        <translation type="vanished">लेबल प्रदर्शन</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>लेबल की संख्या:</translation>
+        <translation type="vanished">लेबल की संख्या:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>प्रारूप:</translation>
+        <translation type="vanished">प्रारूप:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>अभिविन्यास :</translation>
+        <translation type="vanished">अभिविन्यास :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>खड़ा</translation>
+        <translation type="vanished">खड़ा</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>क्षैतिज</translation>
+        <translation type="vanished">क्षैतिज</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>आकार</translation>
+        <translation type="vanished">आकार</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>विंडो आकार के अनुसार रंग बार आकार को दर के रूप में निर्दिष्ट करें।</translation>
+        <translation type="vanished">विंडो आकार के अनुसार रंग बार आकार को दर के रूप में निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>चौड़ाई :</translation>
+        <translation type="vanished">चौड़ाई :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>यदि आप 1 निर्दिष्ट करते हैं, तो रंग बार की चौड़ाई विंडो की चौड़ाई के समान होती है।</translation>
+        <translation type="vanished">यदि आप 1 निर्दिष्ट करते हैं, तो रंग बार की चौड़ाई विंडो की चौड़ाई के समान होती है।</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>ऊंचाई :</translation>
+        <translation type="vanished">ऊंचाई :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>यदि आप 1 निर्दिष्ट करते हैं, तो रंग बार की ऊँचाई विंडो की ऊँचाई के समान होती है।</translation>
+        <translation type="vanished">यदि आप 1 निर्दिष्ट करते हैं, तो रंग बार की ऊँचाई विंडो की ऊँचाई के समान होती है।</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>पद</translation>
+        <translation type="vanished">पद</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>विंडो आकार के अनुसार दर के रूप में रंग पट्टी बाएँ नीचे की स्थिति निर्दिष्ट करें।</translation>
+        <translation type="vanished">विंडो आकार के अनुसार दर के रूप में रंग पट्टी बाएँ नीचे की स्थिति निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>एक्स :</translation>
+        <translation type="vanished">एक्स :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>यदि आप 0 निर्दिष्ट करते हैं, तो रंग पट्टी बायाँ किनारा विंडो के बाएँ किनारे पर स्थित होता है।</translation>
+        <translation type="vanished">यदि आप 0 निर्दिष्ट करते हैं, तो रंग पट्टी बायाँ किनारा विंडो के बाएँ किनारे पर स्थित होता है।</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>वाई:</translation>
+        <translation type="vanished">वाई:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>यदि आप 0 निर्दिष्ट करते हैं, तो कलर बार बॉटम विंडो बॉटम पर स्थित होता है।</translation>
+        <translation type="vanished">यदि आप 0 निर्दिष्ट करते हैं, तो कलर बार बॉटम विंडो बॉटम पर स्थित होता है।</translation>
     </message>
 </context>
 <context>

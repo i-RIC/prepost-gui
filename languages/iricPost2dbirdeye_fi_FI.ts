@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Kirveet</translation>
+        <translation type="vanished">Kirveet</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalar</translation>
+        <translation type="vanished">Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Päivitä ääriviiva -asetus</translation>
+        <translation type="vanished">Päivitä ääriviiva -asetus</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalaari (solukeskus)</translation>
+        <translation type="vanished">Skalaari (solukeskus)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Enintään neljä muotoa voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä muotoa voidaan määrittää.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalaariasetus</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Korkeuden skalaariarvo</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Väriasetus</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Skalaariarvon mukaan</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Skalaariarvo:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Näyttöasetus</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Alueasetukset (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Virhe</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Arvoalueen maksimiarvo on pienempi kuin minimiarvo.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Muoto -asetus ei ole käytettävissä, koska tämä tulos ei sisällä solun skalaariarvoja.</translation>
+        <translation type="vanished">Muoto -asetus ei ole käytettävissä, koska tämä tulos ei sisällä solun skalaariarvoja.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ruudukkomuodon näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Korkeuden skalaariarvo</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Päivitä ääriviiva -asetus</translation>
+        <translation type="vanished">Päivitä ääriviiva -asetus</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaariasetus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Skalaariarvon mukaan</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Alue</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Enintään neljä muotoa voidaan määrittää.</translation>
+        <translation type="vanished">Enintään neljä muotoa voidaan määrittää.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Luo ääriviiva</translation>
+        <translation type="vanished">Luo ääriviiva</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Päivitä ruudukon muotoasetus</translation>
+        <translation type="vanished">Päivitä ruudukon muotoasetus</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

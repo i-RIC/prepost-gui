@@ -1,5 +1,195 @@
 <TS version="2.1" language="es_ES">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Por valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Editar (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Configuración del mapa de colores (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Por valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Longitud</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formato:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longitud:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Longitud</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Valor estandar:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[EM]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Duración en pantalla:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[píxel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Valor mínimo a dibujar:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Leyenda de longitud</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>forma de flecha</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Tamaño de la flecha:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +204,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>En archivo %1,incremento de  x-coordenada por pixel y incremento de y-coordenada por pixel no son iguales. Es aceptable, pero puede estar equivocado.</translation>
+        <translation type="vanished">En archivo %1,incremento de  x-coordenada por pixel y incremento de y-coordenada por pixel no son iguales. Es aceptable, pero puede estar equivocado.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +217,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Seleccione un punto correspondiente en la ventana principal.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Fijar la posición de la imagen</translation>
     </message>
 </context>
 <context>
@@ -100,6 +294,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Visualización de etiquetas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorar la configuración de la barra de colores al importar</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Colores</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Configuración de la barra de colores</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Seleccionar archivo para importar</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Configuración del mapa de colores (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ocurrió un error al cargar %1 Error de análisis %2 en %3, columna %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ocurrió un error al abrir %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparente</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Visualización de etiquetas</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formato:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialogo</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Preajustes:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorar la configuración de la barra de colores al importar</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Relación entre valores y colores</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Ajustar automáticamente según el rango de valores</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Configurar manualmente</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rango de valores</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automático</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>máx.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Mínimo:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Colores</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Rellenar zona inferior</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Rellenar zona superior</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Cambiar</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Configuración de la barra de colores</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Seleccionar archivo para importar</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Configuración del mapa de colores (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ocurrió un error al abrir %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ocurrió un error al cargar %1 Error de análisis %2 en %3, columna %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Seleccione el artículo para aplicar)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Cambiar al modo discreto</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Cambiar al modo de gradación</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Valor mínimo</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>valor máximo</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparente</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Al cambiar al modo de gradación, los valores se establecen en el valor medio de cada sección.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Diálogo Cambiar a modo discreto</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>máx.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Mínimo:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Número de colores a insertar en cada sección</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +677,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Especifique el número de vértices</translation>
     </message>
 </context>
 <context>
@@ -210,6 +779,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Seleccione un punto en el cuadro de diálogo Georeferencia.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Eliminar puntos</translation>
     </message>
 </context>
 <context>
@@ -323,7 +896,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
 </context>
 <context>
@@ -417,11 +990,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Configuracion de Contorno</translation>
+        <translation type="vanished">Configuracion de Contorno</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posición</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Margen horizontal:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Margen vertical:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Ancho:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Altura:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Distancia desde la izquierda</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Distancia desde la derecha</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Distancia desde arriba</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Distancia desde abajo</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1061,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Seleccione de qué archivo CGNS leer la cuadrícula.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Archivo CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1092,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Widget no controlado en ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1106,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>&amp;Guardar y Cerrar</translation>
+        <translation type="vanished">&amp;Guardar y Cerrar</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1144,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>Modificaciones que haces seran descartado.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Error al abrir el archivo CGNS.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1203,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Seleccione Archivo</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1232,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Seleccionar Archivo</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Seleccionar Directorio</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>El nombre de la carpeta debe constar únicamente de caracteres ingleses.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1413,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>No hay datos para importar.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Seleccione la plantilla para importar)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>El contenido del área de texto se sobrescribe con la plantilla.</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1875,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>&amp;Esconder Detalle</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Error ocurrio mientras cargando el resultado de calculo.</translation>
+        <translation type="vanished">Error ocurrio mientras cargando el resultado de calculo.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1936,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Error ocurrio mientras guardando %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Guardando el resultado del cálculo como archivos TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2119,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Error ocurrio mientras cargando el resultado de calculo.</translation>
+        <translation type="vanished">Error ocurrio mientras cargando el resultado de calculo.</translation>
     </message>
 </context>
 <context>
@@ -1494,11 +2175,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atributo de cuadricula no esta definido para tipo de cuadricula %1. Cuadricula I/O funciones, funciones de creacion de cuadricula quizas no funcionan correctanmente para estos tipos de cuadriculas.</translation>
+        <translation type="vanished">Atributo de cuadricula no esta definido para tipo de cuadricula %1. Cuadricula I/O funciones, funciones de creacion de cuadricula quizas no funcionan correctanmente para estos tipos de cuadriculas.</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1517,11 +2198,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Solucion %1 ya existe.</translation>
+        <translation type="vanished">Solucion %1 ya existe.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Archivo CGNS cuyo nombre contiene caracteres distinitos de alfabetos y numers no pueden ser importado.</translation>
+        <translation type="vanished">Archivo CGNS cuyo nombre contiene caracteres distinitos de alfabetos y numers no pueden ser importado.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1545,7 +2226,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Guardando archivo de proyecto fallo.</translation>
+        <translation type="vanished">%1 Guardando archivo de proyecto fallo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2250,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Este archivo de proyecto no se puede leer, porque fue creado por demasiado viejo iRIC (version %1).</translation>
+        <translation type="vanished">Este archivo de proyecto no se puede leer, porque fue creado por demasiado viejo iRIC (version %1).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2270,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Este archivo es para solver %1 %2. No es compatible cone el solve que estas usando, entonces quizas este archivo fallara. Quieres importar este archivo?</translation>
+        <translation type="vanished">Este archivo es para solver %1 %2. No es compatible cone el solve que estas usando, entonces quizas este archivo fallara. Quieres importar este archivo?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2283,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Sistema de coordenadas no seleccionado.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Ocurrió un error al abrir el archivo CGNS en el archivo del proyecto: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Copiando imagen %1 a %2 ha fallado.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2321,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Formato de visualización de la hora</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2436,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Región completa</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Región activa</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Región personalizada</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Estoy dentro:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Yo Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>Min J:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J máx.:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2541,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>Celdas donde varacion de longitud de celda correidno j-direccion excede %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>yo-dirección</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>dirección J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>yo-dirección</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>dirección J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>dirección K</translation>
     </message>
 </context>
 <context>

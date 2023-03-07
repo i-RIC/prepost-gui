@@ -396,7 +396,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção cruzada e os dados de nuvem de pontos do mapa novamente, você pode usar "Mapear dados de nuvem de pontos"</translation>
+        <translation type="vanished">Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção cruzada e os dados de nuvem de pontos do mapa novamente, você pode usar "Mapear dados de nuvem de pontos"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -405,6 +405,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Gerar dados de nuvem de pontos</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção transversal e mapear os dados da nuvem de pontos novamente, você pode usar "Mapear dados da nuvem de pontos"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Os dados de seção transversal são gerados usando dados de nuvem de pontos. Em algumas regiões, os dados não existiam nos dados da nuvem de pontos e o valor 0 foi mapeado para esses pontos. Se você quiser ajustar a posição da seção transversal e mapear os dados da nuvem de pontos novamente, você pode usar "Mapear dados da nuvem de pontos"</translation>
     </message>
 </context>
 <context>
@@ -694,7 +705,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Proporcao de tela: 1/</translation>
+        <translation type="vanished">Proporcao de tela: 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -816,6 +827,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Dados de seção transversal</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Proporção de aspecto (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -845,7 +860,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Proporcao de tela: 1/%1</translation>
+        <translation type="vanished">Proporcao de tela: 1/%1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -875,6 +890,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Edicao de configuracao da exibicao</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Proporção de aspecto (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -929,6 +948,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Cor de exibicao:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nomes de seções transversais</translation>
     </message>
 </context>
 <context>

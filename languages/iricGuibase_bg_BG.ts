@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Мрежови линии</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>всичко</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Само контур</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>цвят:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Мрежови индекси</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видими</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да използвате следните символи, за да определите персонализиран формат на времето: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Година: ГГГГ, ГГ &lt;/li&gt; &lt;li&gt; Месец: М, MM, MMM, MMMM (MMM за януари и т.н., MMMM за януари и т.н.) &lt;/li&gt; &lt;li&gt; Ден: d, dd, ddd, dddd (ddd за пн и т.н., dddd за понеделник и т.н.) &lt;/li &gt; &lt;li&gt; Час: H, HH, h, hh (h, hh за AM/PM дисплей) &lt;/li&gt; &lt;li&gt; Минута: m, mm &lt;/li&gt; &lt;li&gt; Втора: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Показване на часовата зона</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Моля Изчакай</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Моля Изчакай...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Моля Изчакай...</translation>

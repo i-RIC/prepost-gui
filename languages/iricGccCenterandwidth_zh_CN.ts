@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>折线坐标</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>显示设定</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

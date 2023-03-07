@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navigateur d&apos;objets</translation>
+        <translation>Navigateur d'objets</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Post-traitement à vol d&apos;oiseau (2D)&#xa0;: %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Post-traitement à vol d'oiseau (2D) : %1</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation>Couleur de l&apos;arrière plan</translation>
+        <translation>Couleur de l'arrière plan</translation>
     </message>
 </context>
 <context>
@@ -47,7 +45,7 @@
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation>Couleur de l&apos;arrière plan (&amp;B)...</translation>
+        <translation>Couleur de l'arrière plan (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
@@ -95,7 +93,7 @@
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valeur scalaire pour l&apos;élévation</translation>
+        <translation type="vanished">Valeur scalaire pour l'élévation</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -111,11 +109,11 @@
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation type="vanished">Valeur scalaire&#xa0;:</translation>
+        <translation type="vanished">Valeur scalaire :</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">Paramètre d&apos;affichage</translation>
+        <translation type="vanished">Paramètre d'affichage</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
@@ -142,11 +140,11 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation>Le paramètre de contour n&apos;est pas disponible, car ce résultat ne contient pas de valeurs scalaires.</translation>
+        <translation>Le paramètre de contour n'est pas disponible, car ce résultat ne contient pas de valeurs scalaires.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="vanished">Le paramètre de contour n&apos;est pas disponible, car ce résultat ne contient pas de valeurs scalaires de cellule.</translation>
+        <translation type="vanished">Le paramètre de contour n'est pas disponible, car ce résultat ne contient pas de valeurs scalaires de cellule.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -168,11 +166,11 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre d'affichage de la forme de la grille</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur scalaire pour l'altitude</translation>
     </message>
 </context>
 <context>
@@ -187,38 +185,38 @@
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage scalaire (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogue</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Couleur personnalisée</translation>
+        <translation>Couleur personnalisée</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">Par valeur scalaire</translation>
+        <translation>Par valeur scalaire</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Gamme</translation>
     </message>
 </context>
 <context>
@@ -244,7 +242,7 @@
     </message>
     <message>
         <source>Edit Background Color</source>
-        <translation>Modifier la couleur d&apos;arrière-plan</translation>
+        <translation>Modifier la couleur d'arrière-plan</translation>
     </message>
     <message>
         <source>Create Contour</source>

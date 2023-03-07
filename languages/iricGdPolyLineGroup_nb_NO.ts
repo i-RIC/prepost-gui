@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Linje %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Legg til ny linje (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Fargeinnstilling Rediger</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Polyline gruppevisningsinnstilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farge etter verdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linje bredde:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>CSV -fil (linjer) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Rediger skjerminnstilling</translation>
     </message>
 </context>
 <context>

@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Parema Y-telje vahemik on vale.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekundid</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minutid</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Tundi</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Päevad</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Liinid</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekundit</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minutit</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>tundi</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>päevadel</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV eksport (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fondi seadistus (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Väline</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagrammi fondi seadistus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammi pealkiri:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendid:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-telg:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pealkiri:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Puugid:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-telg:</translation>
     </message>
 </context>
 <context>

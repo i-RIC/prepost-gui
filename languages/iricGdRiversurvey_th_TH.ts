@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>ข้อมูลภาคตัดขวางถูกสร้างขึ้นโดยใช้ข้อมูล point cloud หากคุณต้องการปรับตำแหน่งหน้าตัดและข้อมูลระบบคลาวด์ของจุดแผนที่อีกครั้ง คุณสามารถใช้ "ข้อมูลคลาวด์จุดแผนที่"</translation>
+        <translation type="vanished">ข้อมูลภาคตัดขวางถูกสร้างขึ้นโดยใช้ข้อมูล point cloud หากคุณต้องการปรับตำแหน่งหน้าตัดและข้อมูลระบบคลาวด์ของจุดแผนที่อีกครั้ง คุณสามารถใช้ "ข้อมูลคลาวด์จุดแผนที่"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>สร้างข้อมูลจุดคลาวด์</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>ข้อมูลภาคตัดขวางถูกสร้างขึ้นโดยใช้ข้อมูล point cloud หากคุณต้องการปรับตำแหน่งตัดขวางและข้อมูลระบบคลาวด์ของจุดแผนที่อีกครั้ง คุณสามารถใช้ "ข้อมูลคลาวด์จุดแผนที่"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>ข้อมูลภาคตัดขวางถูกสร้างขึ้นโดยใช้ข้อมูล point cloud ในบางภูมิภาค ข้อมูลไม่มีอยู่ในข้อมูล point cloud และค่า 0 ถูกแมปสำหรับจุดเหล่านั้น หากคุณต้องการปรับตำแหน่งตัดขวางและข้อมูลระบบคลาวด์ของจุดแผนที่อีกครั้ง คุณสามารถใช้ "ข้อมูลคลาวด์จุดแผนที่"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>อัตราส่วนภาพ: 1 /</translation>
+        <translation type="vanished">อัตราส่วนภาพ: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>ข้อมูลภาคตัดขวาง</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>อัตราส่วนภาพ (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>อัตราส่วนภาพ: 1 / %1</translation>
+        <translation type="vanished">อัตราส่วนภาพ: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>อัตราส่วนภาพ (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>ชื่อส่วนตัดขวาง</translation>
     </message>
 </context>
 <context>

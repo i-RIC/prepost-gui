@@ -1,5 +1,202 @@
 <TS version="2.1" language="hi_IN">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>संपादन करना (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>कलरमैप सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">प्रपत्र</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>दृश्यता</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>जब चुना गया</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>हमेशा</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>कभी नहीँ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>शीर्षक :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>फ़ॉन्ट सेटिंग:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>लंबाई</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>प्रारूप:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>लंबाई:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>पृष्ठभूमि:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>आकार और स्थिति</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>लंबाई</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>ऑटो</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>मानक मूल्य:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[एमएस]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>स्क्रीन पर लंबाई:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[पिक्सेल]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>कीमत:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>लंबाई किंवदंती</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>बुनियादी</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>तीर का आकार</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>तीर आकार:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>फाइल मैं %1, x-निर्देशांक वृद्धि प्रति पिक्सेल और y-निर्देशांक वृद्धि प्रति पिक्सेल बेमेल। यह स्वीकार्य है, लेकिन यह गलत हो सकता है।</translation>
+        <translation type="vanished">फाइल मैं %1, x-निर्देशांक वृद्धि प्रति पिक्सेल और y-निर्देशांक वृद्धि प्रति पिक्सेल बेमेल। यह स्वीकार्य है, लेकिन यह गलत हो सकता है।</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>मुख्य विंडो पर संबंधित बिंदु का चयन करें।</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>छवि स्थिति ठीक करें</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>दृश्यता</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>जब चुना गया</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>हमेशा</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>कभी नहीँ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>शीर्षक :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>फ़ॉन्ट सेटिंग:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>लेबल प्रदर्शन</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>लेबल:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>पृष्ठभूमि:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>आकार और स्थिति</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>रंग की</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>कलर बार सेटिंग</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>आयात करने के लिए फ़ाइल का चयन करें</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>कलरमैप सेटिंग (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>निर्यात करने के लिए इनपुट फ़ाइल नाम</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>खोलते समय गड़बड़ी हुई %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>कीमत</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>पारदर्शी</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>दृश्यता</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>जब चुना गया</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>हमेशा</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>कभी नहीँ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>शीर्षक :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>फ़ॉन्ट सेटिंग:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>लेबल प्रदर्शन</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>प्रारूप:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>लेबल:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>पृष्ठभूमि:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>आकार और स्थिति</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">संवाद</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>कलरमैप सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>प्रीसेट:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>मूल्यों और रंगों के बीच संबंध</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>मूल्य सीमा के आधार पर स्वचालित रूप से समायोजित करें</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>मैन्युअल रूप से सेटअप करें</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>मूल्य पहुंच</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>स्वचालित</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>मैक्स:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>न्यूनतम:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>रंग की</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>निचला क्षेत्र भरें</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>ऊपरी क्षेत्र भरें</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>बदलना</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>कलर बार सेटिंग</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>आयात करने के लिए फ़ाइल का चयन करें</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>कलरमैप सेटिंग (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>निर्यात करने के लिए इनपुट फ़ाइल नाम</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>खोलते समय गड़बड़ी हुई %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(कृपया लागू करने के लिए आइटम का चयन करें)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>असतत मोड में स्विच करें</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>ग्रेडेशन मोड में स्विच करें</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>चेतावनी</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>कीमत</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>न्यूनतम मूल्य</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>अधिकतम मूल्य</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>पारदर्शी</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>ग्रेडेशन मोड में स्विच करते समय, मान प्रत्येक अनुभाग के मध्य मान पर सेट होते हैं।</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>असतत मोड संवाद पर स्विच करें</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>मैक्स:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>न्यूनतम:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>रंगों की संख्या प्रत्येक अनुभाग में सम्मिलित करने के लिए</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>डीएसटीवाई</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>सैम्पलिंग</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>सभी शिखर</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>नमूना दर:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>शीर्षों की संख्या निर्दिष्ट करें</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>भू-संदर्भ संवाद पर एक बिंदु का चयन करें।</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>अंक हटाएं</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>कंटूर सेटिंग</translation>
+        <translation type="vanished">कंटूर सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>पद</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>क्षैतिज मार्जिन:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>लंबवत मार्जिन:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>ऊंचाई:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>बाएँ से दूरी</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>दायें से दूरी</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>ऊपर से दूरी</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>नीचे से दूरी</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>कृपया ग्रिड पढ़ने के लिए किस सीजीएनएस फ़ाइल का चयन करें।</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>सीजीएनएस फ़ाइल</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>ActionSetValue में हैंडल न किया गया विजेट</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>सहेजें और बंद करें (&amp;S)</translation>
+        <translation type="vanished">सहेजें और बंद करें (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>सहेजते समय त्रुटि हुई.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS फ़ाइल को खोलना विफल रहा।</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>फ़ाइल का चयन करें</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>फ़ाइल नाम में केवल अंग्रेज़ी वर्ण होने चाहिए।</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>फ़ाइल का चयन करें</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>फ़ाइल नाम में केवल अंग्रेज़ी वर्ण होने चाहिए।</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>निर्देशिका का चयन करें</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>फ़ोल्डर नाम में केवल अंग्रेज़ी वर्ण होने चाहिए।</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>संपादित करें</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>आयात करने के लिए कोई डेटा नहीं।</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(आयात करने के लिए टेम्पलेट चुनें)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>चेतावनी</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>पाठ क्षेत्र की सामग्री को टेम्पलेट के साथ अधिलेखित कर दिया गया है</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>विवरण छुपाएं (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>गणना परिणाम लोड करते समय त्रुटि हुई।</translation>
+        <translation type="vanished">गणना परिणाम लोड करते समय त्रुटि हुई।</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>सहेजते समय त्रुटि हुई %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>परिकलन परिणाम को TPO फ़ाइलों के रूप में सहेजा जा रहा है...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>गणना परिणाम लोड करते समय त्रुटि हुई।</translation>
+        <translation type="vanished">गणना परिणाम लोड करते समय त्रुटि हुई।</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>ग्रिड प्रकार के लिए एलिवेशन ग्रिड विशेषता परिभाषित नहीं है %1. ग्रिड I/O फ़ंक्शन, ग्रिड बनाने वाले फ़ंक्शन इन ग्रिड प्रकारों के लिए ठीक से काम नहीं कर सकते हैं।</translation>
+        <translation type="vanished">ग्रिड प्रकार के लिए एलिवेशन ग्रिड विशेषता परिभाषित नहीं है %1. ग्रिड I/O फ़ंक्शन, ग्रिड बनाने वाले फ़ंक्शन इन ग्रिड प्रकारों के लिए ठीक से काम नहीं कर सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>समाधान %1 पहले से ही मौजूद है।</translation>
+        <translation type="vanished">समाधान %1 पहले से ही मौजूद है।</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>सीजीएनएस फ़ाइल जिसके नाम में अक्षर और संख्या के अलावा अन्य वर्ण हैं, आयात नहीं किया जा सकता है।</translation>
+        <translation type="vanished">सीजीएनएस फ़ाइल जिसके नाम में अक्षर और संख्या के अलावा अन्य वर्ण हैं, आयात नहीं किया जा सकता है।</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 प्रोजेक्ट फ़ाइल सहेजना विफल रहा.</translation>
+        <translation type="vanished">%1 प्रोजेक्ट फ़ाइल सहेजना विफल रहा.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>इस प्रोजेक्ट फ़ाइल को पढ़ा नहीं जा सकता, क्योंकि यह बहुत पुराने iRIC (संस्करण.) द्वारा बनाई गई थी %1 )</translation>
+        <translation type="vanished">इस प्रोजेक्ट फ़ाइल को पढ़ा नहीं जा सकता, क्योंकि यह बहुत पुराने iRIC (संस्करण.) द्वारा बनाई गई थी %1 )</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>यह फाइल सॉल्वर के लिए है %1 %2. यह आपके द्वारा उपयोग किए जा रहे सॉल्वर के साथ संगत नहीं है, इसलिए हो सकता है कि इस फ़ाइल को आयात करना विफल हो जाए। क्या आप वाकई इस फ़ाइल को आयात करना चाहते हैं?</translation>
+        <translation type="vanished">यह फाइल सॉल्वर के लिए है %1 %2. यह आपके द्वारा उपयोग किए जा रहे सॉल्वर के साथ संगत नहीं है, इसलिए हो सकता है कि इस फ़ाइल को आयात करना विफल हो जाए। क्या आप वाकई इस फ़ाइल को आयात करना चाहते हैं?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>समन्वय प्रणाली चयनित नहीं है।</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>प्रोजेक्ट फ़ाइल में CGNS फ़ाइल खोलते समय त्रुटि हुई: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>छवि की नकल करना %1 को %2 असफल।</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>समय प्रदर्शन प्रारूप</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>समय क्षेत्र:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>पूरा प्रदेश</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>सक्रिय क्षेत्र</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>कस्टम क्षेत्र</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>मैं भी शामिल:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>मैं मैक्स:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>जे मिन:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>जे मैक्स:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* वे कोशिकाएँ जहाँ j-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>सैम्पलिंग</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>सभी शिखर</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>नमूना दर:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>मैं-दिशा</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>जे-दिशा</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>सैम्पलिंग</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>सभी शिखर</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>नमूना दर:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>मैं-दिशा</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>जे-दिशा</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>के-दिशा</translation>
     </message>
 </context>
 <context>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>그리드 라인</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>모두</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>개요만</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>그리드 인덱스</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;다음 기호를 사용하여 사용자 지정 시간 형식을 정의할 수 있습니다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;연도: YYYY, YY&lt;/li&gt;&lt;li&gt;월: M, MM, MMM, MMMM(1월은 MMM, 1월은 MMMM 등)&lt;/li&gt;&lt;li&gt;요일: d, dd, ddd, dddd(월은 ddd, 월요일은 dddd 등)&lt;/li &gt;&lt;li&gt;시: H, HH, h, hh(AM/PM 디스플레이의 경우 h, hh)&lt;/li&gt;&lt;li&gt;분: m, mm&lt;/li&gt;&lt;li&gt;초: s, ss&lt;/li &gt;&lt;li&gt;오전/오후: 에이&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>시간대 표시</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>기다리세요</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>기다리세요...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>기다리세요...</translation>

@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Poikkileikkaustiedot generoidaan pistepilvidatan avulla. Jos haluat säätää poikkileikkauksen sijaintia ja karttapisteen peittämistietoja uudelleen, voit käyttää "Karttapistetiedot"</translation>
+        <translation type="vanished">Poikkileikkaustiedot generoidaan pistepilvidatan avulla. Jos haluat säätää poikkileikkauksen sijaintia ja karttapisteen peittämistietoja uudelleen, voit käyttää "Karttapistetiedot"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Luo pistepilvetietoja</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää "Karttapistepilvitietoja"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Joillakin alueilla tietoja ei ollut pistepilvidatassa, ja arvo 0 määritettiin näille pisteille. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää "Karttapistepilvitietoja"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Kuvasuhde: 1 /</translation>
+        <translation type="vanished">Kuvasuhde: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Poikkileikkaustiedot</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Kuvasuhde (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Kuvasuhde: 1 / %1</translation>
+        <translation type="vanished">Kuvasuhde: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Muokkaa näyttöasetusta</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Kuvasuhde (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Poikkileikkausten nimet</translation>
     </message>
 </context>
 <context>

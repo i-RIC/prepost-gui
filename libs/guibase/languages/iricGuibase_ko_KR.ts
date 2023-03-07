@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>그리드 라인</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">모두</translation>
+        <translation>모두</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">개요만</translation>
+        <translation>개요만</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">색상:</translation>
+        <translation>색상:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>그리드 인덱스</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">보이는</translation>
+        <translation>보이는</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: &quot; %5.2f&quot; 3.141592 --&gt; 3.14 &quot; %4 12300의 경우.2e&quot; --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: " %5.2f" 3.141592 --&gt; 3.14 " %4 12300의 경우.2e" --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

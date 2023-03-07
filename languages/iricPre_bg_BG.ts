@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Този CGNS файл няма информация за решаване. Не можем да проверим дали този CGNS файл е съвместим с решавача. Ако не е съвместим, може би само част от мрежата ще бъде импортирана. Наистина ли искате да импортирате решетка от този файл?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Този файл не съдържа мрежа, която може да бъде импортирана.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Изберете мрежа</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Изберете мрежа за импортиране.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Настройка на оси</translation>
+        <translation type="vanished">Настройка на оси</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Видимо</translation>
+        <translation type="vanished">Видимо</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
+        <translation type="vanished">Цвят:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Настройка на дисплея</translation>
+        <translation type="vanished">Настройка на дисплея</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Цвят на решетката</translation>
+        <translation type="vanished">Цвят на решетката</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Атрибут на възел</translation>
+        <translation type="vanished">Атрибут на възел</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Атрибут на клетката</translation>
+        <translation type="vanished">Атрибут на клетката</translation>
     </message>
     <message>
         <source>Custom Color</source>
+        <translation type="vanished">Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Брадви</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Видимо</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Цвят:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Редактиране на Z-посока Scale</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-посока скала</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Въведете нова скала за Z-посока.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Редактиране на настройките за цвят</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Редактиране на мащаба на Z-посока</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Въведете нова скала на Z-посока.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Редактиране на настройките на дисплея</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Надморска височина:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Цвят на мрежата</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
         <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка на цветна карта</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -170,26 +259,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
-    </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
-    <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Редактиране на Z-посока Scale</translation>
+        <translation>цвят:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-посока скала</translation>
+        <source>Background Color:</source>
+        <translation>Цвят на фона:</translation>
     </message>
     <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Въведете нова скала за Z-посока.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Редактиране на настройките за цвят</translation>
+        <source>Z-direction scale:</source>
+        <translation>Скала на Z-посока:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Наистина ли искате да изтриете всички гранични условия?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Редактиране на настройките на дисплея</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Настройка на дисплея на граничните условия</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Настройка на шрифта за имена</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Изберете случай</translation>
+        <translation type="vanished">Изберете случай</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Моля, изберете от кой случай %1 да импортирате изчислителни условия.</translation>
+        <translation type="vanished">Моля, изберете от кой случай %1 да импортирате изчислителни условия.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Данни от набор точки (&amp;O)</translation>
+        <translation type="vanished">Данни от набор точки (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Импортиране от мрежата (&amp;I)...</translation>
+        <translation type="vanished">Импортиране от мрежата (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Настройка на скаларна лента...</translation>
+        <translation type="vanished">Настройка на скаларна лента...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Импортиране на данни от %1 се провали.</translation>
+        <translation type="vanished">Импортиране на данни от %1 се провали.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>За да импортирате географските данни, първо посочете координатната система.</translation>
+        <translation type="vanished">За да импортирате географските данни, първо посочете координатната система.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Внос (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Импортиране на надморска височина от мрежата (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>За да импортирате географските данни, първо задайте координатна система за проекта.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Редактиране на настройката за вариант (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>По подразбиране</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Настройка на вариация</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Разрешете вариацията</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Вариация за предаване на решаващия инструмент:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Забележка: Когато вариантът е активиран, се създава вариант с име „По подразбиране“ и всички географски данни се преместват към него. Можете да добавяте, преименувате, премахвате варианти от "Object Browser". Можете да местите, копирате географски данни между вариантите. Данните за атрибутите на мрежата, създадени от варианта, който сте избрали с „Вариация за предаване на решаващия инструмент“, се предават на решаващия инструмент. Можете да подготвите множество варианти, да превключите кои да предадете на решаващия инструмент и да се уверите в ефекта от разликата.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Настройка за показване на атрибут на клетъчна мрежа</translation>
+        <translation type="vanished">Настройка за показване на атрибут на клетъчна мрежа</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Генерирайте данни от облака от точки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Настройка на дисплея на атрибута на клетката на мрежата</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Настройка за показване на атрибут на мрежов възел</translation>
+        <translation type="vanished">Настройка за показване на атрибут на мрежов възел</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Генерирайте данни от облака от точки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Настройка на дисплея на атрибута на възела на мрежата</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Настройка на цветовата легенда</translation>
+        <translation type="vanished">Настройка на цветовата легенда</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Настройка на скаларна лента</translation>
+        <translation type="vanished">Настройка на скаларна лента</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Видимо</translation>
+        <translation type="vanished">Видимо</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Стойност</translation>
+        <translation type="vanished">Стойност</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактиране...</translation>
+        <translation type="vanished">Редактиране...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Формуляр</translation>
+        <translation type="vanished">Формуляр</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Видимо</translation>
+        <translation type="vanished">Видимо</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Заглавие</translation>
+        <translation type="vanished">Заглавие</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Заглавие :</translation>
+        <translation type="vanished">Заглавие :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Настройка на шрифта:</translation>
+        <translation type="vanished">Настройка на шрифта:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактиране...</translation>
+        <translation type="vanished">Редактиране...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Показване на етикети</translation>
+        <translation type="vanished">Показване на етикети</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Брой етикети:</translation>
+        <translation type="vanished">Брой етикети:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Формат:</translation>
+        <translation type="vanished">Формат:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Ориентация:</translation>
+        <translation type="vanished">Ориентация:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикален</translation>
+        <translation type="vanished">Вертикален</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Хоризонтално</translation>
+        <translation type="vanished">Хоризонтално</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Размер</translation>
+        <translation type="vanished">Размер</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Посочете размера на цветната лента като процент спрямо размера на прозореца.</translation>
+        <translation type="vanished">Посочете размера на цветната лента като процент спрямо размера на прозореца.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Ако посочите 1, ширината на цветната лента е същата като ширината на прозореца.</translation>
+        <translation type="vanished">Ако посочите 1, ширината на цветната лента е същата като ширината на прозореца.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Височина:</translation>
+        <translation type="vanished">Височина:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Ако посочите 1, височината на цветната лента е същата като височината на прозореца.</translation>
+        <translation type="vanished">Ако посочите 1, височината на цветната лента е същата като височината на прозореца.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Посочете долната лява долна позиция на цветната лента като процент спрямо размера на прозореца.</translation>
+        <translation type="vanished">Посочете долната лява долна позиция на цветната лента като процент спрямо размера на прозореца.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>Х :</translation>
+        <translation type="vanished">Х :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Ако посочите 0, левият ръб на цветната лента се намира в левия ръб на прозореца.</translation>
+        <translation type="vanished">Ако посочите 0, левият ръб на цветната лента се намира в левия ръб на прозореца.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Д:</translation>
+        <translation type="vanished">Д:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Ако посочите 0, долната част на цветната лента се намира в долната част на прозореца.</translation>
+        <translation type="vanished">Ако посочите 0, долната част на цветната лента се намира в долната част на прозореца.</translation>
     </message>
 </context>
 <context>

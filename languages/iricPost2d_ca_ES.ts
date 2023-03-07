@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuració de la fletxa</translation>
+        <translation type="vanished">Configuració de la fletxa</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Llargada</translation>
+        <translation type="vanished">Llargada</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor estàndard:</translation>
+        <translation type="vanished">Valor estàndard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Senyora]</translation>
+        <translation type="vanished">[Senyora]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud a la pantalla:</translation>
+        <translation type="vanished">Longitud a la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[píxel]</translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor mínim per dibuixar:</translation>
+        <translation type="vanished">Valor mínim per dibuixar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mostreig</translation>
+        <translation type="vanished">Mostreig</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tots els vèrtexs</translation>
+        <translation type="vanished">Tots els vèrtexs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taxa de mostreig:</translation>
+        <translation type="vanished">Taxa de mostreig:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-direcció</translation>
+        <translation type="vanished">I-direcció</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>Direcció J</translation>
+        <translation type="vanished">Direcció J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valor escalar</translation>
+        <translation type="vanished">Per valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma de fletxa</translation>
+        <translation type="vanished">Forma de fletxa</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Mida de la fletxa:</translation>
+        <translation type="vanished">Mida de la fletxa:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuració de la regió (&amp;R)</translation>
+        <translation type="vanished">Configuració de la regió (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuració de la barra de color (&amp;C)</translation>
+        <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuració de la fletxa</translation>
+        <translation type="vanished">Configuració de la fletxa</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Llargada</translation>
+        <translation type="vanished">Llargada</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor estàndard:</translation>
+        <translation type="vanished">Valor estàndard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Senyora]</translation>
+        <translation type="vanished">[Senyora]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud a la pantalla:</translation>
+        <translation type="vanished">Longitud a la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[píxel]</translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor mínim per dibuixar:</translation>
+        <translation type="vanished">Valor mínim per dibuixar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mostreig</translation>
+        <translation type="vanished">Mostreig</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tots els vèrtexs</translation>
+        <translation type="vanished">Tots els vèrtexs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taxa de mostreig:</translation>
+        <translation type="vanished">Taxa de mostreig:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Especifiqueu el nombre de vèrtexs</translation>
+        <translation type="vanished">Especifiqueu el nombre de vèrtexs</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valor escalar</translation>
+        <translation type="vanished">Per valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma de fletxa</translation>
+        <translation type="vanished">Forma de fletxa</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Mida de la fletxa:</translation>
+        <translation type="vanished">Mida de la fletxa:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuració de la regió (&amp;R)</translation>
+        <translation type="vanished">Configuració de la regió (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuració de la barra de color (&amp;C)</translation>
+        <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Escalar (centre cel·lular)</translation>
+        <translation type="vanished">Escalar (centre cel·lular)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualitza la configuració del contorn</translation>
+        <translation type="vanished">Actualitza la configuració del contorn</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Per exportar KML per a la vista de carrer, mostreu-lo amb la figura de contorn.</translation>
+        <translation type="vanished">Per exportar KML per a la vista de carrer, mostreu-lo amb la figura de contorn.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Per exportar KML per a Street View, cal especificar el sistema de coordenades.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, cal especificar el sistema de coordenades.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuració escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diàleg</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Es poden definir un màxim de quatre contorns.</translation>
+        <translation type="vanished">Es poden definir un màxim de quatre contorns.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Configuració escalar</translation>
+        <translation type="vanished">Configuració escalar</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuració de la pantalla</translation>
+        <translation type="vanished">Configuració de la pantalla</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuració de la regió (&amp;R)</translation>
+        <translation type="vanished">Configuració de la regió (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuració de la barra de color (&amp;C)</translation>
+        <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Dades geogràfiques</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Informació de referència</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Configuració de visualització en forma de quadrícula</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualitza la configuració del contorn</translation>
+        <translation type="vanished">Actualitza la configuració del contorn</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Per exportar KML per a la vista de carrer, mostreu-lo amb la figura de contorn.</translation>
+        <translation type="vanished">Per exportar KML per a la vista de carrer, mostreu-lo amb la figura de contorn.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Per exportar KML per a Street View, cal especificar el sistema de coordenades.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuració escalar (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Per exportar KML per a Street View, el mode de color ha de ser "Mode discret".</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diàleg</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Escalar (node)</translation>
+        <translation type="vanished">Escalar (node)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Escalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Per exportar el fitxer de forma, canvieu la configuració del color a "Mode discret".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Fletxa Canvi de valor físic</translation>
+        <translation type="vanished">Fletxa Canvi de valor físic</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualitza la configuració de la fletxa</translation>
+        <translation type="vanished">Actualitza la configuració de la fletxa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuració de les fletxes</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualitza la configuració de la fletxa</translation>
+        <translation type="vanished">Actualitza la configuració de la fletxa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuració de les fletxes</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Configuració escalar de partícules</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuració del mapa de colors</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Mida del punt:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Edita la configuració de partícules</translation>
+        <translation type="vanished">Edita la configuració de partícules</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Mostra el navegador d'atributs</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Canvi de selecció d’atribut vectorial</translation>
+        <translation type="vanished">Canvi de selecció d’atribut vectorial</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Actualització de la configuració vectorial</translation>
+        <translation type="vanished">Actualització de la configuració vectorial</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Canvi de valor físic de la fletxa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Configuració vectorial de partícules</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Edita la configuració del polígon</translation>
+        <translation type="vanished">Edita la configuració del polígon</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Configuració de visualització de dades del polígon</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuració del mapa de colors</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Crea un contorn de cel·la</translation>
+        <translation type="vanished">Crea un contorn de cel·la</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Crea un contorn</translation>
+        <translation type="vanished">Crea un contorn</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualitza la configuració de la forma de quadrícula</translation>
+        <translation type="vanished">Actualitza la configuració de la forma de quadrícula</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Actualitza la configuració escalar de les partícules</translation>
+        <translation type="vanished">Actualitza la configuració escalar de les partícules</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Actualitza el paràmetre escalar polígon</translation>
+        <translation type="vanished">Actualitza el paràmetre escalar polígon</translation>
     </message>
 </context>
 </TS>

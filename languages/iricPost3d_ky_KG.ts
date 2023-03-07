@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Контур орнотуу (уячанын борбору)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Контурду жөндөө (клетканын борбору)</translation>
+        <translation type="vanished">Контурду жөндөө (клетканын борбору)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Мааниси:</translation>
+        <translation type="vanished">Мааниси:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Региондор</translation>
+        <translation type="vanished">Региондор</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Диапазон %1</translation>
+        <translation type="vanished">Диапазон %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Максимум төрт контур аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Диапазон %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Жүз</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Контур</translation>
+        <translation type="vanished">Контур</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Контур жөндөө</translation>
+        <translation type="vanished">Контур жөндөө</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Контур жөндөө (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Жүз %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Контур орнотуу</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Жүздөр</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Контур жөндөө</translation>
+        <translation type="vanished">Контур жөндөө</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Беттер</translation>
+        <translation type="vanished">Беттер</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Face %1</translation>
+        <translation type="vanished">Face %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Максимум төрт контур аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Объект Браузеринин пунктун өзгөртүү</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Жүз %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Багыт</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>И</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Ж</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>К</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>I Мин</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>I Макс</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Макс</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>К Макс</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Иштетилди</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Тор формасы</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Тор формасынын дисплей жөндөөлөрү</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Face</translation>
+        <translation type="vanished">Face</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Жүз %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Жүз %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Arrows Setting</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Узундук Легенда</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Жүздөр</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Face %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Узундук Легенда</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Максимум төрт жебе аныкталышы мүмкүн.</translation>
+        <translation type="vanished">Максимум төрт жебе аныкталышы мүмкүн.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Бөлүкчөлөрдүн скалярдык жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Бөлүкчөлөрдүн жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн жөндөөсүн түзөтүү</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Вектордук атрибут Өзгөртүүнү тандаңыз</translation>
+        <translation type="vanished">Вектордук атрибут Өзгөртүүнү тандаңыз</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Вектордук жөндөөнү жаңыртуу</translation>
+        <translation type="vanished">Вектордук жөндөөнү жаңыртуу</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Жебе физикалык маанинин өзгөрүшү</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Бөлүкчөлөрдүн векторунун жөндөөлөрү</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Жаңыртуу</translation>
+        <translation type="vanished">Жаңыртуу</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Контур түзүү</translation>
+        <translation type="vanished">Контур түзүү</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Тор формасынын жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Тор формасынын жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Бөлүкчөлөрдүн скалярдык жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн скалярдык жөндөөсүн жаңыртуу</translation>
     </message>
 </context>
 </TS>

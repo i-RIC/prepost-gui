@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Bultas iestatīšana</translation>
+        <translation type="vanished">Bultas iestatīšana</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Garums</translation>
+        <translation type="vanished">Garums</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standarta vērtība:</translation>
+        <translation type="vanished">Standarta vērtība:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[jaunkundze]</translation>
+        <translation type="vanished">[jaunkundze]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Garums ekrānā:</translation>
+        <translation type="vanished">Garums ekrānā:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimālā zīmējamā vērtība:</translation>
+        <translation type="vanished">Minimālā zīmējamā vērtība:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Paraugu ņemšana</translation>
+        <translation type="vanished">Paraugu ņemšana</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Visas virsotnes</translation>
+        <translation type="vanished">Visas virsotnes</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Paraugu ņemšanas ātrums:</translation>
+        <translation type="vanished">Paraugu ņemšanas ātrums:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-virziens</translation>
+        <translation type="vanished">I-virziens</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-virziens</translation>
+        <translation type="vanished">J-virziens</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bultas forma</translation>
+        <translation type="vanished">Bultas forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Bultas izmērs:</translation>
+        <translation type="vanished">Bultas izmērs:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Reģiona iestatīšana (&amp;R)</translation>
+        <translation type="vanished">Reģiona iestatīšana (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Bultas iestatīšana</translation>
+        <translation type="vanished">Bultas iestatīšana</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Garums</translation>
+        <translation type="vanished">Garums</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standarta vērtība:</translation>
+        <translation type="vanished">Standarta vērtība:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[jaunkundze]</translation>
+        <translation type="vanished">[jaunkundze]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Garums ekrānā:</translation>
+        <translation type="vanished">Garums ekrānā:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimālā zīmējamā vērtība:</translation>
+        <translation type="vanished">Minimālā zīmējamā vērtība:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Paraugu ņemšana</translation>
+        <translation type="vanished">Paraugu ņemšana</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Visas virsotnes</translation>
+        <translation type="vanished">Visas virsotnes</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Paraugu ņemšanas ātrums:</translation>
+        <translation type="vanished">Paraugu ņemšanas ātrums:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Norādiet virsotņu skaitu</translation>
+        <translation type="vanished">Norādiet virsotņu skaitu</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bultas forma</translation>
+        <translation type="vanished">Bultas forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Bultas izmērs:</translation>
+        <translation type="vanished">Bultas izmērs:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Reģiona iestatīšana (&amp;R)</translation>
+        <translation type="vanished">Reģiona iestatīšana (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalārs (šūnu centrs)</translation>
+        <translation type="vanished">Skalārs (šūnu centrs)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atjauniniet kontūras iestatījumu</translation>
+        <translation type="vanished">Atjauniniet kontūras iestatījumu</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Lai eksportētu KML ielas attēlam, parādiet to ar kontūras attēlu.</translation>
+        <translation type="vanished">Lai eksportētu KML ielas attēlam, parādiet to ar kontūras attēlu.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Lai eksportētu KML ielas attēlam, vērtību diapazons jāiestata manuāli.</translation>
+        <translation type="vanished">Lai eksportētu KML ielas attēlam, vērtību diapazons jāiestata manuāli.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Lai eksportētu KML ielas attēlam, jānorāda koordinātu sistēma.</translation>
+        <translation type="vanished">Lai eksportētu KML ielas attēlam, jānorāda koordinātu sistēma.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalāra iestatījums (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogs</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Var definēt ne vairāk kā četras kontūras.</translation>
+        <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalāra iestatīšana</translation>
+        <translation type="vanished">Skalāra iestatīšana</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Displeja iestatījums</translation>
+        <translation type="vanished">Displeja iestatījums</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Reģiona iestatīšana (&amp;R)</translation>
+        <translation type="vanished">Reģiona iestatīšana (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Vērtību diapazonam maksimālā vērtība ir mazāka par minimālo vērtību.</translation>
+        <translation type="vanished">Vērtību diapazonam maksimālā vērtība ir mazāka par minimālo vērtību.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Ģeogrāfiskie dati</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Atsauces informācija</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Režģa formas displeja iestatījums</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atjauniniet kontūras iestatījumu</translation>
+        <translation type="vanished">Atjauniniet kontūras iestatījumu</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Lai eksportētu KML ielas attēlam, parādiet to ar kontūras attēlu.</translation>
+        <translation type="vanished">Lai eksportētu KML ielas attēlam, parādiet to ar kontūras attēlu.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Lai eksportētu KML ielas attēlam, vērtību diapazons jāiestata manuāli.</translation>
+        <translation type="vanished">Lai eksportētu KML ielas attēlam, vērtību diapazons jāiestata manuāli.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Lai eksportētu KML ielas attēlam, jānorāda koordinātu sistēma.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalāra iestatījums (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Lai eksportētu KML ielas attēlam, krāsu režīmam ir jābūt “Diskrētajam režīmam”</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogs</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalārs (mezgls)</translation>
+        <translation type="vanished">Skalārs (mezgls)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalārs</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Lai eksportētu formas failu, pārslēdziet krāsu iestatījumu uz "Diskrēts režīms".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Bultas fiziskās vērtības maiņa</translation>
+        <translation type="vanished">Bultas fiziskās vērtības maiņa</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atjauniniet bultiņas iestatījumu</translation>
+        <translation type="vanished">Atjauniniet bultiņas iestatījumu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Bultiņu iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atjauniniet bultiņas iestatījumu</translation>
+        <translation type="vanished">Atjauniniet bultiņas iestatījumu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Bultiņu iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Daļiņu skalāra iestatījums</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Krāsu kartes iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkta lielums:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Rediģēt daļiņu iestatījumu</translation>
+        <translation type="vanished">Rediģēt daļiņu iestatījumu</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Rādīt atribūtu pārlūkprogrammu</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektora atribūts Izvēlieties Mainīt</translation>
+        <translation type="vanished">Vektora atribūts Izvēlieties Mainīt</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Atjaunināt vektora iestatījumu</translation>
+        <translation type="vanished">Atjaunināt vektora iestatījumu</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Arrow fiziskās vērtības maiņa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Daļiņu vektora iestatīšana</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Rediģēt daudzstūra iestatījumu</translation>
+        <translation type="vanished">Rediģēt daudzstūra iestatījumu</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Daudzstūra datu displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Krāsu kartes iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Izveidojiet šūnu kontūru</translation>
+        <translation type="vanished">Izveidojiet šūnu kontūru</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Izveidojiet kontūru</translation>
+        <translation type="vanished">Izveidojiet kontūru</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atjauniniet režģa formas iestatījumu</translation>
+        <translation type="vanished">Atjauniniet režģa formas iestatījumu</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Atjauniniet daļiņu skalāra iestatījumu</translation>
+        <translation type="vanished">Atjauniniet daļiņu skalāra iestatījumu</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Atjauniniet daudzstūra skalāra iestatījumu</translation>
+        <translation type="vanished">Atjauniniet daudzstūra skalāra iestatījumu</translation>
     </message>
 </context>
 </TS>

@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>文本文件 (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">文本文件 (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>文本文件 (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>文檔名稱：</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>坐標系</translation>
     </message>
 </context>
 <context>

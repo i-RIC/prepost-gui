@@ -1,5 +1,202 @@
 <TS version="2.1" language="lv_LV">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Pēc skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Rediģēt (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Krāsu kartes iestatījums (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Pēc skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Veidlapa</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Redzamība</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kad atlasīts</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vienmēr</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nekad</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonta iestatījums:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Garums</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formāts:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Garums:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fons:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Izmērs un pozīcija</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Garums</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Standarta vērtība:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[jaunkundze]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Garums uz ekrāna:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[pikselis]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Minimālā zīmējamā vērtība:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vērtība:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Garuma leģenda</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pamata</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Bultas forma</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Bultas izmērs:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Failā %1, x koordinātu pieaugums uz pikseli un y koordinātu pieaugums uz pikseļiem. Tas ir pieņemami, bet var būt nepareizi.</translation>
+        <translation type="vanished">Failā %1, x koordinātu pieaugums uz pikseli un y koordinātu pieaugums uz pikseļiem. Tas ir pieņemami, bet var būt nepareizi.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Galvenajā logā atlasiet atbilstošo punktu.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Fiksējiet attēla pozīciju</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Redzamība</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kad atlasīts</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vienmēr</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nekad</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonta iestatījums:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiķetes displejs</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiķete:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fons:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Izmērs un pozīcija</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Importējot, ignorējiet krāsu joslas iestatījumu</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Krāsas</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Krāsu joslas iestatījums</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Atlasiet importējamo failu</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Krāsu kartes iestatījums (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ievadiet eksportējamā faila nosaukumu</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Atverot, radās kļūda %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vērtība</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Caurspīdīgs</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Redzamība</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Kad atlasīts</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Vienmēr</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nekad</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Fonta iestatījums:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiķetes displejs</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formāts:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiķete:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fons:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Izmērs un pozīcija</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialogs</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Krāsu kartes iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Iepriekšējie iestatījumi:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Importējot, ignorējiet krāsu joslas iestatījumu</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Vērtību un krāsu attiecības</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Automātiski pielāgot, pamatojoties uz vērtību diapazonu</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Iestatīšana manuāli</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Vērtību diapazons</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automātiski</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Krāsas</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Pievienot (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Noņemt (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Aizpildiet apakšējo laukumu</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Aizpildiet augšējo laukumu</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Slēdzis</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Krāsu joslas iestatījums</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Atlasiet importējamo failu</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Krāsu kartes iestatījums (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ievadiet eksportējamā faila nosaukumu</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Atverot, radās kļūda %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Lūdzu, atlasiet vienumu, ko piemērot)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Pārslēdzieties uz diskrēto režīmu</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Pārslēdzieties uz gradācijas režīmu</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Brīdinājums</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vērtība</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Minimālā vērtība</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Maksimālā vērtība</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Caurspīdīgs</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Pārslēdzoties uz gradācijas režīmu, vērtības tiek iestatītas uz katras sadaļas vidējo vērtību.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Pārslēdzieties uz Diskrētā režīma dialoglodziņu</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Maks.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Min.:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Katrā sadaļā ievietojamo krāsu skaits</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Paraugu ņemšana</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visas virsotnes</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Paraugu ņemšanas ātrums:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Norādiet virsotņu skaitu</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Atlasiet punktu ģeogrāfiskās atsauces dialoglodziņā.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Dzēst punktus</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogs</translation>
+        <translation type="vanished">Dialogs</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogs</translation>
+        <translation type="vanished">Dialogs</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Kontūras iestatīšana</translation>
+        <translation type="vanished">Kontūras iestatīšana</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozīcija</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Horizontālā robeža:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Vertikālā robeža:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Platums:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Augstums:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Attālums no kreisās puses</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Attālums no labās puses</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Attālums no augšas</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Attālums no apakšas</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Lūdzu, izvēlieties, no kura CGNS faila lasīt režģi.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNS fails</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Neapstrādāts logrīks pakalpojumā ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Saglabāt un aizvērt (&amp;S)</translation>
+        <translation type="vanished">Saglabāt un aizvērt (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Saglabājot radās kļūda.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNS faila atvēršana neizdevās.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Atlasiet Fails</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Faila nosaukumā ir jāsastāv tikai no angļu rakstzīmēm.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Atlasiet Fails</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Faila nosaukumā ir jāsastāv tikai no angļu rakstzīmēm.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Atlasiet direktoriju</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Mapes nosaukumā ir jāsastāv tikai no angļu rakstzīmēm.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Rediģēt</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Nav datu, ko importēt.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Atlasiet importējamo veidni)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Brīdinājums</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Teksta apgabala saturs tiek pārrakstīts ar veidni</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Slēpt detaļu (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Ielādējot aprēķina rezultātu, radās kļūda.</translation>
+        <translation type="vanished">Ielādējot aprēķina rezultātu, radās kļūda.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Saglabājot radās kļūda %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Notiek aprēķinu rezultāta saglabāšana TPO failos...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Ielādējot aprēķina rezultātu, radās kļūda.</translation>
+        <translation type="vanished">Ielādējot aprēķina rezultātu, radās kļūda.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Augstuma režģa atribūts nav definēts režģa tipam %1. Režģa I/O funkcijas, režģa izveides funkcijas var nedarboties pareizi šiem režģa veidiem.</translation>
+        <translation type="vanished">Augstuma režģa atribūts nav definēts režģa tipam %1. Režģa I/O funkcijas, režģa izveides funkcijas var nedarboties pareizi šiem režģa veidiem.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Risinājums %1 jau eksistē.</translation>
+        <translation type="vanished">Risinājums %1 jau eksistē.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS failu, kura nosaukumā nav rakstzīmju, izņemot alfabētu un ciparus, nevar importēt.</translation>
+        <translation type="vanished">CGNS failu, kura nosaukumā nav rakstzīmju, izņemot alfabētu un ciparus, nevar importēt.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Neizdevās saglabāt projekta failu.</translation>
+        <translation type="vanished">%1 Neizdevās saglabāt projekta failu.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Šo projekta failu nevar nolasīt, jo to izveidoja pārāk veca iRIC (versija %1 ).</translation>
+        <translation type="vanished">Šo projekta failu nevar nolasīt, jo to izveidoja pārāk veca iRIC (versija %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Šis fails ir paredzēts risinātājam %1 %2. Tas nav saderīgs ar jūsu izmantoto risinātāju, tāpēc, iespējams, neizdosies importēt šo failu. Vai tiešām vēlaties importēt šo failu?</translation>
+        <translation type="vanished">Šis fails ir paredzēts risinātājam %1 %2. Tas nav saderīgs ar jūsu izmantoto risinātāju, tāpēc, iespējams, neizdosies importēt šo failu. Vai tiešām vēlaties importēt šo failu?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinātu sistēma nav atlasīta.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Atverot CGNS failu projekta failā, radās kļūda: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Notiek attēla kopēšana %1 uz %2 neizdevās.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Laika displeja formāts</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Laika zona:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Pilns reģions</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Aktīvs reģions</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Pielāgots reģions</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>ES piedalos:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Es Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Šūnas, kurās šūnu garuma izmaiņas j virzienā pārsniedz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Paraugu ņemšana</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visas virsotnes</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Paraugu ņemšanas ātrums:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-virziens</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-virziens</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Paraugu ņemšana</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Visas virsotnes</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Paraugu ņemšanas ātrums:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-virziens</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-virziens</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-virziens</translation>
     </message>
 </context>
 <context>

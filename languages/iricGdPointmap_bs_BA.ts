@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Tekstualni fajl (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Tekstualni fajl (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Tekstualni fajl (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Ime dokumenta:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinatni sistem</translation>
     </message>
 </context>
 <context>

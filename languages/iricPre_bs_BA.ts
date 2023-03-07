@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Ova CGNS datoteka nema informacije o rješavanju. Ne možemo provjeriti je li ova CGNS datoteka kompatibilna sa rješavačem. Ako nije kompatibilan, možda će se uvesti samo neki dio mreže. Zaista želite uvesti mrežu iz ove datoteke?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Ova datoteka ne sadrži mrežu koja se može uvesti.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Odaberite mrežu</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Odaberite mrežu za uvoz.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,42 +139,119 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Podešavanje osi</translation>
+        <translation type="vanished">Podešavanje osi</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vidljivo</translation>
+        <translation type="vanished">Vidljivo</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Boja:</translation>
+        <translation type="vanished">Boja:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Postavke ekrana</translation>
+        <translation type="vanished">Postavke ekrana</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Boja mreže</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Atribut čvora</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Atribut ćelije</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Prilagođena boja</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Sjekire</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Vidljivo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Boja:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Uredite ljestvicu smjera Z</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-smjer ljestvice</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Unesite novu skalu Z-smjera.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Uredi postavke boje</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Uredite skalu Z-smjera</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Unesite novu skalu Z-smjera.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Uredi postavku ekrana</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Nadmorska visina:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Boja mreže</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Atribut čvora</translation>
+        <source>Cusom Color</source>
+        <translation>Custom Color</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>Atribut ćelije</translation>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>Prilagođena boja</translation>
+        <source>Colormap Setting</source>
+        <translation>Colormap Setting</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Sjekire</translation>
+        <translation>Axes</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Boja:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Uredite ljestvicu smjera Z</translation>
+        <source>Background Color:</source>
+        <translation>Boja pozadine:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-smjer ljestvice</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Unesite novu skalu Z-smjera.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Uredi postavke boje</translation>
+        <source>Z-direction scale:</source>
+        <translation>Skala Z-smjera:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Jeste li sigurni da želite izbrisati sve granične uvjete?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Uredi postavku ekrana</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Postavka prikaza graničnog stanja</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Podešavanje fonta za imena</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Odaberite slučaj</translation>
+        <translation type="vanished">Odaberite slučaj</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Molimo odaberite u kom slučaju %1 da uveze uslove proračuna.</translation>
+        <translation type="vanished">Molimo odaberite u kom slučaju %1 da uveze uslove proračuna.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pointset Data (&amp;O)</translation>
+        <translation type="vanished">Pointset Data (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Uvezi s weba (&amp;I)...</translation>
+        <translation type="vanished">Uvezi s weba (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Postavite Scalarbar...</translation>
+        <translation type="vanished">Postavite Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Uvoz podataka iz %1 nije uspjelo.</translation>
+        <translation type="vanished">Uvoz podataka iz %1 nije uspjelo.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Za uvoz geografskih podataka, prvo navedite koordinatni sistem.</translation>
+        <translation type="vanished">Za uvoz geografskih podataka, prvo navedite koordinatni sistem.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Uvoz (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Uvezi elevaciju s weba (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Da biste uvezli geografske podatke, prvo odredite koordinatni sistem za projekat.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Uredite postavku varijacije (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Default</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dijalog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Postavka varijacije</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Omogući varijaciju</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Varijacija za prosljeđivanje rješavaču:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Napomena: Kada je varijacija omogućena, kreira se varijacija pod nazivom "Default" i svi geografski podaci se premeštaju u nju. Možete dodati, preimenovati, ukloniti varijacije iz "Object Browser". Možete premještati, kopirati geografske podatke između varijacija. Podaci o atributu mreže kreirani iz varijacije koju odaberete pomoću "Varijacija za prolazak rješavaču" prosljeđuju se rješavaču. Možete pripremiti više varijacija, prebaciti koje ćete proslijediti rješavaču i osigurati učinak razlike.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Postavka prikaza atributa ćelijske mreže</translation>
+        <translation type="vanished">Postavka prikaza atributa ćelijske mreže</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generirajte podatke iz oblaka točaka</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Postavka prikaza atributa ćelije mreže</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Postavka prikaza atributa mrežnog čvora</translation>
+        <translation type="vanished">Postavka prikaza atributa mrežnog čvora</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generirajte podatke iz oblaka točaka</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Postavka prikaza atributa čvora mreže</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvoz (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Postavka legende boje</translation>
+        <translation type="vanished">Postavka legende boje</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar Setting</translation>
+        <translation type="vanished">Scalarbar Setting</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vidljivo</translation>
+        <translation type="vanished">Vidljivo</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vrijednost</translation>
+        <translation type="vanished">Vrijednost</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Uredi...</translation>
+        <translation type="vanished">Uredi...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Obrazac</translation>
+        <translation type="vanished">Obrazac</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vidljivo</translation>
+        <translation type="vanished">Vidljivo</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Naslov</translation>
+        <translation type="vanished">Naslov</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Naslov:</translation>
+        <translation type="vanished">Naslov:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Podešavanje fonta:</translation>
+        <translation type="vanished">Podešavanje fonta:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Uredi...</translation>
+        <translation type="vanished">Uredi...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Prikaz naljepnica</translation>
+        <translation type="vanished">Prikaz naljepnica</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Broj oznaka:</translation>
+        <translation type="vanished">Broj oznaka:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orijentacija:</translation>
+        <translation type="vanished">Orijentacija:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikalno</translation>
+        <translation type="vanished">Vertikalno</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontalno</translation>
+        <translation type="vanished">Horizontalno</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Veličina</translation>
+        <translation type="vanished">Veličina</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Odredite veličinu trake boja kao stopu prema veličini prozora.</translation>
+        <translation type="vanished">Odredite veličinu trake boja kao stopu prema veličini prozora.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Širina:</translation>
+        <translation type="vanished">Širina:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Ako navedete 1, širina trake u boji jednaka je širini prozora.</translation>
+        <translation type="vanished">Ako navedete 1, širina trake u boji jednaka je širini prozora.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Visina:</translation>
+        <translation type="vanished">Visina:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Ako navedete 1, visina trake u boji je ista kao i visina prozora.</translation>
+        <translation type="vanished">Ako navedete 1, visina trake u boji je ista kao i visina prozora.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozicija</translation>
+        <translation type="vanished">Pozicija</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Odredite donju lijevu traku boja kao omjer prema veličini prozora.</translation>
+        <translation type="vanished">Odredite donju lijevu traku boja kao omjer prema veličini prozora.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Ako navedete 0, lijeva ivica trake boja nalazi se na lijevoj ivici prozora.</translation>
+        <translation type="vanished">Ako navedete 0, lijeva ivica trake boja nalazi se na lijevoj ivici prozora.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Ako navedete 0, dno trake boja nalazi se pri dnu prozora.</translation>
+        <translation type="vanished">Ako navedete 0, dno trake boja nalazi se pri dnu prozora.</translation>
     </message>
 </context>
 <context>

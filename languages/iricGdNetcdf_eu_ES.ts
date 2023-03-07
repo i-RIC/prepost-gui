@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Ondorengo fitxategiak inportatuko dira. Ondo dago?</translation>
+        <translation type="vanished">Ondorengo fitxategiak inportatuko dira. Ondo dago?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Mesedez, hautatu inportatu beharreko fitxategiak.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Hautatu guztiak (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deshautatu Guztiak (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Abisua</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Hautatutako fitxategien arteko denbora tartea ez da berdina.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Fitxategiaren izena ez dator bat ereduarekin</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ordu eremu:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Denboraren bat etortzearen dimentsio balioak.</translation>
+        <translation type="vanished">Denboraren bat etortzearen dimentsio balioak.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordenatu sistema ez dago zehaztuta %1. Mesedez, hautatu koordenatu sistema eskuz.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Irekitze %1 huts egin zuen.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Dimentsioaren balioak %1 desoreka.</translation>
+        <translation type="vanished">Dimentsioaren balioak %1 desoreka.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Errorea gertatu da denboraren definizioa analizatzean: %1</translation>
+        <translation type="vanished">Errorea gertatu da denboraren definizioa analizatzean: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 ez du longitudea, latitudea ezta x, y datuak.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Jatorrizko ordua:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ordu eremu:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informazioa</translation>
+        <translation type="vanished">Informazioa</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 karpetako fitxategiak %2 inportatzen dira.</translation>
+        <translation type="vanished">%1 karpetako fitxategiak %2 inportatzen dira.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Denboraren bat etortzearen dimentsio balioak.</translation>
+        <translation type="vanished">Denboraren bat etortzearen dimentsio balioak.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Denbora-serieen raster datuak inportatu dira dagoeneko. Beste datu batzuk inportatu nahi badituzu, ezabatu lehendik inportatutako datuak.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Errore bat gertatu da honetatik bihurtutako datuak inportatzean %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Errore bat gertatu da irekitzean %1.</translation>
     </message>
 </context>
 </TS>

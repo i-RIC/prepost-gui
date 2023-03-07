@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Võrgujooned</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Ainult ülevaade</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Värv:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Võrguindeksid</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nähtav</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Kohandatud ajavormingu määramiseks saate kasutada järgmisi sümboleid: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Aasta: AAAA, AAAA &lt;/li&gt; &lt;li&gt; Kuu: M, KK, KKM, KKMM (jaanuari MMM, jaanuari MMMM jne) &lt;/li&gt; &lt;li&gt; Päev: d, dd, ddd, dddd (ddd esmaspäeval jne, dddd esmaspäeval jne) &lt;/li &gt; &lt;li&gt; Tund: H, HH, h, hh (h, hh AM/PM kuva puhul) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Teiseks: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Näita ajavööndit</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Palun oota</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Palun oota...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Palun oota...</translation>

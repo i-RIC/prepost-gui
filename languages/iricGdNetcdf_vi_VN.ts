@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Các tệp sau đây sẽ được nhập. Là nó ổn?</translation>
+        <translation type="vanished">Các tệp sau đây sẽ được nhập. Là nó ổn?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Vui lòng chọn các tệp sẽ được nhập.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Chọn tất cả (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Bỏ chọn tất cả (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Cảnh báo</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Khoảng thời gian giữa các tệp đã chọn không giống nhau.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Tên tệp không khớp với mẫu</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Múi giờ:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Giá trị thứ nguyên cho thời gian không khớp.</translation>
+        <translation type="vanished">Giá trị thứ nguyên cho thời gian không khớp.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Hệ tọa độ không được chỉ định cho %1. Vui lòng chọn hệ tọa độ theo cách thủ công.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Khai mạc %1 thất bại.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Giá trị thứ nguyên cho %1 không phù hợp.</translation>
+        <translation type="vanished">Giá trị thứ nguyên cho %1 không phù hợp.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Đã xảy ra lỗi khi phân tích cú pháp định nghĩa thời gian: %1</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi phân tích cú pháp định nghĩa thời gian: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 không có kinh độ, vĩ độ cũng như dữ liệu x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Thời gian ban đầu:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Múi giờ:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Thông tin</translation>
+        <translation type="vanished">Thông tin</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 các tập tin trong thư mục %2 được nhập khẩu.</translation>
+        <translation type="vanished">%1 các tập tin trong thư mục %2 được nhập khẩu.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Giá trị thứ nguyên cho thời gian không khớp.</translation>
+        <translation type="vanished">Giá trị thứ nguyên cho thời gian không khớp.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Dữ liệu raster chuỗi thời gian đã được nhập. Nếu bạn muốn nhập dữ liệu khác, vui lòng xóa dữ liệu đã được nhập trước.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Đã xảy ra lỗi khi nhập dữ liệu được chuyển đổi từ %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Đã xảy ra lỗi khi mở %1.</translation>
     </message>
 </context>
 </TS>

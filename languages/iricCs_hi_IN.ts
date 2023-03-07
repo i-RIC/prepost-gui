@@ -1,5 +1,27 @@
 <TS version="2.1" language="hi_IN">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>आयात करने के लिए डेटा की समन्वय प्रणाली का चयन करें</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>समन्वय प्रणाली</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>संपादन करना...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

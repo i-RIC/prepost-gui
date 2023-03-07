@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>ไฟล์ CGNS นี้ไม่มีข้อมูลตัวแก้ไข เราไม่สามารถตรวจสอบได้ว่าไฟล์ CGNS นี้เข้ากันได้กับตัวแก้ไขหรือไม่ หากเข้ากันไม่ได้ อาจมีการนำเข้าเพียงบางส่วนของกริด คุณต้องการนำเข้ากริดจากไฟล์นี้หรือไม่?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>ไฟล์นี้ไม่มีกริดที่สามารถนำเข้าได้</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>เลือกตาราง</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>เลือกกริดที่จะนำเข้า</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>การตั้งค่าแกน</translation>
+        <translation type="vanished">การตั้งค่าแกน</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>มองเห็นได้</translation>
+        <translation type="vanished">มองเห็นได้</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>สี:</translation>
+        <translation type="vanished">สี:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>การตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">การตั้งค่าการแสดงผล</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>ตารางสี</translation>
+        <translation type="vanished">ตารางสี</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>แอตทริบิวต์โหนด</translation>
+        <translation type="vanished">แอตทริบิวต์โหนด</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>คุณลักษณะของเซลล์</translation>
+        <translation type="vanished">คุณลักษณะของเซลล์</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">แกน</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">สี:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">แก้ไขมาตราส่วน Z-direct</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">สเกลทิศทาง Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">ป้อนมาตราส่วน Z-direct ใหม่</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>แก้ไขสเกลทิศทาง Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>ป้อนสเกลทิศทาง Z ใหม่</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>ระดับความสูง:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>สีกริด</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>คูซัมคัลเลอร์</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามมูลค่า</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>การตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>สี:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>แก้ไขมาตราส่วน Z-direct</translation>
+        <source>Background Color:</source>
+        <translation>สีพื้นหลัง:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>สเกลทิศทาง Z</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>ป้อนมาตราส่วน Z-direct ใหม่</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <source>Z-direction scale:</source>
+        <translation>สเกลทิศทาง Z:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>คุณแน่ใจหรือไม่ว่าต้องการลบเงื่อนไขขอบเขตทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>การตั้งค่าการแสดงเงื่อนไขขอบเขต</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>การตั้งค่าแบบอักษรสำหรับชื่อ</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Select file to import</source>
@@ -393,11 +486,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>เลือกกรณี</translation>
+        <translation type="vanished">เลือกกรณี</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>กรุณาเลือกจากกรณีใน %1 เพื่อนำเข้าเงื่อนไขการคำนวณ</translation>
+        <translation type="vanished">กรุณาเลือกจากกรณีใน %1 เพื่อนำเข้าเงื่อนไขการคำนวณ</translation>
     </message>
     <message>
         <source>Success</source>
@@ -465,7 +558,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>ข้อมูล Pointset (&amp;O)</translation>
+        <translation type="vanished">ข้อมูล Pointset (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>นำเข้าจากเว็บ (&amp;I)...</translation>
+        <translation type="vanished">นำเข้าจากเว็บ (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>ตั้งค่าสเกลาร์บาร์...</translation>
+        <translation type="vanished">ตั้งค่าสเกลาร์บาร์...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>นำเข้าข้อมูลจาก %1 ล้มเหลว.</translation>
+        <translation type="vanished">นำเข้าข้อมูลจาก %1 ล้มเหลว.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>หากต้องการนำเข้าข้อมูลทางภูมิศาสตร์ ให้ระบุระบบพิกัดก่อน</translation>
+        <translation type="vanished">หากต้องการนำเข้าข้อมูลทางภูมิศาสตร์ ให้ระบุระบบพิกัดก่อน</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>นำเข้า (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>นำเข้าระดับความสูงจากเว็บ (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>หากต้องการนำเข้าข้อมูลทางภูมิศาสตร์ ให้ระบุระบบพิกัดสำหรับโครงการก่อน</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>แก้ไขการตั้งค่ารูปแบบ (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ค่าเริ่มต้น</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>กล่องโต้ตอบ</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>การตั้งค่ารูปแบบต่างๆ</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>เปิดใช้งานรูปแบบ</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>รูปแบบที่จะส่งผ่านไปยังตัวแก้ปัญหา:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>หมายเหตุ: เมื่อเปิดใช้งานรูปแบบ รูปแบบที่ชื่อ "ค่าเริ่มต้น" จะถูกสร้างขึ้น และข้อมูลทางภูมิศาสตร์ทั้งหมดจะถูกย้ายไปที่รูปแบบนั้น คุณสามารถเพิ่ม เปลี่ยนชื่อ ลบรูปแบบต่างๆ จาก "Object Browser" คุณสามารถย้าย คัดลอกข้อมูลทางภูมิศาสตร์ระหว่างรูปแบบต่างๆ ข้อมูลแอตทริบิวต์กริดที่สร้างขึ้นจากรูปแบบที่คุณเลือกด้วย "รูปแบบต่างๆ เพื่อส่งผ่านไปยังตัวแก้ปัญหา" จะถูกส่งผ่านไปยังตัวแก้ปัญหา คุณสามารถเตรียมรูปแบบต่างๆ สลับรูปแบบที่จะส่งต่อไปยังตัวแก้ปัญหา และตรวจสอบให้แน่ใจว่าผลของความแตกต่างนั้นเป็นอย่างไร</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>การตั้งค่าการแสดงแอตทริบิวต์กริดเซลล์</translation>
+        <translation type="vanished">การตั้งค่าการแสดงแอตทริบิวต์กริดเซลล์</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>สร้างข้อมูลจุดคลาวด์</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์เซลล์กริด</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1064,7 +1230,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>การตั้งค่าการแสดงแอตทริบิวต์โหนดกริด</translation>
+        <translation type="vanished">การตั้งค่าการแสดงแอตทริบิวต์โหนดกริด</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>สร้างข้อมูลจุดคลาวด์</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์ของโหนดกริด</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>การตั้งค่าตำนานสี</translation>
+        <translation type="vanished">การตั้งค่าตำนานสี</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>การตั้งค่าสเกลาร์บาร์</translation>
+        <translation type="vanished">การตั้งค่าสเกลาร์บาร์</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>มองเห็นได้</translation>
+        <translation type="vanished">มองเห็นได้</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>ค่า</translation>
+        <translation type="vanished">ค่า</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>แก้ไข...</translation>
+        <translation type="vanished">แก้ไข...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>มองเห็นได้</translation>
+        <translation type="vanished">มองเห็นได้</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>ชื่อ</translation>
+        <translation type="vanished">ชื่อ</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>ชื่อ :</translation>
+        <translation type="vanished">ชื่อ :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>การตั้งค่าแบบอักษร:</translation>
+        <translation type="vanished">การตั้งค่าแบบอักษร:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>แก้ไข...</translation>
+        <translation type="vanished">แก้ไข...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>ป้ายแสดง</translation>
+        <translation type="vanished">ป้ายแสดง</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>จำนวนฉลาก :</translation>
+        <translation type="vanished">จำนวนฉลาก :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>รูปแบบ:</translation>
+        <translation type="vanished">รูปแบบ:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>ปฐมนิเทศ :</translation>
+        <translation type="vanished">ปฐมนิเทศ :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>แนวตั้ง</translation>
+        <translation type="vanished">แนวตั้ง</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>แนวนอน</translation>
+        <translation type="vanished">แนวนอน</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>ขนาด</translation>
+        <translation type="vanished">ขนาด</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>ระบุขนาดแถบสีเป็นอัตราเทียบกับขนาดหน้าต่าง</translation>
+        <translation type="vanished">ระบุขนาดแถบสีเป็นอัตราเทียบกับขนาดหน้าต่าง</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>ความกว้าง :</translation>
+        <translation type="vanished">ความกว้าง :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>หากคุณระบุ 1 ความกว้างของแถบสีจะเหมือนกับความกว้างของหน้าต่าง</translation>
+        <translation type="vanished">หากคุณระบุ 1 ความกว้างของแถบสีจะเหมือนกับความกว้างของหน้าต่าง</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>ส่วนสูง :</translation>
+        <translation type="vanished">ส่วนสูง :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>หากคุณระบุ 1 ความสูงของแถบสีจะเท่ากับความสูงของหน้าต่าง</translation>
+        <translation type="vanished">หากคุณระบุ 1 ความสูงของแถบสีจะเท่ากับความสูงของหน้าต่าง</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>ตำแหน่ง</translation>
+        <translation type="vanished">ตำแหน่ง</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>ระบุแถบสีตำแหน่งล่างซ้ายเป็นอัตราเทียบกับขนาดหน้าต่าง</translation>
+        <translation type="vanished">ระบุแถบสีตำแหน่งล่างซ้ายเป็นอัตราเทียบกับขนาดหน้าต่าง</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>NS :</translation>
+        <translation type="vanished">NS :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>หากคุณระบุ 0 ขอบด้านซ้ายของแถบสีจะอยู่ที่ขอบด้านซ้ายของหน้าต่าง</translation>
+        <translation type="vanished">หากคุณระบุ 0 ขอบด้านซ้ายของแถบสีจะอยู่ที่ขอบด้านซ้ายของหน้าต่าง</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>จ :</translation>
+        <translation type="vanished">จ :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>หากคุณระบุ 0 แถบสีด้านล่างจะอยู่ที่ด้านล่างหน้าต่าง</translation>
+        <translation type="vanished">หากคุณระบุ 0 แถบสีด้านล่างจะอยู่ที่ด้านล่างหน้าต่าง</translation>
     </message>
 </context>
 <context>

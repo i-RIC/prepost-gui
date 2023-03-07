@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Rechter Y-asbereik is ongeldig.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>seconden</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minuten</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Uren</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>dagen</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>lijnen</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>seconden</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minuten</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>uur</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dagen</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV-export (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Lettertype instelling (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Extern</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Grafiek Lettertype Instelling</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Grafiektitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>legendes:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-as:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>teken:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-as:</translation>
     </message>
 </context>
 <context>

@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Šim CGNS failam nav informācijas par risinātāju. Mēs nevaram pārbaudīt, vai šis CGNS fails ir saderīgs ar risinātāju. Ja tas nav saderīgs, iespējams, tiks importēta tikai kāda tīkla daļa. Vai tiešām vēlaties importēt režģi no šī faila?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Šajā failā nav režģa, ko varētu importēt.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Izvēlieties režģi</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Atlasiet importējamo režģi.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Cirvju iestatīšana</translation>
+        <translation type="vanished">Cirvju iestatīšana</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Redzams</translation>
+        <translation type="vanished">Redzams</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Displeja iestatījums</translation>
+        <translation type="vanished">Displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Režģa krāsa</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Mezgla atribūts</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Šūnas atribūts</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Cirvji</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Redzams</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Krāsa:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Rediģēt Z virziena skalu</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z virziena skala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Ievadiet jaunu Z virziena skalu.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Rediģēt krāsu iestatījumu</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Rediģēt Z-virziena skalu</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Ievadiet jaunu Z-virziena skalu.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Rediģēt displeja iestatījumu</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Augstums:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Režģa krāsa</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Mezgla atribūts</translation>
-    </message>
-    <message>
-        <source>Cell attribute</source>
-        <translation>Šūnas atribūts</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
+        <source>Cusom Color</source>
         <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Krāsu kartes iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Krāsa:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Rediģēt Z virziena skalu</translation>
+        <source>Background Color:</source>
+        <translation>Fona krāsa:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z virziena skala</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Ievadiet jaunu Z virziena skalu.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Rediģēt krāsu iestatījumu</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z virziena skala:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Vai tiešām vēlaties dzēst visus robežnosacījumus?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Rediģēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Robežnosacījuma displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Fonta iestatījums vārdiem</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Izvēlieties gadījumu</translation>
+        <translation type="vanished">Izvēlieties gadījumu</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Lūdzu, izvēlieties, kurā gadījumā %1 importēt aprēķina nosacījumus.</translation>
+        <translation type="vanished">Lūdzu, izvēlieties, kurā gadījumā %1 importēt aprēķina nosacījumus.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Punktu kopas dati (&amp;O)</translation>
+        <translation type="vanished">Punktu kopas dati (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importēt no tīmekļa (&amp;I)...</translation>
+        <translation type="vanished">Importēt no tīmekļa (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Scalarbar iestatīšana...</translation>
+        <translation type="vanished">Scalarbar iestatīšana...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Datu importēšana no %1 neizdevās.</translation>
+        <translation type="vanished">Datu importēšana no %1 neizdevās.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Lai importētu ģeogrāfiskos datus, vispirms norādiet koordinātu sistēmu.</translation>
+        <translation type="vanished">Lai importētu ģeogrāfiskos datus, vispirms norādiet koordinātu sistēmu.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Importēt (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importēt Elevation no tīmekļa (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Lai importētu ģeogrāfiskos datus, vispirms norādiet projekta koordinātu sistēmu.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Rediģēt varianta iestatījumu (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Noklusējums</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialogs</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variāciju iestatījums</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Iespējot variāciju</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Variācija, kas jānodod risinātājam:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no "Objektu pārlūka". Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Režģa šūnu atribūtu attēlojuma iestatījums</translation>
+        <translation type="vanished">Režģa šūnu atribūtu attēlojuma iestatījums</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Ģenerējiet punktu mākoņa datus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Režģa šūnas atribūtu displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Režģa mezgla atribūtu attēlojuma iestatījums</translation>
+        <translation type="vanished">Režģa mezgla atribūtu attēlojuma iestatījums</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Ģenerējiet punktu mākoņa datus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Režģa mezgla atribūtu displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Krāsu leģendas iestatīšana</translation>
+        <translation type="vanished">Krāsu leģendas iestatīšana</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Skalarbar iestatījums</translation>
+        <translation type="vanished">Skalarbar iestatījums</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Redzams</translation>
+        <translation type="vanished">Redzams</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vērtība</translation>
+        <translation type="vanished">Vērtība</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Rediģēt...</translation>
+        <translation type="vanished">Rediģēt...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Redzams</translation>
+        <translation type="vanished">Redzams</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Nosaukums</translation>
+        <translation type="vanished">Nosaukums</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Nosaukums:</translation>
+        <translation type="vanished">Nosaukums:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Fonta iestatīšana:</translation>
+        <translation type="vanished">Fonta iestatīšana:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Rediģēt...</translation>
+        <translation type="vanished">Rediģēt...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Etiķetes displejs</translation>
+        <translation type="vanished">Etiķetes displejs</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Etiķešu skaits:</translation>
+        <translation type="vanished">Etiķešu skaits:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Formāts:</translation>
+        <translation type="vanished">Formāts:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientācija:</translation>
+        <translation type="vanished">Orientācija:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikāli</translation>
+        <translation type="vanished">Vertikāli</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontāli</translation>
+        <translation type="vanished">Horizontāli</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Izmērs</translation>
+        <translation type="vanished">Izmērs</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Norādiet krāsu joslas lielumu kā likmi pret loga izmēru.</translation>
+        <translation type="vanished">Norādiet krāsu joslas lielumu kā likmi pret loga izmēru.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Platums:</translation>
+        <translation type="vanished">Platums:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Ja norādāt 1, krāsu joslas platums ir vienāds ar loga platumu.</translation>
+        <translation type="vanished">Ja norādāt 1, krāsu joslas platums ir vienāds ar loga platumu.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Augstums:</translation>
+        <translation type="vanished">Augstums:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Ja norādāt 1, krāsu joslas augstums ir vienāds ar loga augstumu.</translation>
+        <translation type="vanished">Ja norādāt 1, krāsu joslas augstums ir vienāds ar loga augstumu.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozīcija</translation>
+        <translation type="vanished">Pozīcija</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Norādiet krāsu joslas kreiso apakšējo pozīciju kā likmi pret loga izmēru.</translation>
+        <translation type="vanished">Norādiet krāsu joslas kreiso apakšējo pozīciju kā likmi pret loga izmēru.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Ja norādāt 0, krāsu joslas kreisā mala atrodas loga kreisajā malā.</translation>
+        <translation type="vanished">Ja norādāt 0, krāsu joslas kreisā mala atrodas loga kreisajā malā.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Ja norādāt 0, krāsu joslas apakšdaļa atrodas loga apakšā.</translation>
+        <translation type="vanished">Ja norādāt 0, krāsu joslas apakšdaļa atrodas loga apakšā.</translation>
     </message>
 </context>
 <context>

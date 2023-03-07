@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>จุด (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>เพิ่มจุดใหม่ (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>แก้ไขการตั้งค่าสี</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>การตั้งค่าการแสดงกลุ่มจุด</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดจุด:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>เกิดข้อผิดพลาดขณะอ่านค่า "ค่า" ในบรรทัด %1. "ค่า" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>

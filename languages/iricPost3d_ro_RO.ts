@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Setare contur (centrul celulei)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamă</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Setarea conturului (centrul celulei)</translation>
+        <translation type="vanished">Setarea conturului (centrul celulei)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Valoare:</translation>
+        <translation type="vanished">Valoare:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regiuni</translation>
+        <translation type="vanished">Regiuni</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adăuga (&amp;A)</translation>
+        <translation type="vanished">Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Gamă %1</translation>
+        <translation type="vanished">Gamă %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Se pot defini maximum patru contururi.</translation>
+        <translation type="vanished">Se pot defini maximum patru contururi.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adăuga (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Elimina (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Gamă %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Față</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Contur</translation>
+        <translation type="vanished">Contur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Setarea conturului</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Setare contur (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Față %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Setarea conturului</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Chipurile</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Setarea conturului</translation>
+        <translation type="vanished">Setarea conturului</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valoare fizică:</translation>
+        <translation type="vanished">Valoare fizică:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Fețe</translation>
+        <translation type="vanished">Fețe</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adăuga (&amp;A)</translation>
+        <translation type="vanished">Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Față %1</translation>
+        <translation type="vanished">Față %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Se pot defini maximum patru contururi.</translation>
+        <translation type="vanished">Se pot defini maximum patru contururi.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Schimbarea obiectelor din browserul de obiecte</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adăuga (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Elimina (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Față %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direcţie</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>eu</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamă</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Sunt în</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Eu Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activat</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Forma grilei</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Setarea de afișare a formei grilei</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Față</translation>
+        <translation type="vanished">Față</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Față %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Față %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Setarea săgeților</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>De bază</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda lungimii</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Chipurile</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adăuga (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Elimina (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Față %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Legenda lungimii</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Se pot defini maximum patru săgeți.</translation>
+        <translation type="vanished">Se pot defini maximum patru săgeți.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Setarea scalară a particulelor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Setarea hărții de culori</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Editați setarea particulelor</translation>
+        <translation type="vanished">Editați setarea particulelor</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Schimbare selectare atribut vector</translation>
+        <translation type="vanished">Schimbare selectare atribut vector</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Actualizați setarea vectorială</translation>
+        <translation type="vanished">Actualizați setarea vectorială</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Săgeată modificarea valorii fizice</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Setare Vector Particule</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Actualizați</translation>
+        <translation type="vanished">Actualizați</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Creați contur</translation>
+        <translation type="vanished">Creați contur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizați setarea formei grilei</translation>
+        <translation type="vanished">Actualizați setarea formei grilei</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Actualizați setarea scalară a particulelor</translation>
+        <translation type="vanished">Actualizați setarea scalară a particulelor</translation>
     </message>
 </context>
 </TS>

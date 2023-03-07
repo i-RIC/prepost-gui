@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Бул CGNS файлында чечүүчү маалымат жок. Бул CGNS файлы чечүүчүгө шайкеш келерин текшере албайбыз. Эгерде ал туура келбесе, балким, тордун бир бөлүгү гана импорттолот. Чын эле бул файлдан торду импорттогуңуз келеби?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Бул файлда импорттоого боло турган тор жок.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Тор тандаңыз</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Импорттоо үчүн торду тандаңыз.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,69 +139,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Axes Setting</translation>
+        <translation type="vanished">Axes Setting</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Көрүнөө</translation>
+        <translation type="vanished">Көрүнөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Display Setting</translation>
+        <translation type="vanished">Display Setting</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Тордун түсү</translation>
+        <translation type="vanished">Тордун түсү</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Түйүн атрибуту</translation>
+        <translation type="vanished">Түйүн атрибуту</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Клетка атрибуту</translation>
+        <translation type="vanished">Клетка атрибуту</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Axes</translation>
+        <translation type="vanished">Axes</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Көрүнөө</translation>
+        <translation type="vanished">Көрүнөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Z-багыт масштабын түзөтүү</translation>
+        <translation type="vanished">Z-багыт масштабын түзөтүү</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Z-багыт масштабы</translation>
+        <translation type="vanished">Z-багыт масштабы</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Киргизүү жаңы Z-багыт масштабы.</translation>
+        <translation type="vanished">Киргизүү жаңы Z-багыт масштабы.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Түс жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Түс жөндөөсүн түзөтүү</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Z-багыт шкаласын түзөтүү</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Жаңы Z багытынын шкаласын киргизиңиз.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Дисплей жөндөөлөрүн түзөтүү</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Бийиктиги:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Тор түсү</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation>Балталар</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation>Фондун түсү:</translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation>Z багытынын шкаласы:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Чын эле бардык чек ара шарттарын жок кылгыңыз келеби?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Дисплей жөндөөлөрүн түзөтүү</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Чек ара шартын көрсөтүү жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Аттар үчүн шрифт жөндөөсү</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Капчыкты тандоо</translation>
+        <translation type="vanished">Капчыкты тандоо</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Сураныч, кайсы учурда тандаңыз %1 эсептөө шарттарын импорттоо.</translation>
+        <translation type="vanished">Сураныч, кайсы учурда тандаңыз %1 эсептөө шарттарын импорттоо.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pointset дайындары (&amp;O)</translation>
+        <translation type="vanished">Pointset дайындары (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Вебден импорттоо (&amp;I)...</translation>
+        <translation type="vanished">Вебден импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Скаляр тилкесин орнотуу...</translation>
+        <translation type="vanished">Скаляр тилкесин орнотуу...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Маалыматтарды импорттоо %1 ишке ашкан жок</translation>
+        <translation type="vanished">Маалыматтарды импорттоо %1 ишке ашкан жок</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Географиялык маалыматтарды импорттоо үчүн, биринчи координаттар системасын көрсөтүңүз.</translation>
+        <translation type="vanished">Географиялык маалыматтарды импорттоо үчүн, биринчи координаттар системасын көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Импорттоо (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Желеден бийиктикти импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Географиялык маалыматтарды импорттоо үчүн алгач долбоор үчүн координаттар системасын көрсөтүңүз.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Вариация жөндөөлөрүн түзөтүү (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Демейки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variation Setting</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Вариацияны иштетүү</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Чечүүчүгө өтүүчү вариация:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Эскертүү: Вариация иштетилгенде, "Демейки" деп аталган вариация түзүлөт жана бардык географиялык маалыматтар ошого жылдырылат. Сиз "Объект Браузеринен" вариацияларды кошуп, атын өзгөртүп, жок кыла аласыз. Вариациялар арасында географиялык маалыматтарды көчүрүп, жылдыра аласыз. Сиз "Чечүүчүгө өтүүчү вариация" менен тандаган вариациядан түзүлгөн тор атрибуту дайындары чечүүчүгө өткөрүлөт. Сиз бир нече вариацияларды даярдап, аны чечүүчүгө өткөрүп, айырманын эффектисин текшере аласыз.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Grid Cell Attribute Display Setting</translation>
+        <translation type="vanished">Grid Cell Attribute Display Setting</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Булуттагы чекиттүү маалыматтарды түзүү</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Тор клетка атрибутун көрсөтүү жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Grid Node Attribute Display Setting</translation>
+        <translation type="vanished">Grid Node Attribute Display Setting</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Булуттагы чекиттүү маалыматтарды түзүү</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Тор түйүнүнүн атрибуттарын көрсөтүү жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Color Legend жөндөө</translation>
+        <translation type="vanished">Color Legend жөндөө</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar Setting</translation>
+        <translation type="vanished">Scalarbar Setting</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Көрүнөө</translation>
+        <translation type="vanished">Көрүнөө</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Мааниси</translation>
+        <translation type="vanished">Мааниси</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Түзөтүү...</translation>
+        <translation type="vanished">Түзөтүү...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Көрүнөө</translation>
+        <translation type="vanished">Көрүнөө</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Аталышы</translation>
+        <translation type="vanished">Аталышы</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Аталышы:</translation>
+        <translation type="vanished">Аталышы:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Шрифт жөндөөсү:</translation>
+        <translation type="vanished">Шрифт жөндөөсү:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Түзөтүү...</translation>
+        <translation type="vanished">Түзөтүү...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Label Display</translation>
+        <translation type="vanished">Label Display</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Этикеткалардын саны:</translation>
+        <translation type="vanished">Этикеткалардын саны:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Формат:</translation>
+        <translation type="vanished">Формат:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Багыты:</translation>
+        <translation type="vanished">Багыты:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонталдуу</translation>
+        <translation type="vanished">Горизонталдуу</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Көлөм</translation>
+        <translation type="vanished">Көлөм</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Түс тилкесинин өлчөмүн терезенин өлчөмүнө карата чен катары көрсөтүңүз.</translation>
+        <translation type="vanished">Түс тилкесинин өлчөмүн терезенин өлчөмүнө карата чен катары көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Туурасы:</translation>
+        <translation type="vanished">Туурасы:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Эгерде сиз 1 көрсөтсөңүз, Color bar туурасы терезенин туурасы менен бирдей.</translation>
+        <translation type="vanished">Эгерде сиз 1 көрсөтсөңүз, Color bar туурасы терезенин туурасы менен бирдей.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Бийиктиги:</translation>
+        <translation type="vanished">Бийиктиги:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Эгерде сиз 1 көрсөтсөңүз, Color bar бийиктиги терезенин бийиктигине окшош.</translation>
+        <translation type="vanished">Эгерде сиз 1 көрсөтсөңүз, Color bar бийиктиги терезенин бийиктигине окшош.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Түстүү тилкени сол жактын төмөнкү абалын терезенин өлчөмүнө карата чен катары белгилеңиз.</translation>
+        <translation type="vanished">Түстүү тилкени сол жактын төмөнкү абалын терезенин өлчөмүнө карата чен катары белгилеңиз.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Эгерде сиз 0 көрсөтсөңүз, түстүү тилкенин сол жагы терезенин сол четинде жайгашкан.</translation>
+        <translation type="vanished">Эгерде сиз 0 көрсөтсөңүз, түстүү тилкенин сол жагы терезенин сол четинде жайгашкан.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Эгерде сиз 0 көрсөтсөңүз, түс тилкесинин асты терезенин түбүндө жайгашкан.</translation>
+        <translation type="vanished">Эгерде сиз 0 көрсөтсөңүз, түс тилкесинин асты терезенин түбүндө жайгашкан.</translation>
     </message>
 </context>
 <context>

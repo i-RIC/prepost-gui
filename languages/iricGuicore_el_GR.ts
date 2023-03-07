@@ -1,5 +1,202 @@
 <TS version="2.1" language="el_GR">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Με κλιμακωτή τιμή</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Επεξεργασία (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Ρύθμιση χρωματικού χάρτη (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Με κλιμακωτή τιμή</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Μορφή</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ορατότητα</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Όταν επιλεγεί</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Πάντα</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ποτέ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Τίτλος</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Τίτλος :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Ρύθμιση γραμματοσειράς:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Μήκος</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Μορφή:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Μήκος:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ιστορικό:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Μέγεθος και Θέση</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Μήκος</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Αυτο</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Τυπική τιμή:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[Κυρία]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Μήκος στην οθόνη:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[εικονοκύτταρο]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Ελάχιστη τιμή για σχεδίαση:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Αξία:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Length Legend</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Βασικός</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Σχήμα βέλους</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Μέγεθος βέλους:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>Στο αρχείο %1, αύξηση των συντεταγμένων x ανά pixel και αύξηση συντεταγμένων y ανά pixel. Είναι αποδεκτό, αλλά μπορεί να είναι λάθος.</translation>
+        <translation type="vanished">Στο αρχείο %1, αύξηση των συντεταγμένων x ανά pixel και αύξηση συντεταγμένων y ανά pixel. Είναι αποδεκτό, αλλά μπορεί να είναι λάθος.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Επιλέξτε ένα αντίστοιχο σημείο στο Κύριο παράθυρο.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Διορθώστε τη θέση της εικόνας</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ορατότητα</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Όταν επιλεγεί</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Πάντα</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ποτέ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Τίτλος</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Τίτλος :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Ρύθμιση γραμματοσειράς:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Εμφάνιση ετικέτας</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Επιγραφή:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ιστορικό:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Μέγεθος και Θέση</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Αγνοήστε τη ρύθμιση της γραμμής χρώματος κατά την εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Χρωματιστά</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Ρύθμιση γραμμής χρώματος</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Επιλέξτε αρχείο για εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Ρύθμιση χρωματικού χάρτη (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση %1 Σφάλμα ανάλυσης %2 στο %3, στήλη %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Λάθος</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Εισαγάγετε όνομα αρχείου για εξαγωγή</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>αξία</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Διαφανής</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Ορατότητα</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Όταν επιλεγεί</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Πάντα</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Ποτέ</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Τίτλος</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Τίτλος :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Ρύθμιση γραμματοσειράς:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Εμφάνιση ετικέτας</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Μορφή:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Επιγραφή:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Ιστορικό:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Μέγεθος και Θέση</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Διάλογος</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Προεπιλογές:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Αγνοήστε τη ρύθμιση της γραμμής χρώματος κατά την εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Σχέση μεταξύ αξιών και χρωμάτων</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Αυτόματη προσαρμογή με βάση το εύρος τιμών</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Ρύθμιση χειροκίνητα</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Εύρος τιμών</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Αυτόματο</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Μέγιστη:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Ελάχ.</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Χρωματιστά</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Προσθήκη (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Αφαιρώ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Γεμίστε την κάτω περιοχή</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Γεμίστε την επάνω περιοχή</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Διακόπτης</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Ρύθμιση γραμμής χρώματος</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Επιλέξτε αρχείο για εισαγωγή</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Ρύθμιση χρωματικού χάρτη (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Εισαγάγετε όνομα αρχείου για εξαγωγή</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Λάθος</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση %1 Σφάλμα ανάλυσης %2 στο %3, στήλη %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Παρακαλώ επιλέξτε στοιχείο για εφαρμογή)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Μετάβαση σε Διακριτή λειτουργία</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Μετάβαση στη λειτουργία διαβάθμισης</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>αξία</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Ελάχιστη τιμή</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Μέγιστη τιμή</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Διαφανής</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>Κατά τη μετάβαση στη λειτουργία διαβάθμισης, οι τιμές ορίζονται στη μεσαία τιμή κάθε τμήματος.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Μετάβαση στο διάλογο διακριτικής λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Μέγιστη:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Ελάχ.</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Αριθμός χρωμάτων για εισαγωγή σε κάθε ενότητα</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Δειγματοληψία</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Όλες οι κορυφές</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Καθορίστε τον αριθμό των κορυφών</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Επιλέξτε ένα σημείο στο παράθυρο διαλόγου Γεωαναφορά.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Διαγραφή σημείων</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Διάλογος</translation>
+        <translation type="vanished">Διάλογος</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Διάλογος</translation>
+        <translation type="vanished">Διάλογος</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Ρύθμιση περιγράμματος</translation>
+        <translation type="vanished">Ρύθμιση περιγράμματος</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Θέση</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Οριζόντιο περιθώριο:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Κάθετο περιθώριο:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Πλάτος:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Υψος:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Απόσταση από αριστερά</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Απόσταση από δεξιά</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Απόσταση από την κορυφή</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Απόσταση από κάτω</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Επιλέξτε από ποιο αρχείο CGNS θα διαβάσετε το πλέγμα.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Αρχείο CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Γραφικό στοιχείο χωρίς διαχείριση στο ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Αποθήκευσε και κλείσε (&amp;S)</translation>
+        <translation type="vanished">Αποθήκευσε και κλείσε (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Παρουσιάστηκε σφάλμα κατά την αποθήκευση.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Το άνοιγμα του αρχείου CGNS απέτυχε.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Επιλέξτε Αρχείο</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Το όνομα αρχείου πρέπει να αποτελείται μόνο από αγγλικούς χαρακτήρες.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Επιλέξτε Αρχείο</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Το όνομα αρχείου πρέπει να αποτελείται μόνο από αγγλικούς χαρακτήρες.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Επιλέξτε Κατάλογος</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Το όνομα του φακέλου πρέπει να αποτελείται μόνο από αγγλικούς χαρακτήρες.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Επεξεργασία</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Δεν υπάρχουν δεδομένα για εισαγωγή.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Επιλέξτε πρότυπο για εισαγωγή)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Το περιεχόμενο στην περιοχή κειμένου αντικαθίσταται με το πρότυπο</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Απόκρυψη λεπτομερειών (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Παρουσιάστηκε σφάλμα κατά την αποθήκευση %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Αποθήκευση αποτελέσματος υπολογισμού ως αρχεία TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Το χαρακτηριστικό πλέγματος ανύψωσης δεν ορίζεται για τον τύπο πλέγματος %1 Το Λειτουργίες εισόδου/εξόδου πλέγματος, οι λειτουργίες δημιουργίας πλέγματος ενδέχεται να μην λειτουργούν σωστά για αυτούς τους τύπους πλέγματος.</translation>
+        <translation type="vanished">Το χαρακτηριστικό πλέγματος ανύψωσης δεν ορίζεται για τον τύπο πλέγματος %1 Το Λειτουργίες εισόδου/εξόδου πλέγματος, οι λειτουργίες δημιουργίας πλέγματος ενδέχεται να μην λειτουργούν σωστά για αυτούς τους τύπους πλέγματος.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Λύση %1 υπάρχει ήδη.</translation>
+        <translation type="vanished">Λύση %1 υπάρχει ήδη.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Δεν είναι δυνατή η εισαγωγή αρχείου CGNS του οποίου το όνομα περιέχει χαρακτήρες διαφορετικούς από αλφάβητα και αριθμούς.</translation>
+        <translation type="vanished">Δεν είναι δυνατή η εισαγωγή αρχείου CGNS του οποίου το όνομα περιέχει χαρακτήρες διαφορετικούς από αλφάβητα και αριθμούς.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Η αποθήκευση του αρχείου έργου απέτυχε.</translation>
+        <translation type="vanished">%1 Η αποθήκευση του αρχείου έργου απέτυχε.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Αυτό το αρχείο έργου δεν μπορεί να διαβαστεί, επειδή δημιουργήθηκε από πολύ παλιό iRIC (έκδοση %1 ).</translation>
+        <translation type="vanished">Αυτό το αρχείο έργου δεν μπορεί να διαβαστεί, επειδή δημιουργήθηκε από πολύ παλιό iRIC (έκδοση %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Αυτό το αρχείο προορίζεται για επίλυση %1 %2 Το Δεν είναι συμβατό με τον επιλυτή που χρησιμοποιείτε, οπότε ίσως η εισαγωγή αυτού του αρχείου να αποτύχει. Θέλετε πραγματικά να εισαγάγετε αυτό το αρχείο;</translation>
+        <translation type="vanished">Αυτό το αρχείο προορίζεται για επίλυση %1 %2 Το Δεν είναι συμβατό με τον επιλυτή που χρησιμοποιείτε, οπότε ίσως η εισαγωγή αυτού του αρχείου να αποτύχει. Θέλετε πραγματικά να εισαγάγετε αυτό το αρχείο;</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Το σύστημα συντεταγμένων δεν έχει επιλεγεί.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου CGNS στο αρχείο έργου : Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Αντιγραφή εικόνας %1 προς την %2 απέτυχε.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Μορφή προβολής ώρας</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Ζώνη ώρας:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Πλήρης Περιφέρεια</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Ενεργή Περιοχή</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Προσαρμοσμένη περιοχή</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Είμαι μέσα:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Max:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Κελιά όπου η διακύμανση του μήκους των κυττάρων κατά μήκος της κατεύθυνσης j υπερβαίνει %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Δειγματοληψία</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Όλες οι κορυφές</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>Ι-κατεύθυνση</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-κατεύθυνση</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Δειγματοληψία</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Όλες οι κορυφές</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>Ι-κατεύθυνση</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-κατεύθυνση</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>Κ-κατεύθυνση</translation>
     </message>
 </context>
 <context>

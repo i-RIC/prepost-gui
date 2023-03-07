@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Rentang sumbu Y kanan tidak valid.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Detik</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Menit</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Jam</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>hari</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Garis</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>detik</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>menit</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>jam</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>hari</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>Ekspor CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Pengaturan Font (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Luar</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Pengaturan Font Bagan</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Judul grafik:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legenda:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Sumbu X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Judul:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kutu:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Sumbu Y:</translation>
     </message>
 </context>
 <context>

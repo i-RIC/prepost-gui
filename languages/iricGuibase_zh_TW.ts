@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>網格線</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>僅大綱</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>網格指數</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用以下符號來定義自定義時間格式：&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year：YYYY、YY&lt;/li&gt;&lt;li&gt;Month：M、 MM、MMM、MMMM（MMM 表示一月等，MMMM 表示一月等）&lt;/li&gt;&lt;li&gt;日：d、dd、ddd、dddd（ddd 表示週一等，dddd 表示週一等）&lt;/li &gt;&lt;li&gt;小時：H、HH、h、hh（用於 AM/PM 顯示的 h、hh）&lt;/li&gt;&lt;li&gt;分鐘：m、mm&lt;/li&gt;&lt;li&gt;秒：s、ss&lt;/li &gt;&lt;li&gt;上午/下午：A，一個&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>顯示時區</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>請稍等</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>請稍等...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>請稍等...</translation>

@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭頭設置</translation>
+        <translation type="vanished">箭頭設置</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理價值：</translation>
+        <translation type="vanished">物理價值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長度</translation>
+        <translation type="vanished">長度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>汽車</translation>
+        <translation type="vanished">汽車</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>標準值：</translation>
+        <translation type="vanished">標準值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[多發性硬化症]</translation>
+        <translation type="vanished">[多發性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕長度：</translation>
+        <translation type="vanished">屏幕長度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>要繪製的最小值：</translation>
+        <translation type="vanished">要繪製的最小值：</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>採樣</translation>
+        <translation type="vanished">採樣</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>所有頂點</translation>
+        <translation type="vanished">所有頂點</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>採樣率：</translation>
+        <translation type="vanished">採樣率：</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定義顏色</translation>
+        <translation type="vanished">自定義顏色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>按標量值</translation>
+        <translation type="vanished">按標量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>箭頭形狀</translation>
+        <translation type="vanished">箭頭形狀</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>箭頭大小：</translation>
+        <translation type="vanished">箭頭大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>區域設置 (&amp;R)</translation>
+        <translation type="vanished">區域設置 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>彩條設置 (&amp;C)</translation>
+        <translation type="vanished">彩條設置 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭頭設置</translation>
+        <translation type="vanished">箭頭設置</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理價值：</translation>
+        <translation type="vanished">物理價值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長度</translation>
+        <translation type="vanished">長度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>汽車</translation>
+        <translation type="vanished">汽車</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>標準值：</translation>
+        <translation type="vanished">標準值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[多發性硬化症]</translation>
+        <translation type="vanished">[多發性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕長度：</translation>
+        <translation type="vanished">屏幕長度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>要繪製的最小值：</translation>
+        <translation type="vanished">要繪製的最小值：</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>採樣</translation>
+        <translation type="vanished">採樣</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>所有頂點</translation>
+        <translation type="vanished">所有頂點</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>採樣率：</translation>
+        <translation type="vanished">採樣率：</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>指定頂點數</translation>
+        <translation type="vanished">指定頂點數</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定義顏色</translation>
+        <translation type="vanished">自定義顏色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>按標量值</translation>
+        <translation type="vanished">按標量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>箭頭形狀</translation>
+        <translation type="vanished">箭頭形狀</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>箭頭大小：</translation>
+        <translation type="vanished">箭頭大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>區域設置 (&amp;R)</translation>
+        <translation type="vanished">區域設置 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>彩條設置 (&amp;C)</translation>
+        <translation type="vanished">彩條設置 (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>標量（單元格中心）</translation>
+        <translation type="vanished">標量（單元格中心）</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>更新輪廓設置</translation>
+        <translation type="vanished">更新輪廓設置</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>要導出街景的 KML，請使用等高線圖顯示。</translation>
+        <translation type="vanished">要導出街景的 KML，請使用等高線圖顯示。</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>要為街景導出 KML，應手動設置值範圍。</translation>
+        <translation type="vanished">要為街景導出 KML，應手動設置值範圍。</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>要導出街景的 KML，應指定坐標系。</translation>
+        <translation type="vanished">要導出街景的 KML，應指定坐標系。</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>對話</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>最多可以定義四個輪廓。</translation>
+        <translation type="vanished">最多可以定義四個輪廓。</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
+        <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>標量設置</translation>
+        <translation type="vanished">標量設置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理價值：</translation>
+        <translation type="vanished">物理價值：</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>顯示設定</translation>
+        <translation type="vanished">顯示設定</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>區域設置 (&amp;R)</translation>
+        <translation type="vanished">區域設置 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>彩條設置 (&amp;C)</translation>
+        <translation type="vanished">彩條設置 (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>對於取值範圍，最大值小於最小值。</translation>
+        <translation type="vanished">對於取值範圍，最大值小於最小值。</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>地理數據</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>參考信息</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>網格形狀顯示設置</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>更新輪廓設置</translation>
+        <translation type="vanished">更新輪廓設置</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>要導出街景的 KML，請使用等高線圖顯示。</translation>
+        <translation type="vanished">要導出街景的 KML，請使用等高線圖顯示。</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>要為街景導出 KML，應手動設置值範圍。</translation>
+        <translation type="vanished">要為街景導出 KML，應手動設置值範圍。</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>要導出街景的 KML，應指定坐標系。</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>要為街景導出 KML，Colormode 需要為“離散模式”</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>對話</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>標量（節點）</translation>
+        <translation type="vanished">標量（節點）</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
+        <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>標量</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>要導出形狀文件，請將顏色設置切換為“離散模式”。</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>箭頭物理值變化</translation>
+        <translation type="vanished">箭頭物理值變化</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>更新箭頭設置</translation>
+        <translation type="vanished">更新箭頭設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>箭頭設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地區</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>更新箭頭設置</translation>
+        <translation type="vanished">更新箭頭設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>箭頭設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地區</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>粒子標量設置</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值著色</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>顏色映射設置</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>點大小：</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定義顏色</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>編輯粒子設置</translation>
+        <translation type="vanished">編輯粒子設置</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>顯示屬性瀏覽器</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>矢量屬性選擇更改</translation>
+        <translation type="vanished">矢量屬性選擇更改</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>更新矢量設置</translation>
+        <translation type="vanished">更新矢量設置</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>箭頭實物價值變化</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>粒子矢量設置</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>編輯多邊形設置</translation>
+        <translation type="vanished">編輯多邊形設置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>多邊形數據顯示設置</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值著色</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>顏色映射設置</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定義顏色</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>創建單元格輪廓</translation>
+        <translation type="vanished">創建單元格輪廓</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>創建輪廓</translation>
+        <translation type="vanished">創建輪廓</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>更新網格形狀設置</translation>
+        <translation type="vanished">更新網格形狀設置</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>更新粒子標量設置</translation>
+        <translation type="vanished">更新粒子標量設置</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>更新多邊形標量設置</translation>
+        <translation type="vanished">更新多邊形標量設置</translation>
     </message>
 </context>
 </TS>

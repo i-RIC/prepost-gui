@@ -581,7 +581,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Archivo de texto (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Archivo de texto (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Archivo de texto (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -709,6 +713,10 @@
     <message>
         <source>File name:</source>
         <translation>Nombre del archivo:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema coordinado</translation>
     </message>
 </context>
 <context>

@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinnstilling</translation>
+        <translation type="vanished">Pilinnstilling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysisk verdi:</translation>
+        <translation type="vanished">Fysisk verdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengde</translation>
+        <translation type="vanished">Lengde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard verdi:</translation>
+        <translation type="vanished">Standard verdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengde på skjermen:</translation>
+        <translation type="vanished">Lengde på skjermen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minste verdi å trekke:</translation>
+        <translation type="vanished">Minste verdi å trekke:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prøvetaking</translation>
+        <translation type="vanished">Prøvetaking</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hjørner</translation>
+        <translation type="vanished">Alle hjørner</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Prøvetakingshastighet:</translation>
+        <translation type="vanished">Prøvetakingshastighet:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Jeg-retning</translation>
+        <translation type="vanished">Jeg-retning</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-retning</translation>
+        <translation type="vanished">J-retning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Etter skalarverdi</translation>
+        <translation type="vanished">Etter skalarverdi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstørrelse:</translation>
+        <translation type="vanished">Pilstørrelse:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regioninnstilling (&amp;R)</translation>
+        <translation type="vanished">Regioninnstilling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinnstilling</translation>
+        <translation type="vanished">Pilinnstilling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysisk verdi:</translation>
+        <translation type="vanished">Fysisk verdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengde</translation>
+        <translation type="vanished">Lengde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard verdi:</translation>
+        <translation type="vanished">Standard verdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengde på skjermen:</translation>
+        <translation type="vanished">Lengde på skjermen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minste verdi å trekke:</translation>
+        <translation type="vanished">Minste verdi å trekke:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prøvetaking</translation>
+        <translation type="vanished">Prøvetaking</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hjørner</translation>
+        <translation type="vanished">Alle hjørner</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Prøvetakingshastighet:</translation>
+        <translation type="vanished">Prøvetakingshastighet:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Angi antall hjørner</translation>
+        <translation type="vanished">Angi antall hjørner</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Etter skalarverdi</translation>
+        <translation type="vanished">Etter skalarverdi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstørrelse:</translation>
+        <translation type="vanished">Pilstørrelse:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regioninnstilling (&amp;R)</translation>
+        <translation type="vanished">Regioninnstilling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (cellesenter)</translation>
+        <translation type="vanished">Skalar (cellesenter)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Oppdater konturinnstilling</translation>
+        <translation type="vanished">Oppdater konturinnstilling</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>For å eksportere KML for gatevisning, vis med konturfigur.</translation>
+        <translation type="vanished">For å eksportere KML for gatevisning, vis med konturfigur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>For å eksportere KML for gatevisning, bør verdiområdet settes opp manuelt.</translation>
+        <translation type="vanished">For å eksportere KML for gatevisning, bør verdiområdet settes opp manuelt.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>For å eksportere KML for gatevisning, bør koordinatsystemet spesifiseres.</translation>
+        <translation type="vanished">For å eksportere KML for gatevisning, bør koordinatsystemet spesifiseres.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalarinnstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Område</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimalt fire konturer kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire konturer kan defineres.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <translation type="vanished">For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalarinnstilling</translation>
+        <translation type="vanished">Skalarinnstilling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysisk verdi:</translation>
+        <translation type="vanished">Fysisk verdi:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Skjerminnstilling</translation>
+        <translation type="vanished">Skjerminnstilling</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regioninnstilling (&amp;R)</translation>
+        <translation type="vanished">Regioninnstilling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>For verdiområde er maks verdi mindre enn min.</translation>
+        <translation type="vanished">For verdiområde er maks verdi mindre enn min.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografiske data</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referanse informasjon</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Visningsinnstilling for rutenettform</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Oppdater konturinnstilling</translation>
+        <translation type="vanished">Oppdater konturinnstilling</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>For å eksportere KML for gatevisning, vis med konturfigur.</translation>
+        <translation type="vanished">For å eksportere KML for gatevisning, vis med konturfigur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>For å eksportere KML for gatevisning, bør verdiområdet settes opp manuelt.</translation>
+        <translation type="vanished">For å eksportere KML for gatevisning, bør verdiområdet settes opp manuelt.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>For å eksportere KML for gatevisning, bør koordinatsystemet spesifiseres.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalarinnstilling (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>For å eksportere KML for gatevisning, må fargemodus være "Diskret modus"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Område</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalar (node)</translation>
+        <translation type="vanished">Skalar (node)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <translation type="vanished">For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>For å eksportere formfil, bytt fargeinnstilling til "Diskret modus".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Arrow Physical Value Change</translation>
+        <translation type="vanished">Arrow Physical Value Change</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Oppdater pilinnstilling</translation>
+        <translation type="vanished">Oppdater pilinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Innstilling av piler</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Oppdater pilinnstilling</translation>
+        <translation type="vanished">Oppdater pilinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Innstilling av piler</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Partikler skalar innstilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farge etter verdi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Fargekartinnstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstørrelse:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Rediger partikkelinnstilling</translation>
+        <translation type="vanished">Rediger partikkelinnstilling</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Vis attributtleser</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vectorattributt Velg Endre</translation>
+        <translation type="vanished">Vectorattributt Velg Endre</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Oppdater vektorinnstilling</translation>
+        <translation type="vanished">Oppdater vektorinnstilling</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Pil Fysisk verdiendring</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Partikler Vektor Innstilling</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Rediger Polygon -innstilling</translation>
+        <translation type="vanished">Rediger Polygon -innstilling</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Innstilling for polygondatavisning</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farge etter verdi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Fargekartinnstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linje bredde:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egendefinert farge</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Lag cellekontur</translation>
+        <translation type="vanished">Lag cellekontur</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Lag kontur</translation>
+        <translation type="vanished">Lag kontur</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Oppdater innstilling for rutenettform</translation>
+        <translation type="vanished">Oppdater innstilling for rutenettform</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Oppdater partikkels skalarinnstilling</translation>
+        <translation type="vanished">Oppdater partikkels skalarinnstilling</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Oppdater Polygon Scalar Setting</translation>
+        <translation type="vanished">Oppdater Polygon Scalar Setting</translation>
     </message>
 </context>
 </TS>

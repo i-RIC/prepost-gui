@@ -1,5 +1,27 @@
 <TS version="2.1" language="lv_LV">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Atlasiet importējamo datu koordinātu sistēma</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Koordinātu sistēma</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Rediģēt...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Mrežne črte</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vse</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Samo oris</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>barva:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Mrežni indeksi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Za določitev oblike časa po meri lahko uporabite naslednje simbole: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Leto: LLLL, YY &lt;/li&gt; &lt;li&gt; Mesec: M, MM, MMM, MMMM (MMM za januar itd., MMMM za januar itd.) &lt;/li&gt; &lt;li&gt; Dan: d, dd, ddd, dddd (ddd za pon. Itd., Dddd za ponedeljek itd.) &lt;/Li &gt; &lt;li&gt; Ura: H, HH, h, hh (h, hh za prikaz AM/PM) &lt;/li&gt; &lt;li&gt; Minuta: m, mm &lt;/li&gt; &lt;li&gt; Druga: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Pokaži časovni pas</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Prosim počakaj</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Prosim počakaj...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Prosim počakaj...</translation>

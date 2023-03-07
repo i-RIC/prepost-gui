@@ -1,5 +1,202 @@
 <TS version="2.1" language="ru_RU">
 <context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>По скалярному значению</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Редактировать (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Настройка цветовой карты (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>По скалярному значению</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Форма</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Видимость</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>При выборе</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Всегда</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Никогда</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Заголовок :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Настройка шрифта:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Длина</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Формат:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Длина:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Размер и положение</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Длина</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Стандартное значение:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[РС]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Длина на экране:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[пиксель]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Минимальное значение для рисования:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Ценить:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Легенда длины</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Базовый</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>Форма стрелки</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Размер стрелки:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Ширина линии:</translation>
+    </message>
+</context>
+<context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
@@ -14,11 +211,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>В файле %1, приращение координаты x на пиксель и приращение координаты y на пиксель не совпадают. Это приемлемо, но может и ошибаться.</translation>
+        <translation type="vanished">В файле %1, приращение координаты x на пиксель и приращение координаты y на пиксель не совпадают. Это приемлемо, но может и ошибаться.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -27,6 +224,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Выберите соответствующую точку в главном окне.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Исправить положение изображения</translation>
     </message>
 </context>
 <context>
@@ -100,6 +301,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Видимость</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>При выборе</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Всегда</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Никогда</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Заголовок :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Настройка шрифта:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Отображение этикетки</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Этикетка:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Размер и положение</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Игнорировать настройку цветовой полосы при импорте</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Цвета</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Настройка цветовой полосы</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Выберите файл для импорта</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Настройка цветовой карты (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Произошла ошибка при загрузке %1 Ошибка синтаксического анализа %2 в %3, столбец %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Введите имя файла для экспорта</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Произошла ошибка при открытии %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Ценить</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Прозрачный</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Видимость</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>При выборе</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Всегда</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Никогда</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Заголовок :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Настройка шрифта:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Отображение этикетки</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Формат:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Этикетка:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Фон:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Размер и положение</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Диалог</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка цветовой карты</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Предустановки:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Игнорировать настройку цветовой полосы при импорте</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Связь между значениями и цветами</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Автоматическая настройка в зависимости от диапазона значений</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Настройка вручную</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Диапазон значений</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>автоматический</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Макс:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Мин:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Цвета</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Удалять (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Заполнить нижнюю область</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Заполнить верхнюю область</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Выключатель</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Настройка цветовой полосы</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Выберите файл для импорта</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Настройка цветовой карты (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Введите имя файла для экспорта</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Произошла ошибка при открытии %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Произошла ошибка при загрузке %1 Ошибка синтаксического анализа %2 в %3, столбец %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Пожалуйста, выберите пункт для применения)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Переключиться в дискретный режим</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Переключиться в режим градации</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Предупреждение</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Ценить</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Мин. значение</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>Максимальное значение</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Прозрачный</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>При переключении в режим градации значения устанавливаются на среднее значение каждого раздела.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Диалоговое окно «Переключиться в дискретный режим»</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>Макс:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Мин:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>Количество цветов для вставки в каждый раздел</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -131,6 +684,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Выборка</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Все вершины</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Частота выборки:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Укажите количество вершин</translation>
     </message>
 </context>
 <context>
@@ -210,6 +786,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Выберите точку в диалоговом окне «Геопривязка».</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Удалить точки</translation>
     </message>
 </context>
 <context>
@@ -323,7 +903,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
 </context>
 <context>
@@ -417,11 +997,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Настройка контура</translation>
+        <translation type="vanished">Настройка контура</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Горизонтальное поле:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Вертикальное поле:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Ширина:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Высота:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Расстояние слева</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Расстояние справа</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Расстояние от вершины</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Расстояние от дна</translation>
     </message>
 </context>
 <context>
@@ -445,6 +1068,10 @@
     <message>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Выберите, из какого файла CGNS читать сетку.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Файл CGNS</translation>
     </message>
 </context>
 <context>
@@ -472,6 +1099,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Необработанный виджет в ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +1113,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Сохрани и закрой (&amp;S)</translation>
+        <translation type="vanished">Сохрани и закрой (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +1151,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>Внесенные вами изменения будут отменены.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Не удалось открыть файл CGNS.</translation>
     </message>
 </context>
 <context>
@@ -572,6 +1210,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Выберите файл</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Имя файла должно состоять только из английских символов.</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +1239,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Выберите файл</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>Имя файла должно состоять только из английских символов.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Выбрать каталог</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>Имя папки должно состоять только из английских символов.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
     </message>
 </context>
 <context>
@@ -755,6 +1420,21 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Нет данных для импорта.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Выберите шаблон для импорта)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Предупреждение</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>Содержимое текстовой области перезаписывается шаблоном</translation>
     </message>
 </context>
 <context>
@@ -1202,16 +1882,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Скрыть детали (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Произошла ошибка при загрузке результата расчета.</translation>
+        <translation type="vanished">Произошла ошибка при загрузке результата расчета.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1943,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Произошла ошибка при сохранении %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Сохранение результатов расчета в виде файлов TPO...</translation>
     </message>
 </context>
 <context>
@@ -1438,11 +2126,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Произошла ошибка при загрузке результата расчета.</translation>
+        <translation type="vanished">Произошла ошибка при загрузке результата расчета.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +2182,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +2194,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Атрибут сетки высот не определен для типа сетки %1. Функции ввода-вывода сетки, функции создания сетки могут работать некорректно для этих типов сетки.</translation>
+        <translation type="vanished">Атрибут сетки высот не определен для типа сетки %1. Функции ввода-вывода сетки, функции создания сетки могут работать некорректно для этих типов сетки.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +2205,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Решение %1 уже существует.</translation>
+        <translation type="vanished">Решение %1 уже существует.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Файл CGNS, имя которого содержит символы, отличные от алфавитов и цифр, не может быть импортирован.</translation>
+        <translation type="vanished">Файл CGNS, имя которого содержит символы, отличные от алфавитов и цифр, не может быть импортирован.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1545,7 +2233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Не удалось сохранить файл проекта.</translation>
+        <translation type="vanished">%1 Не удалось сохранить файл проекта.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1569,7 +2257,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Этот файл проекта нельзя прочитать, так как он был создан слишком старым iRIC (версия %1 ).</translation>
+        <translation type="vanished">Этот файл проекта нельзя прочитать, так как он был создан слишком старым iRIC (версия %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -1589,7 +2277,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Этот файл предназначен для решателя %1 %2. Он несовместим с используемым вами решателем, поэтому, возможно, импорт этого файла не удастся. Вы действительно хотите импортировать этот файл?</translation>
+        <translation type="vanished">Этот файл предназначен для решателя %1 %2. Он несовместим с используемым вами решателем, поэтому, возможно, импорт этого файла не удастся. Вы действительно хотите импортировать этот файл?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +2290,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Система координат не выбрана.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Произошла ошибка при открытии файла CGNS в файле проекта: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Копирование изображения %1 к %2 не удалось.</translation>
     </message>
 </context>
 <context>
@@ -1632,6 +2328,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>Формат отображения времени</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Часовой пояс:</translation>
     </message>
 </context>
 <context>
@@ -1743,6 +2443,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Полный регион</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Активная область</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Пользовательский регион</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>я мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Я Макс:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>Дж Мин.:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J Макс.:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1813,6 +2548,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Ячейки, в которых изменение длины ячейки в направлении j превышает %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Выборка</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Все вершины</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Частота выборки:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-направление</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-направление</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Выборка</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Все вершины</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Частота выборки:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I-направление</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J-направление</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K-направление</translation>
     </message>
 </context>
 <context>

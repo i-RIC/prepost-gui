@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Impostazione scalare</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Valore misurato:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Finestra di dialogo delle impostazioni di visualizzazione dei punti</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Impostazione del display</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Punti</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superficie</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Colore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colore per valore</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Impostazione della mappa dei colori</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importare (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportare (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
-        <translation>Dimensione del punto:</translation>
+        <translation>Dimensione punto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Colore personalizzato</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Impostazione scalare</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Valore misurato:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Impostazione del display</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Dimensione del punto:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Impostazione della barra dei colori (&amp;C)</translation>
+        <translation type="vanished">Impostazione della barra dei colori (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation type="vanished">Errore</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Aggiorna impostazione freccia</translation>
+        <translation type="vanished">Aggiorna impostazione freccia</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Impostazione della freccia dei dati misurati</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Impostazione della freccia</translation>
+        <translation type="vanished">Impostazione della freccia</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valore fisico:</translation>
+        <translation type="vanished">Valore fisico:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lunghezza</translation>
+        <translation type="vanished">Lunghezza</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valore standard:</translation>
+        <translation type="vanished">Valore standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[SM]</translation>
+        <translation type="vanished">[SM]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lunghezza sullo schermo:</translation>
+        <translation type="vanished">Lunghezza sullo schermo:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valore minimo da disegnare:</translation>
+        <translation type="vanished">Valore minimo da disegnare:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valore scalare</translation>
+        <translation type="vanished">Per valore scalare</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Impostazione della barra dei colori (&amp;C)</translation>
+        <translation type="vanished">Impostazione della barra dei colori (&amp;C)</translation>
     </message>
 </context>
 </TS>

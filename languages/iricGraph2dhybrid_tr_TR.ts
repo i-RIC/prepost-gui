@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Sağ Y ekseni aralığı geçersiz.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>saniye</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>dakika</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Saat</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Günler</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>çizgiler</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>saniye</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>dakika</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>saat</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>günler</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV Dışa Aktarma (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Yazı Tipi Ayarı (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Harici</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Grafik Yazı Tipi Ayarı</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Grafik başlığı:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Efsaneler:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ekseni:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Başlık:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Keneler:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ekseni:</translation>
     </message>
 </context>
 <context>

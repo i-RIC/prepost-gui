@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Άξονες</translation>
+        <translation type="vanished">Άξονες</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Βαθμωτό μέγεθος</translation>
+        <translation type="vanished">Βαθμωτό μέγεθος</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ενημέρωση ρύθμισης περιγράμματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης περιγράμματος</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (κέντρο κυττάρων)</translation>
+        <translation type="vanished">Scalar (κέντρο κυττάρων)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+        <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Scalar Setting</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Κλιμωτή τιμή για ανύψωση</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Ρύθμιση χρώματος</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Με κλιμακωτή τιμή</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Scalar Value:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Ρύθμιση οθόνης</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Ρύθμιση περιοχής (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Λάθος</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Για το εύρος τιμών, η μέγιστη τιμή είναι μικρότερη από την ελάχιστη τιμή.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Η ρύθμιση περιγράμματος δεν είναι διαθέσιμη, επειδή αυτό το αποτέλεσμα δεν περιέχει τιμές κλίμακας κυψέλης.</translation>
+        <translation type="vanished">Η ρύθμιση περιγράμματος δεν είναι διαθέσιμη, επειδή αυτό το αποτέλεσμα δεν περιέχει τιμές κλίμακας κυψέλης.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης σχήματος πλέγματος</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Κλιμακωτή τιμή για υψόμετρο</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Ενημέρωση ρύθμισης περιγράμματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης περιγράμματος</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ρύθμιση Scalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Διάλογος</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Με κλιμακωτή τιμή</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+        <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Δημιουργία περιγράμματος</translation>
+        <translation type="vanished">Δημιουργία περιγράμματος</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης σχήματος πλέγματος</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

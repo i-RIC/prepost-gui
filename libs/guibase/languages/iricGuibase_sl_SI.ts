@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Oblika</translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežne črte</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Vse</translation>
+        <translation>Vse</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Samo oris</translation>
+        <translation>Samo oris</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Barva:</translation>
+        <translation>barva:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežni indeksi</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Vidno</translation>
+        <translation>Vidno</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Določite obliko številke v obliki printf. Na primer: &quot; %5.2f &quot;za 3.141592 -&gt; 3.14&quot; %4.2e &quot;za 12300 -&gt; 1,23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Določite obliko številke v obliki printf. Na primer: " %5.2f "za 3.141592 -&gt; 3.14" %4.2e "za 12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>đường lưới</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Chỉ phác thảo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Màu sắc:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Chỉ số lưới</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dễ thấy</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể sử dụng các ký hiệu sau để xác định định dạng thời gian tùy chỉnh: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Năm: YYYY, YY &lt;/li&gt; &lt;li&gt; Tháng: M, MM, MMM, MMMM (MMM cho tháng 1, v.v., MMMM cho tháng 1, v.v.) &lt;/li&gt; &lt;li&gt; Ngày: d, dd, ddd, dddd (ddd cho Thứ Hai, v.v., dddd cho Thứ Hai, v.v.) &lt;/ li &gt; &lt;li&gt; Giờ: H, HH, h, hh (h, hh cho hiển thị AM / PM) &lt;/li&gt; &lt;li&gt; Phút: m, mm &lt;/li&gt; &lt;li&gt; Thứ hai: s, ss &lt;/ li &gt; &lt;li&gt; SA / CH: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Hiển thị múi giờ</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Vui lòng chờ</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Vui lòng chờ...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Vui lòng chờ...</translation>

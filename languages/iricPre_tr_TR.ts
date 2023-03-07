@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Bu CGNS dosyası çözücü bilgisine sahip değildir. Bu CGNS dosyasının çözücü ile uyumlu olup olmadığını kontrol edemiyoruz. Uyumlu değilse, belki de şebekenin yalnızca bir kısmı içe aktarılacaktır. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Bu dosya içe aktarılabilecek ızgara içermiyor.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Izgara seçin</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>İçe aktarılacak ızgarayı seçin.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Eksen Ayarı</translation>
+        <translation type="vanished">Eksen Ayarı</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Gözle görülür</translation>
+        <translation type="vanished">Gözle görülür</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Ekran ayarı</translation>
+        <translation type="vanished">Ekran ayarı</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>ızgara rengi</translation>
+        <translation type="vanished">ızgara rengi</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>düğüm özelliği</translation>
+        <translation type="vanished">düğüm özelliği</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Hücre özelliği</translation>
+        <translation type="vanished">Hücre özelliği</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">eksenler</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Gözle görülür</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Renk:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Z Yönü Ölçeğini Düzenle</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-yönü Ölçeği</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Yeni Z-yönü ölçeğini girin.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Renk Ayarını Düzenle</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Z-yönü Ölçeğini Düzenle</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Yeni Z yönü ölçeğini girin.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Ekran Ayarını Düzenle</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Yükseklik:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Izgara Rengi</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>Özel Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Renk Haritası Ayarı</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -166,30 +255,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Gözle görülür</translation>
+        <translation>Görünür</translation>
     </message>
     <message>
         <source>Color:</source>
         <translation>Renk:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Z Yönü Ölçeğini Düzenle</translation>
+        <source>Background Color:</source>
+        <translation>Arka plan rengi:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-yönü Ölçeği</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Yeni Z-yönü ölçeğini girin.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Renk Ayarını Düzenle</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z yönü ölçeği:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Tüm sınır koşullarını silmek istediğinizden emin misiniz?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Ekran Ayarını Düzenle</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Sınır Koşulu Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>İsimler için yazı tipi ayarı</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Büyük/küçük harf seç</translation>
+        <translation type="vanished">Büyük/küçük harf seç</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Lütfen hangi durumda olduğunu seçin %1 hesaplama koşullarını içe aktarmak için.</translation>
+        <translation type="vanished">Lütfen hangi durumda olduğunu seçin %1 hesaplama koşullarını içe aktarmak için.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Nokta Kümesi Verileri (&amp;O)</translation>
+        <translation type="vanished">Nokta Kümesi Verileri (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Web'den içe aktar (&amp;I)...</translation>
+        <translation type="vanished">Web'den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Skalarbar'ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Verileri içe aktarma %1 arızalı.</translation>
+        <translation type="vanished">Verileri içe aktarma %1 arızalı.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Coğrafi verileri içe aktarmak için önce koordinat sistemini belirtin.</translation>
+        <translation type="vanished">Coğrafi verileri içe aktarmak için önce koordinat sistemini belirtin.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>İçe aktarmak (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Web'den Yüksekliği İçe Aktar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Coğrafi verileri içe aktarmak için önce proje için koordinat sistemini belirtin.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Varyasyon Ayarını Düzenle (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>diyalog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Varyasyon Ayarı</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Varyasyonu etkinleştir</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Çözücüye geçmek için değişiklik:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Not: Varyasyon etkinleştirildiğinde, "Varsayılan" adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. "Nesne Tarayıcı"dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. "Çözücüye geçmek için varyasyon" ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Izgara Hücresi Öznitelik Görüntüleme Ayarı</translation>
+        <translation type="vanished">Izgara Hücresi Öznitelik Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Nokta bulutu verileri oluşturun</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Izgara Hücresi Özniteliği Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Izgara Düğümü Öznitelik Görüntüleme Ayarı</translation>
+        <translation type="vanished">Izgara Düğümü Öznitelik Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Nokta bulutu verileri oluşturun</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Izgara Düğümü Özniteliği Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Renk Açıklama Ayarı</translation>
+        <translation type="vanished">Renk Açıklama Ayarı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Skaler Çubuğu Ayarı</translation>
+        <translation type="vanished">Skaler Çubuğu Ayarı</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Gözle görülür</translation>
+        <translation type="vanished">Gözle görülür</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Değer</translation>
+        <translation type="vanished">Değer</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Düzenlemek...</translation>
+        <translation type="vanished">Düzenlemek...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation type="vanished">Biçim</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Gözle görülür</translation>
+        <translation type="vanished">Gözle görülür</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Başlık</translation>
+        <translation type="vanished">Başlık</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Başlık :</translation>
+        <translation type="vanished">Başlık :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Yazı Tipi Ayarı:</translation>
+        <translation type="vanished">Yazı Tipi Ayarı:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Düzenlemek...</translation>
+        <translation type="vanished">Düzenlemek...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Etiket Ekranı</translation>
+        <translation type="vanished">Etiket Ekranı</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Etiket sayısı :</translation>
+        <translation type="vanished">Etiket sayısı :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Biçim:</translation>
+        <translation type="vanished">Biçim:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Oryantasyon :</translation>
+        <translation type="vanished">Oryantasyon :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Dikey</translation>
+        <translation type="vanished">Dikey</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Yatay</translation>
+        <translation type="vanished">Yatay</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Boy</translation>
+        <translation type="vanished">Boy</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Renk çubuğu boyutunu pencere boyutuna göre oran olarak belirtin.</translation>
+        <translation type="vanished">Renk çubuğu boyutunu pencere boyutuna göre oran olarak belirtin.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Genişlik :</translation>
+        <translation type="vanished">Genişlik :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>1 belirtirseniz, Renk çubuğu genişliği pencere genişliğiyle aynıdır.</translation>
+        <translation type="vanished">1 belirtirseniz, Renk çubuğu genişliği pencere genişliğiyle aynıdır.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Boy uzunluğu :</translation>
+        <translation type="vanished">Boy uzunluğu :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>1 belirtirseniz, Renk çubuğu yüksekliği pencere yüksekliğiyle aynıdır.</translation>
+        <translation type="vanished">1 belirtirseniz, Renk çubuğu yüksekliği pencere yüksekliğiyle aynıdır.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Konum</translation>
+        <translation type="vanished">Konum</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Pencere boyutuna göre oran olarak Renk çubuğunun sol alt konumunu belirtin.</translation>
+        <translation type="vanished">Pencere boyutuna göre oran olarak Renk çubuğunun sol alt konumunu belirtin.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>0 belirtirseniz, Renk çubuğunun sol kenarı pencerenin sol kenarında bulunur.</translation>
+        <translation type="vanished">0 belirtirseniz, Renk çubuğunun sol kenarı pencerenin sol kenarında bulunur.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>0 belirtirseniz, Renk çubuğu alt kısmı pencerenin altında bulunur.</translation>
+        <translation type="vanished">0 belirtirseniz, Renk çubuğu alt kısmı pencerenin altında bulunur.</translation>
     </message>
 </context>
 <context>

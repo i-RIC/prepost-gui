@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>प्रत्येक के लिए</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>आप नाम और मान दोनों के लिए समान कॉलम निर्दिष्ट नहीं कर सकते।</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>समन्वय प्रणाली:</translation>
     </message>
 </context>
 </TS>

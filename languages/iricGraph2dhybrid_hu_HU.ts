@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>A jobb Y-tengely tartomány érvénytelen.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Másodpercek</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Percek</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Órák</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Napok</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Vonalak</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>másodpercig</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>percek</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>órák</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>napok</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV export (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Betűtípus beállítása (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Külső</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagram betűtípus beállítása</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagram címe:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendák:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X tengely:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kullancsok:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y tengely:</translation>
     </message>
 </context>
 <context>

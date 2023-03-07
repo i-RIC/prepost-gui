@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Fjarlægðu miðlínuhyrning</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Skjárstilling</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>Tệp văn bản (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">Tệp văn bản (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>tệp văn bản (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>Tên tệp:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Hệ tọa độ</translation>
     </message>
 </context>
 <context>

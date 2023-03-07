@@ -85,6 +85,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Diese CGNS-Datei enthält keine Solver-Informationen. Wir können nicht überprüfen, ob diese CGNS-Datei mit dem Solver kompatibel ist. Wenn es nicht kompatibel ist, wird möglicherweise nur ein Teil des Rasters importiert. Möchten Sie das Raster wirklich aus dieser Datei importieren?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Diese Datei enthält kein Gitter, das importiert werden kann.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Raster auswählen</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Wählen Sie das zu importierende Raster aus.</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -127,38 +139,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Achseneinstellung</translation>
+        <translation type="vanished">Achseneinstellung</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sichtbar</translation>
+        <translation type="vanished">Sichtbar</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farbe:</translation>
+        <translation type="vanished">Farbe:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Bildschirmeinstellung</translation>
+        <translation type="vanished">Bildschirmeinstellung</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">Gitterfarbe</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">Knotenattribut</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">Zellenattribut</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Freiwählbare Farbe</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">Achsen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">Sichtbar</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Farbe:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Z-Richtungsskala bearbeiten</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z-Richtungsskala</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Geben Sie einen neuen Maßstab in Z-Richtung ein.</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">Farbeinstellung bearbeiten</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Skalierung in Z-Richtung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Geben Sie die neue Z-Richtungsskala ein.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Anzeigeeinstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Elevation:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>Gitterfarbe</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>Knotenattribut</translation>
+        <source>Cusom Color</source>
+        <translation>Benutzerdefinierte Farbe</translation>
     </message>
     <message>
-        <source>Cell attribute</source>
-        <translation>Zellenattribut</translation>
+        <source>Color by value</source>
+        <translation>Farbe nach Wert</translation>
     </message>
     <message>
-        <source>Custom Color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <source>Colormap Setting</source>
+        <translation>Colormap-Einstellung</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -172,24 +261,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>Farbe:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Z-Richtungsskala bearbeiten</translation>
+        <source>Background Color:</source>
+        <translation>Hintergrundfarbe:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z-Richtungsskala</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Geben Sie einen neuen Maßstab in Z-Richtung ein.</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>Farbeinstellung bearbeiten</translation>
+        <source>Z-direction scale:</source>
+        <translation>Maßstab in Z-Richtung:</translation>
     </message>
 </context>
 <context>
@@ -275,6 +353,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Möchten Sie wirklich alle Randbedingungen löschen?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Anzeigeeinstellung bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -378,6 +460,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Einstellung der Randbedingungsanzeige</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Schrifteinstellung für Namen</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
@@ -409,11 +502,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Fall auswählen</translation>
+        <translation type="vanished">Fall auswählen</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Bitte wählen Sie aus welchem Fall in %1 Berechnungsbedingungen zu importieren.</translation>
+        <translation type="vanished">Bitte wählen Sie aus welchem Fall in %1 Berechnungsbedingungen zu importieren.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +566,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Punktsatzdaten (&amp;O)</translation>
+        <translation type="vanished">Punktsatzdaten (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -638,7 +731,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Aus dem Internet importieren (&amp;I)...</translation>
+        <translation type="vanished">Aus dem Internet importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -654,7 +747,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Skalarleiste einrichten...</translation>
+        <translation type="vanished">Skalarleiste einrichten...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -694,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Importieren von Daten aus %1 gescheitert.</translation>
+        <translation type="vanished">Importieren von Daten aus %1 gescheitert.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -718,7 +811,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>Um die geografischen Daten zu importieren, geben Sie zuerst das Koordinatensystem an.</translation>
+        <translation type="vanished">Um die geografischen Daten zu importieren, geben Sie zuerst das Koordinatensystem an.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -768,6 +861,64 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Importieren (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importieren Sie die Höhe aus dem Internet (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Um die geografischen Daten zu importieren, geben Sie zuerst das Koordinatensystem für das Projekt an.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Variationseinstellung bearbeiten (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Variationseinstellung</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Variation aktivieren</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>An Solver zu übergebende Variation:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Hinweis: Wenn die Variante aktiviert ist, wird die Variante mit dem Namen „Standard“ erstellt und alle geografischen Daten dorthin verschoben. Sie können Variationen aus dem "Objektbrowser" hinzufügen, umbenennen und entfernen. Sie können geografische Daten zwischen Variationen verschieben und kopieren. Die Gitterattributdaten, die aus der Variation erstellt wurden, die Sie mit "Variation zur Übergabe an Solver" auswählen, werden an Solver übergeben. Sie können mehrere Variationen vorbereiten, wechseln, welche an den Solver übergeben werden, und den Effekt der Differenz sicherstellen.</translation>
     </message>
 </context>
 <context>
@@ -828,7 +979,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Anzeigeeinstellung für Rasterzellenattribute</translation>
+        <translation type="vanished">Anzeigeeinstellung für Rasterzellenattribute</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -905,6 +1056,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktwolkendaten generieren</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Anzeigeeinstellung für Rasterzellenattribute</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1242,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Anzeigeeinstellung für Gitterknotenattribute</translation>
+        <translation type="vanished">Anzeigeeinstellung für Gitterknotenattribute</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1153,6 +1319,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktwolkendaten generieren</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Anzeigeeinstellung für Rasterknotenattribute</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1707,26 +1888,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Einstellung der Farblegende</translation>
+        <translation type="vanished">Einstellung der Farblegende</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Skalarbalkeneinstellung</translation>
+        <translation type="vanished">Skalarbalkeneinstellung</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sichtbar</translation>
+        <translation type="vanished">Sichtbar</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wert</translation>
+        <translation type="vanished">Wert</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bearbeiten...</translation>
+        <translation type="vanished">Bearbeiten...</translation>
     </message>
 </context>
 <context>
@@ -1805,99 +1986,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sichtbar</translation>
+        <translation type="vanished">Sichtbar</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titel :</translation>
+        <translation type="vanished">Titel :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Schrifteinstellung:</translation>
+        <translation type="vanished">Schrifteinstellung:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bearbeiten...</translation>
+        <translation type="vanished">Bearbeiten...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Etikettenanzeige</translation>
+        <translation type="vanished">Etikettenanzeige</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Anzahl Etiketten :</translation>
+        <translation type="vanished">Anzahl Etiketten :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientierung :</translation>
+        <translation type="vanished">Orientierung :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation type="vanished">Vertikal</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontal</translation>
+        <translation type="vanished">Horizontal</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Größe</translation>
+        <translation type="vanished">Größe</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Geben Sie die Farbbalkengröße als Rate im Verhältnis zur Fenstergröße an.</translation>
+        <translation type="vanished">Geben Sie die Farbbalkengröße als Rate im Verhältnis zur Fenstergröße an.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Breite :</translation>
+        <translation type="vanished">Breite :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Wenn Sie 1 angeben, entspricht die Breite der Farbleiste der Fensterbreite.</translation>
+        <translation type="vanished">Wenn Sie 1 angeben, entspricht die Breite der Farbleiste der Fensterbreite.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Höhe :</translation>
+        <translation type="vanished">Höhe :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Wenn Sie 1 angeben, entspricht die Höhe der Farbleiste der Fensterhöhe.</translation>
+        <translation type="vanished">Wenn Sie 1 angeben, entspricht die Höhe der Farbleiste der Fensterhöhe.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Legen Sie die linke untere Position des Farbbalkens als Rate im Verhältnis zur Fenstergröße fest.</translation>
+        <translation type="vanished">Legen Sie die linke untere Position des Farbbalkens als Rate im Verhältnis zur Fenstergröße fest.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Wenn Sie 0 angeben, befindet sich der linke Rand der Farbleiste am linken Rand des Fensters.</translation>
+        <translation type="vanished">Wenn Sie 0 angeben, befindet sich der linke Rand der Farbleiste am linken Rand des Fensters.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Wenn Sie 0 angeben, befindet sich der untere Farbbalken am unteren Fensterrand.</translation>
+        <translation type="vanished">Wenn Sie 0 angeben, befindet sich der untere Farbbalken am unteren Fensterrand.</translation>
     </message>
 </context>
 <context>

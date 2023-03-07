@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>다음 파일을 가져옵니다. 괜찮아?</translation>
+        <translation type="vanished">다음 파일을 가져옵니다. 괜찮아?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>가져올 파일을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>모두 선택 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>모두 선택 해제 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>경고</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>선택한 파일 간의 시간 간격이 동일하지 않습니다.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>파일 이름이 패턴과 일치하지 않습니다</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>시간대:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>시간 불일치에 대한 차원 값입니다.</translation>
+        <translation type="vanished">시간 불일치에 대한 차원 값입니다.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>좌표계가 지정되지 않았습니다. %1. 좌표계를 수동으로 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>시계열 래스터 데이터를 이미 가져왔습니다. 다른 데이터를 가져오려면 이미 가져온 데이터를 먼저 삭제하십시오.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>열리는 %1 실패한.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>차원 값 %1 불일치.</translation>
+        <translation type="vanished">차원 값 %1 불일치.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>시간 정의를 구문 분석하는 동안 오류가 발생했습니다. %1</translation>
+        <translation type="vanished">시간 정의를 구문 분석하는 동안 오류가 발생했습니다. %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 경도, 위도 또는 x, y 데이터가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>시계열 래스터 데이터를 이미 가져왔습니다. 다른 데이터를 가져오려면 이미 가져온 데이터를 먼저 삭제하십시오.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>원래 시간:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>시간대:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>정보</translation>
+        <translation type="vanished">정보</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 폴더의 파일 %2 수입됩니다.</translation>
+        <translation type="vanished">%1 폴더의 파일 %2 수입됩니다.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>시간 불일치에 대한 차원 값입니다.</translation>
+        <translation type="vanished">시간 불일치에 대한 차원 값입니다.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>시계열 래스터 데이터를 이미 가져왔습니다. 다른 데이터를 가져오려면 이미 가져온 데이터를 먼저 삭제하십시오.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>에서 변환된 데이터를 가져올 때 오류가 발생했습니다. %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>열 때 오류가 발생했습니다. %1.</translation>
     </message>
 </context>
 </TS>

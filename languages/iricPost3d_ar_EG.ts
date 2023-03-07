@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>إعداد المحيط (مركز الخلية)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">إعداد المحيط (مركز الخلية)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>قيمة:</translation>
+        <translation type="vanished">قيمة:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>المناطق</translation>
+        <translation type="vanished">المناطق</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>يضيف (&amp;A)</translation>
+        <translation type="vanished">يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>يزيل (&amp;R)</translation>
+        <translation type="vanished">يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>نطاق %1</translation>
+        <translation type="vanished">نطاق %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>يضيف (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>يزيل (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>يتراوح %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>وجه</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>محيط شكل</translation>
+        <translation type="vanished">محيط شكل</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">إعداد الكونتور</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>إعداد الكونتور (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>وجه %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>إعداد الكونتور</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>وجوه</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>إعداد الكونتور</translation>
+        <translation type="vanished">إعداد الكونتور</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>القيمة المادية:</translation>
+        <translation type="vanished">القيمة المادية:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>وجوه</translation>
+        <translation type="vanished">وجوه</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>يضيف (&amp;A)</translation>
+        <translation type="vanished">يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>يزيل (&amp;R)</translation>
+        <translation type="vanished">يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>وجه %1</translation>
+        <translation type="vanished">وجه %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>تغيير عنصر مستعرض الكائنات</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>يضيف (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>يزيل (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>وجه %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>اتجاه</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>أنا</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>ي</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>ك</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>موافق</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>أنا ماكس</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J مين</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J ماكس</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>ك مين</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>ك ماكس</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>ممكن</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>شكل الشبكة</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>إعداد عرض شكل الشبكة</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>وجه</translation>
+        <translation type="vanished">وجه</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>وجه %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>وجه %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>إعداد الأسهم</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>أساسي</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>طول وسيلة الإيضاح</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>وجوه</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>يضيف (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>يزيل (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>وجه %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>طول وسيلة الإيضاح</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>يمكن تحديد أربعة أسهم كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة أسهم كحد أقصى.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>إعداد عددي الجسيمات</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>حجم النقطة:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>تحرير إعداد الجسيمات</translation>
+        <translation type="vanished">تحرير إعداد الجسيمات</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>سمة المتجه حدد التغيير</translation>
+        <translation type="vanished">سمة المتجه حدد التغيير</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>تحديث إعداد المتجه</translation>
+        <translation type="vanished">تحديث إعداد المتجه</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>تغيير القيمة المادية للسهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>إعداد ناقل الجسيمات</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>تحديث</translation>
+        <translation type="vanished">تحديث</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>إنشاء كونتور</translation>
+        <translation type="vanished">إنشاء كونتور</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>تحديث إعداد شكل الشبكة</translation>
+        <translation type="vanished">تحديث إعداد شكل الشبكة</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>تحديث إعداد عددي الجسيمات</translation>
+        <translation type="vanished">تحديث إعداد عددي الجسيمات</translation>
     </message>
 </context>
 </TS>

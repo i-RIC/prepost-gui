@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Sekery</translation>
+        <translation type="vanished">Sekery</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Skalární</translation>
+        <translation type="vanished">Skalární</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizujte nastavení obrysu</translation>
+        <translation type="vanished">Aktualizujte nastavení obrysu</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalární (střed buňky)</translation>
+        <translation type="vanished">Skalární (střed buňky)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Lze definovat maximálně čtyři obrysy.</translation>
+        <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalární nastavení</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Skalární hodnota pro nadmořskou výšku</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Nastavení barev</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Vlastní barva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Podle skalární hodnoty</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Skalární hodnota:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Chyba</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Nastavení obrysu není k dispozici, protože tento výsledek neobsahuje skalární hodnoty buněk.</translation>
+        <translation type="vanished">Nastavení obrysu není k dispozici, protože tento výsledek neobsahuje skalární hodnoty buněk.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Nastavení zobrazení tvaru mřížky</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Skalární hodnota pro Elevation</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizujte nastavení obrysu</translation>
+        <translation type="vanished">Aktualizujte nastavení obrysu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalární nastavení (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Podle skalární hodnoty</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Lze definovat maximálně čtyři obrysy.</translation>
+        <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Vytvořte obrys</translation>
+        <translation type="vanished">Vytvořte obrys</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Aktualizovat nastavení tvaru mřížky</translation>
+        <translation type="vanished">Aktualizovat nastavení tvaru mřížky</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

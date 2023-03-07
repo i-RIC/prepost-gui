@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>個別の値を指定</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>座標系:</translation>
     </message>
 </context>
 </TS>

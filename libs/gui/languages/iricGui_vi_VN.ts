@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Chọn bộ giải</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút "OK".</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Định dạng văn bản</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Tọa độ trong Thanh trạng thái</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Số thập phân:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Trình duyệt thuộc tính</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>chữ số thập phân</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>tọa độ:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Giá trị:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục &quot;%1&quot;. Bộ giải này bị bỏ qua. %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục "%1". Bộ giải này bị bỏ qua. %2</translation>
     </message>
 </context>
 <context>
@@ -1439,7 +1437,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dự án này dường như được mở bởi một cửa sổ iRIC GUI khác. Bạn không thể mở một thư mục dự án từ nhiều cửa sổ GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Dự án đã mở không được sao chép vào thư mục công việc và bạn sẽ buộc phải lưu các sửa đổi bạn thực hiện cho dự án này. Nếu bạn muốn giữ lại dự án hiện tại, trước tiên hãy lưu nó vào một dự án khác.</translation>
     </message>
     <message>
@@ -1607,8 +1605,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Cửa sổ phụ hiện đang hoạt động không hỗ trợ xuất hình đường viền.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển &quot;Cài đặt hiển thị&quot; thành &quot;Hình đường viền&quot;, không phải &quot;Viền màu&quot; hoặc &quot;Đường viền&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>Tập tin cài đặt (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành "Chế độ rời rạc".</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,8 +2117,8 @@ Option -&gt; Preferences</source>
         <translation>Mở cửa sổ xử lý hậu kỳ 2D mới</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird&apos;s-Eye mới</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird's-Eye mới</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

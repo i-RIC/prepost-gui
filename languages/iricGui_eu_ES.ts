@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Saltatu tasa:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Une honetan ez dago leihorik hautatuta.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Etengabeko argazkia / Filma / Google Earth Export Wizard</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Atzeko planoko sareta</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Letra-tipo lehenetsia</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Testu formatua</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Zeharkako atalen artean:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Ohikoa</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Sarearen forma / Sarearen indizeak</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Kolore Barra</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketak</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Geziaren luzera kondaira</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Aurreprozesatzeko leihoa</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Gora / Ura behera</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Ibai Inkestaren Datuak Zehar-ebakien izenak</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Muga Baldintza Izenak</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Bistaratzeko leihoak</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketak:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Diagrama leihoak</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Kondairak:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ardatzaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ardatz-tikinak:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Kopiatu karpeta proiektua Working Directory-n irekitzean</translation>
+        <translation type="vanished">Kopiatu karpeta proiektua Working Directory-n irekitzean</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Egoera barran koordenatuak</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Leku hamartarrak:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Atributuen arakatzailea</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Zenbaki hamartarrak</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Koordenatuak:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Balioa:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Zehaztu gabea)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Irteera ezarpena</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Irteera kalkuluak fitxategi bereizietan lortzen du</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Argazkia behar bezala gorde da %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Fitxategi guztiak sartu %1 ezabatuta dago.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Ezarpen fitxategia (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Forma fitxategia esportatzeko, aldatu Kolore modua "Modu diskretua".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Datu geografikoak (webgunetik)</translation>
+        <translation type="vanished">Datu geografikoak (webgunetik)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ktrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Kargatu berriro CGNS fitxategia (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Kargatu berriro CGNS fitxategia</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Datu geografikoak (webetik kota)</translation>
     </message>
 </context>
 </TS>

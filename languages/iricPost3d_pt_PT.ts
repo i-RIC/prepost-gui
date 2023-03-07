@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Configuração de contorno (centro da célula)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Faixa</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Configuração de contorno (centro da célula)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Valor:</translation>
+        <translation type="vanished">Valor:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regiões</translation>
+        <translation type="vanished">Regiões</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar (&amp;A)</translation>
+        <translation type="vanished">Adicionar (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Retirar (&amp;R)</translation>
+        <translation type="vanished">Retirar (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuração da barra de cores (&amp;C)</translation>
+        <translation type="vanished">Configuração da barra de cores (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Faixa %1</translation>
+        <translation type="vanished">Faixa %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Podem ser definidos no máximo quatro contornos.</translation>
+        <translation type="vanished">Podem ser definidos no máximo quatro contornos.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Faixa %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Face</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Contorno</translation>
+        <translation type="vanished">Contorno</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Configuração de Contorno</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Configuração de contorno (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Face %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Configuração de Contorno</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Rostos</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Configuração de Contorno</translation>
+        <translation type="vanished">Configuração de Contorno</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor Físico:</translation>
+        <translation type="vanished">Valor Físico:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Rostos</translation>
+        <translation type="vanished">Rostos</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar (&amp;A)</translation>
+        <translation type="vanished">Adicionar (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Retirar (&amp;R)</translation>
+        <translation type="vanished">Retirar (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Configuração da barra de cores (&amp;C)</translation>
+        <translation type="vanished">Configuração da barra de cores (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Enfrentar %1</translation>
+        <translation type="vanished">Enfrentar %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Podem ser definidos no máximo quatro contornos.</translation>
+        <translation type="vanished">Podem ser definidos no máximo quatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Alteração de item do navegador de objetos</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Face %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direção</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>EU</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>k</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Faixa</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Estou dentro</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>eu máximo</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Habilitado</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Forma de grade</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Configuração de exibição de forma de grade</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Enfrentar</translation>
+        <translation type="vanished">Enfrentar</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Face %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Face %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuração de setas</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>básico</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Comprimento Legenda</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Rostos</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Enfrentar %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Comprimento Legenda</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Podem ser definidas no máximo quatro setas.</translation>
+        <translation type="vanished">Podem ser definidas no máximo quatro setas.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Configuração Escalar de Partículas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Cor por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuração do mapa de cores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamanho do ponto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Cor customizada</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Editar configuração de partícula</translation>
+        <translation type="vanished">Editar configuração de partícula</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Alteração de seleção de atributo vetorial</translation>
+        <translation type="vanished">Alteração de seleção de atributo vetorial</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Atualizar a configuração do vetor</translation>
+        <translation type="vanished">Atualizar a configuração do vetor</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Alteração do valor físico da seta</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Configuração do Vetor de Partículas</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Atualizar</translation>
+        <translation type="vanished">Atualizar</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Criar Contorno</translation>
+        <translation type="vanished">Criar Contorno</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atualizar configuração de formato de grade</translation>
+        <translation type="vanished">Atualizar configuração de formato de grade</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Atualizar configuração escalar de partículas</translation>
+        <translation type="vanished">Atualizar configuração escalar de partículas</translation>
     </message>
 </context>
 </TS>

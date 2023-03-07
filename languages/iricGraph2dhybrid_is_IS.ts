@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Svið hægra Y-ása er ógilt.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekúndur</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Fundargerðir</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Klukkutímar</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Dagar</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Línur</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekúndur</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>mínútur</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>klukkustundir</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>daga</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV útflutningur (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Leturstilling (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ytri</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Myndleturstilling</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titill myndrits:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Þjóðsögur:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ás:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ticks:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ás:</translation>
     </message>
 </context>
 <context>

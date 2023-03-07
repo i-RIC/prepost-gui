@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Hàng %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Thêm dòng mới (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Chỉnh sửa cài đặt màu</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Cài đặt hiển thị nhóm đa tuyến</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>Tệp CSV (Dòng) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
 </context>
 <context>

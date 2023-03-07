@@ -1,5 +1,27 @@
 <TS version="2.1" language="pl_PL">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Wybierz układ współrzędnych danych do zaimportowania</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>System współrzędnych</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Edytować...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

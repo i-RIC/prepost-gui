@@ -95,6 +95,18 @@ Do you really want to import grid from this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
 この CGNS ファイルから格子をインポートしますか?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>このファイルには、インポートできるグリッドが含まれていません。</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>グリッドを選択</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>インポートするグリッドを選択します。</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -141,38 +153,115 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>座標軸の設定</translation>
+        <translation type="vanished">座標軸の設定</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>表示設定</translation>
+        <translation type="vanished">表示設定</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="vanished">格子色</translation>
+    </message>
+    <message>
+        <source>Node attribute</source>
+        <translation type="vanished">格子点属性</translation>
+    </message>
+    <message>
+        <source>Cell attribute</source>
+        <translation type="vanished">セル属性</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="vanished">座標軸</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="vanished">表示</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">色:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowDataModel</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="vanished">Z方向の倍率の編集</translation>
+    </message>
+    <message>
+        <source>Z-direction Scale</source>
+        <translation type="vanished">Z方向の倍率</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="vanished">Z方向の倍率を入力してください。</translation>
+    </message>
+    <message>
+        <source>Edit Color Setting</source>
+        <translation type="vanished">表示色設定</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Z方向の倍率の編集</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Z方向の倍率を入力してください。</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>表示設定の編集</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>標高:</translation>
     </message>
     <message>
         <source>Grid Color</source>
         <translation>格子色</translation>
     </message>
     <message>
-        <source>Node attribute</source>
-        <translation>格子点属性</translation>
-    </message>
-    <message>
-        <source>Cell attribute</source>
-        <translation>セル属性</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
+        <source>Cusom Color</source>
         <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により設定</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
         <source>Axes</source>
@@ -186,24 +275,13 @@ Do you really want to import grid from this file?</source>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
-</context>
-<context>
-    <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <source>Edit Z-direction Scale</source>
-        <translation>Z方向の倍率の編集</translation>
+        <source>Background Color:</source>
+        <translation>背景色:</translation>
     </message>
     <message>
-        <source>Z-direction Scale</source>
-        <translation>Z方向の倍率</translation>
-    </message>
-    <message>
-        <source>Input new Z-direction scale.</source>
-        <translation>Z方向の倍率を入力してください。</translation>
-    </message>
-    <message>
-        <source>Edit Color Setting</source>
-        <translation>表示色設定</translation>
+        <source>Z-direction scale:</source>
+        <translation>Z方向の倍率:</translation>
     </message>
 </context>
 <context>
@@ -289,6 +367,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>本当に全ての境界条件を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>表示設定の編集</translation>
     </message>
 </context>
 <context>
@@ -396,6 +478,17 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>境界条件表示設定</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>名前のフォント設定</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Select file to import</source>
@@ -419,11 +512,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>計算ケースの選択</translation>
+        <translation type="vanished">計算ケースの選択</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
+        <translation type="vanished">%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
     </message>
     <message>
         <source>Success</source>
@@ -503,7 +596,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>DEMデータ(&amp;O)</translation>
+        <translation type="vanished">DEMデータ(&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
@@ -728,7 +821,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>インポート (&amp;Webから)</translation>
+        <translation type="vanished">インポート (&amp;Webから)</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -744,7 +837,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>凡例の設定...</translation>
+        <translation type="vanished">凡例の設定...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -792,7 +885,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>%1 からデータをインポートするのに失敗しました。</translation>
+        <translation type="vanished">%1 からデータをインポートするのに失敗しました。</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
@@ -816,7 +909,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
+        <translation type="vanished">この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
@@ -871,6 +964,72 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>インポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Webから標高をインポート...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>この地理情報データをインポートするには、先にプロジェクトの座標系を指定して下さい。</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>バリエーション設定の編集 (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>デフォルト</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>バリエーション設定</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>バリエーションを有効化</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>ソルバーに渡すバリエーション:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>備考:
+
+バリエーションを有効にすると、「デフォルト」という名前のバリエーションが作成され、すべての地理情報がそのバリエーションに移動されます。
+
+バリエーションの追加、名前の変更、削除は「オブジェクトブラウザ」から行えます。
+
+地理情報は、バリエーション間で移動・コピーすることができます。
+
+「ソルバーに渡すバリエーション」で選択したバリエーションからマッピングして生成された格子属性が、ソルバに渡されます。複数のバリエーションを用意して、どのバリエーションをソルバに渡すか切り替えてソルバを実行することで、違いの影響を確認できます。</translation>
     </message>
 </context>
 <context>
@@ -935,7 +1094,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>格子セル属性の表示設定</translation>
+        <translation type="vanished">格子セル属性の表示設定</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1024,6 +1183,21 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>このデータから点群データを生成</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>格子セル属性の表示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1217,7 +1391,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>格子点属性の表示設定</translation>
+        <translation type="vanished">格子点属性の表示設定</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1322,6 +1496,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>このデータから点群データを生成</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>格子点属性の表示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -2172,26 +2361,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>表示色の凡例設定</translation>
+        <translation type="vanished">表示色の凡例設定</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>凡例設定</translation>
+        <translation type="vanished">凡例設定</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>編集...</translation>
+        <translation type="vanished">編集...</translation>
     </message>
 </context>
 <context>
@@ -2274,51 +2463,51 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>タイトル</translation>
+        <translation type="vanished">タイトル</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>タイトル :</translation>
+        <translation type="vanished">タイトル :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>フォント設定:</translation>
+        <translation type="vanished">フォント設定:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>編集...</translation>
+        <translation type="vanished">編集...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>ラベル表示</translation>
+        <translation type="vanished">ラベル表示</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>ラベルの数 :</translation>
+        <translation type="vanished">ラベルの数 :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>表示形式:</translation>
+        <translation type="vanished">表示形式:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>表示方向 :</translation>
+        <translation type="vanished">表示方向 :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>縦</translation>
+        <translation type="vanished">縦</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>横</translation>
+        <translation type="vanished">横</translation>
     </message>
     <message>
         <source> Number of labels :</source>
@@ -2326,51 +2515,51 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Size</source>
-        <translation>サイズ</translation>
+        <translation type="vanished">サイズ</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>カラーバーのサイズを、ウィンドウのサイズへの比率で指定してください。</translation>
+        <translation type="vanished">カラーバーのサイズを、ウィンドウのサイズへの比率で指定してください。</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>幅 :</translation>
+        <translation type="vanished">幅 :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>1を指定すると、カラーバーの幅は、ウィンドウの幅と同じになります。</translation>
+        <translation type="vanished">1を指定すると、カラーバーの幅は、ウィンドウの幅と同じになります。</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>高さ:</translation>
+        <translation type="vanished">高さ:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>1を指定すると、カラーバーの高さは、ウィンドウの高さと同じになります。</translation>
+        <translation type="vanished">1を指定すると、カラーバーの高さは、ウィンドウの高さと同じになります。</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>座標</translation>
+        <translation type="vanished">座標</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>カラーバーの左下の位置を、ウィンドウのサイズへの比率で指定してください。</translation>
+        <translation type="vanished">カラーバーの左下の位置を、ウィンドウのサイズへの比率で指定してください。</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>0を指定すると、カラーバーの一番左が、ウィンドウの左端になります。</translation>
+        <translation type="vanished">0を指定すると、カラーバーの一番左が、ウィンドウの左端になります。</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y :</translation>
+        <translation type="vanished">Y :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>0を指定すると、カラーバーの一番下が、ウィンドウの一番下になります。</translation>
+        <translation type="vanished">0を指定すると、カラーバーの一番下が、ウィンドウの一番下になります。</translation>
     </message>
 </context>
 <context>

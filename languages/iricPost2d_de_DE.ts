@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pfeileinstellung</translation>
+        <translation type="vanished">Pfeileinstellung</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Physikalischer Wert:</translation>
+        <translation type="vanished">Physikalischer Wert:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Länge</translation>
+        <translation type="vanished">Länge</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardwert:</translation>
+        <translation type="vanished">Standardwert:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Frau]</translation>
+        <translation type="vanished">[Frau]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Länge auf dem Bildschirm:</translation>
+        <translation type="vanished">Länge auf dem Bildschirm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[Pixel]</translation>
+        <translation type="vanished">[Pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Mindestwert zum Zeichnen:</translation>
+        <translation type="vanished">Mindestwert zum Zeichnen:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Probenahme</translation>
+        <translation type="vanished">Probenahme</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle Scheitelpunkte</translation>
+        <translation type="vanished">Alle Scheitelpunkte</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Abtastrate:</translation>
+        <translation type="vanished">Abtastrate:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-Richtung</translation>
+        <translation type="vanished">I-Richtung</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-Richtung</translation>
+        <translation type="vanished">J-Richtung</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Nach Skalarwert</translation>
+        <translation type="vanished">Nach Skalarwert</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pfeilform</translation>
+        <translation type="vanished">Pfeilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pfeilgröße:</translation>
+        <translation type="vanished">Pfeilgröße:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linienbreite:</translation>
+        <translation type="vanished">Linienbreite:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regionseinstellung (&amp;R)</translation>
+        <translation type="vanished">Regionseinstellung (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Farbbalkeneinstellung (&amp;C)</translation>
+        <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pfeileinstellung</translation>
+        <translation type="vanished">Pfeileinstellung</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Physikalischer Wert:</translation>
+        <translation type="vanished">Physikalischer Wert:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Länge</translation>
+        <translation type="vanished">Länge</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardwert:</translation>
+        <translation type="vanished">Standardwert:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Frau]</translation>
+        <translation type="vanished">[Frau]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Länge auf dem Bildschirm:</translation>
+        <translation type="vanished">Länge auf dem Bildschirm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[Pixel]</translation>
+        <translation type="vanished">[Pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Mindestwert zum Zeichnen:</translation>
+        <translation type="vanished">Mindestwert zum Zeichnen:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Probenahme</translation>
+        <translation type="vanished">Probenahme</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle Scheitelpunkte</translation>
+        <translation type="vanished">Alle Scheitelpunkte</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Abtastrate:</translation>
+        <translation type="vanished">Abtastrate:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Anzahl der Scheitelpunkte angeben</translation>
+        <translation type="vanished">Anzahl der Scheitelpunkte angeben</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Nach Skalarwert</translation>
+        <translation type="vanished">Nach Skalarwert</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pfeilform</translation>
+        <translation type="vanished">Pfeilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pfeilgröße:</translation>
+        <translation type="vanished">Pfeilgröße:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linienbreite:</translation>
+        <translation type="vanished">Linienbreite:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regionseinstellung (&amp;R)</translation>
+        <translation type="vanished">Regionseinstellung (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Farbbalkeneinstellung (&amp;C)</translation>
+        <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (Zellzentrum)</translation>
+        <translation type="vanished">Skalar (Zellzentrum)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Kontureinstellung aktualisieren</translation>
+        <translation type="vanished">Kontureinstellung aktualisieren</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warnung</translation>
+        <translation type="vanished">Warnung</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Um KML für die Straßenansicht zu exportieren, zeigen Sie es mit Konturfigur an.</translation>
+        <translation type="vanished">Um KML für die Straßenansicht zu exportieren, zeigen Sie es mit Konturfigur an.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Um KML für Street View zu exportieren, sollte der Wertebereich manuell eingerichtet werden.</translation>
+        <translation type="vanished">Um KML für Street View zu exportieren, sollte der Wertebereich manuell eingerichtet werden.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Um KML für Street View zu exportieren, sollte das Koordinatensystem angegeben werden.</translation>
+        <translation type="vanished">Um KML für Street View zu exportieren, sollte das Koordinatensystem angegeben werden.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalare Einstellung (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warnung</translation>
+        <translation type="vanished">Warnung</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Es können maximal vier Konturen definiert werden.</translation>
+        <translation type="vanished">Es können maximal vier Konturen definiert werden.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="vanished">Fehler</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalare Einstellung</translation>
+        <translation type="vanished">Skalare Einstellung</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Physischer Wert:</translation>
+        <translation type="vanished">Physischer Wert:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Bildschirmeinstellung</translation>
+        <translation type="vanished">Bildschirmeinstellung</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regionseinstellung (&amp;R)</translation>
+        <translation type="vanished">Regionseinstellung (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Farbbalkeneinstellung (&amp;C)</translation>
+        <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="vanished">Fehler</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Für den Wertebereich ist der Höchstwert kleiner als der Mindestwert.</translation>
+        <translation type="vanished">Für den Wertebereich ist der Höchstwert kleiner als der Mindestwert.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Geografische Daten</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Referenzinformationen</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Gitterform-Anzeigeeinstellung</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Kontureinstellung aktualisieren</translation>
+        <translation type="vanished">Kontureinstellung aktualisieren</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Um KML für die Straßenansicht zu exportieren, zeigen Sie es mit Konturfigur an.</translation>
+        <translation type="vanished">Um KML für die Straßenansicht zu exportieren, zeigen Sie es mit Konturfigur an.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Um KML für Street View zu exportieren, sollte der Wertebereich manuell eingerichtet werden.</translation>
+        <translation type="vanished">Um KML für Street View zu exportieren, sollte der Wertebereich manuell eingerichtet werden.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Um KML für Street View zu exportieren, sollte das Koordinatensystem angegeben werden.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalare Einstellung (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Um KML für Street View zu exportieren, muss der Farbmodus "Discrete Mode" sein.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Skalar (Knoten)</translation>
+        <translation type="vanished">Skalar (Knoten)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Um die Shape-Datei zu exportieren, schalten Sie die Farbeinstellung auf „Discrete Mode“ um.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Pfeil Physische Wertänderung</translation>
+        <translation type="vanished">Pfeil Physische Wertänderung</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pfeileinstellung aktualisieren</translation>
+        <translation type="vanished">Pfeileinstellung aktualisieren</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pfeileinstellung</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pfeileinstellung aktualisieren</translation>
+        <translation type="vanished">Pfeileinstellung aktualisieren</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Pfeileinstellung</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Skalare Einstellung der Partikel</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farbe nach Wert</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-Einstellung</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktgröße:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Freiwählbare Farbe</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Partikeleinstellung bearbeiten</translation>
+        <translation type="vanished">Partikeleinstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Attribut-Browser anzeigen</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektorattribut-Auswahl ändern</translation>
+        <translation type="vanished">Vektorattribut-Auswahl ändern</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vektoreinstellung aktualisieren</translation>
+        <translation type="vanished">Vektoreinstellung aktualisieren</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Änderung des physischen Werts von Arrow</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Partikel-Vektor-Einstellung</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Polygoneinstellungen bearbeiten</translation>
+        <translation type="vanished">Polygoneinstellungen bearbeiten</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Polygon-Datenanzeigeeinstellung</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farbe nach Wert</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-Einstellung</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linienbreite:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Freiwählbare Farbe</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Zellenkontur erstellen</translation>
+        <translation type="vanished">Zellenkontur erstellen</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kontur erstellen</translation>
+        <translation type="vanished">Kontur erstellen</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Rasterform-Einstellung aktualisieren</translation>
+        <translation type="vanished">Rasterform-Einstellung aktualisieren</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Partikelskalareinstellung aktualisieren</translation>
+        <translation type="vanished">Partikelskalareinstellung aktualisieren</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Aktualisieren Sie die Polygonskalareinstellung</translation>
+        <translation type="vanished">Aktualisieren Sie die Polygonskalareinstellung</translation>
     </message>
 </context>
 </TS>

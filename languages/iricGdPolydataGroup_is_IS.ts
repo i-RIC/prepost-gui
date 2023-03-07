@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Fyrir hvert</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Nafn</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Þú getur ekki tilgreint sama dálkinn bæði fyrir nafn og gildi.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Hnitkerfi:</translation>
     </message>
 </context>
 </TS>

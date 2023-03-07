@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>Coordonnées de la polyligne</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Paramètre d'affichage</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

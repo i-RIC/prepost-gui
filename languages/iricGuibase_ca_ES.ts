@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Línies de quadrícula</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tots</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Només esquema</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Índexs de graella</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d'hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Mostra la zona horària</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +700,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Espereu si us plau...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation>Si us plau, espereu...</translation>
     </message>
 </context>
 <context>

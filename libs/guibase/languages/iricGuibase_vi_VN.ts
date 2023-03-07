@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Mẫu đơn</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>đường lưới</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Tất cả các</translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Chỉ phác thảo</translation>
+        <translation>Chỉ phác thảo</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Màu sắc:</translation>
+        <translation>Màu sắc:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ số lưới</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Dễ thấy</translation>
+        <translation>Dễ thấy</translation>
     </message>
 </context>
 <context>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Chỉ định định dạng số ở định dạng printf. Ví dụ: &quot; %5.2f &quot;cho 3,141592 -&gt; 3,14&quot; %4.2e &quot;cho 12300 -&gt; 1.23e + 004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Chỉ định định dạng số ở định dạng printf. Ví dụ: " %5.2f "cho 3,141592 -&gt; 3,14" %4.2e "cho 12300 -&gt; 1.23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>

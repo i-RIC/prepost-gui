@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>跳過率：</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>當前沒有選擇窗口。</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>連續快照/電影/谷歌地球導出嚮導</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>背景網格</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>字體默認</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>文本格式</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>橫截面之間：</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>常見的</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>網格形狀/網格索引</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>彩條</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>標題</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>箭頭長度圖例</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>預處理窗口</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>上游/下游</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>河流調查數據斷面名稱</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>邊界條件名稱</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>可視化窗口</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>標籤：</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>圖表窗口</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>圖表標題：</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>傳說：</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>軸標題：</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>軸刻度：</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>打開時將文件夾項目複製到工作目錄</translation>
+        <translation type="vanished">打開時將文件夾項目複製到工作目錄</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>狀態欄坐標</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>小數位：</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>屬性瀏覽器</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>小數位</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>坐標：</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>價值：</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>（未標明）</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>輸出設定</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>在單獨的文件中輸出計算結果</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>集成電路 %1</translation>
+        <translation type="vanished">集成電路 %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
+        <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>快照已成功保存到 %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>中的所有文件 %1 被刪除。</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>設定文件 (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>要導出形狀文件，請將顏色模式切換為“離散模式”。</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>地理數據（來自網絡）</translation>
+        <translation type="vanished">地理數據（來自網絡）</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>重新加載 CGNS 文件 (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>重新加載 CGNS 文件</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>地理數據（來自網絡的海拔高度）</translation>
     </message>
 </context>
 </TS>

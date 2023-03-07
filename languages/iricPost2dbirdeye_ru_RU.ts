@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Топоры</translation>
+        <translation type="vanished">Топоры</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Скалярный</translation>
+        <translation type="vanished">Скалярный</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Обновить настройку контура</translation>
+        <translation type="vanished">Обновить настройку контура</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скаляр (центр ячейки)</translation>
+        <translation type="vanished">Скаляр (центр ячейки)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Можно определить максимум четыре контура.</translation>
+        <translation type="vanished">Можно определить максимум четыре контура.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярная настройка</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Скалярное значение высоты</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Настройка цвета</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">По скалярному значению</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Скалярное значение:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Настройка экрана</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Настройка региона (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Настройка цветовой полосы (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Ошибка</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Для диапазона значений максимальное значение меньше минимального.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Настройка контура недоступна, поскольку этот результат не содержит скалярных значений ячеек.</translation>
+        <translation type="vanished">Настройка контура недоступна, поскольку этот результат не содержит скалярных значений ячеек.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,14 +163,60 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Настройка отображения формы сетки</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Скалярное значение для высоты</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Обновить настройку контура</translation>
+        <translation type="vanished">Обновить настройку контура</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Скалярный</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярная настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>По скалярному значению</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
@@ -134,18 +227,18 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Можно определить максимум четыре контура.</translation>
+        <translation type="vanished">Можно определить максимум четыре контура.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Обновить настройку формы сетки</translation>
+        <translation type="vanished">Обновить настройку формы сетки</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
@@ -153,7 +246,7 @@
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Создать контур</translation>
+        <translation type="vanished">Создать контур</translation>
     </message>
 </context>
 </TS>

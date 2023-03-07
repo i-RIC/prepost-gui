@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -110,7 +108,7 @@
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Déposer %1 N&apos;existe pas.</translation>
+        <translation>Déposer %1 N'existe pas.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
@@ -167,7 +165,7 @@
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation>Ce n&apos;est pas une vraie valeur</translation>
+        <translation>Ce n'est pas une vraie valeur</translation>
     </message>
 </context>
 <context>
@@ -208,7 +206,7 @@
     </message>
     <message>
         <source>Min: %1, Max: %2</source>
-        <translation>Min&#xa0;: %1, Max&#xa0;: %2</translation>
+        <translation>Min : %1, Max : %2</translation>
     </message>
 </context>
 <context>
@@ -234,7 +232,7 @@
     <name>GridShapeEditDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Paramètre d&apos;affichage de la forme de la grille</translation>
+        <translation>Paramètre d'affichage de la forme de la grille</translation>
     </message>
     <message>
         <source>Grid lines</source>
@@ -265,31 +263,31 @@
     <name>GridShapeSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Former</translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lignes de grille</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished">Tous</translation>
+        <translation>Tous</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished">Contour seulement</translation>
+        <translation>Contour uniquement</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Couleur:</translation>
+        <translation>Couleur:</translation>
     </message>
     <message>
         <source>Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indices de grille</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Visible</translation>
+        <translation>Visible</translation>
     </message>
 </context>
 <context>
@@ -345,7 +343,7 @@
     </message>
     <message>
         <source>Delete item</source>
-        <translation>Effacer l&apos;article</translation>
+        <translation>Effacer l'article</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this item?</source>
@@ -454,7 +452,7 @@
     <name>RealNumberEditWidget</name>
     <message>
         <source>It is not a real value</source>
-        <translation>Ce n&apos;est pas une vraie valeur</translation>
+        <translation>Ce n'est pas une vraie valeur</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -496,7 +494,7 @@
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Paramètre de police&#xa0;:</translation>
+        <translation>Paramètre de police :</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -504,11 +502,11 @@
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Affichage de l&apos;étiquette</translation>
+        <translation>Affichage de l'étiquette</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Nombre d&apos;étiquettes :</translation>
+        <translation>Nombre d'étiquettes :</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -516,9 +514,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Spécifiez le format des nombres au format printf. Par exemple: &quot; %5.2f&quot; pour 3.141592 --&gt; 3.14 &quot; %4.2e&quot; pour 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Spécifiez le format des nombres au format printf. Par exemple: " %5.2f" pour 3.141592 --&gt; 3.14 " %4.2e" pour 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -574,7 +572,7 @@
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y&#xa0;:</translation>
+        <translation>Y :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
@@ -589,19 +587,19 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>J&apos;en suis:</translation>
+        <translation>J'en suis:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Je max&#xa0;:</translation>
+        <translation>Je max :</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J Min&#xa0;:</translation>
+        <translation>J Min :</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Max&#xa0;:</translation>
+        <translation>J Max :</translation>
     </message>
 </context>
 <context>
@@ -620,7 +618,7 @@
     </message>
     <message>
         <source>Show actual time</source>
-        <translation>Afficher l&apos;heure réelle</translation>
+        <translation>Afficher l'heure réelle</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
@@ -632,7 +630,7 @@
     </message>
     <message>
         <source>MM:SS</source>
-        <translation>MM&#xa0;:&#xa0;SS</translation>
+        <translation>MM : SS</translation>
     </message>
     <message>
         <source>HH:MM:SS</source>
@@ -644,7 +642,7 @@
     </message>
     <message>
         <source>Actual time format</source>
-        <translation>Format de l&apos;heure réelle</translation>
+        <translation>Format de l'heure réelle</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
@@ -672,7 +670,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez utiliser les symboles suivants pour définir un format d&apos;heure personnalisé&#xa0;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Année&#xa0;: AAAA, AA&lt;/li&gt;&lt;li&gt;Mois&#xa0;: M, MM, MMM, MMMM (MMM pour janvier etc., MMMM pour janvier etc.)&lt;/li&gt;&lt;li&gt;Jour&#xa0;: d, dd, ddd, dddd (ddd pour lundi etc., dddd pour lundi etc.)&lt;/li &gt;&lt;li&gt;Heure&#xa0;: H, HH, h, hh (h, hh pour l&apos;affichage AM/PM)&lt;/li&gt;&lt;li&gt;Minute&#xa0;: m, mm&lt;/li&gt;&lt;li&gt;Deuxième&#xa0;: s, ss&lt;/li &gt;&lt;li&gt;AM/PM&#xa0;: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous pouvez utiliser les symboles suivants pour définir un format d'heure personnalisé :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Année : AAAA, AA&lt;/li&gt;&lt;li&gt;Mois : M, MM, MMM, MMMM (MMM pour janvier etc., MMMM pour janvier etc.)&lt;/li&gt;&lt;li&gt;Jour : d, dd, ddd, dddd (ddd pour lundi etc., dddd pour lundi etc.)&lt;/li &gt;&lt;li&gt;Heure : H, HH, h, hh (h, hh pour l'affichage AM/PM)&lt;/li&gt;&lt;li&gt;Minute : m, mm&lt;/li&gt;&lt;li&gt;Deuxième : s, ss&lt;/li &gt;&lt;li&gt;AM/PM : A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show Time Zone</source>
@@ -697,25 +695,25 @@
     <name>WaitDialog</name>
     <message>
         <source>Please wait</source>
-        <translation>S&apos;il vous plaît, attendez</translation>
+        <translation>S'il vous plaît, attendez</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation>S&apos;il vous plaît, attendez...</translation>
+        <translation>S'il vous plaît, attendez...</translation>
     </message>
 </context>
 <context>
     <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
-        <translation>S&apos;il vous plaît, attendez...</translation>
+        <translation>S'il vous plaît, attendez...</translation>
     </message>
 </context>
 <context>
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation>Réglage de l&apos;affichage de l&apos;axe</translation>
+        <translation>Réglage de l'affichage de l'axe</translation>
     </message>
     <message>
         <source>X-Axis</source>
@@ -727,15 +725,15 @@
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximum&#xa0;:</translation>
+        <translation>Maximum :</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min&#xa0;:</translation>
+        <translation>Min :</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d&apos;étiquettes&#xa0;:</translation>
+        <translation>Nombre d'étiquettes :</translation>
     </message>
     <message>
         <source>min</source>

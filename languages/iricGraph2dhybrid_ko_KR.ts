@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>오른쪽 Y축 범위가 잘못되었습니다.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>초</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>분</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>날</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>윤곽</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>초</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>분</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>날</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV 내보내기 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>글꼴 설정 (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>외부의</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>차트 글꼴 설정</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>차트 제목:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>전설:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X축:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>제목:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>진드기:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y축:</translation>
     </message>
 </context>
 <context>

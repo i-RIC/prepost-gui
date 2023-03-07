@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Ardatzak</translation>
+        <translation type="vanished">Ardatzak</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Eskalarra</translation>
+        <translation type="vanished">Eskalarra</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Eguneratu Sestra Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Eskalarra (zelula zentroa)</translation>
+        <translation type="vanished">Eskalarra (zelula zentroa)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Gehienez lau sestra defini daitezke.</translation>
+        <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Ezarpen eskalarra</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Kotaren balio eskalarra</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Kolore ezarpena</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Balio eskalarra:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Eskualdearen ezarpena (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Kolore-barraren ezarpena (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Errorea</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Balioen barrutirako, gehienezko balioa gutxieneko balioa baino txikiagoa da.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Sestra ezarpena ez dago erabilgarri, emaitza honek ez dituelako gelaxkako balio eskalarrak.</translation>
+        <translation type="vanished">Sestra ezarpena ez dago erabilgarri, emaitza honek ez dituelako gelaxkako balio eskalarrak.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Sarearen forma bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Kota-balio eskalarra</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Eguneratu Sestra Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ezarpen eskalarra (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Elkarrizketa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Barrutia</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Gehienez lau sestra defini daitezke.</translation>
+        <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Ingerada sortu</translation>
+        <translation type="vanished">Ingerada sortu</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Eguneratu Sareta Forma Ezarpena</translation>
+        <translation type="vanished">Eguneratu Sareta Forma Ezarpena</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

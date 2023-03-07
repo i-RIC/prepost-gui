@@ -173,6 +173,10 @@
         <source>For each</source>
         <translation>Az egyes</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +257,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Nem adhatja meg ugyanazt az oszlopot a Név és az Érték számára.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Koordináta-rendszer:</translation>
     </message>
 </context>
 </TS>

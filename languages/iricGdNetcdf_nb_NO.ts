@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>Følgende filer blir importert. Er det ok?</translation>
+        <translation type="vanished">Følgende filer blir importert. Er det ok?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Velg filene som skal importeres.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Velg alle (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Opphev alle (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advarsel</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>Tidsintervallet mellom de valgte filene er ikke det samme.</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>Filnavnet stemmer ikke overens med mønsteret</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tidssone:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimensjonsverdier for tidsforskjell.</translation>
+        <translation type="vanished">Dimensjonsverdier for tidsforskjell.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinatsystem er ikke spesifisert for %1. Velg koordinatsystem manuelt.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tidsserierasterdata er allerede importert. Hvis du ønsker å importere andre data, må du først slette dataene som allerede er importert.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Åpning %1 mislyktes.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Dimensjonsverdier for %1 mismatch.</translation>
+        <translation type="vanished">Dimensjonsverdier for %1 mismatch.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>Det oppsto en feil under analyse av tidsdefinisjonen: %1</translation>
+        <translation type="vanished">Det oppsto en feil under analyse av tidsdefinisjonen: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 har ikke data om lengdegrad, breddegrad eller x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tidsserierasterdata er allerede importert. Hvis du ønsker å importere andre data, må du først slette dataene som allerede er importert.</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>Opprinnelig tid:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Tidssone:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasjon</translation>
+        <translation type="vanished">Informasjon</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 filer i mappen %2 er importert.</translation>
+        <translation type="vanished">%1 filer i mappen %2 er importert.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Dimensjonsverdier for tidsforskjell.</translation>
+        <translation type="vanished">Dimensjonsverdier for tidsforskjell.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Tidsserierasterdata er allerede importert. Hvis du ønsker å importere andre data, må du først slette dataene som allerede er importert.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Det oppstod en feil ved import av data konvertert fra %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Det oppstod en feil ved åpning %1.</translation>
     </message>
 </context>
 </TS>

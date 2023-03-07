@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Postprocessament ocular (2D): %1</translation>
     </message>
     <message>
@@ -95,7 +93,7 @@
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valor escalar d&apos;elevació</translation>
+        <translation type="vanished">Valor escalar d'elevació</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -131,7 +129,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és més petit que el valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és més petit que el valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -168,11 +166,11 @@
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització en forma de quadrícula</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
@@ -187,38 +185,38 @@
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració escalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diàleg</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Color personalitzat</translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">Per valor escalar</translation>
+        <translation>Per valor escalar</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>

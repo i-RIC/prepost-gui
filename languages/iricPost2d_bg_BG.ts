@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка на стрелка</translation>
+        <translation type="vanished">Настройка на стрелка</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Дължина</translation>
+        <translation type="vanished">Дължина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Автоматичен</translation>
+        <translation type="vanished">Автоматичен</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартна стойност:</translation>
+        <translation type="vanished">Стандартна стойност:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Госпожица]</translation>
+        <translation type="vanished">[Госпожица]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Дължина на екрана:</translation>
+        <translation type="vanished">Дължина на екрана:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимална стойност за теглене:</translation>
+        <translation type="vanished">Минимална стойност за теглене:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вземане на проби</translation>
+        <translation type="vanished">Вземане на проби</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Всички върхове</translation>
+        <translation type="vanished">Всички върхове</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Честота на вземане на проби:</translation>
+        <translation type="vanished">Честота на вземане на проби:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-посока</translation>
+        <translation type="vanished">I-посока</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-посока</translation>
+        <translation type="vanished">J-посока</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скаларна стойност</translation>
+        <translation type="vanished">По скаларна стойност</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма на стрела</translation>
+        <translation type="vanished">Форма на стрела</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Размер на стрелката:</translation>
+        <translation type="vanished">Размер на стрелката:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка за регион (&amp;R)</translation>
+        <translation type="vanished">Настройка за регион (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка на стрелка</translation>
+        <translation type="vanished">Настройка на стрелка</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Дължина</translation>
+        <translation type="vanished">Дължина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Автоматичен</translation>
+        <translation type="vanished">Автоматичен</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартна стойност:</translation>
+        <translation type="vanished">Стандартна стойност:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Госпожица]</translation>
+        <translation type="vanished">[Госпожица]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Дължина на екрана:</translation>
+        <translation type="vanished">Дължина на екрана:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимална стойност за теглене:</translation>
+        <translation type="vanished">Минимална стойност за теглене:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вземане на проби</translation>
+        <translation type="vanished">Вземане на проби</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Всички върхове</translation>
+        <translation type="vanished">Всички върхове</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Честота на вземане на проби:</translation>
+        <translation type="vanished">Честота на вземане на проби:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Посочете броя на върховете</translation>
+        <translation type="vanished">Посочете броя на върховете</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скаларна стойност</translation>
+        <translation type="vanished">По скаларна стойност</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма на стрела</translation>
+        <translation type="vanished">Форма на стрела</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Размер на стрелката:</translation>
+        <translation type="vanished">Размер на стрелката:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка за регион (&amp;R)</translation>
+        <translation type="vanished">Настройка за регион (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скаларен (клетъчен център)</translation>
+        <translation type="vanished">Скаларен (клетъчен център)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Актуализиране на настройката на контура</translation>
+        <translation type="vanished">Актуализиране на настройката на контура</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>За да експортирате KML за изглед на улица, покажете с Contour Figure.</translation>
+        <translation type="vanished">За да експортирате KML за изглед на улица, покажете с Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>За да експортирате KML за изглед на улица, диапазонът от стойности трябва да се настрои ръчно.</translation>
+        <translation type="vanished">За да експортирате KML за изглед на улица, диапазонът от стойности трябва да се настрои ръчно.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>За да експортирате KML за изглед на улица, трябва да бъде зададена координатна система.</translation>
+        <translation type="vanished">За да експортирате KML за изглед на улица, трябва да бъде зададена координатна система.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скаларна настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Могат да се определят максимум четири контура.</translation>
+        <translation type="vanished">Могат да се определят максимум четири контура.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>За да експортирате файл с форма, превключете „Настройка на дисплея“ на „Контурна фигура“, а не „Цветна ресни“ или „Изолинии“.</translation>
+        <translation type="vanished">За да експортирате файл с форма, превключете „Настройка на дисплея“ на „Контурна фигура“, а не „Цветна ресни“ или „Изолинии“.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Скаларна настройка</translation>
+        <translation type="vanished">Скаларна настройка</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Настройка на дисплея</translation>
+        <translation type="vanished">Настройка на дисплея</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка за регион (&amp;R)</translation>
+        <translation type="vanished">Настройка за регион (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>За диапазона на стойностите максималната стойност е по -малка от минималната стойност.</translation>
+        <translation type="vanished">За диапазона на стойностите максималната стойност е по -малка от минималната стойност.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Географски данни</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Справочна информация</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Настройка на дисплея на формата на мрежата</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Актуализиране на настройката на контура</translation>
+        <translation type="vanished">Актуализиране на настройката на контура</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>За да експортирате KML за изглед на улица, покажете с Contour Figure.</translation>
+        <translation type="vanished">За да експортирате KML за изглед на улица, покажете с Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>За да експортирате KML за изглед на улица, диапазонът от стойности трябва да се настрои ръчно.</translation>
+        <translation type="vanished">За да експортирате KML за изглед на улица, диапазонът от стойности трябва да се настрои ръчно.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>За да експортирате KML за изглед на улица, трябва да бъде зададена координатна система.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скаларна настройка (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>За да експортирате KML за уличен изглед, цветният режим трябва да бъде „Дискретен режим“</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Скаларен (възел)</translation>
+        <translation type="vanished">Скаларен (възел)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>За да експортирате файл с форма, превключете „Настройка на дисплея“ на „Контурна фигура“, а не „Цветна ресни“ или „Изолинии“.</translation>
+        <translation type="vanished">За да експортирате файл с форма, превключете „Настройка на дисплея“ на „Контурна фигура“, а не „Цветна ресни“ или „Изолинии“.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Скалар</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>За да експортирате шейп файл, превключете цветовата настройка на „Дискретен режим“.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Стрелка Промяна на физическата стойност</translation>
+        <translation type="vanished">Стрелка Промяна на физическата стойност</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Актуализирайте настройката на стрелката</translation>
+        <translation type="vanished">Актуализирайте настройката на стрелката</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Настройка на стрелките</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регион</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Актуализирайте настройката на стрелката</translation>
+        <translation type="vanished">Актуализирайте настройката на стрелката</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Настройка на стрелките</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регион</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Скаларна настройка на частиците</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка на цветна карта</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер на точката:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Редактиране на настройката за частици</translation>
+        <translation type="vanished">Редактиране на настройката за частици</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Показване на браузъра за атрибути</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Атрибут на вектор Изберете Промяна</translation>
+        <translation type="vanished">Атрибут на вектор Изберете Промяна</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Актуализиране на векторната настройка</translation>
+        <translation type="vanished">Актуализиране на векторната настройка</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Промяна на физическата стойност на стрелката</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Векторна настройка на частици</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Редактиране на настройка на многоъгълник</translation>
+        <translation type="vanished">Редактиране на настройка на многоъгълник</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Настройка за показване на многоъгълни данни</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка на цветна карта</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортиране (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експортиране (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина на линията:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Създайте клетъчен контур</translation>
+        <translation type="vanished">Създайте клетъчен контур</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Създайте контур</translation>
+        <translation type="vanished">Създайте контур</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Актуализирайте настройката на формата на мрежата</translation>
+        <translation type="vanished">Актуализирайте настройката на формата на мрежата</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Актуализирайте скаларната настройка на частиците</translation>
+        <translation type="vanished">Актуализирайте скаларната настройка на частиците</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Актуализирайте скалярната настройка на многоъгълника</translation>
+        <translation type="vanished">Актуализирайте скалярната настройка на многоъгълника</translation>
     </message>
 </context>
 </TS>

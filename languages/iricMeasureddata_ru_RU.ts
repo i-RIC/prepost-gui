@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Скалярная настройка</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Измеренное значение:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Диалоговое окно настройки отображения точек</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Настройка экрана</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Точки</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Поверхность</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка цветовой карты</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
-        <translation>Размер пункта:</translation>
+        <translation>Размер точки:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярная настройка</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Измеренное значение:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Настройка экрана</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Размер пункта:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка цветовой шкалы (&amp;C)</translation>
+        <translation type="vanished">Настройка цветовой шкалы (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Для диапазона значений максимальное значение меньше минимального.</translation>
+        <translation type="vanished">Для диапазона значений максимальное значение меньше минимального.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Обновить настройку стрелки</translation>
+        <translation type="vanished">Обновить настройку стрелки</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Настройка стрелки измеренных данных</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка стрелки</translation>
+        <translation type="vanished">Настройка стрелки</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Длина</translation>
+        <translation type="vanished">Длина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартное значение:</translation>
+        <translation type="vanished">Стандартное значение:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Длина на экране:</translation>
+        <translation type="vanished">Длина на экране:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксель]</translation>
+        <translation type="vanished">[пиксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимальное значение для рисования:</translation>
+        <translation type="vanished">Минимальное значение для рисования:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скалярному значению</translation>
+        <translation type="vanished">По скалярному значению</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка цветовой шкалы (&amp;C)</translation>
+        <translation type="vanished">Настройка цветовой шкалы (&amp;C)</translation>
     </message>
 </context>
 </TS>

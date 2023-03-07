@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Setarea săgeții</translation>
+        <translation type="vanished">Setarea săgeții</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valoare fizică:</translation>
+        <translation type="vanished">Valoare fizică:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lungime</translation>
+        <translation type="vanished">Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valoare standard:</translation>
+        <translation type="vanished">Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Domnișoară]</translation>
+        <translation type="vanished">[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lungimea pe ecran:</translation>
+        <translation type="vanished">Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valoare minimă de trasat:</translation>
+        <translation type="vanished">Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prelevarea de probe</translation>
+        <translation type="vanished">Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Toate vârfurile</translation>
+        <translation type="vanished">Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Rata de eșantionare:</translation>
+        <translation type="vanished">Rata de eșantionare:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Direcția I</translation>
+        <translation type="vanished">Direcția I</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>Direcția J</translation>
+        <translation type="vanished">Direcția J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
+        <translation type="vanished">După valoarea scalară</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma săgeții</translation>
+        <translation type="vanished">Forma săgeții</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Dimensiunea săgeții:</translation>
+        <translation type="vanished">Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Setarea regiunii (&amp;R)</translation>
+        <translation type="vanished">Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Setarea săgeții</translation>
+        <translation type="vanished">Setarea săgeții</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valoare fizică:</translation>
+        <translation type="vanished">Valoare fizică:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lungime</translation>
+        <translation type="vanished">Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valoare standard:</translation>
+        <translation type="vanished">Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Domnișoară]</translation>
+        <translation type="vanished">[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lungimea pe ecran:</translation>
+        <translation type="vanished">Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valoare minimă de trasat:</translation>
+        <translation type="vanished">Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prelevarea de probe</translation>
+        <translation type="vanished">Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Toate vârfurile</translation>
+        <translation type="vanished">Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Rata de eșantionare:</translation>
+        <translation type="vanished">Rata de eșantionare:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Specificați numărul de vârfuri</translation>
+        <translation type="vanished">Specificați numărul de vârfuri</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
+        <translation type="vanished">După valoarea scalară</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma săgeții</translation>
+        <translation type="vanished">Forma săgeții</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Dimensiunea săgeții:</translation>
+        <translation type="vanished">Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Setarea regiunii (&amp;R)</translation>
+        <translation type="vanished">Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (centrul celulei)</translation>
+        <translation type="vanished">Scalar (centrul celulei)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizați setarea conturului</translation>
+        <translation type="vanished">Actualizați setarea conturului</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
+        <translation type="vanished">Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
+        <translation type="vanished">Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Pentru a exporta KML pentru vedere de stradă, trebuie specificat sistemul de coordonate.</translation>
+        <translation type="vanished">Pentru a exporta KML pentru vedere de stradă, trebuie specificat sistemul de coordonate.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Setare scalară (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamă</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Se pot defini maximum patru contururi.</translation>
+        <translation type="vanished">Se pot defini maximum patru contururi.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
+        <translation type="vanished">Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Setarea scalară</translation>
+        <translation type="vanished">Setarea scalară</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valoare fizică:</translation>
+        <translation type="vanished">Valoare fizică:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="vanished">Arata setarile</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Setarea regiunii (&amp;R)</translation>
+        <translation type="vanished">Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
+        <translation type="vanished">Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Date geografice</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Informații de referință</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Setarea de afișare a formei grilei</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizați setarea conturului</translation>
+        <translation type="vanished">Actualizați setarea conturului</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
+        <translation type="vanished">Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
+        <translation type="vanished">Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Pentru a exporta KML pentru vedere de stradă, trebuie specificat sistemul de coordonate.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Setare scalară (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Pentru a exporta KML pentru Street View, Colormode trebuie să fie „Mod discret”</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamă</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Scalar (nod)</translation>
+        <translation type="vanished">Scalar (nod)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
+        <translation type="vanished">Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Pentru a exporta fișierul de formă, comutați setarea de culoare la „Mod discret”.</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Săgeată Schimbarea valorii fizice</translation>
+        <translation type="vanished">Săgeată Schimbarea valorii fizice</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizați setarea săgeții</translation>
+        <translation type="vanished">Actualizați setarea săgeții</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Setarea săgeților</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regiune</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizați setarea săgeții</translation>
+        <translation type="vanished">Actualizați setarea săgeții</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Setarea săgeților</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regiune</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Setarea scalară a particulelor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Setarea hărții de culori</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Editați setarea particulelor</translation>
+        <translation type="vanished">Editați setarea particulelor</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Afișați browserul de atribute</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Schimbare selectare atribut vector</translation>
+        <translation type="vanished">Schimbare selectare atribut vector</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Actualizați setarea vectorială</translation>
+        <translation type="vanished">Actualizați setarea vectorială</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Săgeată modificarea valorii fizice</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Setare Vector Particule</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Editați setarea poligonului</translation>
+        <translation type="vanished">Editați setarea poligonului</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Setare de afișare a datelor poligonului</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Setarea hărții de culori</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Creați conturul celulei</translation>
+        <translation type="vanished">Creați conturul celulei</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Creați contur</translation>
+        <translation type="vanished">Creați contur</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizați setarea formei grilei</translation>
+        <translation type="vanished">Actualizați setarea formei grilei</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Actualizați setarea scalară a particulelor</translation>
+        <translation type="vanished">Actualizați setarea scalară a particulelor</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Actualizați setarea scalară a poligonului</translation>
+        <translation type="vanished">Actualizați setarea scalară a poligonului</translation>
     </message>
 </context>
 </TS>

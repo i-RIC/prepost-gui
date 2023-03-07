@@ -1,5 +1,27 @@
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>가져올 데이터의 좌표계 선택</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>편집하다...</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>

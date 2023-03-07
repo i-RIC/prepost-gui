@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Oikean Y-akselin alue on virheellinen.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekuntia</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Pöytäkirja</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Tuntia</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>päivää</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Rivit</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekuntia</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>pöytäkirja</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>tuntia</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>päivää</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV -vienti (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fonttiasetus (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ulkoinen</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Kaavion fonttiasetus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Kaavion otsikko:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendat:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-akseli:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tikit:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-akseli:</translation>
     </message>
 </context>
 <context>

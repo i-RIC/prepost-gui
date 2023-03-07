@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Налаштування стрілки</translation>
+        <translation type="vanished">Налаштування стрілки</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Фізична цінність:</translation>
+        <translation type="vanished">Фізична цінність:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Довжина</translation>
+        <translation type="vanished">Довжина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартне значення:</translation>
+        <translation type="vanished">Стандартне значення:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Довжина на екрані:</translation>
+        <translation type="vanished">Довжина на екрані:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[піксель]</translation>
+        <translation type="vanished">[піксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Мінімальне значення для розіграшу:</translation>
+        <translation type="vanished">Мінімальне значення для розіграшу:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вибірка</translation>
+        <translation type="vanished">Вибірка</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Усі вершини</translation>
+        <translation type="vanished">Усі вершини</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Частота дискретизації:</translation>
+        <translation type="vanished">Частота дискретизації:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-напрямок</translation>
+        <translation type="vanished">I-напрямок</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-напрямок</translation>
+        <translation type="vanished">J-напрямок</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>За скалярним значенням</translation>
+        <translation type="vanished">За скалярним значенням</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма стрілки</translation>
+        <translation type="vanished">Форма стрілки</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Розмір стрілки:</translation>
+        <translation type="vanished">Розмір стрілки:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Налаштування регіону (&amp;R)</translation>
+        <translation type="vanished">Налаштування регіону (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Налаштування стрілки</translation>
+        <translation type="vanished">Налаштування стрілки</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Фізична цінність:</translation>
+        <translation type="vanished">Фізична цінність:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Довжина</translation>
+        <translation type="vanished">Довжина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартне значення:</translation>
+        <translation type="vanished">Стандартне значення:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Довжина на екрані:</translation>
+        <translation type="vanished">Довжина на екрані:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[піксель]</translation>
+        <translation type="vanished">[піксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Мінімальне значення для розіграшу:</translation>
+        <translation type="vanished">Мінімальне значення для розіграшу:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вибірка</translation>
+        <translation type="vanished">Вибірка</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Усі вершини</translation>
+        <translation type="vanished">Усі вершини</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Частота дискретизації:</translation>
+        <translation type="vanished">Частота дискретизації:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Вкажіть кількість вершин</translation>
+        <translation type="vanished">Вкажіть кількість вершин</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>За скалярним значенням</translation>
+        <translation type="vanished">За скалярним значенням</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма стрілки</translation>
+        <translation type="vanished">Форма стрілки</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Розмір стрілки:</translation>
+        <translation type="vanished">Розмір стрілки:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Налаштування регіону (&amp;R)</translation>
+        <translation type="vanished">Налаштування регіону (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скалярний (клітинний центр)</translation>
+        <translation type="vanished">Скалярний (клітинний центр)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Оновити налаштування контуру</translation>
+        <translation type="vanished">Оновити налаштування контуру</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Щоб експортувати KML для перегляду вулиць, відобразіть за допомогою контурної фігури.</translation>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, відобразіть за допомогою контурної фігури.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Щоб експортувати KML для перегляду вулиць, діапазон значень слід налаштувати вручну.</translation>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, діапазон значень слід налаштувати вручну.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Щоб експортувати KML для перегляду вулиць, слід вказати систему координат.</translation>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, слід вказати систему координат.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярне налаштування (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Діалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Діапазон</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Можуть бути визначені максимум чотири контури.</translation>
+        <translation type="vanished">Можуть бути визначені максимум чотири контури.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+        <translation type="vanished">Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Скалярна установка</translation>
+        <translation type="vanished">Скалярна установка</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Фізична цінність:</translation>
+        <translation type="vanished">Фізична цінність:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Налаштування дисплея</translation>
+        <translation type="vanished">Налаштування дисплея</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Налаштування регіону (&amp;R)</translation>
+        <translation type="vanished">Налаштування регіону (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Для діапазону значень максимальне значення менше, ніж мінімальне значення.</translation>
+        <translation type="vanished">Для діапазону значень максимальне значення менше, ніж мінімальне значення.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>Географічні дані</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Довідкова інформація</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Налаштування відображення форми сітки</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Оновити налаштування контуру</translation>
+        <translation type="vanished">Оновити налаштування контуру</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>Щоб експортувати KML для перегляду вулиць, відобразіть за допомогою контурної фігури.</translation>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, відобразіть за допомогою контурної фігури.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>Щоб експортувати KML для перегляду вулиць, діапазон значень слід налаштувати вручну.</translation>
+        <translation type="vanished">Щоб експортувати KML для перегляду вулиць, діапазон значень слід налаштувати вручну.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>Щоб експортувати KML для перегляду вулиць, слід вказати систему координат.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярне налаштування (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Щоб експортувати KML для перегляду вулиць, Colormode має бути "Discrete Mode"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Діалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Діапазон</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>Скалярний (вузол)</translation>
+        <translation type="vanished">Скалярний (вузол)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+        <translation type="vanished">Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Скалярний</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Щоб експортувати шейп-файл, перемкніть налаштування кольору на «Дискретний режим».</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Стрілка Зміна фізичного значення</translation>
+        <translation type="vanished">Стрілка Зміна фізичного значення</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Оновити налаштування стрілки</translation>
+        <translation type="vanished">Оновити налаштування стрілки</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Налаштування стрілок</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регіон</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Оновити налаштування стрілки</translation>
+        <translation type="vanished">Оновити налаштування стрілки</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Налаштування стрілок</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Регіон</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Налаштування скалярів частинок</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Налаштування кольорової карти</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Розмір точки:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Спеціальний колір</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Змінити налаштування частинок</translation>
+        <translation type="vanished">Змінити налаштування частинок</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Показати браузер атрибутів</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Атрибут вектора Виберіть Змінити</translation>
+        <translation type="vanished">Атрибут вектора Виберіть Змінити</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Оновити векторні налаштування</translation>
+        <translation type="vanished">Оновити векторні налаштування</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Зміна фізичного значення стрілки</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Налаштування вектора частинок</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>Змінити налаштування багатокутника</translation>
+        <translation type="vanished">Змінити налаштування багатокутника</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Налаштування відображення даних багатокутника</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Налаштування кольорової карти</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Спеціальний колір</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>Створіть контур комірки</translation>
+        <translation type="vanished">Створіть контур комірки</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Створити контур</translation>
+        <translation type="vanished">Створити контур</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Оновити налаштування форми сітки</translation>
+        <translation type="vanished">Оновити налаштування форми сітки</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Оновити скалярне налаштування частинок</translation>
+        <translation type="vanished">Оновити скалярне налаштування частинок</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>Оновіть скалярні налаштування полігону</translation>
+        <translation type="vanished">Оновіть скалярні налаштування полігону</translation>
     </message>
 </context>
 </TS>

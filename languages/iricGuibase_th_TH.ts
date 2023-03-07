@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>เส้นกริด</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>โครงร่างเท่านั้น</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>ดัชนีกริด</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถใช้สัญลักษณ์ต่อไปนี้เพื่อกำหนดรูปแบบเวลาที่กำหนดเองได้:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;ปี: YYYY, YY&lt;/li&gt;&lt;li&gt;เดือน: M, MM, MMM, MMMM (MMM สำหรับเดือนมกราคม เป็นต้น MMMM สำหรับเดือนมกราคม เป็นต้น)&lt;/li&gt;&lt;li&gt;วัน: d, dd, ddd, dddd (ddd สำหรับวันจันทร์ เป็นต้น dddd สำหรับวันจันทร์ เป็นต้น)&lt;/li &gt;&lt;li&gt;ชั่วโมง: H, HH, h, hh (h, hh สำหรับการแสดง AM / PM)&lt;/li&gt;&lt;li&gt;นาที: m, mm&lt;/li&gt;&lt;li&gt;วินาที: s, ss&lt;/li &gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>แสดงเขตเวลา</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>โปรดรอ</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>โปรดรอ...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>โปรดรอ...</translation>

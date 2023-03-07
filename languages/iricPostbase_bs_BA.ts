@@ -57,163 +57,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Podešavanje čestica</translation>
+        <translation type="vanished">Podešavanje čestica</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Boja:</translation>
+        <translation type="vanished">Boja:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>veličina:</translation>
+        <translation type="vanished">veličina:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Skalarna postavka čestica</translation>
+        <translation type="vanished">Skalarna postavka čestica</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Boja prema vrijednosti atributa</translation>
+        <translation type="vanished">Boja prema vrijednosti atributa</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>veličina:</translation>
+        <translation type="vanished">veličina:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Postavka strelice</translation>
+        <translation type="vanished">Postavka strelice</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Vrijednost atributa:</translation>
+        <translation type="vanished">Vrijednost atributa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Dužina</translation>
+        <translation type="vanished">Dužina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatski</translation>
+        <translation type="vanished">Automatski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardna vrijednost:</translation>
+        <translation type="vanished">Standardna vrijednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[gospođa]</translation>
+        <translation type="vanished">[gospođa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Dužina na ekranu:</translation>
+        <translation type="vanished">Dužina na ekranu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna vrijednost za izvlačenje:</translation>
+        <translation type="vanished">Minimalna vrijednost za izvlačenje:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Uzorkovanje</translation>
+        <translation type="vanished">Uzorkovanje</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Sve čestice</translation>
+        <translation type="vanished">Sve čestice</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Stopa uzorkovanja:</translation>
+        <translation type="vanished">Stopa uzorkovanja:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Odredite broj čestica</translation>
+        <translation type="vanished">Odredite broj čestica</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Prema skalarnoj vrijednosti</translation>
+        <translation type="vanished">Prema skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Oblik strelice</translation>
+        <translation type="vanished">Oblik strelice</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Veličina strelice:</translation>
+        <translation type="vanished">Veličina strelice:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygon Setting</translation>
+        <translation type="vanished">Polygon Setting</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Boja:</translation>
+        <translation type="vanished">Boja:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygon Setting</translation>
+        <translation type="vanished">Polygon Setting</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Boja prema vrijednosti atributa</translation>
+        <translation type="vanished">Boja prema vrijednosti atributa</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribut:</translation>
+        <translation type="vanished">Atribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Širina linije</translation>
+        <translation type="vanished">Širina linije</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Postavka trake boja (&amp;C)</translation>
+        <translation type="vanished">Postavka trake boja (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Odaberite Ciljni rezultat</translation>
     </message>
 </context>
 <context>

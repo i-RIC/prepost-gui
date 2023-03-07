@@ -534,7 +534,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>텍스트 파일 (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">텍스트 파일 (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>텍스트 파일 (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -662,6 +666,10 @@
     <message>
         <source>File name:</source>
         <translation>파일 이름:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>좌표계</translation>
     </message>
 </context>
 <context>

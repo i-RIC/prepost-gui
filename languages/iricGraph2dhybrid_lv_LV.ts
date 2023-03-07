@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Labo Y asu diapazons nav derīgs.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekundes</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minūtes</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Stundas</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Dienas</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Līnijas</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekundes</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minūtes</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>stundas</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dienas</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV eksports (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fonta iestatījums (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ārējais</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagrammas fonta iestatījums</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammas nosaukums:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leģendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ass:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ērces:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ass:</translation>
     </message>
 </context>
 <context>

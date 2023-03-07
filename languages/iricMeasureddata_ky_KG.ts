@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Скалярдык жөндөө</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Ченелген баалуулук:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Points дисплей орнотуу диалогу</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Display Setting</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Упайлар</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Surface</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
-        <translation>Пойнт өлчөмү:</translation>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярдык жөндөө</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Ченелген баалуулук:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Display Setting</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Пойнт өлчөмү:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Маанилер диапазону үчүн максималдуу мааниси мини мааниден кичине.</translation>
+        <translation type="vanished">Маанилер диапазону үчүн максималдуу мааниси мини мааниден кичине.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Жебе жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Жебе жөндөөсүн жаңыртуу</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Өлчөнгөн маалымат жебе орнотуу</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Жебе жөндөөсү</translation>
+        <translation type="vanished">Жебе жөндөөсү</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандарттык маани:</translation>
+        <translation type="vanished">Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Айым]</translation>
+        <translation type="vanished">[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Экрандын узундугу:</translation>
+        <translation type="vanished">Экрандын узундугу:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Тартуу үчүн минималдуу мааниси:</translation>
+        <translation type="vanished">Тартуу үчүн минималдуу мааниси:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Скалярдык мааниси боюнча</translation>
+        <translation type="vanished">Скалярдык мааниси боюнча</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Color Bar жөндөө (&amp;C)</translation>
+        <translation type="vanished">Color Bar жөндөө (&amp;C)</translation>
     </message>
 </context>
 </TS>

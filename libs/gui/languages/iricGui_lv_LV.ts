@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Atlasiet Risinātājs</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Veidojot jaunu projektu, jums ir jāizvēlas risinātājs, ko izmantot aprēķiniem. Lūdzu, izvēlieties risinātāju un nospiediet pogu &quot;Labi&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Veidojot jaunu projektu, jums ir jāizvēlas risinātājs, ko izmantot aprēķiniem. Lūdzu, izvēlieties risinātāju un nospiediet pogu "Labi".</translation>
     </message>
 </context>
 <context>
@@ -515,7 +513,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Text Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Teksta formāts</translation>
     </message>
 </context>
 <context>
@@ -922,31 +920,31 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageTextFormat</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinātas statusa joslā</translation>
     </message>
     <message>
         <source>Decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cipari aiz komata:</translation>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribūtu pārlūks</translation>
     </message>
     <message>
         <source>Decimal places</source>
-        <translation type="unfinished"></translation>
+        <translation>Cipari aiz komata</translation>
     </message>
     <message>
         <source>Coordinates:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinātas:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtība:</translation>
     </message>
 </context>
 <context>
@@ -1322,9 +1320,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ielādējot risinātāja definīcijas failu mapē, radās kļūda &quot; %1 Šis risinātājs tiek ignorēts. %2</translation>
+        <translation>Ielādējot risinātāja definīcijas failu mapē, radās kļūda " %1 Šis risinātājs tiek ignorēts. %2</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1441,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Šķiet, ka šo projektu atver cits iRIC GUI logs. Projekta mapi nevar atvērt no vairākiem GUI logiem.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Atvērtais projekts netiek kopēts darba direktorijā, un jūs būsit spiests saglabāt šajā projektā veiktās izmaiņas. Ja vēlaties saglabāt pašreizējo projektu, lūdzu, vispirms saglabājiet to citā projektā.</translation>
     </message>
     <message>
@@ -1603,8 +1601,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Pašlaik aktīvais apakšlogs neatbalsta kontūras skaitļa eksportēšanu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet &quot;Displeja iestatījums&quot; uz &quot;Kontūras attēls&quot;, nevis &quot;Krāsu maliņa&quot; vai &quot;Izolīnas&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1744,8 +1742,8 @@ Option -&gt; Preferences</source>
         <translation>Iestatījumu fails (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Lai eksportētu formas failu, pārslēdziet krāsu režīmu uz "Diskrēts režīms".</translation>
     </message>
 </context>
 <context>
@@ -2092,7 +2090,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2119,7 +2117,7 @@ Option -&gt; Preferences</source>
         <translation>Atveriet jaunu 2D pēcapstrādes logu</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Atveriet jaunu 2D putnu lidojuma pēcapstrādes logu</translation>
     </message>
     <message>

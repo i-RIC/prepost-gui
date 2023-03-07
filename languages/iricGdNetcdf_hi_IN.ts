@@ -52,7 +52,27 @@
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation>निम्न फ़ाइलें आयात की जाएंगी। ठीक है न?</translation>
+        <translation type="vanished">निम्न फ़ाइलें आयात की जाएंगी। ठीक है न?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>कृपया आयात की जाने वाली फ़ाइलें चुनें.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>सभी का चयन करे (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>सभी को अचिन्हिंत करें (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>चेतावनी</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>चयनित फ़ाइलों के बीच का समय अंतराल समान नहीं है।</translation>
     </message>
 </context>
 <context>
@@ -88,6 +108,10 @@
     <message>
         <source>File name does not match the pattern</source>
         <translation>फ़ाइल का नाम पैटर्न से मेल नहीं खाता</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>समय क्षेत्र:</translation>
     </message>
 </context>
 <context>
@@ -149,11 +173,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>समय बेमेल के लिए आयाम मान।</translation>
+        <translation type="vanished">समय बेमेल के लिए आयाम मान।</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>निर्देशांक प्रणाली के लिए निर्दिष्ट नहीं है %1. कृपया मैन्युअल रूप से समन्वय प्रणाली का चयन करें।</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>समय शृंखला रेखापुंज डेटा पहले ही आयात किया जा चुका है। यदि आप अन्य डेटा आयात करना चाहते हैं, तो कृपया पहले पहले से आयात किए गए डेटा को हटा दें।</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>प्रारंभिक %1 असफल।</translation>
     </message>
 </context>
 <context>
@@ -250,15 +282,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>के लिए आयाम मान %1 बेमेल</translation>
+        <translation type="vanished">के लिए आयाम मान %1 बेमेल</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>समय परिभाषा को पार्स करते समय त्रुटि हुई: %1</translation>
+        <translation type="vanished">समय परिभाषा को पार्स करते समय त्रुटि हुई: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 देशांतर, अक्षांश और न ही x, y डेटा है।</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>समय शृंखला रेखापुंज डेटा पहले ही आयात किया जा चुका है। यदि आप अन्य डेटा आयात करना चाहते हैं, तो कृपया पहले पहले से आयात किए गए डेटा को हटा दें।</translation>
     </message>
 </context>
 <context>
@@ -306,6 +342,10 @@
     <message>
         <source>Original time:</source>
         <translation>मूल समय:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>समय क्षेत्र:</translation>
     </message>
 </context>
 <context>
@@ -361,11 +401,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>जानकारी</translation>
+        <translation type="vanished">जानकारी</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 फ़ोल्डर में फ़ाइलें %2 आयात किए जाते हैं।</translation>
+        <translation type="vanished">%1 फ़ोल्डर में फ़ाइलें %2 आयात किए जाते हैं।</translation>
     </message>
     <message>
         <source>Error</source>
@@ -373,7 +413,19 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>समय बेमेल के लिए आयाम मान।</translation>
+        <translation type="vanished">समय बेमेल के लिए आयाम मान।</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>समय शृंखला रेखापुंज डेटा पहले ही आयात किया जा चुका है। यदि आप अन्य डेटा आयात करना चाहते हैं, तो कृपया पहले पहले से आयात किए गए डेटा को हटा दें।</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>से परिवर्तित डेटा आयात करते समय त्रुटि हुई %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>खोलते समय त्रुटि हुई %1.</translation>
     </message>
 </context>
 </TS>

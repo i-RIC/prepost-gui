@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Konturinnstilling (cellesenter)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Område</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Konturinnstilling (cellesenter)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Verdi:</translation>
+        <translation type="vanished">Verdi:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Regioner</translation>
+        <translation type="vanished">Regioner</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Legge til (&amp;A)</translation>
+        <translation type="vanished">Legge til (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Ta bort (&amp;R)</translation>
+        <translation type="vanished">Ta bort (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Område %1</translation>
+        <translation type="vanished">Område %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimalt fire konturer kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire konturer kan defineres.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Legg til (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjerne (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Område %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Ansikt</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Kontur</translation>
+        <translation type="vanished">Kontur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Konturinnstilling</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Konturinnstilling (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Konturinnstilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Ansikter</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Konturinnstilling</translation>
+        <translation type="vanished">Konturinnstilling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysisk verdi:</translation>
+        <translation type="vanished">Fysisk verdi:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Ansikter</translation>
+        <translation type="vanished">Ansikter</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Legge til (&amp;A)</translation>
+        <translation type="vanished">Legge til (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Ta bort (&amp;R)</translation>
+        <translation type="vanished">Ta bort (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Innstilling av fargelinje (&amp;C)</translation>
+        <translation type="vanished">Innstilling av fargelinje (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Ansikt %1</translation>
+        <translation type="vanished">Ansikt %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimalt fire konturer kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire konturer kan defineres.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Endring av objektleser</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Legg til (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjerne (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Retning</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>Jeg</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Område</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Jeg er med</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>I Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Aktivert</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>Rutenettform</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Visningsinnstilling for rutenettform</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Ansikt</translation>
+        <translation type="vanished">Ansikt</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Ansikt %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Innstilling av piler</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grunnleggende</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengdeforklaring</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Ansikter</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Legg til (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Fjerne (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Ansikt %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Lengdeforklaring</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>Maksimalt fire piler kan defineres.</translation>
+        <translation type="vanished">Maksimalt fire piler kan defineres.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Partikler skalar innstilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farge etter verdi</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Fargekartinnstilling</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstørrelse:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Rediger partikkelinnstilling</translation>
+        <translation type="vanished">Rediger partikkelinnstilling</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vectorattributt Velg Endre</translation>
+        <translation type="vanished">Vectorattributt Velg Endre</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Oppdater vektorinnstilling</translation>
+        <translation type="vanished">Oppdater vektorinnstilling</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Pil Fysisk verdiendring</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Partikler Vektor Innstilling</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Oppdater</translation>
+        <translation type="vanished">Oppdater</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Lag kontur</translation>
+        <translation type="vanished">Lag kontur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Oppdater innstilling for rutenettform</translation>
+        <translation type="vanished">Oppdater innstilling for rutenettform</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Oppdater partikkels skalarinnstilling</translation>
+        <translation type="vanished">Oppdater partikkels skalarinnstilling</translation>
     </message>
 </context>
 </TS>

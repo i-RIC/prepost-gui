@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>ग्रिड लाइन्स</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सभी</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>केवल रूपरेखा</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>ग्रिड सूचकांक</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप कस्टम समय प्रारूप को परिभाषित करने के लिए निम्नलिखित प्रतीकों का उपयोग कर सकते हैं:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;वर्ष: YYYY, YY&lt;/li&gt;&lt;li&gt;माह: M, MM, MMM, MMMM (जनवरी के लिए MMM, जनवरी आदि के लिए MMMM)&lt;/li&gt;&lt;li&gt;दिन: d, dd, ddd, dddd (सोम आदि के लिए dddd, सोमवार आदि के लिए dddd)&lt;/li &gt;&lt;li&gt;घंटा: एच, एचएच, एच, एचएच (एच, एचएच एएम / पीएम डिस्प्ले के लिए)&lt;/li&gt;&lt;li&gt;मिनट: एम, मिमी&lt;/li&gt;&lt;li&gt;दूसरा: एस, एसएस&lt;/li &gt;&lt;li&gt;पूर्वाह्न / अपराह्न: ए, ए&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>समय क्षेत्र दिखाएं</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +700,13 @@
     <message>
         <source>Please wait...</source>
         <translation>कृपया प्रतीक्षा करें...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation>कृपया प्रतीक्षा कीजिये...</translation>
     </message>
 </context>
 <context>

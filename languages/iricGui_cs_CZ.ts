@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>Přeskočit sazbu:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Aktuálně není vybráno žádné okno.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Průběžný snímek / Film / Průvodce exportem Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Mřížka na pozadí</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Výchozí písmo</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Textový formát</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Mezi příčnými řezy:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Společný</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Tvar mřížky / Indexy mřížky</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barevný pruh</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Štítky</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda délky šipky</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Okno předběžného zpracování</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Názvy průřezů dat z průzkumu řek</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Názvy hraničních podmínek</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizace Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Štítky:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Graf Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Název grafu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Název osy:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis Ticks:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Po otevření zkopírujte projekt složky do pracovního adresáře</translation>
+        <translation type="vanished">Po otevření zkopírujte projekt složky do pracovního adresáře</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Souřadnice ve stavovém řádku</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>desetinná místa:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Prohlížeč atributů</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Desetinná místa</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Souřadnice:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(Nespecifikováno)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Nastavení výstupu</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Výstup výsledků výpočtu v samostatných souborech</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - IRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - IRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
+        <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Snímek byl úspěšně uložen do %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Všechny soubory v %1 je smazán.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Nastavení souboru (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Chcete-li exportovat soubor tvaru, přepněte barevný režim na „Diskrétní režim“.</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Geografická data (z webu)</translation>
+        <translation type="vanished">Geografická data (z webu)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C.</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Znovu načtěte soubor CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Znovu načtěte soubor CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Geografické údaje (výška z webu)</translation>
     </message>
 </context>
 </TS>

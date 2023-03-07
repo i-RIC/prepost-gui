@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Højre Y-akses område er ugyldigt.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Sekunder</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Referat</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Timer</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Dage</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>Linjer</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>sekunder</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minutter</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>timer</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dage</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>CSV -eksport (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Skrifttypeindstilling (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ekstern</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Indstilling af diagramfont</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-akse:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titel:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Flåter:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-akse:</translation>
     </message>
 </context>
 <context>

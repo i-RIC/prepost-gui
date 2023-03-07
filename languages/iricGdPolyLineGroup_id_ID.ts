@@ -13,6 +13,37 @@
         <source>Line%1</source>
         <translation>Garis %1</translation>
     </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Tambahkan Baris Baru (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Edit Pengaturan Warna</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation>Pengaturan Tampilan Grup Polyline</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lebar Garis:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
@@ -137,6 +168,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>File CSV (Baris) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Edit pengaturan tampilan</translation>
     </message>
 </context>
 <context>

@@ -260,6 +260,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Režģa līnijas</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Tikai kontūra</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Režģa indeksi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Redzams</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -641,6 +672,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Pielāgota laika formāta noteikšanai varat izmantot šādus simbolus: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Gads: GGGG, GG &lt;/li&gt; &lt;li&gt; Mēnesis: M, MM, MMM, MMMM (MMM janvārim utt., MMMM janvārim utt.) &lt;/li&gt; &lt;li&gt; Diena: d, dd, ddd, dddd (ddd pirmdienai utt., Dddd pirmdienai utt.) &lt;/Li &gt; &lt;li&gt; Stunda: H, HH, h, hh (h, hh AM/PM displejam) &lt;/li&gt; &lt;li&gt; Minūte: m, mm &lt;/li&gt; &lt;li&gt; Otrais: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Rādīt laika joslu</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -662,6 +697,13 @@
         <source>Please wait</source>
         <translation>Lūdzu uzgaidiet</translation>
     </message>
+    <message>
+        <source>Please wait...</source>
+        <translation>Lūdzu uzgaidiet...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
         <translation>Lūdzu uzgaidiet...</translation>

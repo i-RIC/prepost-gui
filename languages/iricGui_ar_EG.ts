@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>معدل التخطي:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>-</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>لا توجد نافذة محددة حاليا.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>لقطة مستمرة / فيلم / معالج تصدير Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>شبكة الخلفية</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>الخط الافتراضي</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>تنسيق النص</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>بين المقاطع العرضية:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>مشترك</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>شكل الشبكة / مؤشرات الشبكة</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ملصقات</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>طول السهم وسيلة إيضاح</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>نافذة ما قبل المعالجة</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>المنبع / المصب</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>أسماء المقاطع العرضية لبيانات مسح الأنهار</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>أسماء شروط الحدود</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>نوافذ التصور</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ملصقات:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>نوافذ الرسم البياني</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>عنوان التخطيط:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>أساطير:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>عنوان المحور:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>قراد المحور:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>انسخ مشروع المجلد إلى دليل العمل عند فتحه</translation>
+        <translation type="vanished">انسخ مشروع المجلد إلى دليل العمل عند فتحه</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>الإحداثيات في شريط الحالة</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>منازل عشرية:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>متصفح السمات</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>منازل عشرية</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>إحداثيات:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>قيمة:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(غير محدد)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>اعدادات الخروج</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>ينتج عن حساب المخرجات ملفات منفصلة</translation>
     </message>
 </context>
 <context>
@@ -1397,7 +1530,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1538,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1546,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1469,7 +1602,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>تم حفظ اللقطة في %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>جميع الملفات بتنسيق %1 يتم حذف.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>ملف الإعداد (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>لتصدير ملف الشكل ، بدّل وضع اللون إلى "الوضع المنفصل".</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>البيانات الجغرافية (من الويب)</translation>
+        <translation type="vanished">البيانات الجغرافية (من الويب)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>إعادة تحميل ملف CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>إعادة تحميل ملف CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>البيانات الجغرافية (الارتفاع من الويب)</translation>
     </message>
 </context>
 </TS>

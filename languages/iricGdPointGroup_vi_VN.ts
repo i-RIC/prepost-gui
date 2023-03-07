@@ -13,6 +13,37 @@
         <source>P&amp;oint</source>
         <translation>Chỉ trỏ (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Thêm điểm mới (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Chỉnh sửa cài đặt màu</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Cài đặt hiển thị nhóm điểm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
@@ -109,6 +140,13 @@
     <message>
         <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>Đã xảy ra lỗi khi đọc giá trị "value" trong dòng %1. "giá trị" phải là giá trị thực nhưng "%2" được quy định.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
 </context>
 <context>

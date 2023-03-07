@@ -56,33 +56,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Сокири</translation>
+        <translation type="vanished">Сокири</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Скалярна</translation>
+        <translation type="vanished">Скалярна</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Оновити налаштування контуру</translation>
+        <translation type="vanished">Оновити налаштування контуру</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скалярний (клітинний центр)</translation>
+        <translation type="vanished">Скалярний (клітинний центр)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Можуть бути визначені максимум чотири контури.</translation>
+        <translation type="vanished">Можуть бути визначені максимум чотири контури.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярне налаштування</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Скалярне значення висоти</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Налаштування кольору</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Індивідуальний колір</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">За скалярним значенням</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Скалярне значення:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Налаштування регіону (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Налаштування кольорової панелі (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Помилка</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Для діапазону значень максимальне значення менше за мінімальне значення.</translation>
     </message>
 </context>
 <context>
@@ -97,7 +144,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Налаштування контуру недоступне, оскільки цей результат не містить скалярних значень комірки.</translation>
+        <translation type="vanished">Налаштування контуру недоступне, оскільки цей результат не містить скалярних значень комірки.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -116,6 +163,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Налаштування відображення форми сітки</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Скалярне значення висоти</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -123,7 +181,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Оновити налаштування контуру</translation>
+        <translation type="vanished">Оновити налаштування контуру</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярне налаштування (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Діалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Індивідуальний колір</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>За скалярним значенням</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Діапазон</translation>
     </message>
 </context>
 <context>
@@ -134,22 +227,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Можуть бути визначені максимум чотири контури.</translation>
+        <translation type="vanished">Можуть бути визначені максимум чотири контури.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Створити контур</translation>
+        <translation type="vanished">Створити контур</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Оновити налаштування форми сітки</translation>
+        <translation type="vanished">Оновити налаштування форми сітки</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

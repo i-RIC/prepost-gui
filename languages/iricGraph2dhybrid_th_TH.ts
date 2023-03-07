@@ -97,6 +97,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>ช่วงแกน Y ขวาไม่ถูกต้อง</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>วินาที</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>นาที</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>ชั่วโมง</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>วัน</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +183,22 @@
     <message>
         <source>Lines</source>
         <translation>เส้น</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>วินาที</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>นาที</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>ชั่วโมง</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>วัน</translation>
     </message>
 </context>
 <context>
@@ -348,6 +380,10 @@
     <message>
         <source>CSV &amp;Export</source>
         <translation>ส่งออก CSV (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>การตั้งค่าแบบอักษร (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -573,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>ภายนอก</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>การตั้งค่าแบบอักษรของแผนภูมิ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>ชื่อแผนภูมิ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>ตำนาน:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>แกน X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>เห็บ:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>แกน Y:</translation>
     </message>
 </context>
 <context>

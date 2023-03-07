@@ -49,6 +49,14 @@
         <source>P&amp;olygons</source>
         <translation>Polígonos (&amp;O)</translation>
     </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Agregar nuevo polígono (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>Editar configuración de color</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
@@ -69,11 +77,11 @@
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">Color por Valor</translation>
+        <translation>Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">Color Personalizado</translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>Polygon</source>
@@ -82,6 +90,18 @@
     <message>
         <source>Polygon%1</source>
         <translation type="vanished">Poligono%1</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>Configuración de visualización del grupo de polígonos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Grosor de línea:</translation>
     </message>
 </context>
 <context>
@@ -211,6 +231,13 @@
     <message>
         <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Ocurrió un error al leer la línea %1. "valor" debe ser el mismo para las líneas donde los valores "pid" son los mismos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>Editar configuración de pantalla</translation>
     </message>
 </context>
 <context>

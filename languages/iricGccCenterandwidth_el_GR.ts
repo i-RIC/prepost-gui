@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Κατάργηση κεντρικής γραμμής Vertex</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ρύθμιση οθόνης</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

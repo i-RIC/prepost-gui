@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Datele secțiunii transversale sunt generate utilizând date din cloud puncte. Dacă doriți să reglați din nou poziția secțiunii transversale și datele clouod ale punctelor de hartă, puteți utiliza „Date de cloud punct de hartă”</translation>
+        <translation type="vanished">Datele secțiunii transversale sunt generate utilizând date din cloud puncte. Dacă doriți să reglați din nou poziția secțiunii transversale și datele clouod ale punctelor de hartă, puteți utiliza „Date de cloud punct de hartă”</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Generați date cloud de puncte</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Datele secțiunilor transversale sunt generate folosind datele din norul de puncte. Dacă doriți să ajustați din nou poziția secțiunii transversale și datele din norul de puncte ale hărții, puteți utiliza „Date din norul de puncte ale hărții”</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Datele secțiunilor transversale sunt generate folosind datele din norul de puncte. În unele regiuni, datele nu existau în datele din norul de puncte, iar valoarea 0 a fost mapată pentru acele puncte. Dacă doriți să ajustați din nou poziția secțiunii transversale și datele din norul de puncte ale hărții, puteți utiliza „Date din norul de puncte ale hărții”</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Raport de aspect: 1 /</translation>
+        <translation type="vanished">Raport de aspect: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Date secțiune transversală</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Raport de aspect (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Raport de aspect: 1 / %1</translation>
+        <translation type="vanished">Raport de aspect: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Editați setarea afișajului</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Raport de aspect (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nume de secțiuni transversale</translation>
     </message>
 </context>
 <context>

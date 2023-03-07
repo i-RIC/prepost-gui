@@ -380,7 +380,7 @@
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data awan titik peta, Anda dapat menggunakan "Data awan titik peta"</translation>
+        <translation type="vanished">Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data awan titik peta, Anda dapat menggunakan "Data awan titik peta"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -389,6 +389,17 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>Hasilkan data cloud titik</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan "Data cloud titik peta"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Data penampang dihasilkan menggunakan data point cloud. Di beberapa wilayah, data tidak ada dalam data cloud titik, dan nilai 0 dipetakan untuk titik-titik tersebut. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan "Data cloud titik peta"</translation>
     </message>
 </context>
 <context>
@@ -666,7 +677,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Rasio aspek: 1 /</translation>
+        <translation type="vanished">Rasio aspek: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +795,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Data Lintas-Bagian</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Rasio aspek (V/H): 1 /</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +828,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Rasio aspek: 1 / %1</translation>
+        <translation type="vanished">Rasio aspek: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -839,6 +854,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Edit Pengaturan Tampilan</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Rasio aspek (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -893,6 +912,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nama Penampang</translation>
     </message>
 </context>
 <context>

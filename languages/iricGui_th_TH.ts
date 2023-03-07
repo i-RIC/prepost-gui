@@ -286,6 +286,10 @@
         <source>Skip rate :</source>
         <translation>อัตราการข้าม :</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +360,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>ไม่ได้เลือกหน้าต่างใดในขณะนี้</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>สแนปชอตต่อเนื่อง / ภาพยนตร์ / ตัวช่วยสร้างการส่งออก Google Earth</translation>
     </message>
 </context>
 <context>
@@ -496,6 +507,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>ตารางพื้นหลัง</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>แบบอักษรเริ่มต้น</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>รูปแบบข้อความ</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -514,6 +533,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>ระหว่างส่วนตัดขวาง:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>ทั่วไป</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>รูปร่างกริด / ดัชนีกริด</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>แถบสี</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ป้ายกำกับ</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>ตำนานความยาวลูกศร</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>หน้าต่างก่อนการประมวลผล</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>ต้นน้ำ/ปลายน้ำ</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>ชื่อส่วนข้อมูลการสำรวจแม่น้ำ</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>ชื่อเงื่อนไขขอบเขต</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows การแสดงภาพ</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ป้ายกำกับ:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>หน้าต่างแผนภูมิ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>ชื่อแผนภูมิ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>ตำนาน:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>ชื่อแกน:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>ขีดแกน:</translation>
     </message>
 </context>
 <context>
@@ -540,7 +634,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>คัดลอกโครงการโฟลเดอร์ไปยัง Working Directory เมื่อเปิดขึ้น</translation>
+        <translation type="vanished">คัดลอกโครงการโฟลเดอร์ไปยัง Working Directory เมื่อเปิดขึ้น</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -823,6 +917,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>พิกัดในแถบสถานะ</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>ตำแหน่งทศนิยม:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>เบราว์เซอร์แอตทริบิวต์</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>ตำแหน่งทศนิยม</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>พิกัด:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>ค่า:</translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1043,6 +1168,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(ไม่ระบุ)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>การตั้งค่าเอาต์พุต</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>ผลลัพธ์การคำนวณผลลัพธ์ในไฟล์แยกกัน</translation>
     </message>
 </context>
 <context>
@@ -1457,11 +1590,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1473,7 +1606,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1502,7 +1635,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1591,6 +1724,26 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>มิติ</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>ไฟล์ทั้งหมดใน %1 ถูกลบ</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>ไฟล์การตั้งค่า (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น "โหมดแยก"</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1909,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>ข้อมูลทางภูมิศาสตร์ (จากเว็บ)</translation>
+        <translation type="vanished">ข้อมูลทางภูมิศาสตร์ (จากเว็บ)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2066,6 +2219,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>โหลดไฟล์ CGNS ซ้ำ (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>โหลดไฟล์ CGNS ซ้ำ</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>ข้อมูลทางภูมิศาสตร์ (ระดับความสูงจากเว็บ)</translation>
     </message>
 </context>
 </TS>

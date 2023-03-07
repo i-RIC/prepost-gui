@@ -67,34 +67,57 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
         <translation>Kontur Ayarı (hücre merkezi)</translation>
     </message>
     <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Menzil</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Kontur Ayarı (hücre merkezi)</translation>
+    </message>
+    <message>
         <source>Value:</source>
-        <translation>Değer:</translation>
+        <translation type="vanished">Değer:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Bölgeler</translation>
+        <translation type="vanished">Bölgeler</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ekle (&amp;A)</translation>
+        <translation type="vanished">Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kaldırmak (&amp;R)</translation>
+        <translation type="vanished">Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Menzil %1</translation>
+        <translation type="vanished">Menzil %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +128,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>En fazla dört kontur tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Eklemek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kaldırmak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Menzil %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +194,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Yüz</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>kontur</translation>
+        <translation type="vanished">kontur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
+        <translation type="vanished">Kontur Ayarı</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Kontur Ayarı (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
         <translation>Kontur Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Yüzler</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontur Ayarı</translation>
+        <translation type="vanished">Kontur Ayarı</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fiziksel Değer:</translation>
+        <translation type="vanished">Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>yüzler</translation>
+        <translation type="vanished">yüzler</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ekle (&amp;A)</translation>
+        <translation type="vanished">Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kaldırmak (&amp;R)</translation>
+        <translation type="vanished">Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Yüz %1</translation>
+        <translation type="vanished">Yüz %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +281,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>En fazla dört kontur tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +304,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Nesne Tarayıcı Öğe Değişikliği</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Eklemek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kaldırmak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Yön</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>BEN</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Menzil</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Varım</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Ben Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K dak</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Etkinleştirilmiş</translation>
     </message>
 </context>
 <context>
@@ -286,6 +440,13 @@
     <message>
         <source>Grid shape</source>
         <translation>ızgara şekli</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Izgara Şekli Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
@@ -484,7 +645,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Yüz</translation>
+        <translation type="vanished">Yüz</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Ok Ayarı</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Temel</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Uzunluk Efsanesi</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Yüzler</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Eklemek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +747,10 @@
         <source>Face%1</source>
         <translation>Yüz %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Uzunluk Efsanesi</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +760,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>En fazla dört ok tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört ok tanımlanabilir.</translation>
     </message>
 </context>
 <context>
@@ -753,10 +959,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Parçacıklar Skaler Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Renk Haritası Ayarı</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puan Boyutu:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Parçacık Ayarını Düzenle</translation>
+        <translation type="vanished">Parçacık Ayarını Düzenle</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1008,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektör Özellik Seçimi Değiştir</translation>
+        <translation type="vanished">Vektör Özellik Seçimi Değiştir</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vektör Ayarını Güncelle</translation>
+        <translation type="vanished">Vektör Ayarını Güncelle</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Ok Fiziksel Değer Değişimi</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Parçacıklar Vektör Ayarı</translation>
     </message>
 </context>
 <context>
@@ -894,15 +1146,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Güncelleme</translation>
+        <translation type="vanished">Güncelleme</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kontur Oluştur</translation>
+        <translation type="vanished">Kontur Oluştur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Izgara Şekli Ayarını Güncelle</translation>
+        <translation type="vanished">Izgara Şekli Ayarını Güncelle</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -918,7 +1170,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Parçacık Skaler Ayarını Güncelle</translation>
+        <translation type="vanished">Parçacık Skaler Ayarını Güncelle</translation>
     </message>
 </context>
 </TS>

@@ -111,178 +111,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>إعداد السهم</translation>
+        <translation type="vanished">إعداد السهم</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>القيمة المادية:</translation>
+        <translation type="vanished">القيمة المادية:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>طول</translation>
+        <translation type="vanished">طول</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>آلي</translation>
+        <translation type="vanished">آلي</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>قيمة قياسية:</translation>
+        <translation type="vanished">قيمة قياسية:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[تصلب متعدد]</translation>
+        <translation type="vanished">[تصلب متعدد]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>الطول على الشاشة:</translation>
+        <translation type="vanished">الطول على الشاشة:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[بكسل]</translation>
+        <translation type="vanished">[بكسل]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>الحد الأدنى للرسم:</translation>
+        <translation type="vanished">الحد الأدنى للرسم:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>أخذ العينات</translation>
+        <translation type="vanished">أخذ العينات</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>كل القمم</translation>
+        <translation type="vanished">كل القمم</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>معدل أخذ العينات:</translation>
+        <translation type="vanished">معدل أخذ العينات:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>أنا الاتجاه</translation>
+        <translation type="vanished">أنا الاتجاه</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>اتجاه J</translation>
+        <translation type="vanished">اتجاه J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>حسب القيمة العددية</translation>
+        <translation type="vanished">حسب القيمة العددية</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>شكل السهم</translation>
+        <translation type="vanished">شكل السهم</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>حجم السهم:</translation>
+        <translation type="vanished">حجم السهم:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>إعداد المنطقة (&amp;R)</translation>
+        <translation type="vanished">إعداد المنطقة (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>إعداد السهم</translation>
+        <translation type="vanished">إعداد السهم</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>القيمة المادية:</translation>
+        <translation type="vanished">القيمة المادية:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>طول</translation>
+        <translation type="vanished">طول</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>آلي</translation>
+        <translation type="vanished">آلي</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>قيمة قياسية:</translation>
+        <translation type="vanished">قيمة قياسية:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[تصلب متعدد]</translation>
+        <translation type="vanished">[تصلب متعدد]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>الطول على الشاشة:</translation>
+        <translation type="vanished">الطول على الشاشة:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[بكسل]</translation>
+        <translation type="vanished">[بكسل]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>الحد الأدنى للرسم:</translation>
+        <translation type="vanished">الحد الأدنى للرسم:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>أخذ العينات</translation>
+        <translation type="vanished">أخذ العينات</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>كل القمم</translation>
+        <translation type="vanished">كل القمم</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>معدل أخذ العينات:</translation>
+        <translation type="vanished">معدل أخذ العينات:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>حدد عدد الرؤوس</translation>
+        <translation type="vanished">حدد عدد الرؤوس</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>حسب القيمة العددية</translation>
+        <translation type="vanished">حسب القيمة العددية</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>شكل السهم</translation>
+        <translation type="vanished">شكل السهم</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>حجم السهم:</translation>
+        <translation type="vanished">حجم السهم:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>إعداد المنطقة (&amp;R)</translation>
+        <translation type="vanished">إعداد المنطقة (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +369,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>عددي (مركز الخلية)</translation>
+        <translation type="vanished">عددي (مركز الخلية)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>تحديث إعداد الكونتور</translation>
+        <translation type="vanished">تحديث إعداد الكونتور</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>لتصدير KML للتجول ثلاثي الأبعاد ، اعرضه باستخدام شكل محيطي.</translation>
+        <translation type="vanished">لتصدير KML للتجول ثلاثي الأبعاد ، اعرضه باستخدام شكل محيطي.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>لتصدير KML للتجوّل الافتراضي ، يجب إعداد نطاق القيمة يدويًا.</translation>
+        <translation type="vanished">لتصدير KML للتجوّل الافتراضي ، يجب إعداد نطاق القيمة يدويًا.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>لتصدير KML للتجوّل الافتراضي ، يجب تحديد النظام الإحداثي.</translation>
+        <translation type="vanished">لتصدير KML للتجوّل الافتراضي ، يجب تحديد النظام الإحداثي.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>الإعداد العددي (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>حوار</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -400,50 +427,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+        <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>ضبط عددي</translation>
+        <translation type="vanished">ضبط عددي</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>القيمة المادية:</translation>
+        <translation type="vanished">القيمة المادية:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>إعداد عرض</translation>
+        <translation type="vanished">إعداد عرض</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>إعداد المنطقة (&amp;R)</translation>
+        <translation type="vanished">إعداد المنطقة (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>بالنسبة لنطاق القيمة ، تكون القيمة القصوى أصغر من القيمة الدنيا.</translation>
+        <translation type="vanished">بالنسبة لنطاق القيمة ، تكون القيمة القصوى أصغر من القيمة الدنيا.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +527,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>البيانات الجغرافية</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>معلومات مرجعية</translation>
     </message>
 </context>
 <context>
@@ -635,6 +666,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>إعداد عرض شكل الشبكة</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,7 +715,7 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>تحديث إعداد الكونتور</translation>
+        <translation type="vanished">تحديث إعداد الكونتور</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -685,22 +723,53 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>لتصدير KML للتجول ثلاثي الأبعاد ، اعرضه باستخدام شكل محيطي.</translation>
+        <translation type="vanished">لتصدير KML للتجول ثلاثي الأبعاد ، اعرضه باستخدام شكل محيطي.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>لتصدير KML للتجوّل الافتراضي ، يجب إعداد نطاق القيمة يدويًا.</translation>
+        <translation type="vanished">لتصدير KML للتجوّل الافتراضي ، يجب إعداد نطاق القيمة يدويًا.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>لتصدير KML للتجوّل الافتراضي ، يجب تحديد النظام الإحداثي.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>الإعداد العددي (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن يكون Colormode هو "الوضع المنفصل"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>حوار</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>عددي (عقدة)</translation>
+        <translation type="vanished">عددي (عقدة)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -708,7 +777,15 @@
     </message>
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>العددية</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>لتصدير ملف الشكل ، قم بتبديل إعداد اللون إلى "وضع منفصل".</translation>
     </message>
 </context>
 <context>
@@ -719,21 +796,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>تغيير القيمة المادية للسهم</translation>
+        <translation type="vanished">تغيير القيمة المادية للسهم</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>تحديث إعداد السهم</translation>
+        <translation type="vanished">تحديث إعداد السهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>إعداد الأسهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>تحديث إعداد السهم</translation>
+        <translation type="vanished">تحديث إعداد السهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>إعداد الأسهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
@@ -1062,10 +1175,49 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>إعداد عددي الجسيمات</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>حجم النقطة:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>تحرير إعداد الجسيمات</translation>
+        <translation type="vanished">تحرير إعداد الجسيمات</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>إظهار مستعرض السمات</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1228,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>سمة المتجه حدد التغيير</translation>
+        <translation type="vanished">سمة المتجه حدد التغيير</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>تحديث إعداد المتجه</translation>
+        <translation type="vanished">تحديث إعداد المتجه</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>تغيير القيمة المادية للسهم</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>إعداد ناقل الجسيمات</translation>
     </message>
 </context>
 <context>
@@ -1098,7 +1261,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>تحرير إعداد المضلع</translation>
+        <translation type="vanished">تحرير إعداد المضلع</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>إعداد عرض بيانات المضلع</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
     </message>
 </context>
 <context>
@@ -1306,11 +1504,11 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation>إنشاء محيط الخلية</translation>
+        <translation type="vanished">إنشاء محيط الخلية</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>إنشاء كونتور</translation>
+        <translation type="vanished">إنشاء كونتور</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,15 +1516,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>تحديث إعداد شكل الشبكة</translation>
+        <translation type="vanished">تحديث إعداد شكل الشبكة</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>تحديث إعداد عددي الجسيمات</translation>
+        <translation type="vanished">تحديث إعداد عددي الجسيمات</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>تحديث إعداد العددي المضلع</translation>
+        <translation type="vanished">تحديث إعداد العددي المضلع</translation>
     </message>
 </context>
 </TS>

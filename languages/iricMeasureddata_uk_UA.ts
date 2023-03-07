@@ -38,34 +38,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Скалярна установка</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Виміряне значення:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Діалогове вікно налаштування відображення балів</translation>
     </message>
     <message>
         <source>Display Setting</source>
         <translation>Налаштування дисплея</translation>
     </message>
     <message>
+        <source>Points</source>
+        <translation>Очки</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Поверхня</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Налаштування кольорової карти</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
         <source>Point Size:</source>
         <translation>Розмір точки:</translation>
     </message>
     <message>
+        <source>Custom Color</source>
+        <translation>Спеціальний колір</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Скалярна установка</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Виміряне значення:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Розмір точки:</translation>
+    </message>
+    <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Для діапазону значень максимальне значення менше, ніж мінімальне значення.</translation>
+        <translation type="vanished">Для діапазону значень максимальне значення менше, ніж мінімальне значення.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +127,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Оновити налаштування стрілки</translation>
+        <translation type="vanished">Оновити налаштування стрілки</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Налаштування стрілки вимірюваних даних</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Налаштування стрілки</translation>
+        <translation type="vanished">Налаштування стрілки</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Фізична цінність:</translation>
+        <translation type="vanished">Фізична цінність:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Довжина</translation>
+        <translation type="vanished">Довжина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартне значення:</translation>
+        <translation type="vanished">Стандартне значення:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Довжина на екрані:</translation>
+        <translation type="vanished">Довжина на екрані:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[піксель]</translation>
+        <translation type="vanished">[піксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Мінімальне значення для розіграшу:</translation>
+        <translation type="vanished">Мінімальне значення для розіграшу:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>За скалярним значенням</translation>
+        <translation type="vanished">За скалярним значенням</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Налаштування колірної панелі (&amp;C)</translation>
+        <translation type="vanished">Налаштування колірної панелі (&amp;C)</translation>
     </message>
 </context>
 </TS>
