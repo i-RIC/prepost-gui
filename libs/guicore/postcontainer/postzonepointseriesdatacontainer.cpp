@@ -112,6 +112,9 @@ int PostZonePointSeriesDataContainer::loadData()
 {
 	m_data.clear();
 	auto zc = zoneDataContainer();
+	if (zc == nullptr) {
+		return IRIC_NO_ERROR;
+	}
 
 	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
 	for (PostCalculatedResult* r : calcResults) {
