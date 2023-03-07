@@ -133,6 +133,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 		mapper->SetInputData(data);
 		m_actor->SetMapper(mapper);
 		mapper->Delete();
+		m_actor->GetProperty()->SetColor(m_setting.customColor);
 	} else if (m_setting.colorMode == Setting::ColorMode::ByScalar) {
 		auto cs = activeColorMapSetting();
 		if (cs != nullptr) {
