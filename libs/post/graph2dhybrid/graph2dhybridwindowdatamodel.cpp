@@ -1201,6 +1201,7 @@ void Graph2dHybridWindowDataModel::applyAxisSetting()
 	xAxisLabelText.setFont(m_setting.xAxisTitleFont());
 
 	v->setAxisTitle(QwtPlot::xBottom, xAxisLabelText);
+	v->setAxisFont(QwtPlot::xBottom, m_setting.xAxisTickFont());
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asLeft)) {

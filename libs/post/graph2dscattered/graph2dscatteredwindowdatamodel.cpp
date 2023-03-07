@@ -277,6 +277,7 @@ void Graph2dScatteredWindowDataModel::applyAxisSetting()
 	xAxisTitle.setFont(m_setting.xAxisTitleFont());
 
 	v->setAxisTitle(QwtPlot::xBottom, xAxisTitle);
+	v->setAxisFont(QwtPlot::xBottom, m_setting.xAxisTickFont());
 
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asLeft)) {
