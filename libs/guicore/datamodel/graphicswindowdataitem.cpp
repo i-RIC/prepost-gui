@@ -376,7 +376,9 @@ QMainWindow* GraphicsWindowDataItem::mainWindow() const
 
 bool GraphicsWindowDataItem::isAncientChecked() const
 {
-	QStandardItem* i = dynamic_cast<GraphicsWindowDataItem*>(parent())->m_standardItem;
+	auto parent2 = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	if (parent2 == nullptr) {return true;}
+	auto i = parent2->m_standardItem;
 	if (i == nullptr) {return true;}
 	if (i->isCheckable() && i->checkState() == Qt::Unchecked) {
 		return false;
