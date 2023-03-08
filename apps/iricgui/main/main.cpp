@@ -17,6 +17,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <misc/errormessage.h>
 #include <misc/iricrootpath.h>
 #include <misc/qttool.h>
+#include <misc/stringtool.h>
 
 #include <QApplication>
 #include <QDir>
@@ -57,6 +58,9 @@ int main(int argc, char* argv[])
 
 	QString exeFolder = QApplication::applicationDirPath();
 	iRICRootPath::set(exeFolder);
+
+	QString proj_lib = QString("PROJ_LIB=") + QDir::toNativeSeparators(QDir(exeFolder).absoluteFilePath("share/proj"));
+	_putenv(iRIC::toStr(proj_lib).c_str());
 
 	QString langFolder = QDir(exeFolder).absoluteFilePath("languages");
 
