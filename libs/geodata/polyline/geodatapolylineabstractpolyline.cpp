@@ -137,7 +137,7 @@ void GeoDataPolyLineAbstractPolyLine::updateScalarValues()
 {
 	double val = impl->m_parent->variantValue().toDouble();
 	impl->m_linesScalarValues->Reset();
-	for (int i = 0; i < impl->m_polylineController.polyLine().size() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (impl->m_polylineController.polyLine().size()) - 1; ++i) {
 		impl->m_linesScalarValues->InsertNextValue(val);
 	}
 	impl->m_linesScalarValues->Modified();
