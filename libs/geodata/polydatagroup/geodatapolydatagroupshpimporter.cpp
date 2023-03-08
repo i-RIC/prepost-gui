@@ -116,7 +116,11 @@ bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QStr
 		auto wkt = f.readAll().toStdString();
 		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
 		auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
-		dialog.setCoordinateSystem(cs);
+		if (cs != nullptr) {
+			dialog.setCoordinateSystem(cs);
+		} else {
+			dialog.setCoordinateSystem(projectCs);
+		}
 	} else {
 		dialog.setCoordinateSystem(projectCs);
 	}
