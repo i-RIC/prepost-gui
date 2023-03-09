@@ -47,7 +47,7 @@ private:
 	QTableView* colorTable() const;
 	QPushButton* removeButton() const;
 
-	void importSetting(const QString& fileName);
+	void importSetting(const QString& fileName, bool ignoreLegendSetting);
 
 	void applySettingOtherThanLegend();
 	void updateLegendNumberOfLabels();

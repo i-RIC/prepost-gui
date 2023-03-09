@@ -102,9 +102,6 @@ void ColorMapEnumerateSettingEditWidget::importSetting()
 		return;
 	}
 	m_concreteSetting.load(doc.documentElement());
-	if (ui->ignoreColorBarSettingCheckBox->isChecked()) {
-		m_concreteSetting.legend = backup.legend;
-	}
 
 	applySetting();
 

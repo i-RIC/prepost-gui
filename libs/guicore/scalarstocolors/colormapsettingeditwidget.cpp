@@ -137,7 +137,7 @@ void ColorMapSettingEditWidget::importSetting()
 											  LastIODirectory::get(), tr("Colormap setting (*.cmsetting)"));
 	if (fname.isNull()) {return;}
 
-	importSetting(fname);
+	importSetting(fname, false);
 }
 
 void ColorMapSettingEditWidget::exportSetting()
@@ -175,7 +175,7 @@ void ColorMapSettingEditWidget::selectColorMapSetting(int index)
 	ui->colorPatternSelectComboBox->blockSignals(false);
 
 	auto fname = m_importTargetFileNames.at(index - 1);
-	importSetting(fname);
+	importSetting(fname, ui->ignoreColorBarSettingCheckBox->isChecked());
 }
 
 void ColorMapSettingEditWidget::switchToAutoMode()
@@ -334,7 +334,7 @@ QPushButton* ColorMapSettingEditWidget::removeButton() const
 	return ui->removeButton;
 }
 
-void ColorMapSettingEditWidget::importSetting(const QString& fileName)
+void ColorMapSettingEditWidget::importSetting(const QString& fileName, bool ignoreLegendSetting)
 {
 	ColorMapSettingContainer backup = m_concreteSetting;
 
@@ -354,7 +354,7 @@ void ColorMapSettingEditWidget::importSetting(const QString& fileName)
 		return;
 	}
 	m_concreteSetting.load(doc.documentElement());
-	if (ui->ignoreColorBarSettingCheckBox->isChecked()) {
+	if (ignoreLegendSetting) {
 		m_concreteSetting.legend = backup.legend;
 	}
 	m_concreteSetting.valueCaption = backup.valueCaption;
