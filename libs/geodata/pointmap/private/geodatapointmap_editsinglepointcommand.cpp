@@ -33,5 +33,6 @@ void GeoDataPointmap::EditSinglePointCommand::applyPoint(const QPointF& p, doubl
 	m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, v);
 	m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
 	m_pointMap->m_needRemeshing = true;
+	m_pointMap->updateActorSettings();
 	m_pointMap->setMapped(false);
 }

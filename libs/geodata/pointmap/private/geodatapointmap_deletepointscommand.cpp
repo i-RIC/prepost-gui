@@ -37,6 +37,7 @@ void GeoDataPointmap::DeletePointsCommand::redo()
 	m_pointMap->setPoints(m_newPoints, m_newValues);
 	m_pointMap->updateBreakLinesOnDelete(m_deletedPoints);
 	m_pointMap->m_needRemeshing = true;
+	m_pointMap->updateActorSettings();
 	m_pointMap->setMapped(false);
 }
 
@@ -45,5 +46,6 @@ void GeoDataPointmap::DeletePointsCommand::undo()
 	m_pointMap->setPoints(m_oldPoints, m_oldValues);
 	m_pointMap->updateBreakLinesOnInsert(m_deletedPoints);
 	m_pointMap->m_needRemeshing = true;
+	m_pointMap->updateActorSettings();
 	m_pointMap->setMapped(false);
 }

@@ -232,7 +232,6 @@ protected:
 private:
 	class InterpolateLineAddPointCommand;
 	class AddPointsCommand;
-	class AddInterpolatePointsCommand;
 	class DeletePointsCommand;
 	class EditPointsCommand;
 	class EditSinglePointCommand;

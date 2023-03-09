@@ -842,6 +842,8 @@ void GeoDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values)
 	impl->m_pointsManager.points()->GetPointData()->SetActiveScalars(VALUES);
 	impl->m_pointsManager.points()->Modified();
 	impl->m_pointsManager.points()->GetPoints()->Modified();
+
+	updateActorSettings();
 }
 
 void GeoDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values)
