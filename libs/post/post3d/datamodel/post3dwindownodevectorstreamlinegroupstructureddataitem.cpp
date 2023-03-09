@@ -99,6 +99,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		actorCollection()->AddItem(actor);
 
 		vtkDataSetMapper* mapper = vtkDataSetMapper::New();
+		mapper->ScalarVisibilityOff();
 		actor->SetMapper(mapper);
 
 		vtkStreamTracer* tracer = vtkStreamTracer::New();

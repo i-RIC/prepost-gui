@@ -117,6 +117,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		actorCollection()->AddItem(actor);
 
 		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+		mapper->ScalarVisibilityOff();
 		actor->SetMapper(mapper);
 
 		vtkSmartPointer<vtkStreamTracer> tracer = vtkSmartPointer<vtkStreamTracer>::New();
