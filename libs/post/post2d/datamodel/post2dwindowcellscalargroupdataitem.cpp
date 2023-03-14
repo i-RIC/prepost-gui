@@ -75,6 +75,7 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 	auto ps = cont->data()->data();
 
 	auto filtered = m_setting.regionSetting.buildCellFilteredData(ps);
+	filtered->GetCellData()->SetActiveScalars(m_target.c_str());
 	auto mapper = m_setting.colorMapSetting.buildCellDataMapper(filtered, false);
 	m_actor->SetMapper(mapper);
 
