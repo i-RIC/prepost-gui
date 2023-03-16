@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignoruj ustawienia paska kolorów podczas importowania</translation>
+        <translation type="vanished">Ignoruj ustawienia paska kolorów podczas importowania</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Rozmiar i położenie</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatyczny</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Podczas przełączania w tryb gradacji wartości są ustawiane na środkową wartość każdej sekcji.</translation>
+        <translation type="vanished">Podczas przełączania w tryb gradacji wartości są ustawiane na środkową wartość każdej sekcji.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Liczba kolorów do wstawienia w każdej sekcji</translation>
+        <translation type="vanished">Liczba kolorów do wstawienia w każdej sekcji</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Zakres wartości</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formularz</translation>
+        <translation type="vanished">Formularz</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atrybut</translation>
+        <translation type="vanished">Atrybut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolor</translation>
+        <translation type="vanished">Kolor</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Węzeł definicji nie jest przechowywany</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Nieprawidłowa wartośćType " %1 jest ustawiony.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Nieprawidłowa wartośćType &quot; %1 jest ustawiony.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Zły warunekTyp "%1"jest ustawiony.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Zły warunekTyp &quot;%1&quot;jest ustawiony.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,7 +1387,7 @@ Do you really want to import this file?</source>
         <translation>Plik %1 jest aktualizowany po zaimportowaniu do warunku obliczeniowego %2. Czy chcesz zaimportować zaktualizowany plik?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Możesz kopiować i wklejać wartości za pomocą skrótu „Ctrl + C” i „Ctrl + V”</translation>
     </message>
     <message>
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Ustawienie mapy kolorów</translation>
+        <translation type="vanished">Ustawienie mapy kolorów</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Zakres wartości</translation>
+        <translation type="vanished">Zakres wartości</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatyczny</translation>
+        <translation type="vanished">Automatyczny</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Wypełnij górny obszar</translation>
+        <translation type="vanished">Wypełnij górny obszar</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min.:</translation>
+        <translation type="vanished">Min.:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Wypełnij dolny obszar</translation>
+        <translation type="vanished">Wypełnij dolny obszar</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Numer oddziału:</translation>
+        <translation type="vanished">Numer oddziału:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks.:</translation>
+        <translation type="vanished">Maks.:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa kolorów</translation>
+        <translation type="vanished">Mapa kolorów</translation>
     </message>
 </context>
 <context>
@@ -1487,7 +1517,7 @@ Do you really want to import this file?</source>
         <translation>Wystąpił błąd podczas otwierania pliku.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Pierwsze dwie kolumny muszą zawierać „X” i „Y”.</translation>
     </message>
     <message>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Definicja zmiennej</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>W dół (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Definicja wyjścia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Obszar roboczy "%1" ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Obszar roboczy &quot;%1&quot; ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Ustawienie koloru</translation>
+        <translation type="vanished">Ustawienie koloru</translation>
     </message>
 </context>
 <context>

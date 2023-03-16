@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>导入时忽略颜色条设置</translation>
+        <translation type="vanished">导入时忽略颜色条设置</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>大小和位置</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">汽车</translation>
     </message>
 </context>
 <context>
@@ -602,7 +624,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Value</source>
@@ -626,7 +648,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>切换到渐变模式时，值设置为每个部分的中间值。</translation>
+        <translation type="vanished">切换到渐变模式时，值设置为每个部分的中间值。</translation>
     </message>
 </context>
 <context>
@@ -645,22 +667,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>每个部分要插入的颜色数</translation>
+        <translation type="vanished">每个部分要插入的颜色数</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">取值范围</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>属性</translation>
+        <translation type="vanished">属性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
 </context>
 <context>
@@ -1077,12 +1107,12 @@ Parse error %2 at %3, column %4</source>
         <translation>定义节点未被储存</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>设置了错误数值种类"%1" </translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>设置了错误数值种类&quot;%1&quot; </translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>设置了错误条件种类"%1" </translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>设置了错误条件种类&quot;%1&quot; </translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1355,7 +1385,7 @@ Do you really want to import this file?</source>
         <translation>信息</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>您可以使用快捷键“Ctrl + C”和“Ctrl + V”复制和粘贴值</translation>
     </message>
     <message>
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>彩色地图设置</translation>
+        <translation type="vanished">彩色地图设置</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>值域</translation>
+        <translation type="vanished">值域</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>自动</translation>
+        <translation type="vanished">自动</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>填充上部</translation>
+        <translation type="vanished">填充上部</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>最小:</translation>
+        <translation type="vanished">最小:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>填充下部:</translation>
+        <translation type="vanished">填充下部:</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>分割数:</translation>
+        <translation type="vanished">分割数:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>最大:</translation>
+        <translation type="vanished">最大:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>有色地图</translation>
+        <translation type="vanished">有色地图</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1513,8 @@ Do you really want to import this file?</source>
         <translation>打开文件时出现错误</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>前两列必须为"X" and "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>前两列必须为&quot;X&quot; and &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>变量定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>&amp;下移</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2058,8 +2088,8 @@ Do you really want to import this file?</source>
         <translation type="obsolete">&amp;编辑...</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2121,8 +2151,8 @@ Do you really want to import this file?</source>
         <translation>输出定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text - 装饰：下划线；颜色：#0000ff;"&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text - 装饰：下划线；颜色：#0000ff;&quot;&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2376,8 +2406,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Workspace "%1"具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Workspace &quot;%1&quot;具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2520,7 +2550,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>颜色设置</translation>
+        <translation type="vanished">颜色设置</translation>
     </message>
 </context>
 <context>

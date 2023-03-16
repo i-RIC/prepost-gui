@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -393,12 +395,12 @@
         <translation type="vanished">Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation type="vanished">不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation type="vanished">不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -635,7 +637,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>インポート時に凡例の設定を反映しない</translation>
+        <translation type="vanished">インポート時に凡例の設定を反映しない</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -749,6 +751,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>向き:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>ラベルの数:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
     </message>
 </context>
 <context>
@@ -880,7 +902,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Value</source>
@@ -904,7 +926,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
+        <translation type="vanished">グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
     </message>
 </context>
 <context>
@@ -923,22 +945,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>各区間に内挿する色の数</translation>
+        <translation type="vanished">各区間に内挿する色の数</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>値の範囲</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>色の数:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>属性</translation>
+        <translation type="vanished">属性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
 </context>
 <context>
@@ -1570,12 +1600,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1908,8 @@ Do you really want to import this file?</source>
         <translation>情報</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>ショートカットキー "Ctrl + C", "Ctrl + V" によって、値をコピー＆ペーストできます。</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1968,39 +1998,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>カラーマップ設定</translation>
+        <translation type="vanished">カラーマップ設定</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>値の範囲</translation>
+        <translation type="vanished">値の範囲</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>最大値以上を描画</translation>
+        <translation type="vanished">最大値以上を描画</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>最小値:</translation>
+        <translation type="vanished">最小値:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>最小値以下を描画</translation>
+        <translation type="vanished">最小値以下を描画</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>分割数:</translation>
+        <translation type="vanished">分割数:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>最大値:</translation>
+        <translation type="vanished">最大値:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -2010,8 +2040,8 @@ Do you really want to import this file?</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>最初の2つの列は "X",  "Y" でなくてはいけません。</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>最初の2つの列は &quot;X&quot;,  &quot;Y&quot; でなくてはいけません。</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2269,7 +2299,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Value for testing:</source>
@@ -2319,12 +2349,12 @@ Do you really want to import this file?</source>
         <translation>変数の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2335,7 +2365,7 @@ Do you really want to import this file?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the "Value for testing" for each input is shown.</source>
+        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the &quot;Value for testing&quot; for each input is shown.</source>
         <translation type="vanished">このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。</translation>
     </message>
     <message>
@@ -2406,8 +2436,8 @@ Do you really want to import this file?</source>
         <translation>下へ (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2784,8 +2814,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2871,8 +2901,8 @@ Do you really want to import this file?</source>
         <translation>出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3167,8 +3197,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>ワークスペース %1" には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>ワークスペース %1&quot; には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3400,7 +3430,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>表示色設定</translation>
+        <translation type="vanished">表示色設定</translation>
     </message>
 </context>
 <context>

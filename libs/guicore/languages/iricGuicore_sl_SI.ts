@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+        <translation type="vanished">Pri uvozu prezrite nastavitev barvne vrstice</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Avto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
+        <translation type="vanished">Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Število barv, ki jih je treba vstaviti v vsak del</translation>
+        <translation type="vanished">Število barv, ki jih je treba vstaviti v vsak del</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Razpon vrednosti</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Vozlišče definicije ni shranjeno</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Napačna vrednostType "%1"je nastavljeno.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Napačna vrednostType &quot;%1&quot;je nastavljeno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Napačno stanje Vrsta "%1"je nastavljeno.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Napačno stanje Vrsta &quot;%1&quot;je nastavljeno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>mapa %1 se po uvozu v stanje izračuna izračuna po posodobitvi %2. Ali želite uvoziti posodobljeno datoteko?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Vrednosti lahko kopirate in prilepite s bližnjico "Ctrl + C" in "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Vrednosti lahko kopirate in prilepite s bližnjico &quot;Ctrl + C&quot; in &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Nastavitev barvnega zemljevida</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Razpon vrednosti</translation>
+        <translation type="vanished">Razpon vrednosti</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Samodejno</translation>
+        <translation type="vanished">Samodejno</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Izpolnite zgornjo površino</translation>
+        <translation type="vanished">Izpolnite zgornjo površino</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Izpolnite spodnje območje</translation>
+        <translation type="vanished">Izpolnite spodnje območje</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Številka oddelka:</translation>
+        <translation type="vanished">Številka oddelka:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
     </message>
 </context>
 <context>
@@ -1487,8 +1517,8 @@ Do you really want to import this file?</source>
         <translation>Pri odpiranju datoteke je prišlo do napake.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Prva dva stolpca morata biti "X" in "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Prva dva stolpca morata biti &quot;X&quot; in &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Opredelitev spremenljivke</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Dol (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Opredelitev izhoda</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Delovni prostor "%1"ima %2 projektne mape, za katere se zdi, da se ne uporabljajo več. Ali jih želite odstraniti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Delovni prostor &quot;%1&quot;ima %2 projektne mape, za katere se zdi, da se ne uporabljajo več. Ali jih želite odstraniti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Nastavitev barve</translation>
+        <translation type="vanished">Nastavitev barve</translation>
     </message>
 </context>
 <context>

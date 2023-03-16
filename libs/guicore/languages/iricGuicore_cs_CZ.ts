@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Při importu ignorujte nastavení barevného pruhu</translation>
+        <translation type="vanished">Při importu ignorujte nastavení barevného pruhu</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Velikost a poloha</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
+        <translation type="vanished">Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Počet barev pro vložení do každé sekce</translation>
+        <translation type="vanished">Počet barev pro vložení do každé sekce</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Rozsah hodnot</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definiční uzel není uložen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Špatná hodnotaTyp " %1 “je nastaveno.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Špatná hodnotaTyp &quot; %1 “je nastaveno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Špatný stavTyp " %1 “je nastaveno.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Špatný stavTyp &quot; %1 “je nastaveno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,7 +1387,7 @@ Do you really want to import this file?</source>
         <translation>Soubor %1 se aktualizuje po importu do podmínky výpočtu %2. Chcete importovat aktualizovaný soubor?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Hodnoty můžete zkopírovat a vložit pomocí klávesové zkratky „Ctrl + C“ a „Ctrl + V“</translation>
     </message>
     <message>
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavení barevné mapy</translation>
+        <translation type="vanished">Nastavení barevné mapy</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Rozsah hodnot</translation>
+        <translation type="vanished">Rozsah hodnot</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatický</translation>
+        <translation type="vanished">Automatický</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Vyplňte horní oblast</translation>
+        <translation type="vanished">Vyplňte horní oblast</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Vyplňte spodní oblast</translation>
+        <translation type="vanished">Vyplňte spodní oblast</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Číslo divize:</translation>
+        <translation type="vanished">Číslo divize:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -1487,7 +1517,7 @@ Do you really want to import this file?</source>
         <translation>Při otevírání souboru došlo k chybě.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>První dva sloupce musí být „X“ a „Y“.</translation>
     </message>
     <message>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Definice proměnné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1658,7 +1688,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí "Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí &quot;Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Dolů (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Definice výstupu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Pracovní prostor "%1"má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Pracovní prostor &quot;%1&quot;má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Nastavení barev</translation>
+        <translation type="vanished">Nastavení barev</translation>
     </message>
 </context>
 <context>

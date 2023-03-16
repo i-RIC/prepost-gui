@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Ukuran dan Posisi</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Mobil</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
+        <translation type="vanished">Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Jumlah warna untuk disisipkan di setiap bagian</translation>
+        <translation type="vanished">Jumlah warna untuk disisipkan di setiap bagian</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Rentang Nilai</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Node definisi tidak disimpan</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>NilaiTipe salah &quot;%1&quot; sudah diatur.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Kondisi salahTipe &quot;%1&quot; sudah diatur.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>Informasi</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan &quot;Ctrl + C&quot; dan &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation type="vanished">Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Rentang nilai</translation>
+        <translation type="vanished">Rentang nilai</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Otomatis</translation>
+        <translation type="vanished">Otomatis</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Isi area atas</translation>
+        <translation type="vanished">Isi area atas</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Isi area bawah</translation>
+        <translation type="vanished">Isi area bawah</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Nomor Divisi:</translation>
+        <translation type="vanished">Nomor Divisi:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation type="vanished">Maks:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>peta warna</translation>
+        <translation type="vanished">peta warna</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1513,8 @@ Do you really want to import this file?</source>
         <translation>Terjadi kesalahan saat membuka file.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Dua kolom pertama harus &quot;X&quot; dan &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Definisi variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Turun (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Definisi keluaran</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Ruang kerja &quot;%1&quot; memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Pengaturan Warna</translation>
+        <translation type="vanished">Pengaturan Warna</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+        <translation type="vanished">Ohita väripalkin asetus tuonnin aikana</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
+        <translation type="vanished">Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Jokaiseen osioon lisättävien värien määrä</translation>
+        <translation type="vanished">Jokaiseen osioon lisättävien värien määrä</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Arvoalue</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribuutti</translation>
+        <translation type="vanished">Attribuutti</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Määrityssolmu ei ole tallennettu</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Väärä valueType "%1"on asetettu.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Väärä valueType &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Väärä kuntoTyyppi "%1"on asetettu.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Väärä kuntoTyyppi &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>Tiedosto %1 päivitetään laskutoimintoon tuonnin jälkeen %2. Haluatko tuoda päivitetyn tiedoston?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Voit kopioida ja liittää arvot pikanäppäimillä "Ctrl + C" ja "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Voit kopioida ja liittää arvot pikanäppäimillä &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Värikartan asetus</translation>
+        <translation type="vanished">Värikartan asetus</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Arvoalue</translation>
+        <translation type="vanished">Arvoalue</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automaattinen</translation>
+        <translation type="vanished">Automaattinen</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Täytä ylempi alue</translation>
+        <translation type="vanished">Täytä ylempi alue</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Täytä alempi alue</translation>
+        <translation type="vanished">Täytä alempi alue</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Osaston numero:</translation>
+        <translation type="vanished">Osaston numero:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Värikartta</translation>
+        <translation type="vanished">Värikartta</translation>
     </message>
 </context>
 <context>
@@ -1487,8 +1517,8 @@ Do you really want to import this file?</source>
         <translation>Virhe avattaessa tiedostoa.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Kahden ensimmäisen sarakkeen on oltava "X" ja "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Kahden ensimmäisen sarakkeen on oltava &quot;X&quot; ja &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Määritelmä muuttuja</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Alas (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Tuloksen määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Työtila "%1"on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Työtila &quot;%1&quot;on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Väriasetus</translation>
+        <translation type="vanished">Väriasetus</translation>
     </message>
 </context>
 <context>

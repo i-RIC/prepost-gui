@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+        <translation type="vanished">ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">อัตโนมัติ</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
+        <translation type="vanished">เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>จำนวนสีที่จะแทรกในแต่ละส่วน</translation>
+        <translation type="vanished">จำนวนสีที่จะแทรกในแต่ละส่วน</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">ช่วงค่า</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>คุณลักษณะ</translation>
+        <translation type="vanished">คุณลักษณะ</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>โหนดนิยามไม่ถูกเก็บไว้</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>ค่าผิดประเภท "%1" ถูกตั้งค่า</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>ค่าผิดประเภท &quot;%1&quot; ถูกตั้งค่า</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>เงื่อนไขผิดประเภท "%1"ถูกตั้งค่า</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>เงื่อนไขผิดประเภท &quot;%1&quot;ถูกตั้งค่า</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>ข้อมูล</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด "Ctrl + C" และ "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด &quot;Ctrl + C&quot; และ &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>การตั้งค่าแผนที่สี</translation>
+        <translation type="vanished">การตั้งค่าแผนที่สี</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>ช่วงค่า</translation>
+        <translation type="vanished">ช่วงค่า</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>อัตโนมัติ</translation>
+        <translation type="vanished">อัตโนมัติ</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>เติมพื้นที่ด้านบน</translation>
+        <translation type="vanished">เติมพื้นที่ด้านบน</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>นาที:</translation>
+        <translation type="vanished">นาที:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>ต่อเติมช่วงล่าง</translation>
+        <translation type="vanished">ต่อเติมช่วงล่าง</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>หมายเลขกอง:</translation>
+        <translation type="vanished">หมายเลขกอง:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>สูงสุด:</translation>
+        <translation type="vanished">สูงสุด:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1513,8 @@ Do you really want to import this file?</source>
         <translation>เกิดข้อผิดพลาดขณะเปิดไฟล์</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>สองคอลัมน์แรกต้องเป็น "X" และ "Y"</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>สองคอลัมน์แรกต้องเป็น &quot;X&quot; และ &quot;Y&quot;</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>ความหมายของตัวแปร</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>ลง (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>ความหมายของผลลัพธ์</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>พื้นที่ทำงาน "%1" มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>พื้นที่ทำงาน &quot;%1&quot; มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>การตั้งค่าสี</translation>
+        <translation type="vanished">การตั้งค่าสี</translation>
     </message>
 </context>
 <context>

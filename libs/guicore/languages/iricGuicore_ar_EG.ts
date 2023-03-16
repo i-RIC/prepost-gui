@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>تجاهل إعداد شريط الألوان عند الاستيراد</translation>
+        <translation type="vanished">تجاهل إعداد شريط الألوان عند الاستيراد</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>الحجم والموقع</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">آلي</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
+        <translation type="vanished">عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>عدد الألوان المراد إدراجها في كل قسم</translation>
+        <translation type="vanished">عدد الألوان المراد إدراجها في كل قسم</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">مدى القيمة</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>يصف</translation>
+        <translation type="vanished">يصف</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>لا يتم تخزين عقدة التعريف</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>نوع القيمة خاطئ "%1"تم تعيينه.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>نوع القيمة خاطئ &quot;%1&quot;تم تعيينه.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>نوع الشرط خاطئ "%1"تم تعيينه.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>نوع الشرط خاطئ &quot;%1&quot;تم تعيينه.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1142,7 +1172,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation>برنامج الحل قيد التشغيل حاليًا ، لذا لا يمكنك حفظ شرط الحساب. الرجاء الضغط على زر "إلغاء الأمر".</translation>
+        <translation>برنامج الحل قيد التشغيل حاليًا ، لذا لا يمكنك حفظ شرط الحساب. الرجاء الضغط على زر &quot;إلغاء الأمر&quot;.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>ملف %1 يتم تحديثه بعد الاستيراد إلى شرط الحساب %2. هل تريد استيراد الملف المحدث؟</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>يمكنك نسخ القيم ولصقها باستخدام الاختصار "Ctrl + C" و "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>يمكنك نسخ القيم ولصقها باستخدام الاختصار &quot;Ctrl + C&quot; و &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>إعداد خريطة الألوان</translation>
+        <translation type="vanished">إعداد خريطة الألوان</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>مدى القيمة</translation>
+        <translation type="vanished">مدى القيمة</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>تلقائي</translation>
+        <translation type="vanished">تلقائي</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>املأ المنطقة العلوية</translation>
+        <translation type="vanished">املأ المنطقة العلوية</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>الحد الأدنى:</translation>
+        <translation type="vanished">الحد الأدنى:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>املأ المنطقة السفلية</translation>
+        <translation type="vanished">املأ المنطقة السفلية</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>رقم القسم:</translation>
+        <translation type="vanished">رقم القسم:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>الأعلى:</translation>
+        <translation type="vanished">الأعلى:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>خريطة ملونة</translation>
+        <translation type="vanished">خريطة ملونة</translation>
     </message>
 </context>
 <context>
@@ -1487,8 +1517,8 @@ Do you really want to import this file?</source>
         <translation>حدث خطأ أثناء فتح الملف.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>يجب أن يكون أول عمودين "X" و "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>يجب أن يكون أول عمودين &quot;X&quot; و &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>تعريف المتغير</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>تحت (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة &lt;/ span&gt;: الترتيب في القائمة مهم. في التعريف ، يمكنك استخدام قيمة العمليات الحسابية البسيطة كمتغير ، يظهر سابقًا في القائمة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>تعريف الإخراج</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href="http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -الديكور: underline؛ color: # 0000ff؛ "&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>مساحة العمل "%1" لديها %2 مجلدات المشروع التي يبدو أنها لم تعد مستخدمة. هل تريد إزالتها؟</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>مساحة العمل &quot;%1&quot; لديها %2 مجلدات المشروع التي يبدو أنها لم تعد مستخدمة. هل تريد إزالتها؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>إعداد اللون</translation>
+        <translation type="vanished">إعداد اللون</translation>
     </message>
 </context>
 <context>

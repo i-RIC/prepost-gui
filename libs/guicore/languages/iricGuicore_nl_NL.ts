@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Negeer de kleurenbalkinstelling bij het importeren</translation>
+        <translation type="vanished">Negeer de kleurenbalkinstelling bij het importeren</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Grootte en positie</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Bij het overschakelen naar de gradatiemodus worden de waarden ingesteld op de middelste waarde van elke sectie.</translation>
+        <translation type="vanished">Bij het overschakelen naar de gradatiemodus worden de waarden ingesteld op de middelste waarde van elke sectie.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Aantal kleuren dat bij elke sectie moet worden ingevoegd</translation>
+        <translation type="vanished">Aantal kleuren dat bij elke sectie moet worden ingevoegd</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Waardebereik</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribuut</translation>
+        <translation type="vanished">Attribuut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitieknooppunt wordt niet opgeslagen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Verkeerde waardeType "%1" is ingesteld.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Verkeerde waardeType &quot;%1&quot; is ingesteld.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Verkeerde voorwaardeType "%1"staat.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Verkeerde voorwaardeType &quot;%1&quot;staat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,8 +1387,8 @@ Do you really want to import this file?</source>
         <translation>Bestand %1 wordt bijgewerkt nadat het is geïmporteerd naar de berekeningsconditie %2. Wilt u het bijgewerkte bestand importeren?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen "Ctrl + C" en "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen &quot;Ctrl + C&quot; en &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Instelling kleurenkaart</translation>
+        <translation type="vanished">Instelling kleurenkaart</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Waardebereik</translation>
+        <translation type="vanished">Waardebereik</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>automatisch</translation>
+        <translation type="vanished">automatisch</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Bovenste gebied vullen</translation>
+        <translation type="vanished">Bovenste gebied vullen</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Onderste gebied vullen</translation>
+        <translation type="vanished">Onderste gebied vullen</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Divisienummer:</translation>
+        <translation type="vanished">Divisienummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximaal:</translation>
+        <translation type="vanished">Maximaal:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kleurenkaart</translation>
+        <translation type="vanished">Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -1487,8 +1517,8 @@ Do you really want to import this file?</source>
         <translation>Er is een fout opgetreden bij het openen van het bestand.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De eerste twee kolommen moeten "X" en "Y" zijn.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De eerste twee kolommen moeten &quot;X&quot; en &quot;Y&quot; zijn.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Definitie van variabele</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Omlaag (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Definitie van output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Werkruimte "%1" heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Werkruimte &quot;%1&quot; heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Kleurinstelling</translation>
+        <translation type="vanished">Kleurinstelling</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+        <translation type="vanished">Importuojant nepaisyti spalvų juostos nustatymo</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatinis</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
+        <translation type="vanished">Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Kiekviename skyriuje įterptinų spalvų skaičius</translation>
+        <translation type="vanished">Kiekviename skyriuje įterptinų spalvų skaičius</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Vertės diapazonas</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributas</translation>
+        <translation type="vanished">Atributas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Apibrėžimo mazgas nesaugomas</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Neteisingas valueType "%1"yra nustatytas.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Neteisingas valueType &quot;%1&quot;yra nustatytas.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Klaidinga būklėTipas "%1"yra nustatytas.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Klaidinga būklėTipas &quot;%1&quot;yra nustatytas.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,7 +1387,7 @@ Do you really want to import this file?</source>
         <translation>Failas %1 yra atnaujinamas importavus į skaičiavimo sąlygas %2. Ar norite importuoti atnaujintą failą?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Galite nukopijuoti ir įklijuoti vertes naudodami sparčiuosius klavišus „Ctrl + C“ ir „Ctrl + V“</translation>
     </message>
     <message>
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Spalvų žemėlapio nustatymas</translation>
+        <translation type="vanished">Spalvų žemėlapio nustatymas</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Vertių diapazonas</translation>
+        <translation type="vanished">Vertių diapazonas</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Užpildykite viršutinę sritį</translation>
+        <translation type="vanished">Užpildykite viršutinę sritį</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Užpildykite apatinę sritį</translation>
+        <translation type="vanished">Užpildykite apatinę sritį</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Skyriaus numeris:</translation>
+        <translation type="vanished">Skyriaus numeris:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks.</translation>
+        <translation type="vanished">Maks.</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Spalvotas</translation>
+        <translation type="vanished">Spalvotas</translation>
     </message>
 </context>
 <context>
@@ -1487,7 +1517,7 @@ Do you really want to import this file?</source>
         <translation>Atidarant failą įvyko klaida.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Pirmieji du stulpeliai turi būti „X“ ir „Y“.</translation>
     </message>
     <message>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Išvesties apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Darbo vieta "%1"turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Darbo vieta &quot;%1&quot;turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Spalvų nustatymas</translation>
+        <translation type="vanished">Spalvų nustatymas</translation>
     </message>
 </context>
 <context>

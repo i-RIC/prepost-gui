@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Hunsa stillingu litastikunnar við innflutning</translation>
+        <translation type="vanished">Hunsa stillingu litastikunnar við innflutning</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +478,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Stærð og staðsetning</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Sjálfvirk</translation>
     </message>
 </context>
 <context>
@@ -606,7 +628,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +652,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
+        <translation type="vanished">Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
     </message>
 </context>
 <context>
@@ -649,22 +671,30 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Fjöldi lita til að setja inn í hvern hluta</translation>
+        <translation type="vanished">Fjöldi lita til að setja inn í hvern hluta</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Gildissvið</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Eiginleiki</translation>
+        <translation type="vanished">Eiginleiki</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
 </context>
 <context>
@@ -1081,12 +1111,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Skilgreiningarhnútur er ekki geymdur</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation>Rangt valueType “ %1 “er stillt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Rangt ástandTegund " %1 “er stillt.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Rangt ástandTegund &quot; %1 “er stillt.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1357,7 +1387,7 @@ Do you really want to import this file?</source>
         <translation>Skrá %1 er uppfærð eftir innflutning í reikningsskilyrði %2. Viltu flytja inn uppfærða skrá?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Þú getur afritað og límt gildin með flýtileiðinni „Ctrl + C“ og „Ctrl + V“</translation>
     </message>
     <message>
@@ -1441,39 +1471,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Stilling mynda</translation>
+        <translation type="vanished">Stilling mynda</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Gildissvið</translation>
+        <translation type="vanished">Gildissvið</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Sjálfvirk</translation>
+        <translation type="vanished">Sjálfvirk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Fylltu efra svæði</translation>
+        <translation type="vanished">Fylltu efra svæði</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Fylltu neðra svæði</translation>
+        <translation type="vanished">Fylltu neðra svæði</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Deildarnúmer:</translation>
+        <translation type="vanished">Deildarnúmer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Hámark:</translation>
+        <translation type="vanished">Hámark:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Litamynd</translation>
+        <translation type="vanished">Litamynd</translation>
     </message>
 </context>
 <context>
@@ -1487,7 +1517,7 @@ Do you really want to import this file?</source>
         <translation>Villa kom upp við opnun skráarinnar.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Fyrstu tveir dálkarnir verða að vera „X“ og „Y“.</translation>
     </message>
     <message>
@@ -1649,8 +1679,8 @@ Do you really want to import this file?</source>
         <translation>Skilgreining á breytu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -skreyting: undirstrikun; litur:#0000ff; "&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1728,8 +1758,8 @@ Do you really want to import this file?</source>
         <translation>Niður (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Athugið &lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota verðmæti einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Athugið &lt;/span&gt;: Röðin á listanum er mikilvæg. Í skilgreiningunni er hægt að nota verðmæti einfaldra aðgerðaútreikninga sem breytu, sem birtist fyrr á listanum. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2082,8 +2112,8 @@ Do you really want to import this file?</source>
         <translation>Skilgreining á afköstum</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -skreyting: undirstrikun; litur:#0000ff; "&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2337,8 +2367,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Vinnusvæði “ %1 "hefur %2 verkefnamöppur sem virðast ekki vera notaðar lengur. Viltu fjarlægja þá?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Vinnusvæði “ %1 &quot;hefur %2 verkefnamöppur sem virðast ekki vera notaðar lengur. Viltu fjarlægja þá?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2481,7 +2511,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Litastilling</translation>
+        <translation type="vanished">Litastilling</translation>
     </message>
 </context>
 <context>
