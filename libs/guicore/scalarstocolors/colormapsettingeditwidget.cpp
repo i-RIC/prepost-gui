@@ -469,26 +469,21 @@ void ColorMapSettingEditWidget::updateSwitchButtonText()
 
 void ColorMapSettingEditWidget::switchTransitionModeToContinuous()
 {
-	InformationDialog::warning(this, tr("Warning"), tr("When switching to Gradation Mode, the values are set to the middle value of each sections."), "colormap_to_continuous");
 	m_concreteSetting.transitionMode = ColorMapSettingContainer::TransitionMode::Continuous;
 
 	std::vector<ColorMapSettingValueColorPairContainer> newColors;
 
-	for (int i = 0; i < m_concreteSetting.colors.size(); ++i) {
+	const auto& colors = m_concreteSetting.colors;
+	double min = m_concreteSetting.colorTableMinValue;
+	double max = colors.at(colors.size() - 1).value;
+	double step = (max - min) / (colors.size() - 1);
+	for (unsigned int i = 0; i < colors.size(); ++i) {
 		ColorMapSettingValueColorPairContainer c;
-		c.color = m_concreteSetting.colors.at(i).color;
-		if (i == 0) {
-			c.value = m_concreteSetting.colorTableMinValue;
-		} else if (i == m_concreteSetting.colors.size() - 1) {
-			c.value = m_concreteSetting.colors.at(i).value;
-		} else if (i == 1) {
-			double v1 = m_concreteSetting.colorTableMinValue;
-			double v2 = m_concreteSetting.colors.at(0).value;
-			c.value = (v1 + v2) * 0.5;
+		c.color = colors.at(i).color;
+		if (i == colors.size() - 1) {
+			c.value = max;
 		} else {
-			double v1 = m_concreteSetting.colors.at(i - 1).value;
-			double v2 = m_concreteSetting.colors.at(i).value;
-			c.value = (v1 + v2) * 0.5;
+			c.value = min + i * step;
 		}
 		newColors.push_back(c);
 	}
