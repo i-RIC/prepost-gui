@@ -104,14 +104,42 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildContinuous(QPainter* pai
 	painter->setPen(labelPen);
 	painter->setFont(labelFont);
 
-	for (int i = 0; i < cols.size(); ++i) {
-		QString val = QString::asprintf(f.c_str(), cols.at(i).value.value());
-		auto rect = metrics.boundingRect(val);
+	if (s->autoNumberOfLabels) {
+		for (int i = 0; i < cols.size(); ++i) {
+			QString val = QString::asprintf(f.c_str(), cols.at(i).value.value());
+			auto rect = metrics.boundingRect(val);
 
-		int bottom = image->height() / image->devicePixelRatioF() - OUTER_MARGIN - barHeight * i;
+			int bottom = image->height() / image->devicePixelRatioF() - OUTER_MARGIN - barHeight * i;
 
-		QRectF textRect(left, bottom - rect.height() * 0.5, labelWidth, rect.height());
-		painter->drawText(textRect, val);
+			QRectF textRect(left, bottom - rect.height() * 0.5, labelWidth, rect.height());
+			painter->drawText(textRect, val);
+		}
+	} else {
+		auto colors = s->colorMapSetting()->getColors();
+		double origStep = 1.0 / (colors.size() - 1);
+		double step = 1.0 / (s->numberOfLabels.value() - 1);
+		int labelHeight = (bottom - top) / (s->numberOfLabels - 1);
+		for (int i = 0; i < s->numberOfLabels; ++i) {
+			double v = i * step;
+			auto id1 = static_cast<unsigned int> (v / origStep);
+			double r = (v - (id1 * origStep)) / origStep;
+
+			double value;
+			if (id1 == colors.size() - 1) {
+				value = colors.at(colors.size() - 1).value;
+			} else {
+				double v1 = colors.at(id1).value;
+				double v2 = colors.at(id1 + 1).value;
+				value = v1 * (1 - r) + v2 * r;
+			}
+			QString val = QString::asprintf(f.c_str(), value);
+			auto rect = metrics.boundingRect(val);
+
+			int bottom = image->height() / image->devicePixelRatioF() - OUTER_MARGIN - labelHeight * i;
+
+			QRectF textRect(left, bottom - rect.height() * 0.5, labelWidth, rect.height());
+			painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, val);
+		}
 	}
 }
 

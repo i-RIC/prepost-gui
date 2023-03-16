@@ -244,6 +244,7 @@ void ColorMapSettingEditWidget::switchTransitionMode()
 	} else {
 		switchTransitionModeToContinuous();
 	}
+	ui->legendWidget->updateAutoNumberOfLabels();
 }
 
 void ColorMapSettingEditWidget::switchAutoValueRange(bool automatic)
@@ -420,14 +421,7 @@ void ColorMapSettingEditWidget::applySettingOtherThanLegend()
 
 void ColorMapSettingEditWidget::updateLegendNumberOfLabels()
 {
-	const auto& s = m_concreteSetting;
-	/*
-	if (s.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
-		ui->legendWidget->setNumberOfLabels(s.colors.size());
-	} else {
-		ui->legendWidget->setNumberOfLabels(s.colors.size() + 1);
-	}
-	*/
+	ui->legendWidget->updateNumberOfLabelsIfNeeded();
 }
 
 void ColorMapSettingEditWidget::fixData()

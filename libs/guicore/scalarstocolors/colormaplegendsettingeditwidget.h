@@ -7,6 +7,7 @@ namespace Ui {
 class ColorMapLegendSettingEditWidget;
 }
 
+class ColorMapSettingContainer;
 class ColorMapLegendSettingContainer;
 
 class ColorMapLegendSettingEditWidget : public QWidget
@@ -20,7 +21,14 @@ public:
 	ColorMapLegendSettingContainer setting() const;
 	void setSetting(const ColorMapLegendSettingContainer& setting);
 
+	void updateAutoNumberOfLabels();
+	void updateNumberOfLabelsIfNeeded();
+
+private slots:
+	void handleAutoNumberOfLabels(bool checked);
+
 private:
+	ColorMapSettingContainer* m_colorMapSetting;
 	Ui::ColorMapLegendSettingEditWidget *ui;
 };
 

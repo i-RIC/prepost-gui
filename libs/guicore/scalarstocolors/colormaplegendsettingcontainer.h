@@ -5,6 +5,7 @@
 #include "colormaplegendsettingcontaineri.h"
 
 #include <guicore/image/imagesettingcontainer.h>
+#include <misc/boolcontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/doublecontainer.h>
@@ -43,6 +44,7 @@ public:
 
 	StringContainer title;
 
+	BoolContainer autoNumberOfLabels;
 	IntContainer numberOfLabels;
 
 	StringContainer labelFormat;

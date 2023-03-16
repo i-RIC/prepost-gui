@@ -1,12 +1,15 @@
+#include "colormapsettingcontainer.h"
 #include "colormaplegendsettingcontainer.h"
 #include "colormaplegendsettingeditwidget.h"
 #include "ui_colormaplegendsettingeditwidget.h"
 
 ColorMapLegendSettingEditWidget::ColorMapLegendSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
+	m_colorMapSetting {nullptr},
 	ui(new Ui::ColorMapLegendSettingEditWidget)
 {
 	ui->setupUi(this);
+	connect(ui->numLabelsAutoCheckBox, &QCheckBox::toggled, this, &ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels);
 }
 
 ColorMapLegendSettingEditWidget::~ColorMapLegendSettingEditWidget()
@@ -27,6 +30,8 @@ ColorMapLegendSettingContainer ColorMapLegendSettingEditWidget::setting() const
 	}
 	ret.title = ui->titleEdit->text();
 	ret.labelFormat = ui->labelFormatEdit->text();
+	ret.autoNumberOfLabels = ui->numLabelsAutoCheckBox->isChecked();
+	ret.numberOfLabels = ui->numLabelsSpinBox->value();
 	ret.titleFont = ui->titleFontWidget->font();
 	ret.labelFont = ui->labelFontWidget->font();
 	ret.titleColor = ui->titleColorWidget->color();
@@ -49,6 +54,8 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 	}
 	ui->titleEdit->setText(setting.title);
 	ui->labelFormatEdit->setText(setting.labelFormat);
+	ui->numLabelsAutoCheckBox->setChecked(setting.autoNumberOfLabels);
+	ui->numLabelsSpinBox->setValue(setting.numberOfLabels);
 	ui->titleFontWidget->setFont(setting.titleFont);
 	ui->labelFontWidget->setFont(setting.labelFont);
 	ui->titleColorWidget->setColor(setting.titleColor);
@@ -57,4 +64,37 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 	ui->backgroundOpacitySlider->setOpacityPercent(setting.backgroundOpacity);
 
 	ui->imageSettingWidget->setSetting(setting.imageSetting);
+	m_colorMapSetting = setting.colorMapSetting();
+
+	updateAutoNumberOfLabels();
+	updateNumberOfLabelsIfNeeded();
+}
+
+void ColorMapLegendSettingEditWidget::updateAutoNumberOfLabels()
+{
+	if (m_colorMapSetting == nullptr) {return;}
+
+	bool isDiscrete = (m_colorMapSetting->transitionMode == ColorMapSettingContainer::TransitionMode::Discrete);
+	ui->numLabelsAutoCheckBox->setDisabled(isDiscrete);
+	if (isDiscrete) {
+		ui->numLabelsAutoCheckBox->setChecked(true);
+		updateNumberOfLabelsIfNeeded();
+	}
+}
+
+void ColorMapLegendSettingEditWidget::updateNumberOfLabelsIfNeeded()
+{
+	if (! ui->numLabelsAutoCheckBox->isChecked()) {return;}
+	if (m_colorMapSetting == nullptr) {return;}
+
+	int numCols = m_colorMapSetting->colors.size();
+	if (m_colorMapSetting->transitionMode == ColorMapSettingContainer::TransitionMode::Discrete) {
+		++ numCols;
+	}
+	ui->numLabelsSpinBox->setValue(numCols);
+}
+
+void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool checked)
+{
+	updateNumberOfLabelsIfNeeded();
 }

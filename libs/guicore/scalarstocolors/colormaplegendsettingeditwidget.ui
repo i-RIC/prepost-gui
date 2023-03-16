@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>392</width>
-    <height>388</height>
+    <width>354</width>
+    <height>416</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,13 +110,51 @@
        <widget class="QLineEdit" name="labelFormatEdit"/>
       </item>
       <item row="1" column="0">
+       <widget class="QLabel" name="numLabelsLabel">
+        <property name="text">
+         <string>Number of labels:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QCheckBox" name="numLabelsAutoCheckBox">
+          <property name="text">
+           <string>Auto</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="numLabelsSpinBox">
+          <property name="minimum">
+           <number>2</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
        <widget class="QLabel" name="labelFontLabel">
         <property name="text">
          <string>Font Setting:</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="2" column="1">
        <widget class="QFontEditWidget" name="labelFontWidget" native="true"/>
       </item>
      </layout>
@@ -285,5 +323,22 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>numLabelsAutoCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>numLabelsSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
