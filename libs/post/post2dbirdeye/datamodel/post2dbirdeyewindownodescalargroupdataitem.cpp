@@ -149,6 +149,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	}
 
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
+	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
