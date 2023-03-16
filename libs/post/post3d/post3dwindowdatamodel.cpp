@@ -205,10 +205,9 @@ void Post3dWindowDataModel::editZScale()
 
 void Post3dWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_zScale =  iRIC::getDoubleAttribute(node, "ZScale", 1);
-	Post3dWindowRootDataItem* ritem = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
-	ritem->updateZScale(m_zScale);
 	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
+	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
+	m_rootDataItem->updateZScale(m_zScale);
 }
 
 void Post3dWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)

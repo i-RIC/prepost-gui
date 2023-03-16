@@ -191,9 +191,9 @@ void Post2dBirdEyeWindowDataModel::editZScale()
 
 void Post2dBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_zScale =  iRIC::getDoubleAttribute(node, "ZScale", 1);
-	m_rootDataItem->updateZScale(m_zScale);
 	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
+	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
+	m_rootDataItem->updateZScale(m_zScale);
 }
 
 void Post2dBirdEyeWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)
