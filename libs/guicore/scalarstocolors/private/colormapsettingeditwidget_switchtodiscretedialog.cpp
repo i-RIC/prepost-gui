@@ -63,6 +63,7 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::setOriginalColors(const 
 	for (auto& c : m_originalColors) {
 		c.value = (c.value - min) / range_width;
 	}
+	ui->colorsSpinBox->setValue(colors.size());
 }
 
 void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
@@ -72,23 +73,29 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
 	int colNum = ui->colorsSpinBox->value();
 
 	m_newColors.clear();
-	for (int i = 0; i < m_originalColors.size() - 1; ++i) {
-		m_newColors.push_back(m_originalColors.at(i));
+	double origStep = 1.0 / (m_originalColors.size() - 1);
+	double step = 1.0 / (colNum - 1);
 
-		auto c1 = m_originalColors.at(i).color.value();
-		auto c2 = m_originalColors.at(i + 1).color.value();
-		for (int j = 0; j < colNum; ++j) {
-			double r = (j + 1) / static_cast<double>(colNum + 1);
+	for (int i = 0; i < colNum; ++i) {
+		double v = i * step;
+		auto id1 = static_cast<unsigned int> (v / origStep);
+		double r = (v - (id1 * origStep)) / origStep;
+
+		ColorMapSettingValueColorPairContainer newC;
+		if (id1 == m_originalColors.size() - 1) {
+			newC.color = m_originalColors.at(m_originalColors.size() - 1).color;
+		} else {
+			auto c1 = m_originalColors.at(id1).color.value();
+			auto c2 = m_originalColors.at(id1 + 1).color.value();
+
 			double red = c1.redF() * (1 - r) + c2.redF() * r;
 			double green = c1.greenF() * (1 - r) + c2.greenF() * r;
 			double blue = c1.blueF() * (1 - r) + c2.blueF() * r;
 
-			ColorMapSettingValueColorPairContainer newC;
 			newC.color = QColor(static_cast<int>(255 * red), static_cast<int>(255 * green), static_cast<int>(255 * blue));
-			m_newColors.push_back(newC);
 		}
+		m_newColors.push_back(newC);
 	}
-	m_newColors.push_back(m_originalColors.at(m_originalColors.size() - 1));
 
 	for (int i = 0; i < m_newColors.size(); ++i) {
 		m_newColors[i].value = (i + 1) / static_cast<double> (m_newColors.size());

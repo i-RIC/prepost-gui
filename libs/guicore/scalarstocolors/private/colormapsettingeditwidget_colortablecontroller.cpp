@@ -168,14 +168,11 @@ ColorMapSettingEditWidget::ColorTableController::ColorTableController(ColorMapSe
 	t->setModel(&m_model);
 	t->setItemDelegate(m_delegate);
 
-	t->setSelectionBehavior(QAbstractItemView::SelectRows);
-	t->setEditTriggers(QAbstractItemView::AllEditTriggers);
-
 	connect(t, &QTableView::clicked, this, &ColorMapSettingEditWidget::ColorTableController::handleItemClick);
 
 	auto selModel = new QItemSelectionModel(&m_model);
 	t->setSelectionModel(selModel);
-	connect(selModel, &QItemSelectionModel::currentChanged, this, &ColorMapSettingEditWidget::ColorTableController::handleTableCurrentChange);
+	connect(selModel, &QItemSelectionModel::selectionChanged, this, &ColorTableController::handleTableSelectionChange);
 }
 
 ColorMapSettingEditWidget::ColorTableController::~ColorTableController()
@@ -223,14 +220,13 @@ void ColorMapSettingEditWidget::ColorTableController::handleItemClick(const QMod
 	}
 }
 
-void ColorMapSettingEditWidget::ColorTableController::handleTableCurrentChange(const QModelIndex& current, const QModelIndex& previous)
+void ColorMapSettingEditWidget::ColorTableController::handleTableSelectionChange(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/)
 {
-	bool removeOk = true;
 	const auto& s = m_widget->m_concreteSetting;
 	if (s.valueMode == ColorMapSettingContainer::ValueMode::Relative) {return;}
 
-	if (current.row() == 0) {removeOk = false;}
-	if (current.row() == s.colors.size() - 1) {removeOk = false;}
+	auto rows = m_widget->colorTable()->selectionModel()->selectedRows();
+	bool removeOk = (rows.size() > 0 && s.colors.size() - rows.size() >= 2);
 
 	m_widget->removeButton()->setEnabled(removeOk);
 }

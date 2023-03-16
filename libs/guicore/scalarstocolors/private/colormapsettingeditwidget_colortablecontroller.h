@@ -18,7 +18,7 @@ public:
 
 private slots:
 	void handleItemClick(const QModelIndex& index);
-	void handleTableCurrentChange(const QModelIndex& current, const QModelIndex& previous);
+	void handleTableSelectionChange(const QItemSelection& selected, const QItemSelection& deselected);
 
 private:
 	void editColor(const QModelIndex& index, ColorMapSettingValueColorPairContainer* c);

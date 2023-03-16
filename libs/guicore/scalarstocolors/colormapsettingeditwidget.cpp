@@ -311,13 +311,24 @@ void ColorMapSettingEditWidget::addColor()
 
 void ColorMapSettingEditWidget::removeColor()
 {
-	int row = ui->colorsTableView->currentIndex().row();
-	if (row == -1) {return;}
 	auto& colors = m_concreteSetting.colors;
-	row = colors.size() - 1 - row;
+	std::vector<ColorMapSettingValueColorPairContainer> newColors;
 
-	auto it = colors.begin() + row;
-	colors.erase(it);
+	auto rows = ui->colorsTableView->selectionModel()->selectedRows();
+	std::unordered_set<unsigned int> rowSet;
+	for (auto r : rows) {
+		rowSet.insert(colors.size() - 1 - r.row());
+	}
+
+	for (unsigned int i = 0; i < colors.size(); ++i) {
+		const auto& c = colors.at(i);
+		if (rowSet.find(i) != rowSet.end()) {
+			continue;
+		}
+		newColors.push_back(c);
+	}
+
+	colors = newColors;
 
 	m_colorTableController->applyToTable();
 
