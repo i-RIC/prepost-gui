@@ -105,8 +105,27 @@ int GeoDataPointmapRealTextImporter::LineParser::skipRate() const
 	return m_skipRate;
 }
 
-QStringList GeoDataPointmapRealTextImporter::LineParser::parseToStrs(const QString& line, bool* ok, QString* error)
+QString GeoDataPointmapRealTextImporter::LineParser::removeDuplicateSpacesFromLine(const QString& line)
 {
+	QString ret;
+	QChar lastChar;
+	int pos = 0;
+
+	while (pos < line.length()) {
+		QChar c = line.at(pos);
+		if (!(c == " " && lastChar == " ")) {
+			ret.append(c);
+		}
+		lastChar = c;
+		++ pos;
+	}
+
+	return ret;
+}
+
+QStringList GeoDataPointmapRealTextImporter::LineParser::parseToStrs(const QString& origLine, bool* ok, QString* error)
+{
+	auto line = removeDuplicateSpacesFromLine(origLine);
 	Status status = Status::OutsideValue;
 	int pos = 0;
 

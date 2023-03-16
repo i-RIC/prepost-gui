@@ -26,6 +26,7 @@ public:
 	int headerLines() const;
 	int skipRate() const;
 
+	QString removeDuplicateSpacesFromLine(const QString& line);
 	QStringList parseToStrs(const QString& line, bool* ok, QString* error);
 	Values parseToValues(const QString& line, bool* ok, QString* error);
 
