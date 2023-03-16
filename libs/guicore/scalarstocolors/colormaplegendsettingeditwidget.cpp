@@ -28,6 +28,11 @@ ColorMapLegendSettingContainer ColorMapLegendSettingEditWidget::setting() const
 	} else if (ui->visibilityNeverRadioButton->isChecked()) {
 		ret.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Never;
 	}
+	if (ui->horizontalRadioButton->isChecked()) {
+		ret.direction = ColorMapLegendSettingContainer::Direction::Horizontal;
+	} else if (ui->verticalRadioButton->isChecked()) {
+		ret.direction = ColorMapLegendSettingContainer::Direction::Vertical;
+	}
 	ret.title = ui->titleEdit->text();
 	ret.labelFormat = ui->labelFormatEdit->text();
 	ret.autoNumberOfLabels = ui->numLabelsAutoCheckBox->isChecked();
@@ -51,6 +56,11 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 		ui->visibilityAlwaysRadioButton->setChecked(true);
 	} else if (setting.visibilityMode == ColorMapLegendSettingContainer::VisibilityMode::Never) {
 		ui->visibilityNeverRadioButton->setChecked(true);
+	}
+	if (setting.direction == ColorMapLegendSettingContainer::Direction::Horizontal) {
+		ui->horizontalRadioButton->setChecked(true);
+	} else if (setting.direction == ColorMapLegendSettingContainer::Direction::Vertical) {
+		ui->verticalRadioButton->setChecked(true);
 	}
 	ui->titleEdit->setText(setting.title);
 	ui->labelFormatEdit->setText(setting.labelFormat);

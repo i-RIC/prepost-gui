@@ -5,9 +5,10 @@
 #include <QFont>
 
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
-	CompositeContainer({&visibilityMode, &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
+	CompositeContainer({&visibilityMode, &direction, &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
 										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &imageSetting}),
 	visibilityMode {"visibilityMode", VisibilityMode::WhenSelected},
+	direction {"direction", Direction::Vertical},
 	title {"title"},
 	autoNumberOfLabels {"autoNumberOfLabels", true},
 	numberOfLabels {"numberOfLabels"},

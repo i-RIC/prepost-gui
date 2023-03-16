@@ -25,6 +25,10 @@ public:
 		WhenSelected,
 		Never,
 	};
+	enum class Direction {
+		Horizontal,
+		Vertical
+	};
 
 	ColorMapLegendSettingContainer();
 	ColorMapLegendSettingContainer(const ColorMapLegendSettingContainer& c);
@@ -41,6 +45,7 @@ public:
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	EnumContainerT<VisibilityMode> visibilityMode;
+	EnumContainerT<Direction> direction;
 
 	StringContainer title;
 
