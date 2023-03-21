@@ -8,6 +8,7 @@
 #include <QAction>
 
 #include <vtkActor.h>
+#include <vtkActor2D.h>
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkDoubleArray.h>
@@ -49,6 +50,10 @@ GeoDataPointGroup::Impl::Impl(GeoDataPointGroup* group) :
 
 GeoDataPointGroup::Impl::~Impl()
 {
+	for (auto actor : m_imageActors) {
+		actor->Delete();
+	}
+
 	m_vtkPoints->Delete();
 	m_pointsPolyData->Delete();
 	m_pointsActor->Delete();
@@ -56,6 +61,24 @@ GeoDataPointGroup::Impl::~Impl()
 	m_selectedPointsPointsActor->Delete();
 
 	delete m_dummyPointForMenu;
+}
+
+QPixmap GeoDataPointGroup::Impl::shrinkPixmap(const QPixmap pixmap, int maxSize)
+{
+	if (pixmap.width() <= maxSize && pixmap.height() <= maxSize) {return pixmap;}
+
+	if (pixmap.width() > pixmap.height()) {
+		return pixmap.scaledToWidth(maxSize);
+	} else {
+		return pixmap.scaledToHeight(maxSize);
+	}
+}
+
+QString GeoDataPointGroup::Impl::iconFileName(const QString& filename)
+{
+	QString ret = filename;
+	ret.replace(".dat", "_icon.png");
+	return ret;
 }
 
 void GeoDataPointGroup::Impl::setupDummyPointForMenu()

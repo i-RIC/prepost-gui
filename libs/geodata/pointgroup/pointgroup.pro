@@ -82,7 +82,10 @@ LIBS += -liricGdPolydataGroup
 LIBS += \
 	-lvtkCommonCore-$${VTK_MAJ_MIN} \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
-	-lvtkRenderingCore-$${VTK_MAJ_MIN}
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkImagingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingQt-$${VTK_MAJ_MIN}
 
 # shapelib
 
@@ -116,14 +119,17 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
            private/geodatapointgroup_impl.h \
-           private/geodatapointgroup_setcolorsettingcommand.h \
+           private/geodatapointgroup_propertydialog.h \
+           private/geodatapointgroup_setting.h \
+           private/geodatapointgroup_updateactorsettingcommand.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
            private/geodatapointgroupnodemappert_detail.h \
            private/geodatapointgrouppoint_impl.h \
            private/geodatapointgroupproxy_impl.h \
            private/geodatapointgroupproxy_setsettingcommand.h
-FORMS += geodatapointgroupcolorsettingdialog.ui
+FORMS += geodatapointgroupcolorsettingdialog.ui \
+    private/geodatapointgroup_propertydialog.ui
 SOURCES += geodatapointgroup.cpp \
            geodatapointgroupcolorsettingdialog.cpp \
            geodatapointgroupcreator.cpp \
@@ -136,7 +142,9 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
            private/geodatapointgroup_impl.cpp \
-           private/geodatapointgroup_setcolorsettingcommand.cpp \
+           private/geodatapointgroup_propertydialog.cpp \
+           private/geodatapointgroup_setting.cpp \
+           private/geodatapointgroup_updateactorsettingcommand.cpp \
            private/geodatapointgroupproxy_impl.cpp \
            private/geodatapointgroupproxy_setsettingcommand.cpp
 TRANSLATIONS += languages/iricGdPointGroup_ar_EG.ts \

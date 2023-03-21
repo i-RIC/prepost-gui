@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Krāsu iestatījumu rediģēšana</translation>
+        <translation type="vanished">Krāsu iestatījumu rediģēšana</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,8 +127,8 @@
         <translation>Lasot galvenes rindiņu, radās kļūda. Galvenē jābūt vismaz 4 kolonnām.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Lasot galvenes rindiņu, radās kļūda. Sleja %1 vajadzētu būt "%2", bet"%3" ir dots.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Lasot galvenes rindiņu, radās kļūda. Sleja %1 vajadzētu būt &quot;%2&quot;, bet&quot;%3&quot; ir dots.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -130,16 +143,16 @@
         <translation>Lasot rindiņu, radās kļūda %1. Datiem jābūt vismaz 4 slejām.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Lasot rindā “x” vērtību, radās kļūda %1. "x" ir jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Lasot rindā “x” vērtību, radās kļūda %1. &quot;x&quot; ir jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Lasot rindā “y” vērtību, radās kļūda %1. "y" ir jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Lasot rindā “y” vērtību, radās kļūda %1. &quot;y&quot; ir jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Kļūda, lasot vērtību "vērtība" rindā %1. "Vērtībai" jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Kļūda, lasot vērtību &quot;vērtība&quot; rindā %1. &quot;Vērtībai&quot; jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>Punkts %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punkti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punkta lielums:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

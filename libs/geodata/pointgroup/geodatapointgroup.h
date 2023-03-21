@@ -24,14 +24,18 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
+	QStringList containedFiles() const override;
 
 	GeoDataProxy* getProxy() override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 	GeoDataPolyDataGroupPolyData* createNewData() override;
 	GeoDataPolyData* createEditTargetData() override;
@@ -50,7 +54,9 @@ private:
 
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface *d) override;
 
-	class SetColorSettingCommand;
+	class PropertyDialog;
+	class Setting;
+	class UpdateActorSettingCommand;
 
 	class Impl;
 	Impl* impl;
@@ -60,9 +66,5 @@ public:
 	friend class GeoDataPointGroupProxy;
 	friend class GeoDataPointGroupShpImporter;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatapointgroup_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOINTGROUP_H

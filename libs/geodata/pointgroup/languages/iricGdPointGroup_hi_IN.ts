@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,8 +127,8 @@
         <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए &quot;%2&quot;, लेकिन &quot;%3&quot; दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -130,16 +143,16 @@
         <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>पंक्ति में &quot;x&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;x&quot; वास्तविक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>पंक्ति में &quot;y&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;y&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>पंक्ति में &quot;मान&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;मूल्य&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
     </message>
 </context>
 <context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>बिंदु %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">अंक</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

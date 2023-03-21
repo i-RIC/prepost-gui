@@ -43,8 +43,8 @@ public:
 	void informDataChange() override;
 	bool getValueRange(double* min, double* max);
 	void applyColorMapSetting();
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void moveUp() override;
 	void moveDown() override;
 	bool setupExportMenu(QMenu* menu);

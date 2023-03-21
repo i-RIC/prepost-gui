@@ -1,29 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Slett poeng</translation>
+        <translation type="vanished">Slett poeng</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Valgte punktegenskaper</translation>
+        <translation type="vanished">Valgte punktegenskaper</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Antall poeng:</translation>
+        <translation type="vanished">Antall poeng:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimum:</translation>
+        <translation type="vanished">Minimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimum:</translation>
+        <translation type="vanished">Maksimum:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Slett mindre enn verdi:</translation>
+        <translation type="vanished">Slett mindre enn verdi:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Når du bytter til denne modusen, må du gjøre om TIN -er. Vil du remesh nå?</translation>
+        <translation type="vanished">Når du bytter til denne modusen, må du gjøre om TIN -er. Vil du remesh nå?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +64,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Velg punkt</translation>
+        <translation type="vanished">Velg punkt</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +84,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Slett utvalgte punkter mindre enn verdi (&amp;L)...</translation>
+        <translation type="vanished">Slett utvalgte punkter mindre enn verdi (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Slett utvalgte punkter større enn verdi (&amp;G)...</translation>
+        <translation type="vanished">Slett utvalgte punkter større enn verdi (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +124,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Når du legger til break line, må du bytte til å vise wireframes. Vil du bytte til å vise wireframes nå?</translation>
+        <translation type="vanished">Når du legger til break line, må du bytte til å vise wireframes. Vil du bytte til å vise wireframes nå?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +132,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Når du fjerner break line, må du bytte til å vise wireframes. Vil du bytte til å vise wireframes nå?</translation>
+        <translation type="vanished">Når du fjerner break line, må du bytte til å vise wireframes. Vil du bytte til å vise wireframes nå?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +144,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Når du vil fjerne trekanter med lange kanter, må du bytte Displaymetode til Wireframe eller Surface. Hvis du trykker på OK -knappen, blir Displaymetode byttet til Wireframe</translation>
+        <translation type="vanished">Når du vil fjerne trekanter med lange kanter, må du bytte Displaymetode til Wireframe eller Surface. Hvis du trykker på OK -knappen, blir Displaymetode byttet til Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Når du redigerer poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
+        <translation type="vanished">Når du redigerer poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Når du sletter poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
+        <translation type="vanished">Når du sletter poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Du kan ikke slette punkter som brukes for bruddlinjer.</translation>
+        <translation type="vanished">Du kan ikke slette punkter som brukes for bruddlinjer.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Slett poeng</translation>
+        <translation type="vanished">Slett poeng</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Velg Fil som skal eksporteres</translation>
+        <translation type="vanished">Velg Fil som skal eksporteres</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +176,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Det oppsto en feil under eksport til %1.</translation>
+        <translation type="vanished">Det oppsto en feil under eksport til %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Slett poeng mindre enn %1</translation>
+        <translation type="vanished">Slett poeng mindre enn %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Slett punkter som er større enn %1</translation>
+        <translation type="vanished">Slett punkter som er større enn %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Når du interpolerer poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
+        <translation type="vanished">Når du interpolerer poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +196,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Når du legger til poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
+        <translation type="vanished">Når du legger til poeng, må du bytte til å vise poeng. Vil du bytte til å vise poeng nå?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +204,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Legg til Break Line Point</translation>
+        <translation type="vanished">Legg til Break Line Point</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Avbryt Definere Break Line</translation>
+        <translation type="vanished">Avbryt Definere Break Line</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Fullfør Definere Break Line</translation>
+        <translation type="vanished">Fullfør Definere Break Line</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Rediger poeng</translation>
+        <translation type="vanished">Rediger poeng</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Legg til nytt interp -linjepunkt</translation>
+        <translation type="vanished">Legg til nytt interp -linjepunkt</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,11 +228,11 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Slå sammen...</translation>
+        <translation type="vanished">Slå sammen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Det er ingen andre data å flette inn "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Det er ingen andre data å flette inn &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -256,97 +258,163 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Point Cloud -data (&amp;O)</translation>
     </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advarsel</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation type="unfinished">Du kan ikke slette punkter som brukes for bruddlinjer.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advarsel</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished">Interpolasjonsøkningen må være større 0 og mindre enn interpolasjonslinjelengden</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Slett poeng</translation>
+        <translation type="vanished">Slett poeng</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Valgte punktegenskaper</translation>
+        <translation type="vanished">Valgte punktegenskaper</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Antall poeng:</translation>
+        <translation type="vanished">Antall poeng:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimum:</translation>
+        <translation type="vanished">Minimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimum:</translation>
+        <translation type="vanished">Maksimum:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>Slett større enn verdi:</translation>
+        <translation type="vanished">Slett større enn verdi:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>Rediger poeng</translation>
+        <translation type="vanished">Rediger poeng</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Valgte punktegenskaper</translation>
+        <translation type="vanished">Valgte punktegenskaper</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Antall poeng:</translation>
+        <translation type="vanished">Antall poeng:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimum:</translation>
+        <translation type="vanished">Minimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimum:</translation>
+        <translation type="vanished">Maksimum:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>X-plassering</translation>
+        <translation type="vanished">X-plassering</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Y-plassering</translation>
+        <translation type="vanished">Y-plassering</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Verdi</translation>
+        <translation type="vanished">Verdi</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolere inkrement</translation>
+        <translation type="vanished">Interpolere inkrement</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Interpolasjonsinnstilling</translation>
+        <translation type="vanished">Interpolasjonsinnstilling</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Interpolasjonsøkning:</translation>
+        <translation type="vanished">Interpolasjonsøkning:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation>Linjelengde:</translation>
+        <translation type="vanished">Linjelengde:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Interpolasjonsøkningen må være større 0 og mindre enn interpolasjonslinjelengden</translation>
+        <translation type="vanished">Interpolasjonsøkningen må være større 0 og mindre enn interpolasjonslinjelengden</translation>
     </message>
 </context>
 <context>
@@ -521,12 +589,12 @@
         <translation>Ingen skilletegn angitt</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Ikke nok verdier til å lese "%1"."%1"kolonne er %2 men %3 verdier input.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Ikke nok verdier til å lese &quot;%1&quot;.&quot;%1&quot;kolonne er %2 men %3 verdier input.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Det oppsto en feil under lesing "%1"verdi."%1"verdien skal være det reelle tallet, men"%2"spesifisert.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Det oppsto en feil under lesing &quot;%1&quot;verdi.&quot;%1&quot;verdien skal være det reelle tallet, men&quot;%2&quot;spesifisert.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +664,8 @@
         <translation>Sitat karakter:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -876,18 +944,295 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="unfinished">Rediger poeng</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="unfinished">Antall poeng:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation type="unfinished">X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation type="unfinished">Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Verdi:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished">Interpolasjonsinnstilling</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="unfinished">Interpolere inkrement</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished">Interpolasjonsøkning:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished">Linjelengde:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">TINN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Poeng</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punktstørrelse:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="unfinished">Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Flate</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Fjern trekanter med lang kant</translation>
+        <translation type="vanished">Fjern trekanter med lang kant</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Begrens kantlengde:</translation>
+        <translation type="vanished">Begrens kantlengde:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Merk &lt;/span&gt;: Når du klikker på bruksknappen, blir trekanter som blir fjernet malt med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Merk &lt;/span&gt;: Når du klikker på bruksknappen, blir trekanter som blir fjernet malt med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -4,7 +4,7 @@
 #include "geodatapointgrouppoint.h"
 #include "geodatapointgroupproxy.h"
 #include "private/geodatapointgroup_impl.h"
-#include "private/geodatapointgroup_setcolorsettingcommand.h"
+#include "private/geodatapointgroup_propertydialog.h"
 
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
@@ -18,18 +18,25 @@
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
+#include <misc/stringtool.h>
 
 #include <QMenu>
 
 #include <vtkActor.h>
+#include <vtkActor2D.h>
 #include <vtkActorCollection.h>
+#include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkDoubleArray.h>
+#include <vtkImageChangeInformation.h>
+#include <vtkImageMapper.h>
 #include <vtkMapper.h>
 #include <vtkPoints.h>
 #include <vtkPolyData.h>
 #include <vtkProperty.h>
+#include <vtkProperty2D.h>
+#include <vtkQImageToImageSource.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
 
@@ -69,7 +76,7 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 
 	auto att = gridAttribute();
 	if (att && att->isReferenceInformation()) {
-		impl->m_colorSetting.mapping = GeoDataPointGroupColorSettingDialog::Arbitrary;
+		impl->m_setting.mapping = Setting::Mapping::Arbitrary;
 	}
 
 	updateActorSetting();
@@ -78,8 +85,14 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 GeoDataPointGroup::~GeoDataPointGroup()
 {
 	actorCollection()->RemoveAllItems();
-	renderer()->RemoveActor(impl->m_pointsActor);
-	renderer()->RemoveActor(impl->m_selectedPointsPointsActor);
+	actor2DCollection()->RemoveAllItems();
+
+	auto r = renderer();
+	for (auto actor : impl->m_imageActors) {
+		r->RemoveActor2D(actor);
+	}
+	r->RemoveActor(impl->m_pointsActor);
+	r->RemoveActor(impl->m_selectedPointsPointsActor);
 
 	delete impl;
 }
@@ -237,22 +250,22 @@ void GeoDataPointGroup::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedPointsPointsActor->SetPosition(0, 0, range.max());
 }
 
+void GeoDataPointGroup::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
 
 QDialog* GeoDataPointGroup::propertyDialog(QWidget* parent)
 {
-	auto dialog = new GeoDataPointGroupColorSettingDialog(parent);
-	dialog->setSetting(impl->m_colorSetting);
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
-	}
-	return dialog;
+	return new PropertyDialog(this, parent);
 }
 
-void GeoDataPointGroup::handlePropertyDialogAccepted(QDialog* d)
+QStringList GeoDataPointGroup::containedFiles() const
 {
-	auto dialog = dynamic_cast<GeoDataPointGroupColorSettingDialog*> (d);
-	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
+	QStringList ret;
+	ret.append(relativeFilename());
+	ret.append(Impl::iconFileName(relativeFilename()));
+	return ret;
 }
 
 GeoDataProxy* GeoDataPointGroup::getProxy()
@@ -263,13 +276,33 @@ GeoDataProxy* GeoDataPointGroup::getProxy()
 void GeoDataPointGroup::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_colorSetting.load(node);
+	impl->m_setting.load(node);
 }
 
 void GeoDataPointGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_colorSetting.save(writer);
+	impl->m_setting.save(writer);
+}
+
+void GeoDataPointGroup::loadExternalData(const QString& filename)
+{
+	auto iconFileName = Impl::iconFileName(filename);
+
+	QImage image;
+	bool ok = image.load(iconFileName);
+	if (ok) {
+		impl->m_setting.image = image;
+	}
+	GeoDataPolyDataGroup::loadExternalData(filename);
+}
+
+void GeoDataPointGroup::saveExternalData(const QString& filename)
+{
+	GeoDataPolyDataGroup::saveExternalData(filename);
+	if (! impl->m_setting.image.isNull()) {
+		impl->m_setting.image.save(Impl::iconFileName(filename));
+	}
 }
 
 GeoDataPolyDataGroupPolyData* GeoDataPointGroup::createNewData()
@@ -290,52 +323,97 @@ GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 
 void GeoDataPointGroup::updateActorSetting()
 {
-	auto cs = impl->m_colorSetting;
-
-	// color
-	QColor c = cs.color;
-
-	impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-	impl->m_selectedPointsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-
-	// mapping
-	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPointGroupColorSettingDialog::Arbitrary) {
-		scalarVisibility = false;
+	auto r = renderer();
+	for (auto actor : impl->m_imageActors) {
+		r->RemoveActor2D(actor);
+		actor->Delete();
 	}
-	if (scalarVisibility) {
-		vtkMapper* mapper = nullptr;
-		auto cs = colorMapSettingContainer();
+	impl->m_imageActors.clear();
+	impl->m_pointsActor->VisibilityOff();
 
-		mapper = cs->buildCellDataMapper(impl->m_pointsPolyData, true);
-		impl->m_pointsActor->SetMapper(mapper);
-		mapper->Delete();
+	actorCollection()->RemoveAllItems();
+	actor2DCollection()->RemoveAllItems();
 
-		mapper = cs->buildCellDataMapper(impl->m_selectedPointsPointsPolyData, true);
-		impl->m_selectedPointsPointsActor->SetMapper(mapper);
-		mapper->Delete();
+	auto cs = impl->m_setting;
+
+	if (cs.shape == Setting::Shape::Point || cs.image.isNull()) {
+		// color
+		QColor c = cs.color;
+
+		impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+		impl->m_selectedPointsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+
+		// mapping
+		bool scalarVisibility = true;
+		if (cs.mapping == Setting::Mapping::Arbitrary) {
+			scalarVisibility = false;
+		}
+		if (scalarVisibility) {
+			vtkMapper* mapper = nullptr;
+			auto cs = colorMapSettingContainer();
+
+			mapper = cs->buildCellDataMapper(impl->m_pointsPolyData, true);
+			impl->m_pointsActor->SetMapper(mapper);
+			mapper->Delete();
+
+			mapper = cs->buildCellDataMapper(impl->m_selectedPointsPointsPolyData, true);
+			impl->m_selectedPointsPointsActor->SetMapper(mapper);
+			mapper->Delete();
+		} else {
+			vtkPolyDataMapper* mapper = nullptr;
+
+			mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+			mapper->SetInputData(impl->m_pointsPolyData);
+			impl->m_pointsActor->SetMapper(mapper);
+			mapper->Delete();
+
+			mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+			mapper->SetInputData(impl->m_selectedPointsPointsPolyData);
+			impl->m_selectedPointsPointsActor->SetMapper(mapper);
+			mapper->Delete();
+		}
+
+		// opacity
+		impl->m_pointsActor->GetProperty()->SetOpacity(cs.opacity);
+		impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(cs.opacity);
+
+		// pointSize
+		impl->m_pointsActor->GetProperty()->SetPointSize(cs.pointSize);
+		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(cs.pointSize * 2);
+
+		actorCollection()->AddItem(impl->m_pointsActor);
 	} else {
-		vtkPolyDataMapper* mapper = nullptr;
+		auto pixmap = QPixmap::fromImage(impl->m_setting.image);
+		impl->m_shrinkedImage = Impl::shrinkPixmap(pixmap, impl->m_setting.imageMaxSize).toImage();
+		auto imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
+		imgToImg->SetQImage(&impl->m_shrinkedImage);
+		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
+		imageInfo->SetInputConnection(imgToImg->GetOutputPort());
+		imageInfo->CenterImageOn();
+		auto col = actor2DCollection();
 
-		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		mapper->SetInputData(impl->m_pointsPolyData);
-		impl->m_pointsActor->SetMapper(mapper);
-		mapper->Delete();
+		for (auto it = data().rbegin(); it != data().rend(); ++it) {
+			auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
+			auto p = point->point();
+			auto mapper = vtkSmartPointer<vtkImageMapper>::New();
+			mapper->SetColorWindow(255);
+			mapper->SetColorLevel(127.5);
+			mapper->SetInputConnection(imageInfo->GetOutputPort());
 
-		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		mapper->SetInputData(impl->m_selectedPointsPointsPolyData);
-		impl->m_selectedPointsPointsActor->SetMapper(mapper);
-		mapper->Delete();
+			auto actor = vtkActor2D::New();
+			actor->SetMapper(mapper);
+			actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+
+			auto coord = actor->GetPositionCoordinate();
+			coord->SetCoordinateSystemToWorld();
+			coord->SetValue(p.x(), p.y(), 0);
+
+			r->AddActor2D(actor);
+			col->AddItem(actor);
+			impl->m_imageActors.push_back(actor);
+		}
 	}
-
-	// opacity
-	impl->m_pointsActor->GetProperty()->SetOpacity(cs.opacity);
-	impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(cs.opacity);
-
-	// pointSize
-	impl->m_pointsActor->GetProperty()->SetPointSize(cs.pointSize);
-	impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(cs.pointSize * 2);
-
+	updateVisibilityWithoutRendering();
 	updateActorSettingForEditTargetPolyData();
 }
 
@@ -440,13 +518,13 @@ void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
 
 	auto targetData = dynamic_cast<GeoDataPoint*> (t);
 
-	const auto& cs = impl->m_colorSetting;
-	targetData->setColor(cs.color);
-	targetData->setOpacity(cs.opacity);
-	if (cs.mapping == GeoDataPointGroupColorSettingDialog::Arbitrary) {
+	const auto& s = impl->m_setting;
+	targetData->setColor(s.color);
+	targetData->setOpacity(s.opacity);
+	if (s.mapping == Setting::Mapping::Arbitrary) {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
 	} else {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
 	}
-	targetData->setPointSize(cs.pointSize * 2);
+	targetData->setPointSize(s.pointSize * 2);
 }

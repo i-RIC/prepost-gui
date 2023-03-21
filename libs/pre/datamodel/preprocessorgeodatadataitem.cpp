@@ -263,15 +263,14 @@ void PreProcessorGeoDataDataItem::applyColorMapSetting()
 	m_geoData->applyColorMapSetting();
 }
 
+void PreProcessorGeoDataDataItem::showPropertyDialog()
+{
+	m_geoData->showPropertyDialog();
+}
+
 QDialog* PreProcessorGeoDataDataItem::propertyDialog(QWidget* parent)
 {
 	return m_geoData->propertyDialog(parent);
-}
-
-void PreProcessorGeoDataDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	m_geoData->handlePropertyDialogAccepted(propDialog);
-	renderGraphicsView();
 }
 
 void PreProcessorGeoDataDataItem::moveUp()
