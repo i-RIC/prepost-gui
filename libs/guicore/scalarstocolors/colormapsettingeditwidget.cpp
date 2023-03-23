@@ -294,7 +294,20 @@ void ColorMapSettingEditWidget::addColor()
 	row = colors.size() - 1 - row;
 
 	if (row == 0) {
-		colors.insert(colors.begin(), colors.at(0));
+		if (m_concreteSetting.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
+			auto newColor = colors.at(0);
+			auto delta = colors.at(1).value - colors.at(0).value;
+			newColor.value -= delta;
+
+			colors.insert(colors.begin(), newColor);
+		} else {
+			auto newColor = colors.at(0);
+			auto delta = colors.at(0).value - m_concreteSetting.colorTableMinValue;
+			newColor.value = m_concreteSetting.colorTableMinValue;
+
+			colors.insert(colors.begin(), newColor);
+			m_concreteSetting.colorTableMinValue -= delta;
+		}
 	} else {
 		ColorMapSettingValueColorPairContainer newColor;
 		newColor.value = (colors.at(row - 1).value + colors.at(row).value) * 0.5;
