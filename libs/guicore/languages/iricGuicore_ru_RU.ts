@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Цветовая карта</translation>
+        <translation>Цветовая карта</translation>
     </message>
 </context>
 <context>

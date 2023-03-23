@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">خريطة ملونة</translation>
+        <translation>خريطة ملونة</translation>
     </message>
 </context>
 <context>

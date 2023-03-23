@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Түстөр картасы</translation>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>

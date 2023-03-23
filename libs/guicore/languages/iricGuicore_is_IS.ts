@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Litamynd</translation>
+        <translation>Litakort</translation>
     </message>
 </context>
 <context>

@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">peta warna</translation>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>

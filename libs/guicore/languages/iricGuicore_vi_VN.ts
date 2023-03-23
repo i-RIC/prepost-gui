@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Colormap</translation>
+        <translation>bản đồ màu</translation>
     </message>
 </context>
 <context>

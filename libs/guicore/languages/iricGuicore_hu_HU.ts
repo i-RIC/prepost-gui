@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Színtérkép</translation>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>

@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Krāsu karte</translation>
+        <translation>Krāsu karte</translation>
     </message>
 </context>
 <context>

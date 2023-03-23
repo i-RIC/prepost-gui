@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">顏色圖</translation>
+        <translation>色圖</translation>
     </message>
 </context>
 <context>

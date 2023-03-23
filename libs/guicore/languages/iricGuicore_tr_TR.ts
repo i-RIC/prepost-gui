@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">renk haritası</translation>
+        <translation>renk haritası</translation>
     </message>
 </context>
 <context>

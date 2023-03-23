@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Kleurenkaart</translation>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>

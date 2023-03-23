@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Colormap</translation>
+        <translation>Χρωματικός χάρτης</translation>
     </message>
 </context>
 <context>

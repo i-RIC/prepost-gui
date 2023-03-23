@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Spalvotas</translation>
+        <translation>Spalvų žemėlapis</translation>
     </message>
 </context>
 <context>

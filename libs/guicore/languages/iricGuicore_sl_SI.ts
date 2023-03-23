@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished">Barvni zemljevid</translation>
+        <translation>Barvni zemljevid</translation>
     </message>
 </context>
 <context>
