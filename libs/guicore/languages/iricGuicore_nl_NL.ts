@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Eenvoudig</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Kleurenkaart</translation>
     </message>
 </context>
 <context>

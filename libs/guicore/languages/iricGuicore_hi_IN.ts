@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">रंग मैप</translation>
     </message>
 </context>
 <context>

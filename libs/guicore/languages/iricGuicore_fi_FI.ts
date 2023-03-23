@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Perus</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Värikartta</translation>
     </message>
 </context>
 <context>

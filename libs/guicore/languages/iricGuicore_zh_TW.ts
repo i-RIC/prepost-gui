@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">顏色圖</translation>
     </message>
 </context>
 <context>

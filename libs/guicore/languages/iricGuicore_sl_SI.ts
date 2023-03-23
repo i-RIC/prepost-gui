@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>barva</translation>
+        <translation type="vanished">barva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Osnovno</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Barvni zemljevid</translation>
     </message>
 </context>
 <context>

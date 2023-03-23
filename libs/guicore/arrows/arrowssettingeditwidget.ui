@@ -167,9 +167,9 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="colorTab">
+     <widget class="QWidget" name="colormapTab">
       <attribute name="title">
-       <string>Color</string>
+       <string>Colormap</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>

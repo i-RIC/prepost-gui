@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Spalvotas</translation>
     </message>
 </context>
 <context>

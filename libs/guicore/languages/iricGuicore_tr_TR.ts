@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Temel</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">renk haritası</translation>
     </message>
 </context>
 <context>

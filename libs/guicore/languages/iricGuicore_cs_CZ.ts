@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Základní</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Colormap</translation>
     </message>
 </context>
 <context>

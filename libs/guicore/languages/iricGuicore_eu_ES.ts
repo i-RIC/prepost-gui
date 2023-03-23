@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Kolormapa</translation>
     </message>
 </context>
 <context>

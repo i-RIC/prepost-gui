@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Alapvető</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Színtérkép</translation>
     </message>
 </context>
 <context>

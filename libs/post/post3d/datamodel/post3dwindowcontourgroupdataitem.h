@@ -14,6 +14,8 @@ class ValueRangeContainer;
 
 class Post3dWindowContourGroupDataItem : public Post3dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post3dWindowContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p);
 	~Post3dWindowContourGroupDataItem();

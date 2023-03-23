@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Базовый</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Цветовая карта</translation>
     </message>
 </context>
 <context>

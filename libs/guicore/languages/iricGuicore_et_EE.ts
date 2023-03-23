@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Põhiline</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Värvikaart</translation>
     </message>
 </context>
 <context>

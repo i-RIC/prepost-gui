@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Dasar</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">peta warna</translation>
     </message>
 </context>
 <context>

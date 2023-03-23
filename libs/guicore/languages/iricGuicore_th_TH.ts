@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">แผนที่สี</translation>
     </message>
 </context>
 <context>

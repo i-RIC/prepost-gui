@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>기초적인</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">컬러맵</translation>
     </message>
 </context>
 <context>

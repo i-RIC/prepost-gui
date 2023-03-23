@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Түстөр картасы</translation>
     </message>
 </context>
 <context>

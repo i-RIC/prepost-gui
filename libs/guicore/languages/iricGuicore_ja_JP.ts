@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>表示色</translation>
+        <translation type="vanished">表示色</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -247,6 +247,10 @@
     <message>
         <source>Basic</source>
         <translation>基本</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>

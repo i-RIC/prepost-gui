@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Pamata</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Krāsu karte</translation>
     </message>
 </context>
 <context>
