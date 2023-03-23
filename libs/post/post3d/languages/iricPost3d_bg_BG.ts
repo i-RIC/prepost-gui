@@ -76,7 +76,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -89,6 +89,10 @@
     <message>
         <source>Range</source>
         <translation>Обхват</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

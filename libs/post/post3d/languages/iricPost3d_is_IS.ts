@@ -76,7 +76,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -89,6 +89,10 @@
     <message>
         <source>Range</source>
         <translation>Svið</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

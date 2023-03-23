@@ -174,7 +174,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -187,6 +187,10 @@
     <message>
         <source>Range</source>
         <translation>范围</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -182,7 +182,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -195,6 +195,10 @@
     <message>
         <source>Range</source>
         <translation>範囲</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>
