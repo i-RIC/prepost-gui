@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edycja ustawień kolorów</translation>
+        <translation type="vanished">Edycja ustawień kolorów</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,8 +127,8 @@
         <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Nagłówek powinien mieć co najmniej 4 kolumny.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Kolumna %1 Powinien być "%2", ale "%3" jest podawany.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Kolumna %1 Powinien być &quot;%2&quot;, ale &quot;%3&quot; jest podawany.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -130,16 +143,16 @@
         <translation>Wystąpił błąd podczas odczytu wiersza %1. Dane powinny mieć co najmniej 4 kolumny.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytywania wartości „x” w wierszu %1. „x” powinno być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytywania wartości „x” w wierszu %1. „x” powinno być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytywania wartości "y" w wierszu %1. „y” powinno być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytywania wartości &quot;y&quot; w wierszu %1. „y” powinno być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytu wartości "value" w linii %1. „wartość” powinna być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytu wartości &quot;value&quot; w linii %1. „wartość” powinna być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Zwrotnica</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Rozmiar punktu:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>顏色設置編輯</translation>
+        <translation type="vanished">顏色設置編輯</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,7 +127,7 @@
         <translation>讀取標題行時出錯。標題至少應有 4 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
         <translation>讀取標題行時出錯。柱子 %1 應該 ” %2 “， 但 ” %3 “ 給出。</translation>
     </message>
     <message>
@@ -130,15 +143,15 @@
         <translation>讀取行時出錯 %1.數據至少應有 4 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>讀取行中的“x”值時出錯 %1. “x”應該是真實值，但“ %2 ”的規定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>在線讀取“y”值時發生錯誤 %1. “y”應該是真正的價值，但“ %2 ”的規定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>在線讀取“值”值時發生錯誤 %1. “價值”應該是真正的價值，但“ %2 ”的規定。</translation>
     </message>
 </context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>觀點 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">按值著色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">自定義顏色</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">積分</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">點大小：</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

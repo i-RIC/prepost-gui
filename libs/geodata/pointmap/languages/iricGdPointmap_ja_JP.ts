@@ -1,36 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>点の削除</translation>
+        <translation type="vanished">点の削除</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>選択された点の属性</translation>
+        <translation type="vanished">選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>点の数:</translation>
+        <translation type="vanished">点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>最小値:</translation>
+        <translation type="vanished">最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>最大値:</translation>
+        <translation type="vanished">最大値:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>この値以下の点を削除:</translation>
+        <translation type="vanished">この値以下の点を削除:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation>点の編集</translation>
+        <translation type="vanished">点の編集</translation>
     </message>
     <message>
         <source>Select Refecence Point</source>
@@ -38,19 +40,19 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>分割線の点の追加</translation>
+        <translation type="vanished">分割線の点の追加</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>分割線の定義の完了</translation>
+        <translation type="vanished">分割線の定義の完了</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>分割線の定義のキャンセル</translation>
+        <translation type="vanished">分割線の定義のキャンセル</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>新しい補間線の点の追加</translation>
+        <translation type="vanished">新しい補間線の点の追加</translation>
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
@@ -78,7 +80,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>このモードに切り替えるには、 TIN を再生成する必要があります。再生成しますか?</translation>
+        <translation type="vanished">このモードに切り替えるには、 TIN を再生成する必要があります。再生成しますか?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -94,7 +96,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>点の選択</translation>
+        <translation type="vanished">点の選択</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -114,11 +116,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>選択された点のうち、指定した値以下の点を削除(&amp;L)...</translation>
+        <translation type="vanished">選択された点のうち、指定した値以下の点を削除(&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>選択された点のうち、指定した値以上の点を削除(&amp;G)...</translation>
+        <translation type="vanished">選択された点のうち、指定した値以上の点を削除(&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -142,7 +144,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>長い辺を持つ三角形を削除するには、先に「表示方法」を「ワイヤーフレーム」もしくは「補間された面」に切り替える必要があります。OK ボタンを押すと、「表示方法」を「ワイヤーフレーム」に切り替えます。</translation>
+        <translation type="vanished">長い辺を持つ三角形を削除するには、先に「表示方法」を「ワイヤーフレーム」もしくは「補間された面」に切り替える必要があります。OK ボタンを押すと、「表示方法」を「ワイヤーフレーム」に切り替えます。</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Surface</source>
@@ -170,7 +172,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>分割線を追加するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">分割線を追加するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -178,7 +180,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>分割線を削除するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">分割線を削除するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -198,23 +200,23 @@
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>点を削除する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">点を削除する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>分割線に使用されている点は、削除できません。</translation>
+        <translation type="vanished">分割線に使用されている点は、削除できません。</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>点の削除</translation>
+        <translation type="vanished">点の削除</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>エクスポートするファイル名の選択</translation>
+        <translation type="vanished">エクスポートするファイル名の選択</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -226,19 +228,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
+        <translation type="vanished">%1 へのエクスポート中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>%1 以下の点の削除</translation>
+        <translation type="vanished">%1 以下の点の削除</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>%1 以上の点の削除</translation>
+        <translation type="vanished">%1 以上の点の削除</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>点を補間するには、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">点を補間するには、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -246,7 +248,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation type="vanished">点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -258,11 +260,11 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>マージ...</translation>
+        <translation type="vanished">マージ...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>"%1" グループにはマージできるデータがありません。</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -288,6 +290,72 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>点群データ(&amp;O)</translation>
     </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation>モードの切替 (&amp;M)</translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation>マージ (&amp;M)...</translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation>マッピング設定 (&amp;M)...</translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation>エクスポートするファイル名の選択</translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>TIN を再生成し、TIN編集モードに切り替えます。</translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation>選択モード</translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation>矩形領域で選択</translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation>選択された点の絞り込み (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation>TIN の再生成 (&amp;T)</translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation>並べ替え (&amp;S)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation>分割線に使用されている点は、削除できません。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation>補間の増分は 0 より大きく、線の長さより短い必要があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -304,62 +372,62 @@
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>点の削除</translation>
+        <translation type="vanished">点の削除</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>選択された点の属性</translation>
+        <translation type="vanished">選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>点の数:</translation>
+        <translation type="vanished">点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>最小値:</translation>
+        <translation type="vanished">最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>最大値:</translation>
+        <translation type="vanished">最大値:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>この値以上の点を削除:</translation>
+        <translation type="vanished">この値以上の点を削除:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>点の編集</translation>
+        <translation type="vanished">点の編集</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>選択された点の属性</translation>
+        <translation type="vanished">選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>点の数:</translation>
+        <translation type="vanished">点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>最小値:</translation>
+        <translation type="vanished">最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>最大値:</translation>
+        <translation type="vanished">最大値:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>X座標</translation>
+        <translation type="vanished">X座標</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Y座標</translation>
+        <translation type="vanished">Y座標</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
 </context>
 <context>
@@ -370,7 +438,7 @@
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation>補間の増分</translation>
+        <translation type="vanished">補間の増分</translation>
     </message>
     <message>
         <source>Interpolation Line Length:</source>
@@ -382,26 +450,26 @@
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>補間設定</translation>
+        <translation type="vanished">補間設定</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>補間の増分:</translation>
+        <translation type="vanished">補間の増分:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation>先の長さ:</translation>
+        <translation type="vanished">先の長さ:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>補間の増分は 0 より大きく、線の長さより短い必要があります。</translation>
+        <translation type="vanished">補間の増分は 0 より大きく、線の長さより短い必要があります。</translation>
     </message>
 </context>
 <context>
@@ -600,8 +668,8 @@
         <translation type="vanished">%1 を読み込めませんでした。%1 は %2 列目ですが、値は %3しかありません。</translation>
     </message>
     <message>
-        <source>Error occured while reading %1 value. %1 value should be real number, but "%2" specified.</source>
-        <translation type="vanished">%1 の値を読み込めませんでした。 %1 の値は実数値である必要がありますが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading %1 value. %1 value should be real number, but &quot;%2&quot; specified.</source>
+        <translation type="vanished">%1 の値を読み込めませんでした。 %1 の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
@@ -628,12 +696,12 @@
         <translation>区切り文字が指定されていません</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>"%1" を読み込めませんでした。"%1" は %2 列目ですが、値は %3しかありません。</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>&quot;%1&quot; を読み込めませんでした。&quot;%1&quot; は %2 列目ですが、値は %3しかありません。</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>"%1" の値を読み込めませんでした。 "%1" の値は実数値である必要がありますが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV etc)</source>
@@ -715,8 +783,8 @@
         <translation>クォート文字</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1019,14 +1087,291 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>点群データマッピング設定</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>TINでマッピング</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>マッピングには、点から作成された TIN を使用します。格子点やセルで定義された属性値は、その格子点（またはセルの中心）を含む三角形の頂点で定義された値の加重平均として計算されます。</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>テンプレートマッピング</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;格子のセル形状を考慮して、格子点 (もしくはセル中心) に近い点を探し、その点の値を補間に利用します。&lt;/p&gt;&lt;p&gt;このアルゴリズムは、構造格子でのみ利用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>詳細 (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>ポリゴンで定義する領域ごとに、マッピングアルゴリズムを指定する</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;領域をポリゴンで定義し、領域ごとに、点で定義された値から格子点 (またはセル中心) の値をマッピングするアルゴリズムを指定します。&lt;/p&gt;&lt;p&gt;以下から選択できます。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;円内の点の最小値&lt;/li&gt;&lt;li&gt;円内の点の最大値&lt;/li&gt;&lt;li&gt;円内の点の加重平均値&lt;/li&gt;&lt;li&gt;TIN からマッピング&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>テンプレートマッピング設定</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>探索範囲</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>マニュアル</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>流れ方向の長さ [m]</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>横断方向の長さ [m]</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>テンプレートの拡大の最大数</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>重み付け指数:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>点の編集</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>選択された点の属性</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>点の数:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>最小値:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>最大値:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>値:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>選択された点の絞り込み</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>選択あsれた点の属性</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>点の数:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>最小値:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>最大値:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>絞り込み条件</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>しきい値以上の点を選択</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>しきい値以下の点を選択</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>しきい値:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>補間設定</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>補間の増分</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>補間の増分:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>先の長さ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>計算方法</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>TIN でマッピング</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>指定した半径の円内の点の最小値</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>指定した半径の円内の点の最大値</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>指定した半径の円内の点の重み付け平均</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>重み付け指数 k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>点を探索する範囲の円の半径</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>点群データ表示設定</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>ワイヤーフレーム</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>補間された面</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>長い辺を持つ三角形の削除</translation>
+        <translation type="vanished">長い辺を持つ三角形の削除</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>しきい値の辺の長さ:</translation>
+        <translation type="vanished">しきい値の辺の長さ:</translation>
     </message>
     <message>
         <source>Make sure all points are used</source>
@@ -1037,8 +1382,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;もしある点を含む全ての三角形が削除される場合、それらのうち一番辺の長さが短い三角形を削除対象から外すことで、すべての点が少なくとも1つの三角形で使われるようにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

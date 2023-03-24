@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPointGroup</name>
@@ -35,7 +37,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>表示色設定の編集</translation>
+        <translation type="vanished">表示色設定の編集</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation>画像ファイルの選択</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>すべての画像(*.jpg *.jpeg *.png);;Jpeg 画像(*.jpg *.jpeg);;PNG 画像(*.png)</translation>
     </message>
 </context>
 <context>
@@ -138,8 +151,8 @@
         <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには4列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は "%2" のはずですが、"%3" が指定されています。</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は &quot;%2&quot; のはずですが、&quot;%3&quot; が指定されています。</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -154,16 +167,16 @@
         <translation>%1行目の読み込み中にエラーが発生しました。4列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "x" の読み込み中にエラーが発生しました。 "x" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;x&quot; の読み込み中にエラーが発生しました。 &quot;x&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "y" の読み込み中にエラーが発生しました。 "y" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;y&quot; の読み込み中にエラーが発生しました。 &quot;y&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "value" の読み込み中にエラーが発生しました。 "value" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;value&quot; の読み込み中にエラーが発生しました。 &quot;value&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
 </context>
 <context>
@@ -252,6 +265,57 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation>点データ表示設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>形状</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>アイコン画像</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>画像のインポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>クリア (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>最大サイズ:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>インポートした画像の幅もしくは高さが最大サイズより大きい場合、幅もしくは高さが最大サイズと同じになるよう画像を縮小します。</translation>
     </message>
 </context>
 </TS>

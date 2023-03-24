@@ -114,8 +114,11 @@ public:
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
 	virtual void assignActorZValues(const ZDepthRange& range);
 	virtual bool getValueRange(double* min, double* max);
+
+	virtual void showPropertyDialog();
 	virtual QDialog* propertyDialog(QWidget* parent);
 	virtual void handlePropertyDialogAccepted(QDialog* propDialog);
+
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	virtual void update2Ds();
 
@@ -159,6 +162,8 @@ protected:
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com);
+	void showPropertyDialogModal();
+	void showPropertyDialogModeless();
 
 	MouseBoundingBox* mouseBoundingBox();
 	PreProcessorDataModelInterface* dataModel() const;

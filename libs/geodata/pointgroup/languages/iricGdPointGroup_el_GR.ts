@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,8 +127,8 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Η κεφαλίδα πρέπει να έχει τουλάχιστον 4 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι "%2", αλλά "%3" δίνεται.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι &quot;%2&quot;, αλλά &quot;%3&quot; δίνεται.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -130,16 +143,16 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Τα δεδομένα πρέπει να έχουν τουλάχιστον 4 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "x" στη γραμμή %1 Το Το "x" πρέπει να είναι πραγματική τιμή αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;x&quot; στη γραμμή %1 Το Το &quot;x&quot; πρέπει να είναι πραγματική τιμή αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "y" στη γραμμή %1 Το Το "y" πρέπει να έχει πραγματική αξία, αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;y&quot; στη γραμμή %1 Το Το &quot;y&quot; πρέπει να έχει πραγματική αξία, αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "τιμή" στη γραμμή %1 Το Η "αξία" πρέπει να είναι πραγματική αξία αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;τιμή&quot; στη γραμμή %1 Το Η &quot;αξία&quot; πρέπει να είναι πραγματική αξία αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>Σημείο %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Πόντοι</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

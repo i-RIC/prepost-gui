@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataPointGroup</name>
@@ -19,7 +21,18 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kleurinstelling bewerken</translation>
+        <translation type="vanished">Kleurinstelling bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,8 +127,8 @@
         <translation>Er is een fout opgetreden bij het lezen van de kopregel. Header moet minimaal 4 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn "%2", maar "%3" is gegeven.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn &quot;%2&quot;, maar &quot;%3&quot; is gegeven.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -130,16 +143,16 @@
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Gegevens moeten minimaal 4 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de "x"-waarde in de regel %1. "x" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de &quot;x&quot;-waarde in de regel %1. &quot;x&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de "y"-waarde in de regel %1. "y" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de &quot;y&quot;-waarde in de regel %1. &quot;y&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de waarde &quot;waarde&quot; in de regel %1. &quot;waarde&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +186,57 @@
     <message>
         <source>Point%1</source>
         <translation>Punt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punten</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

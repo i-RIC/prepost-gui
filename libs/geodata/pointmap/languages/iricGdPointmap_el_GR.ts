@@ -1,29 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Διαγραφή πόντων</translation>
+        <translation type="vanished">Διαγραφή πόντων</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Επιλεγμένες ιδιότητες σημείου</translation>
+        <translation type="vanished">Επιλεγμένες ιδιότητες σημείου</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Αριθμός πόντων:</translation>
+        <translation type="vanished">Αριθμός πόντων:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Ελάχιστο:</translation>
+        <translation type="vanished">Ελάχιστο:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Το μέγιστο:</translation>
+        <translation type="vanished">Το μέγιστο:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Διαγραφή μικρότερης από την τιμή:</translation>
+        <translation type="vanished">Διαγραφή μικρότερης από την τιμή:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Όταν μεταβαίνετε σε αυτήν τη λειτουργία, πρέπει να αναδιατυπώσετε τους ΑΦΜ. Θέλετε να το αναδιαμορφώσετε τώρα;</translation>
+        <translation type="vanished">Όταν μεταβαίνετε σε αυτήν τη λειτουργία, πρέπει να αναδιατυπώσετε τους ΑΦΜ. Θέλετε να το αναδιαμορφώσετε τώρα;</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +64,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Επιλέξτε σημείο</translation>
+        <translation type="vanished">Επιλέξτε σημείο</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +84,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Διαγραφή επιλεγμένων πόντων μικρότερης της αξίας (&amp;L)...</translation>
+        <translation type="vanished">Διαγραφή επιλεγμένων πόντων μικρότερης της αξίας (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Διαγραφή επιλεγμένων πόντων μεγαλύτερων από την αξία (&amp;G)...</translation>
+        <translation type="vanished">Διαγραφή επιλεγμένων πόντων μεγαλύτερων από την αξία (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +124,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Όταν προσθέτετε διακοπή γραμμής, πρέπει να κάνετε εναλλαγή για να εμφανίσετε τα συρμάτινα πλαίσια. Θέλετε να αλλάξετε τώρα για να εμφανίσετε τα συρματόσχοινα;</translation>
+        <translation type="vanished">Όταν προσθέτετε διακοπή γραμμής, πρέπει να κάνετε εναλλαγή για να εμφανίσετε τα συρμάτινα πλαίσια. Θέλετε να αλλάξετε τώρα για να εμφανίσετε τα συρματόσχοινα;</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +132,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Όταν αφαιρείτε τη γραμμή διακοπής, πρέπει να αλλάξετε για να εμφανίσετε τα συρματόσχοινα. Θέλετε να αλλάξετε τώρα για να εμφανίσετε τα συρματόσχοινα;</translation>
+        <translation type="vanished">Όταν αφαιρείτε τη γραμμή διακοπής, πρέπει να αλλάξετε για να εμφανίσετε τα συρματόσχοινα. Θέλετε να αλλάξετε τώρα για να εμφανίσετε τα συρματόσχοινα;</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +144,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Όταν θέλετε να αφαιρέσετε τρίγωνα με μακριά άκρα, πρέπει να αλλάξετε τη μέθοδο εμφάνισης σε Wireframe ή Surface. Εάν πατήσετε το κουμπί OK, η μέθοδος εμφάνισης αλλάζει σε Wireframe</translation>
+        <translation type="vanished">Όταν θέλετε να αφαιρέσετε τρίγωνα με μακριά άκρα, πρέπει να αλλάξετε τη μέθοδο εμφάνισης σε Wireframe ή Surface. Εάν πατήσετε το κουμπί OK, η μέθοδος εμφάνισης αλλάζει σε Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Όταν επεξεργάζεστε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
+        <translation type="vanished">Όταν επεξεργάζεστε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Όταν διαγράφετε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
+        <translation type="vanished">Όταν διαγράφετε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Δεν μπορείτε να διαγράψετε σημεία που χρησιμοποιούνται για διακοπή γραμμών.</translation>
+        <translation type="vanished">Δεν μπορείτε να διαγράψετε σημεία που χρησιμοποιούνται για διακοπή γραμμών.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Διαγραφή πόντων</translation>
+        <translation type="vanished">Διαγραφή πόντων</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Επιλέξτε Αρχείο για εξαγωγή</translation>
+        <translation type="vanished">Επιλέξτε Αρχείο για εξαγωγή</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +176,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την εξαγωγή σε %1 Το</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά την εξαγωγή σε %1 Το</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Διαγράψτε πόντους λιγότερους από %1</translation>
+        <translation type="vanished">Διαγράψτε πόντους λιγότερους από %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Διαγράψτε πόντους μεγαλύτερους από %1</translation>
+        <translation type="vanished">Διαγράψτε πόντους μεγαλύτερους από %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Όταν παρεμβάλλετε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
+        <translation type="vanished">Όταν παρεμβάλλετε σημεία, πρέπει να μεταβείτε στην εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +196,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Όταν προσθέτετε πόντους, πρέπει να κάνετε εναλλαγή για εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
+        <translation type="vanished">Όταν προσθέτετε πόντους, πρέπει να κάνετε εναλλαγή για εμφάνιση σημείων. Θέλετε να μεταβείτε τώρα στην εμφάνιση σημείων;</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +204,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Προσθήκη σημείου διακοπής γραμμής</translation>
+        <translation type="vanished">Προσθήκη σημείου διακοπής γραμμής</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Ακύρωση καθορισμού γραμμής διακοπής</translation>
+        <translation type="vanished">Ακύρωση καθορισμού γραμμής διακοπής</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Ολοκλήρωση καθορισμού γραμμής διακοπής</translation>
+        <translation type="vanished">Ολοκλήρωση καθορισμού γραμμής διακοπής</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Επεξεργασία πόντων</translation>
+        <translation type="vanished">Επεξεργασία πόντων</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Προσθήκη νέου σημείου γραμμής Interp</translation>
+        <translation type="vanished">Προσθήκη νέου σημείου γραμμής Interp</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,11 +228,11 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Συγχώνευση...</translation>
+        <translation type="vanished">Συγχώνευση...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση "%1"ομάδα.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση &quot;%1&quot;ομάδα.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -256,97 +258,163 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Point Cloud Data (&amp;O)</translation>
     </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation type="unfinished">Δεν μπορείτε να διαγράψετε σημεία που χρησιμοποιούνται για διακοπή γραμμών.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished">Η αύξηση της παρεμβολής πρέπει να είναι μεγαλύτερη από 0 και μικρότερη από το μήκος της γραμμής παρεμβολής</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Διαγραφή πόντων</translation>
+        <translation type="vanished">Διαγραφή πόντων</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Επιλεγμένες ιδιότητες σημείου</translation>
+        <translation type="vanished">Επιλεγμένες ιδιότητες σημείου</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Αριθμός πόντων:</translation>
+        <translation type="vanished">Αριθμός πόντων:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Ελάχιστο:</translation>
+        <translation type="vanished">Ελάχιστο:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Το μέγιστο:</translation>
+        <translation type="vanished">Το μέγιστο:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>Διαγραφή μεγαλύτερης από την τιμή:</translation>
+        <translation type="vanished">Διαγραφή μεγαλύτερης από την τιμή:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>Επεξεργασία πόντων</translation>
+        <translation type="vanished">Επεξεργασία πόντων</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Επιλεγμένες ιδιότητες σημείου</translation>
+        <translation type="vanished">Επιλεγμένες ιδιότητες σημείου</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Αριθμός πόντων:</translation>
+        <translation type="vanished">Αριθμός πόντων:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Ελάχιστο:</translation>
+        <translation type="vanished">Ελάχιστο:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Το μέγιστο:</translation>
+        <translation type="vanished">Το μέγιστο:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>Χ-θέση</translation>
+        <translation type="vanished">Χ-θέση</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Υ-τοποθεσία</translation>
+        <translation type="vanished">Υ-τοποθεσία</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>αξία</translation>
+        <translation type="vanished">αξία</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolate Αύξηση</translation>
+        <translation type="vanished">Interpolate Αύξηση</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Ρύθμιση παρεμβολής</translation>
+        <translation type="vanished">Ρύθμιση παρεμβολής</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Αύξηση παρεμβολής:</translation>
+        <translation type="vanished">Αύξηση παρεμβολής:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation>Μήκος γραμμής:</translation>
+        <translation type="vanished">Μήκος γραμμής:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Η αύξηση της παρεμβολής πρέπει να είναι μεγαλύτερη από 0 και μικρότερη από το μήκος της γραμμής παρεμβολής</translation>
+        <translation type="vanished">Η αύξηση της παρεμβολής πρέπει να είναι μεγαλύτερη από 0 και μικρότερη από το μήκος της γραμμής παρεμβολής</translation>
     </message>
 </context>
 <context>
@@ -521,12 +589,12 @@
         <translation>Δεν καθορίστηκε οριοθέτης</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Δεν υπάρχουν αρκετές τιμές για ανάγνωση "%1"."%1"στήλη είναι %2 αλλά %3 τιμές εισαγωγής.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Δεν υπάρχουν αρκετές τιμές για ανάγνωση &quot;%1&quot;.&quot;%1&quot;στήλη είναι %2 αλλά %3 τιμές εισαγωγής.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση "%1" αξία. "%1"η τιμή πρέπει να είναι πραγματικός αριθμός, αλλά"%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση &quot;%1&quot; αξία. &quot;%1&quot;η τιμή πρέπει να είναι πραγματικός αριθμός, αλλά&quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +664,8 @@
         <translation>Παράθεση χαρακτήρα:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -876,18 +944,295 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="unfinished">Επεξεργασία πόντων</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="unfinished">Αριθμός πόντων:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation type="unfinished">Χ:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation type="unfinished">Υ:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Αξία:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished">Ρύθμιση παρεμβολής</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="unfinished">Interpolate Αύξηση</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished">Αύξηση παρεμβολής:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished">Μήκος γραμμής:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">ΚΑΣΣΙΤΕΡΟΣ</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Πόντοι</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="unfinished">Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Επιφάνεια</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Αφαιρέστε τρίγωνα με μακρύ άκρο</translation>
+        <translation type="vanished">Αφαιρέστε τρίγωνα με μακρύ άκρο</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Περιορισμός μήκους ακμής:</translation>
+        <translation type="vanished">Περιορισμός μήκους ακμής:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

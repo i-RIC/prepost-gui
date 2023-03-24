@@ -104,6 +104,9 @@ protected:
 
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+
 	QAction* addAction() const;
 	QAction* editNameAction() const;
 	QAction* editNameAndValueAction() const;
@@ -124,8 +127,6 @@ private:
 	void mergePolyData(GeoDataPolyData* data, int position = -1);
 	void mergePolyDataGroup(GeoDataPolyDataGroup* group, int position = -1);
 
-	void loadExternalData(const QString& filename) override;
-	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
 
 	virtual GeoDataPolyDataGroupPolyData* createNewData() = 0;

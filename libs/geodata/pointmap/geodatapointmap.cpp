@@ -895,6 +895,11 @@ void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 	}
 }
 
+void GeoDataPointmap::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
 QDialog* GeoDataPointmap::propertyDialog(QWidget* parent)
 {
 	GeoDataPointmapRepresentationDialog* dialog = new GeoDataPointmapRepresentationDialog(parent);

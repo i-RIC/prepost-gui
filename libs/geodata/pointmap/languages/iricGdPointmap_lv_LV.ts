@@ -1,29 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Dzēst punktus</translation>
+        <translation type="vanished">Dzēst punktus</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Atlasītie punktu rekvizīti</translation>
+        <translation type="vanished">Atlasītie punktu rekvizīti</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Punktu skaits:</translation>
+        <translation type="vanished">Punktu skaits:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimums:</translation>
+        <translation type="vanished">Minimums:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimums:</translation>
+        <translation type="vanished">Maksimums:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Dzēst mazāk par vērtību:</translation>
+        <translation type="vanished">Dzēst mazāk par vērtību:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Pārslēdzoties uz šo režīmu, jums ir jāpārveido TIN. Vai vēlaties tagad atjaunot?</translation>
+        <translation type="vanished">Pārslēdzoties uz šo režīmu, jums ir jāpārveido TIN. Vai vēlaties tagad atjaunot?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +64,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Izvēlieties punktu</translation>
+        <translation type="vanished">Izvēlieties punktu</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +84,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Dzēst atlasītos punktus, kas ir mazāki par vērtību (&amp;L)...</translation>
+        <translation type="vanished">Dzēst atlasītos punktus, kas ir mazāki par vērtību (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Dzēst atlasītos punktus, kas ir lielāki par vērtību (&amp;G)...</translation>
+        <translation type="vanished">Dzēst atlasītos punktus, kas ir lielāki par vērtību (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +124,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Pievienojot pārtraukuma līniju, jums ir jāpārslēdzas uz rāmjiem. Vai vēlaties tagad pārslēgties uz vadu rāmjiem?</translation>
+        <translation type="vanished">Pievienojot pārtraukuma līniju, jums ir jāpārslēdzas uz rāmjiem. Vai vēlaties tagad pārslēgties uz vadu rāmjiem?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +132,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Noņemot pārtraukuma līniju, jums ir jāpārslēdzas uz rāmju rāmjiem. Vai vēlaties tagad pārslēgties uz vadu rāmjiem?</translation>
+        <translation type="vanished">Noņemot pārtraukuma līniju, jums ir jāpārslēdzas uz rāmju rāmjiem. Vai vēlaties tagad pārslēgties uz vadu rāmjiem?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +144,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Ja vēlaties noņemt trīsstūrus ar garām malām, displeja metode jāpārslēdz uz Wireframe vai Surface. Ja nospiežat pogu OK, displeja metode tiek pārslēgta uz Wireframe</translation>
+        <translation type="vanished">Ja vēlaties noņemt trīsstūrus ar garām malām, displeja metode jāpārslēdz uz Wireframe vai Surface. Ja nospiežat pogu OK, displeja metode tiek pārslēgta uz Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Rediģējot punktus, jums jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
+        <translation type="vanished">Rediģējot punktus, jums jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Dzēšot punktus, jums ir jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
+        <translation type="vanished">Dzēšot punktus, jums ir jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Jūs nevarat izdzēst punktus, ko izmanto pārtraukuma līnijām.</translation>
+        <translation type="vanished">Jūs nevarat izdzēst punktus, ko izmanto pārtraukuma līnijām.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Dzēst punktus</translation>
+        <translation type="vanished">Dzēst punktus</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Atlasiet Eksportējamais fails</translation>
+        <translation type="vanished">Atlasiet Eksportējamais fails</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +176,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Eksportējot uz, radās kļūda %1.</translation>
+        <translation type="vanished">Eksportējot uz, radās kļūda %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Dzēst punktus mazāk par %1</translation>
+        <translation type="vanished">Dzēst punktus mazāk par %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Dzēst punktus, kas lielāki par %1</translation>
+        <translation type="vanished">Dzēst punktus, kas lielāki par %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Interpolējot punktus, jums jāpāriet uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
+        <translation type="vanished">Interpolējot punktus, jums jāpāriet uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +196,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Pievienojot punktus, jums jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
+        <translation type="vanished">Pievienojot punktus, jums jāpārslēdzas uz punktu rādīšanu. Vai vēlaties tagad pārslēgties uz rādīšanas punktiem?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +204,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Pievienot pārtraukuma līnijas punktu</translation>
+        <translation type="vanished">Pievienot pārtraukuma līnijas punktu</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Atcelt pārtraukuma līnijas noteikšanu</translation>
+        <translation type="vanished">Atcelt pārtraukuma līnijas noteikšanu</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Pabeidziet pārtraukuma līnijas noteikšanu</translation>
+        <translation type="vanished">Pabeidziet pārtraukuma līnijas noteikšanu</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Rediģēt punktus</translation>
+        <translation type="vanished">Rediģēt punktus</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Pievienot jaunu interp līnijas līniju</translation>
+        <translation type="vanished">Pievienot jaunu interp līnijas līniju</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,11 +228,11 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Apvienot...</translation>
+        <translation type="vanished">Apvienot...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nav citu datu, ko apvienot "%1"grupa.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nav citu datu, ko apvienot &quot;%1&quot;grupa.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -256,97 +258,163 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Punktu mākoņa dati (&amp;O)</translation>
     </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Brīdinājums</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation type="unfinished">Jūs nevarat izdzēst punktus, ko izmanto pārtraukuma līnijām.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Brīdinājums</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="unfinished">Interpolācijas pieaugumam jābūt lielākam par 0 un mazākam par interpolācijas līnijas garumu</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Dzēst punktus</translation>
+        <translation type="vanished">Dzēst punktus</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Atlasītie punktu rekvizīti</translation>
+        <translation type="vanished">Atlasītie punktu rekvizīti</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Punktu skaits:</translation>
+        <translation type="vanished">Punktu skaits:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimums:</translation>
+        <translation type="vanished">Minimums:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimums:</translation>
+        <translation type="vanished">Maksimums:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>Dzēst lielāku par vērtību:</translation>
+        <translation type="vanished">Dzēst lielāku par vērtību:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>Rediģēt punktus</translation>
+        <translation type="vanished">Rediģēt punktus</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Atlasītie punktu rekvizīti</translation>
+        <translation type="vanished">Atlasītie punktu rekvizīti</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Punktu skaits:</translation>
+        <translation type="vanished">Punktu skaits:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimums:</translation>
+        <translation type="vanished">Minimums:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimums:</translation>
+        <translation type="vanished">Maksimums:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>X atrašanās vieta</translation>
+        <translation type="vanished">X atrašanās vieta</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Y-atrašanās vieta</translation>
+        <translation type="vanished">Y-atrašanās vieta</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vērtība</translation>
+        <translation type="vanished">Vērtība</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolēt pieaugumu</translation>
+        <translation type="vanished">Interpolēt pieaugumu</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Interpolācijas iestatījums</translation>
+        <translation type="vanished">Interpolācijas iestatījums</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Interpolācijas pieaugums:</translation>
+        <translation type="vanished">Interpolācijas pieaugums:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation>Līnijas garums:</translation>
+        <translation type="vanished">Līnijas garums:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Interpolācijas pieaugumam jābūt lielākam par 0 un mazākam par interpolācijas līnijas garumu</translation>
+        <translation type="vanished">Interpolācijas pieaugumam jābūt lielākam par 0 un mazākam par interpolācijas līnijas garumu</translation>
     </message>
 </context>
 <context>
@@ -521,12 +589,12 @@
         <translation>Nav norādīts norobežotājs</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Nav pietiekami daudz vērtību, lai lasītu "%1"". %1 "kolonna ir %2 bet %3 ievades vērtības.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Nav pietiekami daudz vērtību, lai lasītu &quot;%1&quot;&quot;. %1 &quot;kolonna ir %2 bet %3 ievades vērtības.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Lasīšanas laikā radās kļūda "%1"vērtība". %1 "Vērtībai jābūt reālam skaitlim, bet"%2"norādīts.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Lasīšanas laikā radās kļūda &quot;%1&quot;vērtība&quot;. %1 &quot;Vērtībai jābūt reālam skaitlim, bet&quot;%2&quot;norādīts.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +664,8 @@
         <translation>Citāta raksturs:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -876,18 +944,295 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="unfinished">Rediģēt punktus</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="unfinished">Punktu skaits:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation type="unfinished">X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation type="unfinished">Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished">Vērtība:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="unfinished">Interpolācijas iestatījums</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="unfinished">Interpolēt pieaugumu</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="unfinished">Interpolācijas pieaugums:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="unfinished">Līnijas garums:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punkti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punkta izmērs:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="unfinished">Stiepļu rāmis</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Virsma</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Noņemiet trīsstūrus ar garu malu</translation>
+        <translation type="vanished">Noņemiet trīsstūrus ar garu malu</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Malu garuma ierobežojums:</translation>
+        <translation type="vanished">Malu garuma ierobežojums:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

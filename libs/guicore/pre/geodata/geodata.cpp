@@ -236,6 +236,11 @@ bool GeoData::getValueRange(double*, double*)
 	return false;
 }
 
+void GeoData::showPropertyDialog()
+{
+	showPropertyDialogModal();
+}
+
 QDialog* GeoData::propertyDialog(QWidget*)
 {
 	return nullptr;
@@ -336,6 +341,29 @@ void GeoData::pushRenderCommand(QUndoCommand* com)
 void GeoData::pushRenderRedoOnlyCommand(QUndoCommand* com)
 {
 	geoDataDataItem()->pushRenderRedoOnlyCommand(com, geoDataDataItem());
+}
+
+void GeoData::showPropertyDialogModal()
+{
+	QDialog* propDialog = propertyDialog(preProcessorWindow());
+	if (propDialog == nullptr) {return;}
+	int result = propDialog->exec();
+	if (result == QDialog::Accepted) {
+		handlePropertyDialogAccepted(propDialog);
+	}
+	delete propDialog;
+}
+
+void GeoData::showPropertyDialogModeless()
+{
+	QDialog* propDialog = propertyDialog(preProcessorWindow());
+	if (propDialog == nullptr) {return;}
+	propDialog->setAttribute(Qt::WA_DeleteOnClose);
+	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+
+	iricMainWindow()->enterModelessDialogMode();
+
+	propDialog->show();
 }
 
 PreProcessorGraphicsViewInterface* GeoData::graphicsView()
