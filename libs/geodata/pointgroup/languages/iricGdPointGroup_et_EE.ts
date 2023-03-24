@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige pildifail</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik pildid (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Päise rea lugemisel ilmnes viga. Päises peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema &quot;%2&quot;, aga &quot;%3&quot;antakse.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema "%2", aga "%3"antakse.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Rida lugedes ilmnes viga %1. Andmetel peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Viga &quot;x&quot; väärtuse reas lugemisel ilmnes viga %1. &quot;x&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Viga "x" väärtuse reas lugemisel ilmnes viga %1. "x" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse &quot;y&quot; reas lugemisel ilmnes viga %1. &quot;y&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse "y" reas lugemisel ilmnes viga %1. "y" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. &quot;väärtus&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. "väärtus" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide andmete kuvamise seade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Värv väärtuse järgi</translation>
+        <translation>Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kohandatud värv</translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuju</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punktid</translation>
+        <translation>Punktid</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punkti suurus:</translation>
+        <translation>Punkti suurus:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikoonipildid</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Impordi pilt (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Selge (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max suurus:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui imporditud pildi laius või kõrgus on suurem kui maksimaalne suurus, vähendatakse pilti automaatselt nii, et laius või kõrgus võrdub maksimaalse suurusega.</translation>
     </message>
 </context>
 </TS>

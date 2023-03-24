@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tệp hình ảnh</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Tiêu đề phải có ít nhất 4 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là &quot;%2&quot;, nhưng &quot;%3&quot; được đưa ra.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là "%2", nhưng "%3" được đưa ra.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Đã xảy ra lỗi khi đọc dòng %1. Dữ liệu phải có ít nhất 4 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;x&quot; trong dòng %1. &quot;x&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị "x" trong dòng %1. "x" phải là giá trị thực nhưng "%2" được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;y&quot; trong dòng %1. &quot;y&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị "y" trong dòng %1. "y" phải là giá trị thực nhưng "%2" được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;value&quot; trong dòng %1. &quot;giá trị&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị "value" trong dòng %1. "giá trị" phải là giá trị thực nhưng "%2" được quy định.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt hiển thị dữ liệu điểm</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Màu</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Màu theo giá trị</translation>
+        <translation>Màu theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Tự phối màu</translation>
+        <translation>Tự phối màu</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình dạng</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Điểm</translation>
+        <translation>điểm</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Kích thước điểm:</translation>
+        <translation>Kích thước điểm:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình ảnh biểu tượng</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập hình ảnh (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông thoáng (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích thước tối đa:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khi chiều rộng hoặc chiều cao của hình ảnh đã nhập lớn hơn Kích thước tối đa, hình ảnh sẽ tự động bị thu nhỏ lại để chiều rộng hoặc chiều cao bằng với kích thước tối đa.</translation>
     </message>
 </context>
 </TS>

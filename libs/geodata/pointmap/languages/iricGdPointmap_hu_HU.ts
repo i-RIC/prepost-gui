@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Összeolvad...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nincs más egyesítendő adat &quot;%1&quot;csoport.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nincs más egyesítendő adat "%1"csoport.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -260,69 +258,69 @@
     </message>
     <message>
         <source>Switch &amp;Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Üzemmód váltása (&amp;M)</translation>
     </message>
     <message>
         <source>Mer&amp;ge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Összeolvad (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Térképezési beállítás (&amp;M)...</translation>
     </message>
     <message>
         <source>Select file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki az exportálandó fájl nevét</translation>
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem sikerült megnyitni %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Módosítsa a TIN-t, és ha kész, váltson TIN szerkesztési módba.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztási mód</translation>
     </message>
     <message>
         <source>Select points with Rectangle Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelöljön ki pontokat a Téglalap régióval</translation>
     </message>
     <message>
         <source>&amp;Filter selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>A kiválasztott pontok szűrése (&amp;F)</translation>
     </message>
     <message>
         <source>Remesh &amp;TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Fajta (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelem</translation>
+        <translation>Figyelem</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished">A törésvonalakhoz használt pontokat nem törölheti.</translation>
+        <translation>A törésvonalhoz használt pontokat nem lehet törölni.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelem</translation>
+        <translation>Figyelem</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished">Az interpolációs növekménynek nagyobbnak kell lennie 0 -nál és kisebbnek kell lennie, mint az interpolációs vonal hossza</translation>
+        <translation>Az interpolációs növekménynek 0-val nagyobbnak és kisebbnek kell lennie, mint az interpolációs vonal hossza</translation>
     </message>
 </context>
 <context>
@@ -589,12 +587,12 @@
         <translation>Nincs megadva elválasztó</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Nincs elég érték az olvasáshoz &quot;%1&quot;&quot;. %1 &quot;oszlop az %2 de %3 bemeneti értékek.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Nincs elég érték az olvasáshoz "%1"". %1 "oszlop az %2 de %3 bemeneti értékek.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Hiba történt olvasás közben &quot;%1&quot;érték&quot;. %1 &quot;az értéknek valós számnak kell lennie, de&quot;%2&quot;meghatározott.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Hiba történt olvasás közben "%1"érték". %1 "az értéknek valós számnak kell lennie, de"%2"meghatározott.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -664,8 +662,8 @@
         <translation>Idézet karakter:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -947,277 +945,277 @@
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontfelhő adatleképezés beállítása</translation>
     </message>
     <message>
         <source>Mapping with TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Térképezés TIN-nel</translation>
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation type="unfinished"></translation>
+        <translation>A pontokból létrehozott TIN-t a leképezéshez használják. A rács csomópontjaiban vagy celláiban meghatározott grid attribútumértékek a csomópontot (vagy cellaközéppontot) tartalmazó háromszög csomópontjaiban meghatározott értékek súlyozott átlagaként számítják ki.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablonleképezés</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Keresse meg azokat a pontokat, amelyek közel vannak a rácscsomópontokhoz, tekintettel a rácscella alakzatokra, és használja az ezen pontokon lévő értékeket az interpolációhoz.&lt;/p&gt;&lt;p&gt;Ez az algoritmus csak strukturált rácsokhoz használja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Részlet (&amp;D)...</translation>
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Módosítsa a leképezési algoritmust minden sokszöggel meghatározott területhez</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Határozza meg a területeket sokszögként, és adja meg az algoritmust a rácscsomópontokon vagy a cellaközéppontokon lévő értékek leképezéséhez a pontokban meghatározott értékekből.&lt;/p&gt;&lt;p&gt;A felhasználó az alábbiak közül választhat: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;A körön belüli pontok minimális értékének feltérképezése&lt;/li&gt;&lt;li&gt;A körön belüli pontok maximális értékének feltérképezése&lt;/li&gt;&lt;li&gt;A körön belüli pontok súlyozott átlagértékének feltérképezése&lt;/li&gt; &lt;li&gt;Térkép a TIN-ből&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablonleképezés beállítása</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés régióban</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Kézikönyv</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Áramlatonkénti hossza [m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresztfolyam szélessége [m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sablonbővítések száma:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Súlyozási kitevő:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished">Pontok szerkesztése</translation>
+        <translation>Pontok szerkesztése</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>A kiválasztott pontok tulajdonságai</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished">Pontok száma:</translation>
+        <translation>Pontok száma:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimális érték:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximális érték:</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Érték:</translation>
+        <translation>Érték:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
     <message>
         <source>Filter Selected Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Kijelölt pontok szűrése</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>A kiválasztott pontok tulajdonságai</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontok száma:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimális érték:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximális érték:</translation>
     </message>
     <message>
         <source>Filtering condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Szűrési állapot</translation>
     </message>
     <message>
         <source>Select points with value greater than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a küszöbértéknél nagyobb értékű pontokat</translation>
     </message>
     <message>
         <source>Select points with value less than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a küszöbértéknél kisebb értékű pontokat</translation>
     </message>
     <message>
         <source>Threshold value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Küszöbérték:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished">Interpolációs beállítás</translation>
+        <translation>Interpolációs beállítás</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished">Interpolációs növekedés</translation>
+        <translation>Növekmény interpolálása</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished">Interpoláció növekedése:</translation>
+        <translation>Interpolációs növekmény:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished">Sor hossza:</translation>
+        <translation>Vonal hossza:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Calculation method</source>
-        <translation type="unfinished"></translation>
+        <translation>Számítási módszer</translation>
     </message>
     <message>
         <source>Map using TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Térkép TIN használatával</translation>
     </message>
     <message>
         <source>Minimum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>A sugáron belüli pontok minimális értéke</translation>
     </message>
     <message>
         <source>Maximum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>A sugáron belüli pontok maximális értéke</translation>
     </message>
     <message>
         <source>Weighted average of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>A sugáron belüli pontok súlyozott átlaga</translation>
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation type="unfinished"></translation>
+        <translation>k súlyozási kitevő:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Az értékek súlyozott átlagának kiszámításakor az &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; értéket használják súlyként. r a távolság a pont és a csomópont vagy a cellaközép között, amelyhez az érték hozzá van rendelve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation type="unfinished"></translation>
+        <translation>A kör sugara a pontok kereséséhez:</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>A leképezés végrehajtásakor a körben a fenti sugarú pontokat keresi a rendszer, hogy az értékeket leképezze a rács csomópontjaira vagy cellaközéppontjaira.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontfelhő megjelenítési beállítása</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapvető</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">ÓN</translation>
+        <translation>ÓN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Pontok</translation>
+        <translation>Pontok</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Pontméret:</translation>
+        <translation>Pontméret:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished">Drótkeret</translation>
+        <translation>Drótkeret</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Felület</translation>
+        <translation>Felület</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Törésvonalak</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Előadás</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Sokszögek beállítása</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation type="unfinished"></translation>
+        <translation>Színtérkép az értékekhez</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importálás (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -1231,8 +1229,8 @@
         <translation type="vanished">Az élhossz korlátozása:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

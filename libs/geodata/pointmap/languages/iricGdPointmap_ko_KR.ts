@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">병합...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>&quot;에 병합할 다른 데이터가 없습니다. %1 &quot; 그룹.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>"에 병합할 다른 데이터가 없습니다. %1 " 그룹.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -260,69 +258,69 @@
     </message>
     <message>
         <source>Switch &amp;Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>모드 전환 (&amp;M)</translation>
     </message>
     <message>
         <source>Mer&amp;ge...</source>
-        <translation type="unfinished"></translation>
+        <translation>병합 (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>매핑 설정 (&amp;M)...</translation>
     </message>
     <message>
         <source>Select file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>내보낼 파일 이름 선택</translation>
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>열지 못했습니다. %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN을 다시 메시하고 완료되면 TIN 편집 모드로 전환합니다.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>선택 모드</translation>
     </message>
     <message>
         <source>Select points with Rectangle Region</source>
-        <translation type="unfinished"></translation>
+        <translation>직사각형 영역으로 점 선택</translation>
     </message>
     <message>
         <source>&amp;Filter selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 포인트 필터링 (&amp;F)</translation>
     </message>
     <message>
         <source>Remesh &amp;TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>리메시 TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>종류 (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">경고</translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished">구분선에 사용된 점은 삭제할 수 없습니다.</translation>
+        <translation>파단선에 사용된 점은 삭제할 수 없습니다.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">경고</translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished">보간 증분은 0보다 크고 보간 라인 길이보다 작아야 합니다.</translation>
+        <translation>보간 증분은 0보다 크고 보간선 길이보다 작아야 합니다.</translation>
     </message>
 </context>
 <context>
@@ -589,12 +587,12 @@
         <translation>구분 기호가 지정되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>&quot;를 읽을 값이 충분하지 않습니다. %1 &quot;.&quot;%1&quot; 열은 %2 하지만 %3 값 입력.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>"를 읽을 값이 충분하지 않습니다. %1 "."%1" 열은 %2 하지만 %3 값 입력.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>&quot;를 읽는 동안 오류가 발생했습니다. %1 &quot; 값. &quot;%1&quot; 값은 실수여야 하지만 &quot;%2&quot;를 지정했습니다.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>"를 읽는 동안 오류가 발생했습니다. %1 " 값. "%1" 값은 실수여야 하지만 "%2"를 지정했습니다.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -664,8 +662,8 @@
         <translation>인용 문자:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -947,277 +945,277 @@
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 클라우드 데이터 매핑 설정</translation>
     </message>
     <message>
         <source>Mapping with TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN으로 매핑</translation>
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트에서 생성된 TIN은 매핑에 사용됩니다. 그리드 노드 또는 셀에 정의된 그리드 속성 값은 해당 노드(또는 셀 중심)를 포함하는 삼각형의 노드에 정의된 값의 가중 평균으로 계산됩니다.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>템플릿 매핑</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;그리드 셀 모양에 대해 그리드 노드에 가까운 점을 찾아 해당 점의 값을 보간에 사용합니다.&lt;/p&gt;&lt;p&gt;이 알고리즘은 다음과 같습니다. 구조화된 그리드에만 사용하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>세부 사항 (&amp;D)...</translation>
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>폴리곤으로 정의된 영역별 매핑 알고리즘 변경</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;영역을 다각형으로 정의하고 포인트에서 정의된 값에서 그리드 노드 또는 셀 중심의 값을 매핑하는 알고리즘을 지정합니다.&lt;/p&gt;&lt;p&gt;사용자는 아래에서 선택할 수 있습니다. &lt;/p&gt;&lt;ul&gt;&lt;li&gt;원 내 점의 최소값 매핑&lt;/li&gt;&lt;li&gt;원 내 점의 최대값 매핑&lt;/li&gt;&lt;li&gt;원 내 점의 가중 평균값 매핑&lt;/li&gt; &lt;li&gt;TIN의 지도 값&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>템플릿 매핑 설정</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>지역 검색</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>자동</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>수동</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>스트림 방향 길이[m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>교차 스트림 폭[m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>템플릿 확장 횟수:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>가중 지수:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished">포인트 편집</translation>
+        <translation>포인트 편집</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 점의 속성</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished">포인트 수:</translation>
+        <translation>포인트 수:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>최소값:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>최대값:</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished">NS:</translation>
+        <translation>엑스:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished">와이:</translation>
+        <translation>와이:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">값:</translation>
+        <translation>값:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
     <message>
         <source>Filter Selected Points</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 포인트 필터링</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>선택한 점의 속성</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 수:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>최소값:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>최대값:</translation>
     </message>
     <message>
         <source>Filtering condition</source>
-        <translation type="unfinished"></translation>
+        <translation>필터링 조건</translation>
     </message>
     <message>
         <source>Select points with value greater than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>임계값보다 큰 값을 가진 포인트 선택</translation>
     </message>
     <message>
         <source>Select points with value less than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>임계값보다 작은 값을 가진 포인트 선택</translation>
     </message>
     <message>
         <source>Threshold value:</source>
-        <translation type="unfinished"></translation>
+        <translation>임계치:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished">보간 설정</translation>
+        <translation>보간 설정</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished">보간 증분</translation>
+        <translation>보간 증분</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished">보간 증분:</translation>
+        <translation>보간 증분:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished">라인 길이:</translation>
+        <translation>라인 길이:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Calculation method</source>
-        <translation type="unfinished"></translation>
+        <translation>계산 방법</translation>
     </message>
     <message>
         <source>Map using TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN을 사용하여 매핑</translation>
     </message>
     <message>
         <source>Minimum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>반경 내 점의 최소값</translation>
     </message>
     <message>
         <source>Maximum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>반경 내 포인트의 최대값</translation>
     </message>
     <message>
         <source>Weighted average of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>반경 내 포인트의 가중 평균</translation>
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation type="unfinished"></translation>
+        <translation>가중 지수 k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt;는 값의 가중 평균을 계산할 때 가중치로 사용됩니다. r은 점에서 값이 매핑되는 노드 또는 셀 중심까지의 거리입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation type="unfinished"></translation>
+        <translation>점을 검색하기 위한 원의 반경:</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>중</translation>
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>매핑 실행 시 위의 반지름을 가진 원 안의 포인트를 검색하여 값을 그리드 노드나 셀 중심에 매핑합니다.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 클라우드 표시 설정</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>기초적인</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">주석</translation>
+        <translation>주석</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">포인트들</translation>
+        <translation>포인트들</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">포인트 크기:</translation>
+        <translation>포인트 크기:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished">와이어프레임</translation>
+        <translation>와이어프레임</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>선의 폭:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">표면</translation>
+        <translation>표면</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>구분선</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>보여주다</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>색상:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>매핑 설정 다각형</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation type="unfinished"></translation>
+        <translation>값에 대한 컬러맵</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>수입 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내다 (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -1231,8 +1229,8 @@
         <translation type="vanished">가장자리 길이 제한:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

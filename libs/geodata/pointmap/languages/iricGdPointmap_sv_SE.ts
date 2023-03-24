@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">Sammanfoga...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Det finns ingen annan data att slå ihop &quot;%1&quot; grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Det finns ingen annan data att slå ihop "%1" grupp.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -260,69 +258,69 @@
     </message>
     <message>
         <source>Switch &amp;Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla läge (&amp;M)</translation>
     </message>
     <message>
         <source>Mer&amp;ge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sammanfoga (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartinställning (&amp;M)...</translation>
     </message>
     <message>
         <source>Select file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj filnamn att exportera</translation>
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick inte att öppna %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koppla om TIN och när det är klart, växla till TIN Edit Mode.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Valläge</translation>
     </message>
     <message>
         <source>Select points with Rectangle Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj punkter med rektangelregion</translation>
     </message>
     <message>
         <source>&amp;Filter selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrera valda punkter (&amp;F)</translation>
     </message>
     <message>
         <source>Remesh &amp;TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varning</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished">Du kan inte radera punkter som används för raster.</translation>
+        <translation>Du kan inte ta bort punkter som används för brytlinjer.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varning</translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished">Interpolationsökningen måste vara större 0 och mindre än interpolationslinjelängden</translation>
+        <translation>Interpolationsstegringen måste vara större och mindre än interpolationslinjens längd</translation>
     </message>
 </context>
 <context>
@@ -589,12 +587,12 @@
         <translation>Ingen avgränsare specificerad</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Inte tillräckligt med värden för att läsa &quot;%1&quot;.&quot;%1&quot;kolumn är %2 men %3 värden input.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Inte tillräckligt med värden för att läsa "%1"."%1"kolumn är %2 men %3 värden input.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Ett fel uppstod när du läste &quot;%1&quot;värde.&quot;%1&quot;värdet ska vara det verkliga talet, men&quot;%2&quot; specificerad.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Ett fel uppstod när du läste "%1"värde."%1"värdet ska vara det verkliga talet, men"%2" specificerad.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -664,8 +662,8 @@
         <translation>Citat tecken:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -947,277 +945,277 @@
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data Mapping Inställning</translation>
     </message>
     <message>
         <source>Mapping with TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartläggning med TIN</translation>
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN skapat från punkter används för kartläggning. Grid-attributvärden som definieras vid rutnätsnoder eller celler beräknas som ett viktat medelvärde av de värden som definieras vid noderna i triangeln som innehåller noden (eller cellcentrum).</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mallmappning</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hitta punkter som är nära rutnätsnoderna, angående rutnätscellernas former, och använd värdena vid dessa punkter för interpolering.&lt;/p&gt;&lt;p&gt;Denna algoritm kan vara använd endast för strukturerade rutnät.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Detalj (&amp;D)...</translation>
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra mappningsalgoritmen för varje område som definieras med polygoner</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiera områden som polygoner och ange algoritmen för att kartlägga värden vid rutnätsnoder eller cellcentra från värden definierade vid punkter.&lt;/p&gt;&lt;p&gt;Användaren kan välja från nedan: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Karta minimivärdet för punkter inom cirkeln&lt;/li&gt;&lt;li&gt;Karta maximalt värde för punkter inom cirkeln&lt;/li&gt;&lt;li&gt;Karta vägt medelvärde för punkter inom cirkeln&lt;/li&gt; &lt;li&gt;Kartvärde från TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Mallmappningsinställning</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök region</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuell</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strömmässig längd[m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärströmsbredd[m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal mallexpansioner:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viktningsexponent:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished">Redigera poäng</translation>
+        <translation>Redigera poäng</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Egenskaper för valda punkter</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished">Antal poäng:</translation>
+        <translation>Antal poäng:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minsta värde:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximalt värde:</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Värde:</translation>
+        <translation>Värde:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
     <message>
         <source>Filter Selected Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrera valda punkter</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Egenskaper för valda punkter</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal poäng:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minsta värde:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximalt värde:</translation>
     </message>
     <message>
         <source>Filtering condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtreringstillstånd</translation>
     </message>
     <message>
         <source>Select points with value greater than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj punkter med ett värde större än tröskelvärdet</translation>
     </message>
     <message>
         <source>Select points with value less than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj punkter med värde mindre än tröskelvärdet</translation>
     </message>
     <message>
         <source>Threshold value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tröskelvärde:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished">Interpolationsinställning</translation>
+        <translation>Interpolationsinställning</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished">Interpolera inkrement</translation>
+        <translation>Interpolera Inkrement</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished">Interpolationsökning:</translation>
+        <translation>Interpolationsökning:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished">Linjelängd:</translation>
+        <translation>Linjelängd:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Calculation method</source>
-        <translation type="unfinished"></translation>
+        <translation>Beräkningsmetod</translation>
     </message>
     <message>
         <source>Map using TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Karta med TIN</translation>
     </message>
     <message>
         <source>Minimum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Minsta värde för punkter inom radie</translation>
     </message>
     <message>
         <source>Maximum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximalt värde för punkter inom radie</translation>
     </message>
     <message>
         <source>Weighted average of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Vägt medelvärde av punkter inom radie</translation>
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viktningsexponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; används som vikt vid beräkning av viktat medelvärde av värdena. r är avståndet från punkten till noden eller cellcentrum som värdet är mappat till.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cirkelns radie för att söka efter punkter:</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>När mappning utförs, genomsöks punkter med i cirkeln med radien ovan för att mappa värden till rutnätsnoder eller cellcentra.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Display-inställning</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Grundläggande</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">TENN</translation>
+        <translation>TENN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poäng</translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstorlek:</translation>
+        <translation>Punktstorlek:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished">Trådram</translation>
+        <translation>Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjebredd:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Yta</translation>
+        <translation>Yta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryt linjer</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartläggning av polygoner</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation type="unfinished"></translation>
+        <translation>Färgkarta för värden</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -1231,8 +1229,8 @@
         <translation type="vanished">Gräns för kantlängd:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете файл с изображение</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Всички изображения (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Възникна грешка при четене на заглавния ред. Заглавката трябва да има поне 4 колони.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Възникна грешка при четене на заглавния ред. Колона %1 би трябвало &quot;%2&quot;, но &quot;%3&quot; е даден.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Възникна грешка при четене на заглавния ред. Колона %1 би трябвало "%2", но "%3" е даден.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Възникна грешка при четене на ред %1. Данните трябва да имат поне 4 колони.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Възникна грешка при четене на стойност &quot;x&quot; в ред %1. &quot;x&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Възникна грешка при четене на стойност "x" в ред %1. "x" трябва да е реална стойност, но "%2"е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Възникна грешка при четене на стойност &quot;y&quot; в ред %1. &quot;y&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Възникна грешка при четене на стойност "y" в ред %1. "y" трябва да е реална стойност, но "%2"е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Възникна грешка при четене на стойност &quot;стойност&quot; в ред %1. &quot;стойност&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Възникна грешка при четене на стойност "стойност" в ред %1. "стойност" трябва да е реална стойност, но "%2"е посочено.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка за показване на данни за точки</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Цвят</translation>
+        <translation>Цвят</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Оцветете по стойност</translation>
+        <translation>Оцветете по стойност</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Персонализиран цвят</translation>
+        <translation>Персонализиран цвят</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Точки</translation>
+        <translation>Точки</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Размер на точката:</translation>
+        <translation>Размер на точката:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения на икони</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортиране на изображение (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>ясно (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимален размер:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Когато ширината или височината на импортираното изображение е по-голяма от максималния размер, изображението автоматично се свива, така че ширината или височината стават равни на максималния размер.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione o ficheiro de imaxe</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas as imaxes (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Produciuse un erro ao ler a liña de cabeceira. A cabeceira debe ter polo menos 4 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Produciuse un erro ao ler a liña de cabeceira. Columna %1 debería ser &quot;%2&quot;, pero&quot;%3&quot;dase.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Produciuse un erro ao ler a liña de cabeceira. Columna %1 debería ser "%2", pero"%3"dase.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Produciuse un erro ao ler a liña %1. Os datos deben ter como mínimo 4 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Produciuse un erro ao ler o valor &quot;x&quot; na liña %1. &quot;x&quot; debería ter un valor real pero &quot;%2&quot;especifícase.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Produciuse un erro ao ler o valor "x" na liña %1. "x" debería ter un valor real pero "%2"especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Produciuse un erro ao ler o valor &quot;y&quot; na liña %1. &quot;y&quot; debería ter un valor real pero &quot;%2&quot;especifícase.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Produciuse un erro ao ler o valor "y" na liña %1. "y" debería ter un valor real pero "%2"especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Produciuse un erro ao ler o valor &quot;valor&quot; na liña %1. &quot;valor&quot; debería ser un valor real pero &quot;%2&quot;especifícase.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Produciuse un erro ao ler o valor "valor" na liña %1. "valor" debería ser un valor real pero "%2"especifícase.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de datos de puntos</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Cor</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Cor por valor</translation>
+        <translation>Cor por valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Cor personalizada</translation>
+        <translation>Cor personalizada</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puntos</translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Tamaño do punto:</translation>
+        <translation>Tamaño do punto:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Imaxes de iconas</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar imaxe (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño máximo:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando o ancho ou o alto da imaxe importada é superior ao tamaño máximo, a imaxe encolle automaticamente para que o ancho ou o alto sexa igual ao tamaño máximo.</translation>
     </message>
 </context>
 </TS>

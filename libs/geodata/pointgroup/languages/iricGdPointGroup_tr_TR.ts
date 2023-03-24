@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>resim dosyası seçin</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm resimler (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Başlık satırı okunurken hata oluştu. Başlıkta en az 4 sütun olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Başlık satırı okunurken hata oluştu. Kolon %1 olmalı &quot;%2&quot;, ancak &quot;%3&quot; verilmiş.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Başlık satırı okunurken hata oluştu. Kolon %1 olmalı "%2", ancak "%3" verilmiş.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Satır okunurken hata oluştu %1. Veriler en az 4 sütuna sahip olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Satırda &quot;x&quot; değeri okunurken hata oluştu %1. &quot;x&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Satırda "x" değeri okunurken hata oluştu %1. "x" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Satırda &quot;y&quot; değeri okunurken hata oluştu %1. &quot;y&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Satırda "y" değeri okunurken hata oluştu %1. "y" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Satırda &quot;değer&quot; değeri okunurken hata oluştu %1. &quot;değer&quot; gerçek değer olmalı ama &quot;%2&quot;belirtilmiştir.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Satırda "değer" değeri okunurken hata oluştu %1. "değer" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puan Veri Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">değere göre renk</translation>
+        <translation>değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Özel renk</translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Şekil</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puan</translation>
+        <translation>Puanlar</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puan Boyutu:</translation>
+        <translation>Puan Boyutu:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Simge Görselleri</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Resmi içe aktar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Temizlemek (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum boyut:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılan görüntünün genişliği veya yüksekliği Maks boyuttan büyük olduğunda, genişlik veya yükseklik maksimum boyuta eşit olacak şekilde görüntü otomatik olarak küçültülür.</translation>
     </message>
 </context>
 </TS>

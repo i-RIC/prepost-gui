@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il file immagine</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le immagini (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l&apos;esportazione in %1.</translation>
+        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -112,7 +110,7 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
@@ -120,15 +118,15 @@
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L&apos;intestazione dovrebbe avere almeno 3 colonne.</translation>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L'intestazione dovrebbe avere almeno 3 colonne.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L&apos;intestazione dovrebbe avere almeno 4 colonne.</translation>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L'intestazione dovrebbe avere almeno 4 colonne.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. Colonna %1 dovrebbe essere &quot;%2&quot;, ma &quot;%3&quot; viene data.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. Colonna %1 dovrebbe essere "%2", ma "%3" viene data.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Si è verificato un errore durante la lettura della riga %1. I dati dovrebbero avere almeno 4 colonne.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore &quot;x&quot; nella riga %1. &quot;x&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore "x" nella riga %1. "x" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore &quot;y&quot; nella riga %1. &quot;y&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore "y" nella riga %1. "y" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore &quot;value&quot; nella riga %1. &quot;valore&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore "value" nella riga %1. "valore" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della visualizzazione dei dati dei punti</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Colore</translation>
+        <translation>Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Colore per valore</translation>
+        <translation>Colore per valore</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Colore personalizzato</translation>
+        <translation>Colore personalizzato</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punti</translation>
+        <translation>Punti</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Dimensione punto:</translation>
+        <translation>Dimensione punto:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Immagini dell'icona</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa immagine (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiaro (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione massima:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando la larghezza o l'altezza dell'immagine importata è maggiore di Dimensione massima, l'immagine viene automaticamente ridotta in modo che la larghezza o l'altezza diventi uguale alla dimensione massima.</translation>
     </message>
 </context>
 </TS>

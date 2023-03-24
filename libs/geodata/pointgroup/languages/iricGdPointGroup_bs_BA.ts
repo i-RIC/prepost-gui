@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite datoteku slike</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sve slike (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Došlo je do greške pri čitanju zaglavlja. Zaglavlje treba imati najmanje 4 kolone.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti &quot;%2&quot;, ali&quot;%3&quot;je dato.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti "%2", ali"%3"je dato.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Došlo je do greške pri čitanju retka %1. Podaci trebaju imati najmanje 4 kolone.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;x&quot; u redu %1. &quot;x&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "x" u redu %1. "x" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;y&quot; u redu %1. &quot;y&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "y" u redu %1. "y" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;value&quot; u redu %1. &quot;vrijednost&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "value" u redu %1. "vrijednost" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavka prikaza podataka o tačkama</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Boja</translation>
+        <translation>Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Boja po vrijednosti</translation>
+        <translation>Boja po vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Custom Color</translation>
+        <translation>Custom Color</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblik</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poeni</translation>
+        <translation>Poeni</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Veličina tačke:</translation>
+        <translation>Veličina tačke:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon Images</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvezi sliku (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Jasno (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalna veličina:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kada je širina ili visina uvezene slike veća od maksimalne veličine, slika se automatski smanjuje tako da širina ili visina postane jednaka maksimalnoj veličini.</translation>
     </message>
 </context>
 </TS>

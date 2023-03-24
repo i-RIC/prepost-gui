@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>TIN&apos;s verwisselen...</translation>
+        <translation>TIN's verwisselen...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -48,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN&apos;s opnieuw invoeren. Wil je nu remesh?</translation>
+        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN's opnieuw invoeren. Wil je nu remesh?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -92,7 +90,7 @@
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>Remesh FIN&apos;s (&amp;T)</translation>
+        <translation>Remesh FIN's (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Het verwijderen van FIN&apos;s is voltooid.</translation>
+        <translation>Het verwijderen van FIN's is voltooid.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -231,8 +229,8 @@
         <translation type="vanished">Samenvoegen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Er zijn geen andere gegevens om in te voegen &quot;%1&quot; groep.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Er zijn geen andere gegevens om in te voegen "%1" groep.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -260,69 +258,69 @@
     </message>
     <message>
         <source>Switch &amp;Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Verander modus (&amp;M)</translation>
     </message>
     <message>
         <source>Mer&amp;ge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Samenvoegen (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapping-instelling (&amp;M)...</translation>
     </message>
     <message>
         <source>Select file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer de bestandsnaam om te exporteren</translation>
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet geslaagd te openen %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hermesh TIN en als het klaar is, schakelt u over naar de TIN-bewerkingsmodus.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectiemodus</translation>
     </message>
     <message>
         <source>Select points with Rectangle Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer punten met Rechthoekgebied</translation>
     </message>
     <message>
         <source>&amp;Filter selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter geselecteerde punten (&amp;F)</translation>
     </message>
     <message>
         <source>Remesh &amp;TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Hermes TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Soort (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished">U kunt geen punten verwijderen die worden gebruikt voor afbreeklijnen.</translation>
+        <translation>U kunt geen punten verwijderen die voor breeklijnen worden gebruikt.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished">Interpolatie-increment moet groter zijn dan 0 en kleiner dan de lengte van de interpolatielijn</translation>
+        <translation>Interpolatiestap moet groter zijn dan 0 en kleiner dan de lengte van de interpolatielijn</translation>
     </message>
 </context>
 <context>
@@ -589,12 +587,12 @@
         <translation>Geen scheidingsteken opgegeven</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Niet genoeg waarden om te lezen &quot;%1&quot;.&quot;%1&quot; kolom is %2 maar %3 waarden ingevoerd.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Niet genoeg waarden om te lezen "%1"."%1" kolom is %2 maar %3 waarden ingevoerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen &quot;%1&quot; waarde. &quot;%1&quot; waarde moet een reëel getal zijn, maar &quot;%2&quot; opgegeven.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen "%1" waarde. "%1" waarde moet een reëel getal zijn, maar "%2" opgegeven.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -625,7 +623,7 @@
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation>CSV (door komma&apos;s gescheiden waarden)</translation>
+        <translation>CSV (door komma's gescheiden waarden)</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -664,12 +662,12 @@
         <translation>Citaat karakter:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma&apos;s.</translation>
+        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma's.</translation>
     </message>
     <message>
         <source>Escape character:</source>
@@ -947,277 +945,277 @@
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntenwolk Data Mapping Instelling</translation>
     </message>
     <message>
         <source>Mapping with TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>In kaart brengen met TIN</translation>
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN gemaakt op basis van punten worden gebruikt voor het in kaart brengen. Rasterattribuutwaarden die zijn gedefinieerd bij rasterknooppunten of cellen worden berekend als gewogen gemiddelde van de waarden die zijn gedefinieerd bij de knooppunten van de driehoek die het knooppunt (of celcentrum) bevat.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjabloontoewijzing</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vind punten in de buurt van de rasterknooppunten, met betrekking tot de rastercelvormen, en gebruik de waarden op die punten voor interpolatie.&lt;/p&gt;&lt;p&gt;Dit algoritme kan alleen gebruiken voor gestructureerde rasters.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Detail (&amp;D)...</translation>
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Wijzig het toewijzingsalgoritme voor elk gebied dat is gedefinieerd met polygonen</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definieer gebieden als polygonen en specificeer het algoritme om waarden op rasterknooppunten of celcentra in kaart te brengen op basis van waarden die op punten zijn gedefinieerd.&lt;/p&gt;&lt;p&gt;De gebruiker kan hieronder selecteren: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Minimumwaarde van punten binnen cirkel in kaart brengen&lt;/li&gt;&lt;li&gt;Maximale waarde van punten binnen cirkel in kaart brengen&lt;/li&gt;&lt;li&gt;Gewogen gemiddelde waarde van punten binnen cirkel in kaart brengen&lt;/li&gt; &lt;li&gt;Kaartwaarde uit TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling sjabloontoewijzing</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoek regio</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handmatig</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomgewijze lengte[m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsstroombreedte[m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal sjabloonuitbreidingen:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wegingsexponent:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished">Punten bewerken</translation>
+        <translation>Punten bewerken</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschappen van geselecteerde punten</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished">Aantal punten:</translation>
+        <translation>Aantal punten:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale waarde:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale waarde:</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished">J:</translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Waarde:</translation>
+        <translation>Waarde:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
     <message>
         <source>Filter Selected Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter geselecteerde punten</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschappen van geselecteerde punten</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal punten:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale waarde:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale waarde:</translation>
     </message>
     <message>
         <source>Filtering condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter conditie</translation>
     </message>
     <message>
         <source>Select points with value greater than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer punten met een waarde groter dan de drempelwaarde</translation>
     </message>
     <message>
         <source>Select points with value less than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer punten met een waarde kleiner dan de drempelwaarde</translation>
     </message>
     <message>
         <source>Threshold value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Drempelwaarde:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished">Interpolatie-instelling</translation>
+        <translation>Interpolatie-instelling</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished">Increment interpoleren</translation>
+        <translation>Interpoleer verhoging</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished">Interpolatietoename:</translation>
+        <translation>Interpolatieverhoging:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished">Lijnlengte:</translation>
+        <translation>Lijnlengte:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Calculation method</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekenmethode</translation>
     </message>
     <message>
         <source>Map using TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaart met behulp van TIN</translation>
     </message>
     <message>
         <source>Minimum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimale waarde van punten binnen straal</translation>
     </message>
     <message>
         <source>Maximum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale waarde van punten binnen straal</translation>
     </message>
     <message>
         <source>Weighted average of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Gewogen gemiddelde van punten binnen straal</translation>
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation type="unfinished"></translation>
+        <translation>Weging Exponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; wordt gebruikt als het gewicht bij het berekenen van het gewogen gemiddelde van de waarden. r is de afstand van het punt tot het knooppunt of celcentrum, waaraan de waarde is toegewezen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Straal van cirkel om naar punten te zoeken:</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wanneer het in kaart brengen wordt uitgevoerd, worden punten in de cirkel met de straal erboven doorzocht om waarden toe te wijzen aan rasterknooppunten of celcentra.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling puntenwolkweergave</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Eenvoudig</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">BLIK</translation>
+        <translation>BLIK</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punten</translation>
+        <translation>Punten</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puntgrootte:</translation>
+        <translation>Puntgrootte:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished">Draadframe</translation>
+        <translation>Draadframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnbreedte:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Oppervlakte</translation>
+        <translation>Oppervlak</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Breek lijnen</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>In kaart brengen Polygonen instellen</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart voor waarden</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -1231,8 +1229,8 @@
         <translation type="vanished">Randlengte beperken:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

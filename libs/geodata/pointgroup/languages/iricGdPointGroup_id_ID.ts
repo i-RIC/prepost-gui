@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file gambar</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua gambar (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Terjadi kesalahan saat membaca baris header. Header harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya &quot;%2&quot;, tetapi &quot;%3&quot; diberikan.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya "%2", tetapi "%3" diberikan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Terjadi kesalahan saat membaca baris %1. Data harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;x&quot; di baris %1. &quot;x&quot; harus berupa nilai sebenarnya tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "x" di baris %1. "x" harus berupa nilai sebenarnya tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;y&quot; di baris %1. &quot;y&quot; seharusnya bernilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "y" di baris %1. "y" seharusnya bernilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;nilai&quot; di baris %1. &quot;nilai&quot; harus berupa nilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Data Poin</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Warnai berdasarkan nilai</translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Warna Kustom</translation>
+        <translation>Warna Kustom</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poin</translation>
+        <translation>Poin</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Ukuran Titik:</translation>
+        <translation>Ukuran Titik:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Gambar Ikon</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor gambar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Jernih (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran maks:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ketika lebar atau tinggi gambar yang diimpor lebih besar dari ukuran Maks, gambar secara otomatis menyusut sehingga lebar atau tinggi menjadi sama dengan ukuran maks.</translation>
     </message>
 </context>
 </TS>

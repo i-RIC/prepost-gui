@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg bildefil</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle bilder (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Det oppstod en feil under lesing av overskriftslinje. Overskriften skal ha minst 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Det oppstod en feil under lesing av overskriftslinje. Kolonne %1 bør være &quot;%2&quot;, men &quot;%3&quot; er gitt.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Det oppstod en feil under lesing av overskriftslinje. Kolonne %1 bør være "%2", men "%3" er gitt.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Det oppsto en feil under lesing av linjen %1. Data skal ha minst 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;x&quot; -verdien på linjen %1. &quot;x&quot; skal være reell verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "x" -verdien på linjen %1. "x" skal være reell verdi, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;y&quot; -verdien på linjen %1. &quot;y&quot; skal være ekte verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "y" -verdien på linjen %1. "y" skal være ekte verdi, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;verdi&quot; -verdien på linjen %1. &quot;verdi&quot; skal være reell verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "verdi" -verdien på linjen %1. "verdi" skal være reell verdi, men "%2"er spesifisert.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Visningsinnstilling for poengdata</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farge</translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Farge etter verdi</translation>
+        <translation>Farge etter verdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Egendefinert farge</translation>
+        <translation>Egendefinert farge</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poeng</translation>
+        <translation>Poeng</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstørrelse:</translation>
+        <translation>Punktstørrelse:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikon bilder</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer bilde (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks størrelse:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når bredden eller høyden på det importerte bildet er større enn Maks størrelse, krympes bildet automatisk slik at bredden eller høyden blir lik maks størrelse.</translation>
     </message>
 </context>
 </TS>

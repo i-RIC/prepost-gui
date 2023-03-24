@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지 파일 선택</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 이미지 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 헤더에는 최소한 4개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 &quot;%2&quot;, 하지만 &quot;%3&quot;가 주어진다.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 "%2", 하지만 "%3"가 주어진다.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>줄을 읽는 동안 오류가 발생했습니다. %1. 데이터에는 최소한 4개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;x&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;x&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "x" 값을 읽는 동안 오류가 발생했습니다. %1. "x"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;y&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;y&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "y" 값을 읽는 동안 오류가 발생했습니다. %1. "y"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;값&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "값" 값을 읽는 동안 오류가 발생했습니다. %1. "값"은 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 데이터 표시 설정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">값별 색상 지정</translation>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">맞춤 색상</translation>
+        <translation>맞춤 색상</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>모양</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">포인트들</translation>
+        <translation>포인트들</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">포인트 크기:</translation>
+        <translation>포인트 크기:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>아이콘 이미지</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지 가져오기 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>분명한 (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>최대 크기:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>가져온 이미지의 너비나 높이가 최대 크기보다 크면 너비나 높이가 최대 크기와 같아지도록 이미지가 자동으로 축소됩니다.</translation>
     </message>
 </context>
 </TS>

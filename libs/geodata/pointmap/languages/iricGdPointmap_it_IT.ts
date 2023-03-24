@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">Si è verificato un errore durante l&apos;esportazione in %1.</translation>
+        <translation type="vanished">Si è verificato un errore durante l'esportazione in %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -231,8 +229,8 @@
         <translation type="vanished">Unisci...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Non ci sono altri dati da unire &quot;%1&quot;gruppo.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Non ci sono altri dati da unire "%1"gruppo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -240,7 +238,7 @@
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>È necessario selezionare un punto noto e definire almeno una posizione per i punti aggiunti. Vuoi riprovare o annullare l&apos;operazione?</translation>
+        <translation>È necessario selezionare un punto noto e definire almeno una posizione per i punti aggiunti. Vuoi riprovare o annullare l'operazione?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -252,7 +250,7 @@
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Per interpolare i punti, è necessario specificare più di due punti e l&apos;ultimo punto dovrebbe essere un punto esistente. Vuoi riprovare o annullare l&apos;operazione?</translation>
+        <translation>Per interpolare i punti, è necessario specificare più di due punti e l'ultimo punto dovrebbe essere un punto esistente. Vuoi riprovare o annullare l'operazione?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -260,69 +258,69 @@
     </message>
     <message>
         <source>Switch &amp;Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia modalità (&amp;M)</translation>
     </message>
     <message>
         <source>Mer&amp;ge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Unisci (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della mappatura (&amp;M)...</translation>
     </message>
     <message>
         <source>Select file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il nome del file da esportare</translation>
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile aprire %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TIN e quando è finito, passa alla modalità di modifica TIN.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modalità di selezione</translation>
     </message>
     <message>
         <source>Select points with Rectangle Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona i punti con Rectangle Region</translation>
     </message>
     <message>
         <source>&amp;Filter selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtra i punti selezionati (&amp;F)</translation>
     </message>
     <message>
         <source>Remesh &amp;TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordinare (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avvertimento</translation>
+        <translation>Avvertimento</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished">Non è possibile eliminare i punti utilizzati per le linee di interruzione.</translation>
+        <translation>Non è possibile eliminare i punti utilizzati per le linee di interruzione.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avvertimento</translation>
+        <translation>Avvertimento</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished">L&apos;incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
+        <translation>L'incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
     </message>
 </context>
 <context>
@@ -395,7 +393,7 @@
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="vanished">Impostazione dell&apos;interpolazione</translation>
+        <translation type="vanished">Impostazione dell'interpolazione</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
@@ -414,7 +412,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="vanished">L&apos;incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
+        <translation type="vanished">L'incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
     </message>
 </context>
 <context>
@@ -429,7 +427,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>Si è verificato un errore durante l&apos;esportazione in %1</translation>
+        <translation>Si è verificato un errore durante l'esportazione in %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -497,7 +495,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l&apos;esportazione in %1.</translation>
+        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -512,7 +510,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -546,7 +544,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
@@ -589,12 +587,12 @@
         <translation>Nessun delimitatore specificato</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Valori insufficienti per leggere &quot;%1&quot;.&quot;%1&quot; colonna è %2 ma %3 valori inseriti.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Valori insufficienti per leggere "%1"."%1" colonna è %2 ma %3 valori inseriti.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Si è verificato un errore durante la lettura &quot;%1&quot; valore. &quot;%1&quot; il valore dovrebbe essere un numero reale, ma &quot;%2&quot; specificato.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Si è verificato un errore durante la lettura "%1" valore. "%1" il valore dovrebbe essere un numero reale, ma "%2" specificato.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -664,8 +662,8 @@
         <translation>Citazione personaggio:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -802,7 +800,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -874,7 +872,7 @@
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La regione per l&apos;importazione dei dati non è ancora selezionata. Si prega di trascinare a sinistra sulla mappa per selezionare l&apos;area.</translation>
+        <translation>La regione per l'importazione dei dati non è ancora selezionata. Si prega di trascinare a sinistra sulla mappa per selezionare l'area.</translation>
     </message>
 </context>
 <context>
@@ -947,277 +945,277 @@
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della mappatura dei dati della nuvola di punti</translation>
     </message>
     <message>
         <source>Mapping with TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappatura con TIN</translation>
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation type="unfinished"></translation>
+        <translation>I TIN creati dai punti vengono utilizzati per la mappatura. I valori degli attributi della griglia definiti nei nodi o nelle celle della griglia sono calcolati come media pesata dei valori definiti nei nodi del triangolo che contiene il nodo (o il centro della cella).</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappatura del modello</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trova i punti vicini ai nodi della griglia, per quanto riguarda le forme delle celle della griglia, e usa i valori in quei punti per l'interpolazione.&lt;/p&gt;&lt;p&gt;Questo algoritmo può essere utilizzare solo per griglie strutturate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dettaglio (&amp;D)...</translation>
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia l'algoritmo di mappatura per ogni area definita con poligoni</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definisci le aree come poligoni e specifica l'algoritmo per mappare i valori nei nodi della griglia o nei centri delle celle dai valori definiti nei punti.&lt;/p&gt;&lt;p&gt;L'utente può selezionare uno dei seguenti: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mappa il valore minimo dei punti all'interno del cerchio&lt;/li&gt;&lt;li&gt;Mappa il valore massimo dei punti all'interno del cerchio&lt;/li&gt;&lt;li&gt;Mappa il valore medio ponderato dei punti all'interno del cerchio&lt;/li&gt; &lt;li&gt;Mappa il valore da TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione mappatura modello</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca regione</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuale</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lunghezza del flusso [m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Larghezza del flusso trasversale [m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di espansioni del modello:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esponente di ponderazione:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished">Modifica punti</translation>
+        <translation>Modifica punti</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietà dei punti selezionati</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished">Numero di punti:</translation>
+        <translation>Numero di punti:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore minimo:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore massimo:</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished">Sì:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished">Valore:</translation>
+        <translation>Valore:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
     <message>
         <source>Filter Selected Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtra punti selezionati</translation>
     </message>
     <message>
         <source>Properties of selected points</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietà dei punti selezionati</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di punti:</translation>
     </message>
     <message>
         <source>Minimum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore minimo:</translation>
     </message>
     <message>
         <source>Maximum value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore massimo:</translation>
     </message>
     <message>
         <source>Filtering condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condizione di filtraggio</translation>
     </message>
     <message>
         <source>Select points with value greater than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezionare i punti con valore maggiore della soglia</translation>
     </message>
     <message>
         <source>Select points with value less than threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona punti con valore inferiore alla soglia</translation>
     </message>
     <message>
         <source>Threshold value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore di soglia:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished">Impostazione dell&apos;interpolazione</translation>
+        <translation>Impostazione dell'interpolazione</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished">Incremento di interpolazione</translation>
+        <translation>Incremento di interpolazione</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished">Incremento di interpolazione:</translation>
+        <translation>Incremento di interpolazione:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished">Lunghezza della linea:</translation>
+        <translation>Lunghezza linea:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulo</translation>
     </message>
     <message>
         <source>Calculation method</source>
-        <translation type="unfinished"></translation>
+        <translation>Metodo di calcolo</translation>
     </message>
     <message>
         <source>Map using TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa utilizzando TIN</translation>
     </message>
     <message>
         <source>Minimum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore minimo dei punti entro il raggio</translation>
     </message>
     <message>
         <source>Maximum value of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore massimo dei punti nel raggio</translation>
     </message>
     <message>
         <source>Weighted average of points within radius</source>
-        <translation type="unfinished"></translation>
+        <translation>Media ponderata dei punti all'interno del raggio</translation>
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esponente di ponderazione k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; viene utilizzato come peso nel calcolo della media ponderata dei valori. r è la distanza dal punto al nodo o al centro della cella, a cui è mappato il valore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raggio del cerchio per la ricerca dei punti:</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando viene eseguita la mappatura, i punti all'interno del cerchio con il raggio sopra vengono cercati per mappare i valori ai nodi della griglia o ai centri delle celle.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Di base</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">LATTINA</translation>
+        <translation>LATTINA</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punti</translation>
+        <translation>Punti</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Dimensione del punto:</translation>
+        <translation>Dimensione punto:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished">Wireframe</translation>
+        <translation>Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Larghezza della linea:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Superficie</translation>
+        <translation>Superficie</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Rompere le linee</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Spettacolo</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Colore:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappatura impostazione poligoni</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa dei colori per i valori</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importare (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportare (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -1231,8 +1229,8 @@
         <translation type="vanished">Limite lunghezza bordo:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu el fitxer d'imatge</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Totes les imatges (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S&apos;ha produït un error en exportar a %1.</translation>
+        <translation>S'ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -112,47 +110,47 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S&apos;ha produït un error en obrir-se %1</translation>
+        <translation>S'ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S'ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 3 columnes.</translation>
+        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 3 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir com a mínim 4 columnes.</translation>
+        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir com a mínim 4 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser &quot;%2&quot;, però&quot;%3&quot; és donat.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>S'ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser "%2", però"%3" és donat.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S&apos;ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S'ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
-        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir almenys 3 columnes.</translation>
+        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir almenys 3 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
-        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir com a mínim 4 columnes.</translation>
+        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir com a mínim 4 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>S&apos;ha produït un error en llegir el valor &quot;x&quot; a la línia %1. &quot;x&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>S'ha produït un error en llegir el valor "x" a la línia %1. "x" hauria de ser un valor real, però "%2"s'especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>S&apos;ha produït un error en llegir el valor &quot;y&quot; a la línia %1. &quot;y&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>S'ha produït un error en llegir el valor "y" a la línia %1. "y" hauria de ser un valor real, però "%2"s'especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>S&apos;ha produït un error en llegir el valor &quot;valor&quot; a la línia %1. &quot;valor&quot; ha de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>S'ha produït un error en llegir el valor "valor" a la línia %1. "valor" ha de ser un valor real, però "%2"s'especifica.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de dades de punts</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Color per valor</translation>
+        <translation>Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Color personalitzat</translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punts</translation>
+        <translation>Punts</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Mida del punt:</translation>
+        <translation>Mida del punt:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Imatges d'icones</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa imatge (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Clar (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida màxima:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kuvatiedosto</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki kuvat (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Virhe otsikkorivin lukemisen aikana. Otsikossa tulee olla vähintään 4 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla &quot;%2&quot;, mutta &quot;%3&quot; on annettu.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla "%2", mutta "%3" on annettu.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Virhe riviä luettaessa %1. Datassa tulee olla vähintään 4 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Virhe luettaessa x -arvoa riviltä %1. &quot;x&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Virhe luettaessa x -arvoa riviltä %1. "x" on todellinen arvo, mutta "%2"on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Virhe luettaessa y -arvoa riviltä %1. &quot;y&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Virhe luettaessa y -arvoa riviltä %1. "y" on todellinen arvo, mutta "%2"on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Virhe luettaessa arvon &quot;arvo&quot; riviä %1. &quot;arvon&quot; pitäisi olla todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Virhe luettaessa arvon "arvo" riviä %1. "arvon" pitäisi olla todellinen arvo, mutta "%2"on määritetty.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pistetietojen näyttöasetus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Väri</translation>
+        <translation>Väri</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Väri arvon mukaan</translation>
+        <translation>Väri arvon mukaan</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Mukautettu väri</translation>
+        <translation>Mukautettu väri</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Muoto</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Pisteet</translation>
+        <translation>Pisteet</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Pistekoko:</translation>
+        <translation>Pistekoko:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikoni kuvat</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuo kuva (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Asia selvä (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max koko:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun tuodun kuvan leveys tai korkeus on suurempi kuin enimmäiskoko, kuvaa pienennetään automaattisesti niin, että leveys tai korkeus on yhtä suuri kuin enimmäiskoko.</translation>
     </message>
 </context>
 </TS>

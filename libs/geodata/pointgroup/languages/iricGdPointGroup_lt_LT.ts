@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite vaizdo failą</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Visi vaizdai (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Skaitant antraštės eilutę įvyko klaida. Antraštėje turi būti bent 4 stulpeliai.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Skaitant antraštės eilutę įvyko klaida. Stulpelis %1 turėtų būti &quot;%2&quot;, bet&quot;%3&quot;yra duotas.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Skaitant antraštės eilutę įvyko klaida. Stulpelis %1 turėtų būti "%2", bet"%3"yra duotas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Skaitant eilutę įvyko klaida %1. Duomenys turi turėti bent 4 stulpelius.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Klaida skaitant „x“ reikšmę eilutėje %1. „x“ turėtų būti tikroji vertė, bet %2 &quot;yra nurodyta.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Klaida skaitant „x“ reikšmę eilutėje %1. „x“ turėtų būti tikroji vertė, bet %2 "yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Klaida skaitant „y“ reikšmę eilutėje %1. „y“ turėtų būti tikroji vertė, bet %2 &quot;yra nurodyta.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Klaida skaitant „y“ reikšmę eilutėje %1. „y“ turėtų būti tikroji vertė, bet %2 "yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Klaida skaitant „vertės“ reikšmę eilutėje %1. „vertė“ turėtų būti tikroji vertė, bet „ %2 &quot;yra nurodyta.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Klaida skaitant „vertės“ reikšmę eilutėje %1. „vertė“ turėtų būti tikroji vertė, bet „ %2 "yra nurodyta.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Taškų duomenų rodymo nustatymas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Spalva</translation>
+        <translation>Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Spalva pagal vertę</translation>
+        <translation>Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Pasirinktinė spalva</translation>
+        <translation>Pasirinktinė spalva</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Figūra</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Taškai</translation>
+        <translation>Taškai</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Taško dydis:</translation>
+        <translation>Taško dydis:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramų vaizdai</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuoti vaizdą (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Aišku (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus dydis:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kai importuoto vaizdo plotis arba aukštis yra didesnis nei maksimalus dydis, vaizdas automatiškai sumažinamas, kad plotis arba aukštis taptų lygus maksimaliam dydžiui.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj bildfil</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla bilder (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Ett fel uppstod när rubriken skulle läsas. Rubrik ska ha minst fyra kolumner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Ett fel uppstod när rubriken skulle läsas. Kolumn %1 borde vara &quot;%2&quot;, men&quot;%3&quot; är given.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ett fel uppstod när rubriken skulle läsas. Kolumn %1 borde vara "%2", men"%3" är given.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Ett fel uppstod när raden lästes %1. Data bör ha minst fyra kolumner.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;x&quot; -värdet i raden %1. &quot;x&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "x" -värdet i raden %1. "x" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;y&quot; -värdet i raden %1. &quot;y&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "y" -värdet i raden %1. "y" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;värde&quot; -värdet i raden %1. &quot;värde&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "värde" -värdet i raden %1. "värde" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Visningsinställning för poängdata</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Färg</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Färg efter värde</translation>
+        <translation>Färg efter värde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Anpassad färg</translation>
+        <translation>Anpassad färg</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poäng</translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstorlek:</translation>
+        <translation>Punktstorlek:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikon bilder</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera bild (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max storlek:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>När den importerade bildens bredd eller höjd är större än Max storlek, krymps bilden automatiskt så att bredden eller höjden blir lika med maxstorleken.</translation>
     </message>
 </context>
 </TS>

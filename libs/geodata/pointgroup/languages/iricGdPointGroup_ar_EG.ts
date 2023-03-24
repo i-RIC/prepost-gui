@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد ملف الصورة</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع الصور (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>حدث خطأ أثناء قراءة سطر العنوان. يجب أن يحتوي الرأس على 4 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون &quot;%2&quot;، لكن &quot;%3&quot; معطى.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون "%2"، لكن "%3" معطى.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تحتوي البيانات على 4 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;x&quot; في السطر %1. يجب أن تكون &quot;x&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "x" في السطر %1. يجب أن تكون "x" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;y&quot; في السطر %1. يجب أن تكون &quot;y&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "y" في السطر %1. يجب أن تكون "y" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;القيمة&quot; في السطر %1. يجب أن تكون &quot;القيمة&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "القيمة" في السطر %1. يجب أن تكون "القيمة" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض بيانات النقاط</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">اللون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">لون حسب القيمة</translation>
+        <translation>لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">لون مخصص</translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">نقاط</translation>
+        <translation>نقاط</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">حجم النقطة:</translation>
+        <translation>حجم النقطة:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>صور الأيقونات</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>استيراد الصورة (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>واضح (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>اقصى حجم:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>عندما يكون عرض أو ارتفاع الصورة المدرجة أكبر من الحجم الأقصى ، يتم تقليص الصورة تلقائيًا بحيث يصبح العرض أو الارتفاع مساويًا للحجم الأقصى.</translation>
     </message>
 </context>
 </TS>

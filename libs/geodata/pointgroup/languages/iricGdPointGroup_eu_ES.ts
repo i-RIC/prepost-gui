@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPointGroup</name>
@@ -28,11 +26,11 @@
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu irudi fitxategia</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Irudi guztiak (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -127,8 +125,8 @@
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak gutxienez 4 zutabe izan behar ditu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -143,16 +141,16 @@
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 4 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
 </context>
 <context>
@@ -192,51 +190,51 @@
     <name>GeoDataPointGroup_PropertyDialog</name>
     <message>
         <source>Points Data Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuen datuak bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Koloreztatu balioaren arabera</translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kolore pertsonalizatua</translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puntuak</translation>
+        <translation>Puntuak</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puntuen tamaina:</translation>
+        <translation>Puntuen tamaina:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikonoen Irudiak</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu irudia (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Garbi (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienezko tamaina:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatutako irudiaren zabalera edo altuera Gehienezko tamaina baino handiagoa denean, irudia automatikoki txikitzen da, zabalera edo altuera gehienezko tamainaren berdina izan dadin.</translation>
     </message>
 </context>
 </TS>
