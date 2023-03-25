@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Додати новий %1</translation>
+        <translation type="vanished">Додати новий %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -15,7 +17,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
@@ -30,8 +32,8 @@
         <translation>Ви впевнені, що хочете видалити вибране %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Інших даних для об’єднання немає "%1"група.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Інших даних для об’єднання немає &quot;%1&quot;група.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Змінити ім'я (&amp;N)...</translation>
+        <translation>Змінити ім&apos;я (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Налаштування кольору (&amp;S)...</translation>
+        <translation type="vanished">Налаштування кольору (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Редагувати налаштування кольору</translation>
+        <translation type="vanished">Редагувати налаштування кольору</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Копіювати...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Налаштування кольору PolyData</translation>
+        <translation type="vanished">Налаштування кольору PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Колір за значенням</translation>
+        <translation type="vanished">Колір за значенням</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
 </context>
 <context>
@@ -175,7 +181,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation>Ім'я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -240,7 +246,7 @@
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation>Ім'я встановлюється автоматично (наприклад, PolyData1)</translation>
+        <translation>Ім&apos;я встановлюється автоматично (наприклад, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>

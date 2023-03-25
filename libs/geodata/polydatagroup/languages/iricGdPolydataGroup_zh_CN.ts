@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>添新 %1</translation>
+        <translation type="vanished">添新 %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,7 +32,7 @@
         <translation>您确定要删除选定的 %1 ?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
         <translation>没有其他数据可以合并到“ %1 “ 团体。</translation>
     </message>
     <message>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>颜色设置 (&amp;S)...</translation>
+        <translation type="vanished">颜色设置 (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>颜色设置编辑</translation>
+        <translation type="vanished">颜色设置编辑</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>复制...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData 颜色设置</translation>
+        <translation type="vanished">PolyData 颜色设置</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>按值着色</translation>
+        <translation type="vanished">按值着色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
 </context>
 <context>

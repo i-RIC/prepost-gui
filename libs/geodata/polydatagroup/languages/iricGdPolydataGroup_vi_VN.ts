@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Thêm mới %1</translation>
+        <translation type="vanished">Thêm mới %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Bạn có chắc chắn muốn xóa các mục đã chọn không %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Không có dữ liệu nào khác để hợp nhất trong "%1" tập đoàn.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Không có dữ liệu nào khác để hợp nhất trong &quot;%1&quot; tập đoàn.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Cài đặt màu sắc (&amp;S)...</translation>
+        <translation type="vanished">Cài đặt màu sắc (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Chỉnh sửa cài đặt màu</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Sao chép...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Cài đặt màu PolyData</translation>
+        <translation type="vanished">Cài đặt màu PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Màu sắc theo giá trị</translation>
+        <translation type="vanished">Màu sắc theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
 </context>
 <context>

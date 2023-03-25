@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>เพิ่มใหม่ %1</translation>
+        <translation type="vanished">เพิ่มใหม่ %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>คุณแน่ใจหรือว่าต้องการลบรายการที่เลือก %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน "%1" กลุ่ม.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน &quot;%1&quot; กลุ่ม.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>การตั้งค่าสี (&amp;S)...</translation>
+        <translation type="vanished">การตั้งค่าสี (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>สำเนา...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>การตั้งค่าสี PolyData</translation>
+        <translation type="vanished">การตั้งค่าสี PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>สีตามค่า</translation>
+        <translation type="vanished">สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
 </context>
 <context>

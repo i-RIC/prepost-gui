@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Tambah baru %1</translation>
+        <translation type="vanished">Tambah baru %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Apakah Anda yakin ingin menghapus yang dipilih? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Tidak ada data lain untuk digabungkan dalam "%1"kelompok.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Tidak ada data lain untuk digabungkan dalam &quot;%1&quot;kelompok.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Pengaturan Warna (&amp;S)...</translation>
+        <translation type="vanished">Pengaturan Warna (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Pengeditan Pengaturan Warna</translation>
+        <translation type="vanished">Pengeditan Pengaturan Warna</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Salinan...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Pengaturan Warna PolyData</translation>
+        <translation type="vanished">Pengaturan Warna PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Warnai berdasarkan nilai</translation>
+        <translation type="vanished">Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
     </message>
 </context>
 <context>

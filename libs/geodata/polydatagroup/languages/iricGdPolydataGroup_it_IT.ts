@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Aggiungere nuova %1</translation>
+        <translation type="vanished">Aggiungere nuova %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Sei sicuro di voler eliminare selezionato? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Non ci sono altri dati da unire "%1"gruppo.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Non ci sono altri dati da unire &quot;%1&quot;gruppo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Impostazione del colore (&amp;S)...</translation>
+        <translation type="vanished">Impostazione del colore (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Modifica impostazione colore</translation>
+        <translation type="vanished">Modifica impostazione colore</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copia...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Impostazione colore PolyData</translation>
+        <translation type="vanished">Impostazione colore PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colore per valore</translation>
+        <translation type="vanished">Colore per valore</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
 </context>
 <context>
@@ -236,7 +242,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carica dall'attributo del file Shape</translation>
+        <translation>Carica dall&apos;attributo del file Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>

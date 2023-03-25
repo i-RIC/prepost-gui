@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Bæta við nýju %1</translation>
+        <translation type="vanished">Bæta við nýju %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Ertu viss um að þú viljir eyða völdum %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Það eru engin önnur gögn til að sameinast “ %1 "hópur.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Það eru engin önnur gögn til að sameinast “ %1 &quot;hópur.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Litastilling (&amp;S)...</translation>
+        <translation type="vanished">Litastilling (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Litastilling Breyta</translation>
+        <translation type="vanished">Litastilling Breyta</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Afrita...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData litastilling</translation>
+        <translation type="vanished">PolyData litastilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
+        <translation type="vanished">Litur eftir gildi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
 </context>
 <context>

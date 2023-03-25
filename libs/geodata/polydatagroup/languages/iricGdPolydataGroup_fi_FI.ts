@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Lisää uusi %1</translation>
+        <translation type="vanished">Lisää uusi %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Haluatko varmasti poistaa valitut %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Muita tietoja ei voi yhdistää &quot;%1&quot; ryhmä.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Väriasetus (&amp;S)...</translation>
+        <translation type="vanished">Väriasetus (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Väriasetuksen muokkaus</translation>
+        <translation type="vanished">Väriasetuksen muokkaus</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopio...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData -väriasetus</translation>
+        <translation type="vanished">PolyData -väriasetus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Väritä arvon mukaan</translation>
+        <translation type="vanished">Väritä arvon mukaan</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
 </context>
 <context>

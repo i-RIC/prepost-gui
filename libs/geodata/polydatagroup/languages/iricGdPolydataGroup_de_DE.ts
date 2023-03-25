@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Neue hinzufügen %1</translation>
+        <translation type="vanished">Neue hinzufügen %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Möchten Sie die Auswahl wirklich löschen? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden "%1"Gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden &quot;%1&quot;Gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Farbeinstellung (&amp;S)...</translation>
+        <translation type="vanished">Farbeinstellung (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Farbeinstellung bearbeiten</translation>
+        <translation type="vanished">Farbeinstellung bearbeiten</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopieren...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData-Farbeinstellung</translation>
+        <translation type="vanished">PolyData-Farbeinstellung</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farbe nach Wert</translation>
+        <translation type="vanished">Farbe nach Wert</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
 </context>
 <context>

@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Legg til ny %1</translation>
+        <translation type="vanished">Legg til ny %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Er du sikker på at du vil slette de valgte %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Det er ingen andre data å flette inn "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Det er ingen andre data å flette inn &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Fargeinnstilling (&amp;S)...</translation>
+        <translation type="vanished">Fargeinnstilling (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Fargeinnstilling Rediger</translation>
+        <translation type="vanished">Fargeinnstilling Rediger</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopiere...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData -fargeinnstilling</translation>
+        <translation type="vanished">PolyData -fargeinnstilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farge etter verdi</translation>
+        <translation type="vanished">Farge etter verdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
 </context>
 <context>

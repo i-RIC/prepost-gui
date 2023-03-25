@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Προσθεσε νεο %1</translation>
+        <translation type="vanished">Προσθεσε νεο %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε επιλεγμένα %1 μικρό?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση "%1"ομάδα.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση &quot;%1&quot;ομάδα.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Ρύθμιση χρώματος (&amp;S)...</translation>
+        <translation type="vanished">Ρύθμιση χρώματος (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Color Setting Edit</translation>
+        <translation type="vanished">Color Setting Edit</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Αντίγραφο...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Ρύθμιση χρώματος PolyData</translation>
+        <translation type="vanished">Ρύθμιση χρώματος PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Χρώμα ανά τιμή</translation>
+        <translation type="vanished">Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
 </context>
 <context>

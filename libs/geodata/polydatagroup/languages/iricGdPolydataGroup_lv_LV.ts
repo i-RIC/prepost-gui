@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Pievieno jaunu %1</translation>
+        <translation type="vanished">Pievieno jaunu %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Vai tiešām vēlaties dzēst atlasīto %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nav citu datu, ko apvienot "%1"grupa.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nav citu datu, ko apvienot &quot;%1&quot;grupa.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Krāsu iestatīšana (&amp;S)...</translation>
+        <translation type="vanished">Krāsu iestatīšana (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Krāsu iestatījumu rediģēšana</translation>
+        <translation type="vanished">Krāsu iestatījumu rediģēšana</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopēt...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData krāsu iestatījums</translation>
+        <translation type="vanished">PolyData krāsu iestatījums</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Krāsojiet pēc vērtības</translation>
+        <translation type="vanished">Krāsojiet pēc vērtības</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
 </context>
 <context>

@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Adăuga nou %1</translation>
+        <translation type="vanished">Adăuga nou %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Sigur doriți să ștergeți selectate %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nu există alte date în care să fuzionați "%1" grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nu există alte date în care să fuzionați &quot;%1&quot; grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Setarea culorii (&amp;S)...</translation>
+        <translation type="vanished">Setarea culorii (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Editare setare culoare</translation>
+        <translation type="vanished">Editare setare culoare</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copie...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Setare culoare PolyData</translation>
+        <translation type="vanished">Setare culoare PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Culoare după valoare</translation>
+        <translation type="vanished">Culoare după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
 </context>
 <context>

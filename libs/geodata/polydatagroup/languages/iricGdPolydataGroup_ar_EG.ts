@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>اضف جديد %1</translation>
+        <translation type="vanished">اضف جديد %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>هل أنت متأكد أنك تريد حذف المحدد %1 س؟</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>لا توجد بيانات أخرى لدمجها "%1" مجموعة.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>لا توجد بيانات أخرى لدمجها &quot;%1&quot; مجموعة.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>إعداد اللون (&amp;S)...</translation>
+        <translation type="vanished">إعداد اللون (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>تحرير إعداد اللون</translation>
+        <translation type="vanished">تحرير إعداد اللون</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>ينسخ...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>إعداد لون PolyData</translation>
+        <translation type="vanished">إعداد لون PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
+        <translation type="vanished">لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
 </context>
 <context>

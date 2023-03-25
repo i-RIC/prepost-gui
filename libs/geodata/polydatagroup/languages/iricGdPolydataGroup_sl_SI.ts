@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Dodaj novo %1</translation>
+        <translation type="vanished">Dodaj novo %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Ali ste prepričani, da želite izbrisati izbrano %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Drugih podatkov za združevanje ni "%1"skupina.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Drugih podatkov za združevanje ni &quot;%1&quot;skupina.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Nastavitev barve (&amp;S)...</translation>
+        <translation type="vanished">Nastavitev barve (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Urejanje barvnih nastavitev</translation>
+        <translation type="vanished">Urejanje barvnih nastavitev</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopirati...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Nastavitev barve PolyData</translation>
+        <translation type="vanished">Nastavitev barve PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva po vrednosti</translation>
+        <translation type="vanished">Barva po vrednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Barva po meri</translation>
+        <translation type="vanished">Barva po meri</translation>
     </message>
 </context>
 <context>

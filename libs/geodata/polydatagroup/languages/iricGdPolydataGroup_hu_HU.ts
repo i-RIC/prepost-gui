@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Új hozzáadása %1</translation>
+        <translation type="vanished">Új hozzáadása %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Biztosan törli a kijelöltet %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nincs más egyesítendő adat "%1"csoport.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nincs más egyesítendő adat &quot;%1&quot;csoport.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Színbeállítás (&amp;S)...</translation>
+        <translation type="vanished">Színbeállítás (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Színbeállítás szerkesztése</translation>
+        <translation type="vanished">Színbeállítás szerkesztése</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Másolat...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData színbeállítás</translation>
+        <translation type="vanished">PolyData színbeállítás</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Színezze érték szerint</translation>
+        <translation type="vanished">Színezze érték szerint</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
 </context>
 <context>

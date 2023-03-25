@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Přidat nový %1</translation>
+        <translation type="vanished">Přidat nový %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Opravdu chcete smazat vybrané %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nejsou k dispozici žádná další data ke sloučení " %1 „skupina.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nejsou k dispozici žádná další data ke sloučení &quot; %1 „skupina.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Nastavení barev (&amp;S)...</translation>
+        <translation type="vanished">Nastavení barev (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Úpravy nastavení barev</translation>
+        <translation type="vanished">Úpravy nastavení barev</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopírovat...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Nastavení barev PolyData</translation>
+        <translation type="vanished">Nastavení barev PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva podle hodnoty</translation>
+        <translation type="vanished">Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
 </context>
 <context>

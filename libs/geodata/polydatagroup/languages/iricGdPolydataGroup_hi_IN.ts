@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>नया जोड़ो %1</translation>
+        <translation type="vanished">नया जोड़ो %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>क्या आप वाकई चयनित को हटाना चाहते हैं %1 एस?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>रंग सेटिंग (&amp;S)...</translation>
+        <translation type="vanished">रंग सेटिंग (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>कॉपी...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>पॉलीडाटा रंग सेटिंग</translation>
+        <translation type="vanished">पॉलीडाटा रंग सेटिंग</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>मूल्य के अनुसार रंग</translation>
+        <translation type="vanished">मूल्य के अनुसार रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
 </context>
 <context>

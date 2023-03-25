@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Жаңы кошуу %1</translation>
+        <translation type="vanished">Жаңы кошуу %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Тандалгандарды чын эле жок кылгыңыз келеби? %1 с?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Биригүүгө башка маалымат жок "%1"тобу.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Биригүүгө башка маалымат жок &quot;%1&quot;тобу.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Түс жөндөө (&amp;S)...</translation>
+        <translation type="vanished">Түс жөндөө (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Түс орнотууларын түзөтүү</translation>
+        <translation type="vanished">Түс орнотууларын түзөтүү</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Көчүрүү...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Color Setting</translation>
+        <translation type="vanished">PolyData Color Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Түсү наркы боюнча</translation>
+        <translation type="vanished">Түсү наркы боюнча</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
 </context>
 <context>

@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Afegir nou %1</translation>
+        <translation type="vanished">Afegir nou %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>Esteu segur que voleu suprimir els seleccionats? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Configuració del color (&amp;S)...</translation>
+        <translation type="vanished">Configuració del color (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edició de la configuració del color</translation>
+        <translation type="vanished">Edició de la configuració del color</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copia...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -122,7 +128,7 @@
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation>Barra d'eines d'ordenació</translation>
+        <translation>Barra d&apos;eines d&apos;ordenació</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Configuració del color de PolyData</translation>
+        <translation type="vanished">Configuració del color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color per valor</translation>
+        <translation type="vanished">Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
 </context>
 <context>
@@ -217,14 +223,14 @@
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation>%1 Configuració d'importació de grup</translation>
+        <translation>%1 Configuració d&apos;importació de grup</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation>Configuració d'importació de PolyData</translation>
+        <translation>Configuració d&apos;importació de PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -236,11 +242,11 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l'atribut del fitxer Forma</translation>
+        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation>El nom s'estableix automàticament (per exemple, PolyData1)</translation>
+        <translation>El nom s&apos;estableix automàticament (per exemple, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>

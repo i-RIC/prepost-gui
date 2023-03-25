@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>새로운 걸 더하다 %1</translation>
+        <translation type="vanished">새로운 걸 더하다 %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -30,8 +32,8 @@
         <translation>선택 항목을 삭제하시겠습니까? %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>"에 병합할 다른 데이터가 없습니다. %1 " 그룹.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;에 병합할 다른 데이터가 없습니다. %1 &quot; 그룹.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -59,7 +61,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>색상 설정 (&amp;S)...</translation>
+        <translation type="vanished">색상 설정 (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +85,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>색상 설정 편집</translation>
+        <translation type="vanished">색상 설정 편집</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +102,10 @@
     <message>
         <source>Copy...</source>
         <translation>복사...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -140,19 +146,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData 색상 설정</translation>
+        <translation type="vanished">PolyData 색상 설정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>값에 따라 색상 지정</translation>
+        <translation type="vanished">값에 따라 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
 </context>
 <context>
