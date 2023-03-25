@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Seguro que queres eliminar o seleccionado %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Non hai outros datos nos que combinar &quot;%1&quot;grupo.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Non hai outros datos nos que combinar "%1"grupo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización (&amp;S)...</translation>
     </message>
 </context>
 <context>

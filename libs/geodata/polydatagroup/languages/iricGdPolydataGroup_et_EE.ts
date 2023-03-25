@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Kas olete kindel, et soovite valitud kustutada %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Teisi andmeid ei saa ühendada &quot;%1&quot; Grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Teisi andmeid ei saa ühendada "%1" Grupp.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekraani seadistus (&amp;S)...</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,7 +30,7 @@
         <translation>您確定要刪除選定的 %1 ?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <source>There is no other data to merge in "%1" group.</source>
         <translation>沒有其他數據可以合併到“ %1 “ 團體。</translation>
     </message>
     <message>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示設定 (&amp;S)...</translation>
     </message>
 </context>
 <context>

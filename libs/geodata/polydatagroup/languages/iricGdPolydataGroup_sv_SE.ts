@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Är du säker på att du vill radera markerade %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Det finns ingen annan data att slå ihop &quot;%1&quot; grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Det finns ingen annan data att slå ihop "%1" grupp.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärminställning (&amp;S)...</translation>
     </message>
 </context>
 <context>

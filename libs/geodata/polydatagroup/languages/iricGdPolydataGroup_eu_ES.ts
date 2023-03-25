@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Ziur zaude hautatutakoa ezabatu nahi duzula %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Ez dago batzeko beste daturik &quot;%1&quot;taldea.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Ez dago batzeko beste daturik "%1"taldea.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bistaratzeko ezarpena (&amp;S)...</translation>
     </message>
 </context>
 <context>
