@@ -74,13 +74,6 @@ QPixmap GeoDataPointGroup::Impl::shrinkPixmap(const QPixmap pixmap, int maxSize)
 	}
 }
 
-QString GeoDataPointGroup::Impl::iconFileName(const QString& filename)
-{
-	QString ret = filename;
-	ret.replace(".dat", "_icon.png");
-	return ret;
-}
-
 void GeoDataPointGroup::Impl::setupDummyPointForMenu()
 {
 	m_dummyPointForMenu->editNameAndValueAction()->setEnabled(false);

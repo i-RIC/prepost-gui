@@ -118,18 +118,19 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgrouprealcreator.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
+           private/geodatapointgroup_displaysetting.h \
+           private/geodatapointgroup_displaysettingwidget.h \
            private/geodatapointgroup_impl.h \
-           private/geodatapointgroup_propertydialog.h \
-           private/geodatapointgroup_setting.h \
-           private/geodatapointgroup_updateactorsettingcommand.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
            private/geodatapointgroupnodemappert_detail.h \
            private/geodatapointgrouppoint_impl.h \
-           private/geodatapointgroupproxy_impl.h \
-           private/geodatapointgroupproxy_setsettingcommand.h
+           private/geodatapointgroupproxy_displaysetting.h \
+           private/geodatapointgroupproxy_displaysettingwidget.h \
+           private/geodatapointgroupproxy_impl.h
 FORMS += geodatapointgroupcolorsettingdialog.ui \
-    private/geodatapointgroup_propertydialog.ui
+         private/geodatapointgroup_displaysettingwidget.ui \
+         private/geodatapointgroupproxy_displaysettingwidget.ui
 SOURCES += geodatapointgroup.cpp \
            geodatapointgroupcolorsettingdialog.cpp \
            geodatapointgroupcreator.cpp \
@@ -141,12 +142,12 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgrouprealcreator.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
+           private/geodatapointgroup_displaysetting.cpp \
+           private/geodatapointgroup_displaysettingwidget.cpp \
            private/geodatapointgroup_impl.cpp \
-           private/geodatapointgroup_propertydialog.cpp \
-           private/geodatapointgroup_setting.cpp \
-           private/geodatapointgroup_updateactorsettingcommand.cpp \
-           private/geodatapointgroupproxy_impl.cpp \
-           private/geodatapointgroupproxy_setsettingcommand.cpp
+           private/geodatapointgroupproxy_displaysetting.cpp \
+           private/geodatapointgroupproxy_displaysettingwidget.cpp \
+           private/geodatapointgroupproxy_impl.cpp
 TRANSLATIONS += languages/iricGdPointGroup_ar_EG.ts \
                 languages/iricGdPointGroup_bg_BG.ts \
                 languages/iricGdPointGroup_bs_BA.ts \

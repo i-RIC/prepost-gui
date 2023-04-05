@@ -19,6 +19,7 @@ public:
 
 	ColorMapEnumerateLegendSettingContainer setting() const;
 	void setSetting(const ColorMapEnumerateLegendSettingContainer& setting);
+	void setDisableOtherThanImageSetting(bool disabled);
 
 private:
 	Ui::ColorMapEnumerateLegendSettingEditWidget *ui;

@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Bàsic</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignoreu la configuració de la barra de color en importar</translation>
+        <translation type="vanished">Ignoreu la configuració de la barra de color en importar</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Mida i posició</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Direcció:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horitzontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Nombre d'etiquetes:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automàtic</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avís</translation>
+        <translation type="vanished">Avís</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Quan es canvia al mode de gradació, els valors s'estableixen al valor mitjà de cada secció.</translation>
+        <translation type="vanished">Quan es canvia al mode de gradació, els valors s'estableixen al valor mitjà de cada secció.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Exporta (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Nombre de colors per inserir a cada secció</translation>
+        <translation type="vanished">Nombre de colors per inserir a cada secció</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Interval de valors</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Nombre de colors:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporta (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuració del mapa de colors</translation>
+        <translation type="vanished">Configuració del mapa de colors</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Interval de valors</translation>
+        <translation type="vanished">Interval de valors</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Ompliu la zona superior</translation>
+        <translation type="vanished">Ompliu la zona superior</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Ompliu la zona inferior</translation>
+        <translation type="vanished">Ompliu la zona inferior</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Número de divisió:</translation>
+        <translation type="vanished">Número de divisió:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Màx.:</translation>
+        <translation type="vanished">Màx.:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Configuració del color</translation>
+        <translation type="vanished">Configuració del color</translation>
     </message>
 </context>
 <context>

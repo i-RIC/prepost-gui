@@ -355,7 +355,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Edit Pengaturan Tampilan</translation>
+        <translation type="vanished">Edit Pengaturan Tampilan</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Data penampang dihasilkan menggunakan data point cloud. Di beberapa wilayah, data tidak ada dalam data cloud titik, dan nilai 0 dipetakan untuk titik-titik tersebut. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan "Data cloud titik peta"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Pengaturan Tampilan Data Cross-section</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Data Lintas Bagian (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Data Lintas-Bagian (&amp;C)</translation>
+        <translation type="vanished">Data Lintas-Bagian (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 garis %2 : "%3": Data bendera tidak valid.</translation>
+        <translation type="vanished">%1 garis %2 : "%3": Data bendera tidak valid.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Edit pengaturan tampilan</translation>
+        <translation type="vanished">Edit pengaturan tampilan</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Pengaturan Tampilan Data Cross-section</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>File VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Dasar</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Warna latar belakang</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Bisa dilihat</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Anda dapat menyesuaikan warna menggunakan tab Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Garis Penampang</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Skala Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nama Penampang</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>

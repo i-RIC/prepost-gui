@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Geografische Datenzuordnung</translation>
+        <translation type="vanished">Geografische Datenzuordnung</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Mapping mit TINs</translation>
+        <translation type="vanished">Mapping mit TINs</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Aus geografischen Daten erstellte TINs werden für die Kartierung verwendet. Die Attributwerte der Rasterknoten werden als gewichteter Durchschnitt der Werte an den TIN-Knoten berechnet.</translation>
+        <translation type="vanished">Aus geografischen Daten erstellte TINs werden für die Kartierung verwendet. Die Attributwerte der Rasterknoten werden als gewichteter Durchschnitt der Werte an den TIN-Knoten berechnet.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Vorlagenzuordnung</translation>
+        <translation type="vanished">Vorlagenzuordnung</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Finden Sie geografische Datenpunkte, die sich in der Nähe der Gitterknoten befinden, in Bezug auf die Gitterzellenformen, und verwenden Sie die Werte an diesen Punkten für die Interpolation. Dieser Algorithmus kann nur für strukturierte Gitter verwendet werden.</translation>
+        <translation type="vanished">Finden Sie geografische Datenpunkte, die sich in der Nähe der Gitterknoten befinden, in Bezug auf die Gitterzellenformen, und verwenden Sie die Werte an diesen Punkten für die Interpolation. Dieser Algorithmus kann nur für strukturierte Gitter verwendet werden.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detail (&amp;D)...</translation>
+        <translation type="vanished">Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>

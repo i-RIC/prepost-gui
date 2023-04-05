@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Spalvų nustatymų redagavimas</translation>
+        <translation type="vanished">Spalvų nustatymų redagavimas</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Rastrinių duomenų rodymo nustatymas</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Rastrinių duomenų rodymo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Atidarant įvyko klaida %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
     </message>
 </context>
 </TS>

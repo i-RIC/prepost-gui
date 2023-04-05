@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Redigering af farveindstillinger</translation>
+        <translation type="vanished">Redigering af farveindstillinger</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Raster Data Display Indstilling</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Raster Data Display Indstilling</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Brug indstilling af forbehandlingsvindue</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Der opstod en fejl ved åbning %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farvekort</translation>
     </message>
 </context>
 </TS>

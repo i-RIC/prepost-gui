@@ -2,6 +2,7 @@
 #define GEODATANETCDFT_DETAIL_H
 
 #include "../geodatanetcdft.h"
+#include "geodatanetcdf_impl.h"
 
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -135,14 +136,14 @@ void GeoDataNetcdfT<V, DA>::loadRasterData(int index)
 	}
 	start[indices.size()] = 0;
 	start[indices.size() + 1] = 0;
-	if (m_coordinateSystemType == XY) {
-		len[indices.size()] = m_yValues.size();
-		len[indices.size() + 1] = m_xValues.size();
-		bufferSize = m_xValues.size() * m_yValues.size();
-	} else if (m_coordinateSystemType == LonLat) {
-		len[indices.size()] = m_latValues.size();
-		len[indices.size() + 1] = m_lonValues.size();
-		bufferSize = m_lonValues.size() * m_latValues.size();
+	if (impl->m_coordinateSystemType == XY) {
+		len[indices.size()] = impl->m_yValues.size();
+		len[indices.size() + 1] = impl->m_xValues.size();
+		bufferSize = impl->m_xValues.size() * impl->m_yValues.size();
+	} else if (impl->m_coordinateSystemType == LonLat) {
+		len[indices.size()] = impl->m_latValues.size();
+		len[indices.size() + 1] = impl->m_lonValues.size();
+		bufferSize = impl->m_lonValues.size() * impl->m_latValues.size();
 	}
 	vals.assign(bufferSize, 0);
 

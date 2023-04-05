@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Ordena (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuració de visualització del núvol de punts</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Desmarqueu-ho tot (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuració de visualització del núvol de punts</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Bàsic</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punts</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Mida del punt:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Estructura de filferro</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superfície</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Línies de ruptura</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Espectacle</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapeig Configuració de polígons</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mapa de colors per a valors</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Configuració de visualització del núvol de punts</translation>
+        <translation type="vanished">Configuració de visualització del núvol de punts</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Bàsic</translation>
+        <translation type="vanished">Bàsic</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punts</translation>
+        <translation type="vanished">Punts</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Mida del punt:</translation>
+        <translation type="vanished">Mida del punt:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Estructura de filferro</translation>
+        <translation type="vanished">Estructura de filferro</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superfície</translation>
+        <translation type="vanished">Superfície</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Línies de ruptura</translation>
+        <translation type="vanished">Línies de ruptura</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Espectacle</translation>
+        <translation type="vanished">Espectacle</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Color:</translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Mapeig Configuració de polígons</translation>
+        <translation type="vanished">Mapeig Configuració de polígons</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Mapa de colors per als valors</translation>
+        <translation type="vanished">Mapa de colors per als valors</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importar (&amp;I)</translation>
+        <translation type="vanished">Importar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exporta (&amp;E)</translation>
+        <translation type="vanished">Exporta (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Traieu els triangles amb la vora llarga</translation>
+        <translation>Traieu els triangles amb la vora llarga</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Longitud límit de vora:</translation>
+        <translation>Longitud límit de vora:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s'eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s'eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

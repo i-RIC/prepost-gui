@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Редагування налаштувань кольору</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Налаштування відображення балів</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Виберіть файл зображення</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Всі зображення (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Виберіть файл зображення</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Всі зображення (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Змінити налаштування дисплея</translation>
+        <translation type="vanished">Змінити налаштування дисплея</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Налаштування відображення даних балів</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Колір</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Розфарбуй за значенням</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Спеціальний колір</translation>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -234,7 +248,70 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Якщо ширина або висота імпортованого зображення перевищує максимальний розмір, зображення автоматично зменшується, щоб ширина або висота дорівнювала максимальному розміру.</translation>
+        <translation>Якщо ширина або висота імпортованого зображення перевищує максимальний розмір, зображення автоматично зменшується, щоб ширина або висота дорівнювали максимальному розміру.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Спеціальний колір</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Налаштування відображення даних балів</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Спеціальний колір</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Форма</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Очки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Розмір точки:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Зображення значків</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Імпорт зображення (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">ясно (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Максимальний розмір:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Якщо ширина або висота імпортованого зображення перевищує максимальний розмір, зображення автоматично зменшується, щоб ширина або висота дорівнювала максимальному розміру.</translation>
     </message>
 </context>
 </TS>

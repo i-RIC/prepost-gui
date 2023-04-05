@@ -33,15 +33,6 @@ bool GeoDataPointGroupCreator::isCreatable() const
 	return true;
 }
 
-GeoData* GeoDataPointGroupCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	auto g = new GeoDataPointGroup(parent, this, condition);
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent);
-	g->setPosition(condition->position());
-	g->setDefaultMapper();
-	return g;
-}
-
 int GeoDataPointGroupCreator::shapeType() const
 {
 	return SHPT_POINT;

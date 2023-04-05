@@ -110,7 +110,6 @@ win32 {
 HEADERS += gd_polygongroup_global.h \
            geodatapolygongroup.h \
            geodatapolygongroupcellmappert.h \
-           geodatapolygongroupcolorsettingdialog.h \
            geodatapolygongroupcreator.h \
            geodatapolygongroupcreatort.h \
            geodatapolygongroupcsvexporter.h \
@@ -122,8 +121,9 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongrouprealcreator.h \
            geodatapolygongroupshpexporter.h \
            geodatapolygongroupshpimporter.h \
+           polygongroup_pch.h \
+           private/geodatapolygongroup_displaysetting.h \
            private/geodatapolygongroup_impl.h \
-           private/geodatapolygongroup_setcolorsettingcommand.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
@@ -131,11 +131,13 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongrouppolygon_triangulatori.h \
            private/geodatapolygongrouppolygon_triangulatortriangle.h \
            private/geodatapolygongrouppolygon_triangulatorvtk.h \
+           private/geodatapolygongroupproxy_displaysetting.h \
+           private/geodatapolygongroupproxy_displaysettingwidget.h \
            private/geodatapolygongroupproxy_impl.h \
-           private/geodatapolygongroupproxy_setsettingcommand.h
-FORMS += geodatapolygongroupcolorsettingdialog.ui
+           public/geodatapolygongroup_displaysettingwidget.h
+FORMS += private/geodatapolygongroupproxy_displaysettingwidget.ui \
+         public/geodatapolygongroup_displaysettingwidget.ui
 SOURCES += geodatapolygongroup.cpp \
-           geodatapolygongroupcolorsettingdialog.cpp \
            geodatapolygongroupcreator.cpp \
            geodatapolygongroupcsvexporter.cpp \
            geodatapolygongroupcsvimporter.cpp \
@@ -145,12 +147,14 @@ SOURCES += geodatapolygongroup.cpp \
            geodatapolygongrouprealcreator.cpp \
            geodatapolygongroupshpexporter.cpp \
            geodatapolygongroupshpimporter.cpp \
+           private/geodatapolygongroup_displaysetting.cpp \
            private/geodatapolygongroup_impl.cpp \
-           private/geodatapolygongroup_setcolorsettingcommand.cpp \
            private/geodatapolygongrouppolygon_triangulatortriangle.cpp \
            private/geodatapolygongrouppolygon_triangulatorvtk.cpp \
+           private/geodatapolygongroupproxy_displaysetting.cpp \
+           private/geodatapolygongroupproxy_displaysettingwidget.cpp \
            private/geodatapolygongroupproxy_impl.cpp \
-           private/geodatapolygongroupproxy_setsettingcommand.cpp
+           public/geodatapolygongroup_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdPolygonGroup_ar_EG.ts \
                 languages/iricGdPolygonGroup_bg_BG.ts \
                 languages/iricGdPolygonGroup_bs_BA.ts \

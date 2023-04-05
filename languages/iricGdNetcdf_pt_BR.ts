@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Edição de configuração de cor</translation>
+        <translation type="vanished">Edição de configuração de cor</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuração de Exibição de Dados Raster</translation>
     </message>
 </context>
 <context>
@@ -383,6 +387,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuração de Exibição de Dados Raster</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Use a configuração da janela de pré-processamento</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -438,6 +460,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Ocorreu um erro ao abrir %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Cor por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Cor customizada</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de cores</translation>
     </message>
 </context>
 </TS>

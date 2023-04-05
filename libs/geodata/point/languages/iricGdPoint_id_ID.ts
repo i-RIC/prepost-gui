@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Edit Koordinat Titik</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Pindahkan simpul</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Setel simpul</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης οθόνης</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα νέφους σημείου. Σε κάποια περιοχή, τα δεδομένα δεν υπήρχαν στα δεδομένα νέφους σημείων και η τιμή 0 αντιστοιχίστηκε για αυτά τα σημεία. Εάν θέλετε να προσαρμόσετε ξανά τη θέση διατομής και να αντιστοιχίσετε δεδομένα νέφους σημείου, μπορείτε να χρησιμοποιήσετε τα "Δεδομένα σύννεφο σημείου χάρτη"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης δεδομένων διατομής</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Δεδομένα Διατομής (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Στοιχεία διατομής (&amp;C)</translation>
+        <translation type="vanished">Στοιχεία διατομής (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 γραμμή %2 : "%3": Τα δεδομένα επισήμανσης δεν είναι έγκυρα.</translation>
+        <translation type="vanished">%1 γραμμή %2 : "%3": Τα δεδομένα επισήμανσης δεν είναι έγκυρα.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης οθόνης</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης δεδομένων διατομής</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>Αρχείο VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Βασικός</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Χρώμα του φόντου</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ορατός</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Μπορείτε να προσαρμόσετε το χρώμα χρησιμοποιώντας την καρτέλα Χάρτης χρώματος.&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Γραμμές διατομής</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Κλίμακα Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Χρώμα:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Ονόματα διατομών</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χρωματικός χάρτης</translation>
     </message>
 </context>
 <context>

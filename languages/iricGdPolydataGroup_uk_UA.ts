@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Додати новий %1</translation>
+        <translation type="vanished">Додати новий %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Налаштування кольору (&amp;S)...</translation>
+        <translation type="vanished">Налаштування кольору (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Редагувати налаштування кольору</translation>
+        <translation type="vanished">Редагувати налаштування кольору</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Копіювати...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Налаштування дисплея (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Налаштування кольору PolyData</translation>
+        <translation type="vanished">Налаштування кольору PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Колір за значенням</translation>
+        <translation type="vanished">Колір за значенням</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
 </context>
 <context>

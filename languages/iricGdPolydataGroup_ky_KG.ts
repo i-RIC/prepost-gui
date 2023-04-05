@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Жаңы кошуу %1</translation>
+        <translation type="vanished">Жаңы кошуу %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Түс жөндөө (&amp;S)...</translation>
+        <translation type="vanished">Түс жөндөө (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Түс орнотууларын түзөтүү</translation>
+        <translation type="vanished">Түс орнотууларын түзөтүү</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Көчүрүү...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Display Setting (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Color Setting</translation>
+        <translation type="vanished">PolyData Color Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Түсү наркы боюнча</translation>
+        <translation type="vanished">Түсү наркы боюнча</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
 </context>
 <context>

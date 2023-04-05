@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Editar Coordenadas de Ponto</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Mover vértice</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Definir vértice</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

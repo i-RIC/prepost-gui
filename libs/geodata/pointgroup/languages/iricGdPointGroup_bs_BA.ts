@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Uređivanje postavki boje</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Points Display Setting</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Odaberite datoteku slike</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Sve slike (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Odaberite datoteku slike</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Sve slike (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Uredite postavku prikaza</translation>
+        <translation type="vanished">Uredite postavku prikaza</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Koristite podešavanje prozora za prethodnu obradu</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Postavka prikaza podataka o tačkama</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Boja</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Boja po vrijednosti</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Custom Color</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Kada je širina ili visina uvezene slike veća od maksimalne veličine, slika se automatski smanjuje tako da širina ili visina postane jednaka maksimalnoj veličini.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Postavka prikaza podataka o tačkama</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Custom Color</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Oblik</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Poeni</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Veličina tačke:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Icon Images</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Uvezi sliku (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Jasno (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Maksimalna veličina:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Kada je širina ili visina uvezene slike veća od maksimalne veličine, slika se automatski smanjuje tako da širina ili visina postane jednaka maksimalnoj veličini.</translation>
     </message>
 </context>
 </TS>

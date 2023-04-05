@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Rozsah</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barevná mapa</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Tváře</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barevná mapa</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Směr</translation>
+        <translation type="vanished">Směr</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Já</translation>
+        <translation type="vanished">Já</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J.</translation>
+        <translation type="vanished">J.</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Rozsah</translation>
+        <translation type="vanished">Rozsah</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jdu do toho</translation>
+        <translation type="vanished">Jdu do toho</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Povoleno</translation>
+        <translation type="vanished">Povoleno</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Vzorkování</translation>
+        <translation type="vanished">Vzorkování</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Všechny vrcholy</translation>
+        <translation type="vanished">Všechny vrcholy</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Vzorkovací frekvence:</translation>
+        <translation type="vanished">Vzorkovací frekvence:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-směr</translation>
+        <translation type="vanished">I-směr</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-směr</translation>
+        <translation type="vanished">J-směr</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>Směr K.</translation>
+        <translation type="vanished">Směr K.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Podle skalární hodnoty</translation>
+        <translation type="vanished">Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Tvar šipky</translation>
+        <translation type="vanished">Tvar šipky</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Velikost šípu:</translation>
+        <translation type="vanished">Velikost šípu:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nastavení šipky</translation>
+        <translation type="vanished">Nastavení šipky</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Společné nastavení</translation>
+        <translation type="vanished">Společné nastavení</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Délka</translation>
+        <translation type="vanished">Délka</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardní hodnota:</translation>
+        <translation type="vanished">Standardní hodnota:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[slečna]</translation>
+        <translation type="vanished">[slečna]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Délka na obrazovce:</translation>
+        <translation type="vanished">Délka na obrazovce:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimální hodnota pro čerpání:</translation>
+        <translation type="vanished">Minimální hodnota pro čerpání:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Tváře</translation>
+        <translation type="vanished">Tváře</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Tvář %1</translation>
+        <translation type="vanished">Tvář %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Délka Legenda</translation>
+        <translation type="vanished">Délka Legenda</translation>
     </message>
 </context>
 <context>

@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Úprava nastavení barev</translation>
+        <translation type="vanished">Úprava nastavení barev</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Nastavení zobrazení rastrových dat</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Nastavení zobrazení rastrových dat</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Použijte Nastavení okna Předzpracování</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Při otevírání došlo k chybě %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barevná mapa</translation>
     </message>
 </context>
 </TS>

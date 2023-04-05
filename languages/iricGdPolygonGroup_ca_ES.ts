@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edita la configuració del color</translation>
+        <translation type="vanished">Edita la configuració del color</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuració de visualització de polígons</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Configuració de visualització del grup de polígons</translation>
+        <translation type="vanished">Configuració de visualització del grup de polígons</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color per valor</translation>
+        <translation type="vanished">Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Edita la configuració de la pantalla</translation>
+        <translation type="vanished">Edita la configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuració de visualització de polígons</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Advertiment</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
     </message>
 </context>
 </TS>

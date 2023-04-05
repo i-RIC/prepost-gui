@@ -4,7 +4,7 @@
 #include "../geodatamappert.h"
 
 template <class V>
-GeoDataMapperT<V>::GeoDataMapperT(const QString& caption, GeoDataCreator* parent) :
+GeoDataMapperT<V>::GeoDataMapperT(const QString& caption, QObject* parent) :
 	GeoDataMapper {caption, parent}
 {}
 

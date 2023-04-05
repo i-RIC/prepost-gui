@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Krāsu iestatījumu rediģēšana</translation>
+        <translation type="vanished">Krāsu iestatījumu rediģēšana</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Līniju displeja iestatījums</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Group displeja iestatījums</translation>
+        <translation type="vanished">Polyline Group displeja iestatījums</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Krāsa pēc vērtības</translation>
+        <translation type="vanished">Krāsa pēc vērtības</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Dzēšot šo vienumu, tiks noņemti arī visi ar šiem datiem saistītie grafiku logi. Vai tiešām vēlaties dzēst šo vienumu?</translation>
+        <translation type="vanished">Dzēšot šo vienumu, tiks noņemti arī visi ar šiem datiem saistītie grafiku logi. Vai tiešām vēlaties dzēst šo vienumu?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Rediģēt displeja iestatījumu</translation>
+        <translation type="vanished">Rediģēt displeja iestatījumu</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Līniju displeja iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Izmantojiet pirmsapstrādes loga iestatījumu</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI formas fails (līnijas) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Krāsa pēc vērtības</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Krāsu karte</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
     </message>
 </context>
 </TS>

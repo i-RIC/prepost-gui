@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Alapvető</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>A színsáv beállításának figyelmen kívül hagyása importáláskor</translation>
+        <translation type="vanished">A színsáv beállításának figyelmen kívül hagyása importáláskor</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Méret és pozíció</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Irány:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vízszintes</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Függőleges</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Címkék száma:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>A Gradation Mode-ra váltáskor az értékek az egyes szakaszok középső értékére állnak be.</translation>
+        <translation type="vanished">A Gradation Mode-ra váltáskor az értékek az egyes szakaszok középső értékére állnak be.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Export (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Az egyes szakaszokhoz beillesztendő színek száma</translation>
+        <translation type="vanished">Az egyes szakaszokhoz beillesztendő színek száma</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Értéktartomány</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Színek száma:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Tulajdonság</translation>
+        <translation type="vanished">Tulajdonság</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Használja az Előfeldolgozási ablak beállítását</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Színtérkép beállítása</translation>
+        <translation type="vanished">Színtérkép beállítása</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Értéktartomány</translation>
+        <translation type="vanished">Értéktartomány</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Töltse fel a felső területet</translation>
+        <translation type="vanished">Töltse fel a felső területet</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Töltse ki az alsó területet</translation>
+        <translation type="vanished">Töltse ki az alsó területet</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Osztályszám:</translation>
+        <translation type="vanished">Osztályszám:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Színtérkép</translation>
+        <translation type="vanished">Színtérkép</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Színbeállítás</translation>
+        <translation type="vanished">Színbeállítás</translation>
     </message>
 </context>
 <context>

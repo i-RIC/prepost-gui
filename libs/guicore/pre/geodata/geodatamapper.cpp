@@ -1,7 +1,7 @@
 #include "geodatamapper.h"
 #include "private/geodatamapper_impl.h"
 
-GeoDataMapper::GeoDataMapper(const QString& caption, GeoDataCreator* parent) :
+GeoDataMapper::GeoDataMapper(const QString& caption, QObject* parent) :
 	QObject {parent},
 	impl {new Impl {}}
 {
@@ -27,12 +27,6 @@ void GeoDataMapper::setTarget(Grid* grid, GridAttributeContainer* container, Geo
 	impl->m_container = container;
 	impl->m_geoData = geodata;
 }
-
-GeoDataCreator* GeoDataMapper::creator() const
-{
-	return dynamic_cast<GeoDataCreator*>(parent());
-}
-
 
 Grid* GeoDataMapper::grid() const
 {

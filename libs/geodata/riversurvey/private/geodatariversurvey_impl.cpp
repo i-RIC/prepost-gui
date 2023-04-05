@@ -103,7 +103,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_removeLeftExtensionPointAction {new QAction(GeoDataRiverSurvey::tr("Remo&ve Left Bank Extension Line"), rs)},
 	m_removeRightExtensionPointAction {new QAction(GeoDataRiverSurvey::tr("Rem&ove Right Bank Extension Line"), rs)},
 	m_openCrossSectionWindowAction {new QAction(GeoDataRiverSurvey::tr("Display &Cross Section"), rs)},
-	m_showBackgroundAction {new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs)},
+	m_displaySettingAction {new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs)},
 	m_interpolateSplineAction {new QAction(GeoDataRiverSurvey::tr("Spline"), rs)},
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
 	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map point cloud data"), rs)},
@@ -216,7 +216,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_removeLeftExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeLeftExtensionPoint()));
 	connect(m_removeRightExtensionPointAction, SIGNAL(triggered()), m_rs, SLOT(removeRightExtensionPoint()));
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
-	connect(m_showBackgroundAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
+	connect(m_displaySettingAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
 	connect(m_mapPointsAction, SIGNAL(triggered()), m_rs, SLOT(mapPointsData()));
 	connect(m_generatePointMapAction, SIGNAL(triggered()), m_rs, SLOT(generatePointMap()));
@@ -441,7 +441,7 @@ void GeoDataRiverSurvey::Impl::setupEditModeMenu(QMenu* m)
 	m->addAction(m_removeRightExtensionPointAction);
 
 	m->addSeparator();
-	m->addAction(m_showBackgroundAction);
+	m->addAction(m_displaySettingAction);
 
 	m->addSeparator();
 	QMenu* iMenu = m->addMenu(GeoDataRiverSurvey::tr("Interpolation Mode"));
@@ -718,13 +718,6 @@ void GeoDataRiverSurvey::Impl::updateVtkSelectedObjects()
 
 void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 {
-	auto col = m_rs->actorCollection();
-
-	m_verticalCrossSectionLinesActor->VisibilityOff();
-	col->RemoveItem(m_verticalCrossSectionLinesActor);
-
-	if (! m_rs->m_setting.showLines) {return;}
-	col->AddItem(m_verticalCrossSectionLinesActor);
 
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
@@ -749,7 +742,7 @@ void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 
 		for (int i = 0; i < alist.size(); ++i) {
 			const auto& alt = alist[i];
-			double offset = (maxHeight - alt.height()) * m_rs->m_setting.crosssectionLinesScale;
+			double offset = (maxHeight - alt.height()) * m_displaySetting.crosssectionLinesScale;
 			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 			ids.push_back(firstId + i);
@@ -759,20 +752,10 @@ void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 	}
 	m_verticalCrossSectionLines->SetPoints(points);
 	m_verticalCrossSectionLines->SetLines(verticalLines);
-
-	m_verticalCrossSectionLinesActor->GetProperty()->SetColor(m_rs->m_setting.crosssectionLinesColor);
 }
 
 void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 {
-	auto col = m_rs->actor2DCollection();
-	col->RemoveItem(m_labelActor);
-	m_labelActor->VisibilityOff();
-
-	if (! m_rs->m_setting.showNames) {return;}
-
-	col->AddItem(m_labelActor);
-
 	auto p = m_rs->m_headPoint->nextPoint();
 
 	m_rightBankPoints->Reset();
@@ -798,25 +781,10 @@ void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 		p = p->nextPoint();
 	}
 	m_rightBankPointSet->Modified();
-
-	m_rs->m_setting.namesTextSetting.applySetting(m_labelMapper->GetLabelTextProperty());
 }
 
 void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 {
-	m_backgroundActor->VisibilityOff();
-	auto col = m_rs->actorCollection();
-	col->RemoveItem(m_backgroundActor);
-
-	if (! m_rs->m_setting.showBackground) {return;}
-
-	auto cs = m_rs->colorMapSettingContainer();
-	auto mapper = cs->buildPointDataMapper(m_backgroundGrid);
-	m_backgroundActor->SetMapper(mapper);
-	mapper->Delete();
-
-	col->AddItem(m_backgroundActor);
-	m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);
 }
 
 void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)

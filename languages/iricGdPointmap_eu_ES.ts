@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Puntuak ezabatu</translation>
+        <translation type="vanished">Puntuak ezabatu</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Aukeratutako puntuen propietateak</translation>
+        <translation type="vanished">Aukeratutako puntuen propietateak</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Puntu kopurua:</translation>
+        <translation type="vanished">Puntu kopurua:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Gutxienekoa:</translation>
+        <translation type="vanished">Gutxienekoa:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Gehienez:</translation>
+        <translation type="vanished">Gehienez:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Ezabatu balioa baino gutxiago:</translation>
+        <translation type="vanished">Ezabatu balioa baino gutxiago:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Modu honetara aldatzen zarenean, TINak berriro saldu behar dituzu. Berriro berriro nahi duzu?</translation>
+        <translation type="vanished">Modu honetara aldatzen zarenean, TINak berriro saldu behar dituzu. Berriro berriro nahi duzu?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Aukeratu puntua</translation>
+        <translation type="vanished">Aukeratu puntua</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Ezabatu hautatutako puntuak balioa baino gutxiago (&amp;L)...</translation>
+        <translation type="vanished">Ezabatu hautatutako puntuak balioa baino gutxiago (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Ezabatu hautatutako puntuak balioa baino handiagoa (&amp;G)...</translation>
+        <translation type="vanished">Ezabatu hautatutako puntuak balioa baino handiagoa (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Eten lerroa gehitzen duzunean, hari markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
+        <translation type="vanished">Eten lerroa gehitzen duzunean, hari markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Haustura lerroa kentzean, alanbre markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
+        <translation type="vanished">Haustura lerroa kentzean, alanbre markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Ertz luzeak dituzten triangeluak kendu nahi dituzunean, Bistaratze metodoa Wireframe edo Azalera aldatu behar duzu. Ados botoia sakatzen baduzu, Bistaratzeko metodoa Wireframe-ra aldatuko da</translation>
+        <translation type="vanished">Ertz luzeak dituzten triangeluak kendu nahi dituzunean, Bistaratze metodoa Wireframe edo Azalera aldatu behar duzu. Ados botoia sakatzen baduzu, Bistaratzeko metodoa Wireframe-ra aldatuko da</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Puntuak editatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
+        <translation type="vanished">Puntuak editatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Puntuak ezabatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
+        <translation type="vanished">Puntuak ezabatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Ezin dituzu eten lerroetan erabilitako puntuak ezabatu.</translation>
+        <translation type="vanished">Ezin dituzu eten lerroetan erabilitako puntuak ezabatu.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Puntuak ezabatu</translation>
+        <translation type="vanished">Puntuak ezabatu</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Aukeratu Esportatzeko fitxategia</translation>
+        <translation type="vanished">Aukeratu Esportatzeko fitxategia</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Errorea gertatu da esportatzera %1.</translation>
+        <translation type="vanished">Errorea gertatu da esportatzera %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Ezabatu puntuak baino gutxiago %1</translation>
+        <translation type="vanished">Ezabatu puntuak baino gutxiago %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Ezabatu puntu baino handiagoak %1</translation>
+        <translation type="vanished">Ezabatu puntu baino handiagoak %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Puntuak interpolatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
+        <translation type="vanished">Puntuak interpolatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Puntuak gehitzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
+        <translation type="vanished">Puntuak gehitzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Gehitu Break Line Point</translation>
+        <translation type="vanished">Gehitu Break Line Point</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Utzi Break Line definitzea</translation>
+        <translation type="vanished">Utzi Break Line definitzea</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Amaitu Break Line definitzen</translation>
+        <translation type="vanished">Amaitu Break Line definitzen</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Editatu puntuak</translation>
+        <translation type="vanished">Editatu puntuak</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Gehitu Interp Line berria</translation>
+        <translation type="vanished">Gehitu Interp Line berria</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Batu...</translation>
+        <translation type="vanished">Batu...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Puntu hodeiko datuak (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Puntuak ezabatu</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Aldatu modua (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Aukeratutako puntuen propietateak</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Batu (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Puntu kopurua:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Maparen ezarpena (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Gutxienekoa:</translation>
+        <source>Select file name to export</source>
+        <translation>Hautatu esportatzeko fitxategiaren izena</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Gehienez:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Ezin izan da ireki %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Ezabatu balioa baino handiagoa:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Editatu puntuak</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Birsortu TIN eta amaitutakoan, aldatu TIN Editatzeko modura.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Aukeratutako puntuen propietateak</translation>
+        <source>Selection Mode</source>
+        <translation>Hautaketa modua</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Puntu kopurua:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Hautatu puntuak Laukizuzenaren Eskualdearekin</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Gutxienekoa:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Iragazi hautatutako puntuak (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Gehienez:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-kokapena</translation>
+        <source>&amp;Sort</source>
+        <translation>Ordenatu (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-kokapena</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Balioa</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Puntu-hodei bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpolatu gehikuntza</translation>
+        <source>Warning</source>
+        <translation>Abisua</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Interpolazio ezarpena</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Interpolazioaren gehikuntza:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Lerroaren luzera:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Ezin dituzu ezabatu eten-lerroetarako erabilitako puntuak.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Abisua</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Interpolazioaren gehikuntzak interpolazio lerroaren luzera baino 0 handiagoa eta txikiagoa izan behar du</translation>
+        <translation>Interpolazioaren gehikuntzak 0 handiagoa eta interpolazio-lerroaren luzera baino txikiagoa izan behar du</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Puntuak ezabatu</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Aukeratutako puntuen propietateak</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Gutxienekoa:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Gehienez:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Ezabatu balioa baino handiagoa:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Editatu puntuak</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Aukeratutako puntuen propietateak</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Gutxienekoa:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Gehienez:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-kokapena</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-kokapena</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Balioa</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpolatu gehikuntza</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Interpolazio ezarpena</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Interpolazioaren gehikuntza:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Lerroaren luzera:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Abisua</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Interpolazioaren gehikuntzak interpolazio lerroaren luzera baino 0 handiagoa eta txikiagoa izan behar du</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Desautatu guztiak (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Puntu-hodei bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 puntuak)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntuak</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Azalera</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntoak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Eten lerroak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapeatzea Poligonoak ezartzea</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Kolore-mapa balioetarako</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Puntu-hodeiaren datuen maparen ezarpena</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Mapeatzea TINarekin</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>Puntuetatik sortutako TINak mapak egiteko erabiltzen dira. Sarearen nodoetan edo gelaxketan definitutako sare-atributuen balioak nodoa (edo gelaxka-zentroa) daukan triangeluaren nodoetan definitutako balioen batez besteko haztatu gisa kalkulatzen dira.</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Txantiloien mapaketa</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bilatu sareta-nodoetatik gertu dauden puntuak, sareko gelaxken formei dagokienez, eta erabili puntu horietan dauden balioak interpolatzeko.&lt;/p&gt;&lt;p&gt;Algoritmo hau izan daiteke. erabili sare egituratuetarako soilik.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Xehetasuna (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Aldatu mapatze-algoritmoa poligonoekin definitutako eremu bakoitzeko</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zehaztu eremuak poligono gisa, eta zehaztu algoritmoa sare-nodoetan edo gelaxka-zentroetan balioak mapatzeko puntuetan definitutako balioetatik.&lt;/p&gt;&lt;p&gt;Erabiltzaileak behetik hauta dezake: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapatu zirkulu barruko puntuen gutxieneko balioa&lt;/li&gt;&lt;li&gt;Mapatu zirkulu barruko puntuen gehienezko balioa&lt;/li&gt;&lt;li&gt;Mapatu zirkulu barruko puntuen batez besteko balio haztatua&lt;/li&gt; &lt;li&gt;Maparen balioa TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Txantiloiaren maparen ezarpena</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Bilatu eskualdea</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Autoa</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Eskuliburua</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Korrontearen araberako luzera[m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Korrontearen zabalera [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Txantiloi-hedapen kopurua:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Ponderazio-beretzailea:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Editatu Puntuak</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Hautatutako puntuen propietateak</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Gutxieneko balioa:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Gehieneko balioa:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Balioa:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Iragazi hautatutako puntuak</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Hautatutako puntuen propietateak</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Gutxieneko balioa:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Gehienezko balioa:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Iragazte-baldintza</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Hautatu atalasea baino balio handiagoa duten puntuak</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Hautatu atalasea baino balio txikiagoa duten puntuak</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Atalasearen balioa:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Interpolazio ezarpena</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolatu gehikuntza</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Interpolazioaren gehikuntza:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Lerroaren luzera:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Kalkulu-metodoa</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Mapa TIN erabiliz</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Erradio barruko puntuen gutxieneko balioa</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Erradio barruko puntuen gehienezko balioa</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Erradio barruko puntuen batez besteko haztatua</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>k haztatzeko berretzailea:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; balioen batez besteko haztatua kalkulatzeko pisu gisa erabiltzen da. r puntutik nodo edo gelaxka-zentrora dagoen distantzia da, zeinari balioa mapatzen zaion.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Zirkuluaren erradioa puntuak bilatzeko:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Mapeatzea exekutatzen denean, goiko erradioa duten zirkuluan dauden puntuak bilatzen dira balioak sareko nodo edo gelaxka-zentroetara mapatzeko.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Puntu-hodei bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puntuak</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Lerroaren zabalera:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Azalera</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntuak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Eten lerroak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Erakutsi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Mapeatzea Poligonoak ezartzea</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Kolore-mapa balioetarako</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Inportatu (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Esportatu (&amp;E)</translation>
     </message>
 </context>
 <context>

@@ -37,8 +37,10 @@ public:
 	ColorMapSettingContainer* colorMapSetting() const;
 	void setColorMapSetting(ColorMapSettingContainer* c);
 
+	void copy(const ColorMapLegendSettingContainerI& setting) override;
 	void setTitle(const QString& title) override;
-	ColorMapSettingContainerI* setting() override;
+	ColorMapSettingContainerI* setting() const override;
+	void setSetting(ColorMapSettingContainerI* setting) override;
 	ImageSettingContainer* imgSetting() override;
 
 	ColorMapLegendSettingContainer& operator=(const ColorMapLegendSettingContainer& c);

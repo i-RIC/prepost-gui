@@ -1,5 +1,5 @@
 #include "geodatapointmaprealexporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
@@ -21,7 +21,7 @@ GeoDataPointmapRealExporter::GeoDataPointmapRealExporter(GeoDataCreator* creator
 bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
 	// Allocate objects to hold points and vertex cells.
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 	if (selectedFilter == tr("Topography File (*.tpo)")) {
 		TpoExporter exporter(w);
 		if (! exporter.open(filename)) {
@@ -31,8 +31,8 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 
 		exporter.setOffset(pd->mainfile()->offset());
 
-		vtkPoints* points = pmap->vtkGrid()->GetPoints();
-		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
+		auto points = pmap->points()->GetPoints();
+		auto values = pmap->pointsValues();
 
 		double v[3], val;
 		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {

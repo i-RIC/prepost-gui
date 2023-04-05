@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Redaguoti taško koordinates</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Perkelti viršūnę</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Nustatyti viršūnę</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

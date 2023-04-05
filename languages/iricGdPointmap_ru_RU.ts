@@ -3,50 +3,50 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Удалить точки</translation>
+        <translation type="vanished">Удалить точки</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Свойства выбранной точки</translation>
+        <translation type="vanished">Свойства выбранной точки</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Количество точек:</translation>
+        <translation type="vanished">Количество точек:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Минимум:</translation>
+        <translation type="vanished">Минимум:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Максимум:</translation>
+        <translation type="vanished">Максимум:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Удалить меньше значения:</translation>
+        <translation type="vanished">Удалить меньше значения:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation>Изменить точки</translation>
+        <translation type="vanished">Изменить точки</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Добавить точку линии разрыва</translation>
+        <translation type="vanished">Добавить точку линии разрыва</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Завершить определение линии разрыва</translation>
+        <translation type="vanished">Завершить определение линии разрыва</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Отменить определение линии разрыва</translation>
+        <translation type="vanished">Отменить определение линии разрыва</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Добавить новую точку пересечения линии</translation>
+        <translation type="vanished">Добавить новую точку пересечения линии</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>При переходе в этот режим приходится менять ИНН. Вы хотите перестроить сетку сейчас?</translation>
+        <translation type="vanished">При переходе в этот режим приходится менять ИНН. Вы хотите перестроить сетку сейчас?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Выбрать точку</translation>
+        <translation type="vanished">Выбрать точку</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -102,11 +102,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Удалить выбранные точки меньше значения (&amp;L)...</translation>
+        <translation type="vanished">Удалить выбранные точки меньше значения (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Удалить выбранные точки больше значения (&amp;G)...</translation>
+        <translation type="vanished">Удалить выбранные точки больше значения (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -142,7 +142,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Когда вы добавляете линию разрыва, вы должны переключиться на отображение каркасов. Вы хотите переключиться на отображение каркасов сейчас?</translation>
+        <translation type="vanished">Когда вы добавляете линию разрыва, вы должны переключиться на отображение каркасов. Вы хотите переключиться на отображение каркасов сейчас?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -150,7 +150,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Когда вы удаляете линию разрыва, вы должны переключиться на отображение каркасов. Вы хотите переключиться на отображение каркасов сейчас?</translation>
+        <translation type="vanished">Когда вы удаляете линию разрыва, вы должны переключиться на отображение каркасов. Вы хотите переключиться на отображение каркасов сейчас?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -162,27 +162,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Если вы хотите удалить треугольники с длинными краями, вам нужно переключить Метод отображения на Каркас или Поверхность. Если вы нажмете кнопку ОК, метод отображения переключится на Каркас.</translation>
+        <translation type="vanished">Если вы хотите удалить треугольники с длинными краями, вам нужно переключить Метод отображения на Каркас или Поверхность. Если вы нажмете кнопку ОК, метод отображения переключится на Каркас.</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Когда вы редактируете точки, вы должны переключаться, чтобы отображать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
+        <translation type="vanished">Когда вы редактируете точки, вы должны переключаться, чтобы отображать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Когда вы удаляете точки, вы должны переключиться на отображение точек. Вы хотите переключиться на отображение баллов сейчас?</translation>
+        <translation type="vanished">Когда вы удаляете точки, вы должны переключиться на отображение точек. Вы хотите переключиться на отображение баллов сейчас?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Вы не можете удалить точки, использованные для линий разрыва.</translation>
+        <translation type="vanished">Вы не можете удалить точки, использованные для линий разрыва.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Удалить точки</translation>
+        <translation type="vanished">Удалить точки</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Выберите файл для экспорта</translation>
+        <translation type="vanished">Выберите файл для экспорта</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -194,19 +194,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Произошла ошибка при экспорте в %1.</translation>
+        <translation type="vanished">Произошла ошибка при экспорте в %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Удалить точки меньше, чем %1</translation>
+        <translation type="vanished">Удалить точки меньше, чем %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Удалить точки больше, чем %1</translation>
+        <translation type="vanished">Удалить точки больше, чем %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Когда вы интерполируете точки, вы должны переключиться, чтобы показать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
+        <translation type="vanished">Когда вы интерполируете точки, вы должны переключиться, чтобы показать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -214,7 +214,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Когда вы добавляете точки, вы должны переключиться, чтобы показать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
+        <translation type="vanished">Когда вы добавляете точки, вы должны переключиться, чтобы показать точки. Вы хотите переключиться на отображение баллов сейчас?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Объединить...</translation>
+        <translation type="vanished">Объединить...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Данные облака точек (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Удалить точки</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Режим переключения (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Свойства выбранной точки</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Объединить (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Количество точек:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Настройка сопоставления (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Минимум:</translation>
+        <source>Select file name to export</source>
+        <translation>Выберите имя файла для экспорта</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Максимум:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Не удалось открыть %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Удалить значение больше:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Изменить точки</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Перестройте TIN и, когда он будет завершен, переключитесь в режим редактирования TIN.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Свойства выбранной точки</translation>
+        <source>Selection Mode</source>
+        <translation>Режим выбора</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Количество точек:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Выберите точки с прямоугольной областью</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Минимум:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Отфильтровать выбранные точки (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Максимум:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Изменить ИНН (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-расположение</translation>
+        <source>&amp;Sort</source>
+        <translation>Сортировать (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-расположение</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Ценить</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Настройка отображения облака точек</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Интерполировать приращение</translation>
+        <source>Warning</source>
+        <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Настройка интерполяции</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Приращение интерполяции:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Длина линии:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Вы не можете удалить точки, используемые для линий разрыва.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Шаг интерполяции должен быть больше 0 и меньше длины строки интерполяции.</translation>
+        <translation>Шаг интерполяции должен быть больше 0 и меньше длины линии интерполяции.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Удалить точки</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Свойства выбранной точки</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Количество точек:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Минимум:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Максимум:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Удалить значение больше:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Изменить точки</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Свойства выбранной точки</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Количество точек:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Минимум:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Максимум:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-расположение</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-расположение</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Ценить</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Интерполировать приращение</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Настройка интерполяции</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Приращение интерполяции:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Длина линии:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Предупреждение</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Шаг интерполяции должен быть больше 0 и меньше длины строки интерполяции.</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Снять все (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Настройка отображения облака точек</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 точки)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Базовый</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>БАНКА</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Точки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер точки:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Каркас</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина линии:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Поверхность</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Линии разрыва</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показывать</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Цвет:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Отображение полигонов настройки</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Цветовая карта для значений</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Настройка отображения данных облака точек</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Сопоставление с ИНН</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>TIN, созданный из точек, используется для картирования. Значения атрибутов сетки, определенные в узлах или ячейках сетки, рассчитываются как средневзвешенное значение значений, определенных в узлах треугольника, содержащего узел (или центр ячейки).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Сопоставление шаблонов</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Найти точки, которые находятся рядом с узлами сетки, относительно формы ячеек сетки, и использовать значения в этих точках для интерполяции.&lt;/p&gt;&lt;p&gt;Этот алгоритм можно использовать только для структурированных сеток.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Деталь (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Измените алгоритм отображения для каждой области, определенной полигонами.</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Определите области как многоугольники и укажите алгоритм для сопоставления значений в узлах сетки или центрах ячеек со значениями, определенными в точках.&lt;/p&gt;&lt;p&gt;Пользователь может выбрать один из следующих вариантов: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Сопоставление минимального значения точек внутри круга&lt;/li&gt;&lt;li&gt;Сопоставление максимального значения точек внутри круга&lt;/li&gt;&lt;li&gt;Сопоставление средневзвешенного значения точек внутри круга&lt;/li&gt; &lt;li&gt;Сопоставить значение с TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Настройка сопоставления шаблонов</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Регион поиска</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Руководство</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Длина по потоку [м]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Ширина поперечного потока [м]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Количество расширений шаблона:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Экспонента взвешивания:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Редактировать точки</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Свойства выбранных точек</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Количество баллов:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Минимальное значение:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Максимальное значение:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>ИКС:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Д:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Ценить:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Отфильтровать выбранные точки</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Свойства выбранных точек</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Количество баллов:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Минимальное значение:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Максимальное значение:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Условия фильтрации</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Выберите точки со значением, превышающим пороговое значение</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Выберите точки со значением меньше порога</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Пороговое значение:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Настройка интерполяции</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Интерполировать приращение</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Шаг интерполяции:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Длина линии:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Метод расчета</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Карта с использованием ИНН</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Минимальное значение точек в радиусе</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Максимальное значение точек в радиусе</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Средневзвешенное значение точек в радиусе</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Коэффициент взвешивания k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; используется в качестве веса при вычислении средневзвешенного значения. r — расстояние от точки до узла или центра ячейки, с которым сопоставляется значение.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Радиус окружности для поиска точек:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>м</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>При выполнении сопоставления выполняется поиск точек в круге с указанным выше радиусом для сопоставления значений с узлами сетки или центрами ячеек.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Настройка отображения облака точек</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Базовый</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">БАНКА</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Точки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Размер точки:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Каркас</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Ширина линии:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Поверхность</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Линии разрыва</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Показывать</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Отображение полигонов настройки</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Цветовая карта для значений</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Импортировать (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Экспорт (&amp;E)</translation>
     </message>
 </context>
 <context>

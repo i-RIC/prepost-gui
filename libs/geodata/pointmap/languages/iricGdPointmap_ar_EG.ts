@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>نوع (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>إعداد عرض سحابة النقطة</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>إلغاء تحديد الكل (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>إعداد عرض سحابة النقطة</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>أساسي</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>نقاط</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>حجم النقطة:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>إطار سلكي</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>سطح</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; عندما تكون في &amp; quot؛ Points Edit Modequot؛ ، يتم تجاهل هذا الإعداد وتكون بيانات TIN دائمًا تظهر كنقاط. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>كسر الخطوط</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>يعرض</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>لون:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>تعيين المضلعات رسم الخرائط</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>خريطة ملونة للقيم</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>إعداد عرض سحابة النقطة</translation>
+        <translation type="vanished">إعداد عرض سحابة النقطة</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>أساسي</translation>
+        <translation type="vanished">أساسي</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>نقاط</translation>
+        <translation type="vanished">نقاط</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>حجم النقطة:</translation>
+        <translation type="vanished">حجم النقطة:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>إطار سلكي</translation>
+        <translation type="vanished">إطار سلكي</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>سطح</translation>
+        <translation type="vanished">سطح</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; عندما تكون في &amp; quot؛ Points Edit Modequot؛ ، يتم تجاهل هذا الإعداد وتكون بيانات TIN دائمًا تظهر كنقاط. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; عندما تكون في &amp; quot؛ Points Edit Modequot؛ ، يتم تجاهل هذا الإعداد وتكون بيانات TIN دائمًا تظهر كنقاط. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>كسر الخطوط</translation>
+        <translation type="vanished">كسر الخطوط</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>يعرض</translation>
+        <translation type="vanished">يعرض</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>لون:</translation>
+        <translation type="vanished">لون:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>تعيين المضلعات رسم الخرائط</translation>
+        <translation type="vanished">تعيين المضلعات رسم الخرائط</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>خريطة ملونة للقيم</translation>
+        <translation type="vanished">خريطة ملونة للقيم</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>يستورد (&amp;I)</translation>
+        <translation type="vanished">يستورد (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>يصدّر (&amp;E)</translation>
+        <translation type="vanished">يصدّر (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">إزالة المثلثات ذات الحواف الطويلة</translation>
+        <translation>إزالة المثلثات ذات الحواف الطويلة</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">طول حافة الحد:</translation>
+        <translation>طول حافة الحد:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: عند النقر فوق الزر "تطبيق" ، سيتم رسم المثلثات التي ستتم إزالتها باللون الداكن الرمادي. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة &lt;/ span&gt;: عند النقر فوق الزر "تطبيق" ، سيتم رسم المثلثات التي ستتم إزالتها باللون الداكن الرمادي. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

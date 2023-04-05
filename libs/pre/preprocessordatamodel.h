@@ -73,6 +73,7 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
+	PreProcessorGridTypeDataItemInterface* gridTypeDataItem(const std::string& type) const override;
 	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const override;
 	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const std::string& type) const override;
 	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem(const std::string& type) const override;

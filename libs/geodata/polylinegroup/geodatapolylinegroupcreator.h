@@ -16,7 +16,6 @@ public:
 	QString defaultCaption(unsigned int index) const override;
 
 	bool isCreatable() const override;
-	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 
 	int shapeType() const override;
 	QString shapeName() const override;

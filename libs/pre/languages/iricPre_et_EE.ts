@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Geograafiliste andmete kaardistamine</translation>
+        <translation type="vanished">Geograafiliste andmete kaardistamine</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kaardistamine TIN -idega</translation>
+        <translation type="vanished">Kaardistamine TIN -idega</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Geograafilistest andmetest loodud TIN -e kasutatakse kaardistamiseks. Võrgusõlmede atribuutide väärtused arvutatakse TIN -sõlmede väärtuste kaalutud keskmisena.</translation>
+        <translation type="vanished">Geograafilistest andmetest loodud TIN -e kasutatakse kaardistamiseks. Võrgusõlmede atribuutide väärtused arvutatakse TIN -sõlmede väärtuste kaalutud keskmisena.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mallide kaardistamine</translation>
+        <translation type="vanished">Mallide kaardistamine</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Leidke ruudustiku kujude kohta geograafilised andmepunktid, mis asuvad ruudustiku sõlmede lähedal, ja kasutage nende punktide väärtusi interpoleerimiseks. Seda algoritmi saab kasutada ainult struktureeritud võrkude jaoks.</translation>
+        <translation type="vanished">Leidke ruudustiku kujude kohta geograafilised andmepunktid, mis asuvad ruudustiku sõlmede lähedal, ja kasutage nende punktide väärtusi interpoleerimiseks. Seda algoritmi saab kasutada ainult struktureeritud võrkude jaoks.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detail (&amp;D)...</translation>
+        <translation type="vanished">Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>

@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Диапазон</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Лица</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Направление</translation>
+        <translation type="vanished">Направление</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>я</translation>
+        <translation type="vanished">я</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>К Макс</translation>
+        <translation type="vanished">К Макс</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Включено</translation>
+        <translation type="vanished">Включено</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Отбор проб</translation>
+        <translation type="vanished">Отбор проб</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Все вершины</translation>
+        <translation type="vanished">Все вершины</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Частота выборки:</translation>
+        <translation type="vanished">Частота выборки:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-направление</translation>
+        <translation type="vanished">I-направление</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-направление</translation>
+        <translation type="vanished">J-направление</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-направление</translation>
+        <translation type="vanished">K-направление</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скалярному значению</translation>
+        <translation type="vanished">По скалярному значению</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма стрелки</translation>
+        <translation type="vanished">Форма стрелки</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Размер стрелки:</translation>
+        <translation type="vanished">Размер стрелки:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина линии:</translation>
+        <translation type="vanished">Ширина линии:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка стрелки</translation>
+        <translation type="vanished">Настройка стрелки</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Общие настройки</translation>
+        <translation type="vanished">Общие настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Длина</translation>
+        <translation type="vanished">Длина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартное значение:</translation>
+        <translation type="vanished">Стандартное значение:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Длина на экране:</translation>
+        <translation type="vanished">Длина на экране:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксель]</translation>
+        <translation type="vanished">[пиксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимальное значение для рисования:</translation>
+        <translation type="vanished">Минимальное значение для рисования:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Лица</translation>
+        <translation type="vanished">Лица</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Лицо %1</translation>
+        <translation type="vanished">Лицо %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Легенда длины</translation>
+        <translation type="vanished">Легенда длины</translation>
     </message>
 </context>
 <context>

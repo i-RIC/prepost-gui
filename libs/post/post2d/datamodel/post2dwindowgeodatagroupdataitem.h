@@ -5,6 +5,7 @@
 #include <QString>
 #include <QMap>
 
+class DelegatedColorMapSettingContainer;
 class SolverDefinitionGridAttribute;
 class Post2dWindowGeoDataDataItem;
 
@@ -16,15 +17,24 @@ public:
 	Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent);
 	SolverDefinitionGridAttribute* condition() const;
 
+	DelegatedColorMapSettingContainer* colorMapSetting() const;
+	void addCustomMenuItems(QMenu* menu) override;
 	void updateChildren();
+	void applyColorMapSetting();
 
-protected:
+private slots:
+	void editScalarsToColors();
+
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	QMap<QString, Post2dWindowGeoDataDataItem*> m_itemNameMap;
 	SolverDefinitionGridAttribute* m_condition;
+
+	QAction* m_editColorMapAction;
+
+	class ScalarsToColorsEditDialog;
 };
 
 #endif // POST2DWINDOWGEODATAGROUPDATAITEM_H

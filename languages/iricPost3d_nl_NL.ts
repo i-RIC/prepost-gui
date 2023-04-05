@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Bereik</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Gezichten</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Richting</translation>
+        <translation type="vanished">Richting</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>l</translation>
+        <translation type="vanished">l</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ik doe mee</translation>
+        <translation type="vanished">Ik doe mee</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>ik Max</translation>
+        <translation type="vanished">ik Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Ingeschakeld</translation>
+        <translation type="vanished">Ingeschakeld</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sampling</translation>
+        <translation type="vanished">Sampling</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hoekpunten</translation>
+        <translation type="vanished">Alle hoekpunten</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Bemonsteringsfrequentie:</translation>
+        <translation type="vanished">Bemonsteringsfrequentie:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>ik-richting</translation>
+        <translation type="vanished">ik-richting</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-richting</translation>
+        <translation type="vanished">J-richting</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-richting</translation>
+        <translation type="vanished">K-richting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pijlvorm</translation>
+        <translation type="vanished">Pijlvorm</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pijl grootte:</translation>
+        <translation type="vanished">Pijl grootte:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pijlinstelling</translation>
+        <translation type="vanished">Pijlinstelling</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Algemene instelling</translation>
+        <translation type="vanished">Algemene instelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengte</translation>
+        <translation type="vanished">Lengte</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standaard waarde:</translation>
+        <translation type="vanished">Standaard waarde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mevrouw]</translation>
+        <translation type="vanished">[Mevrouw]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengte op scherm:</translation>
+        <translation type="vanished">Lengte op scherm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimale waarde om te tekenen:</translation>
+        <translation type="vanished">Minimale waarde om te tekenen:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Gezichten</translation>
+        <translation type="vanished">Gezichten</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Gezicht %1</translation>
+        <translation type="vanished">Gezicht %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Lengte legende</translation>
+        <translation type="vanished">Lengte legende</translation>
     </message>
 </context>
 <context>

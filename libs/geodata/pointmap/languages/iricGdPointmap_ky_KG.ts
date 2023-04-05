@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Сорттоо (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display Setting</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Баарын тандоодон чыгаруу (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display Setting</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ИНН</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Упайлар</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Surface</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Көп бурчтуктарды орнотуу</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>баалуулуктар үчүн түс картасы</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Point Cloud Display Setting</translation>
+        <translation type="vanished">Point Cloud Display Setting</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Негизги</translation>
+        <translation type="vanished">Негизги</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ИНН</translation>
+        <translation type="vanished">ИНН</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Упайлар</translation>
+        <translation type="vanished">Упайлар</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Упайдын өлчөмү:</translation>
+        <translation type="vanished">Упайдын өлчөмү:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Сызыктын туурасы:</translation>
+        <translation type="vanished">Сызыктын туурасы:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Surface</translation>
+        <translation type="vanished">Surface</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Break Lines</translation>
+        <translation type="vanished">Break Lines</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Show</translation>
+        <translation type="vanished">Show</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Көп бурчтуктарды орнотуу</translation>
+        <translation type="vanished">Көп бурчтуктарды орнотуу</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>баалуулуктар үчүн түс картасы</translation>
+        <translation type="vanished">баалуулуктар үчүн түс картасы</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Импорттоо (&amp;I)</translation>
+        <translation type="vanished">Импорттоо (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Экспорт (&amp;E)</translation>
+        <translation type="vanished">Экспорт (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Long Edge менен үч бурчтуктарды алып салыңыз</translation>
+        <translation>Long Edge менен үч бурчтуктарды алып салыңыз</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Чек четинин узундугу:</translation>
+        <translation>Чек четинин узундугу:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Колдонуу баскычын басканыңызда, алынып салынуучу үч бурчтуктар караңгы түскө боёлот боз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Колдонуу баскычын басканыңызда, алынып салынуучу үч бурчтуктар караңгы түскө боёлот боз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

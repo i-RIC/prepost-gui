@@ -355,7 +355,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าการแสดงผล</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>ข้อมูลภาคตัดขวางถูกสร้างขึ้นโดยใช้ข้อมูล point cloud ในบางภูมิภาค ข้อมูลไม่มีอยู่ในข้อมูล point cloud และค่า 0 ถูกแมปสำหรับจุดเหล่านั้น หากคุณต้องการปรับตำแหน่งตัดขวางและข้อมูลระบบคลาวด์ของจุดแผนที่อีกครั้ง คุณสามารถใช้ "ข้อมูลคลาวด์จุดแผนที่"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>การตั้งค่าการแสดงข้อมูลภาคตัดขวาง</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>ข้อมูลภาคตัดขวาง (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">ข้อมูลภาคตัดขวาง (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 ไลน์ %2 : "%3": ข้อมูลแฟล็กไม่ถูกต้อง</translation>
+        <translation type="vanished">%1 ไลน์ %2 : "%3": ข้อมูลแฟล็กไม่ถูกต้อง</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>การตั้งค่าการแสดงข้อมูลภาคตัดขวาง</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>ไฟล์ VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>สีพื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; คุณสามารถปรับแต่งสีได้โดยใช้แท็บ Colormap&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>เส้นตัดขวาง</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z สเกล:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>ชื่อส่วนตัดขวาง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
     </message>
 </context>
 <context>

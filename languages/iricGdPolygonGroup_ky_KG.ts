@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Color Setting Edit</translation>
+        <translation type="vanished">Color Setting Edit</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Көп бурчтуктарды көрсөтүү жөндөөлөрү</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Көп бурчтуу топтун дисплей жөндөөлөрү</translation>
+        <translation type="vanished">Көп бурчтуу топтун дисплей жөндөөлөрү</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Маани боюнча түс</translation>
+        <translation type="vanished">Маани боюнча түс</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Сызыктын туурасы:</translation>
+        <translation type="vanished">Сызыктын туурасы:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Дисплей жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Дисплей жөндөөсүн түзөтүү</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Көп бурчтуктарды көрсөтүү жөндөөлөрү</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Эскертүү</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
     </message>
 </context>
 </TS>

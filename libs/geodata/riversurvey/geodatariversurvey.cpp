@@ -25,8 +25,8 @@
 #include "private/geodatariversurvey_polylinefinishdefiningcommand.h"
 #include "private/geodatariversurvey_polylineupdatelabelscommand.h"
 #include "private/geodatariversurvey_removeextensioncommand.h"
-#include "private/geodatariversurvey_setdisplaysettingcommand.h"
 #include "private/geodatariversurvey_translateriverpathpointcommand.h"
+#include "public/geodatariversurvey_displaysettingwidget.h"
 
 #include <geodata/pointmap/geodatapointmap.h>
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
@@ -38,9 +38,13 @@
 #include <guibase/polyline/polylineutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/project/colorsource.h>
@@ -48,6 +52,7 @@
 #include <misc/informationdialog.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
+#include <misc/modifycommanddialog.h>
 #include <misc/stringtool.h>
 #include <misc/iricundostack.h>
 
@@ -109,7 +114,7 @@ bool addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<do
 	QPointF p = pos + dir * dist;
 	double val = 0;
 
-	bool ok = pointMap->getValueAt(p, &val);
+	bool ok = pointMap->getTinValueAt(p, &val);
 
 	alts->insert({dist, GeoDataRiverCrosssection::Altitude(dist, val)});
 	return ok;
@@ -120,7 +125,7 @@ bool addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<do
 const int GeoDataRiverSurvey::WSE_NAME_MAXLENGTH = 16;
 
 GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
-	GeoData(d, creator, att),
+	GeoDataWithSingleMapper(d, creator, att),
 	impl {new Impl {this}}
 {
 	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0, this);
@@ -176,7 +181,7 @@ void GeoDataRiverSurvey::setupDataItem()
 	auto cs = new ColorSource(this);
 	cs->load(":/libs/geodata/riversurvey/data/colorsource_rs.xml");
 
-	m_setting.crosssectionLinesColor = cs->getColor(rcount);
+	impl->m_displaySetting.crosssectionLinesColor = cs->getColor(rcount);
 	delete cs;
 
 	GeoData::setupDataItem();
@@ -219,10 +224,10 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 		col->AddItem(impl->m_selectedLeftBankPointsActor);
 		col->AddItem(impl->m_selectedRightBankPointsActor);
 		col->AddItem(impl->m_selectedCrossSectionLinesActor);
-		if (m_setting.showBackground) {
+		if (impl->m_displaySetting.showBackground) {
 			col->AddItem(impl->m_backgroundActor);
 		}
-		if (m_setting.showLines) {
+		if (impl->m_displaySetting.showLines) {
 			col->AddItem(impl->m_verticalCrossSectionLinesActor);
 		}
 		col2->AddItem(impl->m_labelActor);
@@ -252,10 +257,10 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 	} else if (impl->m_mode == Impl::Mode::EditMode) {
 		col->AddItem(impl->m_crossSectionLinesActor);
 		col->AddItem(impl->m_centerAndBankLinesActor);
-		if (m_setting.showBackground) {
+		if (impl->m_displaySetting.showBackground) {
 			col->AddItem(impl->m_backgroundActor);
 		}
-		if (m_setting.showLines) {
+		if (impl->m_displaySetting.showLines) {
 			col->AddItem(impl->m_verticalCrossSectionLinesActor);
 		}
 		col2->AddItem(impl->m_labelActor);
@@ -359,14 +364,15 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	auto elem = node.toElement();
 	GeoData::doLoadFromProjectMainFile(node);
+
 	auto mode = elem.attribute("mode");
 	impl->m_mode = Impl::Mode::EditMode;
 	if (mode == "create") {
 		impl->m_mode = Impl::Mode::CreateMode;
 	}
-	m_setting.load(node);
+	impl->m_displaySetting.load(node);
 
-	impl->m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_backgroundActor->GetProperty()->SetOpacity(impl->m_displaySetting.opacity);
 
 	int linearMode = elem.attribute("interpolateLinear").toInt();
 	bool lMode = (linearMode != 0);
@@ -508,13 +514,30 @@ bool GeoDataRiverSurvey::getValueRange(double* min, double* max)
 	return true;
 }
 
-QDialog* GeoDataRiverSurvey::propertyDialog(QWidget*)
+void GeoDataRiverSurvey::showPropertyDialog()
 {
-	return nullptr;
+	showPropertyDialogModeless();
 }
 
-void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
-{}
+QDialog* GeoDataRiverSurvey::propertyDialog(QWidget* parent)
+{
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
+	auto widget = new DisplaySettingWidget(dialog);
+	widget->setSetting(&impl->m_displaySetting);
+
+	auto colorMapWidget = geoDataGroupDataItem()->condition()->createColorMapSettingEditWidget(widget);
+	auto colormap = geoDataDataItem()->colorMapSettingContainer();
+	colorMapWidget->setSetting(colormap);
+	auto colorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(colorMapWidget, widget);
+
+	widget->setColorMapWidget(colorMapWidget2);
+
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Cross-Section Data Display Setting"));
+	dialog->resize(900, 700);
+
+	return dialog;
+}
 
 void GeoDataRiverSurvey::updateShapeData()
 {
@@ -525,16 +548,53 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->updateVtkNameLabelObjects();
 	impl->updateVtkBackgroundObjects();
 
-	updateVisibilityWithoutRendering();
+	updateActorSetting();
 
 	emit dataUpdated();
 	impl->m_gridThread->update();
 }
 
+void GeoDataRiverSurvey::updateActorSetting()
+{
+	auto col = actorCollection();
+	auto col2 = actor2DCollection();
+
+	impl->m_verticalCrossSectionLinesActor->VisibilityOff();
+	col->RemoveItem(impl->m_verticalCrossSectionLinesActor);
+
+	if (impl->m_displaySetting.showLines) {
+		col->AddItem(impl->m_verticalCrossSectionLinesActor);
+		impl->m_verticalCrossSectionLinesActor->GetProperty()->SetColor(impl->m_displaySetting.crosssectionLinesColor);
+	}
+
+	impl->m_labelActor->VisibilityOff();
+	col2->RemoveItem(impl->m_labelActor);
+
+	if (impl->m_displaySetting.showNames) {
+		col2->AddItem(impl->m_labelActor);
+		impl->m_displaySetting.namesTextSetting.applySetting(impl->m_labelMapper->GetLabelTextProperty());
+	}
+
+	impl->m_backgroundActor->VisibilityOff();
+	col->RemoveItem(impl->m_backgroundActor);
+	if (impl->m_displaySetting.showBackground) {
+		col->AddItem(impl->m_backgroundActor);
+		impl->m_backgroundActor->GetProperty()->SetOpacity(impl->m_displaySetting.opacity);
+
+		auto cs = colorMapSettingContainer();
+		auto mapper = cs->buildPointDataMapper(impl->m_backgroundGrid);
+		impl->m_backgroundActor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
+	updateVisibilityWithoutRendering();
+
+	emit updateActorSettingExecuted();
+}
+
 void GeoDataRiverSurvey::applyColorMapSetting()
 {
-	impl->updateVtkBackgroundObjects();
-	updateVisibilityWithoutRendering();
+	updateActorSetting();
 }
 
 void GeoDataRiverSurvey::updateSelectionShapeData()
@@ -1416,13 +1476,7 @@ void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 
 void GeoDataRiverSurvey::displaySetting()
 {
-	GeoDataRiverSurveyDisplaySettingDialog dialog(preProcessorWindow());
-	dialog.setSetting(m_setting);
-
-	int ret = dialog.exec();
-	if (ret != dialog.Accepted) {return;}
-
-	pushRenderCommand(new SetDisplaySettingCommand(dialog.setting(), this));
+	showPropertyDialog();
 }
 
 void GeoDataRiverSurvey::switchInterpolateModeToLinear()

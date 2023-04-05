@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>导入时忽略颜色条设置</translation>
+        <translation type="vanished">导入时忽略颜色条设置</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>大小和位置</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>方向：</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>标签数量：</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽车</translation>
     </message>
 </context>
 <context>
@@ -602,7 +626,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Value</source>
@@ -626,7 +650,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>切换到渐变模式时，值设置为每个部分的中间值。</translation>
+        <translation type="vanished">切换到渐变模式时，值设置为每个部分的中间值。</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>出口 (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -645,22 +684,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>每个部分要插入的颜色数</translation>
+        <translation type="vanished">每个部分要插入的颜色数</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>取值范围</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>颜色数量：</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>属性</translation>
+        <translation type="vanished">属性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>使用预处理窗口的设置</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>出口 (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>彩色地图设置</translation>
+        <translation type="vanished">彩色地图设置</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>值域</translation>
+        <translation type="vanished">值域</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>自动</translation>
+        <translation type="vanished">自动</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>填充上部</translation>
+        <translation type="vanished">填充上部</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>最小:</translation>
+        <translation type="vanished">最小:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>填充下部:</translation>
+        <translation type="vanished">填充下部:</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>分割数:</translation>
+        <translation type="vanished">分割数:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>最大:</translation>
+        <translation type="vanished">最大:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>有色地图</translation>
+        <translation type="vanished">有色地图</translation>
     </message>
 </context>
 <context>
@@ -2520,7 +2586,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>颜色设置</translation>
+        <translation type="vanished">颜色设置</translation>
     </message>
 </context>
 <context>

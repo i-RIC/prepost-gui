@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Editatu puntu koordenatuak</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Mugitu erpina</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Ezarri erpina</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

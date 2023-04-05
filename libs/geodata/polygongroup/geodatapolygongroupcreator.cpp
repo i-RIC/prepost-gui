@@ -31,14 +31,6 @@ bool GeoDataPolygonGroupCreator::isCreatable() const
 	return true;
 }
 
-GeoData* GeoDataPolygonGroupCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	auto g = new GeoDataPolygonGroup(parent, this, condition);
-	g->setPosition(condition->position());
-	g->setDefaultMapper();
-	return g;
-}
-
 int GeoDataPolygonGroupCreator::shapeType() const
 {
 	return SHPT_POLYGON;

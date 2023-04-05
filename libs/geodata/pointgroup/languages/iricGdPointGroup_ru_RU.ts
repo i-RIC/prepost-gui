@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Изменение настройки цвета</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Настройка отображения точек</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Выберите файл изображения</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Все изображения (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Выберите файл изображения</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Все изображения (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Изменить настройку дисплея</translation>
+        <translation type="vanished">Изменить настройку дисплея</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Настройка отображения данных точек</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Цвет</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Цвет по значению</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Когда ширина или высота импортируемого изображения больше максимального размера, изображение автоматически сжимается, так что ширина или высота становятся равными максимальному размеру.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Настройка отображения данных точек</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Форма</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Точки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Размер точки:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Изображения значков</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Импортировать изображение (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Прозрачный (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Максимальный размер:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Когда ширина или высота импортируемого изображения больше максимального размера, изображение автоматически сжимается, так что ширина или высота становятся равными максимальному размеру.</translation>
     </message>
 </context>
 </TS>

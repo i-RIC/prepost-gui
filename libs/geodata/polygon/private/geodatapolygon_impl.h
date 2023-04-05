@@ -48,6 +48,12 @@ public:
 	QAction* m_removeVertexAction;
 	QAction* m_coordEditAction;
 
+	QAction* m_customHoleModeAction;
+	QAction* m_customDeleteAction;
+	QAction* m_customAddVertexAction;
+	QAction* m_customRemoveVertexAction;
+	QAction* m_customCoordEditAction;
+
 	QPixmap m_addPixmap;
 	QPixmap m_removePixmap;
 	QPixmap m_movePointPixmap;

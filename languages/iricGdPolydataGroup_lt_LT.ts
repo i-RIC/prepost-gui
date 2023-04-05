@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Pridėti naują %1</translation>
+        <translation type="vanished">Pridėti naują %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Spalvų nustatymas (&amp;S)...</translation>
+        <translation type="vanished">Spalvų nustatymas (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Redaguoti spalvų nustatymus</translation>
+        <translation type="vanished">Redaguoti spalvų nustatymus</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopijuoti...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Ekrano nustatymas (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>„PolyData“ spalvų nustatymas</translation>
+        <translation type="vanished">„PolyData“ spalvų nustatymas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Spalva pagal vertę</translation>
+        <translation type="vanished">Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
 </context>
 <context>

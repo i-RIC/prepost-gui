@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Temel</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>renk haritası</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>İçe aktarırken Renk çubuğu ayarını yoksay</translation>
+        <translation type="vanished">İçe aktarırken Renk çubuğu ayarını yoksay</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Boyut ve Konum</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Yön:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Yatay</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Dikey</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Etiket sayısı:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Oto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Derecelendirme Moduna geçerken, değerler her bölümün orta değerine ayarlanır.</translation>
+        <translation type="vanished">Derecelendirme Moduna geçerken, değerler her bölümün orta değerine ayarlanır.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>İhracat (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Her bölüme eklenecek renk sayısı</translation>
+        <translation type="vanished">Her bölüme eklenecek renk sayısı</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Değer aralığı</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>renk sayısı:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation type="vanished">Biçim</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Bağlanmak</translation>
+        <translation type="vanished">Bağlanmak</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Ön işleme Penceresinin Ayarını Kullanın</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Renk Haritası Ayarı</translation>
+        <translation type="vanished">Renk Haritası Ayarı</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Değer aralığı</translation>
+        <translation type="vanished">Değer aralığı</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Otomatik</translation>
+        <translation type="vanished">Otomatik</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Üst alanı doldurun</translation>
+        <translation type="vanished">Üst alanı doldurun</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Minimum:</translation>
+        <translation type="vanished">Minimum:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Alt alanı doldurun</translation>
+        <translation type="vanished">Alt alanı doldurun</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Bölüm Numarası:</translation>
+        <translation type="vanished">Bölüm Numarası:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation type="vanished">Maks:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>renk haritası</translation>
+        <translation type="vanished">renk haritası</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Renk Ayarı</translation>
+        <translation type="vanished">Renk Ayarı</translation>
     </message>
 </context>
 <context>

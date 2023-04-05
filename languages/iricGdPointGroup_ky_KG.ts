@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Color Setting Edit</translation>
+        <translation type="vanished">Color Setting Edit</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Points Display Setting</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Сүрөт файлын тандаңыз</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Бардык сүрөттөр (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Сүрөт файлын тандаңыз</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Бардык сүрөттөр (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Дисплей жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Дисплей жөндөөсүн түзөтүү</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Пункт %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Упайлар</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Icon Images</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Сүрөттү импорттоо (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Таза (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Максималдуу өлчөмү:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Импорттолгон сүрөттүн туурасы же бийиктиги Макс өлчөмүнөн чоңураак болгондо, туурасы же бийиктиги максималдуу өлчөмгө барабар болушу үчүн сүрөт автоматтык түрдө кичирейт.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Points Data Display Setting</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Форма</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Упайлар</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Упайдын өлчөмү:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Icon Images</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Сүрөттү импорттоо (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Таза (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Максималдуу өлчөмү:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Импорттолгон сүрөттүн туурасы же бийиктиги Макс өлчөмүнөн чоңураак болгондо, туурасы же бийиктиги максималдуу өлчөмгө барабар болушу үчүн сүрөт автоматтык түрдө кичирейт.</translation>
     </message>
 </context>
 </TS>

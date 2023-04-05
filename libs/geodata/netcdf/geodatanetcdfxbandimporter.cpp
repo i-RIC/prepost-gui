@@ -1,5 +1,6 @@
 #include "geodatanetcdfreal.h"
 #include "geodatanetcdfxbandimporter.h"
+#include "private/geodatanetcdf_impl.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -150,7 +151,7 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 				return false;
 			}
 
-			netcdf->m_coordinateSystemType = GeoDataNetcdf::LonLat;
+			netcdf->impl->m_coordinateSystemType = GeoDataNetcdf::LonLat;
 
 			std::vector<double> lons(lonLen);
 			std::vector<double> lats(latLen);
@@ -159,13 +160,13 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 			nc_get_var_double(ncid_in, latVarId, lats.data());
 
 			// set lon and lat data
-			netcdf->m_lonValues.clear();
+			netcdf->impl->m_lonValues.clear();
 			for (size_t i = 0; i < lonLen; ++i) {
-				netcdf->m_lonValues.push_back(lons[i]);
+				netcdf->impl->m_lonValues.push_back(lons[i]);
 			}
-			netcdf->m_latValues.clear();
+			netcdf->impl->m_latValues.clear();
 			for (size_t i = 0; i < latLen; ++i) {
-				netcdf->m_latValues.push_back(lats[i]);
+				netcdf->impl->m_latValues.push_back(lats[i]);
 			}
 			// set time dummy data
 			GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();

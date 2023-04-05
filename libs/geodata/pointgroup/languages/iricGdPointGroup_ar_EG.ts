@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">تحرير إعداد اللون</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>ضبط عرض النقاط</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>حدد ملف الصورة</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>جميع الصور (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">حدد ملف الصورة</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">جميع الصور (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>تحرير إعداد العرض</translation>
+        <translation type="vanished">تحرير إعداد العرض</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>إعداد عرض بيانات النقاط</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>لون</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <source>Form</source>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>عندما يكون عرض أو ارتفاع الصورة المدرجة أكبر من الحجم الأقصى ، يتم تقليص الصورة تلقائيًا بحيث يصبح العرض أو الارتفاع مساويًا للحجم الأقصى.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">إعداد عرض بيانات النقاط</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">لون مخصص</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">شكل</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">نقاط</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">حجم النقطة:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">صور الأيقونات</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">استيراد الصورة (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">واضح (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">اقصى حجم:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">عندما يكون عرض أو ارتفاع الصورة المدرجة أكبر من الحجم الأقصى ، يتم تقليص الصورة تلقائيًا بحيث يصبح العرض أو الارتفاع مساويًا للحجم الأقصى.</translation>
     </message>
 </context>
 </TS>

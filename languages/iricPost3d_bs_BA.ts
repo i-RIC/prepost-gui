@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Domet</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Lica</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Obrazac</translation>
+        <translation type="vanished">Obrazac</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Smjer</translation>
+        <translation type="vanished">Smjer</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Raspon</translation>
+        <translation type="vanished">Raspon</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ja sam za</translation>
+        <translation type="vanished">Ja sam za</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Omogućeno</translation>
+        <translation type="vanished">Omogućeno</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Uzorkovanje</translation>
+        <translation type="vanished">Uzorkovanje</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Svi vrhovi</translation>
+        <translation type="vanished">Svi vrhovi</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Stopa uzorkovanja:</translation>
+        <translation type="vanished">Stopa uzorkovanja:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-smjer</translation>
+        <translation type="vanished">I-smjer</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-smjer</translation>
+        <translation type="vanished">J-smjer</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-smjer</translation>
+        <translation type="vanished">K-smjer</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Prema skalarnoj vrijednosti</translation>
+        <translation type="vanished">Prema skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Oblik strelice</translation>
+        <translation type="vanished">Oblik strelice</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Veličina strelice:</translation>
+        <translation type="vanished">Veličina strelice:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Postavka strelice</translation>
+        <translation type="vanished">Postavka strelice</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Common Setting</translation>
+        <translation type="vanished">Common Setting</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizička vrijednost:</translation>
+        <translation type="vanished">Fizička vrijednost:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Dužina</translation>
+        <translation type="vanished">Dužina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatski</translation>
+        <translation type="vanished">Automatski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardna vrijednost:</translation>
+        <translation type="vanished">Standardna vrijednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[gospođa]</translation>
+        <translation type="vanished">[gospođa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Dužina na ekranu:</translation>
+        <translation type="vanished">Dužina na ekranu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna vrijednost za izvlačenje:</translation>
+        <translation type="vanished">Minimalna vrijednost za izvlačenje:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Lica</translation>
+        <translation type="vanished">Lica</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodati (&amp;A)</translation>
+        <translation type="vanished">Dodati (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Ukloni (&amp;R)</translation>
+        <translation type="vanished">Ukloni (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Lice %1</translation>
+        <translation type="vanished">Lice %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Length Legend</translation>
+        <translation type="vanished">Length Legend</translation>
     </message>
 </context>
 <context>

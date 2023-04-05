@@ -1,30 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
-<!-- gridlandxmlexporter_es_ES.ts -->
+
 <context>
     <name>GridLandXmlExporter</name>
     <message>
         <source>LandXml file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo LandXml</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al exportar a %1</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>LandXml files (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos LandXml (*.xml)</translation>
     </message>
 </context>
-<!-- iricAxis2d_es_ES.ts -->
+
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -32,7 +30,7 @@
         <translation>Ejes</translation>
     </message>
 </context>
-<!-- iricAxis3d_es_ES.ts -->
+
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -40,7 +38,29 @@
         <translation>Ejes</translation>
     </message>
 </context>
-<!-- iricCs_es_ES.ts -->
+
+<context>
+    <name>CoordinateSystemConvertDialog</name>
+    <message>
+        <source>Select Coordinate System of data to import</source>
+        <translation>Seleccionar sistema de coordenadas de datos para importar</translation>
+    </message>
+</context>
+<context>
+    <name>CoordinateSystemConvertWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema coordinado</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Editar...</translation>
+    </message>
+</context>
 <context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
@@ -52,19 +72,19 @@
         <translation>Buscar:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: # 0000ff; "&gt; Sugerencia sobre los sistemas de coordenadas japoneses (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: subrayado; color: # 0000ff; "&gt; Sugerencia sobre los sistemas de coordenadas UTM (EPSG: 32601 - 32760, etc.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
         <translation>(No Especificado)</translation>
     </message>
 </context>
-<!-- iricDistancemeasure_es_ES.ts -->
+
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
     <message>
@@ -187,94 +207,94 @@
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar todos (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay medida de distancia.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar medidas de distancia seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las medidas de distancia?</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished">Propiedad de Medido de Distancia</translation>
+        <translation>Propiedad de medida de distancia</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nombre:</translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Punto de Empieza:</translation>
+        <translation>Punto de partida:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">, </translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Punto Final:</translation>
+        <translation>Punto final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiqueta</translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Ensenar Etiqueta</translation>
+        <translation>Mostrar etiqueta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Contenido</translation>
+        <translation>Contenido</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Personalizado</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posicion</translation>
+        <translation>Posición</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centro-Arriba</translation>
+        <translation>Centro-parte superior</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Centro-Izquierda</translation>
+        <translation>Medio-izquierda</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Centro-Derecha</translation>
+        <translation>Medio-Derecha</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centro-Abajo</translation>
+        <translation>Centro-Inferior</translation>
     </message>
     <message>
         <source>Font Setting</source>
@@ -282,18 +302,18 @@
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Ensenar Marcadores de Fin</translation>
+        <translation>Mostrar marcadores de finalización</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Tamano de Marcador:</translation>
+        <translation>Tamaño del marcador:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
-<!-- iricGccCenterandwidth_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -314,11 +334,11 @@
     </message>
     <message>
         <source>&amp;Import Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea central (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea central (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -338,7 +358,7 @@
     </message>
     <message>
         <source>Center line not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea central aún no definida</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
@@ -370,7 +390,7 @@
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
@@ -379,6 +399,10 @@
     <message>
         <source>Polyline Coordinates</source>
         <translation>Coordenadas de Polilinea</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Configuración de pantalla</translation>
     </message>
 </context>
 <context>
@@ -389,7 +413,7 @@
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -397,7 +421,7 @@
     </message>
     <message>
         <source>nJ should be even. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>nJ debería ser parejo. incrementándose en uno.</translation>
     </message>
 </context>
 <context>
@@ -411,7 +435,7 @@
         <translation>Primero, define la linea poligona, con mouse-clic. La linea poligona se usa como la linea centra de la cuadricula. Despues, define con la anchura, el numero do division de la cuadricula en direccion I y direccion J.</translation>
     </message>
 </context>
-<!-- iricGccCompoundchannel_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -424,11 +448,11 @@
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
@@ -492,7 +516,7 @@
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
     </message>
     <message>
         <source>Generating grid...</source>
@@ -533,6 +557,22 @@
     <message>
         <source>Polyline Coordinates</source>
         <translation>Coordenadas de Polilinea</translation>
+    </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Agregar vértice (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Eliminar vértice (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Editar coordenadas (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Dirección de línea central inversa (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -582,10 +622,10 @@
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina un polígono como la región para crear la cuadrícula y otro polígono como la región del canal de aguas bajas. Luego, agregue una línea poligonal como centro del río. La región del canal de agua baja debe incluirse en la región de creación de la cuadrícula, y la línea central del río debe incluirse en la región del canal de agua baja.</translation>
     </message>
 </context>
-<!-- iricGccExternalprogram_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -593,16 +633,16 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al cargar el archivo de definición del creador de la cuadrícula en la carpeta "%1". Este creador de cuadrícula se ignora. %2</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Grid generation program %1 does not exists.</source>
@@ -637,7 +677,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
@@ -648,7 +688,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Error desconocid (Codigo de error: %1)</translation>
     </message>
 </context>
-<!-- iricGccGridcombine_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -747,11 +787,11 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>x :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>y :</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -770,7 +810,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Elevacion de celdas de obstaculo:</translation>
     </message>
 </context>
-<!-- iricGccGridgenerator_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -992,16 +1032,16 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Variacion de anchura [m]:</translation>
     </message>
 </context>
-<!-- iricGccLaplace_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <source>General purpose grid generation tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramienta de generación de red de uso general</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puede crear una forma de cuadrícula suave resolviendo la ecuación de Laplace.</translation>
     </message>
 </context>
 <context>
@@ -1016,79 +1056,79 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para dividir la región, primero haga clic en el borde de la región y luego haga clic en el borde opuesto.</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione una línea de borde dentro de la región cuando desee unir regiones.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea unir las regiones divididas por el borde seleccionado?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea borrar la configuración de división?</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar la definición de la línea central</translation>
     </message>
     <message>
         <source>Start defining center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Comience a definir la línea central</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar vértice de línea</translation>
     </message>
     <message>
         <source>Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo punto</translation>
     </message>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover vértice de línea</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar vértice</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas de la línea central</translation>
     </message>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover punto</translation>
     </message>
     <message>
         <source>&amp;Build left bank and right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas de margen izquierda y margen derecha (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de interpolación (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Ranura (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineal (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar línea de división (&amp;D)</translation>
     </message>
     <message>
         <source>Remove D&amp;ivision Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar línea divisoria (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
@@ -1100,43 +1140,43 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas (&amp;E)...</translation>
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de división para toda la región (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de división para la línea seleccionada (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Edge Points Deploying Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de implementación de puntos de borde (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de implementación para el área seleccionada (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de división clara (&amp;C)...</translation>
     </message>
     <message>
         <source>Please build left bank and right bank lines before creating grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Construya líneas de margen izquierda y margen derecha antes de crear la cuadrícula.</translation>
     </message>
     <message>
         <source>Start adding new edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Comience a agregar una nueva ventaja</translation>
     </message>
     <message>
         <source>Edge Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas del borde</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron datos de sección transversal. Defina la Línea central usted mismo.</translation>
     </message>
 </context>
 <context>
@@ -1147,75 +1187,75 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea central aún no está definida.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas bancarias</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese la distancia desde la línea central</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Banco izquierdo:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen derecho:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencia: Las líneas de la orilla izquierda y la orilla derecha se crean como una línea que consta de puntos que están alejados de la línea central a la dirección perpendicular a la línea central.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el número de secciones transversales de control</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de secciones transversales de control:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencias: Las secciones transversales de control son las secciones transversales cuyos puntos centrales se utilizan como línea central de la cuadrícula.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDeploySettingDialog</name>
     <message>
         <source>Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de despliegue de puntos</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Implementar configuración</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Igualmente dividido</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>División geométrica</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Razón común:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDivisionSettingDialog</name>
     <message>
         <source>Division Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de división</translation>
     </message>
     <message>
         <source>Division Number:</source>
@@ -1223,96 +1263,96 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Implementar configuración</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Igualmente dividido</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>División geométrica</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Razón común:</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Implementar objetivo de configuración</translation>
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta línea solamente</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta línea y líneas en posiciones paralelas</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuración de implementación se aplica a todas las líneas en posiciones paralelas. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceSubRegionDeploySettingDialog</name>
     <message>
         <source>Inner Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de implementación de puntos internos</translation>
     </message>
     <message>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Proporción</translation>
     </message>
     <message>
         <source>Poisson</source>
-        <translation type="unfinished"></translation>
+        <translation>Poisson</translation>
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección Streamwise:</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección de la sección transversal:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de división para toda la región</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Create &amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadrícula (&amp;G)</translation>
     </message>
 </context>
-<!-- iricGccPoisson_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear forma de cuadrícula resolviendo la ecuación de Poisson</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puede crear una forma de cuadrícula suave resolviendo la ecuación de Poisson.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas de margen izquierda y margen derecha</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
@@ -1324,39 +1364,39 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>&amp;Import Right Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea de margen derecha (&amp;I)...</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea central (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea central (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas de la línea central (&amp;T)...</translation>
     </message>
     <message>
         <source>Import &amp;Left Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea de margen izquierda (&amp;L)...</translation>
     </message>
     <message>
         <source>Export Le&amp;ft Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea de margen izquierda (&amp;F)...</translation>
     </message>
     <message>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar las coordenadas de la línea del margen izquierdo (&amp;C)...</translation>
     </message>
     <message>
         <source>Export Ri&amp;ght Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea de margen derecha (&amp;G)...</translation>
     </message>
     <message>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas de línea de margen derecha (&amp;H)...</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1364,35 +1404,35 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>%1 not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 aún no definido</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La región de la cuadrícula aún no está definida.</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea central aún no está definida.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea central</translation>
     </message>
     <message>
         <source>Left bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea de margen izquierda</translation>
     </message>
     <message>
         <source>Right bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea de margen derecha</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar vértice de línea</translation>
     </message>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo punto de línea</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -1400,27 +1440,27 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Move Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover línea</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover vértice de línea</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar vértice</translation>
     </message>
     <message>
         <source>%1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Coordenadas</translation>
     </message>
     <message>
         <source>Edit %1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1 Coordenadas</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron datos de sección transversal. Defina la Línea central usted mismo.</translation>
     </message>
 </context>
 <context>
@@ -1438,38 +1478,38 @@ The low water channel region should be included in grid creation region, andRive
     <name>GridCreatingConditionPoissonBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas bancarias</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese la distancia desde la línea central</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Banco izquierdo:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen derecho:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencia: Las líneas de la orilla izquierda y la orilla derecha se crean como una línea que consta de puntos que están alejados de la línea central a la dirección perpendicular a la línea central.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el número de secciones transversales de control</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de secciones transversales de control:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencias: Las secciones transversales de control son las secciones transversales cuyos puntos centrales se utilizan como línea central de la cuadrícula.</translation>
     </message>
 </context>
 <context>
@@ -1480,14 +1520,14 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número máximo de iteraciones:</translation>
     </message>
 </context>
-<!-- iricGccRectangularregionlonlat_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1534,10 +1574,10 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
 </context>
-<!-- iricGccRectangularregion_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1584,10 +1624,10 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
 </context>
-<!-- iricGccRiversurvey15d_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -1604,17 +1644,17 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Create 1.5D grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Cree una cuadrícula 1.5D a partir de datos de sección transversal</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>La forma de la cuadrícula se define automáticamente utilizando datos de sección transversal. Puede especificar el número de división de la cuadrícula agregando puntos de control de creación de cuadrícula en el centro del río. Nota: ¡Este algoritmo solo está disponible cuando se cargan datos de sección transversal! Cambie el algoritmo a este, después de importar datos de sección transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no existen datos de corte transversal en los datos geográficos. Este algoritmo no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -1625,7 +1665,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
@@ -1681,7 +1721,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de corte transversal. Esta condición de creación de cuadrícula no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -1723,11 +1763,11 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation>0.0</translation>
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt;s &lt;1</translation>
     </message>
 </context>
 <context>
@@ -1808,22 +1848,22 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de posición de los puntos de elevación:</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde la orilla izquierda</translation>
     </message>
     <message>
         <source>Distance from center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde el punto central</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation type="unfinished"></translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>La "orilla izquierda" es la orilla que ve en el lado izquierdo, cuando gira en dirección aguas abajo.</translation>
     </message>
 </context>
-<!-- iricGccRiversurvey_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -1836,17 +1876,17 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Create grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadrícula a partir de datos de sección transversal</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>La forma de la cuadrícula se define automáticamente utilizando datos de sección transversal. Puede especificar el número de división de la cuadrícula agregando puntos de control de creación de la cuadrícula en las secciones transversales del río, el centro del río, la orilla izquierda y la orilla derecha. Nota: ¡Este algoritmo solo está disponible cuando se cargan datos de sección transversal! Cambie el algoritmo a este, después de importar datos de sección transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no existen datos de corte transversal en los datos geográficos. Este algoritmo no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -1857,7 +1897,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
@@ -1913,7 +1953,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de corte transversal. Esta condición de creación de cuadrícula no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -1955,7 +1995,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt;s &lt;1</translation>
     </message>
 </context>
 <context>
@@ -1982,7 +2022,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -2031,7 +2071,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Terminar Linea Transversal:</translation>
     </message>
 </context>
-<!-- iricGccTriangle_es_ES.ts -->
+
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2083,7 +2123,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>&amp;Redivide Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver a dividir la línea de ruptura (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -2163,7 +2203,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando &quot;Enter&quot;.</translation>
+        <translation>Definir region de refinamiento. Region de refinamiento puede ser definado como poligono con clic de mouse. Termina definando con doble click, o presienando "Enter".</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
@@ -2171,7 +2211,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Add New Break Line</source>
@@ -2179,15 +2219,15 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Input divide number</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el número de división</translation>
     </message>
     <message>
         <source>Divide number</source>
-        <translation type="unfinished"></translation>
+        <translation>Dividir número</translation>
     </message>
     <message>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define linea de ruptura. Linea de ruptura puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -2239,11 +2279,11 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea de ruptura puede tener intersecciones con polígonos, pero las líneas de ruptura no deben dividir los polígonos en varias áreas. Si las líneas de corte se configuran de esa manera, el resultado es ambiguo.</translation>
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
@@ -2280,12 +2320,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Entra la area maxima para las celdas dentro del poligono de refinamiento.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2334,39 +2374,43 @@ p, li { white-space: pre-wrap; }
         <translation>Especificando valores pequenos, puedes generar cuadriculas finas.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-<!-- iricGdNetcdf_es_ES.ts -->
+
 <context>
     <name>GeoDataNetcdf</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de color editar</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuración de visualización de datos ráster</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de color de datos ráster</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
@@ -2381,84 +2425,108 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster</translation>
     </message>
     <message>
         <source>Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileListDialog</name>
     <message>
         <source>Confirm File List</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar lista de archivos</translation>
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se importarán los siguientes archivos. ¿Está bien?</translation>
+    </message>
+    <message>
+        <source>Please select the files to be imported.</source>
+        <translation>Seleccione los archivos a importar.</translation>
+    </message>
+    <message>
+        <source>&amp;Select All</source>
+        <translation>Seleccionar todo (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Deselect All</source>
+        <translation>Deseleccionar todo (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>The time interval between the selected files are not the same.</source>
+        <translation>El intervalo de tiempo entre los archivos seleccionados no es el mismo.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de patrón de nombre de archivo</translation>
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el patrón de nombre de archivo para reconocer la fecha y la hora.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del archivo:</translation>
     </message>
     <message>
         <source>Pattern:</source>
-        <translation type="unfinished"></translation>
+        <translation>Patrón:</translation>
     </message>
     <message>
         <source>YYYYMMDD_hhmmss</source>
-        <translation type="unfinished"></translation>
+        <translation>AAAAMMDD_hhmmss</translation>
     </message>
     <message>
         <source>Recognize result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reconocer resultado:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilice las siguientes letras para definir el patrón: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -derecha: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; Año: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mes: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Día: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minuto: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Segundo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre del archivo no coincide con el patrón</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGdalExporter</name>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estos datos no se pueden exportar. Parece que no se importó de *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Estos datos no se pueden exportar. Los datos con dimensión "Tiempo" no se pueden exportar a *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos ASCII de ArcInfo (*.asc)</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos GeoTiff (*.tif)</translation>
     </message>
 </context>
 <context>
@@ -2469,15 +2537,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos ASCII de ArcInfo (*.asc)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2485,178 +2553,194 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos de datos GDAL se pueden importar para condiciones de cuadrícula sin dimensiones y solo dimensión de tiempo.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valores de dimensión para discrepancias de tiempo.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>El sistema de coordenadas no está especificado para %1. Seleccione el sistema de coordenadas manualmente.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>Apertura %1 ha fallado.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG en escala de grises de 16 bits (*.png)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estos datos no se pueden exportar. Parece que no se importó de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Estos datos no se pueden exportar. Los datos con la dimensión "Tiempo" no se pueden exportar a *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al inicializar libpng.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG en escala de grises de 16 bits (para Unreal Engine 4)</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG en escala de grises de 16 bits (*.png)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos PNG de 16 bits en escala de grises se pueden importar para condiciones de cuadrícula sin dimensiones.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1. Parece que no es un archivo PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no es una imagen en escala de grises de 16 bits.</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no existe.</translation>
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer %1. No es un archivo mundial válido.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al analizar %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no tiene variable que se pueda importar.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valores de dimensión para %1 discordancia.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se produjo un error al analizar la definición de tiempo: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no tiene datos de longitud, latitud ni x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar fecha original</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló el reconocimiento automático de la hora original. Especifique la fecha original.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidades:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished"></translation>
+        <translation>días desde 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidad:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>años</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>dias</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>horas</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minutos</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora original:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de asignación de dimensiones</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -2664,234 +2748,464 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiones</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos NetCDF (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuración de visualización de datos ráster</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster de serie temporal</translation>
     </message>
     <message>
         <source>Time Series Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster de serie temporal %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de XBand MP RADER</translation>
     </message>
     <message>
         <source>X band MP rader data (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del rader MP de banda X (*.*)</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>Los datos del rader MP de banda X se pueden importar para las condiciones de la red con la dimensión "Tiempo".</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacion</translation>
+        <translation type="vanished">Informacion</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">%1 archivos en la carpeta %2 son importados.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valores de dimensión para discrepancias de tiempo.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>Los datos ráster de serie temporal ya están importados. Si desea importar otros datos, primero elimine los datos ya importados.</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>Ocurrió un error al importar datos convertidos de %1.</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>Ocurrió un error al abrir %1.</translation>
     </message>
 </context>
-<!-- iricGdPointGroup_es_ES.ts -->
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+</context>
+
 <context>
     <name>GeoDataPointGroup</name>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto %1</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Clasificar (&amp;S)</translation>
     </message>
     <message>
         <source>P&amp;oint</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New Point...</source>
+        <translation>Agregar nuevo punto (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="vanished">Editar configuración de color</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Configuración de visualización de puntos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Seleccionar archivo de imagen</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Todas las imágenes (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Seleccionar archivo de imagen</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Todas las imágenes (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation>Configuración de visualización de grupo de puntos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamaño de punto:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>punto</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvImporter</name>
     <message>
         <source>CSV file (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (puntos)</translation>
     </message>
     <message>
         <source>CSV file (Points) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (puntos) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 3 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener 4 columnas como mínimo.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 3 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener 4 columnas como mínimo.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (puntos)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Points) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (puntos) (*.shp)</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto %1</translation>
     </message>
 </context>
-<!-- iricGdPointmap_es_ES.ts -->
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntos</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Imágenes de iconos</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Importar imagen (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Claro (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Tamaño máximo:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Cuando el ancho o el alto de la imagen importada es mayor que el tamaño máximo, la imagen se reduce automáticamente para que el ancho o el alto sea igual al tamaño máximo.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Configuración de visualización de datos de puntos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Color personalizado</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puntos</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Imágenes de iconos</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Importar imagen (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Claro (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Tamaño máximo:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Cuando el ancho o el alto de la imagen importada es mayor que el tamaño máximo, la imagen se reduce automáticamente para que el ancho o el alto sea igual al tamaño máximo.</translation>
+    </message>
+</context>
+
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Borrar Puntos</translation>
+        <translation type="vanished">Borrar Puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propadadies de Puntos Seleccionados</translation>
+        <translation type="vanished">Propadadies de Puntos Seleccionados</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Numero de Puntos:</translation>
+        <translation type="vanished">Numero de Puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <translation type="vanished">Minimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maximo:</translation>
+        <translation type="vanished">Maximo:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Borrar menos quel valor:</translation>
+        <translation type="vanished">Borrar menos quel valor:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation>Editar Puntos</translation>
+        <translation type="vanished">Editar Puntos</translation>
     </message>
     <message>
         <source>Select Refecence Point</source>
@@ -2899,19 +3213,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Anadir Punto de Ruptura de Linea</translation>
+        <translation type="vanished">Anadir Punto de Ruptura de Linea</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Terminar de Definir Linea de Interrupcion</translation>
+        <translation type="vanished">Terminar de Definir Linea de Interrupcion</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Cancelar de Definir Linea de Ruptura</translation>
+        <translation type="vanished">Cancelar de Definir Linea de Ruptura</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Anadir Nuevo Punto de Linea de Interp</translation>
+        <translation type="vanished">Anadir Nuevo Punto de Linea de Interp</translation>
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
@@ -2927,7 +3241,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
+        <translation>Remallado de TIN...</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
@@ -2939,7 +3253,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Cuando cambias a este modo, tienes que &quot;remesh TINs&quot;. Quieres &quot;remesh&quot; ahora?</translation>
+        <translation type="vanished">Cuando cambias a este modo, tienes que "remesh TINs". Quieres "remesh" ahora?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -2955,7 +3269,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select point</source>
-        <translation>Seleccionar Punto</translation>
+        <translation type="vanished">Seleccionar Punto</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -2975,15 +3289,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Borrar Puntos Seleccionados &amp;Menos Que Valor...</translation>
+        <translation type="vanished">Borrar Puntos Seleccionados &amp;Menos Que Valor...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Borrar Puntos Seleccionados &amp;Mayores Que Valores...</translation>
+        <translation type="vanished">Borrar Puntos Seleccionados &amp;Mayores Que Valores...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TINs (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -2995,11 +3309,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Re&amp;move All Break Lines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar todas las líneas de rotura (&amp;M)...</translation>
     </message>
     <message>
         <source>Remove Triangles &amp;with Long edge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar triángulos con borde largo (&amp;W)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
@@ -3011,19 +3325,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Terminado de &quot;Remesh TINs&quot;.</translation>
+        <translation>Terminado de "Remesh TINs".</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Cuando anadas linea de ruptura, tienes que cambiar para ensenar marco-alambres. Quires cambiar a ensenar los marco-alambres ahora?</translation>
+        <translation type="vanished">Cuando anadas linea de ruptura, tienes que cambiar para ensenar marco-alambres. Quires cambiar a ensenar los marco-alambres ahora?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation>Marco de alambre puede ser definido con mouse-clickin en los puntos entre que quieres anadir linea de ruptura. Termina definando con doble clicking, or presionando &quot;Enter&quot;.</translation>
+        <translation>Marco de alambre puede ser definido con mouse-clickin en los puntos entre que quieres anadir linea de ruptura. Termina definando con doble clicking, or presionando "Enter".</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Cuando removes linea de ruptura, tienes que cambiar a ensenar marco de alambre. Quieres cambiar a ensenar marcos de alambre ahora?</translation>
+        <translation type="vanished">Cuando removes linea de ruptura, tienes que cambiar a ensenar marco de alambre. Quieres cambiar a ensenar marcos de alambre ahora?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -3035,27 +3349,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Cuando desee eliminar triángulos con bordes largos, debe cambiar el Método de visualización a Estructura alámbrica o Superficie. Si presiona el botón OK, el método de visualización cambia a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Cuando editas puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
+        <translation type="vanished">Cuando editas puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Cuando borras puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
+        <translation type="vanished">Cuando borras puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>No puedes borrar puntos que se usan para lineas rupturas.</translation>
+        <translation type="vanished">No puedes borrar puntos que se usan para lineas rupturas.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Borrar Puntos</translation>
+        <translation type="vanished">Borrar Puntos</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Seleccionar Archivo para Exportar</translation>
+        <translation type="vanished">Seleccionar Archivo para Exportar</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -3063,71 +3377,141 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Error ocurrio mientras exportandando a %1.</translation>
+        <translation type="vanished">Error ocurrio mientras exportandando a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Borrar puntos menos de %1</translation>
+        <translation type="vanished">Borrar puntos menos de %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Borrar puntos mas que %1</translation>
+        <translation type="vanished">Borrar puntos mas que %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Cuando se interpolan puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
+        <translation type="vanished">Cuando se interpolan puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation>Para interpolar puntos, selecciona puntos existentes con mouse-clicking, usa Alt para definir camino entre puntos conocidos, y termina con doble-clicking o presionando la tecla &quot;enter&quot;.</translation>
+        <translation>Para interpolar puntos, selecciona puntos existentes con mouse-clicking, usa Alt para definir camino entre puntos conocidos, y termina con doble-clicking o presionando la tecla "enter".</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Cuando anades puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
+        <translation type="vanished">Cuando anades puntos, tienes que cambiar a ensenar puntos. Quieres cambiar a ensenar puntos ahora?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Para anadir puntos nuevos, seleciona un punto existente primero. El valor en ese punto se utilizara como valor predeterminado para puntos nuevos. Despues, click en cualquier posicion que quieras para anadir puntos, y termina con doble-clicking o presionando la tecla &quot;enter&quot;.</translation>
+        <translation>Para anadir puntos nuevos, seleciona un punto existente primero. El valor en ese punto se utilizara como valor predeterminado para puntos nuevos. Despues, click en cualquier posicion que quieras para anadir puntos, y termina con doble-clicking o presionando la tecla "enter".</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar triángulos con borde largo</translation>
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Unir...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>No hay otros datos para fusionar "%1" grupo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Se encontraron puntos duplicados en los destinos de combinación y se omitieron.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe seleccionar un punto conocido y definir al menos una ubicación para los puntos agregados. ¿Quieres volver a intentarlo o cancelar la operación?</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished">Anadir Puntos</translation>
+        <translation>Añadir puntos</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de nuevos puntos</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Para interpolar puntos, debe especificar más de dos puntos y el último punto debe ser un punto existente. ¿Quieres volver a intentarlo o cancelar la operación?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos (&amp;O)</translation>
+    </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation>Modo interruptor (&amp;M)</translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation>Unir (&amp;G)...</translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Configuración de asignación (&amp;M)...</translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation>Seleccione el nombre del archivo para exportar</translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation>Falló al abrir %1.</translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Vuelva a mallar el TIN y, cuando haya terminado, cambie al modo de edición de TIN.</translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation>Modo de selección</translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation>Seleccionar puntos con Región rectangular</translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtrar puntos seleccionados (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation>TIN de malla (&amp;T)</translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation>Clasificar (&amp;S)</translation>
+    </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuración de visualización de nube de puntos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation>No puede eliminar los puntos utilizados para las líneas de quiebre.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation>El incremento de interpolación debe ser mayor que 0 y menor que la longitud de la línea de interpolación</translation>
     </message>
 </context>
 <context>
@@ -3145,62 +3529,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Borrar Puntos</translation>
+        <translation type="vanished">Borrar Puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propadadies de Puntos Seleccionados</translation>
+        <translation type="vanished">Propadadies de Puntos Seleccionados</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Numero de Puntos:</translation>
+        <translation type="vanished">Numero de Puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <translation type="vanished">Minimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maximo:</translation>
+        <translation type="vanished">Maximo:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>Borrar mas que valor:</translation>
+        <translation type="vanished">Borrar mas que valor:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>Editar Puntos</translation>
+        <translation type="vanished">Editar Puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propadadies de Puntos Seleccionados</translation>
+        <translation type="vanished">Propadadies de Puntos Seleccionados</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Numero de Puntos:</translation>
+        <translation type="vanished">Numero de Puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <translation type="vanished">Minimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maximo:</translation>
+        <translation type="vanished">Maximo:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>X-Posicion</translation>
+        <translation type="vanished">X-Posicion</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Y-Posicion</translation>
+        <translation type="vanished">Y-Posicion</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
 </context>
 <context>
@@ -3211,7 +3595,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolar Incremento</translation>
+        <translation type="vanished">Interpolar Incremento</translation>
     </message>
     <message>
         <source>Interpolation Line Length:</source>
@@ -3223,83 +3607,101 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de interpolación</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Incremento de interpolación:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Longitud de la línea:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation type="vanished">Advertencia</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">El incremento de interpolación debe ser mayor que 0 y menor que la longitud de la línea de interpolación</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlExporter</name>
     <message>
         <source>LandXML</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished">Error ocurrio mientras exportandando a %1. {1?}</translation>
+        <translation>Ocurrió un error al exportar a %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo LandXML (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlImporter</name>
     <message>
         <source>LandXML (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML (*.xml)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de análisis %1 en línea %2 columna %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo LandXML (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar datos para fusionar</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione los datos para fusionar este grupo.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todo (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuración de visualización de nube de puntos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
@@ -3314,11 +3716,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos %1</translation>
     </message>
 </context>
 <context>
@@ -3329,7 +3731,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
@@ -3337,7 +3739,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos (DEM, etc.)</translation>
     </message>
 </context>
 <context>
@@ -3348,7 +3750,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
@@ -3356,11 +3758,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM, etc. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Archivo de Topografia (*.tpo)</translation>
+        <translation>Archivo de topografía (*.tpo)</translation>
     </message>
 </context>
 <context>
@@ -3382,194 +3784,202 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished">Error de abrir archivo occurio mientras abriendo %1.</translation>
+        <translation>Se produjo un error al abrir el archivo al abrir %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han encontrado suficientes líneas de encabezado en el archivo.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea %1 : %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 puntos duplicados encontrados. Si se encuentran puntos con los mismos valores xey, se importa el primer punto</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>En la columna %1, %2 o %3 esperado, pero %4 especificado.</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>En la columna %1, delimitador esperado, pero %2 especificado.</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>valor</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha especificado ningún delimitador</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>No hay suficientes valores para leer "%1"."%1"columna es %2 pero %3 entrada de valores.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Se produjo un error al leer "%1" valor. "%1"el valor debe ser un número real, pero"%2"especificado.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de texto (CSV, TSV, etc.)</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Archivo de texto (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation>Archivo de texto (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de importación</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificación:</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de archivo</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV (valores separados por comas)</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>Delimitadores</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Coma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Pestaña</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Espacio</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>Colon</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto y coma</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Otro</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Caracteres especiales</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Carácter de cotización:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando desee especificar varios caracteres de comillas, solo ingrese los caracteres, sin espacios ni comas.</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Personaje de escape:</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones de grabación</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas de encabezado para ignorar</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>La primera línea de encabezado contiene nombres de campo</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar campos</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir configuración</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasa de omisión:</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Avance</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto delimitado personalizado</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>El carácter para escapar de los caracteres de comillas en el texto entre comillas. Puede especificar solo un carácter.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando desee omitir líneas en el archivo, especifique valores mayores que 1. Por ejemplo, si ingresa 2, se importarán todas las demás líneas.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del archivo:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation>Sistema coordinado</translation>
     </message>
 </context>
 <context>
@@ -3607,22 +4017,22 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografía (STL)</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>STL binario (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografía (STL)</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
@@ -3630,7 +4040,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
@@ -3642,10 +4052,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapTINCreator</name>
+    <message>
+        <source>TIN</source>
+        <translation>ESTAÑO</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>Datos de nube de puntos %1</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de partida (DEM, etc.)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
@@ -3656,22 +4077,22 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Mosaico web CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
     <message>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione región</translation>
     </message>
     <message>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo:</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
@@ -3683,11 +4104,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>próximo (&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -3695,88 +4116,424 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation>La región para importar datos aún no está seleccionada. Arrastre a la izquierda en el mapa para seleccionar el área.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Azulejos de elevación USGS (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación GSI (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>Azulejos de elevación GSI (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación GSI (DEM10B)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
     <message>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración del nivel de zoom</translation>
     </message>
     <message>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el nivel de zoom de los datos que desea importar.</translation>
     </message>
     <message>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel del zoom:</translation>
     </message>
     <message>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolución:</translation>
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx m</translation>
     </message>
     <message>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de datos:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB (XXXX puntos)</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MEGABYTE</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 puntos)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ESTAÑO</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntos</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Estructura alámbrica</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superficie</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Cuando está en &amp;quot;Modo de edición de puntosquot;, esta configuración se ignora y los datos TIN siempre se se muestra como puntos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Líneas de ruptura</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Espectáculo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Asignación de polígonos de configuración</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mapa de colores para valores</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Configuración de mapeo de datos de nube de puntos</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Mapeo con TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>Los TIN creados a partir de puntos se utilizan para el mapeo. Los valores de los atributos de cuadrícula definidos en los nodos o celdas de la cuadrícula se calculan como un promedio ponderado de los valores definidos en los nodos del triángulo que contiene el nodo (o el centro de la celda).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Mapeo de plantillas</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encuentre puntos que estén cerca de los nodos de la cuadrícula, con respecto a las formas de las celdas de la cuadrícula, y use los valores en esos puntos para la interpolación.&lt;/p&gt;&lt;p&gt;Este algoritmo puede ser usar solo para cuadrículas estructuradas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Detalle (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Cambiar el algoritmo de mapeo para cada área definida con polígonos</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defina áreas como polígonos y especifique el algoritmo para mapear valores en nodos de cuadrícula o centros de celdas a partir de valores definidos en puntos.&lt;/p&gt;&lt;p&gt;El usuario puede seleccionar entre los siguientes: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Asignar el valor mínimo de los puntos dentro del círculo&lt;/li&gt;&lt;li&gt;Asignar el valor máximo de los puntos dentro del círculo&lt;/li&gt;&lt;li&gt;Asignar el valor promedio ponderado de los puntos dentro del círculo&lt;/li&gt; &lt;li&gt;Valor de mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Configuración de asignación de plantilla</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Región de búsqueda</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manual</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Longitud de corriente [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Ancho de la corriente transversal [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Número de expansiones de plantilla:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Exponente de ponderación:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Editar puntos</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Propiedades de los puntos seleccionados</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Número de puntos:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valor mínimo:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valor máximo:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtrar puntos seleccionados</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Propiedades de los puntos seleccionados</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Número de puntos:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valor mínimo:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valor máximo:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Condición de filtrado</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Seleccionar puntos con valor superior al umbral</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Seleccionar puntos con valor inferior al umbral</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Valor umbral:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Configuración de interpolación</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolar Incremento</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Incremento de interpolación:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Longitud de la línea:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Método de cálculo</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Mapa usando TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Valor mínimo de puntos dentro del radio</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Valor máximo de puntos dentro del radio</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Promedio ponderado de puntos dentro del radio</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Ponderación Exponente k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; se usa como peso al calcular el promedio ponderado de los valores. r es la distancia desde el punto hasta el nodo o el centro de la celda, al que se asigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Radio del círculo para buscar puntos:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>metro</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Cuando se ejecuta el mapeo, se buscan puntos dentro del círculo con el radio arriba para mapear valores a nodos de cuadrícula o centros de celda.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Configuración de visualización de nube de puntos</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Básico</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">ESTAÑO</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puntos</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Estructura alámbrica</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Ancho de línea:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Superficie</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Cuando está en &amp;quot;Modo de edición de puntosquot;, esta configuración se ignora y los datos TIN siempre se se muestra como puntos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Líneas de ruptura</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Espectáculo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Color:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Asignación de polígonos de configuración</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Mapa de colores para valores</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Importar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Exportar (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar triángulos con borde largo</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite de la longitud del borde:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Cuando hagas clic en el botón Aplicar, los triángulos que se eliminarán se pintarán de color oscuro. gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3790,7 +4547,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Anadir Puntos de Interpolacion</translation>
     </message>
 </context>
-<!-- iricGdPoint_es_ES.ts -->
+
 <context>
     <name>GeoDataPoint</name>
     <message>
@@ -3799,7 +4556,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Po&amp;int</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto (&amp;I)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3807,65 +4564,73 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define point by mouse-clicking.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina el punto haciendo clic con el mouse.</translation>
     </message>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>punto</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto</translation>
     </message>
     <message>
         <source>Finish Defining Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar el punto de definición</translation>
     </message>
     <message>
         <source>Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas de puntos</translation>
     </message>
     <message>
         <source>Edit Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas de puntos</translation>
+    </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Mover vértice</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Establecer vértice</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
     <message>
         <source>Point Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de color de punto</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointCreator</name>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto %1</translation>
     </message>
 </context>
-<!-- iricGdPolydataGroup_es_ES.ts -->
+
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Anadir Nuevo %1</translation>
+        <translation type="vanished">Anadir Nuevo %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Explorador de atributos de grupo</translation>
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3881,19 +4646,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Are you sure you want to delete selected %1s?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar los seleccionados? %1 ¿s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>No hay otros datos para fusionar "%1" grupo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre y valor de polydatas</translation>
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo polígono (&amp;A)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name...</source>
@@ -3901,7 +4666,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre y valor (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -3909,23 +4674,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Unir (&amp;M)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Configuracion de &amp;Color...</translation>
+        <translation type="vanished">Configuracion de &amp;Color...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar navegador de atributos (&amp;B)</translation>
     </message>
     <message>
         <source>Move to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover al principio</translation>
     </message>
     <message>
         <source>Move to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover al final</translation>
     </message>
     <message>
         <source>Move up</source>
@@ -3937,30 +4702,34 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de color</translation>
     </message>
     <message>
         <source>Sort data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar datos</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar datos geográficos</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione qué datos geográficos copiar esto %1.</translation>
     </message>
     <message>
         <source>Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dupdo...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Configuración de pantalla (&amp;S)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
     <message>
         <source>PolyData Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegador de atributos de grupo de PolyData</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3968,7 +4737,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3976,105 +4745,109 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar barra de herramientas</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Explorador de atributos de grupo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate</name>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color por Valor</translation>
+        <translation type="vanished">Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupCopySettingDialog</name>
     <message>
         <source>Copy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de copia</translation>
     </message>
     <message>
         <source>Please specify values for copied data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique valores para los datos copiados.</translation>
     </message>
     <message>
         <source>For all</source>
-        <translation type="unfinished"></translation>
+        <translation>Para todos</translation>
     </message>
     <message>
         <source>For each</source>
-        <translation type="unfinished"></translation>
+        <translation>Para cada</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar datos para fusionar</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione los datos para fusionar este grupo.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todo (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo de forma no es %1.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallido.</translation>
     </message>
     <message>
         <source>The number of data mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>El número de discrepancias de datos entre el archivo shp y el archivo dbf.</translation>
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Configuración de importación de grupo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de importación de PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -4090,7 +4863,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre se establece automáticamente (por ejemplo, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4108,13 +4881,17 @@ p, li { white-space: pre-wrap; }
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>No puedes especificar la misma columna para nombre y valor.</translation>
     </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation>Sistema coordinado:</translation>
+    </message>
 </context>
-<!-- iricGdPolydata_es_ES.ts -->
+
 <context>
     <name>GeoDataPolyData</name>
     <message>
         <source>Edit &amp;Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre (&amp;N)</translation>
     </message>
     <message>
         <source>Edit &amp;Value...</source>
@@ -4122,7 +4899,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre y valor (&amp;N)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
@@ -4134,7 +4911,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -4146,26 +4923,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please input new value in this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese un nuevo valor en este %1.</translation>
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de color</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 cambio de nombre y valor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
@@ -4176,7 +4953,7 @@ p, li { white-space: pre-wrap; }
         <translation>Color Personalizado</translation>
     </message>
 </context>
-<!-- iricGdPolygonGroup_es_ES.ts -->
+
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4197,7 +4974,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Clasificar (&amp;S)</translation>
     </message>
     <message>
         <source>Polygon property edit</source>
@@ -4225,7 +5002,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>P&amp;olygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation>Agregar nuevo polígono (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="vanished">Editar configuración de color</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
     </message>
 </context>
 <context>
@@ -4261,156 +5050,190 @@ p, li { white-space: pre-wrap; }
         <source>Polygon%1</source>
         <translation type="vanished">Poligono%1</translation>
     </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="vanished">Configuración de visualización del grupo de polígonos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Grosor de línea:</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>polígono</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished">Poligono</translation>
+        <translation>Polígono</translation>
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al exportar a %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Algunos polígono de estos datos tienen huecos, pero los huecos no se exportan a un archivo CSV. Si desea exportar agujeros, exporte a ESRI Shapefile.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (polígonos)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (polígonos) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. No hay datos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. El polígono debe tener al menos tres puntos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "pid" en la línea %1. "pid" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "vid" en la línea %1. "vid" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "nombre" debe ser el mismo para las líneas donde los valores de "pid" son los mismos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "valor" debe ser el mismo para las líneas donde los valores "pid" son los mismos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polígonos)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polígonos) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -4419,7 +5242,7 @@ p, li { white-space: pre-wrap; }
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 El polígono no se puede importar. El polígono como el siguiente no se puede importar: - Tiene menos de tres puntos - No está cerrado - Las líneas del polígono se cruzan entre sí - El polígono del agujero está fuera del polígono de la región - El polígono pasa por el mismo punto varias veces</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -4477,7 +5300,34 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">No puedes especificar la misma columna para nombre y valor.</translation>
     </message>
 </context>
-<!-- iricGdPolygon_es_ES.ts -->
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+</context>
+
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -4498,7 +5348,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>polígono</translation>
     </message>
     <message>
         <source>Polygon</source>
@@ -4558,7 +5408,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -4566,7 +5416,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Polygon value change</source>
@@ -4597,7 +5447,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
@@ -4623,15 +5473,15 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonImporter</name>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polígono)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
@@ -4639,7 +5489,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallido.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
@@ -4652,7 +5502,7 @@ p, li { white-space: pre-wrap; }
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 El polígono no se puede importar. El polígono como el siguiente no se puede importar: - Tiene menos de tres puntos - No está cerrado - Las líneas del polígono se cruzan entre sí - El polígono del agujero está fuera del polígono de la región - El polígono pasa por el mismo punto varias veces</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -4702,181 +5552,265 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
-<!-- iricGdPolyLineGroup_es_ES.ts -->
+
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Clasificar (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas (&amp;L)</translation>
     </message>
     <message>
         <source>Line%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea %1</translation>
+    </message>
+    <message>
+        <source>&amp;Add New Line...</source>
+        <translation>Agregar nueva línea (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="vanished">Editar configuración de color</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Configuración de visualización de líneas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation type="vanished">Configuración de visualización del grupo de polilíneas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Color personalizado</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Grosor de línea:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Lines%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas %1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Al eliminar este elemento, también se eliminarán las ventanas de gráficos asociadas con estos datos. ¿Está seguro de que desea eliminar este elemento?</translation>
     </message>
     <message>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>línea</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvImporter</name>
     <message>
         <source>CSV file (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (polilíneas)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. No hay datos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. La línea debe tener al menos dos puntos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor de la "tapa" en la línea %1. "tapa" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "vid" en la línea %1. "vid" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "nombre" debe ser el mismo para las líneas donde los valores de "tapa" son los mismos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "valor" debe ser el mismo para las líneas donde los valores de "tapa" son los mismos.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (líneas) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Configuración de visualización de líneas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polilíneas)</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea %1</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (líneas) (*.shp)</translation>
     </message>
 </context>
-<!-- iricGdPolyLine_es_ES.ts -->
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+</context>
+
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -4893,31 +5827,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea (&amp;L)</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar la definición de PolyLine</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo punto de polilínea</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover polilínea</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover vértice de polilínea</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar vértice de polilínea</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar PolyLine Vertex</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -4925,7 +5859,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polyline must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>La polilínea debe tener dos vértices como mínimo.</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -4937,68 +5871,68 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina la polilínea haciendo clic con el mouse. Termine de definir haciendo doble clic o presionando la tecla de retorno.</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>polilínea</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea</translation>
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas de polilínea</translation>
     </message>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas de polilínea</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polilínea)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo de forma no es polilínea.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallido.</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>El número de polilíneas que no coinciden entre el archivo shp y el archivo dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de importación de polilínea</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -5014,7 +5948,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre se establece automáticamente (por ejemplo, Polyline1)</translation>
     </message>
     <message>
         <source>Value</source>
@@ -5037,14 +5971,14 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Archivo de ESRI Forma (*.shp)</translation>
     </message>
 </context>
-<!-- iricGdRiversurvey_es_ES.ts -->
+
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
@@ -5065,15 +5999,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
@@ -5119,7 +6053,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
@@ -5146,7 +6080,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
@@ -5177,7 +6111,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
@@ -5281,7 +6215,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas de margen izquierda y margen derecha</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
@@ -5293,11 +6227,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea central (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea central (&amp;N)...</translation>
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
@@ -5365,7 +6299,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 is not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 aún no está definido</translation>
     </message>
     <message>
         <source>Delete Traversal Lines</source>
@@ -5377,7 +6311,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encuentran datos de puntos para mapear. Importa datos de puntos.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -5385,11 +6319,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea central aún no está definida.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea central</translation>
     </message>
     <message>
         <source>River survey data need at least 2 center points.</source>
@@ -5397,7 +6331,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina la línea central haciendo clic con el mouse. Termine de definir haciendo doble clic o presionando la tecla de retorno.</translation>
     </message>
     <message>
         <source>Remove Extension Line</source>
@@ -5405,7 +6339,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de pantalla</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -5413,32 +6347,55 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 generado.</translation>
     </message>
     <message>
         <source>Cross-section data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de sección transversal necesitan al menos 2 puntos centrales.</translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de sección transversal</translation>
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encuentran datos de nube de puntos para mapear. Importe los datos de la nube de puntos.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Los datos de sección transversal se generan utilizando datos de nubes de puntos. Si desea ajustar la posición de la sección transversal y los datos de la nube de puntos del mapa nuevamente, puede usar "Datos de la nube de puntos del mapa"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de la nube de puntos del mapa</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de nube de puntos</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Los datos de sección transversal se generan utilizando datos de nube de puntos. Si desea ajustar la posición de la sección transversal y los datos de la nube de puntos del mapa nuevamente, puede usar "Datos de la nube de puntos del mapa"</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Los datos de sección transversal se generan utilizando datos de nube de puntos. En alguna región, los datos no existían en la nube de puntos y se asignó el valor 0 para esos puntos. Si desea ajustar la posición de la sección transversal y los datos de la nube de puntos del mapa nuevamente, puede usar "Datos de la nube de puntos del mapa"</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuración de visualización de datos de sección transversal</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Datos de la sección transversal (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
     </message>
 </context>
 <context>
@@ -5448,35 +6405,31 @@ If you want to adjust cross section position and map point clouod data again, yo
         <translation type="vanished">&amp;Encuesta Sobre el Rio</translation>
     </message>
     <message>
-        <source>  </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Datos de sección transversal (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Construir líneas bancarias</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese la distancia desde la línea central</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Banco izquierdo:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen derecho:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sugerencia: Las líneas de la orilla izquierda y la orilla derecha se crean como una línea que consta de puntos que están alejados de la línea central a la dirección perpendicular a la línea central.</translation>
     </message>
 </context>
 <context>
@@ -5491,66 +6444,66 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal</translation>
     </message>
     <message>
         <source>Cross-Section Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de ventana de sección transversal</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de fondo</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala secundaria</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Escamas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -5558,94 +6511,94 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcadores de margen izquierdo / derecho</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente de marcadores de margen izquierdo / derecho</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
     <message>
         <source>Edit Cross Section From Selected Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar sección transversal desde el punto seleccionado</translation>
     </message>
     <message>
         <source>Direction to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección para editar</translation>
     </message>
     <message>
         <source>Left bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Lado de la orilla izquierda</translation>
     </message>
     <message>
         <source>Right bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Lado de la orilla derecha</translation>
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia para editar</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la distancia horizontal</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Specify vertical distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la distancia vertical</translation>
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar la elevación del punto final</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasta el punto en que cruza la sección transversal.</translation>
     </message>
     <message>
         <source>Gradient</source>
-        <translation type="unfinished"></translation>
+        <translation>Degradado</translation>
     </message>
     <message>
         <source>Specify slope</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar pendiente</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Specify fraction  1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique la fracción 1:</translation>
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique la fracción entre la distancia vertical y la distancia horizontal. Por ejemplo, ingresar 10 significa una pendiente del 10% y 20 significa una pendiente del 5%.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation type="unfinished"></translation>
+        <translation>Hacia arriba</translation>
     </message>
     <message>
         <source>Downward</source>
-        <translation type="unfinished"></translation>
+        <translation>Hacia abajo</translation>
     </message>
     <message>
         <source>Edit &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Siguiente (&amp;N)</translation>
     </message>
     <message>
         <source>Edit Crosssection</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar sección transversal</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -5653,19 +6606,19 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay ningún punto de cruce. Compruebe la configuración.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando especifica la distancia vertical, la pendiente no debe ser 0.</translation>
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los ajustes de elevación y pendiente no son válidos.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Cuando especifica la elevación del punto final, no puede ser igual al punto inicial. Si desea dibujar una línea horizontal, seleccione "Especificar distancia horizontal".</translation>
     </message>
 </context>
 <context>
@@ -5676,15 +6629,15 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de sección transversal</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver barra de herramientas de configuración</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de configuración de pantalla</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
@@ -5696,11 +6649,11 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar sección transversal desde el punto seleccionado (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Edit from Dialog...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar desde el cuadro de diálogo (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -5720,23 +6673,23 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Reference</source>
-        <translation type="unfinished"></translation>
+        <translation>Referencia</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de escala automático</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Relación de aspecto: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir la relación de aspecto</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir región</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -5744,15 +6697,15 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcadores de margen izquierdo / derecho</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -5808,7 +6761,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para utilizar esta función, seleccione solo un punto.</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
@@ -5824,11 +6777,11 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar elevación de la superficie del agua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -5836,19 +6789,23 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>No existen datos de elevación de la superficie del agua.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione la elevación de la superficie del agua</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Elevación de la superficie del agua para usar</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Relación de aspecto (V/H): 1 /</translation>
     </message>
 </context>
 <context>
@@ -5879,11 +6836,11 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Relación de aspecto: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar sección transversal</translation>
     </message>
     <message>
         <source>Information</source>
@@ -5891,8 +6848,8 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation type="unfinished"></translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Edite la sección transversal haciendo clic con el mouse. Termine de editar haciendo doble clic o presionando la tecla de retorno. Puede editar con precisión la sección transversal ingresando valores desde el cuadro de diálogo. Ingrese al modo de edición de diálogo desde "Editar desde diálogo" en el menú contextual.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -5904,14 +6861,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Relación de aspecto (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
     <message>
         <source>WSE Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre WSE</translation>
     </message>
     <message>
         <source>Elevation</source>
@@ -5919,7 +6880,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
@@ -5931,7 +6892,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
@@ -5946,7 +6907,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -5958,7 +6919,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nombres de secciones transversales</translation>
     </message>
 </context>
 <context>
@@ -5973,76 +6938,76 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyGenerateDialog</name>
     <message>
         <source>Generate River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de levantamiento de ríos</translation>
     </message>
     <message>
         <source>Number of cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de secciones transversales:</translation>
     </message>
     <message>
         <source>Distance between cross sections [m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia entre secciones transversales [m]:</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia entre puntos de elevación [m]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la sección transversal más aguas arriba</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de datos para mapear:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporter</name>
     <message>
         <source>RiverSurvey data HONRYU export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación HONRYU de datos de RiverSurvey</translation>
     </message>
     <message>
         <source>CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Text File (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de texto (*.txt)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de formato de exportación</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Coma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Pestaña</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Espacio</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Separador:</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Encabezamiento:</translation>
     </message>
     <message>
         <source>Add</source>
@@ -6050,94 +7015,94 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Longitudinal Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia longitudinal:</translation>
     </message>
     <message>
         <source>Distance from previous Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde la sección transversal anterior</translation>
     </message>
     <message>
         <source>Distance from first Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde la primera sección transversal</translation>
     </message>
     <message>
         <source>Columns:</source>
-        <translation type="unfinished"></translation>
+        <translation>Columnas:</translation>
     </message>
     <message>
         <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre, distancia longitudinal, distancia de sección transversal, elevación</translation>
     </message>
     <message>
         <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia longitudinal, nombre, distancia de sección transversal, elevación</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia de sección transversal, elevación, nombre, distancia longitudinal</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia de sección transversal, elevación, distancia longitudinal, nombre</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor LX no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor LY no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor de RX no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor de RY no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 línea %2 "%3": El recuento de puntos no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 línea %2 "%3": Valor de índice no válido</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 línea %2 : datos de sección transversal para %3 no es suficiente</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor de la distancia no es válido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 línea %2 "%3": El valor de elevación no es válido</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation># No se encuentran los datos de la encuesta. Será ignorado.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation># No se encuentran los datos de la sección x. Será ignorado.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation># Los datos de la sección x no están ordenados correctamente. Se ordenará automáticamente.</translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation># Los datos de la sección x contenían datos con las mismas distancias. La distancia de datos se desplaza ligeramente para que pueda importar ambos puntos.</translation>
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
@@ -6149,7 +7114,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de la sección transversal no están ordenados correctamente en %1.</translation>
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
@@ -6157,35 +7122,35 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Línea %2 : Error de lectura. Necesita al menos dos valores.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Línea %2 : Error de lectura. Valor numérico no real "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal %1 no cruza la línea central. El punto central está configurado para ser el punto medio de la vía de bajamar.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>En sección transversal %1, la línea central no se cruza en la vía de bajamar. El punto central está configurado para ser el punto medio de la vía de bajamar.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal %1 no cruza la línea central. El punto central está configurado para ser el punto medio de la orilla izquierda y la orilla derecha.</translation>
     </message>
     <message>
         <source>Cross-Section data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (*.riv)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -6196,7 +7161,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Where to define River center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dónde definir el punto central del río</translation>
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
@@ -6208,34 +7173,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto medio de la vía de agua baja</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Donde la elevación es la más pequeña en forma de agua baja</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Orden de las secciones transversales</translation>
     </message>
     <message>
         <source>Downstream to upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Aguas abajo a aguas arriba</translation>
     </message>
     <message>
         <source>Upstream to downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Upstream to downstream</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea central desde archivo CSV</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemas encontrados en los datos</translation>
     </message>
     <message>
         <source>Name</source>
@@ -6243,123 +7208,123 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Se encuentran los problemas anteriores. ¿Quieres seguir importando?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml (*.xml)</translation>
     </message>
     <message>
         <source>LandXml file(*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo LandXml (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de puntos del mapa</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia entre puntos de elevación [m]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de datos para mapear:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallido.</translation>
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Línea %2 : KP no se ingresa</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Línea %2 "%3": El valor LX no es válido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Línea %2 "%3": El valor LY no es válido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Línea %2 "%3": El valor de RX no es válido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Línea %2 "%3": El valor de RY no es válido</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encuentran los datos del marcador de distancia. Será ignorado.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 línea %2 : "%3": Los datos de la bandera no son válidos.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 línea %2 : "%3": Los datos de distancia no son válidos.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 línea %2 : "%3": Los datos de elevación no son válidos.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione la carpeta donde existen los datos de la sección transversal</translation>
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encuentran los datos de la sección transversal. Será ignorado.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de la sección transversal contenían datos con las mismas distancias. Se utilizan los datos con la elevación más baja: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de la sección transversal no están ordenados correctamente. Se ordenará automáticamente.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de la sección transversal contenían datos con las mismas distancias. La distancia de datos se desplaza ligeramente para que pueda importar ambos puntos.</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Línea %2 : El número de valores debe ser 5, pero %3 valores encontrados.</translation>
     </message>
     <message>
         <source>MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de corte transversal MLIT (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos transversales de MLIT de Japón (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemas encontrados en los datos</translation>
     </message>
     <message>
         <source>Name</source>
@@ -6367,22 +7332,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Related File</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo relacionado</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Problema</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Se encuentran los problemas anteriores. ¿Quieres seguir importando?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuración de visualización de datos de sección transversal</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
@@ -6397,13 +7377,56 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Color de fondo</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Puede personalizar el color mediante la pestaña Mapa de colores.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Líneas de sección transversal</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Escala Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nombres de secciones transversales</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+</context>
+<context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
         <translation>Mover Puntos de Control</translation>
     </message>
 </context>
-<!-- iricGeoIO_es_ES.ts -->
+
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -6412,7 +7435,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el elemento para importar.</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -6437,33 +7460,33 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>PolygonShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolygonShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This polygon contains holes. This polygon can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este polígono contiene huecos. Este polígono no se puede importar.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo no es polígono.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineCsvExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -6478,15 +7501,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Data need two columns.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos necesitan dos columnas.</translation>
     </message>
     <message>
         <source>Data must be real numbers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos deben ser números reales.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -6497,26 +7520,26 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>PolylineShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta polilínea se compone de varias cadenas de líneas. Esta polilínea no se puede importar.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo no es polilínea.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -6535,14 +7558,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer a partir de la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para exportar</translation>
     </message>
 </context>
-<!-- iricGraph2dhybrid_es_ES.ts -->
+
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -6579,7 +7602,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -6603,7 +7626,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Title: </source>
@@ -6641,6 +7664,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right Y-axes range is invalid.</source>
         <translation>Rango de Y-Ejes Derecha es invalido.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation>Segundos</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Minutos</translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation>Horas</translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation>Días</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -6650,15 +7689,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -6686,19 +7725,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>K</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea</translation>
     </message>
     <message>
         <source>Count</source>
@@ -6710,7 +7749,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation>segundos</translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation>minutos</translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation>horas</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>días</translation>
     </message>
 </context>
 <context>
@@ -6768,7 +7823,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Current Only</source>
@@ -6851,15 +7906,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -6893,6 +7948,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>CSV &amp;Export</source>
         <translation>&amp;Exportar CSV</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Configuración de fuente (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -6918,7 +7977,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
@@ -6942,15 +8001,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Yo = %1</translation>
     </message>
     <message>
         <source>I = %1, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Yo = %1, J = %2</translation>
     </message>
     <message>
         <source>I = %1, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Yo = %1, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Index = %1</source>
@@ -6993,8 +8052,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Configuracion de ventana de grafico fallo. Resultado de calculo no esta cargado correctamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Esta función se puede usar cuando se cumplen las siguientes condiciones: &lt;ul&gt; &lt;li&gt; Se dibuja el gráfico para el resultado de la cuadrícula estructurada bidimensional. &lt;/li&gt; &lt;li&gt; El eje X es la dirección I en la cuadrícula. &lt;/ Li &gt; &lt;li&gt; La cuadrícula se crea utilizando el algoritmo "Crear cuadrícula a partir de datos de sección transversal" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7009,7 +8068,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Polyline:</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea:</translation>
     </message>
     <message>
         <source>Calculation Result</source>
@@ -7025,7 +8084,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Grid Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubicación de la cuadrícula:</translation>
     </message>
     <message>
         <source>Two dimensional Data</source>
@@ -7085,11 +8144,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>El título de la primera columna debe ser "X".</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7097,7 +8156,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Polyline Group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo de polilínea:</translation>
     </message>
 </context>
 <context>
@@ -7120,10 +8179,41 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Configuración de la fuente del gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titulo del gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leyendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>eje X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>garrapatas:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>eje Y:</translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
@@ -7134,11 +8224,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>El título de la primera columna debe ser "X".</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -7157,7 +8247,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -7187,47 +8277,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>Graph2dHybridWindowResultCopyDataItem</name>
     <message>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1</translation>
     </message>
     <message>
         <source>%1 (I = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Yo = %2 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Yo = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Yo = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (Index = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Índice = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Yo = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Yo = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, J = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Yo = %3, J = %4 )</translation>
     </message>
 </context>
 <context>
@@ -7248,7 +8338,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>Graph2dHybridWindowRootDataItem</name>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
 </context>
 <context>
@@ -7343,11 +8433,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>IDENTIFICACIÓN:</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -7358,26 +8448,26 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>QObject</name>
     <message>
         <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
+        <translation>GridLocationNull</translation>
     </message>
     <message>
         <source>Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vértice</translation>
     </message>
     <message>
         <source>CellCenter</source>
-        <translation type="unfinished"></translation>
+        <translation>CellCenter</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
 </context>
-<!-- iricGraph2dscattered_es_ES.ts -->
+
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -7394,7 +8484,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -7418,7 +8508,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Title: </source>
@@ -7426,7 +8516,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Add Time to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar tiempo al título</translation>
     </message>
     <message>
         <source>Y Axis</source>
@@ -7465,15 +8555,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -7489,7 +8579,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de gráfico disperso: %1</translation>
     </message>
     <message>
         <source>Controller</source>
@@ -7537,12 +8627,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Draw &amp;Setting</source>
         <translation>Configuracion &amp;de Dibujar</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Configuración de fuente (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
@@ -7577,19 +8671,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eje Y:</translation>
     </message>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Z</translation>
     </message>
 </context>
 <context>
@@ -7597,6 +8691,37 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Draw Setting</source>
         <translation>Configuracion de Dibujo</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Configuración de fuente</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titulo del gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leyendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>eje X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>garrapatas:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>eje Y:</translation>
     </message>
 </context>
 <context>
@@ -7610,15 +8735,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Z</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
@@ -7644,7 +8769,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eje Y:</translation>
     </message>
     <message>
         <source>Left</source>
@@ -7672,7 +8797,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Triángulo</translation>
     </message>
     <message>
         <source>Cross</source>
@@ -7684,14 +8809,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño del símbolo:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
-<!-- iricGraph2dverification_es_ES.ts -->
+
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
@@ -7759,15 +8884,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -7783,11 +8908,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Verification Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de verificación: %1</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Cima</translation>
     </message>
     <message>
         <source>Controller</source>
@@ -7832,7 +8957,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>Graph2dVerificationWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Export CSV file</source>
@@ -7868,7 +8993,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error cuadrático medio de la raíz: %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
@@ -7929,7 +9054,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Volores Medidas vs. Errores Reiduales</translation>
     </message>
 </context>
-<!-- iricGraph2d_es_ES.ts -->
+
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -7992,7 +9117,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -8048,7 +9173,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
 </context>
 <context>
@@ -8063,7 +9188,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Max</source>
@@ -8097,7 +9222,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Mover Elemento Hacia Abajo</translation>
     </message>
 </context>
-<!-- iricGuibase_es_ES.ts -->
+
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -8175,7 +9300,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -8260,7 +9385,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>It is not a real value</source>
@@ -8271,15 +9396,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -8290,7 +9415,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
@@ -8316,7 +9441,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All files (*.*)</source>
@@ -8347,7 +9472,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Grid indices</source>
@@ -8355,25 +9480,56 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
+    </message>
+</context>
+<context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation>Líneas de cuadrícula</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todo</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation>Solo esquema</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation>Índices de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
     </message>
 </context>
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>ItemMultiSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar todo (&amp;A)</translation>
     </message>
 </context>
 <context>
@@ -8391,7 +9547,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ObjectBrowserView</name>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
@@ -8422,56 +9578,56 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>PointClearCommand</name>
     <message>
         <source>Clear Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto claro</translation>
     </message>
 </context>
 <context>
     <name>PointMoveCommand</name>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover punto</translation>
     </message>
 </context>
 <context>
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto fijo</translation>
     </message>
 </context>
 <context>
     <name>PolyLineAddVertexCommand</name>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar vértice de línea</translation>
     </message>
 </context>
 <context>
     <name>PolyLineEditCoordinatesCommand</name>
     <message>
         <source>Edit Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas de línea</translation>
     </message>
 </context>
 <context>
     <name>PolyLineMoveVertexCommand</name>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover vértice de línea</translation>
     </message>
 </context>
 <context>
     <name>PolyLinePushVertexCommand</name>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo punto de línea</translation>
     </message>
 </context>
 <context>
     <name>PolyLineRemoveVertexCommand</name>
     <message>
         <source>Remove Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar vértice de línea</translation>
     </message>
 </context>
 <context>
@@ -8513,7 +9669,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>RealNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
@@ -8528,11 +9684,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor mínimo es %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor máximo es %1.</translation>
     </message>
 </context>
 <context>
@@ -8550,7 +9706,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Title</source>
@@ -8562,7 +9718,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -8570,11 +9726,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualización de etiquetas</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de etiquetas:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -8582,9 +9738,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="unfinished"></translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifique el formato de número en formato printf. Por ejemplo: " %5.2f "para 3,141592 -&gt; 3,14" %4.2e "para 12300 -&gt; 1.23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -8592,11 +9748,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Size</source>
@@ -8632,7 +9788,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
@@ -8640,7 +9796,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
@@ -8678,59 +9834,59 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de valor</translation>
     </message>
     <message>
         <source>Show elapsed time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar tiempo transcurrido</translation>
     </message>
     <message>
         <source>Show actual time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar el tiempo real</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de tiempo transcurrido</translation>
     </message>
     <message>
         <source>SS sec</source>
-        <translation type="unfinished"></translation>
+        <translation>SS seg</translation>
     </message>
     <message>
         <source>MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>MM: SS</translation>
     </message>
     <message>
         <source>HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM: SS</translation>
     </message>
     <message>
         <source>DD:HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>DD: HH: MM: SS</translation>
     </message>
     <message>
         <source>Actual time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de hora real</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>aaaa / mm / dd HH: MM: SS</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>aaaa / mm / dd HH: MM</translation>
     </message>
     <message>
         <source>mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>mm / dd HH: MM: SS</translation>
     </message>
     <message>
         <source>mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>mm / dd HH: MM</translation>
     </message>
     <message>
         <source>HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -8738,14 +9894,18 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede utilizar los siguientes símbolos para definir el formato de hora personalizado: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Año: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM para enero, etc., MMMM para enero, etc.) &lt;/li&gt; &lt;li&gt; Día: d, dd, ddd, dddd (ddd para lunes, etc., dddd para lunes, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh para la visualización de AM / PM) &lt;/li&gt; &lt;li&gt; Minuto: m, mm &lt;/li&gt; &lt;li&gt; Segundo: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>Mostrar zona horaria</translation>
     </message>
 </context>
 <context>
     <name>TooltipLabel</name>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayudar</translation>
     </message>
 </context>
 <context>
@@ -8767,6 +9927,13 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation>Espere por favor...</translation>
+    </message>
+</context>
+<context>
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
@@ -8778,7 +9945,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Max:</source>
@@ -8825,7 +9992,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -8833,26 +10000,26 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo:</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Sólido</translation>
     </message>
     <message>
         <source>Dashed</source>
-        <translation type="unfinished"></translation>
+        <translation>Punteado</translation>
     </message>
     <message>
         <source>Dotted</source>
-        <translation type="unfinished"></translation>
+        <translation>Punteado</translation>
     </message>
 </context>
 <context>
     <name>vtkTextPropertySettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fuente</translation>
     </message>
 </context>
 <context>
@@ -8863,54 +10030,248 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Arial</source>
-        <translation type="unfinished"></translation>
+        <translation>Arial</translation>
     </message>
     <message>
         <source>Courier</source>
-        <translation type="unfinished"></translation>
+        <translation>mensajero</translation>
     </message>
     <message>
         <source>Times</source>
-        <translation type="unfinished"></translation>
+        <translation>Veces</translation>
     </message>
     <message>
         <source>Bold</source>
-        <translation type="unfinished"></translation>
+        <translation>Negrita</translation>
     </message>
     <message>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="unfinished"></translation>
+        <translation>Itálico</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>I</translation>
     </message>
     <message>
         <source>Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Sombra</translation>
     </message>
     <message>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>S</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
 </context>
-<!-- iricGuicore_es_ES.ts -->
+
+<context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Por valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>Editar (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>Configuración del mapa de colores (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Por valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Longitud</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formato:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longitud:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Longitud</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>Valor estandar:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[EM]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>Duración en pantalla:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[píxel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>Valor mínimo a dibujar:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Leyenda de longitud</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>forma de flecha</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>Tamaño de la flecha:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+</context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -8926,11 +10287,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>En archivo %1,incremento de  x-coordenada por pixel y incremento de y-coordenada por pixel no son iguales. Es aceptable, pero puede estar equivocado.</translation>
+        <translation type="vanished">En archivo %1,incremento de  x-coordenada por pixel y incremento de y-coordenada por pixel no son iguales. Es aceptable, pero puede estar equivocado.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -8938,7 +10299,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un punto correspondiente en la ventana principal.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation>Fijar la posición de la imagen</translation>
     </message>
 </context>
 <context>
@@ -8965,11 +10330,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
@@ -8996,53 +10361,490 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>Presionar el botón</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Esconder</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Visualización de etiquetas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="vanished">Ignorar la configuración de la barra de colores al importar</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Colores</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Configuración de la barra de colores</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Seleccionar archivo para importar</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Configuración del mapa de colores (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ocurrió un error al cargar %1 Error de análisis %2 en %3, columna %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ocurrió un error al abrir %1</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparente</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>Visibilidad</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>Cuando se selecciona</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>Siempre</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nunca</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>Título :</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>Configuración de fuente:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Visualización de etiquetas</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>Formato:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>Fondo:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaño y Posición</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Dirección:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Número de etiquetas:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialogo</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>Preajustes:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>Ignorar la configuración de la barra de colores al importar</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>Relación entre valores y colores</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>Ajustar automáticamente según el rango de valores</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>Configurar manualmente</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rango de valores</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automático</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>máx.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Mínimo:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>Colores</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>Rellenar zona inferior</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>Rellenar zona superior</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>Cambiar</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>Configuración de la barra de colores</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>Seleccionar archivo para importar</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Configuración del mapa de colores (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>Ocurrió un error al abrir %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>Ocurrió un error al cargar %1 Error de análisis %2 en %3, columna %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(Seleccione el artículo para aplicar)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>Cambiar al modo discreto</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>Cambiar al modo de gradación</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Advertencia</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>Valor mínimo</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>valor máximo</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>Transparente</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation type="vanished">Al cambiar al modo de gradación, los valores se establecen en el valor medio de cada sección.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Exportar (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>Diálogo Cambiar a modo discreto</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>máx.:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>Mínimo:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation type="vanished">Número de colores a insertar en cada sección</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rango de valores</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Número de colores:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributo</translation>
+        <translation type="vanished">Atributo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>Especifique el número de vértices</translation>
     </message>
 </context>
 <context>
@@ -9109,11 +10911,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se selecciona ningún punto.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ningún punto puede eliminarse más.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -9121,7 +10923,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un punto en el cuadro de diálogo Georeferencia.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>Eliminar puntos</translation>
     </message>
 </context>
 <context>
@@ -9146,7 +10952,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>etiqueta:</translation>
     </message>
 </context>
 <context>
@@ -9235,7 +11041,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
 </context>
 <context>
@@ -9273,26 +11079,26 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Objetivo:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished">Modificaciones que haces seran descartado.</translation>
+        <translation>Se descartarán las modificaciones que haya realizado.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Objetivos</translation>
     </message>
 </context>
 <context>
@@ -9315,7 +11121,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -9329,11 +11135,81 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Configuracion de Contorno</translation>
+        <translation type="vanished">Configuracion de Contorno</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posición</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>Margen horizontal:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>Margen vertical:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Ancho:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Altura:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>Distancia desde la izquierda</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>Distancia desde la derecha</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>Distancia desde arriba</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>Distancia desde abajo</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Seleccionar archivo CGNS de entrada</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>¿Quiere importar la cuadrícula desde el archivo CGNS?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Seleccionar archivo CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Seleccione de qué archivo CGNS leer la cuadrícula.</translation>
+    </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>Archivo CGNS</translation>
     </message>
 </context>
 <context>
@@ -9343,21 +11219,28 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Nodo de definicion no esta archivado</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ValueType incorrecto "%1" Está establecido.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>ConditionType incorrecto "%1"Está establecido.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al cargar el archivo de definición del solucionador. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Widget no controlado en ActionSetValue</translation>
     </message>
 </context>
 <context>
@@ -9368,11 +11251,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>&amp;Guardar y Cerrar</translation>
+        <translation type="vanished">&amp;Guardar y Cerrar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
@@ -9385,7 +11268,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS no tiene información de solucionador. No podemos verificar si este archivo CGNS es compatible con el solucionador. Si no es compatible, tal vez solo se importe una parte de las condiciones. ¿Realmente desea importar este archivo?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
@@ -9397,7 +11280,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador se está ejecutando actualmente, por lo que no puede guardar la condición de cálculo. Presione el botón Cancelar.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
@@ -9406,6 +11289,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>Modificaciones que haces seran descartado.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>Error al abrir el archivo CGNS.</translation>
     </message>
 </context>
 <context>
@@ -9419,65 +11306,69 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del solucionador:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión del solucionador:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tipo de Cuadricula:</translation>
+        <translation>Tipo de cuadrícula:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de la cuadrícula:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de resultados:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Estructurado</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>No estructurado</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished">Seleccionar Archivo</translation>
+        <translation>Seleccione Archivo</translation>
+    </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(El archivo CGNS no está seleccionado)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No hay resultado)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Activado</translation>
     </message>
 </context>
 <context>
@@ -9486,12 +11377,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Seleccionar Archivo</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Seleccionar Directorio</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>El nombre de la carpeta debe constar únicamente de caracteres ingleses.</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
     </message>
 </context>
 <context>
@@ -9514,7 +11428,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar Web</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -9526,11 +11440,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 en fila %2 : El valor %3 es menor que el valor mínimo %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 en fila %2 : El valor %3 es mayor que el valor máximo %4</translation>
     </message>
     <message>
         <source>Choose a text file</source>
@@ -9542,7 +11456,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
@@ -9550,49 +11464,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 son valores para tramos. Por ejemplo, la entrada de valor en la 2ª fila es para el intervalo entre la 1ª y la 2ª fila.</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el nombre del archivo para guardar</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los valores se copian al portapapeles.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Expediente %1 se actualiza después de la importación a la condición de cálculo %2. ¿Quieres importar el archivo actualizado?</translation>
     </message>
     <message>
         <source>Information</source>
         <translation>Informacion</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Puede copiar y pegar los valores, con el acceso directo "Ctrl + C" y "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Los siguientes problemas encontrados:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... y otra %1 errores</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -9603,39 +11517,39 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargar</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de sitio:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha de inicio:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha final:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese un número de sitio.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de sitio no válido.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>La fecha de inicio no es anterior a la fecha de finalización.</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -9643,46 +11557,61 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para importar.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(Seleccione la plantilla para importar)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advertencia</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>El contenido del área de texto se sobrescribe con la plantilla.</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuracion de Mapa de Color</translation>
+        <translation type="vanished">Configuracion de Mapa de Color</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Rango de Valores</translation>
+        <translation type="vanished">Rango de Valores</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatico</translation>
+        <translation type="vanished">Automatico</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Llenar area superior</translation>
+        <translation type="vanished">Llenar area superior</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Minimo:</translation>
+        <translation type="vanished">Minimo:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Llenar area inferior</translation>
+        <translation type="vanished">Llenar area inferior</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Numero de divison:</translation>
+        <translation type="vanished">Numero de divison:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximo:</translation>
+        <translation type="vanished">Maximo:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de Color</translation>
+        <translation type="vanished">Mapa de Color</translation>
     </message>
 </context>
 <context>
@@ -9692,8 +11621,8 @@ Do you really want to import this file?</source>
         <translation>Error ocurrio mientras abriendo el archivo.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Las dos primeras columnas deben ser "X" e "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -9716,34 +11645,34 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de compensación</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -9751,11 +11680,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor X no es apropiado. Ingrese un valor más simple.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor de Y no es apropiado. Ingrese un valor más simple.</translation>
     </message>
 </context>
 <context>
@@ -9785,34 +11714,34 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobando argumento para %1 fallido. Argumentos inválidos: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar variable de resultado de operación simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado del cálculo:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de prueba:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -9820,18 +11749,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ingresa el nombre de la variable.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Este nombre de variable ya se usa</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar resultado de operación simple</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -9839,15 +11768,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados del cálculo para la entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -9855,47 +11784,47 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Definición de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede probar la definición haciendo clic aquí. Si se produce un error al analizar la definición, se muestra el mensaje de error. Cuando la definición se analiza correctamente, el valor se calcula utilizando el &amp; quot; Valor de pruebaquot; para cada entrada se muestra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para probar</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo de cuadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de celdas</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -9903,11 +11832,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre no se ingresa.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Este nombre ya se usa</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -9918,7 +11847,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de resultados de operación simple</translation>
     </message>
     <message>
         <source>Name</source>
@@ -9937,12 +11866,12 @@ Do you really want to import this file?</source>
         <translation>&amp;Abajo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: El orden en la lista es importante. En la definición, puede usar el valor de cálculos de operaciones simples como una variable, que aparece antes en la lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -9962,15 +11891,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo de cuadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de celdas</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partícula</translation>
     </message>
 </context>
 <context>
@@ -9989,11 +11918,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de forma ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
@@ -10001,11 +11930,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de salida:</translation>
     </message>
     <message>
         <source>Time</source>
@@ -10033,15 +11962,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos VTK (binarios)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Full region</source>
@@ -10091,23 +12020,27 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>&amp;Esconder Detalle</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Error ocurrio mientras cargando el resultado de calculo.</translation>
+        <translation type="vanished">Error ocurrio mientras cargando el resultado de calculo.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
@@ -10119,7 +12052,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al cargar el resultado del cálculo para la visualización. Vuelva a intentarlo más tarde o espere hasta que finalice el cálculo.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
@@ -10143,22 +12076,26 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando el resultado del cálculo como archivos de forma ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Error ocurrio mientras guardando %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>Guardando el resultado del cálculo como archivos TPO...</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10166,38 +12103,38 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, el índice de la etiqueta se restablece porque se cambia el tamaño de la cuadrícula.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar argumento de resultado de cadena</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -10205,27 +12142,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para probar</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celda</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10233,7 +12170,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre de la variable está vacío.</translation>
     </message>
 </context>
 <context>
@@ -10244,31 +12181,31 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados del cálculo para la entrada</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para las pruebas</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -10280,15 +12217,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Definición de salida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10300,38 +12237,38 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celda</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Error ocurrio mientras cargando el resultado de calculo.</translation>
+        <translation type="vanished">Error ocurrio mientras cargando el resultado de calculo.</translation>
     </message>
 </context>
 <context>
@@ -10375,7 +12312,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
@@ -10383,11 +12320,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atributo de cuadricula no esta definido para tipo de cuadricula %1. Cuadricula I/O funciones, funciones de creacion de cuadricula quizas no funcionan correctanmente para estos tipos de cuadriculas.</translation>
+        <translation type="vanished">Atributo de cuadricula no esta definido para tipo de cuadricula %1. Cuadricula I/O funciones, funciones de creacion de cuadricula quizas no funcionan correctanmente para estos tipos de cuadriculas.</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -10395,22 +12332,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo proyecto...</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Solucion %1 ya existe.</translation>
+        <translation type="vanished">Solucion %1 ya existe.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Archivo CGNS cuyo nombre contiene caracteres distinitos de alfabetos y numers no pueden ser importado.</translation>
+        <translation type="vanished">Archivo CGNS cuyo nombre contiene caracteres distinitos de alfabetos y numers no pueden ser importado.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10422,7 +12359,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
@@ -10434,7 +12371,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Guardando archivo de proyecto fallo.</translation>
+        <translation type="vanished">%1 Guardando archivo de proyecto fallo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -10458,7 +12395,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>Este archivo de proyecto no se puede leer, porque fue creado por demasiado viejo iRIC (version %1).</translation>
+        <translation type="vanished">Este archivo de proyecto no se puede leer, porque fue creado por demasiado viejo iRIC (version %1).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -10478,7 +12415,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Este archivo es para solver %1 %2. No es compatible cone el solve que estas usando, entonces quizas este archivo fallara. Quieres importar este archivo?</translation>
+        <translation type="vanished">Este archivo es para solver %1 %2. No es compatible cone el solve que estas usando, entonces quizas este archivo fallara. Quieres importar este archivo?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -10490,7 +12427,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de coordenadas no seleccionado.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>Ocurrió un error al abrir el archivo CGNS en el archivo del proyecto: Case1.cgn</translation>
+    </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>Copiando imagen %1 a %2 ha fallado.</translation>
     </message>
 </context>
 <context>
@@ -10508,26 +12453,30 @@ Do you really want to import this file?</source>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha para ajuste t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo para t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>No especificado</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de visualización de la hora</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>Zona horaria:</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espacio de trabajo "%1" tiene %2 carpetas de proyectos que parece que ya no se utilizan. ¿Quieres eliminarlos?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -10549,19 +12498,19 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Índices</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -10573,11 +12522,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Attributes:</source>
@@ -10628,14 +12577,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer compensación</translation>
+    </message>
+</context>
+<context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>Región completa</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>Región activa</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>Región personalizada</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Estoy dentro:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Yo Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>Min J:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J máx.:</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Ajuste de color</translation>
+        <translation type="vanished">Ajuste de color</translation>
     </message>
 </context>
 <context>
@@ -10705,10 +12689,68 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>yo-dirección</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>dirección J</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>yo-dirección</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>dirección J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>dirección K</translation>
+    </message>
+</context>
+<context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Imágenes de fondo (Internet)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10717,64 +12759,64 @@ Do you really want to import this file?</source>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Para obtener una imagen de fondo de Internet, especifique el sistema de coordinación del proyecto, en el siguiente menú. Archivo -&gt; Propiedad</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de imagen de fondo</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (carretera)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (satélite)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (híbrido)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (terreno)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir mapa de calles</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (estándar) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Pale) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (inglés) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Relief) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (imágenes Ortho) (solo Japón)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se especifica el número de compilación del número de versión.</translation>
     </message>
 </context>
-<!-- iricGui_es_ES.ts -->
+
 <context>
     <name>AnimationController</name>
     <message>
@@ -10816,6 +12858,10 @@ Do you really want to import this file?</source>
     <message>
         <source>&amp;Animation Speed Setting...</source>
         <translation>&amp;Configuracion de Velocidad de Animacion...</translation>
+    </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation>Animación en bucle (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -10876,43 +12922,43 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits de Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits portátil (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
@@ -10924,7 +12970,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -10936,7 +12982,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
@@ -10959,7 +13005,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: esta función está disponible solo cuando se ha especificado un sistema de coordenadas.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -10971,7 +13017,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>salida.kml</translation>
     </message>
 </context>
 <context>
@@ -10982,7 +13028,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilice este asistente para especificar los requisitos para generar una salida de instantáneas continua.</translation>
     </message>
 </context>
 <context>
@@ -11058,6 +13104,10 @@ Do you really want to import this file?</source>
         <source>Skip rate :</source>
         <translation>Tasa de saltar :</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -11131,10 +13181,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation>Instantánea continua / Película / Asistente de exportación de Google Earth</translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esperando que el solucionador copie el archivo CGNS...</translation>
     </message>
 </context>
 <context>
@@ -11177,11 +13234,11 @@ Do you really want to import this file?</source>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando actualiza iRIC, debe cerrar iRIC antes de iniciar iRIC Maintainance. Cuando tenga ventanas iRIC distintas a esta, ciérrelas manualmente.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Cierre iRIC y lance iRIC Maintainance</translation>
     </message>
 </context>
 <context>
@@ -11193,7 +13250,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta función está destinada a ser utilizada por desarrolladores de solucionadores o desarrolladores de programas de creación de cuadrículas, no por usuarios. Este asistente generará o actualizará archivos de traducción para archivos de definición de solucionador y archivos de definición de programa de creación de cuadrículas que estén registrados en el sistema iRIC. Debe especificar el nombre del solucionador (o programa de creación de cuadrículas) y la lista de idiomas para los que desea crear o actualizar archivos de traducción.</translation>
     </message>
 </context>
 <context>
@@ -11210,24 +13267,24 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccionar Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón "Aceptar".</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Han pasado días desde el lanzamiento de iRIC Maintainance por última vez. ¿Quieres lanzar iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Lanzar mantenimiento iRIC</translation>
     </message>
 </context>
 <context>
@@ -11238,7 +13295,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Graphics Default</source>
@@ -11254,19 +13311,27 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy de red</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Imágenes de fondo (Internet)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de elevación web</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de fondo</translation>
+    </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fuente predeterminada</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation>Formato de texto</translation>
     </message>
 </context>
 <context>
@@ -11281,11 +13346,86 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección de la sección transversal:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Entre secciones transversales:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Común</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forma de cuadrícula / Índices de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barra de color</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiquetas</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Leyenda de longitud de flecha</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Ventana de preprocesamiento</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Río arriba Río abajo</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nombres de las secciones transversales de los datos topográficos del río</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nombres de condiciones de contorno</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Ventanas de visualización</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiquetas:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Ventanas de gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titulo del gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leyendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Título del eje:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Marcas de eje:</translation>
     </message>
 </context>
 <context>
@@ -11312,63 +13452,63 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Copie el proyecto de carpeta al directorio de trabajo cuando se abra</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobación de actualización</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifique la actualización periódicamente</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo entre verificación (días):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminación de celdas en la cuadrícula de dibujo</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número máximo de celdas extraídas:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número máximo de índices extraídos:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia: si deshabilita la selección y crea una cuadrícula muy grande, es posible que la GUI de iRIC se bloquee debido a la falta de memoria.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite de deshacer:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Consola de solucionador</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas máximas</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>El directorio de trabajo contiene caracteres que no son ASCII.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -11376,15 +13516,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>El directorio de trabajo se cambia, pero el nuevo directorio de trabajo se usa DESPUÉS de salir de la GUI de iRIC.</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta de Python</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: se utiliza para ejecutar solucionadores escritos en Python.</translation>
     </message>
 </context>
 <context>
@@ -11399,7 +13539,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Color Map</source>
@@ -11415,15 +13555,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: La carga de una imagen cuyo ancho (o alto) es mayor que el máximo, se redimensionará automáticamente.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Factor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -11443,7 +13583,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>pixeles</translation>
     </message>
 </context>
 <context>
@@ -11505,35 +13645,35 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>No use proxy</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar la configuración de proxy del sistema</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar configuración de proxy personalizada</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy HTTP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Necesita autenticación para el proxy HTTP</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de usuario:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña:</translation>
     </message>
 </context>
 <context>
@@ -11544,11 +13684,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de fracciones para edición de sección transversal:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -11556,7 +13696,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -11564,7 +13704,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este valor ya existe en la lista.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -11572,26 +13712,57 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar el elemento seleccionado?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea restaurar los valores predeterminados?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar fracción</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique la fracción a sumar:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation>Coordenadas en la barra de estado</translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation>Lugares decimales:</translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation>Navegador de atributos</translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation>Lugares decimales</translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation>Coordenadas:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
     </message>
 </context>
 <context>
@@ -11610,7 +13781,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -11622,34 +13793,34 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese la clave API de Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ahora necesita una clave API para usar Google Maps a través de iRIC. Obtenga su propia clave de API de Google Maps e ingrese aquí, para usar imágenes de Google Maps como imágenes de fondo en el preprocesador y en las ventanas de posprocesamiento 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo (Internet) Editar</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduzca la clave de API de Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>Clave API:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo (Internet) Agregar</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -11657,15 +13828,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejemplo: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom máximo:</translation>
     </message>
 </context>
 <context>
@@ -11684,7 +13855,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -11696,18 +13867,18 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar datos de elevación web</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar datos de elevación web</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -11715,19 +13886,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom mínimo:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom máximo:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejemplo: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
@@ -11770,11 +13941,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazamiento de coordenadas:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha para t = 0:</translation>
     </message>
     <message>
         <source>(No data)</source>
@@ -11815,6 +13986,14 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>(Not specified)</source>
         <translation>(No Especificado)</translation>
+    </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>Configuración de salida</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>Resultados del cálculo de salida en archivos separados</translation>
     </message>
 </context>
 <context>
@@ -11959,9 +14138,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta "%1". Este solucionador se ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -11976,7 +14155,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el solucionador para abrir el proyecto</translation>
     </message>
     <message>
         <source>Name</source>
@@ -12002,12 +14181,12 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Bienvenido a iRIC! iRIC puede simular ríos desde el río Colorado hasta el Nilo.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
@@ -12045,7 +14224,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>iRICMainWindow</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
@@ -12073,11 +14252,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto parece estar abierto por otra ventana de la GUI de iRIC. No puede abrir una carpeta de proyecto desde varias ventanas GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>El proyecto abierto no se copia en el directorio de trabajo y se verá obligado a guardar las modificaciones que realice en este proyecto. Si desea conservar el proyecto actual, guárdelo primero en otro proyecto.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
@@ -12113,11 +14292,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto tiene un resultado de cálculo ENORME, por lo que no se puede guardar como un archivo (*.ipro). Guárdelo como proyecto.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto tiene demasiados archivos, por lo que no se puede guardar como un archivo. (*.ipro). Guárdelo como proyecto.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
@@ -12125,31 +14304,31 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar figura de contorno a ESRI Shapefiles</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar la figura del contorno como archivos de forma ESRI...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no se dibuja ninguna figura de contorno.</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no se puede sobrescribir.</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Google Earth KMZ para Street View</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando archivo KMZ...</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Las cuadrículas se editan o eliminan. Cuando guarda, el resultado del cálculo se descarta.</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -12169,19 +14348,19 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;; Archivo de post script encapsulado (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de transparencia</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres que el fondo sea transparente?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
@@ -12205,7 +14384,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instantánea copiada al portapapeles.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
@@ -12229,36 +14408,36 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>La subventana actualmente activa no admite la exportación de figuras de contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar figura de contorno</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione qué zona usar:</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de trabajo actual (%1) contiene caracteres que no son ASCII. Antes de comenzar un nuevo proyecto, cambie el directorio de trabajo desde el siguiente menú: Opción -&gt; Preferencias</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -12266,7 +14445,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -12274,7 +14453,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -12322,7 +14501,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ se exporta a %1 exitosamente.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
@@ -12342,27 +14521,47 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Una dimensión</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos dimensiones</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Tres dimensiones</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de cálculo, por lo que no puede definir resultados de operaciones simples.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar dimensión</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensión</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>Todos los archivos en %1 esta borrado.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation>Archivo de configuración (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Para exportar un archivo de forma, cambie el modo de color a "Modo discreto".</translation>
     </message>
 </context>
 <context>
@@ -12373,7 +14572,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
@@ -12389,7 +14588,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
@@ -12405,7 +14604,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japonés)</translation>
     </message>
 </context>
 <context>
@@ -12420,7 +14619,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
@@ -12428,7 +14627,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + O</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
@@ -12440,7 +14639,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
@@ -12460,7 +14659,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar instantánea al portapapeles</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
@@ -12500,11 +14699,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Figura de contorno como archivos de forma ESRI (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ para Street View (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
@@ -12528,7 +14727,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Datos geográficos (de la web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -12544,11 +14743,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
@@ -12576,7 +14775,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de la lista de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
@@ -12604,23 +14803,23 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer proyección en (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralelo (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + L</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspectiva (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Mayús + L</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
@@ -12704,7 +14903,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + R</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
@@ -12736,8 +14935,8 @@ Option -&gt; Preferences</source>
         <translation>Abrir Ventana 2D Post-Procesamiento Nueva</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Abrir nueva ventana de posprocesamiento a vista de pájaro 2D</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -12749,11 +14948,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana de gráfico disperso</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana de verificación</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
@@ -12769,7 +14968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionar resultados de operaciones simples (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -12797,11 +14996,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrumentos (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantenimiento (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
@@ -12833,14 +15032,26 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de lista de ventanas</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>Recargar archivo CGNS (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>Recargar archivo CGNS</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>Datos geográficos (elevación desde la web)</translation>
     </message>
 </context>
-<!-- iricHdRiversurveywaterelevation_es_ES.ts -->
+
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -12852,7 +15063,7 @@ Option -&gt; Preferences</source>
     <name>HydraulicDataRiverSurveyWaterElevationImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
@@ -12863,8 +15074,8 @@ Option -&gt; Preferences</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation type="unfinished"></translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>En la columna de %1, el valor "%2"para sección transversal"%3"no es válido. El valor se ignora.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -12872,11 +15083,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Importing %1 canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importador %1 cancelado.</translation>
     </message>
     <message>
         <source>The number of items must be the same in every line.</source>
-        <translation type="unfinished"></translation>
+        <translation>El número de artículos debe ser el mismo en todas las líneas.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -12887,7 +15098,7 @@ Option -&gt; Preferences</source>
         <translation>Archivo de Texto (*.txt)</translation>
     </message>
 </context>
-<!-- iricMeasureddata_es_ES.ts -->
+
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -12912,7 +15123,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
 </context>
 <context>
@@ -12927,34 +15138,81 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Configuracion Escalar</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Valor Medido:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation>Diálogo de configuración de visualización de puntos</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuracion de Pantalla</translation>
+        <translation>Configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntos</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superficie</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Tamano de Punto:</translation>
+        <translation>Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Configuracion Escalar</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Valor Medido:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Configuracion de Pantalla</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Tamano de Punto:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Para rango de valor, valor maximo es menos de valor minimo.</translation>
+        <translation type="vanished">Para rango de valor, valor maximo es menos de valor minimo.</translation>
     </message>
 </context>
 <context>
@@ -12969,65 +15227,72 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizar Configuracion de Flecha</translation>
+        <translation type="vanished">Actualizar Configuracion de Flecha</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation>Configuración de la flecha de datos medidos</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longitud</translation>
+        <translation type="vanished">Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor Estandar:</translation>
+        <translation type="vanished">Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud en la pantalla:</translation>
+        <translation type="vanished">Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo para dibujar:</translation>
+        <translation type="vanished">Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalizado</translation>
+        <translation type="vanished">Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
-<!-- iricMisc_es_ES.ts -->
+
 <context>
     <name>InformationDialog</name>
     <message>
@@ -13040,10 +15305,32 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>ModifyCommandDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+</context>
+<context>
+    <name>QFontEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Editar...</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source> Revision %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Revisión %1</translation>
     </message>
 </context>
 <context>
@@ -13061,10 +15348,10 @@ Option -&gt; Preferences</source>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo %1 fallido.</translation>
     </message>
 </context>
-<!-- iricPost2dbirdeye_es_ES.ts -->
+
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -13075,8 +15362,8 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Postprocesamiento Bird's Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -13095,11 +15382,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (nodo) (&amp;C)...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (centro de la celda) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
@@ -13122,33 +15409,80 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Ejes</translation>
+        <translation type="vanished">Ejes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Escalar</translation>
+        <translation type="vanished">Escalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizar Configuracion de Contorno</translation>
+        <translation type="vanished">Actualizar Configuracion de Contorno</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se puede definir un máximo de cuatro contornos.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Configuración escalar</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="vanished">Valor escalar de elevación</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="vanished">Configuración de color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Por valor escalar</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="vanished">Valor escalar:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Configuración de región (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Configuración de la barra de colores (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Error</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="vanished">Para el rango de valores, el valor máximo es menor que el valor mínimo.</translation>
     </message>
 </context>
 <context>
@@ -13163,7 +15497,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">La configuración de contorno no está disponible porque este resultado no contiene valores escalares de celda.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -13182,36 +15516,82 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Configuración de visualización de forma de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Valor escalar de Elevación</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizar Configuracion de Contorno</translation>
+        <translation type="vanished">Actualizar Configuracion de Contorno</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Escalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuración escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>Por valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rango</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (nodo)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizar Configuracion de Forma de Cuadricula</translation>
+        <translation type="vanished">Actualizar Configuracion de Forma de Cuadricula</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
@@ -13219,10 +15599,10 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Crear contorno</translation>
     </message>
 </context>
-<!-- iricPost2d_es_ES.ts -->
+
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -13257,19 +15637,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>No contours have been defined</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han definido contornos</translation>
     </message>
     <message>
         <source>Please select which scalar to export:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione qué escalar exportar:</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no se dibuja ninguna figura de contorno.</translation>
     </message>
 </context>
 <context>
@@ -13284,7 +15664,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (nodo) (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
@@ -13300,7 +15680,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>P&amp;olygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;O)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attributes...</source>
@@ -13308,7 +15688,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (centro de la celda) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
@@ -13335,185 +15715,185 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longitud</translation>
+        <translation type="vanished">Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor Estandar:</translation>
+        <translation type="vanished">Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud en la pantalla:</translation>
+        <translation type="vanished">Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo para dibujar:</translation>
+        <translation type="vanished">Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Muestreo</translation>
+        <translation type="vanished">Muestreo</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Todos los vertices</translation>
+        <translation type="vanished">Todos los vertices</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tasa de Muestreo:</translation>
+        <translation type="vanished">Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-Direccion</translation>
+        <translation type="vanished">I-Direccion</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-Direccion</translation>
+        <translation type="vanished">J-Direccion</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalizado</translation>
+        <translation type="vanished">Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Ancho de línea:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;Configuracion de Region</translation>
+        <translation type="vanished">&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longitud</translation>
+        <translation type="vanished">Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor Estandar:</translation>
+        <translation type="vanished">Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud en la pantalla:</translation>
+        <translation type="vanished">Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo para dibujar:</translation>
+        <translation type="vanished">Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Muestreo</translation>
+        <translation type="vanished">Muestreo</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Todos los vertices</translation>
+        <translation type="vanished">Todos los vertices</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tasa de Muestreo:</translation>
+        <translation type="vanished">Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>Especificar numero de vertices</translation>
+        <translation type="vanished">Especificar numero de vertices</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalizado</translation>
+        <translation type="vanished">Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Ancho de línea:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;Configuracion de Region</translation>
+        <translation type="vanished">&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia (&amp;G)...</translation>
     </message>
 </context>
 <context>
@@ -13528,7 +15908,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -13540,11 +15920,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay imagen de fondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar imágenes de fondo seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -13586,88 +15966,115 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizar Configuracion de Contorno</translation>
+        <translation type="vanished">Actualizar Configuracion de Contorno</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para exportar KML para Street View, muestre con Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para exportar KML para Street View, el rango de valores debe configurarse manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para exportar KML para Street View, se debe especificar el sistema de coordenadas.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuración escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rango</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se puede definir un máximo de cuatro contornos.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Configuracion Escalar</translation>
+        <translation type="vanished">Configuracion Escalar</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuracion de Pantalla</translation>
+        <translation type="vanished">Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;Configuracion de Region</translation>
+        <translation type="vanished">&amp;Configuracion de Region</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Para rango de valor, valor maximo es menos de valor minimo.</translation>
+        <translation type="vanished">Para rango de valor, valor maximo es menos de valor minimo.</translation>
     </message>
 </context>
 <context>
@@ -13702,21 +16109,39 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>La configuración de contorno no está disponible porque este resultado no contiene valores escalares de celda.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (edgeI)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (edgeJ)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGeoDataGroupDataItem</name>
+    <message>
+        <source>&amp;Color Setting...</source>
+        <translation>Configuración de color (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>%1 Color Setting</source>
+        <translation>%1 Configuración de color</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGeoDataGroupDataItem_ScalarsToColorsEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
     </message>
 </context>
 <context>
@@ -13725,42 +16150,46 @@ Option -&gt; Preferences</source>
         <source>Geographic Data</source>
         <translation>Datos Geograficos</translation>
     </message>
+    <message>
+        <source>Reference Information</source>
+        <translation>Informacion de referencia</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
     <message>
         <source>Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafico</translation>
     </message>
     <message>
         <source>Graph Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Gráfico de cambio de valor físico</translation>
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar configuración de gráfico</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de región personalizada</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todo (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráfico</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -13768,15 +16197,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>I direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Me dirijo</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>All</source>
@@ -13784,7 +16213,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Partial region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región parcial</translation>
     </message>
     <message>
         <source>Start:</source>
@@ -13796,7 +16225,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Skip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltar:</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -13808,19 +16237,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibujar dirección</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical a las líneas de la cuadrícula</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralelo a las líneas de la cuadrícula</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas de cuadrícula</translation>
     </message>
     <message>
         <source>Draw</source>
@@ -13828,7 +16257,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas gráficas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -13840,15 +16269,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>No modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin modificación</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Reste el valor máximo en cada línea</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Reste el valor mínimo en cada línea</translation>
     </message>
 </context>
 <context>
@@ -13856,6 +16285,13 @@ Option -&gt; Preferences</source>
     <message>
         <source>Grid shape</source>
         <translation>Forma de Cuadricula</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Configuración de visualización de forma de cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -13870,7 +16306,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -13882,11 +16318,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos medidos.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar los datos medidos seleccionados</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -13894,18 +16330,18 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todos los datos medidos?</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizar Configuracion de Contorno</translation>
+        <translation type="vanished">Actualizar Configuracion de Contorno</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para exportar KML para Street View, muestre con Contour Figure.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -13913,26 +16349,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para exportar KML para Street View, el rango de valores debe configurarse manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, se debe especificar el sistema de coordenadas.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuración escalar (%1)</translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Para exportar KML para Street View, el modo de color debe ser "Modo discreto"</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rango</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Escalar (nodo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation>Escalar</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Para exportar un archivo de forma, cambie la configuración de color a "Modo discreto".</translation>
     </message>
 </context>
 <context>
@@ -13943,28 +16418,64 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Cambio de Valor Fisico de Flecha</translation>
+        <translation type="vanished">Cambio de Valor Fisico de Flecha</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizar Configuracion de Flecha</translation>
+        <translation type="vanished">Actualizar Configuracion de Flecha</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuración de flechas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Región</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizar Configuracion de Flecha</translation>
+        <translation type="vanished">Actualizar Configuracion de Flecha</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuración de flechas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Región</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles (auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>Partículas (auto)</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
@@ -14026,32 +16537,32 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periódicamente</translation>
     </message>
     <message>
         <source>Generation time interval</source>
         <translation>Intervalo de Tiempo de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -14059,7 +16570,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -14067,7 +16578,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -14110,32 +16621,32 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } p {margen superior: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifica 1, las partículas se generan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si especifica 2, las partículas se generan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si usted especificar 1/2, las partículas se generan para todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -14166,32 +16677,32 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periódicamente</translation>
     </message>
     <message>
         <source>Generation interval</source>
         <translation>Intervalo de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -14199,7 +16710,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -14207,7 +16718,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -14235,7 +16746,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
@@ -14247,19 +16758,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -14282,29 +16793,79 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particle Scalar value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de valor escalar de partículas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Configuración escalar de partículas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de partículas</translation>
+    </message>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>Mostrar navegador de atributos</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Cambio de selección de atributo vectorial</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar la configuración del vector</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Cambio de valor físico de flecha</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Configuración de vectores de partículas</translation>
     </message>
 </context>
 <context>
@@ -14318,11 +16879,46 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowPolyDataGroupDataItem</name>
     <message>
         <source>PolyData value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de valor de PolyData</translation>
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de polígono</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation>Configuración de visualización de datos de polígono</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de línea:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
     </message>
 </context>
 <context>
@@ -14340,7 +16936,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -14390,22 +16986,22 @@ p, li { white-space: pre-wrap; }
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1, las líneas de flujo comienzan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si especifica 2, las líneas de flujo comienzan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1/2, las líneas de flujo comienzan en todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -14413,7 +17009,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -14421,19 +17017,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -14480,7 +17076,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
@@ -14492,19 +17088,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -14530,7 +17126,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizar Configuracion de Forma de Cuadricula</translation>
+        <translation type="vanished">Actualizar Configuracion de Forma de Cuadricula</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -14538,22 +17134,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar configuración escalar de partículas</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Crear contorno</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Crear contorno de celda</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar configuración escalar de polígono</translation>
     </message>
 </context>
-<!-- iricPost3d_es_ES.ts -->
+
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -14611,159 +17207,318 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>Flecha</translation>
+        <translation type="vanished">Flecha</translation>
     </message>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowArrowGroupSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longitud</translation>
-    </message>
-    <message>
-        <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Longitud</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor Estandar:</translation>
-    </message>
-    <message>
-        <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valor Estandar:</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud en la pantalla:</translation>
-    </message>
-    <message>
-        <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo para dibujar:</translation>
+        <translation type="vanished">Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Muestreo</translation>
+        <translation type="vanished">Muestreo</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Todos los vertices</translation>
+        <translation type="vanished">Todos los vertices</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tasa de Muestreo:</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalizado</translation>
+        <translation type="vanished">Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
-    </message>
-    <message>
-        <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Superficies</translation>
+        <translation type="vanished">Superficies</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;Anadir</translation>
+        <translation type="vanished">&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Remover</translation>
+        <translation type="vanished">&amp;Remover</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Superficie%1</translation>
+        <translation type="vanished">Superficie%1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourDataItem</name>
+    <message>
+        <source>Range</source>
+        <translation>Distancia</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem</name>
+    <message>
+        <source>Range%1</source>
+        <translation>Distancia %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>Configuración de contorno (centro de celda)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rango</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="vanished">Configuración de contorno (centro de la celda)</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="vanished">Valor:</translation>
+    </message>
+    <message>
+        <source>Regions</source>
+        <translation type="vanished">Regiones</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="vanished">Configuración de la barra de color (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="vanished">Distancia %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (cell center)</source>
+        <translation>Contornos (centro de la celda)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Advertencia</translation>
+    </message>
+    <message>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="vanished">Se puede definir un máximo de cuatro contornos.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>Rango %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Distancia</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Estoy dentro</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Yo max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activado</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation>Rostro</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>Contorno</translation>
+        <translation type="vanished">Contorno</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Configuracion de Contorno</translation>
+        <translation type="vanished">Configuracion de Contorno</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation>Configuración de contorno (%1)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Rostro %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation>Configuración de contorno</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Caras</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Configuracion de Contorno</translation>
+        <translation type="vanished">Configuracion de Contorno</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor Fisica:</translation>
+        <translation type="vanished">Valor Fisica:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Superficies</translation>
+        <translation type="vanished">Superficies</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;Anadir</translation>
+        <translation type="vanished">&amp;Anadir</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Remover</translation>
+        <translation type="vanished">&amp;Remover</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Superficie%1</translation>
+        <translation type="vanished">Superficie%1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupTopDataItem</name>
     <message>
         <source>Contours</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -14785,6 +17540,80 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation>Rostro %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>j</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation>k</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rango</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>Estoy dentro</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>Yo máx.</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>min J</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J máx.</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K máx.</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activado</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowFaceSettingWidget</name>
     <message>
         <source>Form</source>
@@ -14796,15 +17625,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>K</translation>
     </message>
     <message>
         <source>Range</source>
@@ -14847,6 +17676,13 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>Configuración de visualización de forma de cuadrícula</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowIsosurfaceSettingDialog</name>
     <message>
         <source>Isosurface Setting</source>
@@ -14862,7 +17698,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Full region</source>
@@ -14902,7 +17738,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Max Value</source>
@@ -14914,6 +17750,109 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="vanished">Formulario</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="vanished">Dirección</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="vanished">I</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="vanished">J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="vanished">K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Distancia</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="vanished">Estoy dentro</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="vanished">Yo max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="vanished">J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="vanished">J Max</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="vanished">K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="vanished">K Max</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="vanished">Activado</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="vanished">Muestreo</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="vanished">Todos los vértices</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="vanished">Tasa de muestreo:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="vanished">I-dirección</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="vanished">Dirección J</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="vanished">Dirección K</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Color personalizado</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Por valor escalar</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="vanished">Forma de flecha</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="vanished">Tamaño de la flecha:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="vanished">Ancho de línea:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Isosurface</source>
@@ -14921,7 +17860,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Isosurface physical value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio del valor físico de la isosuperficie</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -14932,14 +17871,140 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Isosurfaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Isosuperficies</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation type="vanished">Cara</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Rostro %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation>Rostro %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation>Configuración de flechas</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>Leyenda de longitud</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation>Caras</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowSettingDialog</name>
+    <message>
+        <source>Arrow Setting</source>
+        <translation type="vanished">Configuración de flecha</translation>
+    </message>
+    <message>
+        <source>Common Setting</source>
+        <translation type="vanished">Configuración común</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Valor físico:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="vanished">Largo</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="vanished">Auto</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="vanished">Valor estandar:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="vanished">[Sra]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="vanished">Longitud en pantalla:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="vanished">[píxel]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="vanished">Valor mínimo a sacar:</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="vanished">Caras</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Agregar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Eliminar (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="vanished">Cara %1</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="vanished">Leyenda de longitud</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation>Flechas</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Advertencia</translation>
+    </message>
+    <message>
+        <source>A maximum of four arrows may be defined.</source>
+        <translation type="vanished">Se puede definir un máximo de cuatro flechas.</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles (auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>Partículas (auto)</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
@@ -14987,32 +18052,32 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periódicamente</translation>
     </message>
     <message>
         <source>Generation time interval</source>
         <translation>Intervalo de Tiempo de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -15020,7 +18085,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -15028,7 +18093,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -15079,32 +18144,32 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } p {margen superior: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifica 1, las partículas se generan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si especifica 2, las partículas se generan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si usted especificar 1/2, las partículas se generan para todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -15123,29 +18188,75 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particle Scalar value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de valor escalar de partículas</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation>Configuración escalar de partículas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamaño de punto:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editar configuración de partículas</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem</name>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Cambio de selección de atributo vectorial</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar la configuración del vector</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation>Cambio de valor físico de flecha</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation>Configuración de vectores de partículas</translation>
     </message>
 </context>
 <context>
@@ -15210,22 +18321,22 @@ p, li { white-space: pre-wrap; }
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1, las líneas de flujo comienzan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si especifica 2, las líneas de flujo comienzan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1/2, las líneas de flujo comienzan en todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -15233,7 +18344,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -15241,19 +18352,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -15268,7 +18379,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizar Configuracion de Forma de Cuadricula</translation>
+        <translation type="vanished">Actualizar Configuracion de Forma de Cuadricula</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -15276,35 +18387,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar configuración escalar de partículas</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Actualizar</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Crear contorno</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear isosuperficie</translation>
     </message>
     <message>
         <source>Delete Isosurface</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar isosuperficie</translation>
     </message>
 </context>
-<!-- iricPostbase_es_ES.ts -->
+
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración del tiempo de generación de partículas</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -15312,11 +18423,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add time step</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar paso de tiempo</translation>
     </message>
     <message>
         <source>Select Time step to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Paso de tiempo para agregar</translation>
     </message>
 </context>
 <context>
@@ -15327,7 +18438,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Dimension:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensión:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
@@ -15339,178 +18450,185 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>One dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos unidimensionales</translation>
     </message>
     <message>
         <source>Two dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos bidimensionales</translation>
     </message>
     <message>
         <source>Three dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos tridimensionales</translation>
     </message>
 </context>
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de partículas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Tamano:</translation>
+        <translation type="vanished">Tamano:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración escalar de partículas</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atributo:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Tamano:</translation>
+        <translation type="vanished">Tamano:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuracion de Flecha</translation>
+        <translation type="vanished">Configuracion de Flecha</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Valor de atributo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Longitud</translation>
+        <translation type="vanished">Longitud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor Estandar:</translation>
+        <translation type="vanished">Valor Estandar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud en la pantalla:</translation>
+        <translation type="vanished">Longitud en la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor minimo para dibujar:</translation>
+        <translation type="vanished">Valor minimo para dibujar:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Muestreo</translation>
+        <translation type="vanished">Muestreo</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Todas las partículas</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tasa de Muestreo:</translation>
+        <translation type="vanished">Tasa de Muestreo:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Especificar el número de partículas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalizado</translation>
+        <translation type="vanished">Color personalizado</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Por valor escalar</translation>
+        <translation type="vanished">Por valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Ancho de línea:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de polígono</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Anchura de Linea:</translation>
+        <translation type="vanished">Anchura de Linea:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de polígono</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atributo:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Ancho de línea</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;Configuracion de Barra de Color</translation>
+        <translation type="vanished">&amp;Configuracion de Barra de Color</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation>Seleccionar resultado objetivo</translation>
     </message>
 </context>
 <context>
@@ -15521,22 +18639,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move label</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover etiqueta</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar el tamaño de la etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de etiqueta</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de etiqueta</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -15544,19 +18662,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Position and Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición y tamaño</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Position</source>
@@ -15564,11 +18682,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izquierda:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cima:</translation>
     </message>
     <message>
         <source>Size</source>
@@ -15576,7 +18694,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -15584,15 +18702,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente y color</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -15600,11 +18718,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Font color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de fuente:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de fondo:</translation>
     </message>
 </context>
 <context>
@@ -15626,11 +18744,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar configuración de proyecto</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de tiempo</translation>
     </message>
 </context>
 <context>
@@ -15655,7 +18773,7 @@ p, li { white-space: pre-wrap; }
         <translation>Nota: Solamente se puede usar Caracteres de Ingles para titulo.</translation>
     </message>
 </context>
-<!-- iricPre_es_ES.ts -->
+
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -15676,7 +18794,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -15714,7 +18832,7 @@ p, li { white-space: pre-wrap; }
     <name>CgnsGridImporter</name>
     <message>
         <source>CGNS files (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file</source>
@@ -15722,7 +18840,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
@@ -15731,7 +18849,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS se crea para %1 versión %2. No es compatible con el solucionador actual. Quizás solo se importe una parte de la cuadrícula. ¿Realmente desea importar la cuadrícula de este archivo?</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -15740,25 +18858,37 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS no tiene información de solucionador. No podemos verificar si este archivo CGNS es compatible con el solucionador. Si no es compatible, tal vez solo se importe una parte de la cuadrícula. ¿Realmente desea importar la cuadrícula de este archivo?</translation>
+    </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation>Este archivo no contiene una cuadrícula que se pueda importar.</translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation>Seleccionar cuadrícula</translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation>Seleccione la cuadrícula para importar.</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Generador de atributos %1 no existe.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Ventana de vista de pájaro de cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -15784,69 +18914,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Configuracion de Ejes</translation>
+        <translation type="vanished">Configuracion de Ejes</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Configuracion de Pantalla</translation>
+        <translation type="vanished">Configuracion de Pantalla</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Color de Cuadricula</translation>
+        <translation type="vanished">Color de Cuadricula</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Atributo de Celda</translation>
+        <translation type="vanished">Atributo de Celda</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Atributo de Celda</translation>
+        <translation type="vanished">Atributo de Celda</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Ejes</translation>
+        <translation type="vanished">Ejes</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Color:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Editar Escala de Z-direccion </translation>
+        <translation type="vanished">Editar Escala de Z-direccion </translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Escala de Z-Direccion</translation>
+        <translation type="vanished">Escala de Z-Direccion</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Entrar nueva escala de Z-direccion.</translation>
+        <translation type="vanished">Entrar nueva escala de Z-direccion.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Editar Configuracion de Color</translation>
+        <translation type="vanished">Editar Configuracion de Color</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation>Editar escala de dirección Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation>Ingrese una nueva escala de dirección Z.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation>Elevación:</translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation>Color de la cuadrícula</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuración del mapa de colores</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation>hachas</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation>Color de fondo:</translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation>Escala de dirección Z:</translation>
     </message>
 </context>
 <context>
@@ -15891,7 +19087,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -15919,11 +19115,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay condición de límite.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar condiciones de contorno seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -15931,7 +19127,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las condiciones de contorno?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation>Editar configuración de pantalla</translation>
     </message>
 </context>
 <context>
@@ -15965,15 +19165,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay configuración de condición de límite.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar la configuración de condición de contorno seleccionada</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las configuraciones de condiciones de contorno?</translation>
     </message>
     <message>
         <source>Add %1</source>
@@ -15992,7 +19192,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia (&amp;G)...</translation>
     </message>
 </context>
 <context>
@@ -16007,7 +19207,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -16019,11 +19219,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay imagen de fondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar imágenes de fondo seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -16032,6 +19232,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Estas seguro que quires borrar todos los imagenes de fondo?</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation>Configuración de visualización de condiciones de contorno</translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation>Configuración de fuente para nombres</translation>
     </message>
 </context>
 <context>
@@ -16046,15 +19257,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo YAML (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Seleccionar caso</translation>
+        <translation type="vanished">Seleccionar caso</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Seleccionar de cual caso en %1 para importar condiciones de calculo.</translation>
+        <translation type="vanished">Seleccionar de cual caso en %1 para importar condiciones de calculo.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -16066,7 +19277,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>La condición de cálculo se ha importado correctamente de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -16082,15 +19293,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los archivos importables (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
@@ -16126,7 +19337,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Datos de Conjunto de &amp;Puntos</translation>
+        <translation type="vanished">Datos de Conjunto de &amp;Puntos</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -16178,7 +19389,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Grid...</source>
@@ -16186,7 +19397,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)</translation>
     </message>
     <message>
         <source>Grid Creating Condition</source>
@@ -16218,19 +19429,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador se está ejecutando. Puede ver la configuración de las condiciones de cálculo, pero no puede sobrescribir.</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea (&amp;L)</translation>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>%1 no estan asignado despues de edite la ultima ves. Quieres ejecutar mapeo ahora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración de la condición de límite "%1"no se asigna después de que se editó la última vez. ¿Desea ejecutar la asignación ahora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -16242,19 +19453,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -16273,7 +19484,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
     </message>
 </context>
 <context>
@@ -16303,7 +19514,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Importar desde web (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -16319,11 +19530,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Configurar Barra Escalar...</translation>
+        <translation type="vanished">Configurar Barra Escalar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16339,11 +19550,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar algoritmo</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el algoritmo para importar datos</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -16351,7 +19562,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer por la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -16359,11 +19570,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation>Importando datos de %1 fallo.</translation>
+        <translation type="vanished">Importando datos de %1 fallo.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no contiene datos para importar.</translation>
     </message>
     <message>
         <source>Importing data...</source>
@@ -16371,11 +19582,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importación cancelada.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -16383,20 +19594,20 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Para importar los datos geográficos, primero especifique el sistema de coordenadas.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo especificado tiene datos no válidos y se ignoraron. Los datos ignorados son los siguientes: %1</translation>
     </message>
     <message>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al importar datos.</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para importar.</translation>
     </message>
     <message>
         <source>Select data to export</source>
@@ -16416,15 +19627,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos geográficos.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar datos geográficos seleccionados</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
@@ -16432,7 +19643,65 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Importar elevación desde la web (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>To import the geographic data, specify coordinate system for the project first.</source>
+        <translation>Para importar los datos geográficos, primero especifique el sistema de coordenadas para el proyecto.</translation>
+    </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation>Editar configuración de variación (&amp;V)...</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Por defecto</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation>Ajuste de variación</translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation>Habilitar variación</translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation>Variación para pasar al solucionador:</translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from "Object Browser".
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: Cuando la variación está habilitada, se crea la variación denominada "Predeterminada" y todos los datos geográficos se mueven a ella. Puede agregar, renombrar, eliminar variaciones desde el "Explorador de objetos". Puede mover, copiar datos geográficos entre variaciones. Los datos de atributos de cuadrícula creados a partir de la variación que seleccione con "Variación para pasar al solucionador" se pasan al solucionador. Puede preparar múltiples variaciones, cambiar cuál pasar al solucionador y asegurarse del efecto de la diferencia.</translation>
     </message>
 </context>
 <context>
@@ -16443,7 +19712,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion de referencia</translation>
     </message>
 </context>
 <context>
@@ -16470,7 +19739,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Importing grid failed.</source>
@@ -16497,7 +19766,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuracion de visualizacion de Atributos de Celda de Cuadricula</translation>
+        <translation type="vanished">Configuracion de visualizacion de Atributos de Celda de Cuadricula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -16505,7 +19774,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione solo un nodo.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -16525,63 +19794,78 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la diferencia...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la proporción...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferencia</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>proporción</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el %1 de %2 en las celdas de la cuadrícula seleccionadas.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Exportar...</translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Archivo de Topografia (*.tpo)</translation>
+        <translation>Archivo de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Exportar como Datos de Topografia</translation>
+        <translation>Exportar como datos topográficos</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Error ocurrio mientras abriendo el archivo.</translation>
+        <translation>Ocurrió un error al abrir el archivo.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Condicion de cuadricula se exporto con exito a %1.</translation>
+        <translation>Condición de cuadrícula exportada con éxito a %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacion</translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 generado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de nube de puntos</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation>Configuración de visualización de atributos de celda de cuadrícula</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -16596,7 +19880,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
@@ -16618,11 +19902,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGridAttributeCustomMappingDialog</name>
     <message>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo de atributos</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar todo (&amp;A)</translation>
     </message>
     <message>
         <source>Geographic Data</source>
@@ -16644,9 +19928,9 @@ Do you really want to import grid from this file?</source>
         <translation>&amp;Ejecutar...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Los siguientes atributos no se asignaron, porque los valores de salida del generador de red para ellos. Si desea mapear datos geográficos para ellos a la fuerza, mapee manualmente con el menú "Cuadrícula" -&gt; "Asignación de atributos" -&gt; "Ejecutar".</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -16665,12 +19949,12 @@ Do you really want to import grid from this file?</source>
         <translation>Mapeo de datos geograficos se termino</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>El atributo de cuadrícula "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condición de frontera "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
 </context>
 <context>
@@ -16685,48 +19969,48 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cuando se crea la cuadrícula, se le pregunta si para ejecutar el mapeo de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>La asignación de atributos se ejecuta solo cuando selecciona manualmente el menú "Ejecutar".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Cartografia de Datos Geograficos</translation>
+        <translation type="vanished">Cartografia de Datos Geograficos</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Cartografia con TINs</translation>
+        <translation type="vanished">Cartografia con TINs</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TINs creado de datos geograficos estan usado para cartografia. Valores de atributo de nodos de cuadricula estan calculado como promedios ponderados en los nodos de TIN.</translation>
+        <translation type="vanished">TINs creado de datos geograficos estan usado para cartografia. Valores de atributo de nodos de cuadricula estan calculado como promedios ponderados en los nodos de TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Asignacion de Mapas</translation>
+        <translation type="vanished">Asignacion de Mapas</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Encuentre puntos de datos geográficos que estén cerca de los nodos de la cuadrícula, con respecto a las formas de las celdas de la cuadrícula, y use los valores en esos puntos para la interpolación. Este algoritmo solo se puede utilizar para cuadrículas estructuradas.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>&amp;Detalle...</translation>
+        <translation type="vanished">&amp;Detalle...</translation>
     </message>
 </context>
 <context>
@@ -16745,7 +20029,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Configuracion de Visualizacion de Atributos de Nodo de Cuadricula </translation>
+        <translation type="vanished">Configuracion de Visualizacion de Atributos de Nodo de Cuadricula </translation>
     </message>
     <message>
         <source>Warning</source>
@@ -16753,7 +20037,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione solo un nodo.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -16761,11 +20045,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal longitudinal abierta (&amp;L)</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
@@ -16785,11 +20069,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para abrir una ventana de sección transversal, seleccione solo un nodo de cuadrícula.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para abrir una ventana de sección transversal longitudinal, seleccione solo un nodo de cuadrícula.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -16809,39 +20093,54 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la diferencia...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la proporción...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferencia</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>proporción</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el %1 de %2 en los nodos de la cuadrícula seleccionados.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 generado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de nube de puntos</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation>Configuración de visualización de atributos de nodo de cuadrícula</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportar (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -16871,11 +20170,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
@@ -16965,19 +20264,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de condición de creación de cuadrícula iRIC (*.igcc)</translation>
     </message>
     <message>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation>La condición de creación de la cuadrícula en este archivo no es compatible con el solucionador</translation>
     </message>
     <message>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para exportar.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -17050,7 +20349,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
@@ -17121,12 +20420,12 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurar &amp;Barra de Escalar...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Abrir ventana de vista de pájaro (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Generación de atributos (&amp;G)</translation>
     </message>
     <message>
         <source> [No Data]</source>
@@ -17134,15 +20433,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 X %2 = %3 )</translation>
     </message>
     <message>
         <source> (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1)</translation>
     </message>
     <message>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar %1</translation>
     </message>
 </context>
 <context>
@@ -17157,11 +20456,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal longitudinal abierta (&amp;L)</translation>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
@@ -17180,11 +20479,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>x:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
 </context>
 <context>
@@ -17199,27 +20498,27 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>x: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>X(%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>y (%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>X( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>y ( %1, %2 ):</translation>
     </message>
 </context>
 <context>
@@ -17230,11 +20529,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Región %1</translation>
     </message>
 </context>
 <context>
@@ -17253,7 +20552,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer por la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -17265,12 +20564,12 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no contiene datos para importar.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo especificado tiene datos no válidos y se ignoraron. Los datos ignorados son los siguientes: %1</translation>
     </message>
     <message>
         <source>Information</source>
@@ -17278,7 +20577,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos se importaron correctamente desde %1.</translation>
     </message>
 </context>
 <context>
@@ -17293,7 +20592,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -17317,11 +20616,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
@@ -17336,7 +20635,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -17348,11 +20647,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos medidos.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar los datos medidos seleccionados</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -17360,7 +20659,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todos los datos medidos?</translation>
     </message>
 </context>
 <context>
@@ -17396,26 +20695,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Configuracion de Leyenda de Color</translation>
+        <translation type="vanished">Configuracion de Leyenda de Color</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Configuracion de Barra de Escalar</translation>
+        <translation type="vanished">Configuracion de Barra de Escalar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editar...</translation>
+        <translation type="vanished">Editar...</translation>
     </message>
 </context>
 <context>
@@ -17464,11 +20763,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)...</translation>
     </message>
     <message>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Red...</translation>
     </message>
 </context>
 <context>
@@ -17494,99 +20793,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titulo</translation>
+        <translation type="vanished">Titulo</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titulo:</translation>
+        <translation type="vanished">Titulo:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Configuración de fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editar...</translation>
+        <translation type="vanished">Editar...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Visualización de etiquetas</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Numero de etiquetas:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Formato:</translation>
+        <translation type="vanished">Formato:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientacion:</translation>
+        <translation type="vanished">Orientacion:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Horizontal</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Tamano</translation>
+        <translation type="vanished">Tamano</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Especifcar tamano de la barra de color como tasa contra el tamano de la ventana.</translation>
+        <translation type="vanished">Especifcar tamano de la barra de color como tasa contra el tamano de la ventana.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Anchura:</translation>
+        <translation type="vanished">Anchura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Si especificas 1,anchura de barra de color es el  mismo a la anchura de ventana.</translation>
+        <translation type="vanished">Si especificas 1,anchura de barra de color es el  mismo a la anchura de ventana.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Altura:</translation>
+        <translation type="vanished">Altura:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Si especificas 1,altura de barra de color es el  mismo a la altura de ventana.</translation>
+        <translation type="vanished">Si especificas 1,altura de barra de color es el  mismo a la altura de ventana.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posicion</translation>
+        <translation type="vanished">Posicion</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Especificar inferior izquierdo posicion de barra de color como tasa contra tamano de ventana.</translation>
+        <translation type="vanished">Especificar inferior izquierdo posicion de barra de color como tasa contra tamano de ventana.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Si especificas 0, barra de color borde izquierdo se encuentra en el borde izquierdo de la ventana.</translation>
+        <translation type="vanished">Si especificas 0, barra de color borde izquierdo se encuentra en el borde izquierdo de la ventana.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Si especificas 0, barra de color inferior se encuentra en el parte inferior de la ventana.</translation>
+        <translation type="vanished">Si especificas 0, barra de color inferior se encuentra en el parte inferior de la ventana.</translation>
     </message>
 </context>
 <context>
@@ -17612,7 +20911,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CGNS (*.cgns)</translation>
     </message>
 </context>
 <context>
@@ -17635,15 +20934,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
@@ -17692,7 +20991,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>&amp;Mover</translation>
     </message>
 </context>
-<!-- iricSolverconsole_es_ES.ts -->
+
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -17729,7 +21028,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto se abre en modo solo publicación. No puede ejecutar el solucionador.</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
@@ -17737,7 +21036,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
@@ -17781,7 +21080,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Han pasado los segundos, pero el solucionador no termina. ¿Quieres matar al solucionador?</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -17819,38 +21118,46 @@ This algorithm can be used only for structured grids.</source>
         <translation>Exportando registro de consola de solucionador fallo.</translation>
     </message>
 </context>
-<!-- rivmaker_es_ES.ts -->
+
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About rivmaker</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre rivmaker</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright: USGS</translation>
     </message>
     <message>
-        <source>rivmaker 2.0</source>
-        <translation type="unfinished"></translation>
+        <source>rivmaker 2.0.2</source>
+        <translation type="vanished">rivmaker 2.0.2</translation>
     </message>
     <message>
-        <source>Release Date: 2021/1/30</source>
-        <translation type="unfinished"></translation>
+        <source>Release Date: 2021/3/2</source>
+        <translation type="vanished">Fecha de lanzamiento: 2021/3/2</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.3</source>
+        <translation>fabricante de agujeros 2.0.3</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/4/28</source>
+        <translation>Fecha de lanzamiento: 2021/4/28</translation>
     </message>
 </context>
 <context>
     <name>ArbitraryHWM</name>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
 </context>
 <context>
     <name>BaseLine</name>
     <message>
         <source>Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base</translation>
     </message>
 </context>
 <context>
@@ -17877,11 +21184,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion contraria (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -17889,11 +21196,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Base line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea base aún no está definida.</translation>
     </message>
     <message>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>El punto no se puede eliminar cuando solo hay dos puntos.</translation>
     </message>
 </context>
 <context>
@@ -17911,56 +21218,56 @@ This algorithm can be used only for structured grids.</source>
     <name>Benchmark</name>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
 </context>
 <context>
     <name>ChartGraphicsView</name>
     <message>
-        <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Relación de aspecto (V / H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de visualización</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Ver barra de herramientas</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir la relación de aspecto</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir región</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Relación de aspecto (V / H): 1 /</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>It is not a real value</source>
@@ -17971,15 +21278,15 @@ This algorithm can be used only for structured grids.</source>
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -17994,29 +21301,29 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La sección transversal aún no está definida.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation type="unfinished"></translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nombre no válido para sección transversal. El nombre debe ser "X1", "X2",... o "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorViewLabelHelper</name>
     <message>
         <source>%1 LB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 LB</translation>
     </message>
     <message>
         <source>%1 RB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 RB</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindow</name>
     <message>
         <source>Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal</translation>
     </message>
     <message>
         <source>Elevation</source>
@@ -18024,152 +21331,152 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Cross Section Window : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal: %1</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos SVG (*.svg)</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nota que se puede abrir.</translation>
     </message>
     <message>
         <source>Cross Section: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal:</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar CSV (&amp;C)...</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de ventana de sección transversal</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala secundaria</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Escamas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de sección transversal</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente Scales</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen izquierda</translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>CrossSections</name>
     <message>
         <source>Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Secciones cruzadas</translation>
     </message>
 </context>
 <context>
@@ -18180,11 +21487,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -18195,18 +21502,18 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -18224,11 +21531,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Import..</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar.. (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export..</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar.. (&amp;E)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -18236,25 +21543,25 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Cross Section lines not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas de sección transversal aún no definidas.</translation>
     </message>
 </context>
 <context>
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación</translation>
     </message>
 </context>
 <context>
     <name>GraphicsSettingDialog</name>
     <message>
         <source>Graphics Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráficos</translation>
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación</translation>
     </message>
     <message>
         <source>Size</source>
@@ -18262,60 +21569,60 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparencia:</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación de agua</translation>
     </message>
 </context>
 <context>
     <name>Hub</name>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
 </context>
 <context>
     <name>LeftBankHWM</name>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
 </context>
 <context>
     <name>MappingSettingDialog</name>
     <message>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de mapeo</translation>
     </message>
     <message>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los puntos se asignan a la sección transversal más cercana</translation>
     </message>
     <message>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos en los que los puntos están todos cerca de secciones transversales</translation>
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN se utiliza para la interpolación en las secciones transversales</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos en los que la densidad de puntos es casi la misma en toda el área</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -18323,19 +21630,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos para los que no podemos generar un buen TIN</translation>
     </message>
     <message>
         <source>Cross section resolution[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolución de sección transversal [m]</translation>
     </message>
     <message>
         <source>Stream-wise length[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud de flujo [m]</translation>
     </message>
     <message>
         <source>Cross-stream width[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura transversal [m]</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
@@ -18350,7 +21657,7 @@ This algorithm can be used only for structured grids.</source>
     <name>Model</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
@@ -18368,19 +21675,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
@@ -18406,15 +21713,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -18447,11 +21754,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -18462,18 +21769,18 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -18491,26 +21798,26 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para eliminar una sección transversal, selecciónela en el Explorador de objetos.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para editar las coordenadas de la sección transversal, selecciónela en el Explorador de objetos.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea base debe ser lo suficientemente larga para cubrir extensiones de HWM</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
-        <translation type="unfinished"></translation>
+        <translation>No todas las secciones transversales cruzan la línea de base</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana principal</translation>
     </message>
 </context>
 <context>
@@ -18521,59 +21828,59 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Cálculo de WSE inicial para la sección transversal %1 fallido</translation>
     </message>
 </context>
 <context>
     <name>ReferenceMark</name>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
 </context>
 <context>
     <name>RightBankHWM</name>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
 </context>
 <context>
     <name>RivCsvExporter</name>
     <message>
         <source>Select directory to save CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar directorio para guardar archivos CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de archivo CSV para exportar</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -18581,18 +21888,18 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 is updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 se actualiza.</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>RivmakerMainWindow</name>
     <message>
         <source>Rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivmaker 1.0</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -18604,7 +21911,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos geográficos (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -18616,15 +21923,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;View</source>
@@ -18648,15 +21955,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + N</translation>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar como (&amp;A)...</translation>
     </message>
     <message>
         <source>Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedad...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -18664,19 +21971,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Q</translation>
     </message>
     <message>
         <source>Dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficticio</translation>
     </message>
     <message>
         <source>&amp;Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación de la superficie del agua (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
@@ -18684,23 +21991,23 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación de la superficie del agua (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Create...</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
@@ -18744,15 +22051,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Base Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;River Survey Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
@@ -18760,15 +22067,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de mapeo (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Graphics Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráficos (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
@@ -18776,19 +22083,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + O</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahorrar</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + S</translation>
     </message>
     <message>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>ficticio</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
@@ -18796,71 +22103,71 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp; Abrir nueva ventana de sección transversal (&amp;N)</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Encajar</translation>
     </message>
     <message>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer rotación</translation>
     </message>
     <message>
         <source>Rotate 90 degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>Girar 90 grados</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercarse</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Disminuir el zoom</translation>
     </message>
     <message>
         <source>Focus Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfoque de la ventana principal</translation>
     </message>
     <message>
         <source>Focus Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal vertical de enfoque</translation>
     </message>
     <message>
         <source>Open Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion contraria (&amp;D)</translation>
     </message>
     <message>
         <source>Open project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo de proyecto</translation>
     </message>
     <message>
         <source>RivMaker project file (*.rpro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto RivMaker (*.rpro)</translation>
     </message>
     <message>
         <source>Project saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto guardado en %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving project file to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando el archivo del proyecto en %1 fallido.</translation>
     </message>
     <message>
         <source>Save project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo de proyecto</translation>
     </message>
     <message>
         <source>No data to export exists</source>
-        <translation type="unfinished"></translation>
+        <translation>No existen datos para exportar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -18868,69 +22175,69 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir el archivo del proyecto.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Se modifican los datos del proyecto. ¿Quieres guardar?</translation>
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de lista de ventanas</translation>
     </message>
     <message>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>La ventana de sección transversal no se puede abrir cuando no se define ninguna sección transversal.</translation>
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río como archivos CSV...</translation>
     </message>
     <message>
         <source>Export as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar como archivos CSV...</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección X</translation>
     </message>
     <message>
         <source>Zoom In in X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección X</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección Y</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alejar en dirección X</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alejar en dirección Y</translation>
     </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
     <message>
         <source>Select SAC GUI input file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el archivo de entrada SAC GUI</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (*.txt *.csv)</translation>
     </message>
 </context>
 <context>
     <name>StreamGage</name>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
 </context>
 <context>
@@ -18941,54 +22248,54 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor: ------</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de vista de elevación</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer zoom (&amp;R)</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Elevation</source>
@@ -19000,239 +22307,239 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos SVG (*.svg)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacion</translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>Data for checked Check Boxes are exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se exportan los datos de las casillas de verificación marcadas.</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nota que se puede abrir.</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar CSV (&amp;C)...</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de la ventana de vista de elevación</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala secundaria</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Escamas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente Scales</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
     <message>
         <source>Visibility Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visibilidad</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramienta de edición WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nombre</translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished">Elevacion</translation>
+        <translation>Elevación</translation>
     </message>
 </context>
 <context>
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación de agua</translation>
     </message>
 </context>
-<!-- structured15dgridwithcrosssectionhecrasexporter_es_ES.ts -->
+
 <context>
     <name>QObject</name>
     <message>
         <source>HEC-RAS text files (*.dat)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de texto HEC-RAS (*.dat)</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionHecRasExporter</name>
     <message>
         <source>HEC-RAS</source>
-        <translation type="unfinished"></translation>
+        <translation>HEC-RAS</translation>
     </message>
 </context>
-<!-- structured2dgridgdalimporter_es_ES.ts -->
+
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
         <source>GDAL supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos compatibles con GDAL</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos ASCII de ArcInfo (*.asc)</translation>
     </message>
 </context>
-<!-- structured2dgridnayscsvexporter_es_ES.ts -->
+
 <context>
     <name>QObject</name>
     <message>
@@ -19244,10 +22551,10 @@ This algorithm can be used only for structured grids.</source>
     <name>Structured2DGridNaysCSVExporter</name>
     <message>
         <source>RIC-Nays CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays CSV</translation>
     </message>
 </context>
-<!-- structured2dgridnayscsvimporter_es_ES.ts -->
+
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -19265,10 +22572,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>The following columns were ignored.
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Se ignoraron las siguientes columnas. %1</translation>
     </message>
 </context>
-<!-- structured2dgridnaysgridexporter_es_ES.ts -->
+
 <context>
     <name>QObject</name>
     <message>
@@ -19283,7 +22590,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Archivo de Cuadricula de RIC-Nays</translation>
     </message>
 </context>
-<!-- structured2dgridnaysgridimporter_es_ES.ts -->
+
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -19303,7 +22610,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Valores de Celda Marcado no estaran cargadas.</translation>
     </message>
 </context>
-<!-- structured2dgridvtkexporter_es_ES.ts -->
+
 <context>
     <name>QObject</name>
     <message>
@@ -19318,7 +22625,27 @@ This algorithm can be used only for structured grids.</source>
         <translation>Archivo VTK</translation>
     </message>
 </context>
-<!-- unstructured2dgridtriangleimporter_es_ES.ts -->
+
+<context>
+    <name>Structured2dGridVtkImporter</name>
+    <message>
+        <source>VTK files (*.vtk)</source>
+        <translation>archivos VTK (*.vtk)</translation>
+    </message>
+    <message>
+        <source>VTK file</source>
+        <translation>archivo VTK</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Copying %1 to %2 failed.</source>
+        <translation>Proceso de copiar %1 a %2 fallido.</translation>
+    </message>
+</context>
+
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -19327,7 +22654,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation type="unfinished"></translation>
+        <translation>Salida TRIÁNGULO (*.node, *.ele)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -19338,7 +22665,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>%1 no existe.</translation>
     </message>
 </context>
-<!-- unstructured2dgridvtkexporter_es_ES.ts -->
+
 <context>
     <name>QObject</name>
     <message>
@@ -19351,6 +22678,26 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>VTK file</source>
         <translation>Archivo VTK</translation>
+    </message>
+</context>
+
+<context>
+    <name>Unstructured2dGridVtkImporter</name>
+    <message>
+        <source>VTK files (*.vtk)</source>
+        <translation>archivos VTK (*.vtk)</translation>
+    </message>
+    <message>
+        <source>VTK file</source>
+        <translation>archivo VTK</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Copying %1 to %2 failed.</source>
+        <translation>Proceso de copiar %1 a %2 fallido.</translation>
     </message>
 </context>
 </TS>

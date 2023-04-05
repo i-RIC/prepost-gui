@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Elimina punti</translation>
+        <translation type="vanished">Elimina punti</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Proprietà del punto selezionato</translation>
+        <translation type="vanished">Proprietà del punto selezionato</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Numero di punti:</translation>
+        <translation type="vanished">Numero di punti:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <translation type="vanished">Minimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Massimo:</translation>
+        <translation type="vanished">Massimo:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Elimina meno del valore:</translation>
+        <translation type="vanished">Elimina meno del valore:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Quando passi a questa modalità, devi remesh TIN. Vuoi remesh ora?</translation>
+        <translation type="vanished">Quando passi a questa modalità, devi remesh TIN. Vuoi remesh ora?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Seleziona punto</translation>
+        <translation type="vanished">Seleziona punto</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Elimina i punti selezionati inferiori al valore (&amp;L)...</translation>
+        <translation type="vanished">Elimina i punti selezionati inferiori al valore (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Elimina i punti selezionati maggiori del valore (&amp;G)...</translation>
+        <translation type="vanished">Elimina i punti selezionati maggiori del valore (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Quando aggiungi una linea di interruzione, devi passare alla visualizzazione dei wireframe. Vuoi passare alla visualizzazione dei wireframe ora?</translation>
+        <translation type="vanished">Quando aggiungi una linea di interruzione, devi passare alla visualizzazione dei wireframe. Vuoi passare alla visualizzazione dei wireframe ora?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Quando rimuovi la linea di interruzione, devi passare alla visualizzazione dei wireframe. Vuoi passare alla visualizzazione dei wireframe ora?</translation>
+        <translation type="vanished">Quando rimuovi la linea di interruzione, devi passare alla visualizzazione dei wireframe. Vuoi passare alla visualizzazione dei wireframe ora?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Quando vuoi rimuovere triangoli con bordi lunghi, devi cambiare Metodo di visualizzazione su Wireframe o Surface. Se si preme il pulsante OK, il metodo di visualizzazione passa a Wireframe</translation>
+        <translation type="vanished">Quando vuoi rimuovere triangoli con bordi lunghi, devi cambiare Metodo di visualizzazione su Wireframe o Surface. Se si preme il pulsante OK, il metodo di visualizzazione passa a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quando modifichi i punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
+        <translation type="vanished">Quando modifichi i punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quando elimini i punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
+        <translation type="vanished">Quando elimini i punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Non è possibile eliminare i punti utilizzati per le linee di interruzione.</translation>
+        <translation type="vanished">Non è possibile eliminare i punti utilizzati per le linee di interruzione.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Elimina punti</translation>
+        <translation type="vanished">Elimina punti</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Seleziona il file da esportare</translation>
+        <translation type="vanished">Seleziona il file da esportare</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
+        <translation type="vanished">Si è verificato un errore durante l'esportazione in %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Elimina punti meno di %1</translation>
+        <translation type="vanished">Elimina punti meno di %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Elimina punti maggiori di %1</translation>
+        <translation type="vanished">Elimina punti maggiori di %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quando si interpolano i punti, è necessario passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
+        <translation type="vanished">Quando si interpolano i punti, è necessario passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quando aggiungi punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
+        <translation type="vanished">Quando aggiungi punti, devi passare alla visualizzazione dei punti. Vuoi passare alla visualizzazione dei punti ora?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Aggiungi punto linea di interruzione</translation>
+        <translation type="vanished">Aggiungi punto linea di interruzione</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Annulla definizione della linea di interruzione</translation>
+        <translation type="vanished">Annulla definizione della linea di interruzione</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Termina la definizione della linea di interruzione</translation>
+        <translation type="vanished">Termina la definizione della linea di interruzione</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Modifica punti</translation>
+        <translation type="vanished">Modifica punti</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Aggiungi nuovo punto linea Interp</translation>
+        <translation type="vanished">Aggiungi nuovo punto linea Interp</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Unisci...</translation>
+        <translation type="vanished">Unisci...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,90 +256,68 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Dati nuvola di punti (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Elimina punti</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Cambia modalità (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Proprietà del punto selezionato</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Unisci (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Numero di punti:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Impostazione della mappatura (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <source>Select file name to export</source>
+        <translation>Seleziona il nome del file da esportare</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Massimo:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Impossibile aprire %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Elimina valore maggiore di:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Modifica punti</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Remesh TIN e quando è finito, passa alla modalità di modifica TIN.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Proprietà del punto selezionato</translation>
+        <source>Selection Mode</source>
+        <translation>Modalità di selezione</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Numero di punti:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Seleziona i punti con Rectangle Region</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimo:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtra i punti selezionati (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Massimo:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-location</translation>
+        <source>&amp;Sort</source>
+        <translation>Ordinare (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Posizione Y</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valore</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Incremento di interpolazione</translation>
+        <source>Warning</source>
+        <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Impostazione dell'interpolazione</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Incremento di interpolazione:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Lunghezza della linea:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Non è possibile eliminare i punti utilizzati per le linee di interruzione.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Avvertimento</translation>
@@ -347,6 +325,98 @@
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
         <translation>L'incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Elimina punti</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Proprietà del punto selezionato</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Numero di punti:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimo:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Massimo:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Elimina valore maggiore di:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Modifica punti</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Proprietà del punto selezionato</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Numero di punti:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimo:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Massimo:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-location</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Posizione Y</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Valore</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Incremento di interpolazione</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Impostazione dell'interpolazione</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Incremento di interpolazione:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Lunghezza della linea:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Avvertimento</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">L'incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Deseleziona tutto (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 punti)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Di base</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>LATTINA</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensione punto:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Larghezza della linea:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superficie</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Rompere le linee</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Spettacolo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Colore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mappatura impostazione poligoni</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mappa dei colori per i valori</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Impostazione della mappatura dei dati della nuvola di punti</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Mappatura con TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>I TIN creati dai punti vengono utilizzati per la mappatura. I valori degli attributi della griglia definiti nei nodi o nelle celle della griglia sono calcolati come media pesata dei valori definiti nei nodi del triangolo che contiene il nodo (o il centro della cella).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Mappatura del modello</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trova i punti vicini ai nodi della griglia, per quanto riguarda le forme delle celle della griglia, e usa i valori in quei punti per l'interpolazione.&lt;/p&gt;&lt;p&gt;Questo algoritmo può essere utilizzare solo per griglie strutturate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Dettaglio (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Cambia l'algoritmo di mappatura per ogni area definita con poligoni</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definisci le aree come poligoni e specifica l'algoritmo per mappare i valori nei nodi della griglia o nei centri delle celle dai valori definiti nei punti.&lt;/p&gt;&lt;p&gt;L'utente può selezionare uno dei seguenti: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mappa il valore minimo dei punti all'interno del cerchio&lt;/li&gt;&lt;li&gt;Mappa il valore massimo dei punti all'interno del cerchio&lt;/li&gt;&lt;li&gt;Mappa il valore medio ponderato dei punti all'interno del cerchio&lt;/li&gt; &lt;li&gt;Mappa il valore da TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Impostazione mappatura modello</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Cerca regione</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manuale</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Lunghezza del flusso [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Larghezza del flusso trasversale [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Numero di espansioni del modello:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Esponente di ponderazione:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Modifica punti</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Proprietà dei punti selezionati</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Numero di punti:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valore minimo:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valore massimo:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valore:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtra punti selezionati</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Proprietà dei punti selezionati</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Numero di punti:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valore minimo:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valore massimo:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Condizione di filtraggio</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Selezionare i punti con valore maggiore della soglia</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Seleziona punti con valore inferiore alla soglia</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Valore di soglia:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Impostazione dell'interpolazione</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Incremento di interpolazione</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Incremento di interpolazione:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Lunghezza linea:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Metodo di calcolo</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Mappa utilizzando TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Valore minimo dei punti entro il raggio</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Valore massimo dei punti nel raggio</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Media ponderata dei punti all'interno del raggio</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Esponente di ponderazione k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; viene utilizzato come peso nel calcolo della media ponderata dei valori. r è la distanza dal punto al nodo o al centro della cella, a cui è mappato il valore.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Raggio del cerchio per la ricerca dei punti:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>M</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Quando viene eseguita la mappatura, i punti all'interno del cerchio con il raggio sopra vengono cercati per mappare i valori ai nodi della griglia o ai centri delle celle.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Impostazioni di visualizzazione della nuvola di punti</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Di base</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">LATTINA</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Dimensione punto:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Larghezza della linea:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Superficie</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Rompere le linee</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Spettacolo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Colore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Mappatura impostazione poligoni</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Mappa dei colori per i valori</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Importare (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Esportare (&amp;E)</translation>
     </message>
 </context>
 <context>

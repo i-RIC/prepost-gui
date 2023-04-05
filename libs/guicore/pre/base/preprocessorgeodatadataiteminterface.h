@@ -5,13 +5,16 @@
 
 class ColorMapSettingContainerI;
 class GeoData;
+class PreProcessorGeoDataGroupDataItemInterface;
 
 class PreProcessorGeoDataDataItemInterface : public PreProcessorDataItem
 {
 public:
-	PreProcessorGeoDataDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
-		: PreProcessorDataItem(itemlabel, icon, parent)
+	PreProcessorGeoDataDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
+		PreProcessorDataItem(itemlabel, icon, parent)
 	{}
+
+	virtual PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const = 0;
 	virtual GeoData* geoData() const = 0;
 	virtual void setGeoData(GeoData* geoData) = 0;
 

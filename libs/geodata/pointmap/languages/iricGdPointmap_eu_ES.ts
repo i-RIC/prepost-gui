@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Ordenatu (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Puntu-hodei bistaratzeko ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Desautatu guztiak (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Puntu-hodei bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntuak</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Azalera</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntoak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Eten lerroak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapeatzea Poligonoak ezartzea</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Kolore-mapa balioetarako</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Puntu-hodei bistaratzeko ezarpena</translation>
+        <translation type="vanished">Puntu-hodei bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Oinarrizkoa</translation>
+        <translation type="vanished">Oinarrizkoa</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puntuak</translation>
+        <translation type="vanished">Puntuak</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntuen tamaina:</translation>
+        <translation type="vanished">Puntuen tamaina:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lerroaren zabalera:</translation>
+        <translation type="vanished">Lerroaren zabalera:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Azalera</translation>
+        <translation type="vanished">Azalera</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntuak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntuak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Eten lerroak</translation>
+        <translation type="vanished">Eten lerroak</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Erakutsi</translation>
+        <translation type="vanished">Erakutsi</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Mapeatzea Poligonoak ezartzea</translation>
+        <translation type="vanished">Mapeatzea Poligonoak ezartzea</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Kolore-mapa balioetarako</translation>
+        <translation type="vanished">Kolore-mapa balioetarako</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Inportatu (&amp;I)</translation>
+        <translation type="vanished">Inportatu (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Esportatu (&amp;E)</translation>
+        <translation type="vanished">Esportatu (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Kendu triangeluak ertz luzearekin</translation>
+        <translation>Kendu triangeluak ertz luzearekin</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Ertzaren luzera mugatu:</translation>
+        <translation>Ertzaren luzera mugatu:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: Aplikatu botoian klik egiten duzunean, kenduko diren triangeluak ilunez margotuko dira grisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: Aplikatu botoian klik egiten duzunean, kenduko diren triangeluak ilunez margotuko dira grisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

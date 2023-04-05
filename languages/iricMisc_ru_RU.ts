@@ -11,6 +11,28 @@
     </message>
 </context>
 <context>
+    <name>ModifyCommandDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Диалог</translation>
+    </message>
+</context>
+<context>
+    <name>QFontEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>Редактировать...</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source> Revision %1</source>

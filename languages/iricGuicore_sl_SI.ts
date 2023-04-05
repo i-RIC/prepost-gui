@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>barva</translation>
+        <translation type="vanished">barva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Osnovno</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barvni zemljevid</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+        <translation type="vanished">Pri uvozu prezrite nastavitev barvne vrstice</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>smer:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Navpično</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Število etiket:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Avto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
+        <translation type="vanished">Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Izvozi (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Število barv, ki jih je treba vstaviti v vsak del</translation>
+        <translation type="vanished">Število barv, ki jih je treba vstaviti v vsak del</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Razpon vrednosti</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Število barv:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Uporabite nastavitev okna predhodne obdelave</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Uvozi (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Izvozi (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Nastavitev barvnega zemljevida</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Razpon vrednosti</translation>
+        <translation type="vanished">Razpon vrednosti</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Samodejno</translation>
+        <translation type="vanished">Samodejno</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Izpolnite zgornjo površino</translation>
+        <translation type="vanished">Izpolnite zgornjo površino</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Izpolnite spodnje območje</translation>
+        <translation type="vanished">Izpolnite spodnje območje</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Številka oddelka:</translation>
+        <translation type="vanished">Številka oddelka:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Nastavitev barve</translation>
+        <translation type="vanished">Nastavitev barve</translation>
     </message>
 </context>
 <context>

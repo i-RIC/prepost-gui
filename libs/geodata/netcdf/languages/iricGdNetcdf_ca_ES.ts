@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Edició de la configuració del color</translation>
+        <translation type="vanished">Edició de la configuració del color</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuració de visualització de dades ràster</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Configuració de visualització de dades ràster</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>S'ha produït un error en obrir %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 </TS>

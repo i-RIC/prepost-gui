@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Editare setări de culoare</translation>
+        <translation type="vanished">Editare setări de culoare</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Setarea de afișare a poligoanelor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Setare de afișare a grupului de poligon</translation>
+        <translation type="vanished">Setare de afișare a grupului de poligon</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colorează după valoare</translation>
+        <translation type="vanished">Colorează după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editați setarea afișajului</translation>
+        <translation type="vanished">Editați setarea afișajului</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Setarea de afișare a poligoanelor</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Avertizare</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Harta de culori</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
     </message>
 </context>
 </TS>

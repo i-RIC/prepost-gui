@@ -37,9 +37,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">表示色設定の編集</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>点データ表示設定</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>画像ファイルの選択</translation>
@@ -47,6 +51,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>すべての画像(*.jpg *.jpeg *.png);;Jpeg 画像(*.jpg *.jpeg);;PNG 画像(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">画像ファイルの選択</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">すべての画像(*.jpg *.jpeg *.png);;Jpeg 画像(*.jpg *.jpeg);;PNG 画像(*.png)</translation>
     </message>
 </context>
 <context>
@@ -181,7 +196,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>表示設定</translation>
+        <translation type="vanished">表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
     </message>
 </context>
 <context>
@@ -266,22 +292,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>点データ表示設定</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>色</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>値により自動設定</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <source>Form</source>
+        <translation />
     </message>
     <message>
         <source>Shape</source>
@@ -314,6 +328,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>インポートした画像の幅もしくは高さが最大サイズより大きい場合、幅もしくは高さが最大サイズと同じになるよう画像を縮小します。</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">点データ表示設定</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">形状</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">点</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">アイコン画像</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">画像のインポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">クリア (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">最大サイズ:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">インポートした画像の幅もしくは高さが最大サイズより大きい場合、幅もしくは高さが最大サイズと同じになるよう画像を縮小します。</translation>
     </message>
 </context>
 </TS>

@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>भौगोलिक डेटा मैपिंग</translation>
+        <translation type="vanished">भौगोलिक डेटा मैपिंग</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>टिन के साथ मानचित्रण</translation>
+        <translation type="vanished">टिन के साथ मानचित्रण</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>भौगोलिक डेटा से बनाए गए TIN का उपयोग मैपिंग के लिए किया जाता है। ग्रिड नोड्स विशेषता मानों की गणना TIN नोड्स पर मानों के भारित औसत के रूप में की जाती है।</translation>
+        <translation type="vanished">भौगोलिक डेटा से बनाए गए TIN का उपयोग मैपिंग के लिए किया जाता है। ग्रिड नोड्स विशेषता मानों की गणना TIN नोड्स पर मानों के भारित औसत के रूप में की जाती है।</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>टेम्प्लेट मैपिंग</translation>
+        <translation type="vanished">टेम्प्लेट मैपिंग</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>ग्रिड सेल आकृतियों के संबंध में, ग्रिड नोड्स के निकट भौगोलिक डेटा बिंदु खोजें, और उन बिंदुओं पर इंटरपोलेशन के लिए मानों का उपयोग करें। यह एल्गोरिथम केवल संरचित ग्रिड के लिए उपयोग किया जा सकता है।</translation>
+        <translation type="vanished">ग्रिड सेल आकृतियों के संबंध में, ग्रिड नोड्स के निकट भौगोलिक डेटा बिंदु खोजें, और उन बिंदुओं पर इंटरपोलेशन के लिए मानों का उपयोग करें। यह एल्गोरिथम केवल संरचित ग्रिड के लिए उपयोग किया जा सकता है।</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>विस्तार (&amp;D)...</translation>
+        <translation type="vanished">विस्तार (&amp;D)...</translation>
     </message>
 </context>
 <context>

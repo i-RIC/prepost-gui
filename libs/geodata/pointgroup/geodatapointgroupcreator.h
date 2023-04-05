@@ -17,8 +17,6 @@ public:
 
 	bool isCreatable() const override;
 
-	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-
 	int shapeType() const override;
 	QString shapeName() const override;
 	QString shapeNameCamelCase() const override;

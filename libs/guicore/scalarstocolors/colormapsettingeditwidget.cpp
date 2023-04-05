@@ -103,6 +103,21 @@ void ColorMapSettingEditWidget::setConcreteSetting(const ColorMapSettingContaine
 	ui->legendWidget->setSetting(m_concreteSetting.legend);
 }
 
+void ColorMapSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+{
+	ui->colorPatternSelectComboBox->setDisabled(disabled);
+	ui->ignoreColorBarSettingCheckBox->setDisabled(disabled);
+	ui->colorModeGroupBox->setDisabled(disabled);
+	//ui->valueRangeGroupBox->setDisabled(disabled);
+	ui->autoValueRangeCheckBox->setDisabled(disabled);
+	ui->maxValueEdit->setDisabled(disabled);
+	ui->minValueEdit->setDisabled(disabled);
+	ui->colorsGroupBox->setDisabled(disabled);
+	ui->switchModeButton->setDisabled(disabled);
+
+	ui->legendWidget->setDisableOtherThanImageSetting(disabled);
+}
+
 QUndoCommand* ColorMapSettingEditWidget::createModifyCommand() const
 {
 	if (m_legendSetting != nullptr) {

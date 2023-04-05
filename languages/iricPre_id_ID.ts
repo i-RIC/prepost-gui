@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Pemetaan data geografis</translation>
+        <translation type="vanished">Pemetaan data geografis</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Pemetaan dengan TIN</translation>
+        <translation type="vanished">Pemetaan dengan TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN yang dibuat dari data geografis digunakan untuk pemetaan. Nilai atribut node grid dihitung sebagai rata-rata tertimbang dari nilai pada node TIN.</translation>
+        <translation type="vanished">TIN yang dibuat dari data geografis digunakan untuk pemetaan. Nilai atribut node grid dihitung sebagai rata-rata tertimbang dari nilai pada node TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Pemetaan template</translation>
+        <translation type="vanished">Pemetaan template</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Temukan titik data geografis yang dekat dengan node grid, mengenai bentuk sel grid, dan gunakan nilai pada titik tersebut untuk interpolasi. Algoritma ini hanya dapat digunakan untuk grid terstruktur.</translation>
+        <translation type="vanished">Temukan titik data geografis yang dekat dengan node grid, mengenai bentuk sel grid, dan gunakan nilai pada titik tersebut untuk interpolasi. Algoritma ini hanya dapat digunakan untuk grid terstruktur.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detail (&amp;D)...</translation>
+        <translation type="vanished">Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>

@@ -71,7 +71,7 @@ std::vector<GeoDataPolyDataGroupPolyData*> getNotSelectedDataVector(const std::v
 } // namespace
 
 GeoDataPolyDataGroup::GeoDataPolyDataGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData(d, creator, condition),
+	GeoDataWithSingleMapper(d, creator, condition),
 	impl {new Impl {this}}
 {
 	impl->m_attributeBrowser->setPolyDataGroup(this);
@@ -256,8 +256,8 @@ void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGra
 			} else {
 				updateVtkObjects();
 				updateSelectedDataVtkObjects();
-				updateMenu();
 			}
+			updateMenu();
 			updateAttributeBrowser();
 			updateActorSetting();
 			renderGraphicsView();

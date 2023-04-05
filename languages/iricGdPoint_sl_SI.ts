@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Urejanje koordinat točk</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Premakni točko</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Nastavite točko</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

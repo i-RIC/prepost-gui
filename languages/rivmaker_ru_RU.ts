@@ -11,11 +11,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
-        <translation>rivmaker 2.0.2</translation>
+        <translation type="vanished">rivmaker 2.0.2</translation>
     </message>
     <message>
         <source>Release Date: 2021/3/2</source>
-        <translation>Дата выпуска: 02.03.2021</translation>
+        <translation type="vanished">Дата выпуска: 02.03.2021</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.3</source>
+        <translation>ривмейкер 2.0.3</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/4/28</source>
+        <translation>Дата выхода: 28 апреля 2021 г.</translation>
     </message>
 </context>
 <context>

@@ -59,7 +59,11 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>颜色设置编辑</translation>
+        <translation type="vanished">颜色设置编辑</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>多边形显示设置</translation>
     </message>
 </context>
 <context>
@@ -81,23 +85,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>色彩</translation>
+        <translation type="vanished">色彩</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>根据数值上色</translation>
+        <translation type="vanished">根据数值上色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>多边形组显示设置</translation>
+        <translation type="vanished">多边形组显示设置</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行宽：</translation>
+        <translation type="vanished">行宽：</translation>
     </message>
 </context>
 <context>
@@ -264,7 +268,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>编辑显示设置</translation>
+        <translation type="vanished">编辑显示设置</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>多边形显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>预处理窗口的使用设置</translation>
     </message>
 </context>
 <context>
@@ -372,6 +391,33 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation type="vanished">您不能为“名称”和“值”指定相同的列</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值着色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行宽：</translation>
     </message>
 </context>
 </TS>

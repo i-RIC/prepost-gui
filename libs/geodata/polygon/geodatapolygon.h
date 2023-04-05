@@ -167,6 +167,12 @@ private:
 	QAction* holeModeAction() const;
 	QAction* deleteAction() const;
 
+	void setAddVertexAction(QAction* action);
+	void setRemoveVertexAction(QAction* action);
+	void setCoordEditAction(QAction* action);
+	void setHoleModeAction(QAction* action);
+	void setDeleteAction(QAction* action);
+
 	void setShapeUpdating(bool updating);
 
 	class AddHolePolygonCommand;
@@ -186,6 +192,7 @@ private:
 	Impl* impl;
 
 public:
+	friend class GeoDataPointmap;
 	friend class GeoDataPolygonAbstractPolygon;
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonGroup;

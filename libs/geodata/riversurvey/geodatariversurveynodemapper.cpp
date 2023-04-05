@@ -71,8 +71,8 @@ GeoDataMapperSettingI* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 				setting.target = i;
 				for (vtkIdType j = 0; j < cell->GetNumberOfPoints(); ++j) {
 					vtkIdType vid = cell->GetPointId(j);
-					setting.indices.append(vid);
-					setting.weights.append(weights[j]);
+					setting.indices.push_back(vid);
+					setting.weights.push_back(weights[j]);
 				}
 				s->settings.append(setting);
 				*(boolMap + i) = true;
@@ -125,8 +125,8 @@ GeoDataMapperSettingI* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 						setting.target = i;
 						for (vtkIdType j = 0; j < cell->GetNumberOfPoints(); ++j) {
 							vtkIdType vid = cell->GetPointId(j);
-							setting.indices.append(vid);
-							setting.weights.append(weights[j]);
+							setting.indices.push_back(vid);
+							setting.weights.push_back(weights[j]);
 						}
 						s->settings.append(setting);
 						*(boolMap + i) = true;

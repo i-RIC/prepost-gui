@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Litastilling Breyta</translation>
+        <translation type="vanished">Litastilling Breyta</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Marghyrningar skjástillingar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Marghyrningshópsskjástilling</translation>
+        <translation type="vanished">Marghyrningshópsskjástilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
+        <translation type="vanished">Litur eftir gildi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Línubreidd:</translation>
+        <translation type="vanished">Línubreidd:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Breyta skjástillingu</translation>
+        <translation type="vanished">Breyta skjástillingu</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Marghyrningar skjástillingar</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Notaðu stillingu á forvinnsluglugganum</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Viðvörun</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Litakort</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
     </message>
 </context>
 </TS>

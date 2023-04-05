@@ -6,7 +6,18 @@
 #include <QCursor>
 #include <QPixmap>
 
+#include "geodatapointmap_mappingsetting.h"
 #include "geodatapointmap_pointsmanager.h"
+#include "geodatapointmap_polygonscellmapper.h"
+#include "geodatapointmap_polygonsnodemapper.h"
+#include "geodatapointmap_polygonsmanager.h"
+#include "geodatapointmap_displaysetting.h"
+#include "geodatapointmap_templatecellmapper.h"
+#include "geodatapointmap_templatenodemapper.h"
+#include "geodatapointmap_tincellmapper.h"
+#include "geodatapointmap_tinmanager.h"
+#include "geodatapointmap_tinnodemapper.h"
+
 
 class GeoDataPointmap::Impl
 {
@@ -15,39 +26,35 @@ public:
 	~Impl();
 
 	void setupActions();
-	void enablePointSelectedActions(bool enable);
+
+	DisplaySetting m_displaySetting;
+	MappingSetting m_mappingSetting;
 
 	PointsManager m_pointsManager;
+	TINManager m_tinManager;
+	PolygonsManager m_polygonsManager;
+	MouseEventController* m_activeController;
 
-	// cursor related resources
-	QPixmap m_addPixmap;
-	QCursor m_addCursor;
-	QPixmap m_removePixmap;
-	QCursor m_removeCursor;
-	QPixmap m_interpPointAddPixmap;
-	QCursor m_interpPointAddCursor;
-	QPixmap m_interpPointCtrlAddPixmap;
-	QCursor m_interpPointCtrlAddCursor;
+	TinNodeMapper m_tinNodeMapper;
+	TinCellMapper m_tinCellMapper;
+	TemplateNodeMapper m_templateNodeMapper;
+	TemplateCellMapper m_templateCellMapper;
+	PolygonsNodeMapper m_polygonsNodeMapper;
+	PolygonsCellMapper m_polygonsCellMapper;
 
 	// menu related resources
-	QAction* m_selectionModePoint;
-	QAction* m_selectionModePolygon;
-	QAction* m_addPointAction;
-	QAction* m_interpolatePointAction;
 	QAction* m_removeTrianglesWithLongEdgeAction;
-	QAction* m_displaySettingAction;
-
-	QAction* m_editPointsAction;
-	QAction* m_editPointsDeleteAction;
-	QAction* m_editPointsExportAction;
-	QAction* m_editPointsLessThanAction;
-	QAction* m_editPointsGreaterThanAction;
 
 	QAction* m_remeshAction;
-	QAction* m_addBreakLineAction;
-	QAction* m_removeBreakLineAction;
-	QAction* m_removeAllBreakLinesAction;
+
+	QMenu* m_modeMenu;
+	QAction* m_pointEditModeAction;
+	QAction* m_tinEditModeAction;
+	QAction* m_polygonsEditModeAction;
+
 	QAction* m_mergeAction;
+	QAction* m_displaySettingAction;
+	QAction* m_mappingSettingAction;
 
 	QMenu* m_rightClickingMenu;
 

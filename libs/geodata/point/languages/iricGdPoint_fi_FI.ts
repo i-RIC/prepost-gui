@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Muokkaa pistekoordinaatteja</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Siirrä kärkeä</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Aseta kärkipiste</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

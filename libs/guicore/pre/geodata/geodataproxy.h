@@ -4,7 +4,11 @@
 #include "../../guicore_global.h"
 #include "../../project/projectdataitem.h"
 
+class ColorMapSettingContainerI;
 class GeoData;
+class GraphicsWindowDataModel;
+class Post2dWindowGeoDataDataItemInterface;
+class Post2dWindowGridTypeDataItemInterface;
 class ZDepthRange;
 
 class QDialog;
@@ -32,11 +36,17 @@ public:
 
 	GeoData* geoData() const;
 
+	virtual void showPropertyDialog();
 	virtual QDialog* propertyDialog(QWidget* parent);
 	virtual void handlePropertyDialogAccepted(QDialog* propDialog);
 
+	Post2dWindowGeoDataDataItemInterface* geoDataDataItem() const;
+	Post2dWindowGridTypeDataItemInterface* gridTypeDataItem() const;
+	void applyColorMapSetting();
+	ColorMapSettingContainerI* colorMapSettingContainer() const;
+
 public slots:
-	virtual void updateGraphics();
+	virtual void updateActorSetting();
 
 protected:
 	QMainWindow* mainWindow() const;
@@ -51,8 +61,15 @@ protected:
 	void updateVisibilityWithoutRendering();
 	bool isVisible();
 
+	GraphicsWindowDataModel* dataModel() const;
+
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
+	void showPropertyDialogModal();
+	void showPropertyDialogModeless();
+
+	class PropertyDialog;
+	class UpdateActorSettingCommand;
 
 private:
 	GeoData* m_geoData;

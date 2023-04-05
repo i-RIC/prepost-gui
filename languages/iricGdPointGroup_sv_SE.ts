@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Färginställning Redigera</translation>
+        <translation type="vanished">Färginställning Redigera</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Poängvisningsinställning</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Välj bildfil</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Alla bilder (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Välj bildfil</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Alla bilder (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redigera displayinställning</translation>
+        <translation type="vanished">Redigera displayinställning</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Använd inställning av förbearbetningsfönstret</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poäng</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstorlek:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Ikon bilder</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Importera bild (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Klar (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Max storlek:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>När den importerade bildens bredd eller höjd är större än Maxstorlek, krymps bilden automatiskt så att bredden eller höjden blir lika med maxstorleken.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Anpassad färg</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Visningsinställning för poängdata</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Anpassad färg</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Form</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Poäng</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktstorlek:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Ikon bilder</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Importera bild (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Klar (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Max storlek:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">När den importerade bildens bredd eller höjd är större än Max storlek, krymps bilden automatiskt så att bredden eller höjden blir lika med maxstorleken.</translation>
     </message>
 </context>
 </TS>

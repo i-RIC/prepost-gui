@@ -45,7 +45,7 @@ bool MergeSupportedListCommand::mergeWith(const QUndoCommand* other)
 
 	if (m_commands.size() != c->m_commands.size()) {return false;}
 
-	for (int i = 0; i < m_commands.size(); ++i) {
+	for (unsigned int i = 0; i < m_commands.size(); ++i) {
 		auto c1 = m_commands.at(i);
 		auto c2 = c->m_commands.at(i);
 

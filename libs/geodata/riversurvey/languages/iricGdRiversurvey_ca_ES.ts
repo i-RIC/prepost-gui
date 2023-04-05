@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Edita la configuració de la pantalla</translation>
+        <translation type="vanished">Edita la configuració de la pantalla</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. En algunes regions, les dades no existien a les dades del núvol de punts i es va assignar el valor 0 per a aquests punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuració de visualització de dades de secció transversal</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Dades de secció transversal (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Dades de secció transversal (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 línia %2 : "%3": Les dades de la marca no són vàlides.</translation>
+        <translation type="vanished">%1 línia %2 : "%3": Les dades de la marca no són vàlides.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editeu la configuració de la pantalla</translation>
+        <translation type="vanished">Editeu la configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuració de visualització de dades de secció transversal</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>Fitxer VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Bàsic</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Color de fons</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; podeu personalitzar el color mitjançant la pestanya Mapa de colors.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Línies de secció transversal</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Escala Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Noms de seccions transversals</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 <context>

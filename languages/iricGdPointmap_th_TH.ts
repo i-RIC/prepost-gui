@@ -3,50 +3,50 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>ลบคะแนน</translation>
+        <translation type="vanished">ลบคะแนน</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>คุณสมบัติคะแนนที่เลือก</translation>
+        <translation type="vanished">คุณสมบัติคะแนนที่เลือก</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>จำนวนคะแนน:</translation>
+        <translation type="vanished">จำนวนคะแนน:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>ขั้นต่ำ:</translation>
+        <translation type="vanished">ขั้นต่ำ:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>ขีดสุด:</translation>
+        <translation type="vanished">ขีดสุด:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>ลบน้อยกว่าค่า:</translation>
+        <translation type="vanished">ลบน้อยกว่าค่า:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation>แก้ไขคะแนน</translation>
+        <translation type="vanished">แก้ไขคะแนน</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>เพิ่มจุดแบ่งเส้น</translation>
+        <translation type="vanished">เพิ่มจุดแบ่งเส้น</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>กำหนดเส้นแบ่งให้เสร็จสิ้น</translation>
+        <translation type="vanished">กำหนดเส้นแบ่งให้เสร็จสิ้น</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>ยกเลิกการกำหนดเส้นแบ่ง</translation>
+        <translation type="vanished">ยกเลิกการกำหนดเส้นแบ่ง</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>เพิ่ม Interp Line Point ใหม่</translation>
+        <translation type="vanished">เพิ่ม Interp Line Point ใหม่</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>เมื่อคุณเปลี่ยนไปใช้โหมดนี้ คุณจะต้องรีเมช TIN คุณต้องการรีเมชตอนนี้หรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณเปลี่ยนไปใช้โหมดนี้ คุณจะต้องรีเมช TIN คุณต้องการรีเมชตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>เลือกจุด</translation>
+        <translation type="vanished">เลือกจุด</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -102,11 +102,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>ลบคะแนนที่เลือกน้อยกว่ามูลค่า (&amp;L)...</translation>
+        <translation type="vanished">ลบคะแนนที่เลือกน้อยกว่ามูลค่า (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>ลบคะแนนที่เลือกมากกว่ามูลค่า (&amp;G)...</translation>
+        <translation type="vanished">ลบคะแนนที่เลือกมากกว่ามูลค่า (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -142,7 +142,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>เมื่อคุณเพิ่มเส้นแบ่ง คุณต้องสลับเพื่อแสดงเส้นลวด คุณต้องการเปลี่ยนเพื่อแสดง wireframes ทันทีหรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณเพิ่มเส้นแบ่ง คุณต้องสลับเพื่อแสดงเส้นลวด คุณต้องการเปลี่ยนเพื่อแสดง wireframes ทันทีหรือไม่?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -150,7 +150,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>เมื่อคุณลบเส้นแบ่ง คุณต้องสลับเพื่อแสดงเส้นลวด คุณต้องการเปลี่ยนเพื่อแสดง wireframes ทันทีหรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณลบเส้นแบ่ง คุณต้องสลับเพื่อแสดงเส้นลวด คุณต้องการเปลี่ยนเพื่อแสดง wireframes ทันทีหรือไม่?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -162,27 +162,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>เมื่อต้องการลบสามเหลี่ยมที่มีขอบยาว คุณต้องสลับ Display Method เป็น Wireframe หรือ Surface หากคุณกดปุ่ม OK วิธีการแสดงจะเปลี่ยนเป็น Wireframe</translation>
+        <translation type="vanished">เมื่อต้องการลบสามเหลี่ยมที่มีขอบยาว คุณต้องสลับ Display Method เป็น Wireframe หรือ Surface หากคุณกดปุ่ม OK วิธีการแสดงจะเปลี่ยนเป็น Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>เมื่อคุณแก้ไขจุด คุณต้องสลับเพื่อแสดงจุด คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณแก้ไขจุด คุณต้องสลับเพื่อแสดงจุด คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>เมื่อคุณลบคะแนน คุณต้องสลับเพื่อแสดงคะแนน คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณลบคะแนน คุณต้องสลับเพื่อแสดงคะแนน คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>คุณไม่สามารถลบจุดที่ใช้สำหรับเส้นแบ่ง</translation>
+        <translation type="vanished">คุณไม่สามารถลบจุดที่ใช้สำหรับเส้นแบ่ง</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>ลบคะแนน</translation>
+        <translation type="vanished">ลบคะแนน</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>เลือกไฟล์ที่จะส่งออก</translation>
+        <translation type="vanished">เลือกไฟล์ที่จะส่งออก</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -194,19 +194,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>เกิดข้อผิดพลาดขณะส่งออกไปยัง %1.</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะส่งออกไปยัง %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>ลบคะแนนน้อยกว่า %1</translation>
+        <translation type="vanished">ลบคะแนนน้อยกว่า %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>ลบคะแนนที่มากกว่า %1</translation>
+        <translation type="vanished">ลบคะแนนที่มากกว่า %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>เมื่อคุณสอดแทรกจุด คุณต้องสลับเพื่อแสดงจุด คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณสอดแทรกจุด คุณต้องสลับเพื่อแสดงจุด คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -214,7 +214,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>เมื่อคุณเพิ่มคะแนน คุณต้องสลับเพื่อแสดงคะแนน คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
+        <translation type="vanished">เมื่อคุณเพิ่มคะแนน คุณต้องสลับเพื่อแสดงคะแนน คุณต้องการเปลี่ยนเพื่อแสดงคะแนนตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>ผสาน...</translation>
+        <translation type="vanished">ผสาน...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Point Cloud Data (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>ลบคะแนน</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>สลับโหมด (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>คุณสมบัติคะแนนที่เลือก</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>ผสาน (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>จำนวนคะแนน:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>การตั้งค่าการทำแผนที่ (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>ขั้นต่ำ:</translation>
+        <source>Select file name to export</source>
+        <translation>เลือกชื่อไฟล์ที่จะส่งออก</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>ขีดสุด:</translation>
+        <source>Failed to open %1.</source>
+        <translation>เปิดไม่สำเร็จ %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>ลบมากกว่าค่า:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>แก้ไขคะแนน</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Remesh TIN และเมื่อเสร็จสิ้น ให้เปลี่ยนเป็นโหมดแก้ไข TIN</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>คุณสมบัติคะแนนที่เลือก</translation>
+        <source>Selection Mode</source>
+        <translation>โหมดการเลือก</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>จำนวนคะแนน:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>เลือกจุดด้วย Rectangle Region</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>ขั้นต่ำ:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>กรองจุดที่เลือก (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>ขีดสุด:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>แก้ไข TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-location</translation>
+        <source>&amp;Sort</source>
+        <translation>เรียงลำดับ (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-ที่ตั้ง</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>ค่า</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>สอดแทรกเพิ่มขึ้น</translation>
+        <source>Warning</source>
+        <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>การตั้งค่าการแก้ไข</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>การแก้ไขที่เพิ่มขึ้น:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>ความยาวสาย:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>คุณไม่สามารถลบจุดที่ใช้สำหรับเส้นแบ่ง</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>การเพิ่มค่าอินเตอร์โพเลตต้องมากกว่า 0 และน้อยกว่าความยาวบรรทัดการแก้ไข</translation>
+        <translation>การเพิ่มการแก้ไขต้องมากกว่า 0 และน้อยกว่าความยาวบรรทัดการแก้ไข</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">ลบคะแนน</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">คุณสมบัติคะแนนที่เลือก</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">จำนวนคะแนน:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">ขั้นต่ำ:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">ขีดสุด:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">ลบมากกว่าค่า:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">แก้ไขคะแนน</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">คุณสมบัติคะแนนที่เลือก</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">จำนวนคะแนน:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">ขั้นต่ำ:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">ขีดสุด:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-location</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-ที่ตั้ง</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">ค่า</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">สอดแทรกเพิ่มขึ้น</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">การตั้งค่าการแก้ไข</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">การแก้ไขที่เพิ่มขึ้น:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">ความยาวสาย:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">คำเตือน</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">การเพิ่มค่าอินเตอร์โพเลตต้องมากกว่า 0 และน้อยกว่าความยาวบรรทัดการแก้ไข</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>ไม่เลือกทั้งหมด (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 คะแนน)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ดีบุก</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>คะแนน</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดจุด:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>โครงลวด</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>พื้นผิว</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>เส้นแบ่ง</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>การทำแผนที่การตั้งค่ารูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>แผนที่สีสำหรับค่า</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>การตั้งค่าการทำแผนที่ข้อมูล Point Cloud</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>การทำแผนที่ด้วย TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>TIN ที่สร้างจากจุดจะใช้สำหรับการทำแผนที่ ค่าแอตทริบิวต์กริดที่กำหนดที่โหนดกริดหรือเซลล์จะคำนวณเป็นค่าเฉลี่ยถ่วงน้ำหนักของค่าที่กำหนดที่โหนดของสามเหลี่ยมที่มีโหนด (หรือศูนย์กลางเซลล์)</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>การทำแผนที่แม่แบบ</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ค้นหาจุดที่อยู่ใกล้กับโหนดกริด เกี่ยวกับรูปร่างของเซลล์กริด และใช้ค่าที่จุดเหล่านั้นสำหรับการแก้ไข&lt;/p&gt;&lt;p&gt;อัลกอริทึมนี้สามารถ ใช้สำหรับกริดที่มีโครงสร้างเท่านั้น&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>รายละเอียด (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>เปลี่ยนอัลกอริทึมการทำแผนที่สำหรับแต่ละพื้นที่ที่กำหนดด้วยรูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;กำหนดพื้นที่เป็นรูปหลายเหลี่ยม และระบุอัลกอริทึมเพื่อแมปค่าที่โหนดกริดหรือศูนย์กลางเซลล์จากค่าที่กำหนดที่จุด&lt;/p&gt;&lt;p&gt;ผู้ใช้สามารถเลือกจากด้านล่าง: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;แมปค่าต่ำสุดของจุดภายในวงกลม&lt;/li&gt;&lt;li&gt;แมปค่าสูงสุดของจุดภายในวงกลม&lt;/li&gt;&lt;li&gt;แมปค่าเฉลี่ยถ่วงน้ำหนักของจุดภายในวงกลม&lt;/li&gt; &lt;li&gt;แมปค่าจาก TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>การตั้งค่าการแมปเทมเพลต</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>ค้นหาภูมิภาค</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>คู่มือ</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>ความยาวสตรีม [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>ความกว้างของสตรีม [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>จำนวนการขยายเทมเพลต:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>เลขชี้กำลังน้ำหนัก:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>แก้ไขคะแนน</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>คุณสมบัติของจุดที่เลือก</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>จำนวนคะแนน:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>มูลค่าขั้นต่ำ:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>ค่าสูงสุด:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>เอ็กซ์:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>ค่า:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>กรองคะแนนที่เลือก</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>คุณสมบัติของจุดที่เลือก</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>จำนวนคะแนน:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>มูลค่าขั้นต่ำ:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>ค่าสูงสุด:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>เงื่อนไขการกรอง</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>เลือกคะแนนที่มีค่ามากกว่าเกณฑ์</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>เลือกคะแนนที่มีค่าน้อยกว่าเกณฑ์</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>ค่าเกณฑ์:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>การตั้งค่าการแก้ไข</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>การเพิ่มการสอดแทรก</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>การเพิ่มการแก้ไข:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>ความยาวสาย:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>วิธีการคำนวณ</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>แผนที่โดยใช้ TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>ค่าต่ำสุดของคะแนนภายในรัศมี</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>ค่าสูงสุดของคะแนนในรัศมี</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>ค่าเฉลี่ยถ่วงน้ำหนักของคะแนนภายในรัศมี</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>เลขชี้กำลังน้ำหนัก k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; ใช้เป็นน้ำหนักเมื่อคำนวณค่าเฉลี่ยถ่วงน้ำหนักของค่าต่างๆ r คือระยะทางจากจุดไปยังโหนดหรือศูนย์กลางเซลล์ ซึ่งค่านั้นถูกแมป&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>รัศมีของวงกลมเพื่อค้นหาจุด:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>ม</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>เมื่อดำเนินการแมป จุดที่มีในวงกลมที่มีรัศมีด้านบนจะถูกค้นหาเพื่อแมปค่ากับโหนดกริดหรือศูนย์กลางเซลล์</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">ดีบุก</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">คะแนน</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">ขนาดจุด:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">โครงลวด</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">พื้นผิว</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">เส้นแบ่ง</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">แสดง</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">สี:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">การทำแผนที่การตั้งค่ารูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">แผนที่สีสำหรับค่า</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">นำเข้า (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">ส่งออก (&amp;E)</translation>
     </message>
 </context>
 <context>

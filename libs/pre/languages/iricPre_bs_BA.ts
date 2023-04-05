@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Mapiranje geografskih podataka</translation>
+        <translation type="vanished">Mapiranje geografskih podataka</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Mapiranje sa TIN -ovima</translation>
+        <translation type="vanished">Mapiranje sa TIN -ovima</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN -ovi stvoreni na temelju geografskih podataka koriste se za mapiranje. Vrijednosti atributa čvorova mreže izračunavaju se kao ponderirani prosjek vrijednosti na TIN čvorovima.</translation>
+        <translation type="vanished">TIN -ovi stvoreni na temelju geografskih podataka koriste se za mapiranje. Vrijednosti atributa čvorova mreže izračunavaju se kao ponderirani prosjek vrijednosti na TIN čvorovima.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mapiranje predloška</translation>
+        <translation type="vanished">Mapiranje predloška</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Pronađite geografske točke podataka koje su blizu čvorova mreže, u vezi s oblicima ćelija mreže, i koristite vrijednosti na tim točkama za interpolaciju. Ovaj algoritam se može koristiti samo za strukturirane mreže.</translation>
+        <translation type="vanished">Pronađite geografske točke podataka koje su blizu čvorova mreže, u vezi s oblicima ćelija mreže, i koristite vrijednosti na tim točkama za interpolaciju. Ovaj algoritam se može koristiti samo za strukturirane mreže.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalj (&amp;D)...</translation>
+        <translation type="vanished">Detalj (&amp;D)...</translation>
     </message>
 </context>
 <context>

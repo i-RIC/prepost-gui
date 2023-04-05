@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>색상 설정 편집</translation>
+        <translation type="vanished">색상 설정 편집</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>래스터 데이터 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>래스터 데이터 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>열 때 오류가 발생했습니다. %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 </TS>

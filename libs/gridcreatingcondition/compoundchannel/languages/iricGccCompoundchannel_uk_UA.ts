@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Далі, будь ласка, визначте центральну лінію сітки. Центральну лінію сітки можна визначити як багатокутну лінію натисканням миші. Завершіть визначення, двічі клацнувши або натиснувши клавішу повернення.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Додати вершину (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Видалити Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Редагувати координати (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Зворотний напрямок центральної лінії (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

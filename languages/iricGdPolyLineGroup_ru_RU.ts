@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Изменение настройки цвета</translation>
+        <translation type="vanished">Изменение настройки цвета</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Настройка отображения линий</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Настройка отображения группы полилиний</translation>
+        <translation type="vanished">Настройка отображения группы полилиний</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Цвет по значению</translation>
+        <translation type="vanished">Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина линии:</translation>
+        <translation type="vanished">Ширина линии:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Удаление этого элемента также приведет к удалению всех окон графиков, связанных с этими данными. Вы уверены, что хотите удалить этот элемент?</translation>
+        <translation type="vanished">Удаление этого элемента также приведет к удалению всех окон графиков, связанных с этими данными. Вы уверены, что хотите удалить этот элемент?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Изменить настройку дисплея</translation>
+        <translation type="vanished">Изменить настройку дисплея</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Настройка отображения линий</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>Шейп-файл ESRI (линии) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина линии:</translation>
     </message>
 </context>
 </TS>

@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>점 좌표 편집</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>정점 이동</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>정점 설정</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

@@ -658,6 +658,21 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>ส่งออก (&amp;E)</translation>
+    </message>
+</context>
+<context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
@@ -697,6 +712,25 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">สี</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
     </message>
 </context>
 <context>

@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>श्रेणी</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>चेहरे के</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>दिशा</translation>
+        <translation type="vanished">दिशा</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>मैं</translation>
+        <translation type="vanished">मैं</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>जे</translation>
+        <translation type="vanished">जे</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>क</translation>
+        <translation type="vanished">क</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>के मिनो</translation>
+        <translation type="vanished">के मिनो</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>के मैक्स</translation>
+        <translation type="vanished">के मैक्स</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>सक्रिय</translation>
+        <translation type="vanished">सक्रिय</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>सैम्पलिंग</translation>
+        <translation type="vanished">सैम्पलिंग</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>सभी कोने</translation>
+        <translation type="vanished">सभी कोने</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>नमूनाकरण दर:</translation>
+        <translation type="vanished">नमूनाकरण दर:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>मैं-दिशा</translation>
+        <translation type="vanished">मैं-दिशा</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>जे-दिशा</translation>
+        <translation type="vanished">जे-दिशा</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>कश्मीर-दिशा</translation>
+        <translation type="vanished">कश्मीर-दिशा</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>अदिश मान द्वारा</translation>
+        <translation type="vanished">अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>तीर आकार</translation>
+        <translation type="vanished">तीर आकार</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>तीर आकार:</translation>
+        <translation type="vanished">तीर आकार:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>तीर सेटिंग</translation>
+        <translation type="vanished">तीर सेटिंग</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>सामान्य सेटिंग</translation>
+        <translation type="vanished">सामान्य सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>लंबाई</translation>
+        <translation type="vanished">लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>मानक मूल्य:</translation>
+        <translation type="vanished">मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[एमएस]</translation>
+        <translation type="vanished">[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>स्क्रीन पर लंबाई:</translation>
+        <translation type="vanished">स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[पिक्सेल]</translation>
+        <translation type="vanished">[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+        <translation type="vanished">आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>चेहरे के</translation>
+        <translation type="vanished">चेहरे के</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>चेहरा %1</translation>
+        <translation type="vanished">चेहरा %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>लंबाई किंवदंती</translation>
+        <translation type="vanished">लंबाई किंवदंती</translation>
     </message>
 </context>
 <context>

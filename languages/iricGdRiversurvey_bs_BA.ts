@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Uredi postavke ekrana</translation>
+        <translation type="vanished">Uredi postavke ekrana</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Podaci o poprečnom presjeku se generiraju korištenjem podataka oblaka tačaka. U nekim regijama podaci nisu postojali u podacima oblaka tačaka, a vrijednost 0 je mapirana za te tačke. Ako želite ponovo prilagoditi položaj poprečnog presjeka i podatke o oblaku tačaka karte, možete koristiti "Podaci oblaka tačaka karte"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Postavka prikaza podataka poprečnog presjeka</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Podaci o poprečnom presjeku (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Podaci o presjeku (&amp;C)</translation>
+        <translation type="vanished">Podaci o presjeku (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linija %2 : "%3": Podaci o zastavi su nevažeći.</translation>
+        <translation type="vanished">%1 linija %2 : "%3": Podaci o zastavi su nevažeći.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Uredite postavke prikaza</translation>
+        <translation type="vanished">Uredite postavke prikaza</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Postavka prikaza podataka poprečnog presjeka</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Koristite podešavanje prozora za prethodnu obradu</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK datoteka (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Boja pozadine</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidljivo</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena:&lt;/span&gt; Možete prilagoditi boju pomoću kartice Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Poprečne linije</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z skala:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Boja:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Imena presjeka</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>

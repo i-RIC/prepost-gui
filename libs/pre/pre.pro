@@ -277,7 +277,6 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
-           datamodel/preprocessorgeodatavariationdataitem.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -301,6 +300,7 @@ HEADERS += pre_global.h \
            datamodel/preprocessorgeodatadataitem.h \
            datamodel/preprocessorgeodatagroupdataitem.h \
            datamodel/preprocessorgeodatatopdataitem.h \
+           datamodel/preprocessorgeodatavariationdataitem.h \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.h \
            datamodel/preprocessorgridattributecelldataitem.h \
            datamodel/preprocessorgridattributecelldisplaysettingdialog.h \
@@ -329,7 +329,7 @@ HEADERS += pre_global.h \
            datamodel/preprocessorstructured2dgridshapedataitem.h \
            datamodel/preprocessorunstructured2dgriddataitem.h \
            datamodel/preprocessorunstructured2dgridshapedataitem.h \
-           factory/geodatafactory.h \
+           factory/geodatafactorysetup.h \
            factory/gridcreatingconditionfactory.h \
            factory/gridexporterfactory.h \
            factory/gridimporterfactory.h \
@@ -360,6 +360,7 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
+           datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.h \
@@ -399,7 +400,6 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui \
          subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.ui
 SOURCES += preobjectbrowser.cpp \
-           datamodel/preprocessorgeodatavariationdataitem.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
@@ -422,6 +422,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/preprocessorgeodatadataitem.cpp \
            datamodel/preprocessorgeodatagroupdataitem.cpp \
            datamodel/preprocessorgeodatatopdataitem.cpp \
+           datamodel/preprocessorgeodatavariationdataitem.cpp \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp \
            datamodel/preprocessorgridattributecelldataitem.cpp \
            datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp \
@@ -450,7 +451,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/preprocessorstructured2dgridshapedataitem.cpp \
            datamodel/preprocessorunstructured2dgriddataitem.cpp \
            datamodel/preprocessorunstructured2dgridshapedataitem.cpp \
-           factory/geodatafactory.cpp \
+           factory/geodatafactorysetup.cpp \
            factory/gridcreatingconditionfactory.cpp \
            factory/gridexporterfactory.cpp \
            factory/gridimporterfactory.cpp \
@@ -478,6 +479,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
            datamodel/private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
+           datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp \

@@ -72,6 +72,16 @@ void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
 	}
 }
 
+void ColorMapEnumerateSettingContainer::copy(const ColorMapSettingContainerI& c)
+{
+	const auto& c2 = dynamic_cast<const ColorMapEnumerateSettingContainer&>(c);
+	CompositeContainer::copyValue(c2);
+
+	colors = c2.colors;
+	valueCaption = c2.valueCaption;
+	valueCaptions = c2.valueCaptions;
+}
+
 void ColorMapEnumerateSettingContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const auto& c2 = dynamic_cast<const ColorMapEnumerateSettingContainer&>(c);

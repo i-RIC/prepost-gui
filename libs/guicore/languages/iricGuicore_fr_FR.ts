@@ -658,6 +658,21 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Exporter (&amp;E)</translation>
+    </message>
+</context>
+<context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
@@ -697,6 +712,25 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Couleur</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Utiliser le paramètre de la fenêtre de prétraitement</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importer (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporter (&amp;E)...</translation>
     </message>
 </context>
 <context>

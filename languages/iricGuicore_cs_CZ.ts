@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Základní</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barevná mapa</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Při importu ignorujte nastavení barevného pruhu</translation>
+        <translation type="vanished">Při importu ignorujte nastavení barevného pruhu</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Velikost a poloha</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Směr:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontální</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikální</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Počet štítků:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
+        <translation type="vanished">Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Vývozní (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Počet barev pro vložení do každé sekce</translation>
+        <translation type="vanished">Počet barev pro vložení do každé sekce</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Rozsah hodnot</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Počet barev:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Použijte Nastavení okna Předzpracování</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Vývozní (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavení barevné mapy</translation>
+        <translation type="vanished">Nastavení barevné mapy</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Rozsah hodnot</translation>
+        <translation type="vanished">Rozsah hodnot</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatický</translation>
+        <translation type="vanished">Automatický</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Vyplňte horní oblast</translation>
+        <translation type="vanished">Vyplňte horní oblast</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Vyplňte spodní oblast</translation>
+        <translation type="vanished">Vyplňte spodní oblast</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Číslo divize:</translation>
+        <translation type="vanished">Číslo divize:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Nastavení barev</translation>
+        <translation type="vanished">Nastavení barev</translation>
     </message>
 </context>
 <context>

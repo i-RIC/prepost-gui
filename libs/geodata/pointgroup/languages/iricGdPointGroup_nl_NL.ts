@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Kleurinstelling bewerken</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Instelling puntenweergave</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Selecteer afbeeldingsbestand</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Alle afbeeldingen (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Selecteer afbeeldingsbestand</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Alle afbeeldingen (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Weergave-instelling bewerken</translation>
+        <translation type="vanished">Weergave-instelling bewerken</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Punten Data Display Instelling</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Kleur</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Kleur op waarde</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Wanneer de breedte of hoogte van de geïmporteerde afbeelding groter is dan de maximale grootte, wordt de afbeelding automatisch verkleind zodat de breedte of hoogte gelijk wordt aan de maximale grootte.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Punten Data Display Instelling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Vorm</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punten</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Pictogram afbeeldingen</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Afbeelding importeren (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Duidelijk (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Maximale maat:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Wanneer de breedte of hoogte van de geïmporteerde afbeelding groter is dan de maximale grootte, wordt de afbeelding automatisch verkleind zodat de breedte of hoogte gelijk wordt aan de maximale grootte.</translation>
     </message>
 </context>
 </TS>

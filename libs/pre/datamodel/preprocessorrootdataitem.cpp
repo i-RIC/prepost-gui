@@ -215,65 +215,23 @@ QAction* PreProcessorRootDataItem::editGridAttributeMappingSettingAction() const
 class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
 {
 public:
-	PreProcessorRootDataItemSetMappingSettingCommand(PreProcessorGridAttributeMappingMode::Mode mm, GeoDataPointmapMappingMode::Mode gmm, bool a, double streamWise, double crossStream, int numExp, double exp, PreProcessorRootDataItem* i)
+	PreProcessorRootDataItemSetMappingSettingCommand(PreProcessorGridAttributeMappingMode::Mode mm, PreProcessorRootDataItem* i)
 		: QUndoCommand(PreProcessorRootDataItem::tr("Change Attribute Mapping Setting")) {
 		m_newMappingMode = mm;
-		m_newGeodataMappingMode = gmm;
-		m_newTempAutoMode = a;
-		m_newTempStreamWiseLength = streamWise;
-		m_newTempCrossStreamLength = crossStream;
-		m_newTempNumExpansion = numExp;
-		m_newTempWeightExponent = exp;
-
 		m_oldMappingMode = PreProcessorGridAttributeMappingMode::mode;
-		m_oldGeodataMappingMode = GeoDataPointmapMappingMode::mode;
-		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
-		m_oldTempAutoMode = s.tempAutoMode;
-		m_oldTempStreamWiseLength = s.tempStreamWiseLength;
-		m_oldTempCrossStreamLength = s.tempCrossStreamLength;
-		m_oldTempNumExpansion = s.tempNumExpansion;
-		m_oldTempWeightExponent = s.tempWeightExponent;
-
 		m_item = i;
 	}
 
 	~PreProcessorRootDataItemSetMappingSettingCommand() {}
 	void redo() {
 		PreProcessorGridAttributeMappingMode::mode = m_newMappingMode;
-		GeoDataPointmapMappingMode::mode = m_newGeodataMappingMode;
-		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
-		s.tempAutoMode = m_newTempAutoMode;
-		s.tempStreamWiseLength = m_newTempStreamWiseLength;
-		s.tempCrossStreamLength = m_newTempCrossStreamLength;
-		s.tempNumExpansion = m_newTempNumExpansion;
-		s.tempWeightExponent = m_newTempWeightExponent;
 	}
 	void undo() {
 		PreProcessorGridAttributeMappingMode::mode = m_oldMappingMode;
-		GeoDataPointmapMappingMode::mode = m_oldGeodataMappingMode;
-		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
-		s.tempAutoMode = m_oldTempAutoMode;
-		s.tempStreamWiseLength = m_oldTempStreamWiseLength;
-		s.tempCrossStreamLength = m_oldTempCrossStreamLength;
-		s.tempNumExpansion = m_oldTempNumExpansion;
-		s.tempWeightExponent = m_oldTempWeightExponent;
 	}
 private:
 	PreProcessorGridAttributeMappingMode::Mode m_newMappingMode;
-	GeoDataPointmapMappingMode::Mode m_newGeodataMappingMode;
-	bool m_newTempAutoMode;
-	double m_newTempStreamWiseLength;
-	double m_newTempCrossStreamLength;
-	int m_newTempNumExpansion;
-	double m_newTempWeightExponent;
-
 	PreProcessorGridAttributeMappingMode::Mode m_oldMappingMode;
-	GeoDataPointmapMappingMode::Mode m_oldGeodataMappingMode;
-	bool m_oldTempAutoMode;
-	double m_oldTempStreamWiseLength;
-	double m_oldTempCrossStreamLength;
-	int m_oldTempNumExpansion;
-	double m_oldTempWeightExponent;
 
 	PreProcessorRootDataItem* m_item;
 };
@@ -283,17 +241,10 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 {
 	PreProcessorGridAttributeMappingSettingTopEditDialog dialog(mainWindow());
 	dialog.setMappingMode(PreProcessorGridAttributeMappingMode::mode);
-	dialog.setPointmapMappingMode(GeoDataPointmapMappingMode::mode);
-	GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
-	dialog.setAutoMode(s.tempAutoMode);
-	dialog.setStreamWiseLength(s.tempStreamWiseLength);
-	dialog.setCrossStreamLength(s.tempCrossStreamLength);
-	dialog.setNumExpansion(s.tempNumExpansion);
-	dialog.setWeightExponent(s.tempWeightExponent);
 
 	if (QDialog::Accepted != dialog.exec()) {return;}
 
-	iRICUndoStack::instance().push(new PreProcessorRootDataItemSetMappingSettingCommand(dialog.mappingMode(), dialog.pointmapMappingMode(), dialog.autoMode(), dialog.streamWiseLength(), dialog.crossStreamLength(), dialog.numExpansion(), dialog.weightExponent(), this));
+	iRICUndoStack::instance().push(new PreProcessorRootDataItemSetMappingSettingCommand(dialog.mappingMode(), this));
 }
 
 bool PreProcessorRootDataItem::isGridEdited() const
@@ -342,6 +293,7 @@ PreProcessorDataModel* PreProcessorRootDataItem::dataModel() const
 void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
+	/*
 	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(elem.attribute("mappingMode", "0").toInt());
 	GeoDataPointmapMappingMode::mode = static_cast<GeoDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
 	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
@@ -352,6 +304,7 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (tmpdbl != 0) {setting.tempCrossStreamLength = tmpdbl;}
 	setting.tempNumExpansion = elem.attribute("numExpansion", "3").toInt();
 	setting.tempWeightExponent = elem.attribute("weightExponent", "1").toDouble();
+	*/
 
 	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
 	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
@@ -391,6 +344,7 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	/*
 	QString tmpstr;
 	tmpstr.setNum(PreProcessorGridAttributeMappingMode::mode);
 	writer.writeAttribute("mappingMode", tmpstr);
@@ -408,6 +362,7 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("numExpansion", tmpstr);
 	tmpstr.setNum(setting.tempWeightExponent);
 	writer.writeAttribute("weightExponent", tmpstr);
+	*/
 
 	writer.writeStartElement("BackgroundImages");
 	m_backgroundImagesDataItem->saveToProjectMainFile(writer);

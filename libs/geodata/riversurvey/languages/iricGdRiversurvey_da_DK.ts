@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Rediger skærmindstilling</translation>
+        <translation type="vanished">Rediger skærmindstilling</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Tværsnitsdata genereres ved hjælp af punktskydata. I nogle regioner fandtes data ikke i punktskydata, og værdien 0 blev kortlagt for disse punkter. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge "Kortpunktskydata"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Indstilling for visning af tværsnitsdata</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Tværsnitsdata (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Tværsnitsdata (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Flagdata er ugyldige.</translation>
+        <translation type="vanished">%1 linje %2 : "%3": Flagdata er ugyldige.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Rediger displayindstilling</translation>
+        <translation type="vanished">Rediger displayindstilling</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Indstilling for visning af tværsnitsdata</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Brug indstilling af forbehandlingsvindue</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK -fil (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grundlæggende</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Baggrundsfarve</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Du kan tilpasse farven ved at bruge fanen Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Tværsnitslinjer</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z-skala:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farve:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Navne på tværsnit</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farvekort</translation>
     </message>
 </context>
 <context>

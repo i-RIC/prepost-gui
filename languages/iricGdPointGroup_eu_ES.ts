@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kolore ezarpenak editatzea</translation>
+        <translation type="vanished">Kolore ezarpenak editatzea</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Puntuak bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Hautatu irudi fitxategia</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Irudi guztiak (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Hautatu irudi fitxategia</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Irudi guztiak (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editatu pantailaren ezarpena</translation>
+        <translation type="vanished">Editatu pantailaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Puntua %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puntuak</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Ikonoen Irudiak</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Inportatu irudia (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Garbi (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Gehienezko tamaina:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Inportatutako irudiaren zabalera edo altuera Gehienezko tamaina baino handiagoa denean, irudia automatikoki txikitzen da, zabalera edo altuera gehienezko tamainaren berdina izan dadin.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Puntuen datuak bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puntuak</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puntuen tamaina:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Ikonoen Irudiak</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Inportatu irudia (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Garbi (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Gehienezko tamaina:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Inportatutako irudiaren zabalera edo altuera Gehienezko tamaina baino handiagoa denean, irudia automatikoki txikitzen da, zabalera edo altuera gehienezko tamainaren berdina izan dadin.</translation>
     </message>
 </context>
 </TS>

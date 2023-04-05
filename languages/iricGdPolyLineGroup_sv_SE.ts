@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Färginställning Redigera</translation>
+        <translation type="vanished">Färginställning Redigera</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linjer Display Inställning</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline-gruppvisningsinställning</translation>
+        <translation type="vanished">Polyline-gruppvisningsinställning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Färg efter värde</translation>
+        <translation type="vanished">Färg efter värde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linjebredd:</translation>
+        <translation type="vanished">Linjebredd:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Om du tar bort det här objektet tas också alla graffönster bort som är associerade med dessa data. Är du säker på att du vill ta bort det här objektet?</translation>
+        <translation type="vanished">Om du tar bort det här objektet tas också alla graffönster bort som är associerade med dessa data. Är du säker på att du vill ta bort det här objektet?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redigera displayinställning</translation>
+        <translation type="vanished">Redigera displayinställning</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linjer Display Inställning</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Använd inställning av förbearbetningsfönstret</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (linjer) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Anpassad färg</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Färgkarta</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredd:</translation>
     </message>
 </context>
 </TS>

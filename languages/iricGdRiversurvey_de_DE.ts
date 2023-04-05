@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Anzeigeeinstellungen bearbeiten</translation>
+        <translation type="vanished">Anzeigeeinstellungen bearbeiten</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. In einigen Regionen waren in Punktwolkendaten keine Daten vorhanden, und für diese Punkte wurde der Wert 0 zugeordnet. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie "Punktwolkendaten zuordnen" verwenden.</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Einstellung der Querschnittsdatenanzeige</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Querschnittsdaten (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Querschnittsdaten (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 Leitung %2 : "%3": Flag-Daten sind ungültig.</translation>
+        <translation type="vanished">%1 Leitung %2 : "%3": Flag-Daten sind ungültig.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Anzeigeeinstellung bearbeiten</translation>
+        <translation type="vanished">Anzeigeeinstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Einstellung der Querschnittsdatenanzeige</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Verwenden Sie die Einstellung des Vorverarbeitungsfensters</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK-Datei (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Hintergrundfarbe</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Sie können die Farbe mithilfe der Registerkarte „Colormap“ anpassen.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Querschnittslinien</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z-Skala:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farbe:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Querschnittsnamen</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farbkarte</translation>
     </message>
 </context>
 <context>

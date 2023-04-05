@@ -523,6 +523,24 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGeoDataGroupDataItem</name>
+    <message>
+        <source>&amp;Color Setting...</source>
+        <translation>Värvi seadistus (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>%1 Color Setting</source>
+        <translation>%1 Värvi seadistus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGeoDataGroupDataItem_ScalarsToColorsEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Dialoog</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>

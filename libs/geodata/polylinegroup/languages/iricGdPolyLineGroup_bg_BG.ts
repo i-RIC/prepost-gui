@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Редактиране на настройките на цвета</translation>
+        <translation type="vanished">Редактиране на настройките на цвета</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Настройка на дисплея на линиите</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Настройка за показване на група полилинии</translation>
+        <translation type="vanished">Настройка за показване на група полилинии</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Оцветете по стойност</translation>
+        <translation type="vanished">Оцветете по стойност</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Изтриването на този елемент също ще премахне всички прозорци с графики, свързани с тези данни. Наистина ли искате да изтриете този елемент?</translation>
+        <translation type="vanished">Изтриването на този елемент също ще премахне всички прозорци с графики, свързани с тези данни. Наистина ли искате да изтриете този елемент?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Редактиране на настройката на дисплея</translation>
+        <translation type="vanished">Редактиране на настройката на дисплея</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Настройка за показване на линии</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Използвайте настройката на прозореца за предварителна обработка</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (линии) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветна карта</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина на линията:</translation>
     </message>
 </context>
 </TS>

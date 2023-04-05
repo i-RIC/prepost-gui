@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Lisa uus %1</translation>
+        <translation type="vanished">Lisa uus %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Värvi seadistus (&amp;S)...</translation>
+        <translation type="vanished">Värvi seadistus (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Värviseadete muutmine</translation>
+        <translation type="vanished">Värviseadete muutmine</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopeeri...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Ekraani seadistus (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData värviseade</translation>
+        <translation type="vanished">PolyData värviseade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Värvi väärtuse järgi</translation>
+        <translation type="vanished">Värvi väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
 </context>
 <context>

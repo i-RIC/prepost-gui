@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Yeni ekle %1</translation>
+        <translation type="vanished">Yeni ekle %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Renk Ayarı (&amp;S)...</translation>
+        <translation type="vanished">Renk Ayarı (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Renk Ayarı Düzenleme</translation>
+        <translation type="vanished">Renk Ayarı Düzenleme</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopyala...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Ekran ayarı (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Renk Ayarı</translation>
+        <translation type="vanished">PolyData Renk Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Değere göre renk</translation>
+        <translation type="vanished">Değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
 </context>
 <context>

@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Definieer vervolgens de middenlijn van het raster. De middellijn van het raster kan worden gedefinieerd als een veelhoekige lijn door met de muis te klikken. Beëindig het definiëren door te dubbelklikken of op de Return-toets te drukken.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Hoekpunt toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Hoekpunt verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Coördinaten bewerken (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Richting middenlijn omkeren (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

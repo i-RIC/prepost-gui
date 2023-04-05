@@ -523,6 +523,24 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGeoDataGroupDataItem</name>
+    <message>
+        <source>&amp;Color Setting...</source>
+        <translation>Configuración de cor (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>%1 Color Setting</source>
+        <translation>%1 Configuración de cor</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGeoDataGroupDataItem_ScalarsToColorsEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>

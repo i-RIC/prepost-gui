@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Järjestellä (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pistepilven näyttöasetus</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Poista kaikkien valinnat (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pistepilven näyttöasetus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Käytä esikäsittelyikkunan asetusta</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Perus</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TINA</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pisteet</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pistekoko:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Rautalanka</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Viivan leveys:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Pinta</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Polygonien kartoitusasetus</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Värikartta arvoille</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Pistepilven näyttöasetus</translation>
+        <translation type="vanished">Pistepilven näyttöasetus</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Perus</translation>
+        <translation type="vanished">Perus</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TINA</translation>
+        <translation type="vanished">TINA</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pisteet</translation>
+        <translation type="vanished">Pisteet</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Pistekoko:</translation>
+        <translation type="vanished">Pistekoko:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Rautalanka</translation>
+        <translation type="vanished">Rautalanka</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Pinta</translation>
+        <translation type="vanished">Pinta</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Break Lines</translation>
+        <translation type="vanished">Break Lines</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Näytä</translation>
+        <translation type="vanished">Näytä</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Polygonien kartoitusasetus</translation>
+        <translation type="vanished">Polygonien kartoitusasetus</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Värikartta arvoille</translation>
+        <translation type="vanished">Värikartta arvoille</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Tuonti (&amp;I)</translation>
+        <translation type="vanished">Tuonti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Viedä (&amp;E)</translation>
+        <translation type="vanished">Viedä (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Poista kolmio pitkillä reunoilla</translation>
+        <translation>Poista kolmio pitkillä reunoilla</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Rajan reunan pituus:</translation>
+        <translation>Rajan reunan pituus:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

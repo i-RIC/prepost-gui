@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>刪除點</translation>
+        <translation type="vanished">刪除點</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>選定點屬性</translation>
+        <translation type="vanished">選定點屬性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>點數：</translation>
+        <translation type="vanished">點數：</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>最低限度：</translation>
+        <translation type="vanished">最低限度：</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>最大值：</translation>
+        <translation type="vanished">最大值：</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>刪除小於值：</translation>
+        <translation type="vanished">刪除小於值：</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>當您切換到此模式時，您必須重新劃分 TIN。你現在要重新劃分嗎？</translation>
+        <translation type="vanished">當您切換到此模式時，您必須重新劃分 TIN。你現在要重新劃分嗎？</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>選擇點</translation>
+        <translation type="vanished">選擇點</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>刪除小於值的選定點 (&amp;L)...</translation>
+        <translation type="vanished">刪除小於值的選定點 (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>刪除大於值的選定點 (&amp;G)...</translation>
+        <translation type="vanished">刪除大於值的選定點 (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>添加中斷線時，您必須切換到顯示線框。你想現在切換到顯示線框嗎？</translation>
+        <translation type="vanished">添加中斷線時，您必須切換到顯示線框。你想現在切換到顯示線框嗎？</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>當您刪除中斷線時，您必須切換到顯示線框。你想現在切換到顯示線框嗎？</translation>
+        <translation type="vanished">當您刪除中斷線時，您必須切換到顯示線框。你想現在切換到顯示線框嗎？</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>當你想刪除長邊三角形時，你必須將顯示方法切換為線框或曲面。如果按 OK 按鈕，顯示方法將切換為線框</translation>
+        <translation type="vanished">當你想刪除長邊三角形時，你必須將顯示方法切換為線框或曲面。如果按 OK 按鈕，顯示方法將切換為線框</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>編輯點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
+        <translation type="vanished">編輯點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>當您刪除點時，您必須切換到顯示點。現在要切換到顯示點嗎？</translation>
+        <translation type="vanished">當您刪除點時，您必須切換到顯示點。現在要切換到顯示點嗎？</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>您不能刪除用於中斷線的點。</translation>
+        <translation type="vanished">您不能刪除用於中斷線的點。</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>刪除點</translation>
+        <translation type="vanished">刪除點</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>選擇要導出的文件</translation>
+        <translation type="vanished">選擇要導出的文件</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>導出到時出錯 %1.</translation>
+        <translation type="vanished">導出到時出錯 %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>刪除點小於 %1</translation>
+        <translation type="vanished">刪除點小於 %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>刪除點大於 %1</translation>
+        <translation type="vanished">刪除點大於 %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>插入點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
+        <translation type="vanished">插入點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>添加點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
+        <translation type="vanished">添加點時，必須切換到顯示點。現在要切換到顯示點嗎？</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>添加斷線點</translation>
+        <translation type="vanished">添加斷線點</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>取消定義斷裂線</translation>
+        <translation type="vanished">取消定義斷裂線</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>完成定義斷裂線</translation>
+        <translation type="vanished">完成定義斷裂線</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>編輯點</translation>
+        <translation type="vanished">編輯點</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>添加新的 Interp 線點</translation>
+        <translation type="vanished">添加新的 Interp 線點</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>合併...</translation>
+        <translation type="vanished">合併...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>點雲數據 (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>刪除點</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>切換模式 (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>選定點屬性</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>合併 (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>點數：</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>映射設置 (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>最低限度：</translation>
+        <source>Select file name to export</source>
+        <translation>選擇要導出的文件名</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>最大值：</translation>
+        <source>Failed to open %1.</source>
+        <translation>打開失敗 %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>刪除大於值：</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>編輯點</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>重新網格化 TIN，完成後，切換到 TIN 編輯模式。</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>選定點屬性</translation>
+        <source>Selection Mode</source>
+        <translation>選擇模式</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>點數：</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>使用矩形區域選擇點</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>最低限度：</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>過濾選定的點 (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>最大值：</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>重新劃分 TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X位置</translation>
+        <source>&amp;Sort</source>
+        <translation>種類 (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-位置</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>價值</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>點雲顯示設置</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>插值增量</translation>
+        <source>Warning</source>
+        <translation>警告</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>插值設置</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>插值增量：</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>線長：</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>您不能刪除用於斷線的點。</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>插值增量必須大於 0 且小於插值線長度</translation>
+        <translation>插值增量必須大於0且小於插值線長</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">刪除點</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">選定點屬性</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">點數：</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">最低限度：</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">最大值：</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">刪除大於值：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">編輯點</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">選定點屬性</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">點數：</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">最低限度：</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">最大值：</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X位置</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-位置</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">價值</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">插值增量</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">插值設置</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">插值增量：</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">線長：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">插值增量必須大於 0 且小於插值線長度</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>全部取消選擇 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>點雲顯示設置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>預處理窗口的使用設置</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 點）</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>錫</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>積分</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>點大小：</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>線框</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>表面</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>斷線</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>展示</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>映射設置多邊形</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>值的顏色圖</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>點雲數據映射設置</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>使用 TIN 映射</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>從點創建的 TIN 用於映射。在網格節點或單元格處定義的網格屬性值計算為在包含節點（或單元格中心）的三角形的節點處定義的值的加權平均值。</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>模板映射</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;根據網格單元的形狀，找到靠近網格節點的點，並使用這些點的值進行插值。&lt;/p&gt;&lt;p&gt;該算法可以是僅用於結構化網格。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>細節 (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>更改用多邊形定義的每個區域的映射算法</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;將區域定義為多邊形，並指定將點定義的值映射到網格節點或單元中心的值的算法。&lt;/p&gt;&lt;p&gt;用戶可以從以下選擇： &lt;/p&gt;&lt;ul&gt;&lt;li&gt;繪製圓內點的最小值&lt;/li&gt;&lt;li&gt;繪製圓內點的最大值&lt;/li&gt;&lt;li&gt;繪製圓內點的加權平均值&lt;/li&gt; &lt;li&gt;來自 TIN 的地圖值&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>模板映射設置</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>搜索區域</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽車</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>手動的</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>流向長度[m]：</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>橫流寬度[m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>模板擴展數：</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>加權指數：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>編輯點</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>所選點的屬性</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>點數：</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>最小值：</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>最大值：</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X：</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>是：</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>價值：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>過濾選定的點</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>所選點的屬性</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>點數：</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>最小值：</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>最大值：</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>篩選條件</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>選擇值大於閾值的點</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>選擇值小於閾值的點</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>閾值：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>插值設置</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>插值增量</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>插值增量：</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>線長：</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>計算方法</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>使用 TIN 繪製地圖</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>半徑內點的最小值</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>半徑內點的最大值</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>半徑內點的加權平均值</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>加權指數 k：</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; 在計算這些值的加權平均值時用作權重。 r 是點到值映射到的節點或單元中心的距離。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>搜索點的圓半徑：</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>米</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>執行映射時，搜索半徑為以上的圓內的點，將值映射到網格節點或單元格中心。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">點雲顯示設置</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">基本的</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">錫</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">積分</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">點大小：</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">線框</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">行寬：</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">表面</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">斷線</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">展示</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">顏色：</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">映射設置多邊形</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">值的顏色圖</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">進口 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">出口 (&amp;E)</translation>
     </message>
 </context>
 <context>

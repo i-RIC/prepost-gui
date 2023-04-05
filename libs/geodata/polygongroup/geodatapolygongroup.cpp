@@ -1,20 +1,24 @@
 #include "geodatapolygongroup.h"
-#include "geodatapolygongroupcolorsettingdialog.h"
 #include "geodatapolygongroupcreator.h"
 #include "geodatapolygongrouppolygon.h"
 #include "geodatapolygongroupproxy.h"
+#include "private/geodatapolygongroup_displaysetting.h"
 #include "private/geodatapolygongroup_impl.h"
-#include "private/geodatapolygongroup_setcolorsettingcommand.h"
+#include "public/geodatapolygongroup_displaysettingwidget.h"
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/modifycommandandrenderdialog.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/geodata/geodatafactoryinterface.h>
+#include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidget.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/zdepthrange.h>
 
 #include <QMenu>
@@ -43,8 +47,8 @@ std::string VALUE = "value";
 
 GeoDataCreator* getPolygonGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
 {
-	auto factory = geoData->preProcessorWindow()->geoDataFactory();
-	auto creators = factory->compatibleCreators(att);
+	const auto& factory = GeoDataFactory::instance();
+	auto creators = factory.compatibleCreators(att);
 	for (auto c : creators) {
 		auto c2 = dynamic_cast <GeoDataPolygonGroupCreator*> (c);
 		if (c2 != nullptr) {return c2;}
@@ -70,7 +74,7 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 
 	auto att = gridAttribute();
 	if (att && att->isReferenceInformation()) {
-		impl->m_colorSetting.mapping = GeoDataPolygonGroupColorSettingDialog::Arbitrary;
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
 }
 
@@ -297,19 +301,30 @@ void GeoDataPolygonGroup::assignActorZValues(const ZDepthRange& range)
 
 QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
 {
-	auto dialog = new GeoDataPolygonGroupColorSettingDialog(parent);
-	dialog->setSetting(impl->m_colorSetting);
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
+	auto widget = new DisplaySettingWidget(dialog);
+	widget->setSetting(&impl->m_displaySetting);
+
+	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
+		widget->setIsReferenceInformation(true);
+	} else {
+		auto colorMapWidget = geoDataGroupDataItem()->condition()->createColorMapSettingEditWidget(widget);
+		auto colormap = geoDataDataItem()->colorMapSettingContainer();
+		colorMapWidget->setSetting(colormap);
+		auto colorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(colorMapWidget, widget);
+
+		widget->setColorMapWidget(colorMapWidget2);
 	}
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Polygons Display Setting"));
+	dialog->resize(900, 700);
+
 	return dialog;
 }
 
-void GeoDataPolygonGroup::handlePropertyDialogAccepted(QDialog* d)
+void GeoDataPolygonGroup::showPropertyDialog()
 {
-	auto dialog = dynamic_cast<GeoDataPolygonGroupColorSettingDialog*> (d);
-	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
+	showPropertyDialogModeless();
 }
 
 GeoDataProxy* GeoDataPolygonGroup::getProxy()
@@ -320,13 +335,13 @@ GeoDataProxy* GeoDataPolygonGroup::getProxy()
 void GeoDataPolygonGroup::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_colorSetting.load(node);
+	impl->m_displaySetting.load(node);
 }
 
 void GeoDataPolygonGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_colorSetting.save(writer);
+	impl->m_displaySetting.save(writer);
 }
 
 GeoDataPolyDataGroupPolyData* GeoDataPolygonGroup::createNewData()
@@ -347,22 +362,22 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 
 void GeoDataPolygonGroup::updateActorSetting()
 {
-	auto cs = impl->m_colorSetting;
+	auto ds = impl->m_displaySetting;
 
 	// color
-	QColor c = cs.color;
+	QColor c = ds.color;
 
 	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-	impl->m_paintActor->GetProperty()->SetColor(cs.color);
+	impl->m_paintActor->GetProperty()->SetColor(ds.color);
 	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_selectedPolygonsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 
 	// opacity
-	impl->m_paintActor->GetProperty()->SetOpacity(cs.opacity);
+	impl->m_paintActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
 	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
+	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
 		scalarVisibility = false;
 	}
 	if (scalarVisibility) {
@@ -409,118 +424,130 @@ void GeoDataPolygonGroup::updateActorSetting()
 	}
 
 	// line width
-	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
-	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(cs.lineWidth * 2);
-	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(cs.lineWidth * 5);
+	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
+	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
 
 	updateActorSettingForEditTargetPolyData();
+
+	emit updateActorSettingExecuted();
+}
+
+void GeoDataPolygonGroup::updateActionConnections()
+{
+	auto dummy = impl->m_dummyPolygonForMenu;
+	GeoDataPolygon* p = nullptr;
+
+	if (editTargetData() != nullptr) {
+		p = dynamic_cast<GeoDataPolygon*> (editTargetData());
+	}
+
+	auto selected = selectedData();
+
+	dummy->editNameAction()->disconnect();
+	dummy->editNameAndValueAction()->disconnect();
+	dummy->addVertexAction()->disconnect();
+	dummy->removeVertexAction()->disconnect();
+	dummy->coordEditAction()->disconnect();
+	dummy->holeModeAction()->disconnect();
+	dummy->deleteAction()->disconnect();
+
+	dummy->editNameAction()->setEnabled(selected.size() > 0 || p != nullptr);
+	dummy->editNameAndValueAction()->setEnabled(selected.size() > 0 || p != nullptr);
+	if (selectedData().size() > 1) {
+		connect(dummy->editNameAction(), &QAction::triggered, [=](bool){editName();});
+		connect(dummy->editNameAndValueAction(), &QAction::triggered, [=](bool){editNameAndValue();});
+	} else if (p != nullptr) {
+		connect(dummy->editNameAction(), &QAction::triggered, [=](bool){p->editName();});
+		connect(dummy->editNameAndValueAction(), &QAction::triggered, [=](bool){p->editNameAndValue();});
+	}
+	dummy->addVertexAction()->setEnabled(selected.size() == 1);
+	dummy->removeVertexAction()->setEnabled(selected.size() == 1);
+	dummy->coordEditAction()->setEnabled(selected.size() == 1);
+	dummy->holeModeAction()->setEnabled(selected.size() == 1);
+	dummy->deleteAction()->setEnabled(selected.size() == 1);
+	if (p != nullptr) {
+		connect(dummy->addVertexAction(), &QAction::triggered, p, &GeoDataPolygon::addVertexMode);
+		p->setAddVertexAction(dummy->addVertexAction());
+		connect(dummy->removeVertexAction(), &QAction::triggered, p, &GeoDataPolygon::removeVertexMode);
+		p->setRemoveVertexAction(dummy->removeVertexAction());
+		connect(dummy->coordEditAction(), &QAction::triggered, [=](bool){p->editCoordinates();});
+		p->setCoordEditAction(dummy->coordEditAction());
+		connect(dummy->holeModeAction(), &QAction::triggered, p, [=](bool){p->addHolePolygon();});
+		p->setHoleModeAction(dummy->holeModeAction());
+		connect(dummy->deleteAction(), &QAction::triggered, p, [=](bool){p->deletePolygon();});
+		p->setDeleteAction(dummy->deleteAction());
+	}
 }
 
 void GeoDataPolygonGroup::updateMenu()
 {
-	auto att = gridAttribute();
-	bool isRef = att && att->isReferenceInformation();
-	GeoDataPolygon* p = impl->m_dummyPolygonForMenu;
-	if (editTargetData() != nullptr) {
-		p = dynamic_cast<GeoDataPolygon*> (editTargetData());
+	updateActionConnections();
+	auto polygon = editTargetData();
+	if (polygon != nullptr) {
+		dynamic_cast<GeoDataPolygon*> (polygon)->updateActionStatus();
 	}
 
 	auto m = m_menu;
 
 	m->clear();
-
 	m->addAction(editNameAction());
-
 	m->addSeparator();
-	m->addAction(addAction());
-
-	m->addSeparator();
-	if (selectedData().size() > 1) {
-		if (isRef) {
-			m->addAction(editNameAction());
-		} else {
-			m->addAction(editNameAndValueAction());
-		}
-	} else {
-		if (isRef) {
-			m->addAction(p->editNameAction());
-		} else {
-			m->addAction(p->editNameAndValueAction());
-		}
-	}
-
-	m->addSeparator();
-	m->addAction(p->addVertexAction());
-	m->addAction(p->removeVertexAction());
-	m->addAction(p->coordEditAction());
-
-	m->addSeparator();
-	m->addAction(p->holeModeAction());
-	m->addAction(p->deleteAction());
-
-	m->addSeparator();
-	auto sortMenu = m->addMenu(tr("&Sort"));
-	sortMenu->addAction(moveToTopAction());
-	sortMenu->addAction(moveUpAction());
-	sortMenu->addAction(moveDownAction());
-	sortMenu->addAction(moveToBottomAction());
-
-	m->addSeparator();
-	m->addAction(mergeAction());
-	m->addAction(copyAction());
-	m->addAction(editDisplaySettingAction());
-	m->addAction(attributeBrowserAction());
-
-	m->addSeparator();
-	m->addAction(deleteAction());
+	updateMenu(m);
 
 	// right clicking menu
 
 	m = rightClickingMenu();
 	m->clear();
+	updateMenu(m);
+}
 
-	m->addAction(addAction());
+void GeoDataPolygonGroup::updateMenu(QMenu* menu)
+{
+	auto att = gridAttribute();
+	bool isRef = att && att->isReferenceInformation();
+	auto dummy = impl->m_dummyPolygonForMenu;
+	GeoDataPolygon* p = nullptr;
 
-	m->addSeparator();
-	if (selectedData().size() > 1) {
-		if (isRef) {
-			m->addAction(editNameAction());
-		} else {
-			m->addAction(editNameAndValueAction());
-		}
-	} else {
-		if (isRef) {
-			m->addAction(p->editNameAction());
-		} else {
-			m->addAction(p->editNameAndValueAction());
-		}
+	if (editTargetData() != nullptr) {
+		p = dynamic_cast<GeoDataPolygon*> (editTargetData());
 	}
 
-	m->addSeparator();
-	m->addAction(p->addVertexAction());
-	m->addAction(p->removeVertexAction());
-	m->addAction(p->coordEditAction());
+	menu->addAction(addAction());
 
-	m->addSeparator();
-	m->addAction(p->holeModeAction());
-	m->addAction(p->deleteAction());
+	menu->addSeparator();
+	if (isRef) {
+		menu->addAction(dummy->editNameAction());
+	} else {
+		menu->addAction(dummy->editNameAndValueAction());
+	}
 
-	m->addSeparator();
-	sortMenu = m->addMenu(tr("&Sort"));
+	menu->addSeparator();
+	menu->addAction(dummy->addVertexAction());
+	menu->addAction(dummy->removeVertexAction());
+	menu->addAction(dummy->coordEditAction());
+
+	menu->addSeparator();
+	menu->addAction(dummy->holeModeAction());
+	menu->addAction(dummy->deleteAction());
+
+	menu->addSeparator();
+	auto sortMenu = menu->addMenu(tr("&Sort"));
 	sortMenu->addAction(moveToTopAction());
 	sortMenu->addAction(moveUpAction());
 	sortMenu->addAction(moveDownAction());
 	sortMenu->addAction(moveToBottomAction());
 
-	m->addSeparator();
-	m->addAction(mergeAction());
-	m->addAction(copyAction());
-	m->addAction(editDisplaySettingAction());
-	m->addAction(attributeBrowserAction());
+	menu->addSeparator();
+	menu->addAction(mergeAction());
+	menu->addAction(copyAction());
+	menu->addAction(editDisplaySettingAction());
+	menu->addAction(attributeBrowserAction());
 
-	m->addSeparator();
-	m->addAction(deleteAction());
+	menu->addSeparator();
+	menu->addAction(deleteAction());
 }
+
 
 void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
 {
@@ -529,13 +556,13 @@ void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
 
 	auto targetData = dynamic_cast<GeoDataPolygon*> (t);
 
-	const auto& cs = impl->m_colorSetting;
-	targetData->setColor(cs.color);
-	targetData->setOpacity(cs.opacity);
-	if (cs.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
+	const auto& ds = impl->m_displaySetting;
+	targetData->setColor(ds.color);
+	targetData->setOpacity(ds.opacity);
+	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
 	} else {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
 	}
-	targetData->setLineWidth(cs.lineWidth);
+	targetData->setLineWidth(ds.lineWidth);
 }

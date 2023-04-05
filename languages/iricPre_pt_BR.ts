@@ -1250,24 +1250,24 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Mapeamento dos dados geograficos</translation>
+        <translation type="vanished">Mapeamento dos dados geograficos</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Mapeamento pelo TIN</translation>
+        <translation type="vanished">Mapeamento pelo TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Sera usado para o mapeamento o TIN criado pelos dados do terreno. O valor de atributo do vertice da grade seria a media ponderada dos valores nos vertices do TIN que os contem.</translation>
+        <translation type="vanished">Sera usado para o mapeamento o TIN criado pelos dados do terreno. O valor de atributo do vertice da grade seria a media ponderada dos valores nos vertices do TIN que os contem.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mapeamento de modelo</translation>
+        <translation type="vanished">Mapeamento de modelo</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Encontre pontos de dados geográficos próximos aos nós da grade, em relação às formas das células da grade, e use os valores nesses pontos para interpolação. Este algoritmo pode ser usado apenas para grades estruturadas.</translation>
+        <translation type="vanished">Encontre pontos de dados geográficos próximos aos nós da grade, em relação às formas das células da grade, e use os valores nesses pontos para interpolação. Este algoritmo pode ser usado apenas para grades estruturadas.</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.</source>
@@ -1275,7 +1275,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalhe (&amp;D)...</translation>
+        <translation type="vanished">Detalhe (&amp;D)...</translation>
     </message>
 </context>
 <context>

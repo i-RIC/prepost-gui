@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Настройки цвета править</translation>
+        <translation type="vanished">Настройки цвета править</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Настройка отображения растровых данных</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Настройка отображения растровых данных</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Использовать настройку окна предварительной обработки</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Произошла ошибка при открытии %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
     </message>
 </context>
 </TS>

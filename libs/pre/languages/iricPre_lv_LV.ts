@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Ģeogrāfisko datu kartēšana</translation>
+        <translation type="vanished">Ģeogrāfisko datu kartēšana</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kartēšana ar TIN</translation>
+        <translation type="vanished">Kartēšana ar TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Kartēšanai tiek izmantoti TIN, kas izveidoti no ģeogrāfiskiem datiem. Režģa mezglu atribūtu vērtības tiek aprēķinātas kā TIN mezglu vērtību vidējais svērtais.</translation>
+        <translation type="vanished">Kartēšanai tiek izmantoti TIN, kas izveidoti no ģeogrāfiskiem datiem. Režģa mezglu atribūtu vērtības tiek aprēķinātas kā TIN mezglu vērtību vidējais svērtais.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Veidņu kartēšana</translation>
+        <translation type="vanished">Veidņu kartēšana</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Atrodiet ģeogrāfisko datu punktus, kas atrodas netālu no režģa mezgliem, attiecībā uz režģa šūnu formām un izmantojiet šo punktu vērtības interpolācijai. Šo algoritmu var izmantot tikai strukturētiem režģiem.</translation>
+        <translation type="vanished">Atrodiet ģeogrāfisko datu punktus, kas atrodas netālu no režģa mezgliem, attiecībā uz režģa šūnu formām un izmantojiet šo punktu vērtības interpolācijai. Šo algoritmu var izmantot tikai strukturētiem režģiem.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Sīkāka informācija (&amp;D)...</translation>
+        <translation type="vanished">Sīkāka informācija (&amp;D)...</translation>
     </message>
 </context>
 <context>

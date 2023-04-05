@@ -15,8 +15,6 @@ public:
 	QString defaultCaption(unsigned int index) const override;
 
 	bool isCreatable() const override;
-
-	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 
 #endif // GEODATAPOLYLINECREATOR_H

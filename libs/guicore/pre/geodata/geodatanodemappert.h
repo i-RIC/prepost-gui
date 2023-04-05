@@ -8,8 +8,8 @@ template <class V, class DA>
 class GeoDataNodeMapperT : public GeoDataMapperT<V>
 {
 public:
-	GeoDataNodeMapperT(const QString& caption, GeoDataCreator* parent);
-	virtual ~GeoDataNodeMapperT();
+	GeoDataNodeMapperT(const QString& caption, QObject* parent);
+	~GeoDataNodeMapperT();
 
 protected:
 	GridAttributeNodeContainerT<V, DA>* container() const;

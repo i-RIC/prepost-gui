@@ -11,11 +11,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
-        <translation>pembuat riv 2.0.2</translation>
+        <translation type="vanished">pembuat riv 2.0.2</translation>
     </message>
     <message>
         <source>Release Date: 2021/3/2</source>
-        <translation>Tanggal Rilis: 2021/3/2</translation>
+        <translation type="vanished">Tanggal Rilis: 2021/3/2</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.3</source>
+        <translation>pembuat riv 2.0.3</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/4/28</source>
+        <translation>Tanggal Rilis: 28/4/2021</translation>
     </message>
 </context>
 <context>

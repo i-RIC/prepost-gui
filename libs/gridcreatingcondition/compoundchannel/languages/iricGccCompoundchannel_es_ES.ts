@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>Coordenadas de Polilinea</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Agregar vértice (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Eliminar vértice (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Editar coordenadas (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Dirección de línea central inversa (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

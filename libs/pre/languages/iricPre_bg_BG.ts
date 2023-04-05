@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Съпоставяне на географски данни</translation>
+        <translation type="vanished">Съпоставяне на географски данни</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Картиране с TIN</translation>
+        <translation type="vanished">Картиране с TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>ИНН, създадени от географски данни, се използват за картографиране. Стойностите на атрибутите на мрежовите възли се изчисляват като среднопретеглена стойност на стойностите в TIN възлите.</translation>
+        <translation type="vanished">ИНН, създадени от географски данни, се използват за картографиране. Стойностите на атрибутите на мрежовите възли се изчисляват като среднопретеглена стойност на стойностите в TIN възлите.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Съпоставяне на шаблони</translation>
+        <translation type="vanished">Съпоставяне на шаблони</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Намерете точки от географски данни, които са близо до възлите на мрежата, относно формите на клетъчната мрежа и използвайте стойностите в тези точки за интерполация. Този алгоритъм може да се използва само за структурирани мрежи.</translation>
+        <translation type="vanished">Намерете точки от географски данни, които са близо до възлите на мрежата, относно формите на клетъчната мрежа и използвайте стойностите в тези точки за интерполация. Този алгоритъм може да се използва само за структурирани мрежи.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Детайл (&amp;D)...</translation>
+        <translation type="vanished">Детайл (&amp;D)...</translation>
     </message>
 </context>
 <context>

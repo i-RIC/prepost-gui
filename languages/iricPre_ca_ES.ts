@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Cartografia de dades geogràfiques</translation>
+        <translation type="vanished">Cartografia de dades geogràfiques</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Assignació amb TIN</translation>
+        <translation type="vanished">Assignació amb TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Els mapes numèrics creats a partir de dades geogràfiques s’utilitzen. Els valors dels atributs dels nodes de quadrícula es calculen com a mitjana ponderada dels valors dels nodes TIN.</translation>
+        <translation type="vanished">Els mapes numèrics creats a partir de dades geogràfiques s’utilitzen. Els valors dels atributs dels nodes de quadrícula es calculen com a mitjana ponderada dels valors dels nodes TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Assignació de plantilles</translation>
+        <translation type="vanished">Assignació de plantilles</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Cerqueu punts de dades geogràfiques a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors en aquests punts per a la interpolació. Aquest algorisme només es pot utilitzar per a quadrícules estructurades.</translation>
+        <translation type="vanished">Cerqueu punts de dades geogràfiques a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors en aquests punts per a la interpolació. Aquest algorisme només es pot utilitzar per a quadrícules estructurades.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detall (&amp;D)...</translation>
+        <translation type="vanished">Detall (&amp;D)...</translation>
     </message>
 </context>
 <context>

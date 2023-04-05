@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kolore ezarpenak editatzea</translation>
+        <translation type="vanished">Kolore ezarpenak editatzea</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Lerroak bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Taldearen bistaratzeko ezarpena</translation>
+        <translation type="vanished">Polyline Taldearen bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Koloreztatu balioaren arabera</translation>
+        <translation type="vanished">Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lerroaren zabalera:</translation>
+        <translation type="vanished">Lerroaren zabalera:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Elementu hau ezabatzeak datu horiekin lotutako grafiko leihoak ere kenduko ditu. Ziur zaude elementu hau ezabatu nahi duzula?</translation>
+        <translation type="vanished">Elementu hau ezabatzeak datu horiekin lotutako grafiko leihoak ere kenduko ditu. Ziur zaude elementu hau ezabatu nahi duzula?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editatu pantailaren ezarpena</translation>
+        <translation type="vanished">Editatu pantailaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Lerroak bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (Lerroak) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 </TS>

@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Lập bản đồ dữ liệu địa lý</translation>
+        <translation type="vanished">Lập bản đồ dữ liệu địa lý</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Lập bản đồ với TIN</translation>
+        <translation type="vanished">Lập bản đồ với TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN được tạo từ dữ liệu địa lý được sử dụng để lập bản đồ. Các giá trị thuộc tính nút lưới được tính như giá trị trung bình có trọng số của các giá trị tại các nút TIN.</translation>
+        <translation type="vanished">TIN được tạo từ dữ liệu địa lý được sử dụng để lập bản đồ. Các giá trị thuộc tính nút lưới được tính như giá trị trung bình có trọng số của các giá trị tại các nút TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Ánh xạ mẫu</translation>
+        <translation type="vanished">Ánh xạ mẫu</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Tìm các điểm dữ liệu địa lý gần các nút lưới, liên quan đến hình dạng ô lưới và sử dụng các giá trị tại các điểm đó để nội suy. Thuật toán này chỉ có thể được sử dụng cho các lưới có cấu trúc.</translation>
+        <translation type="vanished">Tìm các điểm dữ liệu địa lý gần các nút lưới, liên quan đến hình dạng ô lưới và sử dụng các giá trị tại các điểm đó để nội suy. Thuật toán này chỉ có thể được sử dụng cho các lưới có cấu trúc.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Chi tiết (&amp;D)...</translation>
+        <translation type="vanished">Chi tiết (&amp;D)...</translation>
     </message>
 </context>
 <context>

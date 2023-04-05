@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Rediģēt punktu koordinātas</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Pārvietot virsotni</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Iestatīt virsotni</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

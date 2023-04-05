@@ -2,6 +2,7 @@
 #define GEODATAPOLYLINEGROUPPROXY_IMPL_H
 
 #include "../geodatapolylinegroupproxy.h"
+#include "geodatapolylinegroupproxy_displaysetting.h"
 
 class GeoDataPolyLineGroupProxy::Impl
 {
@@ -11,7 +12,7 @@ public:
 
 	vtkActor* m_edgesActor;
 
-	GeoDataPolyLineGroupColorSettingDialog::Setting m_setting;
+	DisplaySetting m_displaySetting;
 };
 
 #endif // GEODATAPOLYLINEGROUPPROXY_IMPL_H

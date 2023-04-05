@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Perus</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värikartta</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+        <translation type="vanished">Ohita väripalkin asetus tuonnin aikana</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Suunta:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Pystysuora</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Tarrojen määrä:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
+        <translation type="vanished">Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Viedä (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Jokaiseen osioon lisättävien värien määrä</translation>
+        <translation type="vanished">Jokaiseen osioon lisättävien värien määrä</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Arvoalue</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Värien määrä:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribuutti</translation>
+        <translation type="vanished">Attribuutti</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Käytä esikäsittelyikkunan asetusta</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Tuonti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Viedä (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Värikartan asetus</translation>
+        <translation type="vanished">Värikartan asetus</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Arvoalue</translation>
+        <translation type="vanished">Arvoalue</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automaattinen</translation>
+        <translation type="vanished">Automaattinen</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Täytä ylempi alue</translation>
+        <translation type="vanished">Täytä ylempi alue</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Täytä alempi alue</translation>
+        <translation type="vanished">Täytä alempi alue</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Osaston numero:</translation>
+        <translation type="vanished">Osaston numero:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Värikartta</translation>
+        <translation type="vanished">Värikartta</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Väriasetus</translation>
+        <translation type="vanished">Väriasetus</translation>
     </message>
 </context>
 <context>

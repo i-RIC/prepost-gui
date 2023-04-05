@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Kortlagning landfræðilegra gagna</translation>
+        <translation type="vanished">Kortlagning landfræðilegra gagna</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kortlagning með TIN</translation>
+        <translation type="vanished">Kortlagning með TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Númer sem eru búin til úr landfræðilegum gögnum eru notuð við kortlagningu. Gildi hnúta eiginleika gilda eru reiknuð sem vegið meðaltal af gildunum á TIN hnútunum.</translation>
+        <translation type="vanished">Númer sem eru búin til úr landfræðilegum gögnum eru notuð við kortlagningu. Gildi hnúta eiginleika gilda eru reiknuð sem vegið meðaltal af gildunum á TIN hnútunum.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Kortlagning sniðmáts</translation>
+        <translation type="vanished">Kortlagning sniðmáts</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Finndu landfræðilega gagnapunkta sem eru nálægt risthnútunum, varðandi form ristafarsins, og notaðu gildin á þeim stöðum til að greina. Þessi reiknirit er aðeins hægt að nota fyrir skipulögð rist.</translation>
+        <translation type="vanished">Finndu landfræðilega gagnapunkta sem eru nálægt risthnútunum, varðandi form ristafarsins, og notaðu gildin á þeim stöðum til að greina. Þessi reiknirit er aðeins hægt að nota fyrir skipulögð rist.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Smáatriði (&amp;D)...</translation>
+        <translation type="vanished">Smáatriði (&amp;D)...</translation>
     </message>
 </context>
 <context>

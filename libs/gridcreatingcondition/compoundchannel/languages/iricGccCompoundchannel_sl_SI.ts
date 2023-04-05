@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Nato določite osrednjo črto mreže. Sredinsko črto mreže lahko s klikom miške definiramo kot poligonalno črto. Dokončanje določite z dvojnim klikom ali pritiskom na tipko za povratek.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Dodaj Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Odstrani Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Uredi koordinate (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Obratna smer sredinske črte (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

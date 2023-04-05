@@ -3,6 +3,7 @@
 #include "geodatanetcdffilenamematcher.h"
 #include "geodatanetcdffilenamepatterndialog.h"
 #include "geodatanetcdfgdalimporter.h"
+#include "private/geodatanetcdf_impl.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -371,23 +372,23 @@ void GeoDataNetcdfGdalImporter::setupCoordinates(GeoDataNetcdf* data, GDALRaster
 {
 	int xsize = band->GetXSize();
 	int ysize = band->GetYSize();
-	data->m_coordinateSystemType = GeoDataNetcdf::XY;
-	data->m_coordinateSystemName = m_coordinateSystem->name();
+	data->impl->m_coordinateSystemType = GeoDataNetcdf::XY;
+	data->impl->m_coordinateSystemName = m_coordinateSystem->name();
 
-	data->m_xValues.clear();
+	data->impl->m_xValues.clear();
 	for (int i = 0; i < xsize; ++i) {
-		data->m_xValues.push_back(m_transform[0] + m_transform[1] * (i + 0.5));
+		data->impl->m_xValues.push_back(m_transform[0] + m_transform[1] * (i + 0.5));
 	}
-	data->m_yValues.clear();
+	data->impl->m_yValues.clear();
 	for (int i = 0; i < ysize; ++i) {
-		data->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - i - 0.5));
+		data->impl->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - i - 0.5));
 	}
 
-	data->m_lonValues.clear();
-	for (int j = 0; j < data->m_yValues.size(); ++j) {
-		double y = data->m_yValues.at(j);
-		for (int i = 0; i < data->m_xValues.size(); ++i) {
-			double x = data->m_xValues.at(i);
+	data->impl->m_lonValues.clear();
+	for (int j = 0; j < data->impl->m_yValues.size(); ++j) {
+		double y = data->impl->m_yValues.at(j);
+		for (int i = 0; i < data->impl->m_xValues.size(); ++i) {
+			double x = data->impl->m_xValues.at(i);
 			double lon, lat;
 			if (m_coordinateSystem->isLongLat()) {
 				lon = x;
@@ -395,8 +396,8 @@ void GeoDataNetcdfGdalImporter::setupCoordinates(GeoDataNetcdf* data, GDALRaster
 			} else {
 				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
 			}
-			data->m_lonValues.push_back(lon);
-			data->m_latValues.push_back(lat);
+			data->impl->m_lonValues.push_back(lon);
+			data->impl->m_latValues.push_back(lat);
 		}
 	}
 }

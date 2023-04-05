@@ -3,6 +3,7 @@
 
 #include "../guicore_global.h"
 
+class ColorMapLegendSettingContainerI;
 class ColorMapSettingContainerI;
 class ColorMapSettingEditWidgetI;
 
@@ -14,6 +15,7 @@ public:
 	virtual ~ColorMapFactoryI() {}
 
 	virtual ColorMapSettingContainerI* createSettingContainer() = 0;
+	virtual ColorMapLegendSettingContainerI* createLegendSettingContainer() = 0;
 	virtual ColorMapSettingEditWidgetI* createSettingEditWidget(QWidget* parent) = 0;
 };
 

@@ -658,6 +658,21 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Εξαγωγή (&amp;E)</translation>
+    </message>
+</context>
+<context>
     <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
     <message>
         <source>Switch to Discrete Mode Dialog</source>
@@ -697,6 +712,25 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Χρώμα</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
     </message>
 </context>
 <context>

@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
+        <translation type="vanished">Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Өлчөмү жана абалы</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Багыты:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикалдуу</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Энбелгилердин саны:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
+        <translation type="vanished">Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Экспорт (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Ар бир бөлүмгө киргизүү үчүн түстөрдүн саны</translation>
+        <translation type="vanished">Ар бир бөлүмгө киргизүү үчүн түстөрдүн саны</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Нарк диапазону</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Түстөрдүн саны:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Атрибут</translation>
+        <translation type="vanished">Атрибут</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Экспорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Түстөр картасынын жөндөөсү</translation>
+        <translation type="vanished">Түстөр картасынын жөндөөсү</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Маанинин диапазону</translation>
+        <translation type="vanished">Маанинин диапазону</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Автоматтык</translation>
+        <translation type="vanished">Автоматтык</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Жогорку аймакты толтуруңуз</translation>
+        <translation type="vanished">Жогорку аймакты толтуруңуз</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Мин:</translation>
+        <translation type="vanished">Мин:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Төмөнкү аймакты толтуруңуз</translation>
+        <translation type="vanished">Төмөнкү аймакты толтуруңуз</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Бөлүмдүн номери:</translation>
+        <translation type="vanished">Бөлүмдүн номери:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Максимум:</translation>
+        <translation type="vanished">Максимум:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Түстөр картасы</translation>
+        <translation type="vanished">Түстөр картасы</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Түс жөндөө</translation>
+        <translation type="vanished">Түс жөндөө</translation>
     </message>
 </context>
 <context>

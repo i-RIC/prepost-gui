@@ -7,9 +7,8 @@
 class ColorMapEnumerateFactory : public ColorMapFactoryI
 {
 public:
-	ColorMapEnumerateFactory();
-
 	ColorMapSettingContainerI* createSettingContainer() override;
+	ColorMapLegendSettingContainerI* createLegendSettingContainer() override;
 	ColorMapSettingEditWidgetI* createSettingEditWidget(QWidget* parent) override;
 };
 

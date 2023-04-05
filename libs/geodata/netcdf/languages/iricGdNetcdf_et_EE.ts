@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Värvisätete muutmine</translation>
+        <translation type="vanished">Värvisätete muutmine</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Rasterandmete kuvamise seade</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Rasterandmete kuvamise seade</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Avamisel ilmnes viga %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värvikaart</translation>
     </message>
 </context>
 </TS>

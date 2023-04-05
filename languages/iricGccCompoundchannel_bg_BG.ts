@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>След това, моля, определете централната линия на мрежата. Централната линия на мрежата може да бъде определена като многоъгълна линия чрез щракване с мишката. Завършете дефинирането, като щракнете двукратно или натиснете клавиша за връщане.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Добавете Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Премахване на Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Редактиране на координати (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Обратна посока на централната линия (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

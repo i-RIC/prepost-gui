@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Ștergeți puncte</translation>
+        <translation type="vanished">Ștergeți puncte</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Proprietăți punct selectate</translation>
+        <translation type="vanished">Proprietăți punct selectate</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Număr de puncte:</translation>
+        <translation type="vanished">Număr de puncte:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minim:</translation>
+        <translation type="vanished">Minim:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maxim:</translation>
+        <translation type="vanished">Maxim:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Ștergeți mai puțin decât valoarea:</translation>
+        <translation type="vanished">Ștergeți mai puțin decât valoarea:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Când treceți la acest mod, trebuie să reîncărcați TIN-urile. Vrei să te repeșești acum?</translation>
+        <translation type="vanished">Când treceți la acest mod, trebuie să reîncărcați TIN-urile. Vrei să te repeșești acum?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Selectați punctul</translation>
+        <translation type="vanished">Selectați punctul</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Ștergeți punctele selectate mai mici decât valoarea (&amp;L)...</translation>
+        <translation type="vanished">Ștergeți punctele selectate mai mici decât valoarea (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Ștergeți punctele selectate mai mari decât valoarea (&amp;G)...</translation>
+        <translation type="vanished">Ștergeți punctele selectate mai mari decât valoarea (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Când adăugați linia de întrerupere, trebuie să comutați pentru a afișa wireframe. Doriți să comutați pentru a afișa wireframe acum?</translation>
+        <translation type="vanished">Când adăugați linia de întrerupere, trebuie să comutați pentru a afișa wireframe. Doriți să comutați pentru a afișa wireframe acum?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Când eliminați linia de rupere, trebuie să comutați pentru a afișa wireframe. Doriți să comutați pentru a afișa wireframe acum?</translation>
+        <translation type="vanished">Când eliminați linia de rupere, trebuie să comutați pentru a afișa wireframe. Doriți să comutați pentru a afișa wireframe acum?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Când doriți să eliminați triunghiuri cu margini lungi, trebuie să comutați Metoda de afișare la Wireframe sau Surface. Dacă apăsați butonul OK, Metoda de afișare se comută la Wireframe</translation>
+        <translation type="vanished">Când doriți să eliminați triunghiuri cu margini lungi, trebuie să comutați Metoda de afișare la Wireframe sau Surface. Dacă apăsați butonul OK, Metoda de afișare se comută la Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Când editați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
+        <translation type="vanished">Când editați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Când ștergeți puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
+        <translation type="vanished">Când ștergeți puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Nu puteți șterge punctele utilizate pentru liniile de întrerupere.</translation>
+        <translation type="vanished">Nu puteți șterge punctele utilizate pentru liniile de întrerupere.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Ștergeți puncte</translation>
+        <translation type="vanished">Ștergeți puncte</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Selectați Fișier de exportat</translation>
+        <translation type="vanished">Selectați Fișier de exportat</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>A apărut o eroare la exportul în %1.</translation>
+        <translation type="vanished">A apărut o eroare la exportul în %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Ștergeți punctele mai puțin de %1</translation>
+        <translation type="vanished">Ștergeți punctele mai puțin de %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Ștergeți puncte mai mari decât %1</translation>
+        <translation type="vanished">Ștergeți puncte mai mari decât %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Când interpolați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
+        <translation type="vanished">Când interpolați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Când adăugați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
+        <translation type="vanished">Când adăugați puncte, trebuie să treceți la afișarea punctelor. Doriți să treceți la afișarea punctelor acum?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Adăugați un punct de linie</translation>
+        <translation type="vanished">Adăugați un punct de linie</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Anulați definirea liniei de întrerupere</translation>
+        <translation type="vanished">Anulați definirea liniei de întrerupere</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Finalizați definirea liniei de pauză</translation>
+        <translation type="vanished">Finalizați definirea liniei de pauză</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Editați punctele</translation>
+        <translation type="vanished">Editați punctele</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Adăugați un nou punct de interpunere</translation>
+        <translation type="vanished">Adăugați un nou punct de interpunere</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Combina...</translation>
+        <translation type="vanished">Combina...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,90 +256,68 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Date din cloud punct (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Ștergeți puncte</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Mod de comutare (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Proprietăți punct selectate</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Combina (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Număr de puncte:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Setare de cartografiere (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minim:</translation>
+        <source>Select file name to export</source>
+        <translation>Selectați numele fișierului de exportat</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maxim:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Nu s-a deschis %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Ștergeți mai mult decât valoarea:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Editați punctele</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Remesh TIN și când este terminat, comutați la TIN Edit Mode.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Proprietăți punct selectate</translation>
+        <source>Selection Mode</source>
+        <translation>Modul de selecție</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Număr de puncte:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Selectați puncte cu Regiunea dreptunghiulară</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minim:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtrați punctele selectate (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maxim:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-locație</translation>
+        <source>&amp;Sort</source>
+        <translation>Fel (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Locație Y</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valoare</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Setare de afișare a norului de puncte</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpolați creșterea</translation>
+        <source>Warning</source>
+        <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Setarea de interpolare</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Increment de interpolare:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Lungimea liniei:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Nu puteți șterge punctele folosite pentru liniile de întrerupere.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Avertizare</translation>
@@ -347,6 +325,98 @@
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
         <translation>Incrementul de interpolare trebuie să fie mai mare de 0 și mai mic decât lungimea liniei de interpolare</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Ștergeți puncte</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Proprietăți punct selectate</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Număr de puncte:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minim:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maxim:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Ștergeți mai mult decât valoarea:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Editați punctele</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Proprietăți punct selectate</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Număr de puncte:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minim:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maxim:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-locație</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Locație Y</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Valoare</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpolați creșterea</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Setarea de interpolare</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Increment de interpolare:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Lungimea liniei:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Avertizare</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Incrementul de interpolare trebuie să fie mai mare de 0 și mai mic decât lungimea liniei de interpolare</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Deselectează tot (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Setare de afișare a norului de puncte</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 puncte)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>De bază</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>STANIU</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puncte</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Cadru de sarma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Suprafaţă</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; când se află în „Modul de editare puncte”, această setare este ignorată, iar datele TIN sunt întotdeauna prezentate ca puncte.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Linii de întrerupere</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Spectacol</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Setarea cartografierii poligoane</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Harta de culori pentru valori</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Setarea pentru maparea datelor din cloud de puncte</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Cartografiere cu TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>TIN create din puncte sunt folosite pentru cartografiere. Valorile atributelor de grilă definite la nodurile sau celulele grilei sunt calculate ca medie ponderată a valorilor definite la nodurile triunghiului care conține nodul (sau centrul celulei).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Maparea șablonului</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Găsiți puncte care sunt aproape de nodurile grilei, în ceea ce privește formele celulelor grilei și utilizați valorile din acele puncte pentru interpolare.&lt;/p&gt;&lt;p&gt;Acest algoritm poate fi utilizați numai pentru grile structurate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Detaliu (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Modificați algoritmul de mapare pentru fiecare zonă definită cu poligoane</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiți zone ca poligoane și specificați algoritmul pentru a mapa valorile la nodurile grilei sau la centrele celulelor din valorile definite în puncte.&lt;/p&gt;&lt;p&gt;Utilizatorul poate selecta de mai jos: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Cartați valoarea minimă a punctelor din cerc&lt;/li&gt;&lt;li&gt;Hartați valoarea maximă a punctelor din cerc&lt;/li&gt;&lt;li&gt;Hartați valoarea medie ponderată a punctelor din cerc&lt;/li&gt; &lt;li&gt;Valoarea hărții din TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Setare de mapare a șablonului</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Caută regiunea</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manual</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Lungimea fluxului [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Lățimea fluxului transversal [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Număr de extinderi de șabloane:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Exponent de ponderare:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Editați puncte</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Proprietățile punctelor selectate</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Număr de puncte:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valoarea minima:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valoare maximă:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtrați punctele selectate</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Proprietățile punctelor selectate</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Numar de puncte:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valoarea minima:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valoare maximă:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Stare de filtrare</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Selectați puncte cu valoare mai mare decât pragul</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Selectați puncte cu valoare mai mică decât pragul</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Valoarea pragului:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Setarea interpolării</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolați creșterea</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Creștere de interpolare:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Lungimea liniei:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Metoda de calcul</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Hartă folosind TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Valoarea minimă a punctelor din rază</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Valoarea maximă a punctelor în rază</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Media ponderată a punctelor din rază</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Exponent de ponderare k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; este folosit ca pondere atunci când se calculează media ponderată a valorilor. r este distanța de la punct la centrul nodului sau al celulei, la care este mapată valoarea.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Raza cercului pentru a căuta puncte:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Când se execută maparea, punctele cu în cerc cu raza de mai sus sunt căutate pentru a mapa valorile către nodurile grilei sau centrele celulelor.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Setare de afișare a norului de puncte</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">De bază</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">STANIU</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puncte</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Cadru de sarma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Lățimea liniei:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Suprafaţă</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; când se află în „Modul de editare puncte”, această setare este ignorată, iar datele TIN sunt întotdeauna prezentate ca puncte.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Linii de întrerupere</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Spectacol</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Culoare:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Setarea cartografierii poligoane</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Harta de culori pentru valori</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Import (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
 </context>
 <context>

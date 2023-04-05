@@ -122,6 +122,17 @@ void ColorMapSettingContainer::save(QXmlStreamWriter& writer) const
 	}
 }
 
+void ColorMapSettingContainer::copy(const ColorMapSettingContainerI& c)
+{
+	const auto& c2 = dynamic_cast<const ColorMapSettingContainer&>(c);
+	CompositeContainer::copyValue(c2);
+
+	colors = c2.colors;
+	autoMinValue = c2.autoMinValue;
+	autoMaxValue = c2.autoMaxValue;
+	valueCaption = c2.valueCaption;
+}
+
 void ColorMapSettingContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const auto& c2 = dynamic_cast<const ColorMapSettingContainer&>(c);

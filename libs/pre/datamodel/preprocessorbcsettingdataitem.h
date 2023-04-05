@@ -54,6 +54,7 @@ public:
 	bool isMapped() const;
 	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
+	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const override;
 	GeoData* geoData() const override;
 	void setGeoData(GeoData *) override;
 

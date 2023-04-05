@@ -1,4 +1,3 @@
-#include "../factory/geodatafactory.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
@@ -13,6 +12,7 @@
 #include <guicore/pre/gridcond/complex/gridcomplexattributeeditwidget.h>
 #include <guicore/pre/gridcond/stringconverter/gridattributestringconverterenumerate.h>
 #include <guicore/pre/geodata/geodatacreator.h>
+#include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/geodatabackground/geodatabackgroundcomplex.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
@@ -133,7 +133,7 @@ int PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile()
 
 void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	GeoDataFactory& factory = GeoDataFactory::instance();
+	auto& factory = GeoDataFactory::instance();
 	// create import menu and add menu.
 	m_importMenu = new QMenu(tr("&Import"), menu);
 	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));

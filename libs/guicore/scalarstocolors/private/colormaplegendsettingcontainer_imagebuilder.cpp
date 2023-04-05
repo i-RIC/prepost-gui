@@ -269,7 +269,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildContinuousHorizontal(QPa
 		QString val = QString::asprintf(f.c_str(), c.value.value());
 		auto rect = metrics.boundingRect(val);
 		if (rect.width() > maxLabelWidth) {
-			maxLabelWidth = rect.width();
+			maxLabelWidth = rect.width() + 5;
 		}
 
 		labelHeight = rect.height();

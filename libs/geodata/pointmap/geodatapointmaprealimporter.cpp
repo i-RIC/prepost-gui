@@ -1,6 +1,6 @@
 #include "geodatapointmaprealimporter.h"
 #include "geodatapointmaprealimporterfilterdialog.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <misc/stringtool.h>
 
@@ -32,10 +32,10 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 {
 	QFileInfo finfo(filename());
 	// Allocate objects to hold points and vertex cells.
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	vtkSmartPointer<vtkDoubleArray> values = vtkSmartPointer<vtkDoubleArray>::New();
+	auto values = vtkSmartPointer<vtkDoubleArray>::New();
 
 	double xt[3];
 	auto filter = selectedFilter();
@@ -89,7 +89,7 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 		file.close();
 	}
 	pmap->setPoints(points, values);
-	pmap->doDelaunay();
+	pmap->rebuildTinFromPoints(false);
 	return true;
 }
 

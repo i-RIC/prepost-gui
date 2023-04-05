@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Aggiungere nuova %1</translation>
+        <translation type="vanished">Aggiungere nuova %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Impostazione del colore (&amp;S)...</translation>
+        <translation type="vanished">Impostazione del colore (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Modifica impostazione colore</translation>
+        <translation type="vanished">Modifica impostazione colore</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copia...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Impostazione del display (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Impostazione colore PolyData</translation>
+        <translation type="vanished">Impostazione colore PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colore per valore</translation>
+        <translation type="vanished">Colore per valore</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
 </context>
 <context>

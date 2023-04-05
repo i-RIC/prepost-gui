@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Neste, vennligst definer rutenettlinjen. Midtlinjen til rutenettet kan defineres som en polygonal linje ved å klikke med musen. Avslutt definisjonen ved å dobbeltklikke eller trykke på retur -tasten.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Legg til Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Fjern Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Rediger koordinater (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Reversere senterlinjeretning (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

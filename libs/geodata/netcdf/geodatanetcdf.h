@@ -3,7 +3,7 @@
 
 #include "geodatanetcdfcolorsettingdialog.h"
 
-#include <guicore/pre/geodata/geodata.h>
+#include <guicore/pre/geodata/geodatawithsinglemapper.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
@@ -22,7 +22,7 @@ class GeoDataNetcdfXbandImporter;
 class GeoDataNetcdfGdalImporter;
 class GridAttributeDimensionContainer;
 
-class GeoDataNetcdf : public GeoData
+class GeoDataNetcdf : public GeoDataWithSingleMapper
 {
 	Q_OBJECT
 
@@ -54,7 +54,6 @@ public:
 		XY
 	};
 
-	/// Constructor
 	GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~GeoDataNetcdf();
 
@@ -89,16 +88,20 @@ public:
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
 	vtkStructuredGrid* grid() const;
-	void updateActorSetting();
+	void updateActorSetting() override;
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
 	virtual double thresholdValue() const = 0;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
 	void applyColorMapSetting() override;
+
+	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
@@ -110,18 +113,19 @@ private:
 	void updateActorSettings();
 	void updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax);
 	void updateRegionPolyData();
-
-	static nc_type getNcType(SolverDefinitionGridAttributeDimension* dim);
-	static nc_type getNcType(SolverDefinitionGridAttribute* cond);
-	virtual void loadRasterData(int index) = 0;
-
-protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void updateFilename() override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
+
+	static nc_type getNcType(SolverDefinitionGridAttributeDimension* dim);
+	static nc_type getNcType(SolverDefinitionGridAttribute* cond);
+
+	virtual void loadRasterData(int index) = 0;
+
+protected:
+	void updateFilename() override;
 	int getValueVarId(int ncid, int* varId);
 
 	void getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const;
@@ -148,32 +152,18 @@ protected:
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
 	vtkSmartPointer<vtkActor> m_regionActor;
 
-	std::vector<double> m_lonValues;
-	std::vector<double> m_latValues;
+	class DisplaySetting;
 
-	std::vector<double> m_xValues;
-	std::vector<double> m_yValues;
-
-	CoordinateSystemType m_coordinateSystemType;
-	GeoDataNetcdfColorSettingDialog::Setting m_colorSetting;
-	QString m_coordinateSystemName;
-
-	bool m_geoTransformExists;
-	double m_geoTransform[6];
-
-	bool m_baseAndResolutionExists;
-	double m_base;
-	double m_resolution;
-
-	bool m_isMasked;
+	class Impl;
+	Impl* impl;
 
 	class EditPropertyCommand;
 
 private:
-    void loadGeoTransform(const QDomNode& node);
-    void saveGeoTransform(QXmlStreamWriter& writer);
-    void loadBaseAndResolution(const QDomNode& node);
-    void saveBaseAndResolution(QXmlStreamWriter& writer);
+	void loadGeoTransform(const QDomNode& node);
+	void saveGeoTransform(QXmlStreamWriter& writer);
+	void loadBaseAndResolution(const QDomNode& node);
+	void saveBaseAndResolution(QXmlStreamWriter& writer);
 
 public:
 	friend class GeoDataNetcdfGdalExporter;
@@ -181,6 +171,7 @@ public:
 	friend class GeoDataNetcdfGrayscalePngRealImporter;
 	friend class GeoDataNetcdfGrayscalePngRealExporter;
 	friend class GeoDataNetcdfImporter;
+	friend class GeoDataNetcdfProxy;
 	friend class GeoDataNetcdfXbandImporter;
 };
 

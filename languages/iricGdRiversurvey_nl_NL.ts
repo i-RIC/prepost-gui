@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Weergave-instelling bewerken</translation>
+        <translation type="vanished">Weergave-instelling bewerken</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio's bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Weergave-instelling dwarsdoorsnedegegevens</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Dwarsdoorsnede gegevens (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Dwarsdoorsnedegegevens (&amp;C)</translation>
+        <translation type="vanished">Dwarsdoorsnedegegevens (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
+        <translation type="vanished">%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Weergave-instelling bewerken</translation>
+        <translation type="vanished">Weergave-instelling bewerken</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Weergave-instelling dwarsdoorsnedegegevens</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK-bestand (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Eenvoudig</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Achtergrond kleur</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Zichtbaar</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Dwarsdoorsnede lijnen</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z-schaal:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kleur:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Namen van dwarsdoorsneden</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>

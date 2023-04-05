@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>颜色设置编辑</translation>
+        <translation type="vanished">颜色设置编辑</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>栅格数据显示设置</translation>
     </message>
 </context>
 <context>
@@ -387,6 +391,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>栅格数据显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>预处理窗口的使用设置</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -442,6 +464,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>打开时出现错误 %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值着色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
     </message>
 </context>
 </TS>

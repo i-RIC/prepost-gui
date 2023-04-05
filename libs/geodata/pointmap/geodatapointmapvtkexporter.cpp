@@ -1,4 +1,4 @@
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 #include "geodatapointmapvtkexporter.h"
 
 #include <cs/coordinatesystem.h>
@@ -25,8 +25,8 @@ bool GeoDataPointmapVTKExporter::doExport(GeoData* data, const QString& filename
 	QString tempPath = QDir::tempPath();
 	QString tmpFile = iRIC::getTempFileName(tempPath);
 
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
-	vtkPolyData* polyData = pmap->delaunayedPolyData();
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
+	vtkPolyData* polyData = pmap->tin();
 
 	// undo offset using transform
 	auto offset = pd->mainfile()->offset();

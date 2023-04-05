@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Editați setarea afișajului</translation>
+        <translation type="vanished">Editați setarea afișajului</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Datele secțiunilor transversale sunt generate folosind datele din norul de puncte. În unele regiuni, datele nu existau în datele din norul de puncte, iar valoarea 0 a fost mapată pentru acele puncte. Dacă doriți să ajustați din nou poziția secțiunii transversale și datele din norul de puncte ale hărții, puteți utiliza „Date din norul de puncte ale hărții”</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Setare de afișare a datelor în secțiune transversală</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Date transversale (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Date secțiune transversală (&amp;C)</translation>
+        <translation type="vanished">Date secțiune transversală (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linia %2 : "%3": Datele de semnalizare sunt nevalide.</translation>
+        <translation type="vanished">%1 linia %2 : "%3": Datele de semnalizare sunt nevalide.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editați setarea afișajului</translation>
+        <translation type="vanished">Editați setarea afișajului</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Setare de afișare a datelor în secțiune transversală</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>Fișier VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>De bază</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Culoare de fundal</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vizibil</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; puteți personaliza culoarea folosind fila Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Liniile de secțiune transversală</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Scara Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nume de secțiuni transversale</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Harta de culori</translation>
     </message>
 </context>
 <context>

@@ -39,6 +39,8 @@ win32 {
 HEADERS += triangle.h \
            triangle_global.h \
            triangleexecutethread.h \
-           private/triangleexecutethread_impl.h
+           private/triangleexecutethread_impl.h \
+           triangleutil.h
 SOURCES += triangle.cpp \
-           triangleexecutethread.cpp
+           triangleexecutethread.cpp \
+           triangleutil.cpp

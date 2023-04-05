@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Farbeinstellung bearbeiten</translation>
+        <translation type="vanished">Farbeinstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Anzeigeeinstellung für Rasterdaten</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Anzeigeeinstellung für Rasterdaten</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Verwenden Sie die Einstellung des Vorverarbeitungsfensters</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Beim Öffnen ist ein Fehler aufgetreten %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farbe nach Wert</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Freiwählbare Farbe</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farbkarte</translation>
     </message>
 </context>
 </TS>

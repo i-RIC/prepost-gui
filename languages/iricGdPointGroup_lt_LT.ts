@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Spalvų nustatymo redagavimas</translation>
+        <translation type="vanished">Spalvų nustatymo redagavimas</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Taškų rodymo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Pasirinkite vaizdo failą</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Visi vaizdai (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Pasirinkite vaizdo failą</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Visi vaizdai (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redaguoti ekrano nustatymą</translation>
+        <translation type="vanished">Redaguoti ekrano nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Taškas %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Figūra</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Taškai</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Piktogramų vaizdai</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Importuoti vaizdą (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Aišku (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Maksimalus dydis:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Kai importuoto vaizdo plotis arba aukštis yra didesnis nei maksimalus dydis, vaizdas automatiškai sumažinamas, kad plotis arba aukštis taptų lygus maksimaliam dydžiui.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Taškų duomenų rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Figūra</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Taškai</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Piktogramų vaizdai</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Importuoti vaizdą (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Aišku (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Maksimalus dydis:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Kai importuoto vaizdo plotis arba aukštis yra didesnis nei maksimalus dydis, vaizdas automatiškai sumažinamas, kad plotis arba aukštis taptų lygus maksimaliam dydžiui.</translation>
     </message>
 </context>
 </TS>

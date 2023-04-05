@@ -1,6 +1,8 @@
 #include "../datamodel/vtk2dgraphicsview.h"
 #include "mouseboundingbox.h"
 
+#include <misc/mathsupport.h>
+
 #include <vtkCamera.h>
 #include <vtkPoints.h>
 #include <vtkProperty.h>
@@ -160,6 +162,35 @@ bool MouseBoundingBox::isInsideBox(double x, double y) const
 	p[2] = 0;
 	vtkIdType cellid = m_regionGrid->FindCell(p, hintCell, 0, 1e-4, subid, pcoords, weights);
 	return (cellid >= 0);
+}
+
+QPointF MouseBoundingBox::center() const
+{
+	double center[3], tmpp[3];
+	for (int i = 0; i < 3; ++i) {
+		center[i] = 0;
+	}
+
+	int pnum = m_lineGrid->GetNumberOfPoints();
+	for (vtkIdType i = 0; i < pnum; ++i) {
+		m_lineGrid->GetPoint(i, tmpp);
+		center[0] += tmpp[0];
+		center[1] += tmpp[1];
+	}
+
+	return QPointF(center[0] / pnum, center[1] / pnum);
+}
+
+double MouseBoundingBox::circumfenceCircleRadius() const
+{
+	double tmpp[3];
+
+	m_lineGrid->GetPoint(0, tmpp);
+	QPointF p(tmpp[0], tmpp[1]);
+
+	QPointF c = center();
+
+	return iRIC::distance(c, p);
 }
 
 vtkUnstructuredGrid* MouseBoundingBox::vtkGrid() const

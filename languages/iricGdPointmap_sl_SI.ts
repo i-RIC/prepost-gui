@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Izbriši točke</translation>
+        <translation type="vanished">Izbriši točke</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Izbrane lastnosti točke</translation>
+        <translation type="vanished">Izbrane lastnosti točke</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Število točk:</translation>
+        <translation type="vanished">Število točk:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Najmanj:</translation>
+        <translation type="vanished">Najmanj:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Največ:</translation>
+        <translation type="vanished">Največ:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Izbriši manj kot vrednost:</translation>
+        <translation type="vanished">Izbriši manj kot vrednost:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Ko preklopite na ta način, morate znova popraviti TIN. Ali želite zdaj popraviti?</translation>
+        <translation type="vanished">Ko preklopite na ta način, morate znova popraviti TIN. Ali želite zdaj popraviti?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Izberite točko</translation>
+        <translation type="vanished">Izberite točko</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Izbriši izbrane točke manj kot vrednost (&amp;L)...</translation>
+        <translation type="vanished">Izbriši izbrane točke manj kot vrednost (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Izbriši izbrane točke, večje od vrednosti (&amp;G)...</translation>
+        <translation type="vanished">Izbriši izbrane točke, večje od vrednosti (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Ko dodate prelomno črto, morate preklopiti na prikaz žičnih okvirjev. Ali želite zdaj preklopiti na prikaz žičnih okvirjev?</translation>
+        <translation type="vanished">Ko dodate prelomno črto, morate preklopiti na prikaz žičnih okvirjev. Ali želite zdaj preklopiti na prikaz žičnih okvirjev?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Ko odstranite prelomno črto, morate preklopiti na prikaz žičnih okvirjev. Ali želite zdaj preklopiti na prikaz žičnih okvirjev?</translation>
+        <translation type="vanished">Ko odstranite prelomno črto, morate preklopiti na prikaz žičnih okvirjev. Ali želite zdaj preklopiti na prikaz žičnih okvirjev?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Če želite odstraniti trikotnike z dolgimi robovi, morate način prikaza preklopiti na Wireframe ali Surface. Če pritisnete gumb OK, se način prikaza preklopi na Wireframe</translation>
+        <translation type="vanished">Če želite odstraniti trikotnike z dolgimi robovi, morate način prikaza preklopiti na Wireframe ali Surface. Če pritisnete gumb OK, se način prikaza preklopi na Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Ko urejate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
+        <translation type="vanished">Ko urejate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Ko izbrišete točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
+        <translation type="vanished">Ko izbrišete točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Ne morete izbrisati točk, ki se uporabljajo za prelomne črte.</translation>
+        <translation type="vanished">Ne morete izbrisati točk, ki se uporabljajo za prelomne črte.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Izbriši točke</translation>
+        <translation type="vanished">Izbriši točke</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Izberite Datoteka za izvoz</translation>
+        <translation type="vanished">Izberite Datoteka za izvoz</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Pri izvozu v. Je prišlo do napake %1.</translation>
+        <translation type="vanished">Pri izvozu v. Je prišlo do napake %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Izbrišite točke manj kot %1</translation>
+        <translation type="vanished">Izbrišite točke manj kot %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Izbrišite točke, večje od %1</translation>
+        <translation type="vanished">Izbrišite točke, večje od %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Ko interpolirate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
+        <translation type="vanished">Ko interpolirate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Ko dodate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
+        <translation type="vanished">Ko dodate točke, morate preklopiti na prikaz točk. Ali želite zdaj preklopiti na prikaz točk?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Dodajte točko preloma</translation>
+        <translation type="vanished">Dodajte točko preloma</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Prekliči določanje prelomne črte</translation>
+        <translation type="vanished">Prekliči določanje prelomne črte</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Dokončajte definiranje prelomne črte</translation>
+        <translation type="vanished">Dokončajte definiranje prelomne črte</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Urejanje točk</translation>
+        <translation type="vanished">Urejanje točk</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Dodaj novo točko prekinitve</translation>
+        <translation type="vanished">Dodaj novo točko prekinitve</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Združi...</translation>
+        <translation type="vanished">Združi...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Podatki v oblaku točk (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Izbriši točke</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Preklopni način (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Izbrane lastnosti točke</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Spoji (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Število točk:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Nastavitev preslikave (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Najmanj:</translation>
+        <source>Select file name to export</source>
+        <translation>Izberite ime datoteke za izvoz</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Največ:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Odpiranje ni uspelo %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Izbriši več kot vrednost:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Urejanje točk</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Znova prepletite TIN in ko je končano, preklopite v način urejanja TIN.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Izbrane lastnosti točke</translation>
+        <source>Selection Mode</source>
+        <translation>Način izbire</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Število točk:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Izberite točke s pravokotno regijo</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Najmanj:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtrirajte izbrane točke (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Največ:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Premeš TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-lokacija</translation>
+        <source>&amp;Sort</source>
+        <translation>Razvrsti (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-lokacija</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Vrednost</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavitev prikaza oblaka točk</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpolacijski prirastek</translation>
+        <source>Warning</source>
+        <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Nastavitev interpolacije</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Prirastek interpolacije:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Dolžina črte:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Ne morete izbrisati točk, ki se uporabljajo za prelomne črte.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Prirastek interpolacije mora biti večji od 0 in manjši od dolžine interpolacijske črte</translation>
+        <translation>Interpolacijski prirast mora biti večji od 0 in manjši od dolžine interpolacijske vrstice</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Izbriši točke</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Izbrane lastnosti točke</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Število točk:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Najmanj:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Največ:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Izbriši več kot vrednost:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Urejanje točk</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Izbrane lastnosti točke</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Število točk:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Najmanj:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Največ:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-lokacija</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-lokacija</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Vrednost</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpolacijski prirastek</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Nastavitev interpolacije</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Prirastek interpolacije:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Dolžina črte:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Opozorilo</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Prirastek interpolacije mora biti večji od 0 in manjši od dolžine interpolacijske črte</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Prekliči izbiro vseh (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavitev prikaza oblaka točk</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Uporabite nastavitev okna predhodne obdelave</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 točke)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Osnovno</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>KOSITER</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Točke</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost točke:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Žični okvir</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Površina</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Prekinitvene črte</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>barva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Preslikava Nastavitev poligonov</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Barvni zemljevid za vrednosti</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Nastavitev preslikave podatkov v oblaku točk</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Preslikava s TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>TIN, ustvarjen iz točk, se uporablja za kartiranje. Vrednosti atributa mreže, definirane v vozliščih ali celicah mreže, se izračunajo kot tehtano povprečje vrednosti, definiranih v vozliščih trikotnika, ki vsebuje vozlišče (ali središče celice).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Preslikava predloge</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Poiščite točke, ki so blizu vozlišč mreže, glede na oblike celic mreže, in uporabite vrednosti na teh točkah za interpolacijo.&lt;/p&gt;&lt;p&gt;Ta algoritem je lahko uporabite samo za strukturirane mreže.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Podrobnost (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Spremenite algoritem preslikave za vsako območje, definirano s poligoni</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definirajte območja kot poligone in določite algoritem za preslikavo vrednosti v vozliščih mreže ali središčih celic iz vrednosti, definiranih v točkah.&lt;/p&gt;&lt;p&gt;Uporabnik lahko izbira med spodnjimi: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimalne vrednosti točk znotraj kroga&lt;/li&gt;&lt;li&gt;Map največje vrednosti točk znotraj kroga&lt;/li&gt;&lt;li&gt;Map tehtane povprečne vrednosti točk znotraj kroga&lt;/li&gt; &lt;li&gt;Vrednost zemljevida iz TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Nastavitev preslikave predloge</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Regija iskanja</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Avto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Priročnik</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Dolžina po toku [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Širina prečnega toka [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Število razširitev predloge:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Utežni eksponent:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Uredi točke</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Lastnosti izbranih točk</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Število točk:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Najmanjša vrednost:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Največja vrednost:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Vrednost:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtriraj izbrane točke</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Lastnosti izbranih točk</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Število točk:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Najmanjša vrednost:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Največja vrednost:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Stanje filtriranja</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Izberite točke z vrednostjo, večjo od praga</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Izberite točke z vrednostjo, nižjo od praga</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Mejna vrednost:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Nastavitev interpolacije</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolacija prirastka</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Interpolacijski prirastek:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Dolžina vrstice:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Metoda izračuna</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Zemljevid s TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Najmanjša vrednost točk znotraj polmera</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Največja vrednost točk znotraj polmera</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Uteženo povprečje točk znotraj polmera</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Utežni eksponent k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; se uporablja kot utež pri izračunu tehtanega povprečja vrednosti. r je razdalja od točke do središča vozlišča ali celice, v katero je preslikana vrednost.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Polmer kroga za iskanje točk:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Ko se izvede preslikava, se iščejo točke v krogu z zgornjim polmerom, da se vrednosti preslikajo v vozlišča mreže ali središča celic.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Nastavitev prikaza oblaka točk</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Osnovno</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">KOSITER</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Točke</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Velikost točke:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Žični okvir</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Širina črte:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Površina</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Ko ste v &amp;quot;načinu urejanja točkquot;, je ta nastavitev prezrta in podatki TIN so vedno prikazano kot točke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Prekinitvene črte</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Prikaži</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">barva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Preslikava Nastavitev poligonov</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Barvni zemljevid za vrednosti</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Uvozi (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Izvozi (&amp;E)</translation>
     </message>
 </context>
 <context>

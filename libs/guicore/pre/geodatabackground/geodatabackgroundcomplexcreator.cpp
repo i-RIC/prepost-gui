@@ -7,17 +7,16 @@ GeoDataBackgroundComplexCreator* GeoDataBackgroundComplexCreator::m_instance = n
 
 GeoDataBackgroundComplexCreator::GeoDataBackgroundComplexCreator() :
 	GeoDataCreator{"complexBackground", tr("Background")}
-{
-	nodeMappers().push_back(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
-	cellMappers().push_back(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
-}
+{}
 
 GeoData* GeoDataBackgroundComplexCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	SolverDefinitionGridComplexAttribute* tmpcond = dynamic_cast<SolverDefinitionGridComplexAttribute* >(condition);
-	GeoData* geodata = new GeoDataBackgroundComplex(parent, this, tmpcond);
-	geodata->setPosition(tmpcond->position());
-	geodata->setDefaultMapper();
+	auto geodata = new GeoDataBackgroundComplex(parent, this, condition);
+	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
+		geodata->setMapper(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		geodata->setMapper(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
+	}
 	return geodata;
 }
 

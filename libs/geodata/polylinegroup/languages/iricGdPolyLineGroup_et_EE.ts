@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Värviseade Redigeerimine</translation>
+        <translation type="vanished">Värviseade Redigeerimine</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Ridade kuva seadistus</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Group Display Setting</translation>
+        <translation type="vanished">Polyline Group Display Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Värv väärtuse järgi</translation>
+        <translation type="vanished">Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Joone laius:</translation>
+        <translation type="vanished">Joone laius:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Selle üksuse kustutamine eemaldab ka kõik nende andmetega seotud graafikuaknad. Kas olete kindel, et soovite selle üksuse kustutada?</translation>
+        <translation type="vanished">Selle üksuse kustutamine eemaldab ka kõik nende andmetega seotud graafikuaknad. Kas olete kindel, et soovite selle üksuse kustutada?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muutke kuvaseadet</translation>
+        <translation type="vanished">Muutke kuvaseadet</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Ridade kuva seadistus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI vormifail (read) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värvikaart</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Joone laius:</translation>
     </message>
 </context>
 </TS>

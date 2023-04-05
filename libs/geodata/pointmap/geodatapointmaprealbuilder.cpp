@@ -1,7 +1,9 @@
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include "geodatapointmaprealbuilder.h"
 #include "private/geodatapointmaprealbuilder_impl.h"
+
+#include <guicore/pre/geodata/geodatacreator.h>
 
 #include <vtkDoubleArray.h>
 
@@ -42,7 +44,7 @@ GeoData* GeoDataPointmapRealBuilder::end(ProjectDataItem* parent, GeoDataCreator
 	pointMap->setupActors();
 
 	pointMap->setPoints(impl->m_points, impl->m_values);
-	pointMap->doDelaunay();
+	pointMap->rebuildTinFromPoints(false);
 
 	impl->m_points->Delete();
 	impl->m_points = nullptr;

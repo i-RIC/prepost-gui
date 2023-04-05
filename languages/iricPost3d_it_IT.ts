@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Allineare</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mappa dei colori</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Facce</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mappa dei colori</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Modulo</translation>
+        <translation type="vanished">Modulo</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Direzione</translation>
+        <translation type="vanished">Direzione</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>io</translation>
+        <translation type="vanished">io</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Gamma</translation>
+        <translation type="vanished">Gamma</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Sono dentro</translation>
+        <translation type="vanished">Sono dentro</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>io massimo</translation>
+        <translation type="vanished">io massimo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Abilitato</translation>
+        <translation type="vanished">Abilitato</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Campionamento</translation>
+        <translation type="vanished">Campionamento</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tutti i vertici</translation>
+        <translation type="vanished">Tutti i vertici</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Frequenza di campionamento:</translation>
+        <translation type="vanished">Frequenza di campionamento:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-direzione</translation>
+        <translation type="vanished">I-direzione</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>direzione J</translation>
+        <translation type="vanished">direzione J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>Direzione K</translation>
+        <translation type="vanished">Direzione K</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valore scalare</translation>
+        <translation type="vanished">Per valore scalare</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma di freccia</translation>
+        <translation type="vanished">Forma di freccia</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Dimensione della freccia:</translation>
+        <translation type="vanished">Dimensione della freccia:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Larghezza della linea:</translation>
+        <translation type="vanished">Larghezza della linea:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Impostazione della freccia</translation>
+        <translation type="vanished">Impostazione della freccia</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Impostazione comune</translation>
+        <translation type="vanished">Impostazione comune</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valore fisico:</translation>
+        <translation type="vanished">Valore fisico:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lunghezza</translation>
+        <translation type="vanished">Lunghezza</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valore standard:</translation>
+        <translation type="vanished">Valore standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[SM]</translation>
+        <translation type="vanished">[SM]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lunghezza sullo schermo:</translation>
+        <translation type="vanished">Lunghezza sullo schermo:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valore minimo da disegnare:</translation>
+        <translation type="vanished">Valore minimo da disegnare:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Facce</translation>
+        <translation type="vanished">Facce</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Aggiungere (&amp;A)</translation>
+        <translation type="vanished">Aggiungere (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Rimuovere (&amp;R)</translation>
+        <translation type="vanished">Rimuovere (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Faccia %1</translation>
+        <translation type="vanished">Faccia %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Legenda lunghezza</translation>
+        <translation type="vanished">Legenda lunghezza</translation>
     </message>
 </context>
 <context>

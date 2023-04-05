@@ -196,6 +196,7 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowdrawcommands.h \
            datamodel/graphicswindowrootdataitem.h \
            datamodel/graphicswindowsimpledatamodel.h \
+           datamodel/modifycommandandrenderdialog.h \
            datamodel/propertybrowserattribute.h \
            datamodel/propertybrowserview.h \
            datamodel/vtk2dgraphicsview.h \
@@ -252,6 +253,8 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
+           pre/geodata/geodatafactory.h \
+           pre/geodata/geodatawithsinglemapper.h \
            project/addiblegcptablemodel.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
@@ -287,7 +290,10 @@ HEADERS += guicore_global.h \
            scalarstocolors/colormapsettingeditdialog.h \
            scalarstocolors/colormapsettingeditwidget.h \
            scalarstocolors/colormapsettingeditwidgeti.h \
+           scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h \
            scalarstocolors/colormapsettingvaluecolorpaircontainer.h \
+           scalarstocolors/delegatedcolormapsettingcontainer.h \
+           scalarstocolors/delegatedcolormapsettingeditwidget.h \
            scalarstocolors/discretevaluesutil.h \
            solverdef/enumloader.h \
            solverdef/enumloadert.h \
@@ -379,7 +385,6 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatacellmappert.h \
            pre/geodata/geodatacreator.h \
            pre/geodata/geodataexporter.h \
-           pre/geodata/geodatafactoryinterface.h \
            pre/geodata/geodataimporter.h \
            pre/geodata/geodatamapper.h \
            pre/geodata/geodatamappersettingi.h \
@@ -492,8 +497,12 @@ HEADERS += guicore_global.h \
            tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
            tmsimage/private/tmsregionselectwidget_impl.h \
+           post/post2d/base/post2dwindowgeodatadataiteminterface.h \
+           post/post2d/base/post2dwindowgridtypedataiteminterface.h \
            pre/complex/private/gridcomplexconditiongroup_impl.h \
            pre/complex/private/gridcomplexconditionwidget_impl.h \
+           pre/geodata/private/geodata_propertydialog.h \
+           pre/geodata/private/geodata_updateactorsettingcommand.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatacreator_impl.h \
            pre/geodata/private/geodataexporter_impl.h \
@@ -501,6 +510,8 @@ HEADERS += guicore_global.h \
            pre/geodata/private/geodatamapper_impl.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
+           pre/geodata/private/geodataproxy_propertydialog.h \
+           pre/geodata/private/geodataproxy_updateactorsettingcommand.h \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.h \
            pre/geodatabackground/private/geodatabackgroundcellmappert_detail.h \
            pre/geodatabackground/private/geodatabackgroundcreatort_detail.h \
@@ -610,8 +621,8 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributeeditwidgett_detail.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h \
            pre/gridcond/base/private/gridattributevariationeditwidgett_detail.h
-FORMS += arrows/arrowscolorsettingeditwidget.ui \
-         arrows/arrowscolorsettingeditsmallwidget.ui \
+FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
+         arrows/arrowscolorsettingeditwidget.ui \
          arrows/arrowslegendsettingeditwidget.ui \
          arrows/arrowslengthsettingeditwidget.ui \
          arrows/arrowssettingeditwidget.ui \
@@ -640,6 +651,8 @@ FORMS += arrows/arrowscolorsettingeditwidget.ui \
          scalarstocolors/colormaplegendsettingeditwidget.ui \
          scalarstocolors/colormapsettingeditdialog.ui \
          scalarstocolors/colormapsettingeditwidget.ui \
+         scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.ui \
+         scalarstocolors/delegatedcolormapsettingeditwidget.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditiongrouprealeditwidget.ui \
@@ -655,8 +668,8 @@ FORMS += arrows/arrowscolorsettingeditwidget.ui \
          project/inputcond/private/inputconditionwidgetcgnsfile.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui
-SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
-           arrows/arrowscolorsettingeditsmallwidget.cpp \
+SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
+           arrows/arrowscolorsettingeditwidget.cpp \
            arrows/arrowslegendsettingcontainer.cpp \
            arrows/arrowslegendsettingeditwidget.cpp \
            arrows/arrowslengthsettingeditwidget.cpp \
@@ -679,6 +692,7 @@ SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
            datamodel/graphicswindowdrawcommands.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
+           datamodel/modifycommandandrenderdialog.cpp \
            datamodel/propertybrowserattribute.cpp \
            datamodel/propertybrowserview.cpp \
            datamodel/vtk2dgraphicsview.cpp \
@@ -734,6 +748,8 @@ SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
+           pre/geodata/geodatafactory.cpp \
+           pre/geodata/geodatawithsinglemapper.cpp \
            project/addiblegcptablemodel.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
@@ -766,7 +782,10 @@ SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
            scalarstocolors/colormapsettingeditdialog.cpp \
            scalarstocolors/colormapsettingeditwidget.cpp \
            scalarstocolors/colormapsettingeditwidgeti.cpp \
+           scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.cpp \
            scalarstocolors/colormapsettingvaluecolorpaircontainer.cpp \
+           scalarstocolors/delegatedcolormapsettingcontainer.cpp \
+           scalarstocolors/delegatedcolormapsettingeditwidget.cpp \
            scalarstocolors/discretevaluesutil.cpp \
            solverdef/integerenumloader.cpp \
            solverdef/realenumloader.cpp \
@@ -915,6 +934,11 @@ SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.cpp \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.cpp \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog_delegate.cpp \
+           post/post2d/base/post2dwindowgridtypedataiteminterface.cpp \
+           pre/geodata/private/geodata_propertydialog.cpp \
+           pre/geodata/private/geodata_updateactorsettingcommand.cpp \
+           pre/geodata/private/geodataproxy_propertydialog.cpp \
+           pre/geodata/private/geodataproxy_updateactorsettingcommand.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \

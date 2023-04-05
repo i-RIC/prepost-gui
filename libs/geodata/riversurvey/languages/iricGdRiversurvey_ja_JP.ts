@@ -239,7 +239,7 @@
     </message>
     <message>
         <source>  </source>
-        <translation type="vanished">  </translation>
+        <translation>  </translation>
     </message>
     <message>
         <source>Generate data</source>
@@ -389,7 +389,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>表示設定の編集</translation>
+        <translation type="vanished">表示設定の編集</translation>
     </message>
     <message>
         <source>Edit Water Surface Elevation</source>
@@ -453,6 +453,14 @@ If you want to adjust cross section position and map point cloud data again, you
 一部の領域では、点群データが存在しなかったため、値 0 をマッピングしました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>横断測量データ表示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -462,11 +470,11 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation>  </translation>
+        <translation type="vanished">  </translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>横断測量データ(&amp;C)</translation>
+        <translation type="vanished">横断測量データ(&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1498,7 +1506,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 %2行目 "%3": フラグの値が不正です。</translation>
+        <translation type="vanished">%1 %2行目 "%3": フラグの値が不正です。</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1576,7 +1584,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>表示設定の編集</translation>
+        <translation type="vanished">表示設定の編集</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>横断測量データ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
     </message>
 </context>
 <context>
@@ -1588,6 +1611,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTKファイル (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>背景色</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考:&lt;/span&gt; 色は、「カラーマップ」タブから変更できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>断面形状</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z方向の倍率:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>断面の名前</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>

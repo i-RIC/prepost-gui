@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Sortere (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Visningsinnstilling for punktsky</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Avmarker alt (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Visningsinnstilling for punktsky</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Bruk innstilling av forhåndsbehandlingsvinduet</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grunnleggende</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TINN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poeng</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstørrelse:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linje bredde:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Flate</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreres denne innstillingen og TIN-data er alltid vist som poeng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Forestilling</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farge:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Kartlegging av polygoner</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Fargekart for verdier</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Visningsinnstilling for punktsky</translation>
+        <translation type="vanished">Visningsinnstilling for punktsky</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Grunnleggende</translation>
+        <translation type="vanished">Grunnleggende</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TINN</translation>
+        <translation type="vanished">TINN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poeng</translation>
+        <translation type="vanished">Poeng</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktstørrelse:</translation>
+        <translation type="vanished">Punktstørrelse:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Flate</translation>
+        <translation type="vanished">Flate</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; Når du er i &amp;quot;Points Edit Modequot;, ignoreres denne innstillingen og TIN-data er alltid vist som poeng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; Når du er i &amp;quot;Points Edit Modequot;, ignoreres denne innstillingen og TIN-data er alltid vist som poeng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Break Lines</translation>
+        <translation type="vanished">Break Lines</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Forestilling</translation>
+        <translation type="vanished">Forestilling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farge:</translation>
+        <translation type="vanished">Farge:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Kartlegging av polygoner</translation>
+        <translation type="vanished">Kartlegging av polygoner</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Fargekart for verdier</translation>
+        <translation type="vanished">Fargekart for verdier</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksport (&amp;E)</translation>
+        <translation type="vanished">Eksport (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Fjern trekanter med lang kant</translation>
+        <translation>Fjern trekanter med lang kant</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Begrens kantlengde:</translation>
+        <translation>Begrens kantlengde:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Merk &lt;/span&gt;: Når du klikker på bruksknappen, blir trekanter som blir fjernet malt med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Merk &lt;/span&gt;: Når du klikker på bruksknappen, blir trekanter som blir fjernet malt med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

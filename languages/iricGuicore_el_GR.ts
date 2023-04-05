@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Βασικός</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χρωματικός χάρτης</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Αγνοήστε τη ρύθμιση της γραμμής χρώματος κατά την εισαγωγή</translation>
+        <translation type="vanished">Αγνοήστε τη ρύθμιση της γραμμής χρώματος κατά την εισαγωγή</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Μέγεθος και Θέση</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Κατεύθυνση:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Οριζόντιος</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Κατακόρυφος</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Αριθμός ετικετών:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Αυτο</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Κατά τη μετάβαση στη λειτουργία διαβάθμισης, οι τιμές ορίζονται στη μεσαία τιμή κάθε τμήματος.</translation>
+        <translation type="vanished">Κατά τη μετάβαση στη λειτουργία διαβάθμισης, οι τιμές ορίζονται στη μεσαία τιμή κάθε τμήματος.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Εξαγωγή (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Αριθμός χρωμάτων για εισαγωγή σε κάθε ενότητα</translation>
+        <translation type="vanished">Αριθμός χρωμάτων για εισαγωγή σε κάθε ενότητα</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Εύρος τιμών</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Αριθμός χρωμάτων:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation type="vanished">Μορφή</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Χαρακτηριστικό</translation>
+        <translation type="vanished">Χαρακτηριστικό</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Εξαγωγή (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Ρύθμιση χάρτη χρωμάτων</translation>
+        <translation type="vanished">Ρύθμιση χάρτη χρωμάτων</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Εύρος τιμών</translation>
+        <translation type="vanished">Εύρος τιμών</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Αυτόματο</translation>
+        <translation type="vanished">Αυτόματο</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Συμπληρώστε την άνω περιοχή</translation>
+        <translation type="vanished">Συμπληρώστε την άνω περιοχή</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Ελάχιστο:</translation>
+        <translation type="vanished">Ελάχιστο:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Συμπληρώστε την κάτω περιοχή</translation>
+        <translation type="vanished">Συμπληρώστε την κάτω περιοχή</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Αριθμός διαίρεσης:</translation>
+        <translation type="vanished">Αριθμός διαίρεσης:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Μέγιστη:</translation>
+        <translation type="vanished">Μέγιστη:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Ρύθμιση χρώματος</translation>
+        <translation type="vanished">Ρύθμιση χρώματος</translation>
     </message>
 </context>
 <context>

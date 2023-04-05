@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Pontok törlése</translation>
+        <translation type="vanished">Pontok törlése</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Kiválasztott ponttulajdonságok</translation>
+        <translation type="vanished">Kiválasztott ponttulajdonságok</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Pontok száma:</translation>
+        <translation type="vanished">Pontok száma:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimális:</translation>
+        <translation type="vanished">Minimális:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maximális:</translation>
+        <translation type="vanished">Maximális:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Az értéknél kisebb törlése:</translation>
+        <translation type="vanished">Az értéknél kisebb törlése:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Amikor átvált erre a módra, újra kell adnia a TIN -eket. Szeretné most újrakezdeni?</translation>
+        <translation type="vanished">Amikor átvált erre a módra, újra kell adnia a TIN -eket. Szeretné most újrakezdeni?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Válassza ki a pontot</translation>
+        <translation type="vanished">Válassza ki a pontot</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Törölje az értéknél kisebb kijelölt pontokat (&amp;L)...</translation>
+        <translation type="vanished">Törölje az értéknél kisebb kijelölt pontokat (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Az értéknél nagyobb kijelölt pontok törlése (&amp;G)...</translation>
+        <translation type="vanished">Az értéknél nagyobb kijelölt pontok törlése (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Ha törésvonalat ad hozzá, át kell kapcsolnia a drótkeretek megjelenítésére. Szeretne most drótkeretek megjelenítésére váltani?</translation>
+        <translation type="vanished">Ha törésvonalat ad hozzá, át kell kapcsolnia a drótkeretek megjelenítésére. Szeretne most drótkeretek megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>A törésvonal eltávolításakor át kell kapcsolni a drótvázak megjelenítésére. Szeretne most drótkeretek megjelenítésére váltani?</translation>
+        <translation type="vanished">A törésvonal eltávolításakor át kell kapcsolni a drótvázak megjelenítésére. Szeretne most drótkeretek megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Ha el szeretné távolítani a hosszú élekkel rendelkező háromszögeket, akkor a megjelenítési módot drótvázra vagy felületre kell váltania. Ha megnyomja az OK gombot, a megjelenítési módszer drótvázra vált</translation>
+        <translation type="vanished">Ha el szeretné távolítani a hosszú élekkel rendelkező háromszögeket, akkor a megjelenítési módot drótvázra vagy felületre kell váltania. Ha megnyomja az OK gombot, a megjelenítési módszer drótvázra vált</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Pontok szerkesztésekor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
+        <translation type="vanished">Pontok szerkesztésekor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Pontok törlésekor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
+        <translation type="vanished">Pontok törlésekor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>A törésvonalakhoz használt pontokat nem törölheti.</translation>
+        <translation type="vanished">A törésvonalakhoz használt pontokat nem törölheti.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Pontok törlése</translation>
+        <translation type="vanished">Pontok törlése</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Válassza ki az exportálni kívánt fájlt</translation>
+        <translation type="vanished">Válassza ki az exportálni kívánt fájlt</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Hiba történt a (z) fájlba történő exportálás során %1.</translation>
+        <translation type="vanished">Hiba történt a (z) fájlba történő exportálás során %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Törölje a pontokat kevesebb, mint %1</translation>
+        <translation type="vanished">Törölje a pontokat kevesebb, mint %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Törölje a nagyobb pontokat %1</translation>
+        <translation type="vanished">Törölje a nagyobb pontokat %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Pontok interpolálásakor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
+        <translation type="vanished">Pontok interpolálásakor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Pontok hozzáadásakor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
+        <translation type="vanished">Pontok hozzáadásakor át kell váltani a pontok megjelenítésére. Szeretne most a pontok megjelenítésére váltani?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Törésvonal hozzáadása</translation>
+        <translation type="vanished">Törésvonal hozzáadása</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Törje a törésvonal meghatározását</translation>
+        <translation type="vanished">Törje a törésvonal meghatározását</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Fejezze be a törésvonal meghatározását</translation>
+        <translation type="vanished">Fejezze be a törésvonal meghatározását</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Pontok szerkesztése</translation>
+        <translation type="vanished">Pontok szerkesztése</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Új Interp vonalpont hozzáadása</translation>
+        <translation type="vanished">Új Interp vonalpont hozzáadása</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Összeolvad...</translation>
+        <translation type="vanished">Összeolvad...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Point Cloud adatok (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Pontok törlése</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Üzemmód váltása (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Kiválasztott ponttulajdonságok</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Összeolvad (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Pontok száma:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Térképezési beállítás (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimális:</translation>
+        <source>Select file name to export</source>
+        <translation>Válassza ki az exportálandó fájl nevét</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maximális:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Nem sikerült megnyitni %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Az értéknél nagyobb törlése:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Pontok szerkesztése</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Módosítsa a TIN-t, és ha kész, váltson TIN szerkesztési módba.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Kiválasztott ponttulajdonságok</translation>
+        <source>Selection Mode</source>
+        <translation>Kiválasztási mód</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Pontok száma:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Jelöljön ki pontokat a Téglalap régióval</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimális:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>A kiválasztott pontok szűrése (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maximális:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-hely</translation>
+        <source>&amp;Sort</source>
+        <translation>Fajta (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-hely</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Érték</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pontfelhő megjelenítési beállítása</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpolációs növekedés</translation>
+        <source>Warning</source>
+        <translation>Figyelem</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Interpolációs beállítás</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Interpoláció növekedése:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Sor hossza:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>A törésvonalhoz használt pontokat nem lehet törölni.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Figyelem</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Az interpolációs növekménynek nagyobbnak kell lennie 0 -nál és kisebbnek kell lennie, mint az interpolációs vonal hossza</translation>
+        <translation>Az interpolációs növekménynek 0-val nagyobbnak és kisebbnek kell lennie, mint az interpolációs vonal hossza</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Pontok törlése</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Kiválasztott ponttulajdonságok</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Pontok száma:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimális:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maximális:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Az értéknél nagyobb törlése:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Pontok szerkesztése</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Kiválasztott ponttulajdonságok</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Pontok száma:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimális:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maximális:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-hely</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-hely</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Érték</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpolációs növekedés</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Interpolációs beállítás</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Interpoláció növekedése:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Sor hossza:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Figyelem</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Az interpolációs növekménynek nagyobbnak kell lennie 0 -nál és kisebbnek kell lennie, mint az interpolációs vonal hossza</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Minden kijelölés megszüntetése (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pontfelhő megjelenítési beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Használja az Előfeldolgozási ablak beállítását</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 pont)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Alapvető</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ÓN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pontok</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pontméret:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Drótkeret</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Felület</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Törésvonalak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Előadás</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Szín:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Sokszögek beállítása</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Színtérkép az értékekhez</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Pontfelhő adatleképezés beállítása</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Térképezés TIN-nel</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>A pontokból létrehozott TIN-t a leképezéshez használják. A rács csomópontjaiban vagy celláiban meghatározott grid attribútumértékek a csomópontot (vagy cellaközéppontot) tartalmazó háromszög csomópontjaiban meghatározott értékek súlyozott átlagaként számítják ki.</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Sablonleképezés</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Keresse meg azokat a pontokat, amelyek közel vannak a rácscsomópontokhoz, tekintettel a rácscella alakzatokra, és használja az ezen pontokon lévő értékeket az interpolációhoz.&lt;/p&gt;&lt;p&gt;Ez az algoritmus csak strukturált rácsokhoz használja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Részlet (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Módosítsa a leképezési algoritmust minden sokszöggel meghatározott területhez</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Határozza meg a területeket sokszögként, és adja meg az algoritmust a rácscsomópontokon vagy a cellaközéppontokon lévő értékek leképezéséhez a pontokban meghatározott értékekből.&lt;/p&gt;&lt;p&gt;A felhasználó az alábbiak közül választhat: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;A körön belüli pontok minimális értékének feltérképezése&lt;/li&gt;&lt;li&gt;A körön belüli pontok maximális értékének feltérképezése&lt;/li&gt;&lt;li&gt;A körön belüli pontok súlyozott átlagértékének feltérképezése&lt;/li&gt; &lt;li&gt;Térkép a TIN-ből&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Sablonleképezés beállítása</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Keresés régióban</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Kézikönyv</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Áramlatonkénti hossza [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Keresztfolyam szélessége [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Sablonbővítések száma:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Súlyozási kitevő:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Pontok szerkesztése</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>A kiválasztott pontok tulajdonságai</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Pontok száma:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimális érték:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maximális érték:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Érték:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Kijelölt pontok szűrése</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>A kiválasztott pontok tulajdonságai</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Pontok száma:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimális érték:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maximális érték:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Szűrési állapot</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Válassza ki a küszöbértéknél nagyobb értékű pontokat</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Válassza ki a küszöbértéknél kisebb értékű pontokat</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Küszöbérték:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Interpolációs beállítás</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Növekmény interpolálása</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Interpolációs növekmény:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Vonal hossza:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Számítási módszer</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Térkép TIN használatával</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>A sugáron belüli pontok minimális értéke</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>A sugáron belüli pontok maximális értéke</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>A sugáron belüli pontok súlyozott átlaga</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>k súlyozási kitevő:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Az értékek súlyozott átlagának kiszámításakor az &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; értéket használják súlyként. r a távolság a pont és a csomópont vagy a cellaközép között, amelyhez az érték hozzá van rendelve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>A kör sugara a pontok kereséséhez:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>A leképezés végrehajtásakor a körben a fenti sugarú pontokat keresi a rendszer, hogy az értékeket leképezze a rács csomópontjaira vagy cellaközéppontjaira.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Pontfelhő megjelenítési beállítása</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Alapvető</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">ÓN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Pontok</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Pontméret:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Drótkeret</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Felület</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Törésvonalak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Előadás</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Szín:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Sokszögek beállítása</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Színtérkép az értékekhez</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Importálás (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
 </context>
 <context>

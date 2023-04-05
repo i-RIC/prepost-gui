@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Geografinių duomenų kartografavimas</translation>
+        <translation type="vanished">Geografinių duomenų kartografavimas</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Žemėlapių sudarymas naudojant TIN</translation>
+        <translation type="vanished">Žemėlapių sudarymas naudojant TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Žemėlapiams naudojami TIN, sukurti iš geografinių duomenų. Tinklelio mazgų atributų vertės apskaičiuojamos kaip svertinis TIN mazgų verčių vidurkis.</translation>
+        <translation type="vanished">Žemėlapiams naudojami TIN, sukurti iš geografinių duomenų. Tinklelio mazgų atributų vertės apskaičiuojamos kaip svertinis TIN mazgų verčių vidurkis.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Šablonų atvaizdavimas</translation>
+        <translation type="vanished">Šablonų atvaizdavimas</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Raskite geografinių duomenų taškus, esančius netoli tinklelio mazgų, atsižvelgiant į tinklelio ląstelių formas, ir naudokite tų taškų vertes interpoliacijai. Šis algoritmas gali būti naudojamas tik struktūrizuotiems tinklams.</translation>
+        <translation type="vanished">Raskite geografinių duomenų taškus, esančius netoli tinklelio mazgų, atsižvelgiant į tinklelio ląstelių formas, ir naudokite tų taškų vertes interpoliacijai. Šis algoritmas gali būti naudojamas tik struktūrizuotiems tinklams.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalė (&amp;D)...</translation>
+        <translation type="vanished">Detalė (&amp;D)...</translation>
     </message>
 </context>
 <context>

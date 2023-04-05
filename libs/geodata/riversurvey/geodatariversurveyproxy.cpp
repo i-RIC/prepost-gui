@@ -2,9 +2,13 @@
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
 #include "private/geodatariversurvey_impl.h"
-#include "private/geodatariversurveyproxy_setsettingcommand.h"
+#include "private/geodatariversurveyproxy_impl.h"
+#include "private/geodatariversurveyproxy_displaysettingwidget.h"
 
+#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
+#include <misc/modifycommanddialog.h>
 #include <misc/zdepthrange.h>
 
 #include <QMainWindow>
@@ -19,21 +23,21 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
-
 GeoDataRiverSurveyProxy::GeoDataRiverSurveyProxy(GeoDataRiverSurvey* geodata) :
-	GeoDataProxy(geodata)
+	GeoDataProxy(geodata),
+	impl {new Impl {}}
 {}
 
 GeoDataRiverSurveyProxy::~GeoDataRiverSurveyProxy()
 {
 	auto r = renderer();
 
-	r->RemoveActor(m_centerAndBankLinesActor);
-	r->RemoveActor(m_crossectionsActor);
-	r->RemoveActor(m_backgroundActor);
-	r->RemoveActor(m_crosssectionLinesActor);
+	r->RemoveActor(impl->m_centerAndBankLinesActor);
+	r->RemoveActor(impl->m_crossectionsActor);
+	r->RemoveActor(impl->m_backgroundActor);
+	r->RemoveActor(impl->m_crosssectionLinesActor);
 
-	r->RemoveActor2D(m_labelActor);
+	r->RemoveActor2D(impl->m_labelActor);
 }
 
 void GeoDataRiverSurveyProxy::setupActors()
@@ -42,130 +46,121 @@ void GeoDataRiverSurveyProxy::setupActors()
 	vtkRenderer* r = renderer();
 	vtkActorCollection* col = actorCollection();
 
-	m_centerAndBankLinesActor = vtkSmartPointer<vtkActor>::New();
 	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper->SetInputData(rs->centerAndBankLines());
-	m_centerAndBankLinesActor->SetMapper(mapper);
-	m_centerAndBankLinesActor->SetProperty(rs->impl->m_centerAndBankLinesActor->GetProperty());
-	r->AddActor(m_centerAndBankLinesActor);
-	col->AddItem(m_centerAndBankLinesActor);
+	impl->m_centerAndBankLinesActor->SetMapper(mapper);
+	impl->m_centerAndBankLinesActor->SetProperty(rs->impl->m_centerAndBankLinesActor->GetProperty());
+	r->AddActor(impl->m_centerAndBankLinesActor);
+	col->AddItem(impl->m_centerAndBankLinesActor);
 
-	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
 	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper->SetInputData(rs->crossSectionLines());
-	m_crossectionsActor->SetMapper(mapper);
-	m_crossectionsActor->SetProperty(rs->impl->m_crossSectionLinesActor->GetProperty());
-	r->AddActor(m_crossectionsActor);
-	col->AddItem(m_crossectionsActor);
+	impl->m_crossectionsActor->SetMapper(mapper);
+	impl->m_crossectionsActor->SetProperty(rs->impl->m_crossSectionLinesActor->GetProperty());
+	r->AddActor(impl->m_crossectionsActor);
+	col->AddItem(impl->m_crossectionsActor);
 
-	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	auto dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	dsmapper->SetInputData(rs->backgroundGrid());
-	dsmapper->SetScalarModeToUsePointData();
-	//dsmapper->SetLookupTable(rs->scalarsToColorsContainer()->vtkObj());
-	dsmapper->UseLookupTableScalarRangeOn();
-	dsmapper->SetScalarVisibility(true);
+	r->AddActor(impl->m_backgroundActor);
 
-	m_backgroundActor->SetMapper(dsmapper);
-	r->AddActor(m_backgroundActor);
-	col->AddItem(m_backgroundActor);
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(impl->m_crosssectionLines);
+	impl->m_crosssectionLinesActor->SetMapper(mapper);
+	impl->m_crosssectionLinesActor->GetProperty()->SetLineWidth(1);
+	r->AddActor(impl->m_crosssectionLinesActor);
 
-	m_crosssectionLinesActor = vtkSmartPointer<vtkActor>::New();
+	impl->m_labelMapper->SetInputData(rs->rightBankPointSet());
+	impl->m_labelMapper->SetFieldDataName(rs->labelArray()->GetName());
+	GeoDataRiverSurvey::setupLabelMapper(impl->m_labelMapper);
+	impl->m_labelActor->SetMapper(impl->m_labelMapper);
+	r->AddActor2D(impl->m_labelActor);
 
-	dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_crosssectionLines = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	dsmapper->SetInputData(m_crosssectionLines);
-	m_crosssectionLinesActor->SetMapper(dsmapper);
-	m_crosssectionLinesActor->GetProperty()->SetLineWidth(1);
-
-	r->AddActor(m_crosssectionLinesActor);
-	col->AddItem(m_crosssectionLinesActor);
-
-	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	auto labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	labelMapper->SetInputData(rs->rightBankPointSet());
-	labelMapper->SetFieldDataName(rs->labelArray()->GetName());
-	GeoDataRiverSurvey::setupLabelMapper(labelMapper);
-	m_labelActor->SetMapper(labelMapper);
-	r->AddActor2D(m_labelActor);
-	actor2DCollection()->AddItem(m_labelActor);
-
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataRiverSurveyProxy::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_setting.load(node);
+	impl->m_displaySetting.load(node);
 
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataRiverSurveyProxy::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.save(writer);
+	impl->m_displaySetting.save(writer);
 }
 
-void GeoDataRiverSurveyProxy::updateGraphics()
+void GeoDataRiverSurveyProxy::updateActorSetting()
 {
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(geoData());
+	auto rs = dynamic_cast<GeoDataRiverSurvey*>(geoData());
+	auto ds = impl->m_displaySetting.displaySetting;
+	if (impl->m_displaySetting.usePreSetting) {
+		ds = rs->impl->m_displaySetting;
+	}
 
-	m_crosssectionLines->Reset();
+	impl->m_crosssectionLines->Initialize();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
+	auto verticalLines = vtkSmartPointer<vtkCellArray>::New();
 
 	GeoDataRiverPathPoint* p = rs->m_headPoint->nextPoint();
-	vtkIdType pointNum = 0;
 	while (p != 0) {
 		double maxHeight = 0;
-		GeoDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
-		// calculate maxHeight.
+		const auto& alist = p->crosssection().AltitudeInfo();
 		for (int i = 0; i < alist.size(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
-		// now draw lines.
 		QPointF offsetDir = p->crosssectionDirection();
 		offsetDir = iRIC::rotateVector270(offsetDir);
 
-		double offset;
-		GeoDataRiverCrosssection::Altitude alt = alist[0];
-		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
-		QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
-		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-		++ pointNum;
-		for (int i = 1; i < alist.size(); ++i) {
-			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
+		vtkIdType firstId = points->GetNumberOfPoints();
+		std::vector<vtkIdType> ids;
+		ids.reserve(alist.size());
+
+		for (int i = 0; i < alist.size(); ++i) {
+			const auto& alt = alist[i];
+			double offset = (maxHeight - alt.height()) * ds.crosssectionLinesScale;
 			QPointF tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
-			++ pointNum;
-			vtkSmartPointer<vtkLine> tmpline = vtkSmartPointer<vtkLine>::New();
-			tmpline->GetPointIds()->SetId(0, pointNum - 2);
-			tmpline->GetPointIds()->SetId(1, pointNum - 1);
-			m_crosssectionLines->InsertNextCell(tmpline->GetCellType(), tmpline->GetPointIds());
+			ids.push_back(firstId + i);
 		}
+		verticalLines->InsertNextCell(ids.size(), ids.data());
 		p = p->nextPoint();
 	}
-	m_crosssectionLines->SetPoints(points);
-	points->Modified();
-	m_crosssectionLines->Modified();
-	m_crosssectionLines->BuildLinks();
+	impl->m_crosssectionLines->SetPoints(points);
+	impl->m_crosssectionLines->SetLines(verticalLines);
 
-	m_backgroundActor->VisibilityOff();
-	m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
-	m_crosssectionLinesActor->VisibilityOff();
-	m_crosssectionLinesActor->GetProperty()->SetColor(m_setting.crosssectionLinesColor);
+	auto col = actorCollection();
+	auto col2 = actor2DCollection();
 
-	vtkActorCollection* collection = actorCollection();
-	collection->RemoveItem(m_backgroundActor);
-	collection->RemoveItem(m_crosssectionLinesActor);
+	impl->m_crosssectionLinesActor->VisibilityOff();
+	col->RemoveItem(impl->m_crosssectionLinesActor);
 
-	if (m_setting.showBackground) {
-		collection->AddItem(m_backgroundActor);
+	if (ds.showLines) {
+		col->AddItem(impl->m_crosssectionLinesActor);
+		impl->m_crosssectionLinesActor->GetProperty()->SetColor(ds.crosssectionLinesColor);
 	}
-	if (m_setting.showLines) {
-		collection->AddItem(m_crosssectionLinesActor);
+
+	impl->m_labelActor->VisibilityOff();
+	col2->RemoveItem(impl->m_labelActor);
+
+	if (ds.showNames) {
+		col2->AddItem(impl->m_labelActor);
+		ds.namesTextSetting.applySetting(impl->m_labelMapper->GetLabelTextProperty());
 	}
+
+	impl->m_backgroundActor->VisibilityOff();
+	col->RemoveItem(impl->m_backgroundActor);
+	if (ds.showBackground) {
+		col->AddItem(impl->m_backgroundActor);
+		impl->m_backgroundActor->GetProperty()->SetOpacity(ds.opacity);
+
+		auto cs = colorMapSettingContainer();
+		auto mapper = cs->buildPointDataMapper(rs->impl->m_backgroundGrid);
+		impl->m_backgroundActor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
 	updateVisibilityWithoutRendering();
 }
 
@@ -180,23 +175,24 @@ void GeoDataRiverSurveyProxy::assignActorZValues(const ZDepthRange& range)
 	double backlines = range.min() * 0.5 + range.max() * 0.5;
 	double lines = range.max();
 
-	m_crossectionsActor->SetPosition(0, 0, lines);
-	m_centerAndBankLinesActor->SetPosition(0, 0, lines);
-	m_crosssectionLinesActor->SetPosition(0, 0, backlines);
-	m_backgroundActor->SetPosition(0, 0, background);
+	impl->m_crossectionsActor->SetPosition(0, 0, lines);
+	impl->m_centerAndBankLinesActor->SetPosition(0, 0, lines);
+	impl->m_crosssectionLinesActor->SetPosition(0, 0, backlines);
+	impl->m_backgroundActor->SetPosition(0, 0, background);
+}
+
+void GeoDataRiverSurveyProxy::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 QDialog* GeoDataRiverSurveyProxy::propertyDialog(QWidget* parent)
 {
-	GeoDataRiverSurveyDisplaySettingDialog* dialog = new GeoDataRiverSurveyDisplaySettingDialog(parent);
-	dialog->setSetting(m_setting);
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoData()->gridAttribute()->name(), parent);
+	auto widget = new DisplaySettingWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Cross-Section Data Display Setting"));
+	dialog->resize(850, 700);
 
 	return dialog;
-}
-
-void GeoDataRiverSurveyProxy::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	GeoDataRiverSurveyDisplaySettingDialog* dialog = dynamic_cast<GeoDataRiverSurveyDisplaySettingDialog*>(propDialog);
-
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this));
 }

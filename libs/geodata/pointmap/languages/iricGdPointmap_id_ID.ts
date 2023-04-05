@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Menyortir (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pengaturan Tampilan Point Cloud</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Batalkan pilihan semua (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pengaturan Tampilan Point Cloud</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Dasar</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIMAH</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poin</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Poin:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Gambar rangka</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lebar Garis:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Permukaan</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Putuskan Garis</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Menunjukkan</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Poligon Pengaturan Pemetaan</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Peta warna untuk nilai</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Pengaturan Tampilan Point Cloud</translation>
+        <translation type="vanished">Pengaturan Tampilan Point Cloud</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Dasar</translation>
+        <translation type="vanished">Dasar</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIMAH</translation>
+        <translation type="vanished">TIMAH</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poin</translation>
+        <translation type="vanished">Poin</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Titik:</translation>
+        <translation type="vanished">Ukuran Titik:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Gambar rangka</translation>
+        <translation type="vanished">Gambar rangka</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lebar Garis:</translation>
+        <translation type="vanished">Lebar Garis:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Permukaan</translation>
+        <translation type="vanished">Permukaan</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Putuskan Garis</translation>
+        <translation type="vanished">Putuskan Garis</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Menunjukkan</translation>
+        <translation type="vanished">Menunjukkan</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Memetakan Pengaturan Poligon</translation>
+        <translation type="vanished">Memetakan Pengaturan Poligon</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Peta warna untuk nilai</translation>
+        <translation type="vanished">Peta warna untuk nilai</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Impor (&amp;I)</translation>
+        <translation type="vanished">Impor (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation type="vanished">Ekspor (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Hapus Segitiga dengan Tepi Panjang</translation>
+        <translation>Hapus Segitiga dengan Tepi Panjang</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Batas panjang tepi:</translation>
+        <translation>Batas panjang tepi:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Saat Anda mengklik tombol terapkan, segitiga yang akan dihapus akan dicat dengan warna gelap abu-abu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Saat Anda mengklik tombol terapkan, segitiga yang akan dihapus akan dicat dengan warna gelap abu-abu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,5 @@
 #include "geodatapointmaplandxmlexporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
@@ -21,13 +21,13 @@ GeoDataPointmapLandXmlExporter::GeoDataPointmapLandXmlExporter(GeoDataCreator* c
 
 bool GeoDataPointmapLandXmlExporter::doExport(GeoData* data, const QString& filename, const QString&, QWidget* w, ProjectData* pd)
 {
-	auto pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*> (data);
+	auto pmap = dynamic_cast<GeoDataPointmap*> (data);
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("Error occured while exporting to %1").arg(QDir::toNativeSeparators(filename)));
 		return false;
 	}
-	auto polydata = pmap->delaunayedPolyData();
+	auto polydata = pmap->tin();
 
 	QXmlStreamWriter writer(&file);
 	writer.writeStartDocument("1.0");

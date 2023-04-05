@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Pontkoordináták szerkesztése</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Csúcs mozgatása</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Csúcs beállítása</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

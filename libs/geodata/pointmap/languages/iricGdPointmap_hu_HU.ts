@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Fajta (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pontfelhő megjelenítési beállítása</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Minden kijelölés megszüntetése (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Pontfelhő megjelenítési beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Használja az Előfeldolgozási ablak beállítását</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Alapvető</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ÓN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Pontok</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Pontméret:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Drótkeret</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Felület</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Törésvonalak</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Előadás</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Szín:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Sokszögek beállítása</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Színtérkép az értékekhez</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Pontfelhő megjelenítési beállítása</translation>
+        <translation type="vanished">Pontfelhő megjelenítési beállítása</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Alapvető</translation>
+        <translation type="vanished">Alapvető</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ÓN</translation>
+        <translation type="vanished">ÓN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pontok</translation>
+        <translation type="vanished">Pontok</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Pontméret:</translation>
+        <translation type="vanished">Pontméret:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Drótkeret</translation>
+        <translation type="vanished">Drótkeret</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Felület</translation>
+        <translation type="vanished">Felület</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A &amp;quot;Points Edit Modequot;-ban ezt a beállítást a rendszer figyelmen kívül hagyja, és a TIN-adatok mindig pontként jelenik meg.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Törésvonalak</translation>
+        <translation type="vanished">Törésvonalak</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Előadás</translation>
+        <translation type="vanished">Előadás</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Sokszögek beállítása</translation>
+        <translation type="vanished">Sokszögek beállítása</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Színtérkép az értékekhez</translation>
+        <translation type="vanished">Színtérkép az értékekhez</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importálás (&amp;I)</translation>
+        <translation type="vanished">Importálás (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Export (&amp;E)</translation>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Hosszú szélű háromszögek eltávolítása</translation>
+        <translation>Hosszú szélű háromszögek eltávolítása</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Az élhossz korlátozása:</translation>
+        <translation>Az élhossz korlátozása:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

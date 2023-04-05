@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Maantieteellisten tietojen kartoitus</translation>
+        <translation type="vanished">Maantieteellisten tietojen kartoitus</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kartoitus TIN -numeroilla</translation>
+        <translation type="vanished">Kartoitus TIN -numeroilla</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Maantieteellisistä tiedoista luotuja verotunnisteita käytetään kartoitukseen. Ruudukkosolmujen määritteen arvot lasketaan TIN -solmujen arvojen painotettuna keskiarvona.</translation>
+        <translation type="vanished">Maantieteellisistä tiedoista luotuja verotunnisteita käytetään kartoitukseen. Ruudukkosolmujen määritteen arvot lasketaan TIN -solmujen arvojen painotettuna keskiarvona.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mallin kartoitus</translation>
+        <translation type="vanished">Mallin kartoitus</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Etsi ruudukon solujen muotoja koskevat maantieteelliset datapisteet, jotka ovat lähellä ruudukon solmuja, ja käytä näiden pisteiden arvoja interpolointiin. Tätä algoritmia voidaan käyttää vain rakenteisiin ruudukkoihin.</translation>
+        <translation type="vanished">Etsi ruudukon solujen muotoja koskevat maantieteelliset datapisteet, jotka ovat lähellä ruudukon solmuja, ja käytä näiden pisteiden arvoja interpolointiin. Tätä algoritmia voidaan käyttää vain rakenteisiin ruudukkoihin.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Yksityiskohta (&amp;D)...</translation>
+        <translation type="vanished">Yksityiskohta (&amp;D)...</translation>
     </message>
 </context>
 <context>

@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Editare setări de culoare</translation>
+        <translation type="vanished">Editare setări de culoare</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Setarea de afișare a liniilor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Setare de afișare a grupului de polilinii</translation>
+        <translation type="vanished">Setare de afișare a grupului de polilinii</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colorează după valoare</translation>
+        <translation type="vanished">Colorează după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Ștergerea acestui element va elimina, de asemenea, orice ferestre grafice asociate cu aceste date. Sigur doriți să ștergeți acest articol?</translation>
+        <translation type="vanished">Ștergerea acestui element va elimina, de asemenea, orice ferestre grafice asociate cu aceste date. Sigur doriți să ștergeți acest articol?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editați setarea afișajului</translation>
+        <translation type="vanished">Editați setarea afișajului</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Setarea de afișare a liniilor</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (Linii) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Harta de culori</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
     </message>
 </context>
 </TS>

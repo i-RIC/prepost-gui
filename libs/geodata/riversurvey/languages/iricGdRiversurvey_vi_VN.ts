@@ -355,7 +355,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hiển thị</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Ở một số khu vực, dữ liệu không tồn tại trong dữ liệu đám mây điểm và giá trị 0 được ánh xạ cho các điểm đó. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm bản đồ, bạn có thể sử dụng "Dữ liệu đám mây điểm bản đồ"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Cài đặt hiển thị dữ liệu mặt cắt ngang</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Dữ liệu mặt cắt ngang (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Dữ liệu mặt cắt ngang (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 hàng %2 : "%3": Dữ liệu cờ không hợp lệ.</translation>
+        <translation type="vanished">%1 hàng %2 : "%3": Dữ liệu cờ không hợp lệ.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hiển thị</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Cài đặt hiển thị dữ liệu mặt cắt ngang</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>Tệp VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Nền tảng</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Màu nền</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dễ thấy</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Bạn có thể tùy chỉnh màu bằng tab Bản đồ màu.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>đường cắt ngang</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Quy mô Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Màu sắc:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Tên mặt cắt ngang</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
     </message>
 </context>
 <context>

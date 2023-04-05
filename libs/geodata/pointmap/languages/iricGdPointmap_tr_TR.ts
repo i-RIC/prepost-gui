@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Düzenlemek (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nokta Bulutu Görüntüleme Ayarı</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Tümünün seçimini kaldır (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nokta Bulutu Görüntüleme Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Ön İşleme Penceresinin Ayarını Kullanın</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Temel</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TENEKE</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puanlar</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puan Boyutu:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>tel kafes</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Yüzey</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; &amp;quot;Puan Düzenleme Modu&amp;quot;ndayken, bu ayar yoksayılır ve TIN verileri her zaman noktalar olarak gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Satır Arası</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göstermek</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Eşleme Ayarı Çokgenleri</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Değerler için renk haritası</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Nokta Bulutu Görüntüleme Ayarı</translation>
+        <translation type="vanished">Nokta Bulutu Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Temel</translation>
+        <translation type="vanished">Temel</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TENEKE</translation>
+        <translation type="vanished">TENEKE</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puanlar</translation>
+        <translation type="vanished">Puanlar</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puan Boyutu:</translation>
+        <translation type="vanished">Puan Boyutu:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>tel kafes</translation>
+        <translation type="vanished">tel kafes</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Yüzey</translation>
+        <translation type="vanished">Yüzey</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; &amp;quot;Puan Düzenleme Modu&amp;quot;ndayken, bu ayar dikkate alınmaz ve TIN verileri her zaman noktalar olarak gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; &amp;quot;Puan Düzenleme Modu&amp;quot;ndayken, bu ayar dikkate alınmaz ve TIN verileri her zaman noktalar olarak gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Satır Arası</translation>
+        <translation type="vanished">Satır Arası</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Göstermek</translation>
+        <translation type="vanished">Göstermek</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Eşleme Ayarı Çokgenleri</translation>
+        <translation type="vanished">Eşleme Ayarı Çokgenleri</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Değerler için renk haritası</translation>
+        <translation type="vanished">Değerler için renk haritası</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>İçe aktarmak (&amp;I)</translation>
+        <translation type="vanished">İçe aktarmak (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>İhracat (&amp;E)</translation>
+        <translation type="vanished">İhracat (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Uzun Kenarlı Üçgenleri Kaldır</translation>
+        <translation>Uzun Kenarlı Üçgenleri Kaldır</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Kenar uzunluğunu sınırla:</translation>
+        <translation>Kenar uzunluğunu sınırla:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Uygula düğmesine tıkladığınızda kaldırılacak üçgenler koyu renkle boyanacaktır. gri.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Uygula düğmesine tıkladığınızda kaldırılacak üçgenler koyu renkle boyanacaktır. gri.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

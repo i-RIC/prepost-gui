@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Grundläggande</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Färgkarta</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorera färgfältsinställningen vid import</translation>
+        <translation type="vanished">Ignorera färgfältsinställningen vid import</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Storlek och position</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Riktning:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Antal etiketter:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Bil</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>När du byter till graderingsläge ställs värdena till mittvärdet för varje sektion.</translation>
+        <translation type="vanished">När du byter till graderingsläge ställs värdena till mittvärdet för varje sektion.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Exportera (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Antal färger som ska infogas vid varje sektion</translation>
+        <translation type="vanished">Antal färger som ska infogas vid varje sektion</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Värdeintervall</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Antal färger:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribut</translation>
+        <translation type="vanished">Attribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Använd inställning av förbearbetningsfönstret</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exportera (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Färgkarta -inställning</translation>
+        <translation type="vanished">Färgkarta -inställning</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Värdeintervall</translation>
+        <translation type="vanished">Värdeintervall</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatisk</translation>
+        <translation type="vanished">Automatisk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Fyll det övre området</translation>
+        <translation type="vanished">Fyll det övre området</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Fyll nedre området</translation>
+        <translation type="vanished">Fyll nedre området</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Avdelningsnummer:</translation>
+        <translation type="vanished">Avdelningsnummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Färgkarta</translation>
+        <translation type="vanished">Färgkarta</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Färginställning</translation>
+        <translation type="vanished">Färginställning</translation>
     </message>
 </context>
 <context>

@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>新しい%1の追加</translation>
+        <translation type="vanished">新しい%1の追加</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>色の設定 (&amp;S)...</translation>
+        <translation type="vanished">色の設定 (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>色の設定の変更</translation>
+        <translation type="vanished">色の設定の変更</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>コピー...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>表示設定 (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>ポリデータの表示色設定</translation>
+        <translation type="vanished">ポリデータの表示色設定</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 <context>

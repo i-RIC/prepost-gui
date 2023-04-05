@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>लाइन्स डिस्प्ले सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>पॉलीलाइन समूह प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">पॉलीलाइन समूह प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>मूल्य से रंग</translation>
+        <translation type="vanished">मूल्य से रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>इस आइटम को मिटाने से इस डेटा से जुड़ी सभी ग्राफ़ विंडो भी निकल जाएंगी. क्या आप सुनिश्चित रूप से इस आइटम को मिटाना चाहते हैं?</translation>
+        <translation type="vanished">इस आइटम को मिटाने से इस डेटा से जुड़ी सभी ग्राफ़ विंडो भी निकल जाएंगी. क्या आप सुनिश्चित रूप से इस आइटम को मिटाना चाहते हैं?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+        <translation type="vanished">प्रदर्शन सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>लाइन्स डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI शेपफाइल (लाइनें) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
     </message>
 </context>
 </TS>

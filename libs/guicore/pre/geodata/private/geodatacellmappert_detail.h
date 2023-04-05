@@ -4,7 +4,7 @@
 #include "../geodatacellmappert.h"
 
 template <class V, class DA>
-GeoDataCellMapperT<V, DA>::GeoDataCellMapperT(const QString& caption, GeoDataCreator* parent) :
+GeoDataCellMapperT<V, DA>::GeoDataCellMapperT(const QString& caption, QObject* parent) :
 	GeoDataMapperT<V> (caption, parent)
 {}
 
@@ -19,4 +19,3 @@ GridAttributeCellContainerT<V, DA>* GeoDataCellMapperT<V, DA>::container() const
 }
 
 #endif // GEODATACELLMAPPERT_DETAIL_H
-

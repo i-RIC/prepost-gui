@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Afegir nou %1</translation>
+        <translation type="vanished">Afegir nou %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Configuració del color (&amp;S)...</translation>
+        <translation type="vanished">Configuració del color (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edició de la configuració del color</translation>
+        <translation type="vanished">Edició de la configuració del color</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copia...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Configuració de la pantalla (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Configuració del color de PolyData</translation>
+        <translation type="vanished">Configuració del color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color per valor</translation>
+        <translation type="vanished">Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
 </context>
 <context>

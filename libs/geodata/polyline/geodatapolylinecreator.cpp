@@ -29,12 +29,3 @@ bool GeoDataPolyLineCreator::isCreatable() const
 	return false;
 }
 
-GeoData* GeoDataPolyLineCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	GeoDataPolyLine* polyline = new GeoDataPolyLine(parent, this, condition);
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent);
-	item->standardItem()->setData(QVariant("Deleting this item will also remove any graph windows associated with this polyline.  Are you sure you want to delete this item?"), Qt::UserRole + 20);
-	polyline->setPosition(condition->position());
-	polyline->setDefaultMapper();
-	return polyline;
-}

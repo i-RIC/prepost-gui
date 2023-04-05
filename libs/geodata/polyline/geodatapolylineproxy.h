@@ -18,7 +18,7 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 
 public slots:
-	void updateGraphics() override;
+	void updateActorSetting() override;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

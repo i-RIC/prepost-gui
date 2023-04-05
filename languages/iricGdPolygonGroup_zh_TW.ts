@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>顏色設置編輯</translation>
+        <translation type="vanished">顏色設置編輯</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>多邊形顯示設置</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>多邊形組顯示設置</translation>
+        <translation type="vanished">多邊形組顯示設置</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>按值著色</translation>
+        <translation type="vanished">按值著色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定義顏色</translation>
+        <translation type="vanished">自定義顏色</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>編輯顯示設置</translation>
+        <translation type="vanished">編輯顯示設置</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>多邊形顯示設置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>預處理窗口的使用設置</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>警告</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值著色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色圖</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
     </message>
 </context>
 </TS>

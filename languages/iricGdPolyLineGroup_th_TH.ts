@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>การตั้งค่าการแสดงเส้น</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>การตั้งค่าการแสดงกลุ่ม Polyline</translation>
+        <translation type="vanished">การตั้งค่าการแสดงกลุ่ม Polyline</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>สีตามค่า</translation>
+        <translation type="vanished">สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>การลบรายการนี้จะเป็นการนำหน้าต่างกราฟที่เกี่ยวข้องกับข้อมูลนี้ออกด้วย คุณแน่ใจหรือว่าต้องการลบรายการนี้หรือไม่?</translation>
+        <translation type="vanished">การลบรายการนี้จะเป็นการนำหน้าต่างกราฟที่เกี่ยวข้องกับข้อมูลนี้ออกด้วย คุณแน่ใจหรือว่าต้องการลบรายการนี้หรือไม่?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>การตั้งค่าการแสดงเส้น</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (เส้น) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
     </message>
 </context>
 </TS>

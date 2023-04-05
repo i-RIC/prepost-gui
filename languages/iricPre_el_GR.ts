@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Γεωγραφική χαρτογράφηση δεδομένων</translation>
+        <translation type="vanished">Γεωγραφική χαρτογράφηση δεδομένων</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Χαρτογράφηση με ΑΦΜ</translation>
+        <translation type="vanished">Χαρτογράφηση με ΑΦΜ</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Τα ΑΦΜ που δημιουργούνται από γεωγραφικά δεδομένα χρησιμοποιούνται για χαρτογράφηση. Οι τιμές χαρακτηριστικών κόμβων πλέγματος υπολογίζονται ως σταθμισμένος μέσος όρος των τιμών στους κόμβους TIN.</translation>
+        <translation type="vanished">Τα ΑΦΜ που δημιουργούνται από γεωγραφικά δεδομένα χρησιμοποιούνται για χαρτογράφηση. Οι τιμές χαρακτηριστικών κόμβων πλέγματος υπολογίζονται ως σταθμισμένος μέσος όρος των τιμών στους κόμβους TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Χαρτογράφηση προτύπου</translation>
+        <translation type="vanished">Χαρτογράφηση προτύπου</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Βρείτε σημεία γεωγραφικών δεδομένων που βρίσκονται κοντά στους κόμβους πλέγματος, σχετικά με τα σχήματα κελιών πλέγματος και χρησιμοποιήστε τις τιμές σε αυτά τα σημεία για παρεμβολή. Αυτός ο αλγόριθμος μπορεί να χρησιμοποιηθεί μόνο για δομημένα πλέγματα.</translation>
+        <translation type="vanished">Βρείτε σημεία γεωγραφικών δεδομένων που βρίσκονται κοντά στους κόμβους πλέγματος, σχετικά με τα σχήματα κελιών πλέγματος και χρησιμοποιήστε τις τιμές σε αυτά τα σημεία για παρεμβολή. Αυτός ο αλγόριθμος μπορεί να χρησιμοποιηθεί μόνο για δομημένα πλέγματα.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Λεπτομέρεια (&amp;D)...</translation>
+        <translation type="vanished">Λεπτομέρεια (&amp;D)...</translation>
     </message>
 </context>
 <context>

@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Rediģēt displeja iestatījumus</translation>
+        <translation type="vanished">Rediģēt displeja iestatījumus</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Dažos reģionos dati nepastāvēja punktu mākoņa datos, un šiem punktiem tika kartēta vērtība 0. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot "Kartes punktu mākoņa datus".</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Šķērsgriezuma datu displeja iestatījums</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Šķērsgriezuma dati (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Šķērsgriezuma dati (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 līnija %2 : "%3": Karodziņa dati nav derīgi.</translation>
+        <translation type="vanished">%1 līnija %2 : "%3": Karodziņa dati nav derīgi.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Rediģēt displeja iestatījumu</translation>
+        <translation type="vanished">Rediģēt displeja iestatījumu</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Šķērsgriezuma datu displeja iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Izmantojiet pirmsapstrādes loga iestatījumu</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK fails (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pamata</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Fona krāsa</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Redzams</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Varat pielāgot krāsu, izmantojot cilni Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Šķērsgriezuma līnijas</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z mērogs:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Šķērsgriezumu nosaukumi</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Krāsu karte</translation>
     </message>
 </context>
 <context>

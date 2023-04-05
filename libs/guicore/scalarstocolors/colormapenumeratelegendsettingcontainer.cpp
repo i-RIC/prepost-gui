@@ -47,14 +47,24 @@ void ColorMapEnumerateLegendSettingContainer::setColorMapSetting(ColorMapEnumera
 	m_colorMapSetting = c;
 }
 
+void ColorMapEnumerateLegendSettingContainer::copy(const ColorMapLegendSettingContainerI& setting)
+{
+	copyValue(dynamic_cast<const ColorMapEnumerateLegendSettingContainer&> (setting));
+}
+
 void ColorMapEnumerateLegendSettingContainer::setTitle(const QString& t)
 {
 	title = t;
 }
 
-ColorMapSettingContainerI* ColorMapEnumerateLegendSettingContainer::setting()
+ColorMapSettingContainerI* ColorMapEnumerateLegendSettingContainer::setting() const
 {
 	return m_colorMapSetting;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setSetting(ColorMapSettingContainerI* setting)
+{
+	m_colorMapSetting = dynamic_cast<ColorMapEnumerateSettingContainer*> (setting);
 }
 
 ImageSettingContainer* ColorMapEnumerateLegendSettingContainer::imgSetting()

@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>रेखापुंज डेटा प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>रेखापुंज डेटा प्रदर्शन सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>खोलते समय त्रुटि हुई %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 </TS>

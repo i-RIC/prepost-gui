@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Kartläggning av geografisk data</translation>
+        <translation type="vanished">Kartläggning av geografisk data</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kartläggning med TIN</translation>
+        <translation type="vanished">Kartläggning med TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN som skapas från geografiska data används för kartläggning. Gridnoders attributvärden beräknas som viktat genomsnitt av värdena vid TIN -noder.</translation>
+        <translation type="vanished">TIN som skapas från geografiska data används för kartläggning. Gridnoders attributvärden beräknas som viktat genomsnitt av värdena vid TIN -noder.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mallkartläggning</translation>
+        <translation type="vanished">Mallkartläggning</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Hitta geografiska datapunkter som ligger nära rutnoderna om rutnätets cellformer och använd värdena vid dessa punkter för interpolering. Denna algoritm kan endast användas för strukturerade rutnät.</translation>
+        <translation type="vanished">Hitta geografiska datapunkter som ligger nära rutnoderna om rutnätets cellformer och använd värdena vid dessa punkter för interpolering. Denna algoritm kan endast användas för strukturerade rutnät.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalj (&amp;D)...</translation>
+        <translation type="vanished">Detalj (&amp;D)...</translation>
     </message>
 </context>
 <context>

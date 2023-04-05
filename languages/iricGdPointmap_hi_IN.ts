@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>अंक हटाएं</translation>
+        <translation type="vanished">अंक हटाएं</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>चयनित बिंदु गुण</translation>
+        <translation type="vanished">चयनित बिंदु गुण</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>न्यूनतम:</translation>
+        <translation type="vanished">न्यूनतम:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>ज्यादा से ज्यादा:</translation>
+        <translation type="vanished">ज्यादा से ज्यादा:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>मान से कम हटाएं:</translation>
+        <translation type="vanished">मान से कम हटाएं:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>जब आप इस मोड में स्विच करते हैं, तो आपको टीआईएन को रीमेश करना होगा। क्या आप अभी रीमेश करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप इस मोड में स्विच करते हैं, तो आपको टीआईएन को रीमेश करना होगा। क्या आप अभी रीमेश करना चाहते हैं?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>बिंदु चुनें</translation>
+        <translation type="vanished">बिंदु चुनें</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>मूल्य से कम चयनित अंक हटाएं (&amp;L)...</translation>
+        <translation type="vanished">मूल्य से कम चयनित अंक हटाएं (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>मूल्य से अधिक चयनित अंक हटाएं (&amp;G)...</translation>
+        <translation type="vanished">मूल्य से अधिक चयनित अंक हटाएं (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>जब आप ब्रेक लाइन जोड़ते हैं, तो आपको वायरफ्रेम दिखाने के लिए स्विच करना होगा। क्या आप अभी वायरफ़्रेम दिखाने के लिए स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप ब्रेक लाइन जोड़ते हैं, तो आपको वायरफ्रेम दिखाने के लिए स्विच करना होगा। क्या आप अभी वायरफ़्रेम दिखाने के लिए स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>जब आप ब्रेक लाइन हटाते हैं, तो आपको वायरफ्रेम दिखाने के लिए स्विच करना होगा। क्या आप अभी वायरफ़्रेम दिखाने के लिए स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप ब्रेक लाइन हटाते हैं, तो आपको वायरफ्रेम दिखाने के लिए स्विच करना होगा। क्या आप अभी वायरफ़्रेम दिखाने के लिए स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>जब आप लंबे किनारों वाले त्रिभुजों को हटाना चाहते हैं, तो आपको डिस्प्ले मेथड को वायरफ्रेम या सरफेस पर स्विच करना होगा। यदि आप OK बटन दबाते हैं, तो डिस्प्ले मेथड वायरफ्रेम पर स्विच हो जाता है</translation>
+        <translation type="vanished">जब आप लंबे किनारों वाले त्रिभुजों को हटाना चाहते हैं, तो आपको डिस्प्ले मेथड को वायरफ्रेम या सरफेस पर स्विच करना होगा। यदि आप OK बटन दबाते हैं, तो डिस्प्ले मेथड वायरफ्रेम पर स्विच हो जाता है</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>जब आप अंक संपादित करते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप अंक संपादित करते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>जब आप अंक हटाते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप अंक हटाते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>आप ब्रेक लाइनों के लिए उपयोग किए गए बिंदुओं को नहीं हटा सकते।</translation>
+        <translation type="vanished">आप ब्रेक लाइनों के लिए उपयोग किए गए बिंदुओं को नहीं हटा सकते।</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>अंक हटाएं</translation>
+        <translation type="vanished">अंक हटाएं</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>निर्यात करने के लिए फ़ाइल का चयन करें</translation>
+        <translation type="vanished">निर्यात करने के लिए फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>को निर्यात करते समय त्रुटि हुई %1.</translation>
+        <translation type="vanished">को निर्यात करते समय त्रुटि हुई %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>से कम अंक हटाएं %1</translation>
+        <translation type="vanished">से कम अंक हटाएं %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>से अधिक अंक हटाएं %1</translation>
+        <translation type="vanished">से अधिक अंक हटाएं %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>जब आप बिंदुओं को प्रक्षेपित करते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप बिंदुओं को प्रक्षेपित करते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>जब आप अंक जोड़ते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
+        <translation type="vanished">जब आप अंक जोड़ते हैं, तो आपको अंक दिखाने के लिए स्विच करना होगा। क्या आप अब शो पॉइंट पर स्विच करना चाहते हैं?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>ब्रेक लाइन प्वाइंट जोड़ें</translation>
+        <translation type="vanished">ब्रेक लाइन प्वाइंट जोड़ें</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>ब्रेक लाइन को परिभाषित करना रद्द करें</translation>
+        <translation type="vanished">ब्रेक लाइन को परिभाषित करना रद्द करें</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>ब्रेक लाइन को परिभाषित करना समाप्त करें</translation>
+        <translation type="vanished">ब्रेक लाइन को परिभाषित करना समाप्त करें</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>अंक संपादित करें</translation>
+        <translation type="vanished">अंक संपादित करें</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>नया इंटरप लाइन प्वाइंट जोड़ें</translation>
+        <translation type="vanished">नया इंटरप लाइन प्वाइंट जोड़ें</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>मर्ज करें...</translation>
+        <translation type="vanished">मर्ज करें...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>प्वाइंट क्लाउड डेटा (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>अंक हटाएं</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>स्विच मोड (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>चयनित बिंदु गुण</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>मर्ज (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>मैपिंग सेटिंग (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>न्यूनतम:</translation>
+        <source>Select file name to export</source>
+        <translation>निर्यात करने के लिए फ़ाइल का नाम चुनें</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>ज्यादा से ज्यादा:</translation>
+        <source>Failed to open %1.</source>
+        <translation>खोलने में असफल हुआ %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>मान से बड़ा हटाएं:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>अंक संपादित करें</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>टिन को रीमेश करें और जब यह पूरा हो जाए, तो टिन एडिट मोड में स्विच करें।</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>चयनित बिंदु गुण</translation>
+        <source>Selection Mode</source>
+        <translation>चयन मोड</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>आयत क्षेत्र वाले बिंदुओं का चयन करें</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>न्यूनतम:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>चयनित बिंदुओं को फ़िल्टर करें (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>ज्यादा से ज्यादा:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>रेमेश टिन (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>एक्स-स्थान</translation>
+        <source>&amp;Sort</source>
+        <translation>क्रम से लगाना (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>वाई-स्थान</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>मूल्य</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>इंटरपोलेट वेतन वृद्धि</translation>
+        <source>Warning</source>
+        <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>इंटरपोलेशन सेटिंग</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>प्रक्षेप वृद्धि:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>रेखा लंबाई:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>आप ब्रेक लाइन के लिए उपयोग किए गए बिंदुओं को हटा नहीं सकते।</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>इंटरपोलेशन इंक्रीमेंट 0 से अधिक और इंटरपोलेशन लाइन की लंबाई से कम होना चाहिए</translation>
+        <translation>इंटरपोलेशन इंक्रीमेंट 0 से ज़्यादा और इंटरपोलेशन लाइन की लंबाई से कम होना चाहिए</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">अंक हटाएं</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">चयनित बिंदु गुण</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">न्यूनतम:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">ज्यादा से ज्यादा:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">मान से बड़ा हटाएं:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">अंक संपादित करें</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">चयनित बिंदु गुण</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">न्यूनतम:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">ज्यादा से ज्यादा:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">एक्स-स्थान</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">वाई-स्थान</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">मूल्य</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">इंटरपोलेट वेतन वृद्धि</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">इंटरपोलेशन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">प्रक्षेप वृद्धि:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">रेखा लंबाई:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">इंटरपोलेशन इंक्रीमेंट 0 से अधिक और इंटरपोलेशन लाइन की लंबाई से कम होना चाहिए</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>सभी को अचयनित करें (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 अंक)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>टिन</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>अंक</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>वायरफ़्रेम</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>सतह</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>ब्रेक लाइन्स</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दिखाना</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>मानचित्रण सेटिंग बहुभुज</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>मूल्यों के लिए रंग मानचित्र</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>पॉइंट क्लाउड डेटा मैपिंग सेटिंग</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>टीआईएन के साथ मैपिंग</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>पॉइंट्स से बने TIN का इस्तेमाल मैपिंग के लिए किया जाता है। ग्रिड नोड्स या सेल में परिभाषित ग्रिड विशेषता मानों की गणना त्रिभुज के नोड्स पर परिभाषित मानों के भारित औसत के रूप में की जाती है जिसमें नोड (या सेल सेंटर) होता है।</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>टेम्पलेट मैपिंग</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ग्रिड सेल आकृतियों के संबंध में ग्रिड नोड्स के पास के बिंदु खोजें, और इंटरपोलेशन के लिए उन बिंदुओं पर मानों का उपयोग करें।&lt;/p&gt;&lt;p&gt;यह एल्गोरिथम हो सकता है केवल संरचित ग्रिड के लिए उपयोग करें।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>विवरण (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>पॉलीगॉन के साथ परिभाषित प्रत्येक क्षेत्र के लिए मैपिंग एल्गोरिद्म बदलें</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पॉलीगॉन के रूप में क्षेत्रों को परिभाषित करें, और बिंदुओं पर परिभाषित मानों से ग्रिड नोड्स या सेल केंद्रों पर मानों को मैप करने के लिए एल्गोरिदम निर्दिष्ट करें।&lt;/p&gt;&lt;p&gt;उपयोगकर्ता नीचे से चुन सकते हैं: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;वृत्त के भीतर बिंदुओं का न्यूनतम मान मानचित्रित करें&lt;/li&gt;&lt;li&gt;वृत्त के भीतर बिंदुओं का अधिकतम मान मानचित्रित करें&lt;/li&gt;&lt;li&gt;वृत्त के भीतर बिंदुओं का मानचित्र भारित औसत मान&lt;/li&gt; &lt;li&gt;TIN से मानचित्र मूल्य&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>टेम्पलेट मैपिंग सेटिंग</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>खोज क्षेत्र</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>ऑटो</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>नियमावली</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>स्ट्रीम-वार लंबाई [एम]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>क्रॉस-स्ट्रीम चौड़ाई [एम]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>टेम्प्लेट विस्तारों की संख्या:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>वेटिंग एक्सपोनेंट:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>अंक संपादित करें</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>चयनित बिंदुओं के गुण</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>न्यूनतम मूल्य:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>अधिकतम मूल्य:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>एक्स:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>वाई:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>कीमत:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>चयनित बिंदुओं को फ़िल्टर करें</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>चयनित बिंदुओं के गुण</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>न्यूनतम मूल्य:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>अधिकतम मूल्य:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>छानने की स्थिति</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>थ्रेशोल्ड से अधिक मान वाले बिंदु चुनें</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>थ्रेशोल्ड से कम मान वाले बिंदु चुनें</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>सीमा मूल्य:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>इंटरपोलेशन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>इंटरपोलेट वृद्धि</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>प्रक्षेप वृद्धि:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>दिशा और रेखा:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>गणना विधि</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>टीआईएन का उपयोग कर मानचित्र</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>त्रिज्या के भीतर बिंदुओं का न्यूनतम मूल्य</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>त्रिज्या के भीतर बिंदुओं का अधिकतम मूल्य</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>त्रिज्या के भीतर अंकों का भारित औसत</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>वेटिंग एक्सपोनेंट k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; का उपयोग वजन के रूप में किया जाता है जब मूल्यों के भारित औसत की गणना की जाती है। आर बिंदु से नोड या सेल केंद्र की दूरी है, जिसके लिए मान मैप किया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>अंक खोजने के लिए वृत्त की त्रिज्या:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>एम</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>जब मैपिंग निष्पादित की जाती है, तो उपरोक्त त्रिज्या वाले सर्कल में बिंदुओं को ग्रिड नोड्स या सेल केंद्रों में मान मैप करने के लिए खोजा जाता है।</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">बुनियादी</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">टिन</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">अंक</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">वायरफ़्रेम</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">रेखा की चौडाई:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">सतह</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">ब्रेक लाइन्स</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">दिखाना</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">रंग:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">मानचित्रण सेटिंग बहुभुज</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">मूल्यों के लिए रंग मानचित्र</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">आयात (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">निर्यात (&amp;E)</translation>
     </message>
 </context>
 <context>

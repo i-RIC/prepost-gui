@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Редактиране на настройките на цвета</translation>
+        <translation type="vanished">Редактиране на настройките на цвета</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Настройка за показване на полигони</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Настройка за показване на група многоъгълници</translation>
+        <translation type="vanished">Настройка за показване на група многоъгълници</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Оцветете по стойност</translation>
+        <translation type="vanished">Оцветете по стойност</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Редактиране на настройката на дисплея</translation>
+        <translation type="vanished">Редактиране на настройката на дисплея</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Настройка за показване на полигони</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Използвайте настройката на прозореца за предварителна обработка</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Внимание</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветна карта</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина на линията:</translation>
     </message>
 </context>
 </TS>

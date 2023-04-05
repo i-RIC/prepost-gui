@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Värviseade Redigeerimine</translation>
+        <translation type="vanished">Värviseade Redigeerimine</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Punktide kuvamise seade</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Valige pildifail</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Kõik pildid (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Valige pildifail</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Kõik pildid (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muutke kuvaseadet</translation>
+        <translation type="vanished">Muutke kuvaseadet</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Kuju</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punktid</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Ikoonipildid</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Impordi pilt (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Selge (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Max suurus:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Kui imporditud pildi laius või kõrgus on suurem kui maksimaalne suurus, vähendatakse pilti automaatselt nii, et laius või kõrgus võrdub maksimaalse suurusega.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Punktide andmete kuvamise seade</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Kuju</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punktid</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Ikoonipildid</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Impordi pilt (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Selge (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Max suurus:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Kui imporditud pildi laius või kõrgus on suurem kui maksimaalne suurus, vähendatakse pilti automaatselt nii, et laius või kõrgus võrdub maksimaalse suurusega.</translation>
     </message>
 </context>
 </TS>

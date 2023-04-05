@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Väriasetusten muokkaus</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Pistenäytön asetus</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Valitse kuvatiedosto</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Kaikki kuvat (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Valitse kuvatiedosto</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Kaikki kuvat (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muokkaa näyttöasetusta</translation>
+        <translation type="vanished">Muokkaa näyttöasetusta</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Käytä esikäsittelyikkunan asetusta</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Pistetietojen näyttöasetus</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Väri</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Väri arvon mukaan</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <source>Form</source>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Kun tuodun kuvan leveys tai korkeus on suurempi kuin enimmäiskoko, kuvaa pienennetään automaattisesti niin, että leveys tai korkeus on yhtä suuri kuin enimmäiskoko.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Pistetietojen näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Muoto</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Pisteet</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Pistekoko:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Ikoni kuvat</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Tuo kuva (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Asia selvä (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Max koko:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Kun tuodun kuvan leveys tai korkeus on suurempi kuin enimmäiskoko, kuvaa pienennetään automaattisesti niin, että leveys tai korkeus on yhtä suuri kuin enimmäiskoko.</translation>
     </message>
 </context>
 </TS>

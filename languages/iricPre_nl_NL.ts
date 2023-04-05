@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Geografische gegevenstoewijzing</translation>
+        <translation type="vanished">Geografische gegevenstoewijzing</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>In kaart brengen met FIN's</translation>
+        <translation type="vanished">In kaart brengen met FIN's</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN's die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
+        <translation type="vanished">TIN's die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Sjabloontoewijzing</translation>
+        <translation type="vanished">Sjabloontoewijzing</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Vind geografische gegevenspunten die zich in de buurt van de rasterknooppunten bevinden, met betrekking tot de rastercelvormen, en gebruik de waarden op die punten voor interpolatie. Dit algoritme kan alleen worden gebruikt voor gestructureerde rasters.</translation>
+        <translation type="vanished">Vind geografische gegevenspunten die zich in de buurt van de rasterknooppunten bevinden, met betrekking tot de rastercelvormen, en gebruik de waarden op die punten voor interpolatie. Dit algoritme kan alleen worden gebruikt voor gestructureerde rasters.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detail (&amp;D)...</translation>
+        <translation type="vanished">Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>

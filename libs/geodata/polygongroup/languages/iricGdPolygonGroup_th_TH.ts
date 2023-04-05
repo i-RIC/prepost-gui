@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>การตั้งค่าการแสดงรูปหลายเหลี่ยม</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>การตั้งค่าการแสดงกลุ่มรูปหลายเหลี่ยม</translation>
+        <translation type="vanished">การตั้งค่าการแสดงกลุ่มรูปหลายเหลี่ยม</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>สีตามค่า</translation>
+        <translation type="vanished">สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>แก้ไขการตั้งค่าการแสดงผล</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>การตั้งค่าการแสดงรูปหลายเหลี่ยม</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>คำเตือน</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามมูลค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
     </message>
 </context>
 </TS>

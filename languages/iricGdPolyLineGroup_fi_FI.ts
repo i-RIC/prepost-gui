@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Väriasetusten muokkaus</translation>
+        <translation type="vanished">Väriasetusten muokkaus</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linjojen näytön asetukset</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Group -näytön asetus</translation>
+        <translation type="vanished">Polyline Group -näytön asetus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Väri arvon mukaan</translation>
+        <translation type="vanished">Väri arvon mukaan</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Tämän kohteen poistaminen poistaa myös kaikki näihin tietoihin liittyvät kaavioikkunat. Haluatko varmasti poistaa tämän kohteen?</translation>
+        <translation type="vanished">Tämän kohteen poistaminen poistaa myös kaikki näihin tietoihin liittyvät kaavioikkunat. Haluatko varmasti poistaa tämän kohteen?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muokkaa näyttöasetusta</translation>
+        <translation type="vanished">Muokkaa näyttöasetusta</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linjojen näytön asetukset</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Käytä esikäsittelyikkunan asetusta</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI -muotoinen tiedosto (rivit) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värikartta</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Viivan leveys:</translation>
     </message>
 </context>
 </TS>

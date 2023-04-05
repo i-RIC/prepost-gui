@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>Επεξεργασία ρυθμίσεων χρώματος</translation>
+        <translation type="vanished">Επεξεργασία ρυθμίσεων χρώματος</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης δεδομένων ράστερ</translation>
     </message>
 </context>
 <context>
@@ -371,6 +375,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης δεδομένων ράστερ</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -426,6 +448,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα %1.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χάρτης χρώματος</translation>
     </message>
 </context>
 </TS>

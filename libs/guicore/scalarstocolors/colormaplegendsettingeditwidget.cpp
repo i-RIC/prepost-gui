@@ -104,6 +104,15 @@ void ColorMapLegendSettingEditWidget::updateNumberOfLabelsIfNeeded()
 	ui->numLabelsSpinBox->setValue(numCols);
 }
 
+void ColorMapLegendSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+{
+	ui->visibilityGroupBox->setDisabled(disabled);
+	ui->directionGroupBox->setDisabled(disabled);
+	ui->titleGroupBox->setDisabled(disabled);
+	ui->labelGroupBox->setDisabled(disabled);
+	ui->colorGroupBox->setDisabled(disabled);
+}
+
 void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool checked)
 {
 	updateNumberOfLabelsIfNeeded();

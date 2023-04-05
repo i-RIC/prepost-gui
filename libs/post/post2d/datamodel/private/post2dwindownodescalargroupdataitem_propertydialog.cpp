@@ -87,5 +87,6 @@ void Post2dWindowNodeScalarGroupDataItem::PropertyDialog::handleButtonClick(QAbs
 
 void Post2dWindowNodeScalarGroupDataItem::PropertyDialog::apply()
 {
+	m_applied = true;
 	m_item->pushRenderCommand(createModifyCommand(true), m_item, true);
 }

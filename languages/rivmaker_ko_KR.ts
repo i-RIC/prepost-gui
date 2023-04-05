@@ -11,11 +11,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
-        <translation>리브메이커 2.0.2</translation>
+        <translation type="vanished">리브메이커 2.0.2</translation>
     </message>
     <message>
         <source>Release Date: 2021/3/2</source>
-        <translation>출시일: 2021/3/2</translation>
+        <translation type="vanished">출시일: 2021/3/2</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.3</source>
+        <translation>리브메이커 2.0.3</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/4/28</source>
+        <translation>발매일: 2021년 4월 28일</translation>
     </message>
 </context>
 <context>

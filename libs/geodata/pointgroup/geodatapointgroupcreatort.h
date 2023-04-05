@@ -10,6 +10,7 @@ public:
 	GeoDataPointGroupCreatorT(const QString& typeName);
 	virtual ~GeoDataPointGroupCreatorT();
 
+	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 	bool isCompatibleWith(SolverDefinitionGridAttribute *condition) const override;
 };
 

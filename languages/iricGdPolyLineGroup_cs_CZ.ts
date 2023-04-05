@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Úprava nastavení barev</translation>
+        <translation type="vanished">Úprava nastavení barev</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Nastavení zobrazení řádků</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Nastavení zobrazení skupiny křivek</translation>
+        <translation type="vanished">Nastavení zobrazení skupiny křivek</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva podle hodnoty</translation>
+        <translation type="vanished">Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Smazáním této položky odstraníte také všechna okna grafů spojená s těmito daty. Opravdu chcete tuto položku smazat?</translation>
+        <translation type="vanished">Smazáním této položky odstraníte také všechna okna grafů spojená s těmito daty. Opravdu chcete tuto položku smazat?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Upravit nastavení zobrazení</translation>
+        <translation type="vanished">Upravit nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Nastavení zobrazení řádků</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Použijte Nastavení okna Předzpracování</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (řádky) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barevná mapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Šířka čáry:</translation>
     </message>
 </context>
 </TS>

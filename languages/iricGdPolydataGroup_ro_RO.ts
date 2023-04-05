@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Adăuga nou %1</translation>
+        <translation type="vanished">Adăuga nou %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Setarea culorii (&amp;S)...</translation>
+        <translation type="vanished">Setarea culorii (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Editare setare culoare</translation>
+        <translation type="vanished">Editare setare culoare</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copie...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Arata setarile (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Setare culoare PolyData</translation>
+        <translation type="vanished">Setare culoare PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Culoare după valoare</translation>
+        <translation type="vanished">Culoare după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
 </context>
 <context>

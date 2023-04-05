@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Edita la configuració del color</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Configuració de visualització de punts</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Seleccioneu el fitxer d'imatge</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Totes les imatges (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Seleccioneu el fitxer d'imatge</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Totes les imatges (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Edita la configuració de la pantalla</translation>
+        <translation type="vanished">Edita la configuració de la pantalla</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Configuració de visualització de dades de punts</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Color</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Color per valor</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <source>Form</source>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Configuració de visualització de dades de punts</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Forma</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punts</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Mida del punt:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Imatges d'icones</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Importa imatge (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Clar (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Mida màxima:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
     </message>
 </context>
 </TS>

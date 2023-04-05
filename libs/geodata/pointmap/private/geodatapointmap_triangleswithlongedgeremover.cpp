@@ -154,7 +154,7 @@ vtkCellArray* GeoDataPointmap::TrianglesWithLongEdgeRemover::buildPolyCellArray(
 		this->rescuePoints(&cells);
 	}
 
-	vtkCellArray* cellArray = vtkCellArray::New();
+	auto cellArray = vtkCellArray::New();
 	if (forPreview) {
 		for (vtkIdType cellId : cells) {
 			cellArray->InsertNextCell(polyData->GetCell(cellId));

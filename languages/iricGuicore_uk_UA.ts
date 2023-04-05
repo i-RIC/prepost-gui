@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Базовий</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Кольорова карта</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ігнорувати налаштування кольорової панелі під час імпорту</translation>
+        <translation type="vanished">Ігнорувати налаштування кольорової панелі під час імпорту</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Розмір і положення</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>напрямок:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальний</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Кількість етикеток:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>УВАГА</translation>
+        <translation type="vanished">УВАГА</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Під час переходу в режим градації значення встановлюються на середнє значення кожного розділу.</translation>
+        <translation type="vanished">Під час переходу в режим градації значення встановлюються на середнє значення кожного розділу.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Експорт (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Кількість кольорів для вставки в кожну секцію</translation>
+        <translation type="vanished">Кількість кольорів для вставки в кожну секцію</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Діапазон значень</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Кількість кольорів:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Атрибут</translation>
+        <translation type="vanished">Атрибут</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Налаштування кольорової карти</translation>
+        <translation type="vanished">Налаштування кольорової карти</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Діапазон значень</translation>
+        <translation type="vanished">Діапазон значень</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Автоматичний</translation>
+        <translation type="vanished">Автоматичний</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Заповніть верхню область</translation>
+        <translation type="vanished">Заповніть верхню область</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Хв:</translation>
+        <translation type="vanished">Хв:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Заповніть нижню область</translation>
+        <translation type="vanished">Заповніть нижню область</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Номер підрозділу:</translation>
+        <translation type="vanished">Номер підрозділу:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Макс.</translation>
+        <translation type="vanished">Макс.</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Кольорова карта</translation>
+        <translation type="vanished">Кольорова карта</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Налаштування кольору</translation>
+        <translation type="vanished">Налаштування кольору</translation>
     </message>
 </context>
 <context>

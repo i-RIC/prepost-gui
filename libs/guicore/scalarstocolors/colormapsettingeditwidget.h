@@ -22,6 +22,7 @@ public:
 	ColorMapSettingContainer concreteSetting() const;
 	void setConcreteSetting(const ColorMapSettingContainer& setting);
 
+	void setDisableOtherThanImageSetting(bool disabled) override;
 	QUndoCommand* createModifyCommand() const override;
 
 public slots:

@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Renk Ayarı Düzenleme</translation>
+        <translation type="vanished">Renk Ayarı Düzenleme</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Çokgen Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Poligon Grubu Görüntüleme Ayarı</translation>
+        <translation type="vanished">Poligon Grubu Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>değere göre renk</translation>
+        <translation type="vanished">değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Görüntü ayarını düzenle</translation>
+        <translation type="vanished">Görüntü ayarını düzenle</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Çokgen Görüntüleme Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Ön İşleme Penceresinin Ayarını Kullanın</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Uyarı</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>renk haritası</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
     </message>
 </context>
 </TS>

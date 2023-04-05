@@ -26,9 +26,11 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
+	void showPropertyDialog() override;
 
 	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -51,7 +53,7 @@ private:
 
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d) override;
 
-	class SetColorSettingCommand;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;
@@ -62,9 +64,5 @@ public:
 	friend class GeoDataPolyLineGroupProxy;
 	friend class GeoDataPolyLineGroupShpImporter;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatapolylinegroup_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOLYLINEGROUP_H

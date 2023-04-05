@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Editați coordonatele punctelor</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Mutați vârful</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Setați vârful</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

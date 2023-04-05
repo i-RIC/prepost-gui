@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Upravit souřadnice bodu</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Přesunout vrchol</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Nastavit vrchol</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

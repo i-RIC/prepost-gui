@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+        <translation type="vanished">ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>ทิศทาง:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>จำนวนป้ายกำกับ:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>อัตโนมัติ</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
+        <translation type="vanished">เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>ส่งออก (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>จำนวนสีที่จะแทรกในแต่ละส่วน</translation>
+        <translation type="vanished">จำนวนสีที่จะแทรกในแต่ละส่วน</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>ช่วงค่า</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>จำนวนสี:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>คุณลักษณะ</translation>
+        <translation type="vanished">คุณลักษณะ</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>ส่งออก (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>การตั้งค่าแผนที่สี</translation>
+        <translation type="vanished">การตั้งค่าแผนที่สี</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>ช่วงค่า</translation>
+        <translation type="vanished">ช่วงค่า</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>อัตโนมัติ</translation>
+        <translation type="vanished">อัตโนมัติ</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>เติมพื้นที่ด้านบน</translation>
+        <translation type="vanished">เติมพื้นที่ด้านบน</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>นาที:</translation>
+        <translation type="vanished">นาที:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>ต่อเติมช่วงล่าง</translation>
+        <translation type="vanished">ต่อเติมช่วงล่าง</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>หมายเลขกอง:</translation>
+        <translation type="vanished">หมายเลขกอง:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>สูงสุด:</translation>
+        <translation type="vanished">สูงสุด:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>การตั้งค่าสี</translation>
+        <translation type="vanished">การตั้งค่าสี</translation>
     </message>
 </context>
 <context>

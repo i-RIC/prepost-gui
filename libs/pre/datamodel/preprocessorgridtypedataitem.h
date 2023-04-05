@@ -9,6 +9,8 @@
 #include <QList>
 #include <QMap>
 
+#include <unordered_map>
+
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
@@ -38,11 +40,12 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
 	ColorMapSettingContainerI* colorMapSetting(const std::string& attName) const override;
-	std::map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
 
 	QAction* addNewGridAction() const;
 	bool isGridEdited() const;
 	void setGridEdited();
+	ModifyCommandDialog* createApplyColorMapSettingDialog(const std::string& name, QWidget *parent) override;
 	QUndoCommand* createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply = false);
 
 	void handleResize(VTKGraphicsView* v) override;
@@ -68,13 +71,14 @@ private:
 	SolverDefinitionGridType* m_gridType;
 	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
 	PreProcessorHydraulicDataTopDataItemInterface* m_hydraulicDataTop;
-	std::map<std::string, ColorMapSettingContainerI*> m_colorMapSettingContainers;
-	std::map<std::string, vtkActor2D*> m_colorMapLegendActors;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettingContainers;
+	std::unordered_map<std::string, vtkActor2D*> m_colorMapLegendActors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.
 	QAction* m_addNewGridAction;
 
 	class ApplyColorMapSettingAndRenderCommand;
+	class ApplyColorMapSettingDialog;
 };
 
 #endif // PREPROCESSORGRIDTYPEDATAITEM_H

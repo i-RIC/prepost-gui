@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Legg til ny %1</translation>
+        <translation type="vanished">Legg til ny %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Fargeinnstilling (&amp;S)...</translation>
+        <translation type="vanished">Fargeinnstilling (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Fargeinnstilling Rediger</translation>
+        <translation type="vanished">Fargeinnstilling Rediger</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopiere...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Skjerminnstilling (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData -fargeinnstilling</translation>
+        <translation type="vanished">PolyData -fargeinnstilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farge etter verdi</translation>
+        <translation type="vanished">Farge etter verdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
 </context>
 <context>

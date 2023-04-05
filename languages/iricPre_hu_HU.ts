@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Földrajzi adatok feltérképezése</translation>
+        <translation type="vanished">Földrajzi adatok feltérképezése</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Térképezés TIN -kkel</translation>
+        <translation type="vanished">Térképezés TIN -kkel</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>A földrajzi adatokból létrehozott TIN -eket használják a leképezéshez. A rácscsomópontok attribútumértékeit a TIN csomópontok értékeinek súlyozott átlagaként számítják ki.</translation>
+        <translation type="vanished">A földrajzi adatokból létrehozott TIN -eket használják a leképezéshez. A rácscsomópontok attribútumértékeit a TIN csomópontok értékeinek súlyozott átlagaként számítják ki.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Sablonleképezés</translation>
+        <translation type="vanished">Sablonleképezés</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Keresse meg azokat a földrajzi adatpontokat, amelyek a rácscsomópontok közelében vannak, a rácscellák alakját illetően, és használja az ezeken a helyeken található értékeket az interpolációhoz. Ez az algoritmus csak strukturált rácsokhoz használható.</translation>
+        <translation type="vanished">Keresse meg azokat a földrajzi adatpontokat, amelyek a rácscsomópontok közelében vannak, a rácscellák alakját illetően, és használja az ezeken a helyeken található értékeket az interpolációhoz. Ez az algoritmus csak strukturált rácsokhoz használható.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Részlet (&amp;D)...</translation>
+        <translation type="vanished">Részlet (&amp;D)...</translation>
     </message>
 </context>
 <context>

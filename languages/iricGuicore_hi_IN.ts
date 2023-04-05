@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
+        <translation type="vanished">आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>आकार और स्थिति</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>दिशा:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>खड़ा</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>लेबल की संख्या:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>ऑटो</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>ग्रेडेशन मोड में स्विच करते समय, मान प्रत्येक अनुभाग के मध्य मान पर सेट होते हैं।</translation>
+        <translation type="vanished">ग्रेडेशन मोड में स्विच करते समय, मान प्रत्येक अनुभाग के मध्य मान पर सेट होते हैं।</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>निर्यात (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>रंगों की संख्या प्रत्येक अनुभाग में सम्मिलित करने के लिए</translation>
+        <translation type="vanished">रंगों की संख्या प्रत्येक अनुभाग में सम्मिलित करने के लिए</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>मूल्य पहुंच</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>रंगों की संख्या:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>गुण</translation>
+        <translation type="vanished">गुण</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>कोलोरमैप सेटिंग</translation>
+        <translation type="vanished">कोलोरमैप सेटिंग</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>मूल्य सीमा</translation>
+        <translation type="vanished">मूल्य सीमा</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>स्वचालित</translation>
+        <translation type="vanished">स्वचालित</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>ऊपरी क्षेत्र भरें</translation>
+        <translation type="vanished">ऊपरी क्षेत्र भरें</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>न्यूनतम:</translation>
+        <translation type="vanished">न्यूनतम:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>निचला क्षेत्र भरें</translation>
+        <translation type="vanished">निचला क्षेत्र भरें</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>डिवीजन नंबर:</translation>
+        <translation type="vanished">डिवीजन नंबर:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>अधिकतम:</translation>
+        <translation type="vanished">अधिकतम:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>रंग मैप</translation>
+        <translation type="vanished">रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>रंग सेटिंग</translation>
+        <translation type="vanished">रंग सेटिंग</translation>
     </message>
 </context>
 <context>

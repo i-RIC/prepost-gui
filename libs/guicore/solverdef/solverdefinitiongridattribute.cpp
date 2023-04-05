@@ -17,10 +17,14 @@
 #include <QDomElement>
 #include <QSettings>
 
-SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
+SolverDefinitionGridAttribute::Impl::Impl(SolverDefinitionGridAttribute* parent) :
 	m_isReferenceInformation {false},
 	m_colorMapFactory {nullptr},
 	m_parent {parent}
+{}
+
+SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
+	Impl {parent}
 {
 	load(elem, solverDef);
 }
@@ -62,6 +66,11 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 }
 
 // Public interfaces
+
+SolverDefinitionGridAttribute::SolverDefinitionGridAttribute() :
+	SolverDefinitionNode {},
+	impl {new Impl {this}}
+{}
 
 SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order) :
 	SolverDefinitionNode {elem, definition},
@@ -187,6 +196,11 @@ ColorMapSettingContainerI* SolverDefinitionGridAttribute::createColorMapSettingC
 	cont->valueCaption = impl->m_caption;
 	setupColorMapSettingContainer(cont);
 	return cont;
+}
+
+ColorMapLegendSettingContainerI* SolverDefinitionGridAttribute::createColorMapLegendSettingContainer() const
+{
+	return impl->m_colorMapFactory->createLegendSettingContainer();
 }
 
 ColorMapSettingEditWidgetI* SolverDefinitionGridAttribute::createColorMapSettingEditWidget(QWidget* parent) const

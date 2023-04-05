@@ -8,6 +8,7 @@
 #include <vtkSmartPointer.h>
 
 #include <triangle/triangle.h>
+#include <triangle/triangleutil.h>
 
 #include <geos/geom/CoordinateSequence.h>
 #include <geos/geom/CoordinateSequenceFactory.h>
@@ -17,37 +18,6 @@
 #include <geos/geom/Polygon.h>
 
 #include <QPolygonF>
-
-namespace {
-
-void clearTrianglateio(triangulateio* io)
-{
-	io->pointlist = NULL;
-	io->pointattributelist = NULL;
-	io->pointmarkerlist = NULL;
-	io->numberofpoints = 0;
-	io->numberofpointattributes = 0;
-	io->trianglelist = NULL;
-	io->triangleattributelist = NULL;
-	io->trianglearealist = NULL;
-	io->neighborlist = NULL;
-	io->numberoftriangles = 0;
-	io->numberofcorners = 0;
-	io->numberoftriangleattributes = 0;
-	io->segmentlist = NULL;
-	io->segmentmarkerlist = NULL;
-	io->numberofsegments = 0;
-	io->holelist = NULL;
-	io->numberofholes = 0;
-	io->regionlist = NULL;
-	io->numberofregions = 0;
-	io->edgelist = NULL;
-	io->edgemarkerlist = NULL;
-	io->normlist = NULL;
-	io->numberofedges = 0;
-}
-
-} // namespace
 
 std::vector<QPointF> PolygonUtil::toStdVector(const QPolygonF& polygon)
 {
@@ -121,7 +91,7 @@ void PolygonUtil::triangulateTriangle(const QPolygonF& polygon, std::vector<unsi
 	delete internalPoint;
 
 	triangulateio in;
-	clearTrianglateio(&in);
+	TriangleUtil::clearTriangulateio(&in);
 	in.pointlist = coords.data();
 	in.numberofpoints = pointCount;
 	in.segmentlist = segs.data();
@@ -131,7 +101,7 @@ void PolygonUtil::triangulateTriangle(const QPolygonF& polygon, std::vector<unsi
 	in.numberofregions = 1;
 
 	triangulateio out;
-	clearTrianglateio(&out);
+	TriangleUtil::clearTriangulateio(&out);
 	char arg[] = "pQ";
 	::triangulate(&(arg[0]), &in, &out, nullptr);
 

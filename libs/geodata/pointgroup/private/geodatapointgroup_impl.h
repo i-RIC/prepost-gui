@@ -2,7 +2,7 @@
 #define GEODATAPOINTGROUP_IMPL_H
 
 #include "../geodatapointgroup.h"
-#include "geodatapointgroup_setting.h"
+#include "geodatapointgroup_displaysetting.h"
 
 #include <vector>
 
@@ -20,7 +20,6 @@ public:
 	~Impl();
 
 	static QPixmap shrinkPixmap(const QPixmap pixmap, int maxSize);
-	static QString iconFileName(const QString& filename);
 	void setupDummyPointForMenu();
 
 	vtkPoints* m_vtkPoints;
@@ -35,7 +34,7 @@ public:
 	GeoDataPoint* m_dummyPointForMenu;
 	QImage m_shrinkedImage;
 
-	Setting m_setting;
+	DisplaySetting m_displaySetting;
 };
 
 #endif // GEODATAPOINTGROUP_IMPL_H

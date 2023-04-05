@@ -26,7 +26,7 @@ GeoDataPolyData::Impl::Impl(GeoDataPolyData* parent) :
 }
 
 GeoDataPolyData::GeoDataPolyData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData(d, creator, condition),
+	GeoDataWithSingleMapper(d, creator, condition),
 	impl {new Impl {this}}
 {
 	setupValues();

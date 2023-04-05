@@ -2,6 +2,7 @@
 #include "geodatanetcdfimporter.h"
 #include "geodatanetcdfimporterdateselectdialog.h"
 #include "geodatanetcdfimportersettingdialog.h"
+#include "private/geodatanetcdf_impl.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
@@ -230,7 +231,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	if (ret != NC_NOERR) {return false;}
 	nc_closer closer_new(ncid_out);
 
-	netcdf->m_coordinateSystemType = m_csType;
+	netcdf->impl->m_coordinateSystemType = m_csType;
 
 	// load coordinate values
 
@@ -252,13 +253,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
 		ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys.data());
 
-		netcdf->m_xValues.clear();
+		netcdf->impl->m_xValues.clear();
 		for (size_t i = 0; i < xlen; ++i) {
-			netcdf->m_xValues.push_back(xs[i]);
+			netcdf->impl->m_xValues.push_back(xs[i]);
 		}
-		netcdf->m_yValues.clear();
+		netcdf->impl->m_yValues.clear();
 		for (size_t i = 0; i < ylen; ++i) {
-			netcdf->m_yValues.push_back(ys[i]);
+			netcdf->impl->m_yValues.push_back(ys[i]);
 		}
 
 		// load Lon and Lat
@@ -273,13 +274,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = ncGetVariableAsDouble(ncid_in, m_lonVarId, lonLen, lons.data());
 		ret = ncGetVariableAsDouble(ncid_in, m_latVarId, latLen, lats.data());
 
-		netcdf->m_lonValues.clear();
+		netcdf->impl->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.push_back(lons[i]);
+			netcdf->impl->m_lonValues.push_back(lons[i]);
 		}
-		netcdf->m_latValues.clear();
+		netcdf->impl->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.push_back(lats[i]);
+			netcdf->impl->m_latValues.push_back(lats[i]);
 		}
 	} else if (m_csType == GeoDataNetcdf::LonLat) {
 		// load Lon and Lat
@@ -300,13 +301,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
 		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats.data());
 
-		netcdf->m_lonValues.clear();
+		netcdf->impl->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.push_back(lons[i]);
+			netcdf->impl->m_lonValues.push_back(lons[i]);
 		}
-		netcdf->m_latValues.clear();
+		netcdf->impl->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.push_back(lats[i]);
+			netcdf->impl->m_latValues.push_back(lats[i]);
 		}
 	}
 

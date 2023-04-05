@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Επεξεργασία ρύθμισης χρώματος</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης σημείων</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Επιλέξτε αρχείο εικόνας</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Όλες οι εικόνες (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Επιλέξτε αρχείο εικόνας</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Όλες οι εικόνες (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης οθόνης</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης δεδομένων σημείων</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Χρώμα</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Χρώμα ανά τιμή</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <source>Form</source>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Όταν το πλάτος ή το ύψος της εισαγόμενης εικόνας είναι μεγαλύτερο από το μέγιστο μέγεθος, η εικόνα συρρικνώνεται αυτόματα έτσι ώστε το πλάτος ή το ύψος να γίνει ίσο με το μέγιστο μέγεθος.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Ρύθμιση εμφάνισης δεδομένων σημείων</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Σχήμα</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Πόντοι</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Εικόνες εικονιδίων</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Εισαγωγή εικόνας (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Σαφή (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Μέγιστο μέγεθος:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Όταν το πλάτος ή το ύψος της εισαγόμενης εικόνας είναι μεγαλύτερο από το μέγιστο μέγεθος, η εικόνα συρρικνώνεται αυτόματα έτσι ώστε το πλάτος ή το ύψος να γίνει ίσο με το μέγιστο μέγεθος.</translation>
     </message>
 </context>
 </TS>

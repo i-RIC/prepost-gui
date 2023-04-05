@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Nieuw toevoegen %1</translation>
+        <translation type="vanished">Nieuw toevoegen %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Kleurinstelling (&amp;S)...</translation>
+        <translation type="vanished">Kleurinstelling (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kleurinstelling Bewerken</translation>
+        <translation type="vanished">Kleurinstelling Bewerken</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopiëren...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Beeldscherm instelling (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData-kleurinstelling</translation>
+        <translation type="vanished">PolyData-kleurinstelling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Kleur op waarde</translation>
+        <translation type="vanished">Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
 </context>
 <context>

@@ -359,7 +359,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Editar configuración de pantalla</translation>
+        <translation type="vanished">Editar configuración de pantalla</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -405,6 +405,18 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Los datos de sección transversal se generan utilizando datos de nube de puntos. En alguna región, los datos no existían en la nube de puntos y se asignó el valor 0 para esos puntos. Si desea ajustar la posición de la sección transversal y los datos de la nube de puntos del mapa nuevamente, puede usar "Datos de la nube de puntos del mapa"</translation>
     </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuración de visualización de datos de sección transversal</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Datos de la sección transversal (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -413,12 +425,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation type="vanished">&amp;Encuesta Sobre el Rio</translation>
     </message>
     <message>
-        <source>  </source>
-        <translation />
-    </message>
-    <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Datos de sección transversal (&amp;C)</translation>
+        <translation type="vanished">Datos de sección transversal (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1289,7 +1297,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 línea %2 : "%3": Los datos de la bandera no son válidos.</translation>
+        <translation type="vanished">%1 línea %2 : "%3": Los datos de la bandera no son válidos.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1359,7 +1367,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editar configuración de pantalla</translation>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Configuración de visualización de datos de sección transversal</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
@@ -1371,6 +1394,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>Archivo VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Básico</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Color de fondo</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Puede personalizar el color mediante la pestaña Mapa de colores.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Líneas de sección transversal</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Escala Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nombres de secciones transversales</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
     </message>
 </context>
 <context>

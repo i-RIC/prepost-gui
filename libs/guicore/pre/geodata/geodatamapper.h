@@ -15,7 +15,7 @@ class GeoDataMapperSettingI;
 class GUICOREDLL_EXPORT GeoDataMapper : public QObject
 {
 public:
-	GeoDataMapper(const QString& caption, GeoDataCreator* parent);
+	GeoDataMapper(const QString& caption, QObject* parent);
 	virtual ~GeoDataMapper();
 
 	const QString& caption() const;
@@ -27,7 +27,6 @@ public:
 	virtual void terminate(GeoDataMapperSettingI* setting) = 0;
 
 protected:
-	GeoDataCreator* creator() const;
 	Grid* grid() const;
 	GridAttributeContainer* container() const;
 	GeoData* geoData() const;

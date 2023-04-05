@@ -45,12 +45,14 @@ HEADERS += anms.h \
            mathsupport.h \
            mergesupportedlistcommand.h \
            misc_global.h \
+           modifycommanddialog.h \
+           modifycommandwidget.h \
+           mouseeventcontroller.h \
            multicelloperabletableview.h \
            networksetting.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            primitiveview.h \
-           private/valuemodifycommandt_detail.h \
            pythonutil.h \
            qfontcontainer.h \
            qfontdisplaylabel.h \
@@ -94,11 +96,13 @@ HEADERS += anms.h \
            private/simplevaluecontainert_detail.h \
            private/valuearraycontainert_detail.h \
            private/valuechangert_detail.h \
+           private/valuemodifycommandt_detail.h \
            private/valuerestorert_detail.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui \
+         modifycommanddialog.ui \
          primitiveview.ui \
          qfonteditwidget.ui \
          slowmotionspeededitdialog.ui
@@ -126,6 +130,9 @@ SOURCES += anms.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
            mergesupportedlistcommand.cpp \
+           modifycommanddialog.cpp \
+           modifycommandwidget.cpp \
+           mouseeventcontroller.cpp \
            multicelloperabletableview.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \

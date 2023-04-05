@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Jangkauan</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Wajah</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Arah</translation>
+        <translation type="vanished">Arah</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Saya</translation>
+        <translation type="vanished">Saya</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation type="vanished">saya min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation type="vanished">saya maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation type="vanished">Diaktifkan</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Contoh</translation>
+        <translation type="vanished">Contoh</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Semua simpul</translation>
+        <translation type="vanished">Semua simpul</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tingkat pengambilan sampel:</translation>
+        <translation type="vanished">Tingkat pengambilan sampel:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>saya-arah</translation>
+        <translation type="vanished">saya-arah</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>arah-J</translation>
+        <translation type="vanished">arah-J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-arah</translation>
+        <translation type="vanished">K-arah</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bentuk Panah</translation>
+        <translation type="vanished">Bentuk Panah</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ukuran panah:</translation>
+        <translation type="vanished">Ukuran panah:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lebar garis:</translation>
+        <translation type="vanished">Lebar garis:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pengaturan Panah</translation>
+        <translation type="vanished">Pengaturan Panah</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Pengaturan Umum</translation>
+        <translation type="vanished">Pengaturan Umum</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation type="vanished">Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation type="vanished">Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation type="vanished">[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation type="vanished">Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation type="vanished">Nilai minimum untuk menggambar:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>wajah</translation>
+        <translation type="vanished">wajah</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Wajah %1</translation>
+        <translation type="vanished">Wajah %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Legenda Panjang</translation>
+        <translation type="vanished">Legenda Panjang</translation>
     </message>
 </context>
 <context>

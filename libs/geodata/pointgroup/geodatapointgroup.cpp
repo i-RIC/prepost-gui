@@ -4,7 +4,7 @@
 #include "geodatapointgrouppoint.h"
 #include "geodatapointgroupproxy.h"
 #include "private/geodatapointgroup_impl.h"
-#include "private/geodatapointgroup_propertydialog.h"
+#include "private/geodatapointgroup_displaysettingwidget.h"
 
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
@@ -14,7 +14,8 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/geodata/geodatafactoryinterface.h>
+#include <guicore/pre/geodata/geodatafactory.h>
+#include <guicore/pre/geodata/private/geodata_propertydialog.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
@@ -52,8 +53,8 @@ std::string VALUE = "value";
 
 GeoDataCreator* getPointGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
 {
-	auto factory = geoData->preProcessorWindow()->geoDataFactory();
-	auto creators = factory->compatibleCreators(att);
+	const auto& factory = GeoDataFactory::instance();
+	auto creators = factory.compatibleCreators(att);
 	for (auto c : creators) {
 		auto c2 = dynamic_cast <GeoDataPointGroupCreator*> (c);
 		if (c2 != nullptr) {return c2;}
@@ -76,7 +77,7 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 
 	auto att = gridAttribute();
 	if (att && att->isReferenceInformation()) {
-		impl->m_setting.mapping = Setting::Mapping::Arbitrary;
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
 
 	updateActorSetting();
@@ -257,15 +258,18 @@ void GeoDataPointGroup::showPropertyDialog()
 
 QDialog* GeoDataPointGroup::propertyDialog(QWidget* parent)
 {
-	return new PropertyDialog(this, parent);
-}
+	auto dialog = new PropertyDialog(this, parent);
+	auto widget = new DisplaySettingWidget(dialog);
+	widget->setSetting(&impl->m_displaySetting);
 
-QStringList GeoDataPointGroup::containedFiles() const
-{
-	QStringList ret;
-	ret.append(relativeFilename());
-	ret.append(Impl::iconFileName(relativeFilename()));
-	return ret;
+	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
+		widget->setIsReferenceInformation(true);
+	}
+
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Points Display Setting"));
+
+	return dialog;
 }
 
 GeoDataProxy* GeoDataPointGroup::getProxy()
@@ -276,33 +280,13 @@ GeoDataProxy* GeoDataPointGroup::getProxy()
 void GeoDataPointGroup::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_setting.load(node);
+	impl->m_displaySetting.load(node);
 }
 
 void GeoDataPointGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_setting.save(writer);
-}
-
-void GeoDataPointGroup::loadExternalData(const QString& filename)
-{
-	auto iconFileName = Impl::iconFileName(filename);
-
-	QImage image;
-	bool ok = image.load(iconFileName);
-	if (ok) {
-		impl->m_setting.image = image;
-	}
-	GeoDataPolyDataGroup::loadExternalData(filename);
-}
-
-void GeoDataPointGroup::saveExternalData(const QString& filename)
-{
-	GeoDataPolyDataGroup::saveExternalData(filename);
-	if (! impl->m_setting.image.isNull()) {
-		impl->m_setting.image.save(Impl::iconFileName(filename));
-	}
+	impl->m_displaySetting.save(writer);
 }
 
 GeoDataPolyDataGroupPolyData* GeoDataPointGroup::createNewData()
@@ -334,18 +318,18 @@ void GeoDataPointGroup::updateActorSetting()
 	actorCollection()->RemoveAllItems();
 	actor2DCollection()->RemoveAllItems();
 
-	auto cs = impl->m_setting;
+	auto ds = impl->m_displaySetting;
 
-	if (cs.shape == Setting::Shape::Point || cs.image.isNull()) {
+	if (ds.shape == DisplaySetting::Shape::Point || ds.image.isNull()) {
 		// color
-		QColor c = cs.color;
+		QColor c = ds.color;
 
 		impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 		impl->m_selectedPointsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 
 		// mapping
 		bool scalarVisibility = true;
-		if (cs.mapping == Setting::Mapping::Arbitrary) {
+		if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
 			scalarVisibility = false;
 		}
 		if (scalarVisibility) {
@@ -374,17 +358,17 @@ void GeoDataPointGroup::updateActorSetting()
 		}
 
 		// opacity
-		impl->m_pointsActor->GetProperty()->SetOpacity(cs.opacity);
-		impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(cs.opacity);
+		impl->m_pointsActor->GetProperty()->SetOpacity(ds.opacity);
+		impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(ds.opacity);
 
 		// pointSize
-		impl->m_pointsActor->GetProperty()->SetPointSize(cs.pointSize);
-		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(cs.pointSize * 2);
+		impl->m_pointsActor->GetProperty()->SetPointSize(ds.pointSize);
+		impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(ds.pointSize * 2);
 
 		actorCollection()->AddItem(impl->m_pointsActor);
 	} else {
-		auto pixmap = QPixmap::fromImage(impl->m_setting.image);
-		impl->m_shrinkedImage = Impl::shrinkPixmap(pixmap, impl->m_setting.imageMaxSize).toImage();
+		auto pixmap = QPixmap::fromImage(impl->m_displaySetting.image);
+		impl->m_shrinkedImage = Impl::shrinkPixmap(pixmap, impl->m_displaySetting.imageMaxSize).toImage();
 		auto imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
 		imgToImg->SetQImage(&impl->m_shrinkedImage);
 		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
@@ -402,7 +386,7 @@ void GeoDataPointGroup::updateActorSetting()
 
 			auto actor = vtkActor2D::New();
 			actor->SetMapper(mapper);
-			actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+			actor->GetProperty()->SetOpacity(impl->m_displaySetting.opacity);
 
 			auto coord = actor->GetPositionCoordinate();
 			coord->SetCoordinateSystemToWorld();
@@ -415,6 +399,8 @@ void GeoDataPointGroup::updateActorSetting()
 	}
 	updateVisibilityWithoutRendering();
 	updateActorSettingForEditTargetPolyData();
+
+	emit updateActorSettingExecuted();
 }
 
 void GeoDataPointGroup::updateMenu()
@@ -518,10 +504,10 @@ void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
 
 	auto targetData = dynamic_cast<GeoDataPoint*> (t);
 
-	const auto& s = impl->m_setting;
+	const auto& s = impl->m_displaySetting;
 	targetData->setColor(s.color);
 	targetData->setOpacity(s.opacity);
-	if (s.mapping == Setting::Mapping::Arbitrary) {
+	if (s.mapping == DisplaySetting::Mapping::Arbitrary) {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
 	} else {
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);

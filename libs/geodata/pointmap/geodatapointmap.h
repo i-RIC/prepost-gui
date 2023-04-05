@@ -4,7 +4,6 @@
 #include "geodatapointmaprepresentationdialog.h"
 
 #include <guibase/polyline/polylinecontroller.h>
-#include <guibase/polygon/polygoncontroller.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <misc/zdepthrange.h>
 
@@ -15,7 +14,6 @@
 #include <vtkActor.h>
 #include <vtkLODActor.h>
 #include <vtkDataSetMapper.h>
-#include <vtkPointLocator.h>
 #include <vtkMaskPoints.h>
 
 #include <vector>
@@ -55,52 +53,37 @@ private:
 	static const char* VALUES;
 
 public:
-	enum MappingMode {
-		mmTIN,
-		mmTemplate
-	};
 	enum MouseEventMode {
 		meNormal,
 		meNormalWithShift,
-		meSMBox,
-		meSMBoxPrepare,
-		meSMBoxNotPossible,
-		meSMPolygon,
-		meSMPolygonPrepare,
-		meSMPolygonNotPossible,
-
-		meAddPointSelectReferenceNotPossible,
-		meAddPointSelectReference,
-		meAddPoint,
-
-		meSMAddPoint,        // depricated
-		meSMAddCtrlPoint,    // depricated
-		meSMAddPointPrepare, // depricated
-		meSMInterpPoint,
-		meSMInterpCtrlPoint,
-		meSMInterpPointPrepare,
-		meSMInterpPointNotPossible,
-		meBreakLineAddNotPossible,
-		meBreakLineAdd,
-		meBreakLineRemoveNotPossible,
-		meBreakLineRemove,
 
 		meLongEdgeRemoveDialog,
 	};
+
 	GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
-	virtual ~GeoDataPointmap();
+	~GeoDataPointmap();
 
-	vtkPolyData* vtkGrid() const;
-	vtkPolyData* delaunayedPolyData() const;
+	bool getValueRange(double* min, double* max) override;
+	GeoDataMapper* mapper() const override;
 
-	void setPoints(vtkPoints* points, vtkDataArray* values);
-	void setSTLData(vtkPolyData* data, vtkDataArray* values);
+	vtkPolyData* points() const;
+	vtkDoubleArray* pointsValues() const;
 
-	bool getValueAt(double x, double y, double* value);
-	bool getValueAt(const QPointF& pos, double* value);
+	vtkPolyData* tin() const;
+	vtkDoubleArray* tinValues() const;
 
-	/// Execute the delaunay division.
-	bool doDelaunay(bool allowCancel = false);
+	void setPoints(vtkPoints* points, vtkDoubleArray* values);
+	void setTin(vtkPolyData* data, vtkDoubleArray* values);
+
+	bool getTinValueAt(double x, double y, double* value);
+	bool getTinValueAt(const QPointF& pos, double* value);
+	bool mapWithPolygons(double x, double y, double* value);
+
+	bool needRebuildTin() const;
+	void setNeedRebuildTin(bool needed = true);
+
+	void rebuildTinFromPointsIfNeeded();
+	bool rebuildTinFromPoints(bool allowCancel);
 	void setupActors() override;
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
@@ -110,149 +93,92 @@ public:
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-
-	vtkPolygon* getVtkInterpPolygon() const;
-	vtkDoubleArray* getVtkInterpValue() const;
-	vtkPolyData* selectedVerticesGrid() const;
+	QStringList containedFiles() const override;
 
 	QVector<vtkIdType> selectedVertices();
-	void definePolygon(bool doubleClick, bool xOr);
-	void selectPointsInsidePolygon(bool xOr);
-	void selectPointsInsideBox(MouseBoundingBox* box, bool xOr);
-	void selectPointsNearPoint(const QVector2D& pos, bool xOr);
-	void clearPointsSelection();
-	void finishAddPoint();
-	void finishInterpPoint();
-	bool needRemeshing() {return m_needRemeshing;}
-	vtkCell* findCell(double x, double y, double* weights);
+	vtkCell* findTinCell(double x, double y, double* weights);
+	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 public slots:
-	void remeshTINS(bool nodialog = false);
-
-private:
-	void updateActorSettings();
-	void updateRepresentation();
-
-	bool checkBreakLines();
-	void updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints);
-	void updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints);
-	bool pointsUsedForBreakLines(const QVector<vtkIdType>& points);
-	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
-
-	static void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
-										std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
-										std::vector<double>& yp, std::vector<double>& temp);
-
-	MappingMode m_mappingMode;
-	QPoint m_dragStartPoint;
-	QPoint m_currentPoint;
-	QPoint m_mouseMovePoint;
-
-	MouseEventMode m_mouseEventMode;
-	void buildGridFromPolydata();
-	void updateActionStatus();
-	void updateMouseEventMode();
-	bool isVertexSelectable(const QPointF& pos);
-	int m_selectedVertexId;
-	double m_selectedZPos;
-	bool m_canceled;
+	void remeshTin(bool nodialog = false);
 
 private slots:
-	void showDisplaySetting();
-	void selectionModePoint(bool on);
-	void selectionModePolygon(bool on);
-	void interpolatePoints(bool on);
-	void addPoints(bool on);
+	void openDisplaySettingDialog();
+	void openMappingSettingDialog();
 
-	void addBreakLine();
-	void removeBreakLine();
-	void removeAllBreakLines();
 	void removeTrianglesWithLongEdgeStart();
 	void removeTrianglesWithLongEdgeEnd();
 
-	void editPoints();
-	void editPointsDelete();
-	void editPointsExport();
-	void editPointsLessThan();
-	void editPointsGreaterThan();
-	void cancel() {m_canceled = true;}
-
 	void mergePointmaps();
+	void togglePointsEditMode(bool on);
+	void toggleTinEditMode(bool on);
+	void togglePolyonsEditMode(bool on);
 
-protected:
+private:
+	void updateActorSetting() override;
+	void updateMenu();
+	void updateMenu(QMenu* menu);
+
+	void buildPointsFromTIN();
+
+	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
+
+	void pushModifyCommand(QUndoCommand* command);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateFilename() override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doApplyOffset(double x, double y) override;
 
-	void rebuildQTree();
-
-	vtkSmartPointer<vtkPolyData> m_vtkDelaunayedPolyData;
-	geos::index::quadtree::Quadtree* m_qTree;
-
-	QList<GeoDataPointmapBreakLine*> m_breakLines;
-	GeoDataPointmapBreakLine* m_activeBreakLine;
-
-
-	vtkSmartPointer<vtkPointLocator> m_vtkPointLocator;
-
-	int m_opacityPercent;
-	bool m_hideBreakLines;
-	int m_pointSize;
-	GeoDataPointmapRepresentationDialog::Representation m_representation;
-
-	vtkSmartPointer<vtkPolyData> m_selectedVerticesGrid;
-	vtkSmartPointer<vtkPolyDataMapper> m_selectedMapper;
-	vtkSmartPointer<vtkActor> m_selectedActor;
-
-	PolyLineController m_interpolatePointsController;
-	double m_addPointsValue;
-	std::vector<double> m_interpolateValues;
-	std::vector<bool> m_interpolateNewFlags;
-
-	PolygonController m_selectionPolygonController;
-
-	bool lastInterpPointKnown;
-	bool doubleclick;
-	/// When Points are added/deleted after the last remeshing, this flag is true.
-	bool m_needRemeshing;
+	QPoint m_dragStartPoint;
 	ZDepthRange m_zDepthRange;
 
-private:
-	class InterpolateLineAddPointCommand;
-	class AddPointsCommand;
-	class DeletePointsCommand;
-	class EditPointsCommand;
-	class EditSinglePointCommand;
-	class BreakLineAddCommand;
-	class BreakLineAddPointCommand;
-	class BreakLineFinishDefinitionCommand;
-	class BreakLineCancelDefinitionCommand;
-	class RemoveTrianglesCommand;
+	GeoDataMapper* m_templateMapper;
+	MouseEventMode m_mouseEventMode;
 
-	class TrianglesWithLongEdgeRemover;
-	TrianglesWithLongEdgeRemover* m_longEdgeRemover;
+	class DisplaySetting;
+	class MappingSetting;
+	class MappingSettingDialog;
+	class PropertyDialog;
+
+	class RemoveTrianglesCommand;
+	class ModifyCommand;
+	class UpdateActorSettingsCommand;
+
+	// class TrianglesWithLongEdgeRemover;
+	// TrianglesWithLongEdgeRemover* m_longEdgeRemover;
 
 	class PointsManager;
+	class PolygonsManager;
+	class TINManager;
 
-protected:
+	class TinNodeMapper;
+	class TinCellMapper;
+	class TemplateNodeMapper;
+	class TemplateCellMapper;
+	class PolygonsNodeMapper;
+	class PolygonsCellMapper;
+
+private:
 	class Impl;
 	Impl* impl;
 
 public:
 	friend class GeoDataPointmapBreakLine;
+	friend class GeoDataPointmapProxy;
 };
 
 #endif // GEODATAPOINTMAP_H

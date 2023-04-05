@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>इसके बाद, कृपया ग्रिड सेंटर लाइन को परिभाषित करें। ग्रिड केंद्र रेखा को माउस-क्लिक करके बहुभुज रेखा के रूप में परिभाषित किया जा सकता है। डबल क्लिक करके, या रिटर्न कुंजी दबाकर परिभाषित करना समाप्त करें।</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>वर्टेक्स जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>वर्टेक्स को हटा दें (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>निर्देशांक संपादित करें (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>रिवर्स सेंटर लाइन दिशा (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

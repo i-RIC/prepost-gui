@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>編輯顯示設置</translation>
+        <translation type="vanished">編輯顯示設置</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>使用點雲數據生成橫截面數據。在某些地區，點雲數據中不存在數據，並且為這些點映射了值 0。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>截面數據顯示設置</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>截面數據 (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>橫截面數據 (&amp;C)</translation>
+        <translation type="vanished">橫截面數據 (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 線 %2 ：“ %3 ": 標誌數據無效。</translation>
+        <translation type="vanished">%1 線 %2 ：“ %3 ": 標誌數據無效。</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>編輯顯示設置</translation>
+        <translation type="vanished">編輯顯示設置</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>截面數據顯示設置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>預處理窗口的使用設置</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK文件 (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>背景顏色</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;您可以使用 Colormap 選項卡自定義顏色。&lt;/p&gt;&lt;/body&gt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>橫截麵線</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z 比例：</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>橫截面名稱</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色圖</translation>
     </message>
 </context>
 <context>

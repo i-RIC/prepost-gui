@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Mapování geografických dat</translation>
+        <translation type="vanished">Mapování geografických dat</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Mapování pomocí DIČ</translation>
+        <translation type="vanished">Mapování pomocí DIČ</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>K mapování se používají DIČ vytvořená z geografických dat. Hodnoty atributů uzlů mřížky se vypočítají jako vážený průměr hodnot v uzlech TIN.</translation>
+        <translation type="vanished">K mapování se používají DIČ vytvořená z geografických dat. Hodnoty atributů uzlů mřížky se vypočítají jako vážený průměr hodnot v uzlech TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mapování šablon</translation>
+        <translation type="vanished">Mapování šablon</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Najděte body geografických dat, které se nacházejí v blízkosti uzlů mřížky, týkající se tvarů buněk mřížky, a použijte hodnoty v těchto bodech k interpolaci. Tento algoritmus lze použít pouze pro strukturované mřížky.</translation>
+        <translation type="vanished">Najděte body geografických dat, které se nacházejí v blízkosti uzlů mřížky, týkající se tvarů buněk mřížky, a použijte hodnoty v těchto bodech k interpolaci. Tento algoritmus lze použít pouze pro strukturované mřížky.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detail (&amp;D)...</translation>
+        <translation type="vanished">Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>

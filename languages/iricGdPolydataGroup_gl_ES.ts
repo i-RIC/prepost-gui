@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Engadir novo %1</translation>
+        <translation type="vanished">Engadir novo %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Configuración da cor (&amp;S)...</translation>
+        <translation type="vanished">Configuración da cor (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edición de configuración de cor</translation>
+        <translation type="vanished">Edición de configuración de cor</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Copiar...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Configuración de visualización (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Configuración de cor PolyData</translation>
+        <translation type="vanished">Configuración de cor PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Cor por valor</translation>
+        <translation type="vanished">Cor por valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Cor personalizada</translation>
+        <translation type="vanished">Cor personalizada</translation>
     </message>
 </context>
 <context>

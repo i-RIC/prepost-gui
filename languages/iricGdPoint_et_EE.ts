@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Muuda punkti koordinaate</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Liiguta tippu</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Määra tipp</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
