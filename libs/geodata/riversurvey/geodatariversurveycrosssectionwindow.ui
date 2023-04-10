@@ -41,6 +41,9 @@
    <property name="windowTitle">
     <string>Cross Section ToolBar</string>
    </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -52,6 +55,9 @@
    <property name="windowTitle">
     <string>View Setting ToolBar</string>
    </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -62,6 +68,9 @@
   <widget class="QToolBar" name="displayToolBar">
    <property name="windowTitle">
     <string>Display Setting ToolBar</string>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>

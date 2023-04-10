@@ -27,6 +27,19 @@ PostProcessorWindow::~PostProcessorWindow()
 	m_projectDataItem->informWindowClose();
 }
 
+const QIcon& PostProcessorWindow::icon() const
+{
+	return m_icon;
+}
+
+int PostProcessorWindow::index() const
+{
+	return m_index;
+}
+
+void PostProcessorWindow::applyOffset(double /*x_diff*/, double /*y_diff*/)
+{}
+
 PostSolutionInfo* PostProcessorWindow::postSolutionInfo()
 {
 	return m_projectDataItem->projectData()->mainfile()->postSolutionInfo();

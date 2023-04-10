@@ -30,9 +30,10 @@ class GUICOREDLL_EXPORT PostSolutionInfo : public ProjectDataItem
 
 public:
 	enum Dimension {dim1D, dim2D, dim3D};
-	/// Constructor
+
 	PostSolutionInfo(ProjectDataItem* parent);
 	~PostSolutionInfo();
+
 	SolverDefinition::IterationType iterationType() const;
 	void setIterationType(SolverDefinition::IterationType type);
 	PostIterationSteps* iterationSteps() const;

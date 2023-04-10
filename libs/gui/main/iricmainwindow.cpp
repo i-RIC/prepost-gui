@@ -868,9 +868,13 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		return false;
 	}
 	updateWindowTitle();
+	m_projectData->mainfile()->postSolutionInfo()->loadFromCgnsFile();
+	updatePostActionStatus();
+
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	RecentProjectsManager::append(filename);
 	statusBar()->showMessage(tr("Project successfully saved to %1.").arg(QDir::toNativeSeparators(filename)), STATUSBAR_DISPLAYTIME);
+
 	return true;
 }
 

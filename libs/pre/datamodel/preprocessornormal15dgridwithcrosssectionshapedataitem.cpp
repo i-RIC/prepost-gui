@@ -190,7 +190,8 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(Q
 	auto tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
-			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
+			auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
+			tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
 		}
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;

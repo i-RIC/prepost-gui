@@ -1,6 +1,8 @@
 #ifndef PREPROCESSORGRIDDATAITEM_H
 #define PREPROCESSORGRIDDATAITEM_H
 
+#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
+
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
 #include <misc/edge.h>
 
@@ -10,13 +12,15 @@ class Grid;
 class QSignalMapper;
 
 class QAction;
+class PreProcessorBCGroupDataItem;
 class PreProcessorGridAndGridCreatingConditionDataItem;
-class PreProcessorGridShapeDataItem;
 class PreProcessorGridAttributeNodeGroupDataItem;
 class PreProcessorGridAttributeNodeDataItem;
 class PreProcessorGridAttributeCellGroupDataItem;
 class PreProcessorGridAttributeCellDataItem;
-class PreProcessorBCGroupDataItem;
+class PreProcessorGridShapeDataItem;
+class PreProcessorGridTypeDataItem;
+class VTK2DGraphicsView;
 
 class GridPointMouseMoveCommand;
 class GridAttributeEditCommand;
@@ -59,7 +63,7 @@ public:
 
 	void nodeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void nodeSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v);
 
 	void nodeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void nodeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
@@ -94,6 +98,7 @@ public:
 	void informGridAttributeChange(const std::string& name) override;
 	void silentDeleteGrid() override;
 
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 	PreProcessorGridShapeDataItem* shapeDataItem() const;
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
 	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
@@ -105,6 +110,9 @@ public:
 	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
 	void unsetBCGroupDataItem() override;
 	void applyColorMapSetting(const std::string& name) override;
+	void openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction dir, int index);
+	void addCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w);
+	void removeCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w);
 
 	bool isImportAvailable();
 	bool isExportAvailable();
@@ -161,6 +169,8 @@ private:
 	void setupActions();
 	void setupGenerateAttributeActions(QMenu* menu);
 	void clearSelection();
+	void updateSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
+	QVector<vtkIdType> getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
 	void updateSelectedVertices(MouseBoundingBox* box, bool xOr);
 	QVector<vtkIdType> getSelectedVertices(MouseBoundingBox* box, bool xOr);
 	QSet<vtkIdType> getSelectedVerticesSet(MouseBoundingBox* box, bool xOr);
@@ -171,6 +181,7 @@ private:
 	void updateSelectedEdgesGraphics();
 	void finishGridLoading();
 	void closeBirdEyeWindow();
+	void closeCrosssectionWindows();
 	void informSelectedVerticesChanged();
 
 protected:

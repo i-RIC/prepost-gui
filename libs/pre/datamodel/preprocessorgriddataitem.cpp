@@ -6,6 +6,7 @@
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
 #include "../subwindow/gridbirdeyewindow/gridbirdeyewindow.h"
+#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
@@ -75,7 +76,7 @@
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
 
-PreProcessorGridDataItem::Impl::Impl() :
+PreProcessorGridDataItem::Impl::Impl(PreProcessorGridDataItem* item) :
 	m_grid {nullptr},
 	m_nodeDataItem {nullptr},
 	m_cellDataItem {nullptr},
@@ -85,7 +86,8 @@ PreProcessorGridDataItem::Impl::Impl() :
 	m_menu {nullptr},
 	m_generateAttMenu {nullptr},
 	m_shiftPressed {false},
-	m_gridIsDeleted {false}
+	m_gridIsDeleted {false},
+	m_item {item}
 {}
 
 PreProcessorGridDataItem::Impl::~Impl()
@@ -95,11 +97,20 @@ PreProcessorGridDataItem::Impl::~Impl()
 	delete m_generateAttMenu;
 }
 
+PreProcessorGridCrosssectionWindow2* PreProcessorGridDataItem::Impl::buildCrosssectionWindow()
+{
+	auto window = new PreProcessorGridCrosssectionWindow2(m_item, m_item->mainWindow());
+	auto center = dynamic_cast<QMdiArea*> (m_item->iricMainWindow()->centralWidget());
+	auto container = center->addSubWindow(window);
+	container->setWindowIcon(window->windowIcon());
+
+	return window;
+}
 
 PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridDataItemInterface(parent),
 	m_bcGroupDataItem {nullptr},
-	impl {new Impl {}}
+	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -116,8 +127,9 @@ PreProcessorGridDataItem::~PreProcessorGridDataItem()
 	renderer()->RemoveActor(impl->m_selectedCellsLinesActor);
 	renderer()->RemoveActor(impl->m_selectedEdgesActor);
 	closeBirdEyeWindow();
-	delete m_bcGroupDataItem;
+	closeCrosssectionWindows();
 
+	delete m_bcGroupDataItem;
 	delete impl;
 }
 
@@ -135,6 +147,19 @@ void PreProcessorGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditions");
 	if (! bcNode.isNull() && m_bcGroupDataItem != nullptr) {
 		m_bcGroupDataItem->loadFromProjectMainFile(bcNode);
+	}
+
+	QDomNode cwNode = iRIC::getChildNode(node, "CrossSectionWindows");
+	if (! cwNode.isNull()) {
+		const auto& clist = cwNode.childNodes();
+		for (int i = 0; i < clist.size(); ++i) {
+			auto c = clist.at(i);
+			auto window = impl->buildCrosssectionWindow();
+			window->loadFromProjectMainFile(c);
+			auto container = dynamic_cast<QWidget*> (window->parent());
+			container->show();
+			addCrossSectionWindow(window);
+		}
 	}
 }
 
@@ -157,6 +182,13 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_bcGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	writer.writeStartElement("CrossSectionWindows");
+	for (auto w : impl->m_crosssectionWindows) {
+		writer.writeStartElement("CrossSectionWindow");
+		w->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
 }
 
 int PreProcessorGridDataItem::loadFromCgnsFile()
@@ -174,7 +206,7 @@ int PreProcessorGridDataItem::loadFromCgnsFile()
 int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	impl->m_grid = GridCgnsEstimater::buildGrid(zone, nullptr);
-	SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
+	SolverDefinitionGridType* gridType = gridTypeDataItem()->gridType();
 	gridType->buildGridAttributes(impl->m_grid);
 
 	impl->m_grid->setParent(this);
@@ -201,6 +233,10 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	finishGridLoading();
 	updateActionStatus();
 	updateObjectBrowserTree();
+
+	for (auto w : impl->m_crosssectionWindows) {
+		w->applyTmpTargetSetting();
+	}
 
 	return IRIC_NO_ERROR;
 }
@@ -469,6 +505,76 @@ void PreProcessorGridDataItem::clearSelection()
 	updateSelectedVerticesGraphics();
 	updateSelectedCellsGraphics();
 	updateSelectedEdgesGraphics();
+}
+
+void PreProcessorGridDataItem::updateSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr)
+{
+	impl->m_selectedVertices = getSelectedVerticesBySelectingNearest(pos, maxDistance, xOr);
+
+	updateSelectedVerticesGraphics();
+
+	m_shapeDataItem->updateActionStatus();
+	updateActionStatus();
+	informSelectedVerticesChanged();
+}
+
+QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr)
+{
+	QVector<vtkIdType> ret;
+	if (impl->m_grid == nullptr) {
+		// grid is not setup yet.
+		return ret;
+	}
+
+	QSet<vtkIdType> selectedVerticesSet;
+	if (xOr) {
+		for (vtkIdType i = 0; i < impl->m_selectedVertices.count(); ++i) {
+			selectedVerticesSet.insert(impl->m_selectedVertices.at(i));
+		}
+	}
+
+	vtkPoints* points = impl->m_grid->vtkGrid()->GetPoints();
+	double p[3];
+	auto sgrid = dynamic_cast<Structured2DGrid*>(impl->m_grid);
+	std::map<double, vtkIdType> distanceMap;
+
+	if (sgrid != nullptr) {
+		for (int ii = sgrid->drawnIMin(); ii <= sgrid->drawnIMax(); ++ii) {
+			for (int jj = sgrid->drawnJMin(); jj <= sgrid->drawnJMax(); ++jj) {
+				vtkIdType idx = sgrid->vertexIndex(ii, jj);
+				points->GetPoint(idx, p);
+				QPointF pos2(p[0], p[1]);
+				double distance = iRIC::distance(pos, pos2);
+				if (distance > maxDistance) {continue;}
+
+				distanceMap.insert({distance, idx});
+			}
+		}
+	} else {
+		vtkIdType i;
+		for (i = 0; i < points->GetNumberOfPoints(); ++i) {
+			points->GetPoint(i, p);
+			QPointF pos2(p[0], p[1]);
+			double distance = iRIC::distance(pos, pos2);
+			if (distance > maxDistance) {continue;}
+
+			distanceMap.insert({distance, i});
+		}
+	}
+
+	if (distanceMap.size() > 0) {
+		auto nearestId = distanceMap.begin()->second;
+		if (selectedVerticesSet.contains(nearestId)) {
+			selectedVerticesSet.remove(nearestId);
+		} else {
+			selectedVerticesSet.insert(nearestId);
+		}
+	}
+
+	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it) {
+		ret.append(*s_it);
+	}
+	return ret;
 }
 
 void PreProcessorGridDataItem::updateSelectedVertices(MouseBoundingBox* box, bool xOr)
@@ -787,23 +893,20 @@ void PreProcessorGridDataItem::nodeSelectingMousePressEvent(QMouseEvent* event, 
 	renderGraphicsView();
 }
 
-void PreProcessorGridDataItem::nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+void PreProcessorGridDataItem::nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-//	if (impl->m_grid != nullptr && impl->m_grid->isMasked()){return;}
 	MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 	box->setEndPoint(event->x(), event->y());
 
 	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
-		int r = iRIC::nearRadius();
-		QPoint newStart = box->endPoint() - QPoint(r, r);
-		QPoint newEnd = box->endPoint() + QPoint(r, r);
-		box->setStartPoint(newStart.x(), newStart.y());
-		box->setEndPoint(newEnd.x(), newEnd.y());
+		double maxDistance = v->stdDistance(iRIC::nearRadius());
+		bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
+		QPointF pos = v->viewportToWorld(event->pos());
+		updateSelectedVerticesBySelectingNearest(pos, maxDistance, xOr);
+	} else {
+		bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
+		updateSelectedVertices(box, xOr);
 	}
-
-	bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
-
-	updateSelectedVertices(box, xOr);
 	box->disable();
 
 	v->restoreUpdateRate();
@@ -1039,7 +1142,7 @@ void PreProcessorGridDataItem::setupActions()
 	impl->m_cellDisplaySettingAction = new QAction(tr("&Cell Attribute..."), this);
 
 	impl->m_setupScalarBarAction = new QAction(tr("Set &Up Scalarbar..."), this);
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	connect(impl->m_setupScalarBarAction, SIGNAL(triggered()), gtItem->geoDataTop(), SLOT(setupScalarBar()));
 
 	impl->m_birdEyeWindowAction = new QAction(tr("Open &Bird's-Eye View Window"), this);
@@ -1068,8 +1171,9 @@ void PreProcessorGridDataItem::informGridAttributeChangeAll()
 void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name)
 {
 	emit gridAttributeChanged(name);
-	auto nItem = m_nodeGroupDataItem->nodeDataItem(name);
-	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
+	for (auto w : impl->m_crosssectionWindows) {
+		w->update();
+	}
 
 	if (impl->m_birdEyeWindow != nullptr) {
 		impl->m_birdEyeWindow->updateGrid();
@@ -1246,7 +1350,7 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	finishGridLoading();
 	clearSelection();
 	closeBirdEyeWindow();
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	gtItem->geoDataTop()->clearDimensionsIfNoDataExists();
 
 	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
@@ -1257,6 +1361,11 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	iRICUndoStack::instance().clear();
 }
 
+
+PreProcessorGridTypeDataItem* PreProcessorGridDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+}
 
 PreProcessorGridShapeDataItem* PreProcessorGridDataItem::shapeDataItem() const
 {
@@ -1328,6 +1437,19 @@ void PreProcessorGridDataItem::closeBirdEyeWindow()
 	if (impl->m_birdEyeWindow == nullptr) {return;}
 	delete impl->m_birdEyeWindow->parent();
 	
+	auto w = iricMainWindow();
+	if (w == nullptr) {return;}
+
+	w->updateWindowList();
+}
+
+void PreProcessorGridDataItem::closeCrosssectionWindows()
+{
+	auto windows = impl->m_crosssectionWindows;
+	for (auto w : windows) {
+		delete w->parent();
+	}
+
 	auto w = iricMainWindow();
 	if (w == nullptr) {return;}
 
@@ -1478,7 +1600,7 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 
 void PreProcessorGridDataItem::setupGenerateAttributeActions(QMenu* menu)
 {
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	for (SolverDefinitionGridAttribute* def : gtItem->gridType()->gridAttributes()) {
 		if (def->mapping().isNull()) {continue;}
 
@@ -1578,6 +1700,36 @@ void PreProcessorGridDataItem::applyColorMapSetting(const std::string& name)
 
 	if (impl->m_birdEyeWindow != nullptr) {
 		impl->m_birdEyeWindow->updateGrid();
+	}
+	for (auto w : impl->m_crosssectionWindows) {
+		w->applyColorMapSetting(name);
+	}
+}
+
+void PreProcessorGridDataItem::openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction dir, int index)
+{
+	auto window = impl->buildCrosssectionWindow();
+	auto container = dynamic_cast<QWidget*> (window->parent());
+
+	container->show();
+	container->setFocus();
+	window->setTarget(dir, index);
+	addCrossSectionWindow(window);
+}
+
+void PreProcessorGridDataItem::addCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w)
+{
+	impl->m_crosssectionWindows.push_back(w);
+}
+
+void PreProcessorGridDataItem::removeCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w)
+{
+	auto& windows = impl->m_crosssectionWindows;
+	for (auto it = windows.begin(); it != windows.end(); ++it) {
+		if (*it == w) {
+			windows.erase(it);
+			return;
+		}
 	}
 }
 

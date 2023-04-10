@@ -4,6 +4,7 @@
 #include <guibase/iricactivecellfilter.h>
 
 #include <QDomNode>
+#include <QLinearGradient>
 #include <QXmlStreamWriter>
 
 #include <vtkAppendPolyData.h>
@@ -44,6 +45,28 @@ void addPolyDataWithValue(vtkAppendPolyData* append, vtkPolyData* polydata, int 
 	newdata->GetCellData()->SetActiveScalars(vals->GetName());
 	append->AddInputData(newdata);
 	newdata->Delete();
+}
+
+void fillRect(double x1, double x2, double ymin, double ymax, const QColor color, QPainter* painter)
+{
+	QBrush brush(color);
+
+	double xmin = std::min(x1, x2);
+	double xmax = std::max(x1, x2);
+	QRectF rect(QPointF(xmin, ymin), QPointF(xmax, ymax));
+	painter->fillRect(rect, brush);
+}
+
+QColor interpolateColor(double v, double v1, double v2, const QColor& c1, const QColor& c2)
+{
+	double r = (v - v1) / (v2 - v1);
+
+	QColor ret;
+	ret.setRed(int((1 - r) * c1.red() + r * c2.red()));
+	ret.setGreen(int((1 - r) * c1.green() + r * c2.green()));
+	ret.setBlue(int((1 - r) * c1.blue() + r * c2.blue()));
+
+	return ret;
 }
 
 } // namespace
@@ -124,13 +147,7 @@ void ColorMapSettingContainer::save(QXmlStreamWriter& writer) const
 
 void ColorMapSettingContainer::copy(const ColorMapSettingContainerI& c)
 {
-	const auto& c2 = dynamic_cast<const ColorMapSettingContainer&>(c);
-	CompositeContainer::copyValue(c2);
-
-	colors = c2.colors;
-	autoMinValue = c2.autoMinValue;
-	autoMaxValue = c2.autoMaxValue;
-	valueCaption = c2.valueCaption;
+	copyValue(dynamic_cast<const ColorMapSettingContainer&> (c));
 }
 
 void ColorMapSettingContainer::copyValue(const XmlAttributeContainer& c)
@@ -162,6 +179,166 @@ vtkMapper* ColorMapSettingContainer::buildPointDataMapper(vtkDataSet* data)
 		return buildPointDataMapperDiscrete(data);
 	}
 	return nullptr;
+}
+
+void ColorMapSettingContainer::paintNodeData(double x1, double x2, double v1, double v2, double ymin, double ymax, QPainter* painter)
+{
+	painter->save();
+	painter->setRenderHint(QPainter::Antialiasing, false);
+	auto colors = getColors();
+	QColor color;
+
+	if (v2 < v1) {
+		std::swap(v1, v2);
+		std::swap(x1, x2);
+	}
+
+	if (transitionMode == TransitionMode::Continuous) {
+		double r1 = (colors.begin()->value - v1) / (v2 - v1);
+		if (r1 >= 0 && r1 <= 1) {
+			if (fillLower) {
+				double x = (1 - r1) * x1 + r1 * x2;
+				fillRect(x1, x, ymin, ymax, colors.begin()->color, painter);
+			}
+		}
+		double r2 = (colors.rbegin()->value - v1) / (v2 - v1);
+		if (r2 >= 0 && r2 <= 1) {
+			if (fillUpper) {
+				double x = (1 - r2) * x1 + r2 * x2;
+				fillRect(x, x2, ymin, ymax, colors.rbegin()->color, painter);
+			}
+		}
+		for (int i = 0; i < colors.size() - 1; ++i) {
+			const auto& c1 = colors.at(i);
+			const auto& c2 = colors.at(i + 1);
+
+			QColor color1 = c1.color;
+			QColor color2 = c2.color;
+
+			r1 = (c1.value - v1) / (v2 - v1);
+			r2 = (c2.value - v1) / (v2 - v1);
+			if (r2 <= 0) {continue;}
+			if (r1 >= 1) {continue;}
+
+			if (r1 < 0) {
+				color1 = interpolateColor(0, r1, r2, c1.color, c2.color);
+				r1 = 0;
+			}
+			if (r2 > 1) {
+				color2 = interpolateColor(1, r1, r2, c1.color, c2.color);
+				r2 = 1;
+			}
+
+			double xx1 = (1 - r1) * x1 + r1 * x2;
+			double xx2 = (1 - r2) * x1 + r2 * x2;
+			QLinearGradient gradient(QPointF(xx1, 0), QPointF(xx2, 0));
+			gradient.setColorAt(0, color1);
+			gradient.setColorAt(1, color2);
+
+			QBrush brush (gradient);
+			double xmin = std::min(xx1, xx2);
+			double xmax = std::max(xx1, xx2);
+			QRectF rect(QPointF(xmin, ymin), QPointF(xmax, ymax));
+			painter->fillRect(rect, brush);
+		}
+	} else if (transitionMode == TransitionMode::Discrete) {
+		double min = getColorTableMinValue();
+		double r1 = (min - v1) / (v2 - v1);
+		if (r1 >= 0 && r1 <= 1) {
+			if (fillLower) {
+				double x = (1 - r1) * x1 + r1 * x2;
+				fillRect(x1, x, ymin, ymax, colors.begin()->color, painter);
+			}
+		}
+		double r2 = (colors.rbegin()->value - v1) / (v2 - v1);
+		if (r2 >= 0 && r2 <= 1) {
+			if (fillUpper) {
+				double x = (1 - r2) * x1 + r2 * x2;
+				fillRect(x, x2, ymin, ymax, colors.rbegin()->color, painter);
+			}
+		}
+		for (int i = 0; i < colors.size(); ++i) {
+			if (colors.at(i).transparent) {continue;}
+
+			double min2, max2;
+			if (i == 0) {
+				min2 = min;
+				max2 = colors.at(i).value;
+			} else {
+				min2 = colors.at(i - 1).value;
+				max2 = colors.at(i).value;
+			}
+			auto color = colors.at(i).color;
+
+			r1 = (min2 - v1) / (v2 - v1);
+			r2 = (max2 - v1) / (v2 - v1);
+			if (r2 <= 0) {continue;}
+			if (r1 >= 1) {continue;}
+
+			if (r1 < 0) {r1 = 0;}
+			if (r2 > 1) {r2 = 1;}
+
+			double xx1 = (1 - r1) * x1 + r1 * x2;
+			double xx2 = (1 - r2) * x1 + r2 * x2;
+			fillRect(xx1, xx2, ymin, ymax, color, painter);
+		}
+	}
+	painter->setRenderHint(QPainter::Antialiasing, true);
+	painter->restore();
+}
+
+void ColorMapSettingContainer::paintCellData(double x1, double x2, double v, double ymin, double ymax, QPainter* painter)
+{
+	painter->save();
+	painter->setRenderHint(QPainter::Antialiasing, false);
+	auto colors = getColors();
+	QColor color;
+	if (transitionMode == TransitionMode::Continuous) {
+		if (v < colors.begin()->value) {
+			if (! fillLower) {return;}
+			color = colors.begin()->color;
+		} else if (v > colors.rbegin()->value) {
+			if (! fillUpper) {return;}
+			color = colors.rbegin()->color;
+		} else {
+			for (int i = 0; i < colors.size() - 1; ++i) {
+				const auto& c1 = colors.at(i);
+				const auto& c2 = colors.at(i + 1);
+				if (v >= c1.value && v <= c2.value) {
+					color = interpolateColor(v, c1.value, c2.value, c1.color, c2.color);
+				}
+			}
+		}
+		fillRect(x1, x2, ymin, ymax, color, painter);
+	} else if (transitionMode == TransitionMode::Discrete) {
+		double min = getColorTableMinValue();
+		if (v < min) {
+			if (! fillLower) {return;}
+			if (colors.begin()->transparent) {return;}
+			color = colors.begin()->color;
+		} else if (v > colors.rbegin()->value) {
+			if (! fillUpper) {return;}
+			if (colors.rbegin()->transparent) {return;}
+			color = colors.rbegin()->color;
+		} else {
+			for (int i = 0; i < colors.size(); ++i) {
+				double min2, max2;
+				if (i == 0) {
+					min2 = min;
+					max2 = colors.at(i).value;
+				} else {
+					min2 = colors.at(i - 1).value;
+					max2 = colors.at(i).value;
+				}
+				if (v >= min2 && v < max2) {
+					color = colors.at(i).color;
+				}
+			}
+		}
+		fillRect(x1, x2, ymin, ymax, color, painter);
+	}
+	painter->setRenderHint(QPainter::Antialiasing, true);
+	painter->restore();
 }
 
 ColorMapLegendSettingContainerI* ColorMapSettingContainer::legendSetting()

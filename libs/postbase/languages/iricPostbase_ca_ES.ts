@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -80,7 +82,7 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d'atribut</translation>
+        <translation type="vanished">Color per valor d&apos;atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -103,7 +105,7 @@
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valor de l'atribut:</translation>
+        <translation type="vanished">Valor de l&apos;atribut:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -201,7 +203,7 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d'atribut</translation>
+        <translation type="vanished">Color per valor d&apos;atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -235,18 +237,18 @@
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Canvieu la mida de l'etiqueta</translation>
+        <translation>Canvieu la mida de l&apos;etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Edita la configuració de l'etiqueta</translation>
+        <translation>Edita la configuració de l&apos;etiqueta</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Configuració d'etiquetes</translation>
+        <translation>Configuració d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -325,7 +327,7 @@
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editeu la configuració de l'hora</translation>
+        <translation>Editeu la configuració de l&apos;hora</translation>
     </message>
 </context>
 <context>

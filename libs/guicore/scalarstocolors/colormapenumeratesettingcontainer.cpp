@@ -5,6 +5,10 @@
 
 #include <guibase/iricactivecellfilter.h>
 
+#include <QLinearGradient>
+#include <QPainter>
+
+#include <algorithm>
 #include <unordered_map>
 
 namespace {
@@ -74,12 +78,7 @@ void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
 
 void ColorMapEnumerateSettingContainer::copy(const ColorMapSettingContainerI& c)
 {
-	const auto& c2 = dynamic_cast<const ColorMapEnumerateSettingContainer&>(c);
-	CompositeContainer::copyValue(c2);
-
-	colors = c2.colors;
-	valueCaption = c2.valueCaption;
-	valueCaptions = c2.valueCaptions;
+	copyValue(dynamic_cast<const ColorMapEnumerateSettingContainer&> (c));
 }
 
 void ColorMapEnumerateSettingContainer::copyValue(const XmlAttributeContainer& c)
@@ -177,6 +176,52 @@ vtkMapper* ColorMapEnumerateSettingContainer::buildPointDataMapper(vtkDataSet* d
 	stc->Delete();
 
 	return mapper;
+}
+
+void ColorMapEnumerateSettingContainer::paintNodeData(double x1, double x2, double v1, double v2, double ymin, double ymax, QPainter* painter)
+{
+	painter->save();
+
+	QColor c1, c2;
+	for (const auto& pair : colors) {
+		if (pair.value == v1) {
+			c1 = pair.color;
+		}
+		if (pair.value == v2) {
+			c2 = pair.color;
+		}
+	}
+	if (! c1.isValid() || c2.isValid()) {return;}
+
+	QLinearGradient gradient(QPointF(x1, 0), QPointF(x2, 0));
+	gradient.setColorAt(0, c1);
+	gradient.setColorAt(1, c2);
+
+	QBrush brush(gradient);
+	double xmin = std::min(x1, x2);
+	double xmax = std::max(x1, x2);
+	QRectF rect(QPointF(xmin, ymin), QPointF(xmax, ymax));
+	painter->fillRect(rect, brush);
+
+	painter->restore();
+}
+
+void ColorMapEnumerateSettingContainer::paintCellData(double x1, double x2, double v, double ymin, double ymax, QPainter* painter)
+{
+	painter->save();
+	painter->setRenderHint(QPainter::Antialiasing, false);
+	for (const auto& pair : colors) {
+		if (pair.value == v && (! pair.transparent)) {
+			QBrush brush(pair.color);
+
+			double xmin = std::min(x1, x2);
+			double xmax = std::max(x1, x2);
+			QRectF rect(QPointF(xmin, ymin), QPointF(xmax, ymax));
+			painter->fillRect(rect, brush);
+		}
+	}
+	painter->setRenderHint(QPainter::Antialiasing, true);
+	painter->restore();
 }
 
 ColorMapLegendSettingContainerI* ColorMapEnumerateSettingContainer::legendSetting()

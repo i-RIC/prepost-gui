@@ -11,32 +11,33 @@
 #include <QVector2D>
 #include <QPoint>
 
-class QDialog;
+class PreProcessorGridDataItem;
+
 class QAction;
-class QColor;
-class QString;
 
 class PreProcessorGridShapeDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridShapeDataItem(PreProcessorDataItem* parent);
 	virtual ~PreProcessorGridShapeDataItem();
-	/// Inform that the grid is updated.
+
 	virtual void informGridUpdate() = 0;
 	void handleStandardItemDoubleClicked() override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	virtual void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	QAction* editAction() {return m_editAction;}
-	QAction* openXsectionWindowAction() {return m_openXsectionWindowAction;}
-	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}
+
+	QAction* editAction() const;
+	QAction* openXsectionWindowAction() const;
+	QAction* openVXsectionWindowAction() const;
 	virtual void updateActionStatus();
+
+	PreProcessorGridDataItem* gridDataItem() const;
 
 private slots:
 	void editShape();
