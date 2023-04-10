@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation>Impostazione dell&apos;ora di generazione delle particelle</translation>
+        <translation>Impostazione dell'ora di generazione delle particelle</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -248,7 +246,7 @@
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Impostazione dell&apos;etichetta</translation>
+        <translation>Impostazione dell'etichetta</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -338,7 +336,7 @@
     </message>
     <message>
         <source>Use project setting</source>
-        <translation>Usa l&apos;impostazione del progetto</translation>
+        <translation>Usa l'impostazione del progetto</translation>
     </message>
     <message>
         <source>Time Format</source>
