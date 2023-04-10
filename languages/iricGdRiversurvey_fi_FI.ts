@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Muokkaa näyttöasetusta</translation>
+        <translation type="vanished">Muokkaa näyttöasetusta</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Joillakin alueilla tietoja ei ollut pistepilvidatassa, ja arvo 0 määritettiin näille pisteille. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää "Karttapistepilvitietoja"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Poikkileikkaustietojen näytön asetus</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Poikkileikkaustiedot (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Poikkileikkaustiedot (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linja %2 : "%3": Lipputiedot ovat virheellisiä.</translation>
+        <translation type="vanished">%1 linja %2 : "%3": Lipputiedot ovat virheellisiä.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muokkaa näyttöasetusta</translation>
+        <translation type="vanished">Muokkaa näyttöasetusta</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Poikkileikkaustietojen näytön asetus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Käytä esikäsittelyikkunan asetusta</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK -tiedosto (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Perus</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Taustaväri</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Voit mukauttaa väriä Colormap-välilehden avulla.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Poikkileikkauslinjat</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z-asteikko:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Poikkileikkausten nimet</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värikartta</translation>
     </message>
 </context>
 <context>

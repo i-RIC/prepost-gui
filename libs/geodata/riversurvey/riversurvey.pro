@@ -170,6 +170,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_addextensioncommand.h \
            private/geodatariversurvey_changeselectioncommand.h \
            private/geodatariversurvey_deleteriverpathpointcommand.h \
+           private/geodatariversurvey_displaysetting.h \
            private/geodatariversurvey_editcrosssectioncommand.h \
            private/geodatariversurvey_expandcrosssectioncommand.h \
            private/geodatariversurvey_impl.h \
@@ -185,7 +186,6 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurvey_removeextensioncommand.h \
            private/geodatariversurvey_renameriverpathpointcommand.h \
            private/geodatariversurvey_rotaterivercrosssectioncommand.h \
-           private/geodatariversurvey_setdisplaysettingcommand.h \
            private/geodatariversurvey_shiftriverpathcentercommand.h \
            private/geodatariversurvey_translateriverpathpointcommand.h \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.h \
@@ -195,7 +195,10 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.h \
            private/geodatariversurveyimporter_problemsdialog.h \
            private/geodatariversurveymlitimporter_problemsdialog.h \
-           private/geodatariversurveyproxy_setsettingcommand.h
+           private/geodatariversurveyproxy_displaysetting.h \
+           private/geodatariversurveyproxy_displaysettingwidget.h \
+           private/geodatariversurveyproxy_impl.h \
+           public/geodatariversurvey_displaysettingwidget.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
          geodatariverpathpointextensionadddialog.ui \
@@ -214,7 +217,9 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariversurveyimportersettingdialog.ui \
          geodatariversurveymappointsdialog.ui \
          private/geodatariversurveyimporter_problemsdialog.ui \
-         private/geodatariversurveymlitimporter_problemsdialog.ui
+         private/geodatariversurveymlitimporter_problemsdialog.ui \
+         private/geodatariversurveyproxy_displaysettingwidget.ui \
+         public/geodatariversurvey_displaysettingwidget.ui
 SOURCES += geodatarivercrosssection.cpp \
            geodatarivercrosssectionaltitudemovedialog.cpp \
            geodatariverpathpoint.cpp \
@@ -256,6 +261,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_addextensioncommand.cpp \
            private/geodatariversurvey_changeselectioncommand.cpp \
            private/geodatariversurvey_deleteriverpathpointcommand.cpp \
+           private/geodatariversurvey_displaysetting.cpp \
            private/geodatariversurvey_editcrosssectioncommand.cpp \
            private/geodatariversurvey_expandcrosssectioncommand.cpp \
            private/geodatariversurvey_impl.cpp \
@@ -271,7 +277,6 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurvey_removeextensioncommand.cpp \
            private/geodatariversurvey_renameriverpathpointcommand.cpp \
            private/geodatariversurvey_rotaterivercrosssectioncommand.cpp \
-           private/geodatariversurvey_setdisplaysettingcommand.cpp \
            private/geodatariversurvey_shiftriverpathcentercommand.cpp \
            private/geodatariversurvey_translateriverpathpointcommand.cpp \
            private/geodatariversurveycrosssectionwindow_datatabledelegate.cpp \
@@ -280,7 +285,10 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurveycrosssectionwindowgraphicsview_setdisplaysettingcommand.cpp \
            private/geodatariversurveyimporter_problemsdialog.cpp \
            private/geodatariversurveymlitimporter_problemsdialog.cpp \
-           private/geodatariversurveyproxy_setsettingcommand.cpp
+           private/geodatariversurveyproxy_displaysetting.cpp \
+           private/geodatariversurveyproxy_displaysettingwidget.cpp \
+           private/geodatariversurveyproxy_impl.cpp \
+           public/geodatariversurvey_displaysettingwidget.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGdRiversurvey_ar_EG.ts \
                 languages/iricGdRiversurvey_bg_BG.ts \

@@ -11,7 +11,11 @@
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation>色の設定の変更</translation>
+        <translation type="vanished">色の設定の変更</translation>
+    </message>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>ラスタデータ表示設定</translation>
     </message>
 </context>
 <context>
@@ -391,6 +395,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfProxy</name>
+    <message>
+        <source>Raster Data Display Setting</source>
+        <translation>ラスタデータ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
@@ -446,6 +468,29 @@
     <message>
         <source>Error occured when opening %1.</source>
         <translation>%1 を開く処理でエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdf_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>

@@ -132,6 +132,9 @@ win32 {
 
 # Input
 HEADERS += post2d_global.h \
+           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -228,6 +231,7 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowstreamlinestructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui \
          datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.ui \
          datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui \
          datamodel/private/post2dwindowgridshapedataitem_propertydialog.ui \
          datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.ui \
@@ -239,6 +243,9 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.ui \
          datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.ui
 SOURCES += post2dgridregionselectdialog.cpp \
+           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \

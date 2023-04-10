@@ -8,6 +8,7 @@ class GUICOREDLL_EXPORT ColorMapFactory : public ColorMapFactoryI
 {
 public:
 	ColorMapSettingContainerI* createSettingContainer() override;
+	ColorMapLegendSettingContainerI* createLegendSettingContainer() override;
 	ColorMapSettingEditWidgetI* createSettingEditWidget(QWidget* parent) override;
 };
 

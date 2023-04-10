@@ -8,8 +8,8 @@ class GeoDataPolyLineCreatorT : public GeoDataPolyLineCreator
 {
 public:
 	GeoDataPolyLineCreatorT(const QString& typeName);
-	virtual ~GeoDataPolyLineCreatorT();
 
+	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 };
 

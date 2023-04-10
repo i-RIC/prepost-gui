@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Uređivanje postavki boje</translation>
+        <translation type="vanished">Uređivanje postavki boje</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Postavka prikaza poligona</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Postavka prikaza grupe poligona</translation>
+        <translation type="vanished">Postavka prikaza grupe poligona</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Boja po vrijednosti</translation>
+        <translation type="vanished">Boja po vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Custom Color</translation>
+        <translation type="vanished">Custom Color</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Uredite postavku prikaza</translation>
+        <translation type="vanished">Uredite postavku prikaza</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Postavka prikaza poligona</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Koristite podešavanje prozora za prethodnu obradu</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Upozorenje</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina linije:</translation>
     </message>
 </context>
 </TS>

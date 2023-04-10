@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Soort (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Instelling puntenwolkweergave</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Alles deselecteren (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Instelling puntenwolkweergave</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Eenvoudig</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>BLIK</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punten</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Draadframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Oppervlak</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Breek lijnen</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kleur:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>In kaart brengen Polygonen instellen</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Kleurenkaart voor waarden</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Instelling puntenwolkweergave</translation>
+        <translation type="vanished">Instelling puntenwolkweergave</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Eenvoudig</translation>
+        <translation type="vanished">Eenvoudig</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>BLIK</translation>
+        <translation type="vanished">BLIK</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punten</translation>
+        <translation type="vanished">Punten</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntgrootte:</translation>
+        <translation type="vanished">Puntgrootte:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Draadframe</translation>
+        <translation type="vanished">Draadframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Oppervlak</translation>
+        <translation type="vanished">Oppervlak</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Breek lijnen</translation>
+        <translation type="vanished">Breek lijnen</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Show</translation>
+        <translation type="vanished">Show</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>In kaart brengen Polygonen instellen</translation>
+        <translation type="vanished">In kaart brengen Polygonen instellen</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Kleurenkaart voor waarden</translation>
+        <translation type="vanished">Kleurenkaart voor waarden</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importeren (&amp;I)</translation>
+        <translation type="vanished">Importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exporteren (&amp;E)</translation>
+        <translation type="vanished">Exporteren (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Driehoeken met lange rand verwijderen</translation>
+        <translation>Driehoeken met lange rand verwijderen</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Randlengte beperken:</translation>
+        <translation>Randlengte beperken:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

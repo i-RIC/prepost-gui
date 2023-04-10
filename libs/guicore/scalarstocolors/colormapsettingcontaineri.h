@@ -23,6 +23,7 @@ public:
 
 	virtual void load(const QDomNode& node) = 0;
 	virtual void save(QXmlStreamWriter& writer) const = 0;
+	virtual void copy(const ColorMapSettingContainerI& c) = 0;
 
 	virtual vtkMapper* buildCellDataMapper(vtkDataSet* data, bool ignoreTransparent) = 0;
 	virtual vtkMapper* buildPointDataMapper(vtkDataSet* data) = 0;

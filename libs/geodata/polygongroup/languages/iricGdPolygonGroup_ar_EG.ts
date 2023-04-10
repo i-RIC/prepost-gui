@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>تحرير إعداد اللون</translation>
+        <translation type="vanished">تحرير إعداد اللون</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>إعداد عرض المضلعات</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>إعداد عرض مجموعة المضلع</translation>
+        <translation type="vanished">إعداد عرض مجموعة المضلع</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
+        <translation type="vanished">لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>تحرير إعداد العرض</translation>
+        <translation type="vanished">تحرير إعداد العرض</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>إعداد عرض المضلعات</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>تحذير</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
     </message>
 </context>
 </TS>

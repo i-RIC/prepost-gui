@@ -50,6 +50,12 @@ void ColorMapEnumerateSettingEditWidget::setConcreteSetting(const ColorMapEnumer
 	applySetting();
 }
 
+void ColorMapEnumerateSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+{
+	ui->colorsGroupBox->setDisabled(disabled);
+	ui->legendWidget->setDisableOtherThanImageSetting(disabled);
+}
+
 QUndoCommand* ColorMapEnumerateSettingEditWidget::createModifyCommand() const
 {
 	if (m_legendSetting != nullptr) {

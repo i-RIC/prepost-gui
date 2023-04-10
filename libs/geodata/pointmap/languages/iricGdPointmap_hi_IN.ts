@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>क्रम से लगाना (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>सभी को अचयनित करें (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>टिन</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>अंक</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>वायरफ़्रेम</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>रेखा की चौडाई:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>सतह</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>ब्रेक लाइन्स</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दिखाना</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>मानचित्रण सेटिंग बहुभुज</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>मूल्यों के लिए रंग मानचित्र</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
+        <translation type="vanished">प्वाइंट क्लाउड डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>बुनियादी</translation>
+        <translation type="vanished">बुनियादी</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>टिन</translation>
+        <translation type="vanished">टिन</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>अंक</translation>
+        <translation type="vanished">अंक</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>बिंदु का आकार:</translation>
+        <translation type="vanished">बिंदु का आकार:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>वायरफ़्रेम</translation>
+        <translation type="vanished">वायरफ़्रेम</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>सतह</translation>
+        <translation type="vanished">सतह</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>ब्रेक लाइन्स</translation>
+        <translation type="vanished">ब्रेक लाइन्स</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>दिखाना</translation>
+        <translation type="vanished">दिखाना</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>मानचित्रण सेटिंग बहुभुज</translation>
+        <translation type="vanished">मानचित्रण सेटिंग बहुभुज</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>मूल्यों के लिए रंग मानचित्र</translation>
+        <translation type="vanished">मूल्यों के लिए रंग मानचित्र</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>आयात (&amp;I)</translation>
+        <translation type="vanished">आयात (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>निर्यात (&amp;E)</translation>
+        <translation type="vanished">निर्यात (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">लंबी धार वाले त्रिभुज निकालें</translation>
+        <translation>लंबी धार वाले त्रिभुज निकालें</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">सीमा किनारे की लंबाई:</translation>
+        <translation>सीमा किनारे की लंबाई:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt;&lt;body&gt;&lt;p&gt; ग्रे.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt;&lt;body&gt;&lt;p&gt; ग्रे.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

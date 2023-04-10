@@ -9,7 +9,7 @@ void GeoDataPolyLineProxy::setupActors()
 {
 	GeoDataPolyLine* pol = dynamic_cast<GeoDataPolyLine*>(geoData());
 
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataPolyLineProxy::doLoadFromProjectMainFile(const QDomNode& /*node*/)
@@ -18,7 +18,7 @@ void GeoDataPolyLineProxy::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 void GeoDataPolyLineProxy::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void GeoDataPolyLineProxy::updateGraphics()
+void GeoDataPolyLineProxy::updateActorSetting()
 {}
 
 void GeoDataPolyLineProxy::updateZDepthRangeItemCount(ZDepthRange& range)

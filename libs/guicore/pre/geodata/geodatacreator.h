@@ -9,7 +9,6 @@
 class GeoData;
 class GeoDataImporter;
 class GeoDataExporter;
-class GeoDataMapper;
 class GeoDataWebImporter;
 class GraphicsWindowDataItem;
 class ProjectDataItem;
@@ -39,12 +38,6 @@ public:
 
 	virtual GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) = 0;
 	virtual GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition);
-
-	const std::vector<GeoDataMapper*>& nodeMappers() const;
-	std::vector<GeoDataMapper*>& nodeMappers();
-
-	const std::vector<GeoDataMapper*>& cellMappers() const;
-	std::vector<GeoDataMapper*>& cellMappers();
 
 	const std::vector<GeoDataImporter*>& importers() const;
 	std::vector<GeoDataImporter*>& importers();

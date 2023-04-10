@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Raða (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display Stilling</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Afturkalla allt (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display Stilling</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Notaðu stillingu á forvinnsluglugganum</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Stig</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktastærð:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Yfirborð</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið:&lt;/span&gt; Þegar í &amp;quot;Points Edit Modequot; er þessi stilling hunsuð og TIN gögn eru alltaf sýnd sem stig.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Brot línur</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Litur:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Kortlagning stilling marghyrninga</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Litakort fyrir gildi</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Point Cloud Display Stilling</translation>
+        <translation type="vanished">Point Cloud Display Stilling</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Basic</translation>
+        <translation type="vanished">Basic</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Stig</translation>
+        <translation type="vanished">Stig</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktastærð:</translation>
+        <translation type="vanished">Punktastærð:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Línubreidd:</translation>
+        <translation type="vanished">Línubreidd:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Yfirborð</translation>
+        <translation type="vanished">Yfirborð</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið:&lt;/span&gt; Þegar í &amp;quot;Points Edit Modequot; er þessi stilling hunsuð og TIN gögn eru alltaf sýnd sem stig.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið:&lt;/span&gt; Þegar í &amp;quot;Points Edit Modequot; er þessi stilling hunsuð og TIN gögn eru alltaf sýnd sem stig.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Brot línur</translation>
+        <translation type="vanished">Brot línur</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Sýna</translation>
+        <translation type="vanished">Sýna</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Litur:</translation>
+        <translation type="vanished">Litur:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Kortlagning stilling marghyrninga</translation>
+        <translation type="vanished">Kortlagning stilling marghyrninga</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Litakort fyrir gildi</translation>
+        <translation type="vanished">Litakort fyrir gildi</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Flytja inn (&amp;I)</translation>
+        <translation type="vanished">Flytja inn (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Útflutningur (&amp;E)</translation>
+        <translation type="vanished">Útflutningur (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Fjarlægðu þríhyrninga með Long Edge</translation>
+        <translation>Fjarlægðu þríhyrninga með Long Edge</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Takmarka brúnlengd:</translation>
+        <translation>Takmarka brúnlengd:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Athugið &lt;/span&gt;: Þegar þú smellir á hnappinn Apply, verða þríhyrningarnir sem fjarlægðir verða málaðir dökkir grátt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Athugið &lt;/span&gt;: Þegar þú smellir á hnappinn Apply, verða þríhyrningarnir sem fjarlægðir verða málaðir dökkir grátt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

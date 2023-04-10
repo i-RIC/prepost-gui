@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Breyta punktahnitum</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Færa hornpunktinn</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Stilltu hornpunkt</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>表示色</translation>
+        <translation type="vanished">表示色</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -247,6 +247,10 @@
     <message>
         <source>Basic</source>
         <translation>基本</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -635,7 +639,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>インポート時に凡例の設定を反映しない</translation>
+        <translation type="vanished">インポート時に凡例の設定を反映しない</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -749,6 +753,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>向き:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>ラベルの数:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
     </message>
 </context>
 <context>
@@ -880,7 +904,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Value</source>
@@ -904,7 +928,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
+        <translation type="vanished">グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>エクスポート(&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -923,22 +962,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>各区間に内挿する色の数</translation>
+        <translation type="vanished">各区間に内挿する色の数</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>値の範囲</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>色の数:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>属性</translation>
+        <translation type="vanished">属性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>プリプロセッサーの設定を使う</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1968,39 +2034,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>カラーマップ設定</translation>
+        <translation type="vanished">カラーマップ設定</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>値の範囲</translation>
+        <translation type="vanished">値の範囲</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>最大値以上を描画</translation>
+        <translation type="vanished">最大値以上を描画</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>最小値:</translation>
+        <translation type="vanished">最小値:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>最小値以下を描画</translation>
+        <translation type="vanished">最小値以下を描画</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>分割数:</translation>
+        <translation type="vanished">分割数:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>最大値:</translation>
+        <translation type="vanished">最大値:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -3400,7 +3466,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>表示色設定</translation>
+        <translation type="vanished">表示色設定</translation>
     </message>
 </context>
 <context>

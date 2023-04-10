@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>เรียงลำดับ (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>ไม่เลือกทั้งหมด (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ดีบุก</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>คะแนน</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>ขนาดจุด:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>โครงลวด</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>พื้นผิว</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>เส้นแบ่ง</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>การทำแผนที่การตั้งค่ารูปหลายเหลี่ยม</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>แผนที่สีสำหรับค่า</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
+        <translation type="vanished">การตั้งค่าการแสดงผลแบบ Point Cloud</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>ขั้นพื้นฐาน</translation>
+        <translation type="vanished">ขั้นพื้นฐาน</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ดีบุก</translation>
+        <translation type="vanished">ดีบุก</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>คะแนน</translation>
+        <translation type="vanished">คะแนน</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>ขนาดจุด:</translation>
+        <translation type="vanished">ขนาดจุด:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>โครงลวด</translation>
+        <translation type="vanished">โครงลวด</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>ความกว้างของเส้น:</translation>
+        <translation type="vanished">ความกว้างของเส้น:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>พื้นผิว</translation>
+        <translation type="vanished">พื้นผิว</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>เส้นแบ่ง</translation>
+        <translation type="vanished">เส้นแบ่ง</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>แสดง</translation>
+        <translation type="vanished">แสดง</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>สี:</translation>
+        <translation type="vanished">สี:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>การทำแผนที่การตั้งค่ารูปหลายเหลี่ยม</translation>
+        <translation type="vanished">การทำแผนที่การตั้งค่ารูปหลายเหลี่ยม</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>แผนที่สีสำหรับค่า</translation>
+        <translation type="vanished">แผนที่สีสำหรับค่า</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>นำเข้า (&amp;I)</translation>
+        <translation type="vanished">นำเข้า (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>ส่งออก (&amp;E)</translation>
+        <translation type="vanished">ส่งออก (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">ลบสามเหลี่ยมที่มีขอบยาว</translation>
+        <translation>ลบสามเหลี่ยมที่มีขอบยาว</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">จำกัดความยาวของขอบ:</translation>
+        <translation>จำกัดความยาวของขอบ:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: เมื่อคุณคลิกที่ปุ่ม Apply รูปสามเหลี่ยมที่จะถูกลบออกจะถูกทาด้วยสีเข้ม สีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: เมื่อคุณคลิกที่ปุ่ม Apply รูปสามเหลี่ยมที่จะถูกลบออกจะถูกทาด้วยสีเข้ม สีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

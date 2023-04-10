@@ -5,10 +5,6 @@
 #include "geodatapolylinegroupshpexporter.h"
 #include "geodatapolylinegroupshpimporter.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-
-#include <QStandardItem>
-
 GeoDataPolyLineGroupCreator::GeoDataPolyLineGroupCreator(const QString& typeName) :
 	GeoDataPolyDataGroupCreator {typeName, tr("Lines")}
 {
@@ -31,16 +27,6 @@ QString GeoDataPolyLineGroupCreator::defaultCaption(unsigned int index) const
 bool GeoDataPolyLineGroupCreator::isCreatable() const
 {
 	return true;
-}
-
-GeoData* GeoDataPolyLineGroupCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	auto g = new GeoDataPolyLineGroup(parent, this, condition);
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent);
-	item->standardItem()->setData(QVariant(tr("Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?")), Qt::UserRole + 20);
-	g->setPosition(condition->position());
-	g->setDefaultMapper();
-	return g;
 }
 
 int GeoDataPolyLineGroupCreator::shapeType() const

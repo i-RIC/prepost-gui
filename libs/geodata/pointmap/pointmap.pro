@@ -52,6 +52,34 @@ unix {
 }
 LIBS += -liricGuicore
 
+# iricGdPolygonGroup
+
+unix {
+        LIBS += -L"../polygongroup"
+}
+LIBS += -liricGdPolygonGroup
+
+# iricGdPolygon
+
+unix {
+        LIBS += -L"../polygon"
+}
+LIBS += -liricGdPolygon
+
+# iricGdPolydataGroup
+
+unix {
+        LIBS += -L"../polydatagroup"
+}
+LIBS += -liricGdPolyDataGroup
+
+# iricGdPolydata
+
+unix {
+        LIBS += -L"../polydata"
+}
+LIBS += -liricGdPolydata
+
 ######################
 # External libraries #
 ######################
@@ -109,17 +137,13 @@ win32 {
 # Input
 HEADERS += gd_pointmap_global.h \
            geodatapointmap.h \
-           geodatapointmapbreakline.h \
-           geodatapointmapcellmappert.h \
-           geodatapointmapdelptsgreaterthandialog.h \
-           geodatapointmapdelptslessthandialog.h \
-           geodatapointmapeditptsdialog.h \
-           geodatapointmapinterpolatepointsdialog.h \
+           geodatapointmapcellmapper.h \
            geodatapointmaplandxmlexporter.h \
            geodatapointmaplandxmlimporter.h \
            geodatapointmapmappingmode.h \
            geodatapointmapmergesettingdialog.h \
-           geodatapointmapnodemappert.h \
+           geodatapointmapnodemapper.h \
+           geodatapointmapproxy.h \
            geodatapointmaprealbuilder.h \
            geodatapointmaprealcreator.h \
            geodatapointmaprealexporter.h \
@@ -129,9 +153,8 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaprepresentationdialog.h \
            geodatapointmapstlexporter.h \
            geodatapointmapstlimporter.h \
-           geodatapointmapt.h \
            geodatapointmaptemplatemappingsetting.h \
-           geodatapointmaptemplatenodemappert.h \
+           geodatapointmaptemplatenodemapper.h \
            geodatapointmaptincreator.h \
            geodatapointmapvtkexporter.h \
            geodatapointmapwebimporter.h \
@@ -139,50 +162,79 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapwebimportersetting.h \
            geodatapointmapwebimportersettingmanager.h \
            geodatapointmapwebimporterzoomleveldialog.h \
-           private/geodatapointmap_addpointscommand.h \
-           private/geodatapointmap_breaklineaddcommand.h \
-           private/geodatapointmap_breaklineaddpointcommand.h \
-           private/geodatapointmap_breaklinecanceldefinitioncommand.h \
-           private/geodatapointmap_breaklinefinishdefinitioncommand.h \
-           private/geodatapointmap_deletepointscommand.h \
-           private/geodatapointmap_editpointscommand.h \
-           private/geodatapointmap_editsinglepointcommand.h \
+           private/geodatapointmap_displaysetting.h \
            private/geodatapointmap_impl.h \
-           private/geodatapointmap_interpolatelineaddpointcommand.h \
+           private/geodatapointmap_mappingsetting.h \
+           private/geodatapointmap_mappingsettingdialog.h \
+           private/geodatapointmap_mappingsettingdialog_templatedetaildialog.h \
+           private/geodatapointmap_modifycommand.h \
            private/geodatapointmap_pointsmanager.h \
-           private/geodatapointmap_removetrianglescommand.h \
-           private/geodatapointmap_triangleswithlongedgeremover.h \
-           private/geodatapointmap_triangleswithlongedgeremover_dialog.h \
-           private/geodatapointmapcellmappert_detail.h \
-           private/geodatapointmapnodemappert_detail.h \
+           private/geodatapointmap_pointsmanager_actions.h \
+           private/geodatapointmap_pointsmanager_addpointcontroller.h \
+           private/geodatapointmap_pointsmanager_addpointcontroller_setexistingpointcommand.h \
+           private/geodatapointmap_pointsmanager_addpointscommand.h \
+           private/geodatapointmap_pointsmanager_deletepointscommand.h \
+           private/geodatapointmap_pointsmanager_editpointscommand.h \
+           private/geodatapointmap_pointsmanager_editpointsdialog.h \
+           private/geodatapointmap_pointsmanager_editsinglepointcommand.h \
+           private/geodatapointmap_pointsmanager_filterselectedpointsdialog.h \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller.h \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller_addpointcommand.h \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller_settingdialog.h \
+           private/geodatapointmap_pointsmanager_selectpointboundingboxcontroller.h \
+           private/geodatapointmap_pointsmanager_selectpointpolygoncontroller.h \
+           private/geodatapointmap_polygonscellmapper.h \
+           private/geodatapointmap_polygonsmanager.h \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition.h \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.h \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition_stringconverter.h \
+           private/geodatapointmap_polygonsmanager_mappingsetting.h \
+           private/geodatapointmap_polygonsnodemapper.h \
+           private/geodatapointmap_templatecellmapper.h \
+           private/geodatapointmap_templatenodemapper.h \
+           private/geodatapointmap_tincellmapper.h \
+           private/geodatapointmap_tinmanager.h \
+           private/geodatapointmap_tinmanager_actions.h \
+           private/geodatapointmap_tinmanager_addbreaklinecontroller.h \
+           private/geodatapointmap_tinmanager_addbreaklinecontroller_addpointcommand.h \
+           private/geodatapointmap_tinmanager_breakline.h \
+           private/geodatapointmap_tinmanager_deletebreaklinecontroller.h \
+           private/geodatapointmap_tinmanager_removetrianglescommand.h \
+           private/geodatapointmap_tinmanager_removetriangleswithlongedgecontroller.h \
+           private/geodatapointmap_tinmanager_tinbuilder.h \
+           private/geodatapointmap_tinnodemapper.h \
+           private/geodatapointmapproxy_displaysetting.h \
+           private/geodatapointmapproxy_displaysettingwidget.h \
+           private/geodatapointmapproxy_impl.h \
            private/geodatapointmaprealbuilder_impl.h \
            private/geodatapointmaprealtextimporter_lineparser.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
-           private/geodatapointmapt_detail.h \
-           private/geodatapointmaptemplatenodemappert_detail.h \
-           private/geodatapointmapwebimportersetting_impl.h
-FORMS += geodatapointmapdelptsgreaterthandialog.ui \
-         geodatapointmapdelptslessthandialog.ui \
-         geodatapointmapeditptsdialog.ui \
-         geodatapointmapinterpolatepointsdialog.ui \
-         geodatapointmapmergesettingdialog.ui \
+           private/geodatapointmapwebimportersetting_impl.h \
+           public/geodatapointmap_displaysettingwidget.h
+FORMS += geodatapointmapmergesettingdialog.ui \
          geodatapointmaprealimporterfilterdialog.ui \
          geodatapointmaprepresentationdialog.ui \
          geodatapointmapwebimporterregionselectdialog.ui \
          geodatapointmapwebimporterzoomleveldialog.ui \
+         private/geodatapointmap_mappingsettingdialog.ui \
+         private/geodatapointmap_mappingsettingdialog_templatedetaildialog.ui \
+         private/geodatapointmap_pointsmanager_editpointsdialog.ui \
+         private/geodatapointmap_pointsmanager_filterselectedpointsdialog.ui \
+         private/geodatapointmap_pointsmanager_interpolatepointcontroller_settingdialog.ui \
+         private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.ui \
          private/geodatapointmap_triangleswithlongedgeremover_dialog.ui \
-         private/geodatapointmaprealtextimporter_settingdialog.ui
+         private/geodatapointmapproxy_displaysettingwidget.ui \
+         private/geodatapointmaprealtextimporter_settingdialog.ui \
+         public/geodatapointmap_displaysettingwidget.ui
 SOURCES += geodatapointmap.cpp \
-           geodatapointmapbreakline.cpp \
-           geodatapointmapdelptsgreaterthandialog.cpp \
-           geodatapointmapdelptslessthandialog.cpp \
-           geodatapointmapeditptsdialog.cpp \
-           geodatapointmapinterpolatepointsdialog.cpp \
+           geodatapointmapcellmapper.cpp \
            geodatapointmaplandxmlexporter.cpp \
            geodatapointmaplandxmlimporter.cpp \
            geodatapointmapmappingmode.cpp \
            geodatapointmapmergesettingdialog.cpp \
+           geodatapointmapnodemapper.cpp \
+           geodatapointmapproxy.cpp \
            geodatapointmaprealbuilder.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \
@@ -193,6 +245,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
+           geodatapointmaptemplatenodemapper.cpp \
            geodatapointmaptincreator.cpp \
            geodatapointmapvtkexporter.cpp \
            geodatapointmapwebimporter.cpp \
@@ -200,22 +253,53 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapwebimportersetting.cpp \
            geodatapointmapwebimportersettingmanager.cpp \
            geodatapointmapwebimporterzoomleveldialog.cpp \
-           private/geodatapointmap_addpointscommand.cpp \
-           private/geodatapointmap_breaklineaddcommand.cpp \
-           private/geodatapointmap_breaklineaddpointcommand.cpp \
-           private/geodatapointmap_breaklinecanceldefinitioncommand.cpp \
-           private/geodatapointmap_breaklinefinishdefinitioncommand.cpp \
-           private/geodatapointmap_deletepointscommand.cpp \
-           private/geodatapointmap_editpointscommand.cpp \
-           private/geodatapointmap_editsinglepointcommand.cpp \
+           private/geodatapointmap_displaysetting.cpp \
            private/geodatapointmap_impl.cpp \
-           private/geodatapointmap_interpolatelineaddpointcommand.cpp \
+           private/geodatapointmap_mappingsetting.cpp \
+           private/geodatapointmap_mappingsettingdialog.cpp \
+           private/geodatapointmap_mappingsettingdialog_templatedetaildialog.cpp \
+           private/geodatapointmap_modifycommand.cpp \
            private/geodatapointmap_pointsmanager.cpp \
-           private/geodatapointmap_removetrianglescommand.cpp \
-           private/geodatapointmap_triangleswithlongedgeremover.cpp \
-           private/geodatapointmap_triangleswithlongedgeremover_dialog.cpp \
+           private/geodatapointmap_pointsmanager_actions.cpp \
+           private/geodatapointmap_pointsmanager_addpointcontroller.cpp \
+           private/geodatapointmap_pointsmanager_addpointcontroller_setexistingpointcommand.cpp \
+           private/geodatapointmap_pointsmanager_addpointscommand.cpp \
+           private/geodatapointmap_pointsmanager_deletepointscommand.cpp \
+           private/geodatapointmap_pointsmanager_editpointscommand.cpp \
+           private/geodatapointmap_pointsmanager_editpointsdialog.cpp \
+           private/geodatapointmap_pointsmanager_editsinglepointcommand.cpp \
+           private/geodatapointmap_pointsmanager_filterselectedpointsdialog.cpp \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller.cpp \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller_addpointcommand.cpp \
+           private/geodatapointmap_pointsmanager_interpolatepointcontroller_settingdialog.cpp \
+           private/geodatapointmap_pointsmanager_selectpointboundingboxcontroller.cpp \
+           private/geodatapointmap_pointsmanager_selectpointpolygoncontroller.cpp \
+           private/geodatapointmap_polygonscellmapper.cpp \
+           private/geodatapointmap_polygonsmanager.cpp \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition.cpp \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.cpp \
+           private/geodatapointmap_polygonsmanager_attributeformappingcondition_stringconverter.cpp \
+           private/geodatapointmap_polygonsmanager_mappingsetting.cpp \
+           private/geodatapointmap_polygonsnodemapper.cpp \
+           private/geodatapointmap_templatecellmapper.cpp \
+           private/geodatapointmap_templatenodemapper.cpp \
+           private/geodatapointmap_tincellmapper.cpp \
+           private/geodatapointmap_tinmanager.cpp \
+           private/geodatapointmap_tinmanager_actions.cpp \
+           private/geodatapointmap_tinmanager_addbreaklinecontroller.cpp \
+           private/geodatapointmap_tinmanager_addbreaklinecontroller_addpointcommand.cpp \
+           private/geodatapointmap_tinmanager_breakline.cpp \
+           private/geodatapointmap_tinmanager_deletebreaklinecontroller.cpp \
+           private/geodatapointmap_tinmanager_removetrianglescommand.cpp \
+           private/geodatapointmap_tinmanager_removetriangleswithlongedgecontroller.cpp \
+           private/geodatapointmap_tinmanager_tinbuilder.cpp \
+           private/geodatapointmap_tinnodemapper.cpp \
+           private/geodatapointmapproxy_displaysetting.cpp \
+           private/geodatapointmapproxy_displaysettingwidget.cpp \
+           private/geodatapointmapproxy_impl.cpp \
            private/geodatapointmaprealtextimporter_lineparser.cpp \
-           private/geodatapointmaprealtextimporter_settingdialog.cpp
+           private/geodatapointmaprealtextimporter_settingdialog.cpp \
+           public/geodatapointmap_displaysettingwidget.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \
                 languages/iricGdPointmap_bg_BG.ts \

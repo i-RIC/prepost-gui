@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>تحرير إعداد اللون</translation>
+        <translation type="vanished">تحرير إعداد اللون</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>إعداد عرض الخطوط</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>إعداد عرض مجموعة Polyline</translation>
+        <translation type="vanished">إعداد عرض مجموعة Polyline</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
+        <translation type="vanished">لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>سيؤدي حذف هذا العنصر أيضًا إلى إزالة أي نوافذ رسم بياني مرتبطة بهذه البيانات. هل أنت متأكد أنك تريد حذف هذا البند؟</translation>
+        <translation type="vanished">سيؤدي حذف هذا العنصر أيضًا إلى إزالة أي نوافذ رسم بياني مرتبطة بهذه البيانات. هل أنت متأكد أنك تريد حذف هذا البند؟</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>تحرير إعداد العرض</translation>
+        <translation type="vanished">تحرير إعداد العرض</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>إعداد عرض الخطوط</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (خطوط) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
     </message>
 </context>
 </TS>

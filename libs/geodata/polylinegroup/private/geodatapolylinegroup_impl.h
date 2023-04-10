@@ -2,7 +2,7 @@
 #define GEODATAPOLYLINEGROUP_IMPL_H
 
 #include "../geodatapolylinegroup.h"
-#include "../geodatapolylinegroupcolorsettingdialog.h"
+#include "geodatapolylinegroup_displaysetting.h"
 
 class vtkActor;
 class vtkPoints;
@@ -29,7 +29,7 @@ public:
 
 	GeoDataPolyLine* m_dummyPolyLineForMenu;
 
-	GeoDataPolyLineGroupColorSettingDialog::Setting m_colorSetting;
+	DisplaySetting m_displaySetting;
 };
 
 #endif // GEODATAPOLYLINEGROUP_IMPL_H

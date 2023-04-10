@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Сортувати (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Налаштування відображення хмари точок</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Скасувати вибір усіх (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Налаштування відображення хмари точок</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Базовий</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ІПН</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Очки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Розмір точки:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Каркас</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Поверхня</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка:&lt;/span&gt; у &amp;quot;Режимі редагування балівquot;, це налаштування ігнорується, а дані TIN завжди показано як точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Лінії розриву</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>колір:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Налаштування багатокутників на карті</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Кольорова карта значень</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Налаштування відображення хмари точок</translation>
+        <translation type="vanished">Налаштування відображення хмари точок</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Базовий</translation>
+        <translation type="vanished">Базовий</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ІПН</translation>
+        <translation type="vanished">ІПН</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Очки</translation>
+        <translation type="vanished">Очки</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Розмір точки:</translation>
+        <translation type="vanished">Розмір точки:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Каркас</translation>
+        <translation type="vanished">Каркас</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Поверхня</translation>
+        <translation type="vanished">Поверхня</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка:&lt;/span&gt; у &amp;quot;Режимі редагування балівquot;, це налаштування ігнорується, а дані TIN завжди показано як точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка:&lt;/span&gt; у &amp;quot;Режимі редагування балівquot;, це налаштування ігнорується, а дані TIN завжди показано як точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Лінії розриву</translation>
+        <translation type="vanished">Лінії розриву</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Показати</translation>
+        <translation type="vanished">Показати</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>колір:</translation>
+        <translation type="vanished">колір:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Налаштування багатокутників на карті</translation>
+        <translation type="vanished">Налаштування багатокутників на карті</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Кольорова карта значень</translation>
+        <translation type="vanished">Кольорова карта значень</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Імпорт (&amp;I)</translation>
+        <translation type="vanished">Імпорт (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Експорт (&amp;E)</translation>
+        <translation type="vanished">Експорт (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Видаліть трикутники за допомогою Long Edge</translation>
+        <translation>Видаліть трикутники за допомогою Long Edge</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Гранична довжина краю:</translation>
+        <translation>Гранична довжина краю:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Коли ви натискаєте кнопку "Застосувати", трикутники, які будуть видалені, будуть пофарбовані темним кольором сірий. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Коли ви натискаєте кнопку "Застосувати", трикутники, які будуть видалені, будуть пофарбовані темним кольором сірий. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

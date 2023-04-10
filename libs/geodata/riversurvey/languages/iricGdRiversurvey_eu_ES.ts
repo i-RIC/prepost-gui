@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Editatu pantailaren ezarpena</translation>
+        <translation type="vanished">Editatu pantailaren ezarpena</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Zeharkako datuak puntu-hodei datuak erabiliz sortzen dira. Eskualde batzuetan, datuak ez zeuden puntu-hodeiko datuetan, eta puntu horietarako 0 balioa mapatu zen. Zeharkako posizioa eta maparen puntu-hodeiaren datuak berriro doitu nahi badituzu, "Maparen puntu-hodeiaren datuak" erabil dezakezu</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Zeharkako datuak bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>Zeharkako Datuak (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>Zeharkako datuak (&amp;C)</translation>
+        <translation type="vanished">Zeharkako datuak (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 lerroa %2 : "%3": Banderaren datuak baliogabeak dira.</translation>
+        <translation type="vanished">%1 lerroa %2 : "%3": Banderaren datuak baliogabeak dira.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editatu pantailaren ezarpena</translation>
+        <translation type="vanished">Editatu pantailaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Zeharkako datuak bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK fitxategia (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Atzeko planoaren kolorea</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; Kolorea pertsonaliza dezakezu Kolore-mapa fitxa erabiliz.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Ebakidura-lerroak</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z eskala:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Zeharkako izenak</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
     </message>
 </context>
 <context>

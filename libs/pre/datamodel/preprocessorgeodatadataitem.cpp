@@ -61,6 +61,16 @@ void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_exportAction);
 }
 
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataDataItem::groupDataItem() const
+{
+	return dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent());
+}
+
+GeoData* PreProcessorGeoDataDataItem::geoData() const
+{
+	return m_geoData;
+}
+
 void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 {
 	// set geodata

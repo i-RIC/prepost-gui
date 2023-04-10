@@ -14,7 +14,7 @@
 #include <QStandardItem>
 
 GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoData {d, creator, condition}
+	GeoDataWithSingleMapper {d, creator, condition}
 {
 	setName("background");
 	setCaption(GeoDataBackground::tr("Default"));

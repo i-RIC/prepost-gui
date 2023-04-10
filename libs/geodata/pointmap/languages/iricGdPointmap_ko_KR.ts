@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>종류 (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>포인트 클라우드 표시 설정</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>모두 선택 해제 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>포인트 클라우드 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>기초적인</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>주석</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>포인트들</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>와이어프레임</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>표면</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>구분선</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>보여주다</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>매핑 설정 다각형</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>값의 컬러맵</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>포인트 클라우드 표시 설정</translation>
+        <translation type="vanished">포인트 클라우드 표시 설정</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>기초적인</translation>
+        <translation type="vanished">기초적인</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>주석</translation>
+        <translation type="vanished">주석</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>포인트들</translation>
+        <translation type="vanished">포인트들</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>포인트 크기:</translation>
+        <translation type="vanished">포인트 크기:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>와이어프레임</translation>
+        <translation type="vanished">와이어프레임</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>선의 폭:</translation>
+        <translation type="vanished">선의 폭:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>표면</translation>
+        <translation type="vanished">표면</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>구분선</translation>
+        <translation type="vanished">구분선</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>보여주다</translation>
+        <translation type="vanished">보여주다</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>매핑 설정 다각형</translation>
+        <translation type="vanished">매핑 설정 다각형</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>값에 대한 컬러맵</translation>
+        <translation type="vanished">값에 대한 컬러맵</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>수입 (&amp;I)</translation>
+        <translation type="vanished">수입 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>내보내다 (&amp;E)</translation>
+        <translation type="vanished">내보내다 (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">긴 모서리가 있는 삼각형 제거</translation>
+        <translation>긴 모서리가 있는 삼각형 제거</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">가장자리 길이 제한:</translation>
+        <translation>가장자리 길이 제한:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

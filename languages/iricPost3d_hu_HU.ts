@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Hatótávolság</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Arcok</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Irány</translation>
+        <translation type="vanished">Irány</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>én</translation>
+        <translation type="vanished">én</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Hatótávolság</translation>
+        <translation type="vanished">Hatótávolság</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Én benne vagyok</translation>
+        <translation type="vanished">Én benne vagyok</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Én Max</translation>
+        <translation type="vanished">Én Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Engedélyezve</translation>
+        <translation type="vanished">Engedélyezve</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mintavétel</translation>
+        <translation type="vanished">Mintavétel</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Minden csúcs</translation>
+        <translation type="vanished">Minden csúcs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Mintavételi arány:</translation>
+        <translation type="vanished">Mintavételi arány:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-irány</translation>
+        <translation type="vanished">I-irány</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-irány</translation>
+        <translation type="vanished">J-irány</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-irány</translation>
+        <translation type="vanished">K-irány</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nyíl Alak</translation>
+        <translation type="vanished">Nyíl Alak</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nyíl méret:</translation>
+        <translation type="vanished">Nyíl méret:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nyilak beállítása</translation>
+        <translation type="vanished">Nyilak beállítása</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Közös beállítás</translation>
+        <translation type="vanished">Közös beállítás</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizikai érték:</translation>
+        <translation type="vanished">Fizikai érték:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Hossz</translation>
+        <translation type="vanished">Hossz</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikus</translation>
+        <translation type="vanished">Automatikus</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard érték:</translation>
+        <translation type="vanished">Standard érték:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Kisasszony]</translation>
+        <translation type="vanished">[Kisasszony]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Hossz a képernyőn:</translation>
+        <translation type="vanished">Hossz a képernyőn:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[képpont]</translation>
+        <translation type="vanished">[képpont]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimális rajzolható érték:</translation>
+        <translation type="vanished">Minimális rajzolható érték:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Arcok</translation>
+        <translation type="vanished">Arcok</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Hozzáadás (&amp;A)</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eltávolítás (&amp;R)</translation>
+        <translation type="vanished">Eltávolítás (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Arc %1</translation>
+        <translation type="vanished">Arc %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Hossz Legend</translation>
+        <translation type="vanished">Hossz Legend</translation>
     </message>
 </context>
 <context>

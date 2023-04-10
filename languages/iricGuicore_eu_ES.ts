@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Oinarrizkoa</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
+        <translation type="vanished">Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Tamaina eta posizioa</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Norabidea:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Bertikala</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Etiketa kopurua:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Autoa</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Graduazio modura aldatzean, balioak atal bakoitzaren erdiko balioan ezartzen dira.</translation>
+        <translation type="vanished">Graduazio modura aldatzean, balioak atal bakoitzaren erdiko balioan ezartzen dira.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Esportatu (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Atal bakoitzean txertatzeko kolore kopurua</translation>
+        <translation type="vanished">Atal bakoitzean txertatzeko kolore kopurua</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Balio-barrutia</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Kolore kopurua:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributu</translation>
+        <translation type="vanished">Atributu</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Kolormapen ezarpena</translation>
+        <translation type="vanished">Kolormapen ezarpena</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Balio tartea</translation>
+        <translation type="vanished">Balio tartea</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Bete goiko eremua</translation>
+        <translation type="vanished">Bete goiko eremua</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Bete beheko eremua</translation>
+        <translation type="vanished">Bete beheko eremua</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Zatiketa zenbakia:</translation>
+        <translation type="vanished">Zatiketa zenbakia:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kolormapa</translation>
+        <translation type="vanished">Kolormapa</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Koloreen ezarpena</translation>
+        <translation type="vanished">Koloreen ezarpena</translation>
     </message>
 </context>
 <context>

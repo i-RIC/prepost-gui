@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Dodaj novo %1</translation>
+        <translation type="vanished">Dodaj novo %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Nastavitev barve (&amp;S)...</translation>
+        <translation type="vanished">Nastavitev barve (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Urejanje barvnih nastavitev</translation>
+        <translation type="vanished">Urejanje barvnih nastavitev</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopirati...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Nastavitev zaslona (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Nastavitev barve PolyData</translation>
+        <translation type="vanished">Nastavitev barve PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva po vrednosti</translation>
+        <translation type="vanished">Barva po vrednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Barva po meri</translation>
+        <translation type="vanished">Barva po meri</translation>
     </message>
 </context>
 <context>

@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Renk Ayarı Düzenleme</translation>
+        <translation type="vanished">Renk Ayarı Düzenleme</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Çizgi Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Çoklu Çizgi Grubu Görüntüleme Ayarı</translation>
+        <translation type="vanished">Çoklu Çizgi Grubu Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>değere göre renk</translation>
+        <translation type="vanished">değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Bu öğenin silinmesi, bu verilerle ilişkili tüm grafik pencerelerini de kaldıracaktır. Bu öğeyi silmek istediğinizden emin misiniz?</translation>
+        <translation type="vanished">Bu öğenin silinmesi, bu verilerle ilişkili tüm grafik pencerelerini de kaldıracaktır. Bu öğeyi silmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Görüntü ayarını düzenle</translation>
+        <translation type="vanished">Görüntü ayarını düzenle</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Çizgi Görüntüleme Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Ön İşleme Penceresinin Ayarını Kullanın</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Şekil Dosyası (Çizgiler) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>renk haritası</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
     </message>
 </context>
 </TS>

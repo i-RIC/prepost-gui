@@ -2,21 +2,27 @@
 #define POST2DWINDOWGEODATADATAITEM_H
 
 #include <guicore/datamodel/geodataproxydataitem.h>
+#include <guicore/post/post2d/base/post2dwindowgeodatadataiteminterface.h>
 
 class GeoDataProxy;
 
-class Post2dWindowGeoDataDataItem : public GeoDataProxyDataItem
+class Post2dWindowGeoDataDataItem : public GeoDataProxyDataItem, public Post2dWindowGeoDataDataItemInterface
 {
 	Q_OBJECT
 
 public:
 	Post2dWindowGeoDataDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowGeoDataDataItem();
+
+	GeoDataProxy* geoDataProxy() const;
 	void setGeoDataProxy(GeoDataProxy* proxy);
-	GeoDataProxy* geoDataProxy() const {return m_geoDataProxy;}
+
+	DelegatedColorMapSettingContainer* colorMapSetting() const override;
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void updateZDepthRangeItemCount() override;
+	GraphicsWindowDataModel* dataModel() const override;
+	void applyColorMapSetting();
 
 private slots:
 	void updateCaption(const QString& newcaption);
@@ -28,7 +34,6 @@ protected:
 
 private:
 	GeoDataProxy* m_geoDataProxy;
-
 };
 
 #endif // POST2DWINDOWGEODATADATAITEM_H

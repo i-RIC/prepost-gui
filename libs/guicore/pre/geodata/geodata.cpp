@@ -39,10 +39,6 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 	m_menu = new QMenu(projectData()->mainWindow());
 	m_editNameAction = new QAction(GeoData::tr("Edit &Name..."), this);
 	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
-	mapperFunc = &GeoData::nodeMappers;
-	if (condition != nullptr && condition->position() == SolverDefinitionGridAttribute::CellCenter) {
-		mapperFunc = &GeoData::cellMappers;
-	}
 }
 GeoData::~GeoData()
 {
@@ -64,15 +60,6 @@ const QString& GeoData::typeName() const
 	return m_creator->typeName();
 }
 
-void GeoData::setPosition(SolverDefinitionGridAttribute::Position pos)
-{
-	if (pos == SolverDefinitionGridAttribute::Node) {
-		mapperFunc = &GeoData::nodeMappers;
-	} else {
-		mapperFunc = &GeoData::cellMappers;
-	}
-}
-
 QString GeoData::caption() const
 {
 	return m_setting.caption;
@@ -91,46 +78,6 @@ SolverDefinitionGridAttribute* GeoData::gridAttribute() const
 GeoDataCreator* GeoData::creator() const
 {
 	return m_creator;
-}
-
-GeoDataMapper* GeoData::mapper() const
-{
-	return m_mapper;
-}
-
-void GeoData::setMapper(GeoDataMapper* m)
-{
-	m_mapper = m;
-}
-
-std::vector<GeoDataMapper*> GeoData::mappers() const
-{
-	return (this->*mapperFunc)();
-}
-
-void GeoData::setDefaultMapper()
-{
-	auto tmpmappers = mappers();
-	if (tmpmappers.size() == 0) {m_mapper = nullptr;}
-	m_mapper = tmpmappers[0];
-}
-
-std::vector<GeoDataMapper*> GeoData::nodeMappers() const
-{
-	if (m_creator == nullptr) {
-		std::vector<GeoDataMapper*> l;
-		return l;
-	}
-	return m_creator->nodeMappers();
-}
-
-std::vector<GeoDataMapper*> GeoData::cellMappers() const
-{
-	if (m_creator == nullptr) {
-		std::vector<GeoDataMapper*> l;
-		return l;
-	}
-	return m_creator->cellMappers();
 }
 
 std::vector<GeoDataImporter*> GeoData::importers() const
@@ -251,8 +198,7 @@ void GeoData::handlePropertyDialogAccepted(QDialog*)
 
 ColorMapSettingContainerI* GeoData::colorMapSettingContainer() const
 {
-	auto di = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (parent());
-	return di->colorMapSettingContainer();
+	return geoDataDataItem()->colorMapSettingContainer();
 }
 
 void GeoData::update2Ds()
@@ -260,7 +206,7 @@ void GeoData::update2Ds()
 
 bool GeoData::isVisible() const
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	auto item = geoDataDataItem();
 	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
 }
 
@@ -312,6 +258,11 @@ PreProcessorGeoDataGroupDataItemInterface* GeoData::geoDataGroupDataItem() const
 PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const
 {
 	return dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+}
+
+PreProcessorGridTypeDataItemInterface* GeoData::gridTypeDataItem() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(geoDataTopDataItem()->parent());
 }
 
 PreProcessorHydraulicDataTopDataItemInterface* GeoData::hydraulicDataTopDataItem() const
@@ -391,6 +342,9 @@ vtkActor2DCollection* GeoData::actor2DCollection()
 	return geoDataDataItem()->actor2DCollection();
 }
 
+void GeoData::updateActorSetting()
+{}
+
 void GeoData::editName()
 {
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
@@ -399,32 +353,27 @@ void GeoData::editName()
 
 QAction* GeoData::deleteAction()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->dataModel()->objectBrowserView()->deleteAction();
+	return dataModel()->objectBrowserView()->deleteAction();
 }
 
 MouseBoundingBox* GeoData::mouseBoundingBox()
 {
-	PreProcessorGeoDataDataItemInterface* r = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return r->mouseBoundingBox();
+	return geoDataDataItem()->mouseBoundingBox();
 }
 
 PreProcessorDataModelInterface* GeoData::dataModel() const
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->dataModel();
+	return geoDataDataItem()->dataModel();
 }
 
 void GeoData::updateVisibility()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	item->updateVisibility();
+	geoDataDataItem()->updateVisibility();
 }
 
 void GeoData::updateVisibilityWithoutRendering()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	item->updateVisibilityWithoutRendering();
+	geoDataDataItem()->updateVisibilityWithoutRendering();
 }
 
 void GeoData::doLoadFromProjectMainFile(const QDomNode& node)
@@ -445,7 +394,7 @@ iRICLib::H5CgnsGeographicDataGroup::Type GeoData::iRICLibType() const
 
 GridAttributeDimensionsContainer* GeoData::dimensions() const
 {
-	PreProcessorGeoDataGroupDataItemInterface* item = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto item = geoDataGroupDataItem();
 	if (item == nullptr) {return nullptr;}
 	return item->dimensions();
 }

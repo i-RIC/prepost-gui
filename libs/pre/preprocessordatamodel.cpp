@@ -21,7 +21,7 @@
 #include "datamodel/preprocessorgeodatagroupdataitem.h"
 #include "datamodel/preprocessorgeodatatopdataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
-#include "factory/geodatafactory.h"
+#include "factory/geodatafactorysetup.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
 #include "preprocessorgraphicsview.h"
@@ -33,6 +33,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/hydraulicdata/hydraulicdataimporter.h>
 #include <guicore/project/projectdata.h>
@@ -90,6 +91,8 @@ PreProcessorGraphicsViewInterface* PreProcessorDataModel::graphicsView() const
 
 void PreProcessorDataModel::init()
 {
+	GeoDataFactorySetup::setup();
+
 	// setup the basic itemModel structure.
 	PreProcessorRootDataItem* root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
@@ -1433,6 +1436,12 @@ bool PreProcessorDataModel::checkMappingStatus()
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Mapping geographic data, boundary condition finished successfully."));
 	}
 	return ! mapExexuted;
+}
+
+PreProcessorGridTypeDataItemInterface* PreProcessorDataModel::gridTypeDataItem(const std::string& type) const
+{
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	return root->gridTypeDataItem(type);
 }
 
 PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem() const

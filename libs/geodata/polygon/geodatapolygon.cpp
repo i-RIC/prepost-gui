@@ -82,6 +82,12 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.svg"), GeoDataPolygon::tr("&Add Vertex"), m_parent)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.svg"), GeoDataPolygon::tr("&Remove Vertex"), m_parent)},
 	m_coordEditAction {new QAction(GeoDataPolygon::tr("Edit &Coordinates..."), m_parent)},
+	m_customHoleModeAction {nullptr},
+	m_customDeleteAction {nullptr},
+	m_customAddVertexAction {nullptr},
+	m_customRemoveVertexAction {nullptr},
+	m_customCoordEditAction {nullptr},
+
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
 	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
 	m_movePointPixmap {":/libs/guibase/images/cursorOpenHandPoint.png"},
@@ -850,97 +856,230 @@ void GeoDataPolygon::updateActionStatus()
 	case meDefining:
 		impl->m_addVertexAction->setDisabled(true);
 		impl->m_addVertexAction->setChecked(false);
+		if (impl->m_customAddVertexAction != nullptr) {
+			impl->m_customAddVertexAction->setDisabled(true);
+			impl->m_customAddVertexAction->setChecked(true);
+		}
 		impl->m_removeVertexAction->setDisabled(true);
 		impl->m_removeVertexAction->setChecked(false);
+		if (impl->m_customRemoveVertexAction != nullptr) {
+			impl->m_customRemoveVertexAction->setDisabled(true);
+			impl->m_customRemoveVertexAction->setChecked(false);
+		}
 		impl->m_coordEditAction->setEnabled(false);
-
+		if (impl->m_customCoordEditAction != nullptr) {
+			impl->m_customCoordEditAction->setEnabled(false);
+		}
 		impl->m_holeModeAction->setDisabled(true);
 		impl->m_holeModeAction->setChecked(false);
+		if (impl->m_customHoleModeAction != nullptr) {
+			impl->m_customHoleModeAction->setDisabled(true);
+			impl->m_customHoleModeAction->setChecked(false);
+		}
 		impl->m_deleteAction->setDisabled(true);
+		if (impl->m_customDeleteAction != nullptr) {
+			impl->m_customDeleteAction->setDisabled(true);
+		}
 		if (dynamic_cast<GeoDataPolygonRegionPolygon*>(impl->m_selectedPolygon) != nullptr) {
 //			m_defineModeAction->setChecked(true);
 		} else if (dynamic_cast<GeoDataPolygonHolePolygon*>(impl->m_selectedPolygon) != nullptr) {
 			impl->m_holeModeAction->setChecked(true);
+			if (impl->m_customHoleModeAction != nullptr) {
+				impl->m_customHoleModeAction->setChecked(true);
+			}
 		}
 		break;
 	case meTranslate:
 	case meMoveVertex:
 		impl->m_addVertexAction->setDisabled(true);
 		impl->m_addVertexAction->setChecked(false);
+		if (impl->m_customAddVertexAction != nullptr) {
+			impl->m_customAddVertexAction->setDisabled(true);
+			impl->m_customAddVertexAction->setChecked(false);
+		}
 		impl->m_removeVertexAction->setDisabled(true);
 		impl->m_removeVertexAction->setChecked(false);
+		if (impl->m_customRemoveVertexAction != nullptr) {
+			impl->m_customRemoveVertexAction->setDisabled(true);
+			impl->m_customRemoveVertexAction->setChecked(false);
+		}
 		impl->m_coordEditAction->setDisabled(true);
-
+		if (impl->m_customCoordEditAction != nullptr) {
+			impl->m_customCoordEditAction->setDisabled(true);
+		}
 		impl->m_holeModeAction->setDisabled(true);
+		if (impl->m_customHoleModeAction != nullptr) {
+			impl->m_customHoleModeAction->setDisabled(true);
+		}
 		impl->m_deleteAction->setDisabled(true);
-		break;
-
+		if (impl->m_customDeleteAction != nullptr) {
+			impl->m_customDeleteAction->setDisabled(true);
+		}
 		break;
 	case meNormal:
 	case meTranslatePrepare:
 	case meMoveVertexPrepare:
 		impl->m_addVertexAction->setChecked(false);
+		if (impl->m_customAddVertexAction != nullptr) {
+			impl->m_customAddVertexAction->setChecked(false);
+		}
 		impl->m_removeVertexAction->setChecked(false);
+		if (impl->m_customRemoveVertexAction != nullptr) {
+			impl->m_customRemoveVertexAction->setChecked(false);
+		}
 
 		if (impl->m_selectMode != smNone) {
 			impl->m_addVertexAction->setEnabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setEnabled(true);
+			}
 			if (impl->m_selectMode == smPolygon) {
 				impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+				if (impl->m_customRemoveVertexAction != nullptr) {
+					impl->m_customRemoveVertexAction->setEnabled(activePolygonHasFourVertices());
+				}
 			}
 			impl->m_coordEditAction->setEnabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setEnabled(true);
+			}
 		} else {
 			impl->m_addVertexAction->setDisabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setDisabled(true);
+			}
 			impl->m_removeVertexAction->setDisabled(true);
+			if (impl->m_customRemoveVertexAction != nullptr) {
+				impl->m_customRemoveVertexAction->setDisabled(true);
+			}
 			impl->m_coordEditAction->setDisabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setDisabled(true);
+			}
 		}
 
 		impl->m_holeModeAction->setEnabled(true);
 		impl->m_holeModeAction->setChecked(false);
+		if (impl->m_customHoleModeAction != nullptr) {
+			impl->m_customHoleModeAction->setEnabled(true);
+			impl->m_customHoleModeAction->setChecked(false);
+		}
 		if (impl->m_selectedPolygon != nullptr) {
 			impl->m_addVertexAction->setEnabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setEnabled(true);
+			}
 			impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+			if (impl->m_customRemoveVertexAction != nullptr) {
+				impl->m_customRemoveVertexAction->setEnabled(activePolygonHasFourVertices());
+			}
 			impl->m_coordEditAction->setEnabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setEnabled(true);
+			}
 			impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
+			if (impl->m_customDeleteAction != nullptr) {
+				impl->m_customDeleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
+			}
 		} else {
 			impl->m_addVertexAction->setDisabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setDisabled(true);
+			}
 			impl->m_removeVertexAction->setDisabled(true);
+			if (impl->m_customRemoveVertexAction != nullptr) {
+				impl->m_customRemoveVertexAction->setDisabled(true);
+			}
 			impl->m_coordEditAction->setDisabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setDisabled(true);
+			}
 			impl->m_deleteAction->setDisabled(true);
+			if (impl->m_customDeleteAction != nullptr) {
+				impl->m_customDeleteAction->setDisabled(true);
+			}
 		}
 		break;
 	case meAddVertexPrepare:
 	case meAddVertexNotPossible:
 	case meAddVertex:
 		impl->m_addVertexAction->setChecked(true);
+		if (impl->m_customAddVertexAction != nullptr) {
+			impl->m_customAddVertexAction->setChecked(true);
+		}
 		impl->m_removeVertexAction->setChecked(false);
+		if (impl->m_customRemoveVertexAction != nullptr) {
+			impl->m_customRemoveVertexAction->setChecked(false);
+		}
 
 		if (impl->m_selectMode != smNone) {
 			impl->m_addVertexAction->setEnabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setEnabled(true);
+			}
 			if (impl->m_selectMode == smPolygon) {
 				impl->m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
+				if (impl->m_customRemoveVertexAction != nullptr) {
+					impl->m_customRemoveVertexAction->setEnabled(activePolygonHasFourVertices());
+				}
 			}
 			impl->m_coordEditAction->setEnabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setEnabled(true);
+			}
 		} else {
 			impl->m_addVertexAction->setDisabled(true);
+			if (impl->m_customAddVertexAction != nullptr) {
+				impl->m_customAddVertexAction->setDisabled(true);
+			}
 			impl->m_removeVertexAction->setDisabled(true);
+			if (impl->m_customRemoveVertexAction != nullptr) {
+				impl->m_customRemoveVertexAction->setDisabled(true);
+			}
 			impl->m_coordEditAction->setDisabled(true);
+			if (impl->m_customCoordEditAction != nullptr) {
+				impl->m_customCoordEditAction->setDisabled(true);
+			}
 		}
 		impl->m_holeModeAction->setDisabled(true);
 		impl->m_holeModeAction->setChecked(false);
+		if (impl->m_customHoleModeAction != nullptr) {
+			impl->m_customHoleModeAction->setDisabled(true);
+			impl->m_customHoleModeAction->setChecked(false);
+		}
 		impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
-
+		if (impl->m_customDeleteAction != nullptr) {
+			impl->m_customDeleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
+		}
 		break;
 	case meRemoveVertexPrepare:
 	case meRemoveVertexNotPossible:
 		impl->m_addVertexAction->setEnabled(true);
 		impl->m_addVertexAction->setChecked(false);
+		if (impl->m_customAddVertexAction != nullptr) {
+			impl->m_customAddVertexAction->setEnabled(true);
+			impl->m_customAddVertexAction->setChecked(false);
+		}
 		impl->m_removeVertexAction->setEnabled(true);
 		impl->m_removeVertexAction->setChecked(true);
+		if (impl->m_customRemoveVertexAction != nullptr) {
+			impl->m_customRemoveVertexAction->setEnabled(true);
+			impl->m_customRemoveVertexAction->setChecked(true);
+		}
 		impl->m_coordEditAction->setEnabled(false);
-
+		if (impl->m_customCoordEditAction != nullptr) {
+			impl->m_customCoordEditAction->setEnabled(false);
+		}
 		impl->m_holeModeAction->setDisabled(true);
 		impl->m_holeModeAction->setChecked(false);
+		if (impl->m_customHoleModeAction != nullptr) {
+			impl->m_customHoleModeAction->setDisabled(true);
+			impl->m_customHoleModeAction->setChecked(false);
+		}
 		impl->m_deleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
+		if (impl->m_customDeleteAction != nullptr) {
+			impl->m_customDeleteAction->setEnabled(impl->m_selectedPolygon != impl->m_regionPolygon);
+		}
 		break;
 	case meTranslateDialog:
 	case meEditVerticesDialog:
@@ -1002,7 +1141,7 @@ GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 	}
 	pol->setActive(true);
 	pol->setColor(color());
-	pol->setLineWidth(impl->m_regionPolygon->lineWidth());
+	pol->setLineWidth(impl->m_regionPolygon->lineWidth() / 2.0);
 	pol->setMapping(colorSetting().mapping);
 
 	return pol;
@@ -1472,6 +1611,31 @@ QAction* GeoDataPolygon::holeModeAction() const
 QAction* GeoDataPolygon::deleteAction() const
 {
 	return impl->m_deleteAction;
+}
+
+void GeoDataPolygon::setAddVertexAction(QAction* action)
+{
+	impl->m_customAddVertexAction = action;
+}
+
+void GeoDataPolygon::setRemoveVertexAction(QAction* action)
+{
+	impl->m_customRemoveVertexAction = action;
+}
+
+void GeoDataPolygon::setCoordEditAction(QAction* action)
+{
+	impl->m_customCoordEditAction = action;
+}
+
+void GeoDataPolygon::setHoleModeAction(QAction* action)
+{
+	impl->m_customHoleModeAction = action;
+}
+
+void GeoDataPolygon::setDeleteAction(QAction* action)
+{
+	impl->m_customDeleteAction = action;
 }
 
 void GeoDataPolygon::setShapeUpdating(bool updating)

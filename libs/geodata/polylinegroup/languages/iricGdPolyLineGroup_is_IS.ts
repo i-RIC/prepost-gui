@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Litastilling Breyta</translation>
+        <translation type="vanished">Litastilling Breyta</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Línuskjástillingar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Group Display Stilling</translation>
+        <translation type="vanished">Polyline Group Display Stilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
+        <translation type="vanished">Litur eftir gildi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Línubreidd:</translation>
+        <translation type="vanished">Línubreidd:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Með því að eyða þessu atriði verður einnig eytt öllum línuritagluggum sem tengjast þessum gögnum. Ertu viss um að þú viljir eyða þessu atriði?</translation>
+        <translation type="vanished">Með því að eyða þessu atriði verður einnig eytt öllum línuritagluggum sem tengjast þessum gögnum. Ertu viss um að þú viljir eyða þessu atriði?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Breyta skjástillingu</translation>
+        <translation type="vanished">Breyta skjástillingu</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Línuskjástillingar</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Notaðu stillingu á forvinnsluglugganum</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (línur) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Litakort</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Línubreidd:</translation>
     </message>
 </context>
 </TS>

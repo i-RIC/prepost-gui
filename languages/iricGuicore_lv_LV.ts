@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Pamata</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Krāsu karte</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importējot, ignorējiet krāsu joslas iestatījumu</translation>
+        <translation type="vanished">Importējot, ignorējiet krāsu joslas iestatījumu</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Izmērs un pozīcija</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Virziens:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontāli</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikāli</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Etiķešu skaits:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Pārslēdzoties uz gradācijas režīmu, vērtības tiek iestatītas uz katras sadaļas vidējo vērtību.</translation>
+        <translation type="vanished">Pārslēdzoties uz gradācijas režīmu, vērtības tiek iestatītas uz katras sadaļas vidējo vērtību.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Eksportēt (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Katrā sadaļā ievietojamo krāsu skaits</translation>
+        <translation type="vanished">Katrā sadaļā ievietojamo krāsu skaits</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Vērtību diapazons</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Krāsu skaits:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribūts</translation>
+        <translation type="vanished">Atribūts</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Izmantojiet priekšapstrādes loga iestatījumu</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportēt (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Krāsu kartes iestatīšana</translation>
+        <translation type="vanished">Krāsu kartes iestatīšana</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Vērtību diapazons</translation>
+        <translation type="vanished">Vērtību diapazons</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Aizpildiet augšējo laukumu</translation>
+        <translation type="vanished">Aizpildiet augšējo laukumu</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Aizpildiet apakšējo laukumu</translation>
+        <translation type="vanished">Aizpildiet apakšējo laukumu</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Nodaļas numurs:</translation>
+        <translation type="vanished">Nodaļas numurs:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks.</translation>
+        <translation type="vanished">Maks.</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Krāsu karte</translation>
+        <translation type="vanished">Krāsu karte</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Krāsu iestatīšana</translation>
+        <translation type="vanished">Krāsu iestatīšana</translation>
     </message>
 </context>
 <context>

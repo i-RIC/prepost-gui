@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kleurinstelling bewerken</translation>
+        <translation type="vanished">Kleurinstelling bewerken</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Polygonen weergave-instelling</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Weergave-instelling polygoongroep</translation>
+        <translation type="vanished">Weergave-instelling polygoongroep</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Kleur op waarde</translation>
+        <translation type="vanished">Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Weergave-instelling bewerken</translation>
+        <translation type="vanished">Weergave-instelling bewerken</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Polygonen weergave-instelling</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lijnbreedte:</translation>
     </message>
 </context>
 </TS>

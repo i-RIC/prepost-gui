@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>기초적인</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>가져올 때 색상 막대 설정 무시</translation>
+        <translation type="vanished">가져올 때 색상 막대 설정 무시</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>크기와 위치</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>방향:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>수평의</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>수직의</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>레이블 수:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>자동</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>그라데이션 모드로 전환 시 각 구간의 중간 값으로 값이 설정됩니다.</translation>
+        <translation type="vanished">그라데이션 모드로 전환 시 각 구간의 중간 값으로 값이 설정됩니다.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>내보내다 (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>각 섹션에 삽입할 색상 수</translation>
+        <translation type="vanished">각 섹션에 삽입할 색상 수</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>값 범위</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>색상 수:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>기인하다</translation>
+        <translation type="vanished">기인하다</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>내보내다 (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>컬러맵 설정</translation>
+        <translation type="vanished">컬러맵 설정</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>값 범위</translation>
+        <translation type="vanished">값 범위</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>자동적 인</translation>
+        <translation type="vanished">자동적 인</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>상단 영역 채우기</translation>
+        <translation type="vanished">상단 영역 채우기</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>최소:</translation>
+        <translation type="vanished">최소:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>하단 영역 채우기</translation>
+        <translation type="vanished">하단 영역 채우기</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>부서 번호:</translation>
+        <translation type="vanished">부서 번호:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>최대:</translation>
+        <translation type="vanished">최대:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>컬러맵</translation>
+        <translation type="vanished">컬러맵</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>색상 설정</translation>
+        <translation type="vanished">색상 설정</translation>
     </message>
 </context>
 <context>

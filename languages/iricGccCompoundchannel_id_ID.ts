@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>Koordinat Poliline</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Tambahkan Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Hapus Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Sunting Koordinat (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Membalikkan Arah Garis Tengah (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

@@ -67,6 +67,7 @@ LIBS += \
 	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
 	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
 	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeometry-$${VTK_MAJ_MIN} \
 	-lvtkFiltersExtraction-$${VTK_MAJ_MIN}
 
 # iriclib
@@ -155,6 +156,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfintegerimporter.h \
            geodatanetcdfncexporter.h \
            geodatanetcdfnodemappert.h \
+           geodatanetcdfproxy.h \
            geodatanetcdfreal.h \
            geodatanetcdfrealcreator.h \
            geodatanetcdfrealimporter.h \
@@ -164,18 +166,25 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdftimeseriesintegercreator.h \
            geodatanetcdftimeseriesrealcreator.h \
            geodatanetcdfxbandimporter.h \
-           private/geodatanetcdf_editpropertycommand.h \
+           private/geodatanetcdf_displaysetting.h \
+           private/geodatanetcdf_impl.h \
            private/geodatanetcdfcellmappert_detail.h \
            private/geodatanetcdfcreatort_detail.h \
            private/geodatanetcdfimportert_detail.h \
            private/geodatanetcdfnodemappert_detail.h \
+           private/geodatanetcdfproxy_displaysetting.h \
+           private/geodatanetcdfproxy_displaysettingwidget.h \
+           private/geodatanetcdfproxy_impl.h \
            private/geodatanetcdft_detail.h \
-           private/geodatanetcdftimeseriescreatort_detail.h
+           private/geodatanetcdftimeseriescreatort_detail.h \
+           public/geodatanetcdf_displaysettingwidget.h
 FORMS += geodatanetcdfcolorsettingdialog.ui \
          geodatanetcdffilelistdialog.ui \
          geodatanetcdffilenamepatterndialog.ui \
          geodatanetcdfimporterdateselectdialog.ui \
-         geodatanetcdfimportersettingdialog.ui
+         geodatanetcdfimportersettingdialog.ui \
+         private/geodatanetcdfproxy_displaysettingwidget.ui \
+         public/geodatanetcdf_displaysettingwidget.ui
 SOURCES += geodatanetcdf.cpp \
            geodatanetcdfcolorsettingdialog.cpp \
            geodatanetcdfcreator.cpp \
@@ -197,6 +206,7 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdfintegercreator.cpp \
            geodatanetcdfintegerimporter.cpp \
            geodatanetcdfncexporter.cpp \
+           geodatanetcdfproxy.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
            geodatanetcdfrealimporter.cpp \
@@ -204,7 +214,12 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdftimeseriesintegercreator.cpp \
            geodatanetcdftimeseriesrealcreator.cpp \
            geodatanetcdfxbandimporter.cpp \
-           private/geodatanetcdf_editpropertycommand.cpp
+           private/geodatanetcdf_displaysetting.cpp \
+           private/geodatanetcdf_impl.cpp \
+           private/geodatanetcdfproxy_displaysetting.cpp \
+           private/geodatanetcdfproxy_displaysettingwidget.cpp \
+           private/geodatanetcdfproxy_impl.cpp \
+           public/geodatanetcdf_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdNetcdf_ar_EG.ts \
                 languages/iricGdNetcdf_bg_BG.ts \
                 languages/iricGdNetcdf_bs_BA.ts \

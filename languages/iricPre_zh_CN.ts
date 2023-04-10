@@ -1237,29 +1237,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>地理数据映射</translation>
+        <translation type="vanished">地理数据映射</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>TINs映射</translation>
+        <translation type="vanished">TINs映射</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>从地理数据创建的TIN用于映射。 网格节点属性值计算为TIN节点值的加权平均值。</translation>
+        <translation type="vanished">从地理数据创建的TIN用于映射。 网格节点属性值计算为TIN节点值的加权平均值。</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>模板映射</translation>
+        <translation type="vanished">模板映射</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>查找有关网格单元格形状的，靠近网格节点的地理数据点，并使用这些点上的值进行插值。
+        <translation type="vanished">查找有关网格单元格形状的，靠近网格节点的地理数据点，并使用这些点上的值进行插值。
 该算法只能用于结构化网格。</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>&amp;细节...</translation>
+        <translation type="vanished">&amp;细节...</translation>
     </message>
 </context>
 <context>

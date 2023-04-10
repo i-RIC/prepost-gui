@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>添新 %1</translation>
+        <translation type="vanished">添新 %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>顏色設置 (&amp;S)...</translation>
+        <translation type="vanished">顏色設置 (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>顏色設置編輯</translation>
+        <translation type="vanished">顏色設置編輯</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>複製...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>顯示設定 (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData 顏色設置</translation>
+        <translation type="vanished">PolyData 顏色設置</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>按值著色</translation>
+        <translation type="vanished">按值著色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定義顏色</translation>
+        <translation type="vanished">自定義顏色</translation>
     </message>
 </context>
 <context>

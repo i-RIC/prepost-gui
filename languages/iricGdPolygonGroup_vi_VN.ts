@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Chỉnh sửa cài đặt màu</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Cài đặt hiển thị đa giác</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Cài đặt hiển thị nhóm đa giác</translation>
+        <translation type="vanished">Cài đặt hiển thị nhóm đa giác</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu</translation>
+        <translation type="vanished">Màu</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Màu theo giá trị</translation>
+        <translation type="vanished">Màu theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hiển thị</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Cài đặt hiển thị đa giác</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Cảnh báo</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
     </message>
 </context>
 </TS>

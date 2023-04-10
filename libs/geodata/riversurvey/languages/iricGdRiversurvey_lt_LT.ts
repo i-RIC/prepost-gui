@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Redaguoti ekrano nustatymus</translation>
+        <translation type="vanished">Redaguoti ekrano nustatymus</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Skerspjūvio duomenys generuojami naudojant taškų debesies duomenis. Kai kuriuose regionuose taškų debesies duomenyse nebuvo, o tų taškų reikšmė buvo 0. Jei norite vėl koreguoti skerspjūvio padėtį ir žemėlapio taškų debesies duomenis, galite naudoti „Žemėlapio taškų debesies duomenys“.</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Skerspjūvio duomenų rodymo nustatymas</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Skerspjūvio duomenys (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Skerspjūvio duomenys (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linija %2 : "%3": Vėliavos duomenys neteisingi.</translation>
+        <translation type="vanished">%1 linija %2 : "%3": Vėliavos duomenys neteisingi.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redaguoti ekrano nustatymus</translation>
+        <translation type="vanished">Redaguoti ekrano nustatymus</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Skerspjūvio duomenų rodymo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK failas (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Fono spalva</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; galite tinkinti spalvą naudodami skirtuką Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Skerspjūvio linijos</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z skalė:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Skerspjūvių pavadinimai</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
     </message>
 </context>
 <context>

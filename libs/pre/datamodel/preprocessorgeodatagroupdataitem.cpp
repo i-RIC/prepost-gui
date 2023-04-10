@@ -1,4 +1,3 @@
-#include "../factory/geodatafactory.h"
 #include "../misc/preprocessorlegendboxeditdialog.h"
 #include "../preobjectbrowserview.h"
 #include "../preprocessordatamodel.h"
@@ -24,6 +23,7 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
+#include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/geodata/geodataimporter.h>
 #include <guicore/pre/geodata/geodatawebimporter.h>
 #include <guicore/pre/geodata/geodatamapper.h>
@@ -132,7 +132,7 @@ PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 
 void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	GeoDataFactory& factory = GeoDataFactory::instance();
+	auto& factory = GeoDataFactory::instance();
 	// create import menu and add menu.
 	m_importMenu = new QMenu(tr("&Import"), menu);
 	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
@@ -749,7 +749,7 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 {
 	m_variationSetting.load(node);
 
-	GeoDataFactory& factory = GeoDataFactory::instance();
+	auto& factory = GeoDataFactory::instance();
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count() - 1; ++i) {
 		PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
@@ -973,13 +973,15 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 
 void PreProcessorGeoDataGroupDataItem::applyColorMapSetting()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		item->applyColorMapSetting();
 	}
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
 	auto setting = typedi->colorMapSetting(condition()->name());
-	setting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+	if (setting != nullptr) {
+		setting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+	}
 }
 
 void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()

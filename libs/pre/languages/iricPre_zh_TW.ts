@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>地理數據映射</translation>
+        <translation type="vanished">地理數據映射</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>使用 TIN 映射</translation>
+        <translation type="vanished">使用 TIN 映射</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>從地理數據創建的 TIN 用於製圖。網格節點屬性值計算為 TIN 節點值的加權平均值。</translation>
+        <translation type="vanished">從地理數據創建的 TIN 用於製圖。網格節點屬性值計算為 TIN 節點值的加權平均值。</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>模板映射</translation>
+        <translation type="vanished">模板映射</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>查找靠近網格節點的地理數據點，關於網格單元形狀，並使用這些點處的值進行插值。該算法只能用於結構化網格。</translation>
+        <translation type="vanished">查找靠近網格節點的地理數據點，關於網格單元形狀，並使用這些點處的值進行插值。該算法只能用於結構化網格。</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>細節 (&amp;D)...</translation>
+        <translation type="vanished">細節 (&amp;D)...</translation>
     </message>
 </context>
 <context>

@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Színbeállítás szerkesztése</translation>
+        <translation type="vanished">Színbeállítás szerkesztése</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Vonalak megjelenítési beállítása</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Vonallánccsoport megjelenítési beállítása</translation>
+        <translation type="vanished">Vonallánccsoport megjelenítési beállítása</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Szín érték szerint</translation>
+        <translation type="vanished">Szín érték szerint</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Vonalvastagság:</translation>
+        <translation type="vanished">Vonalvastagság:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Ha törli ezt az elemet, az ezen adatokhoz tartozó grafikonablakok is eltávolításra kerülnek. Biztosan törli ezt az elemet?</translation>
+        <translation type="vanished">Ha törli ezt az elemet, az ezen adatokhoz tartozó grafikonablakok is eltávolításra kerülnek. Biztosan törli ezt az elemet?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Megjelenítési beállítás szerkesztése</translation>
+        <translation type="vanished">Megjelenítési beállítás szerkesztése</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Vonalak megjelenítési beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Használja az Előfeldolgozási ablak beállítását</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (sorok) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Vonalvastagság:</translation>
     </message>
 </context>
 </TS>

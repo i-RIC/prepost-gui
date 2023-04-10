@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>A continuació, definiu la línia central de la quadrícula. La línia central de la quadrícula es pot definir com a línia poligonal fent clic amb el ratolí. Acabeu de definir fent doble clic o prement la tecla Retorn.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Afegeix Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Elimina Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Edita les coordenades (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Invertir la direcció de la línia central (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Grunnleggende</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Fargekart</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorer innstillingen for fargelinje ved import</translation>
+        <translation type="vanished">Ignorer innstillingen for fargelinje ved import</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Størrelse og plassering</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Retning:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Antall etiketter:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Når du bytter til graderingsmodus, settes verdiene til den midterste verdien for hver seksjon.</translation>
+        <translation type="vanished">Når du bytter til graderingsmodus, settes verdiene til den midterste verdien for hver seksjon.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Eksport (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Antall farger som skal settes inn i hver seksjon</translation>
+        <translation type="vanished">Antall farger som skal settes inn i hver seksjon</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Verdiområde</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Antall farger:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Skjema</translation>
+        <translation type="vanished">Skjema</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Egenskap</translation>
+        <translation type="vanished">Egenskap</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Bruk innstilling av forhåndsbehandlingsvinduet</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Innstilling for fargekart</translation>
+        <translation type="vanished">Innstilling for fargekart</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Verdiområde</translation>
+        <translation type="vanished">Verdiområde</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatisk</translation>
+        <translation type="vanished">Automatisk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Fyll øvre område</translation>
+        <translation type="vanished">Fyll øvre område</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Fyll nedre område</translation>
+        <translation type="vanished">Fyll nedre område</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Divisjonsnummer:</translation>
+        <translation type="vanished">Divisjonsnummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks:</translation>
+        <translation type="vanished">Maks:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Fargekart</translation>
+        <translation type="vanished">Fargekart</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Fargeinnstilling</translation>
+        <translation type="vanished">Fargeinnstilling</translation>
     </message>
 </context>
 <context>

@@ -5,13 +5,13 @@
 
 #include "geodatapolydatacolorsettingdialog.h"
 
-#include <guicore/pre/geodata/geodata.h>
+#include <guicore/pre/geodata/geodatawithsinglemapper.h>
 
 class QAction;
 class QMenu;
 class QToolBar;
 
-class GD_POLYDATA_EXPORT GeoDataPolyData : public GeoData
+class GD_POLYDATA_EXPORT GeoDataPolyData : public GeoDataWithSingleMapper
 {
 	Q_OBJECT
 

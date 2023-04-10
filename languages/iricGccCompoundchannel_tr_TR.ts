@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Ardından, lütfen ızgara merkez çizgisini tanımlayın. Izgara merkez çizgisi, fare ile tıklanarak çokgen çizgi olarak tanımlanabilir. Tanımlamayı çift tıklayarak veya dönüş tuşuna basarak bitirin.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Tepe Noktası Ekle (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Vertex'i kaldır (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Koordinatları Düzenle (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Orta Çizgi Yönünü Ters Çevir (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

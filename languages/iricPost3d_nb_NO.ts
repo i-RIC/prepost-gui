@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Område</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Fargekart</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Ansikter</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Fargekart</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Skjema</translation>
+        <translation type="vanished">Skjema</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Retning</translation>
+        <translation type="vanished">Retning</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Jeg</translation>
+        <translation type="vanished">Jeg</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Område</translation>
+        <translation type="vanished">Område</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jeg er med</translation>
+        <translation type="vanished">Jeg er med</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Maks</translation>
+        <translation type="vanished">I Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Maks</translation>
+        <translation type="vanished">J Maks</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Maks</translation>
+        <translation type="vanished">K Maks</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Aktivert</translation>
+        <translation type="vanished">Aktivert</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Prøvetaking</translation>
+        <translation type="vanished">Prøvetaking</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alle hjørner</translation>
+        <translation type="vanished">Alle hjørner</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Prøvetakingshastighet:</translation>
+        <translation type="vanished">Prøvetakingshastighet:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Jeg-retning</translation>
+        <translation type="vanished">Jeg-retning</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-retning</translation>
+        <translation type="vanished">J-retning</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-retning</translation>
+        <translation type="vanished">K-retning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egendefinert farge</translation>
+        <translation type="vanished">Egendefinert farge</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Etter skalarverdi</translation>
+        <translation type="vanished">Etter skalarverdi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstørrelse:</translation>
+        <translation type="vanished">Pilstørrelse:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linje bredde:</translation>
+        <translation type="vanished">Linje bredde:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinnstilling</translation>
+        <translation type="vanished">Pilinnstilling</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Felles setting</translation>
+        <translation type="vanished">Felles setting</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysisk verdi:</translation>
+        <translation type="vanished">Fysisk verdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengde</translation>
+        <translation type="vanished">Lengde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standard verdi:</translation>
+        <translation type="vanished">Standard verdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengde på skjermen:</translation>
+        <translation type="vanished">Lengde på skjermen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minste verdi å trekke:</translation>
+        <translation type="vanished">Minste verdi å trekke:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Ansikter</translation>
+        <translation type="vanished">Ansikter</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Legge til (&amp;A)</translation>
+        <translation type="vanished">Legge til (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Ta bort (&amp;R)</translation>
+        <translation type="vanished">Ta bort (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Ansikt %1</translation>
+        <translation type="vanished">Ansikt %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Lengdeforklaring</translation>
+        <translation type="vanished">Lengdeforklaring</translation>
     </message>
 </context>
 <context>

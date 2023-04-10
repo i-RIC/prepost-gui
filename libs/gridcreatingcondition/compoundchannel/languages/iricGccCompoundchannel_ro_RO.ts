@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Apoi, vă rugăm să definiți linia centrală a grilei. Linia centrală a rețelei poate fi definită ca linie poligonală făcând clic pe mouse. Terminați definirea făcând dublu clic sau apăsând tasta returnare.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Adăugați Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Eliminați Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Editați coordonatele (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Inversa directia liniei centrale (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

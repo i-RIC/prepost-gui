@@ -26,16 +26,14 @@ public:
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	QStringList containedFiles() const override;
 
 	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
-	void loadExternalData(const QString& filename) override;
-	void saveExternalData(const QString& filename) override;
 
 	GeoDataPolyDataGroupPolyData* createNewData() override;
 	GeoDataPolyData* createEditTargetData() override;
@@ -54,9 +52,7 @@ private:
 
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface *d) override;
 
-	class PropertyDialog;
-	class Setting;
-	class UpdateActorSettingCommand;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;

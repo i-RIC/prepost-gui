@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Spalvų nustatymo redagavimas</translation>
+        <translation type="vanished">Spalvų nustatymo redagavimas</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Daugiakampių rodymo nustatymas</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Daugiakampių grupės ekrano nustatymas</translation>
+        <translation type="vanished">Daugiakampių grupės ekrano nustatymas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Spalva pagal vertę</translation>
+        <translation type="vanished">Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pasirinktinė spalva</translation>
+        <translation type="vanished">Pasirinktinė spalva</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redaguoti ekrano nustatymą</translation>
+        <translation type="vanished">Redaguoti ekrano nustatymą</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Daugiakampių rodymo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Įspėjimas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
     </message>
 </context>
 </TS>

@@ -8,8 +8,8 @@ template <class V, class DA>
 class GeoDataCellMapperT : public GeoDataMapperT<V>
 {
 public:
-	GeoDataCellMapperT(const QString& caption, GeoDataCreator* parent);
-	virtual ~GeoDataCellMapperT();
+	GeoDataCellMapperT(const QString& caption, QObject* parent);
+	~GeoDataCellMapperT();
 
 protected:
 	GridAttributeCellContainerT<V, DA>* container() const;

@@ -11,6 +11,28 @@
     </message>
 </context>
 <context>
+    <name>ModifyCommandDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>대화</translation>
+    </message>
+</context>
+<context>
+    <name>QFontEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation>편집하다...</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source> Revision %1</source>

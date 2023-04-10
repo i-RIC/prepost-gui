@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Tālāk, lūdzu, definējiet režģa centra līniju. Režģa viduslīniju var definēt kā daudzstūra līniju, noklikšķinot ar peli. Pabeidziet definēšanu, veicot dubultklikšķi vai nospiežot atgriešanās taustiņu.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Pievienojiet virsotni (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Noņemiet virsotni (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Rediģēt koordinātes (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Apgrieztā centra līnijas virziens (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

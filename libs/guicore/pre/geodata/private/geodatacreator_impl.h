@@ -11,9 +11,6 @@ public:
 	QString m_caption;
 	QString m_typeName;
 
-	std::vector<GeoDataMapper*> m_nodeMappers;
-	std::vector<GeoDataMapper*> m_cellMappers;
-
 	std::vector<GeoDataImporter*> m_importers;
 	std::vector<GeoDataWebImporter*> m_webImporters;
 	std::vector<GeoDataExporter*> m_exporters;

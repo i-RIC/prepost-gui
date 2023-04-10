@@ -55,7 +55,11 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Editar configuración de color</translation>
+        <translation type="vanished">Editar configuración de color</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
     </message>
 </context>
 <context>
@@ -77,11 +81,11 @@
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color por Valor</translation>
+        <translation type="vanished">Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color Personalizado</translation>
+        <translation type="vanished">Color Personalizado</translation>
     </message>
     <message>
         <source>Polygon</source>
@@ -93,15 +97,15 @@
     </message>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Configuración de visualización del grupo de polígonos</translation>
+        <translation type="vanished">Configuración de visualización del grupo de polígonos</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Grosor de línea:</translation>
+        <translation type="vanished">Grosor de línea:</translation>
     </message>
 </context>
 <context>
@@ -237,7 +241,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editar configuración de pantalla</translation>
+        <translation type="vanished">Editar configuración de pantalla</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Usar la configuración de la ventana de preprocesamiento</translation>
     </message>
 </context>
 <context>
@@ -324,6 +343,33 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation type="vanished">No puedes especificar la misma columna para nombre y valor.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Color por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Color personalizado</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>mapa de colores</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de línea:</translation>
     </message>
 </context>
 </TS>

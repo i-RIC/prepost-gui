@@ -1342,29 +1342,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>地勢データのマッピング</translation>
+        <translation type="vanished">地勢データのマッピング</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>TIN によるマッピング</translation>
+        <translation type="vanished">TIN によるマッピング</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>地勢データから生成された TIN をマッピングに利用します。格子頂点の属性の値は、その頂点を含む TIN の頂点での値の重みつき平均になります。</translation>
+        <translation type="vanished">地勢データから生成された TIN をマッピングに利用します。格子頂点の属性の値は、その頂点を含む TIN の頂点での値の重みつき平均になります。</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>テンプレートマッピング</translation>
+        <translation type="vanished">テンプレートマッピング</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>格子点に近い地勢データの点を、格子セルの形状を考慮して探し、見つかった点での値を補間に使用します。
+        <translation type="vanished">格子点に近い地勢データの点を、格子セルの形状を考慮して探し、見つかった点での値を補間に使用します。
 このアルゴリズムは、構造格子についてのみ利用できます。</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>詳細(&amp;D)...</translation>
+        <translation type="vanished">詳細(&amp;D)...</translation>
     </message>
 </context>
 <context>

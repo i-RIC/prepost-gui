@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Smazat body</translation>
+        <translation type="vanished">Smazat body</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Vybrané vlastnosti bodu</translation>
+        <translation type="vanished">Vybrané vlastnosti bodu</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Počet bodů:</translation>
+        <translation type="vanished">Počet bodů:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Minimální:</translation>
+        <translation type="vanished">Minimální:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maximum:</translation>
+        <translation type="vanished">Maximum:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Odstranit méně než hodnota:</translation>
+        <translation type="vanished">Odstranit méně než hodnota:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Když přepnete do tohoto režimu, musíte řemesl TINs. Chcete nyní řemeshovat?</translation>
+        <translation type="vanished">Když přepnete do tohoto režimu, musíte řemesl TINs. Chcete nyní řemeshovat?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Vyberte bod</translation>
+        <translation type="vanished">Vyberte bod</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Smazat vybrané body méně než hodnota (&amp;L)...</translation>
+        <translation type="vanished">Smazat vybrané body méně než hodnota (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Smazat vybrané body větší než hodnota (&amp;G)...</translation>
+        <translation type="vanished">Smazat vybrané body větší než hodnota (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Když přidáte přerušovací čáru, musíte přepnout na zobrazení drátových modelů. Chcete nyní zobrazit drátové modely?</translation>
+        <translation type="vanished">Když přidáte přerušovací čáru, musíte přepnout na zobrazení drátových modelů. Chcete nyní zobrazit drátové modely?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Když odstraníte přerušovací čáru, musíte přepnout na zobrazení drátových modelů. Chcete nyní zobrazit drátové modely?</translation>
+        <translation type="vanished">Když odstraníte přerušovací čáru, musíte přepnout na zobrazení drátových modelů. Chcete nyní zobrazit drátové modely?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Pokud chcete odstranit trojúhelníky s dlouhými hranami, musíte přepnout metodu zobrazení na Wireframe nebo Surface. Pokud stisknete tlačítko OK, metoda zobrazení se přepne na Wireframe</translation>
+        <translation type="vanished">Pokud chcete odstranit trojúhelníky s dlouhými hranami, musíte přepnout metodu zobrazení na Wireframe nebo Surface. Pokud stisknete tlačítko OK, metoda zobrazení se přepne na Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Když upravujete body, musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
+        <translation type="vanished">Když upravujete body, musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Když odstraňujete body, musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
+        <translation type="vanished">Když odstraňujete body, musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Body použité pro lomené čáry nelze odstranit.</translation>
+        <translation type="vanished">Body použité pro lomené čáry nelze odstranit.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Smazat body</translation>
+        <translation type="vanished">Smazat body</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Vyberte soubor k exportu</translation>
+        <translation type="vanished">Vyberte soubor k exportu</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Při exportu do došlo k chybě %1.</translation>
+        <translation type="vanished">Při exportu do došlo k chybě %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Smazat body menší než %1</translation>
+        <translation type="vanished">Smazat body menší než %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Smažte body větší než %1</translation>
+        <translation type="vanished">Smažte body větší než %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Při interpolaci bodů musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
+        <translation type="vanished">Při interpolaci bodů musíte přepnout na zobrazení bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Když přidáváte body, musíte přepnout na zobrazování bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
+        <translation type="vanished">Když přidáváte body, musíte přepnout na zobrazování bodů. Chcete nyní přepnout na zobrazování bodů?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Přidejte bod přerušení</translation>
+        <translation type="vanished">Přidejte bod přerušení</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Zrušit definici čáry přerušení</translation>
+        <translation type="vanished">Zrušit definici čáry přerušení</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Dokončete definici čáry přerušení</translation>
+        <translation type="vanished">Dokončete definici čáry přerušení</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Upravit body</translation>
+        <translation type="vanished">Upravit body</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Přidejte nový liniový bod Interp</translation>
+        <translation type="vanished">Přidejte nový liniový bod Interp</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Spojit...</translation>
+        <translation type="vanished">Spojit...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,90 +256,68 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Data mračna bodů (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Smazat body</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Přepnout režim (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Vybrané vlastnosti bodu</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Spojit (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Počet bodů:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Nastavení mapování (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimální:</translation>
+        <source>Select file name to export</source>
+        <translation>Vyberte název souboru, který chcete exportovat</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maximum:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Otevření se nezdařilo %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Odstranit větší než hodnotu:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Upravit body</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Znovu vytvořte síť TIN a po dokončení přepněte do režimu úprav TIN.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Vybrané vlastnosti bodu</translation>
+        <source>Selection Mode</source>
+        <translation>Režim výběru</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Počet bodů:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Vyberte body pomocí Obdélníkové oblasti</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Minimální:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtrujte vybrané body (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maximum:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>Umístění X</translation>
+        <source>&amp;Sort</source>
+        <translation>Seřadit (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Poloha Y</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Hodnota</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavení zobrazení mračna bodů</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpolovat přírůstek</translation>
+        <source>Warning</source>
+        <translation>Varování</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Nastavení interpolace</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Interpolační přírůstek:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Délka řádku:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Nemůžete odstranit body použité pro čáry přerušení.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Varování</translation>
@@ -347,6 +325,98 @@
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
         <translation>Interpolační přírůstek musí být větší 0 a menší než délka interpolační čáry</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Smazat body</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Vybrané vlastnosti bodu</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimální:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maximum:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Odstranit větší než hodnotu:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Upravit body</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Vybrané vlastnosti bodu</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Minimální:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maximum:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">Umístění X</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Poloha Y</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Hodnota</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpolovat přírůstek</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Nastavení interpolace</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Interpolační přírůstek:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Délka řádku:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Varování</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Interpolační přírůstek musí být větší 0 a menší než délka interpolační čáry</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Odznačit vše (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavení zobrazení mračna bodů</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Použijte Nastavení okna Předzpracování</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 body)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Základní</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>CÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Body</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Drátový model</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Šířka čáry:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Povrch</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ukázat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapování Nastavení polygonů</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Barevná mapa pro hodnoty</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Nastavení mapování dat mračna bodů</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Mapování pomocí TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>Pro mapování se používají TIN vytvořené z bodů. Hodnoty atributů mřížky definované v uzlech nebo buňkách mřížky se vypočítají jako vážený průměr hodnot definovaných v uzlech trojúhelníku, který obsahuje uzel (nebo střed buňky).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Mapování šablony</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Najděte body, které jsou blízko uzlů mřížky, pokud jde o tvary buněk mřížky, a použijte hodnoty v těchto bodech pro interpolaci.&lt;/p&gt;&lt;p&gt;Tento algoritmus lze použít použijte pouze pro strukturované mřížky.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Detail (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Změňte mapovací algoritmus pro každou oblast definovanou polygony</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definujte oblasti jako polygony a určete algoritmus pro mapování hodnot v uzlech mřížky nebo středů buněk z hodnot definovaných v bodech.&lt;/p&gt;&lt;p&gt;Uživatel si může vybrat z níže uvedených možností: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapovat minimální hodnotu bodů v kruhu&lt;/li&gt;&lt;li&gt;Mapovat maximální hodnotu bodů v kruhu&lt;/li&gt;&lt;li&gt;Mapovat váženou průměrnou hodnotu bodů v kruhu&lt;/li&gt; &lt;li&gt;Zmapovat hodnotu z TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Nastavení mapování šablon</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Hledat region</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manuál</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Délka proudu [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Šířka napříč proudem [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Počet rozšíření šablony:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Váhový exponent:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Upravit body</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Vlastnosti vybraných bodů</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimální hodnota:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maximální hodnota:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtrovat vybrané body</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Vlastnosti vybraných bodů</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimální hodnota:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maximální hodnota:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Podmínky filtrování</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Vyberte body s hodnotou větší než práh</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Vyberte body s hodnotou menší než prahová hodnota</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Prahová hodnota:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Nastavení interpolace</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolovat přírůstek</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Přírůstek interpolace:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Délka řádku:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Metoda výpočtu</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Mapa pomocí TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Minimální hodnota bodů v okruhu</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Maximální hodnota bodů v okruhu</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Vážený průměr bodů v okruhu</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Váhový exponent k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; se používá jako váha při výpočtu váženého průměru hodnot. r je vzdálenost od bodu k uzlu nebo středu buňky, ke kterému je hodnota mapována.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Poloměr kruhu pro hledání bodů:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Při provádění mapování se vyhledávají body v kruhu s poloměrem výše, aby se mapovaly hodnoty na uzly mřížky nebo středy buněk.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Nastavení zobrazení mračna bodů</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Základní</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">CÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Body</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Drátový model</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Šířka čáry:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Povrch</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Ukázat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Barva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Mapování Nastavení polygonů</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Barevná mapa pro hodnoty</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Import (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Vývozní (&amp;E)</translation>
     </message>
 </context>
 <context>

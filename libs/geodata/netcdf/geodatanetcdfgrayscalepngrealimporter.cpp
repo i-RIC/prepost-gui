@@ -1,5 +1,6 @@
 #include "geodatanetcdfgrayscalepngrealimporter.h"
 #include "geodatanetcdfreal.h"
+#include "private/geodatanetcdf_impl.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
@@ -104,24 +105,24 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 	}
 	png_read_image(png_ptr, row_pointers.data());
 
-	netcdf->m_coordinateSystemType = GeoDataNetcdf::XY;
-	netcdf->m_coordinateSystemName = m_coordinateSystem->name();
+	netcdf->impl->m_coordinateSystemType = GeoDataNetcdf::XY;
+	netcdf->impl->m_coordinateSystemName = m_coordinateSystem->name();
 
-	netcdf->m_xValues.clear();
+	netcdf->impl->m_xValues.clear();
 	double* transform = netcdf->geoTransform();
 	for (int i = 0; i < width; ++i) {
-		netcdf->m_xValues.push_back(*transform + *(transform + 1) * (i + 0.5));
+		netcdf->impl->m_xValues.push_back(*transform + *(transform + 1) * (i + 0.5));
 	}
-	netcdf->m_yValues.clear();
+	netcdf->impl->m_yValues.clear();
 	for (int i = 0; i < height; ++i) {
-		netcdf->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
+		netcdf->impl->m_yValues.push_back(*(transform + 3) + *(transform + 5) * (height - i - 0.5));
 	}
 
-	netcdf->m_lonValues.clear();
-	for (int j = 0; j < netcdf->m_yValues.size(); ++j) {
-		double y = netcdf->m_yValues.at(j);
-		for (int i = 0; i < netcdf->m_xValues.size(); ++i) {
-			double x = netcdf->m_xValues.at(i);
+	netcdf->impl->m_lonValues.clear();
+	for (int j = 0; j < netcdf->impl->m_yValues.size(); ++j) {
+		double y = netcdf->impl->m_yValues.at(j);
+		for (int i = 0; i < netcdf->impl->m_xValues.size(); ++i) {
+			double x = netcdf->impl->m_xValues.at(i);
 			double lon, lat;
 			if (m_coordinateSystem->isLongLat()) {
 				lon = x;
@@ -129,8 +130,8 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 			} else {
 				m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
 			}
-			netcdf->m_lonValues.push_back(lon);
-			netcdf->m_latValues.push_back(lat);
+			netcdf->impl->m_lonValues.push_back(lon);
+			netcdf->impl->m_latValues.push_back(lat);
 		}
 	}
 

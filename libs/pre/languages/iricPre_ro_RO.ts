@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Cartografierea datelor geografice</translation>
+        <translation type="vanished">Cartografierea datelor geografice</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Cartografierea cu TIN-uri</translation>
+        <translation type="vanished">Cartografierea cu TIN-uri</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN-urile create din date geografice sunt utilizate pentru cartografiere. Valorile atributelor nodurilor de rețea sunt calculate ca medie ponderată a valorilor la nodurile TIN.</translation>
+        <translation type="vanished">TIN-urile create din date geografice sunt utilizate pentru cartografiere. Valorile atributelor nodurilor de rețea sunt calculate ca medie ponderată a valorilor la nodurile TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Cartarea șabloanelor</translation>
+        <translation type="vanished">Cartarea șabloanelor</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Găsiți puncte de date geografice care sunt aproape de nodurile rețelei, în ceea ce privește formele celulei rețelei și utilizați valorile din acele puncte pentru interpolare. Acest algoritm poate fi utilizat numai pentru grilele structurate.</translation>
+        <translation type="vanished">Găsiți puncte de date geografice care sunt aproape de nodurile rețelei, în ceea ce privește formele celulei rețelei și utilizați valorile din acele puncte pentru interpolare. Acest algoritm poate fi utilizat numai pentru grilele structurate.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detaliu (&amp;D)...</translation>
+        <translation type="vanished">Detaliu (&amp;D)...</translation>
     </message>
 </context>
 <context>

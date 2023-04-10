@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Loại (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Cài đặt hiển thị đám mây điểm</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Bỏ chọn tất cả (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Cài đặt hiển thị đám mây điểm</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Nền tảng</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>điểm</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>khung dây</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Bề mặt</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Khi ở &amp;quot;Chế độ chỉnh sửa điểmquot;, cài đặt này bị bỏ qua và dữ liệu TIN luôn được hiển thị dưới dạng điểm.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>ngắt dòng</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Trình diễn</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Màu sắc:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Ánh xạ thiết lập đa giác</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Bản đồ màu cho các giá trị</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Cài đặt hiển thị đám mây điểm</translation>
+        <translation type="vanished">Cài đặt hiển thị đám mây điểm</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Nền tảng</translation>
+        <translation type="vanished">Nền tảng</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TÍN</translation>
+        <translation type="vanished">TÍN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>điểm</translation>
+        <translation type="vanished">điểm</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Kích thước điểm:</translation>
+        <translation type="vanished">Kích thước điểm:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>khung dây</translation>
+        <translation type="vanished">khung dây</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Bề mặt</translation>
+        <translation type="vanished">Bề mặt</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Khi ở &amp;quot;Chế độ chỉnh sửa điểmquot;, cài đặt này bị bỏ qua và dữ liệu TIN luôn được hiển thị dưới dạng điểm.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Khi ở &amp;quot;Chế độ chỉnh sửa điểmquot;, cài đặt này bị bỏ qua và dữ liệu TIN luôn được hiển thị dưới dạng điểm.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>ngắt dòng</translation>
+        <translation type="vanished">ngắt dòng</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Trình diễn</translation>
+        <translation type="vanished">Trình diễn</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Màu sắc:</translation>
+        <translation type="vanished">Màu sắc:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Ánh xạ thiết lập đa giác</translation>
+        <translation type="vanished">Ánh xạ thiết lập đa giác</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Bản đồ màu cho các giá trị</translation>
+        <translation type="vanished">Bản đồ màu cho các giá trị</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Nhập khẩu (&amp;I)</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Xuất khẩu (&amp;E)</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Xóa hình tam giác có cạnh dài</translation>
+        <translation>Xóa hình tam giác có cạnh dài</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Giới hạn chiều dài cạnh:</translation>
+        <translation>Giới hạn chiều dài cạnh:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Khi bạn nhấp vào nút áp dụng, các hình tam giác bị xóa sẽ được sơn màu tối xám. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Khi bạn nhấp vào nút áp dụng, các hình tam giác bị xóa sẽ được sơn màu tối xám. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -24,6 +24,7 @@ public:
 	ColorMapLegendSettingContainerI* legendSetting() const;
 	void setLegendSetting(ColorMapLegendSettingContainerI* setting);
 
+	virtual void setDisableOtherThanImageSetting(bool disabled) = 0;
 	virtual QUndoCommand* createModifyCommand() const = 0;
 
 public slots:

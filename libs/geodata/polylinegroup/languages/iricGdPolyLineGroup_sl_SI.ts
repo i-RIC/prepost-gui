@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Urejanje barvnih nastavitev</translation>
+        <translation type="vanished">Urejanje barvnih nastavitev</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Nastavitev prikaza vrstic</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Nastavitev prikaza skupine poličrt</translation>
+        <translation type="vanished">Nastavitev prikaza skupine poličrt</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>barva</translation>
+        <translation type="vanished">barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva po vrednosti</translation>
+        <translation type="vanished">Barva po vrednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Barva po meri</translation>
+        <translation type="vanished">Barva po meri</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Širina črte:</translation>
+        <translation type="vanished">Širina črte:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Če izbrišete ta element, boste odstranili tudi vsa okna grafikona, povezana s temi podatki. Ali ste prepričani, da želite izbrisati ta element?</translation>
+        <translation type="vanished">Če izbrišete ta element, boste odstranili tudi vsa okna grafikona, povezana s temi podatki. Ali ste prepričani, da želite izbrisati ta element?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Uredi nastavitev zaslona</translation>
+        <translation type="vanished">Uredi nastavitev zaslona</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Nastavitev prikaza vrstic</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Uporabite nastavitev okna predhodne obdelave</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>Datoteka oblike ESRI (vrstice) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barvni zemljevid</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
     </message>
 </context>
 </TS>

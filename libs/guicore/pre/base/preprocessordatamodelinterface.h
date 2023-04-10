@@ -8,6 +8,7 @@ class MouseBoundingBox;
 class PreProcessorWindowInterface;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
+class PreProcessorGridTypeDataItemInterface;
 class PreProcessorGraphicsViewInterface;
 class PreProcessorHydraulicDataTopDataItemInterface;
 
@@ -18,6 +19,7 @@ public:
 	PreProcessorDataModelInterface(PreProcessorWindowInterface* w, ProjectDataItem* parent);
 	virtual ~PreProcessorDataModelInterface() {}
 	virtual MouseBoundingBox* mouseBoundingBox() = 0;
+	virtual PreProcessorGridTypeDataItemInterface* gridTypeDataItem(const std::string& type) const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const std::string& type) const = 0;
 	virtual PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem(const std::string& type) const = 0;

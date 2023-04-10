@@ -19,6 +19,7 @@ class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGeoDataGroupDataItemInterface;
 class PreProcessorGeoDataDataItemInterface;
 class PreProcessorGraphicsViewInterface;
+class PreProcessorGridTypeDataItemInterface;
 class PreProcessorHydraulicDataTopDataItemInterface;
 class PreProcessorHydraulicDataGroupDataItemInterface;
 class ZDepthRange;
@@ -64,21 +65,13 @@ public:
 
 	const QString& typeName() const;
 
-	void setPosition(SolverDefinitionGridAttribute::Position pos);
-
 	QString caption() const;
 	virtual void setCaption(const QString& cap);
 
 	SolverDefinitionGridAttribute* gridAttribute() const;
 	GeoDataCreator* creator() const;
 
-	virtual GeoDataMapper* mapper() const;
-	void setMapper(GeoDataMapper* m);
-	std::vector<GeoDataMapper*> mappers() const;
-	void setDefaultMapper();
-
-	std::vector<GeoDataMapper*> nodeMappers() const;
-	std::vector<GeoDataMapper*> cellMappers() const;
+	virtual GeoDataMapper* mapper() const = 0;
 
 	std::vector<GeoDataImporter*> importers() const;
 	std::vector<GeoDataExporter*> exporters() const;
@@ -132,7 +125,7 @@ public:
 	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 
 signals:
-	void graphicsUpdated();
+	void updateActorSettingExecuted();
 
 public slots:
 	virtual void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
@@ -145,18 +138,19 @@ protected:
 	void updateVisibility();
 	void updateVisibilityWithoutRendering();
 	QAction* deleteAction();
-	std::vector<GeoDataMapper*> (GeoData::*mapperFunc)() const;
 	vtkRenderer* renderer();
 	void renderGraphicsView();
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
+	virtual void updateActorSetting();
 
 	PreProcessorWindowInterface* preProcessorWindow();
 	PreProcessorGraphicsViewInterface* graphicsView();
 	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const;
 	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
 	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
+	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const;
 	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem() const;
 	PreProcessorHydraulicDataGroupDataItemInterface* hydraulicDataGroupDataItem(const std::string& name) const;
 	void pushCommand(QUndoCommand* com);
@@ -177,10 +171,12 @@ protected:
 
 	GeoDataCreator* m_creator;
 	SolverDefinitionGridAttribute* m_gridAttribute;
-	GeoDataMapper* m_mapper;
 
 	QMenu* m_menu;
 	QAction* m_editNameAction;
+
+	class PropertyDialog;
+	class UpdateActorSettingCommand;
 
 public:
 	friend class GeoDataProxy;

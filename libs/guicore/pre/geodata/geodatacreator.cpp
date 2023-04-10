@@ -77,26 +77,6 @@ bool GeoDataCreator::requestCoordinateSystem() const
 	return false;
 }
 
-const std::vector<GeoDataMapper*>& GeoDataCreator::nodeMappers() const
-{
-	return impl->m_nodeMappers;
-}
-
-std::vector<GeoDataMapper*>& GeoDataCreator::nodeMappers()
-{
-	return impl->m_nodeMappers;
-}
-
-const std::vector<GeoDataMapper*>& GeoDataCreator::cellMappers() const
-{
-	return impl->m_cellMappers;
-}
-
-std::vector<GeoDataMapper*>& GeoDataCreator::cellMappers()
-{
-	return impl->m_cellMappers;
-}
-
 const std::vector<GeoDataImporter*>& GeoDataCreator::importers() const
 {
 	return impl->m_importers;

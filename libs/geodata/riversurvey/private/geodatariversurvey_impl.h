@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEY_IMPL_H
 
 #include "../geodatariversurvey.h"
+#include "geodatariversurvey_displaysetting.h"
 
 #include <guibase/polyline/polylinecontroller.h>
 #include <guibase/vtktool/vtklabel2dactor.h>
@@ -104,6 +105,7 @@ public:
 	void editModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v);
 
 	Mode m_mode;
+	DisplaySetting m_displaySetting;
 	CreateMouseEventMode m_createMouseEventMode;
 	EditMouseEventMode m_editMouseEventMode;
 
@@ -193,7 +195,7 @@ public:
 	QAction* m_removeLeftExtensionPointAction;
 	QAction* m_removeRightExtensionPointAction;
 	QAction* m_openCrossSectionWindowAction;
-	QAction* m_showBackgroundAction;
+	QAction* m_displaySettingAction;
 	QAction* m_interpolateSplineAction;
 	QAction* m_interpolateLinearAction;
 	QAction* m_mapPointsAction;

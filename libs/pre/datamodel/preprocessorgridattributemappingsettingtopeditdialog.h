@@ -19,31 +19,10 @@ class PreProcessorGridAttributeMappingSettingTopEditDialog : public QDialog
 public:
 	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget* parent = nullptr);
 	~PreProcessorGridAttributeMappingSettingTopEditDialog();
+
 	PreProcessorGridAttributeMappingMode::Mode mappingMode();
 	void setMappingMode(PreProcessorGridAttributeMappingMode::Mode mm);
-	GeoDataPointmapMappingMode::Mode pointmapMappingMode();
-	void setPointmapMappingMode(GeoDataPointmapMappingMode::Mode mm);
 
-	bool autoMode() {return m_autoMode;}
-	void setAutoMode(bool a) {m_autoMode = a;}
-	double streamWiseLength() {return m_streamWiseLength;}
-	void setStreamWiseLength(double len) {m_streamWiseLength = len;}
-	double crossStreamLength() {return m_crossStreamLength;}
-	void setCrossStreamLength(double len) {m_crossStreamLength = len;}
-	int numExpansion() {return m_numExpansion;}
-	void setNumExpansion(int num) {m_numExpansion = num;}
-	double weightExponent() {return m_weightExponent;}
-	void setWeightExponent(double exp) {m_weightExponent = exp;}
-
-private slots:
-	void showDetailDialog();
-
-private:
-	bool m_autoMode;
-	double m_streamWiseLength;
-	double m_crossStreamLength;
-	int m_numExpansion;
-	double m_weightExponent;
 	Ui::PreProcessorGridAttributeMappingSettingTopEditDialog* ui;
 };
 

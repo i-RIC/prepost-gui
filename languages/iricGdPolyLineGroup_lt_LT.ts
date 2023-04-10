@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Spalvų nustatymo redagavimas</translation>
+        <translation type="vanished">Spalvų nustatymo redagavimas</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linijų ekrano nustatymas</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Polyline Group ekrano nustatymas</translation>
+        <translation type="vanished">Polyline Group ekrano nustatymas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Spalva pagal vertę</translation>
+        <translation type="vanished">Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pasirinktinė spalva</translation>
+        <translation type="vanished">Pasirinktinė spalva</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Ištrynus šį elementą taip pat bus pašalinti visi su šiais duomenimis susieti grafikų langai. Ar tikrai norite ištrinti šį elementą?</translation>
+        <translation type="vanished">Ištrynus šį elementą taip pat bus pašalinti visi su šiais duomenimis susieti grafikų langai. Ar tikrai norite ištrinti šį elementą?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Redaguoti ekrano nustatymą</translation>
+        <translation type="vanished">Redaguoti ekrano nustatymą</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Linijų ekrano nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI formos failas (eilutės) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
     </message>
 </context>
 </TS>

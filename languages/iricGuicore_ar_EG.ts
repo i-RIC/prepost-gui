@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>لون</translation>
+        <translation type="vanished">لون</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>أساسي</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>تجاهل إعداد شريط الألوان عند الاستيراد</translation>
+        <translation type="vanished">تجاهل إعداد شريط الألوان عند الاستيراد</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>الحجم والموقع</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>اتجاه:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>أفقي</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>رَأسِيّ</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>عدد الملصقات:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>آلي</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
+        <translation type="vanished">عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>يصدّر (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>عدد الألوان المراد إدراجها في كل قسم</translation>
+        <translation type="vanished">عدد الألوان المراد إدراجها في كل قسم</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>مدى القيمة</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>عدد الألوان:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>يصف</translation>
+        <translation type="vanished">يصف</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>يصدّر (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>إعداد خريطة الألوان</translation>
+        <translation type="vanished">إعداد خريطة الألوان</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>مدى القيمة</translation>
+        <translation type="vanished">مدى القيمة</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>تلقائي</translation>
+        <translation type="vanished">تلقائي</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>املأ المنطقة العلوية</translation>
+        <translation type="vanished">املأ المنطقة العلوية</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>الحد الأدنى:</translation>
+        <translation type="vanished">الحد الأدنى:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>املأ المنطقة السفلية</translation>
+        <translation type="vanished">املأ المنطقة السفلية</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>رقم القسم:</translation>
+        <translation type="vanished">رقم القسم:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>الأعلى:</translation>
+        <translation type="vanished">الأعلى:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>خريطة ملونة</translation>
+        <translation type="vanished">خريطة ملونة</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>إعداد اللون</translation>
+        <translation type="vanished">إعداد اللون</translation>
     </message>
 </context>
 <context>

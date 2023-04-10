@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Renk Ayarı Düzenleme</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Puan Görüntüleme Ayarı</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>resim dosyası seçin</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Tüm resimler (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">resim dosyası seçin</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Tüm resimler (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Görüntü ayarını düzenle</translation>
+        <translation type="vanished">Görüntü ayarını düzenle</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Ön İşleme Penceresinin Ayarını Kullanın</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Puan Veri Görüntüleme Ayarı</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Renk</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>değere göre renk</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <source>Form</source>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>İçe aktarılan görüntünün genişliği veya yüksekliği Maks boyuttan büyük olduğunda, genişlik veya yükseklik maksimum boyuta eşit olacak şekilde görüntü otomatik olarak küçültülür.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Puan Veri Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Özel renk</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Şekil</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Puanlar</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puan Boyutu:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Simge Görselleri</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Resmi içe aktar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Temizlemek (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Maksimum boyut:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">İçe aktarılan görüntünün genişliği veya yüksekliği Maks boyuttan büyük olduğunda, genişlik veya yükseklik maksimum boyuta eşit olacak şekilde görüntü otomatik olarak küçültülür.</translation>
     </message>
 </context>
 </TS>

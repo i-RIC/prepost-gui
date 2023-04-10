@@ -1,5 +1,5 @@
 #include "geodatapointmaprealtextimporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 #include "private/geodatapointmaprealtextimporter_lineparser.h"
 #include "private/geodatapointmaprealtextimporter_settingdialog.h"
 #include "private/geodatapointmaprealtextimporter_values.h"
@@ -151,9 +151,9 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 		QMessageBox::warning(w, tr("Warning"), tr("%1 duplicate points found. If points with same x and y values found, the first point is imported").arg(duplicatePoints));
 	}
 
-	auto pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 	pmap->setPoints(points, values);
-	pmap->doDelaunay();
+	pmap->rebuildTinFromPoints(false);
 	return true;
 }
 

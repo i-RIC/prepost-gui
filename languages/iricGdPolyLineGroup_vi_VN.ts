@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Chỉnh sửa cài đặt màu</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Cài đặt hiển thị dòng</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Cài đặt hiển thị nhóm đa tuyến</translation>
+        <translation type="vanished">Cài đặt hiển thị nhóm đa tuyến</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu</translation>
+        <translation type="vanished">Màu</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Màu theo giá trị</translation>
+        <translation type="vanished">Màu theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Xóa mục này cũng sẽ xóa mọi cửa sổ biểu đồ được liên kết với dữ liệu này. bạn có chắc bạn muốn xóa mục này?</translation>
+        <translation type="vanished">Xóa mục này cũng sẽ xóa mọi cửa sổ biểu đồ được liên kết với dữ liệu này. bạn có chắc bạn muốn xóa mục này?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hiển thị</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Cài đặt hiển thị dòng</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>Tệp hình dạng ESRI (Dòng) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
     </message>
 </context>
 </TS>

@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Redigera punktkoordinater</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Flytta vertex</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Ställ in vertex</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

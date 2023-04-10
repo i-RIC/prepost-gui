@@ -1,8 +1,6 @@
 #ifndef GEODATAPOLYGONGROUPPROXY_H
 #define GEODATAPOLYGONGROUPPROXY_H
 
-#include "geodatapolygongroupcolorsettingdialog.h"
-
 #include <guicore/pre/geodata/geodataproxy.h>
 
 class GeoDataPolygonGroup;
@@ -18,11 +16,12 @@ public:
 	void setupActors() override;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 public slots:
-	void updateGraphics() override;
+	void updateActorSetting() override;
 
 private:
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -30,7 +29,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	class SetSettingCommand;
+	class DisplaySetting;
+	class DisplaySettingWidget;
 
 	class Impl;
 	Impl* impl;

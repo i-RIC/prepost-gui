@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Kustuta punktid</translation>
+        <translation type="vanished">Kustuta punktid</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Valitud punkti omadused</translation>
+        <translation type="vanished">Valitud punkti omadused</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Punktide arv:</translation>
+        <translation type="vanished">Punktide arv:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Miinimum:</translation>
+        <translation type="vanished">Miinimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Maksimaalne:</translation>
+        <translation type="vanished">Maksimaalne:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Kustuta väärtusest vähem:</translation>
+        <translation type="vanished">Kustuta väärtusest vähem:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Kui lülitate sellele režiimile, peate TIN -id uuesti muutma. Kas soovite nüüd uuendusi teha?</translation>
+        <translation type="vanished">Kui lülitate sellele režiimile, peate TIN -id uuesti muutma. Kas soovite nüüd uuendusi teha?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Valige punkt</translation>
+        <translation type="vanished">Valige punkt</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Kustuta valitud punktid alla väärtuse (&amp;L)...</translation>
+        <translation type="vanished">Kustuta valitud punktid alla väärtuse (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Kustuta valitud punktid, mis on väärtusest suuremad (&amp;G)...</translation>
+        <translation type="vanished">Kustuta valitud punktid, mis on väärtusest suuremad (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Katkendjoone lisamisel peate lülituma juhtmeraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
+        <translation type="vanished">Katkendjoone lisamisel peate lülituma juhtmeraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Katkestusjoone eemaldamisel peate lülituma traatraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
+        <translation type="vanished">Katkestusjoone eemaldamisel peate lülituma traatraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Kui soovite eemaldada pikkade servadega kolmnurgad, peate kuvamismeetodi valima Wireframe või Surface. Kui vajutate nuppu OK, lülitatakse kuvamismeetod Wireframe'i</translation>
+        <translation type="vanished">Kui soovite eemaldada pikkade servadega kolmnurgad, peate kuvamismeetodi valima Wireframe või Surface. Kui vajutate nuppu OK, lülitatakse kuvamismeetod Wireframe'i</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Punktide redigeerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
+        <translation type="vanished">Punktide redigeerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Punktide kustutamisel peate punktide kuvamiseks üle minema. Kas soovite nüüd näitamise punktidele üle minna?</translation>
+        <translation type="vanished">Punktide kustutamisel peate punktide kuvamiseks üle minema. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Murdejoonte jaoks kasutatud punkte ei saa kustutada.</translation>
+        <translation type="vanished">Murdejoonte jaoks kasutatud punkte ei saa kustutada.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Kustuta punktid</translation>
+        <translation type="vanished">Kustuta punktid</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Valige Eksporditav fail</translation>
+        <translation type="vanished">Valige Eksporditav fail</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Vea eksportimisel ilmnes viga %1.</translation>
+        <translation type="vanished">Vea eksportimisel ilmnes viga %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Kustuta punkte vähem kui %1</translation>
+        <translation type="vanished">Kustuta punkte vähem kui %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Kustutage punktist suuremad punktid %1</translation>
+        <translation type="vanished">Kustutage punktist suuremad punktid %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Punktide interpoleerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
+        <translation type="vanished">Punktide interpoleerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Punktide lisamisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
+        <translation type="vanished">Punktide lisamisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Lisa murdejoone punkt</translation>
+        <translation type="vanished">Lisa murdejoone punkt</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Katkesta murdejoone määratlemine</translation>
+        <translation type="vanished">Katkesta murdejoone määratlemine</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Lõpeta murdejoone määratlemine</translation>
+        <translation type="vanished">Lõpeta murdejoone määratlemine</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Redigeeri punkte</translation>
+        <translation type="vanished">Redigeeri punkte</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Lisa uus interp joonepunkt</translation>
+        <translation type="vanished">Lisa uus interp joonepunkt</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Ühenda...</translation>
+        <translation type="vanished">Ühenda...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Punktipilve andmed (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Kustuta punktid</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Lülitage režiimi (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Valitud punkti omadused</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>Ühendage (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Punktide arv:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Kaardistamise seadistus (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Miinimum:</translation>
+        <source>Select file name to export</source>
+        <translation>Valige eksporditava faili nimi</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maksimaalne:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Avamine ebaõnnestus %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Kustuta suurem kui väärtus:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Redigeeri punkte</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Sisestage TIN uuesti ja kui see on lõpetatud, lülituge TIN-i redigeerimisrežiimi.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Valitud punkti omadused</translation>
+        <source>Selection Mode</source>
+        <translation>Valikurežiim</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Punktide arv:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Valige punktid ristkülikupiirkonnaga</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Miinimum:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtreerige valitud punkte (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Maksimaalne:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>X-asukoht</translation>
+        <source>&amp;Sort</source>
+        <translation>Sorteeri (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Y-asukoht</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Väärtus</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktipilve kuvaseade</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Interpoleeri juurdekasv</translation>
+        <source>Warning</source>
+        <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Interpolatsiooni seadistus</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Interpolatsiooni kasv:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Liini pikkus:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Katkestusjoonte jaoks kasutatud punkte ei saa kustutada.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Interpolatsiooni juurdekasv peab olema suurem kui 0 ja väiksem kui interpoleerimisjoone pikkus</translation>
+        <translation>Interpolatsiooni samm peab olema suurem 0 ja väiksem kui interpolatsioonirea pikkus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Kustuta punktid</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Valitud punkti omadused</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Punktide arv:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Miinimum:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maksimaalne:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Kustuta suurem kui väärtus:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Redigeeri punkte</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Valitud punkti omadused</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Punktide arv:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Miinimum:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Maksimaalne:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">X-asukoht</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Y-asukoht</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Väärtus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Interpoleeri juurdekasv</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Interpolatsiooni seadistus</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Interpolatsiooni kasv:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Liini pikkus:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Hoiatus</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Interpolatsiooni juurdekasv peab olema suurem kui 0 ja väiksem kui interpoleerimisjoone pikkus</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Tühista kõigi valik (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktipilve kuvaseade</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 punkti)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Põhiline</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punktid</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Traatkarkass</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Joone laius:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Pind</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Katkestusjooned</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näita</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Värv:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Polügoonide kaardistamine</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Väärtuste värvikaart</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Punktide pilveandmete kaardistamise seadistus</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Kaardistamine TIN-iga</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>Kaardistamiseks kasutatakse punktidest loodud TIN-i. Võrgustiku sõlmedes või lahtrites määratletud ruudustiku atribuudi väärtused arvutatakse sõlme (või lahtri keskpunkti) sisaldava kolmnurga sõlmedes määratletud väärtuste kaalutud keskmisena.</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Mallide kaardistamine</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Leidke ruudustiku lahtrite kuju järgi punkte, mis on ruudustiku sõlmede lähedal, ja kasutage nendes punktides olevaid väärtusi interpoleerimiseks.&lt;/p&gt;&lt;p&gt;Seda algoritmi saab kasutada kasutada ainult struktureeritud ruudustiku jaoks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Detail (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Muutke iga hulknurkadega määratletud ala kaardistamisalgoritmi</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Määratlege alad hulknurkadena ja määrake algoritm, et kaardistada väärtusi ruudustiku sõlmedes või lahtri keskpunktides punktides määratletud väärtustest.&lt;/p&gt;&lt;p&gt;Kasutaja saab valida järgmiste hulgast: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Kaardista ringis olevate punktide minimaalne väärtus&lt;/li&gt;&lt;li&gt;Kaardista ringis olevate punktide maksimaalne väärtus&lt;/li&gt;&lt;li&gt;Kaardista ringis olevate punktide kaalutud keskmine väärtus&lt;/li&gt; &lt;li&gt;Väärtus kaardi TIN-ist&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Malli kaardistamise seade</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Otsi piirkonnast</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automaatne</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Käsiraamat</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Voo pikkus [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Ristvoolu laius [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Malli laienduste arv:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Kaalueksponent:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Redigeeri punkte</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Valitud punktide omadused</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Punktide arv:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimaalne väärtus:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maksimaalne väärtus:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Väärtus:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtreerige valitud punktid</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Valitud punktide omadused</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Punktide arv:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Minimaalne väärtus:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Maksimaalne väärtus:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Filtreerimise seisukord</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Valige punktid, mille väärtus on suurem kui lävi</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Valige punktid, mille väärtus on väiksem kui lävi</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Läviväärtus:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Interpolatsiooni seadistus</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Kasvu interpoleerimine</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Interpolatsiooni juurdekasv:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Rea pikkus:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Arvutusmeetod</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Kaart kasutades TIN-i</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Raadiuses olevate punktide minimaalne väärtus</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Punktide maksimaalne väärtus raadiuses</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Raadiuses olevate punktide kaalutud keskmine</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Kaalueksponent k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Väärtuste kaalutud keskmise arvutamisel kasutatakse kaaluna &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt;. r on kaugus punktist sõlme või lahtri keskpunktini, millele väärtus on vastendatud.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Ringi raadius punktide otsimiseks:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Kui kaardistamine on teostatud, otsitakse ülaltoodud raadiusega ringis olevaid punkte, et vastendada väärtused ruudustiku sõlmedesse või lahtri keskpunktidesse.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Punktipilve kuvaseade</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Põhiline</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punktid</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Traatkarkass</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Joone laius:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Pind</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Katkestusjooned</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Näita</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Värv:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Polügoonide kaardistamine</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Värvikaart väärtuste jaoks</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Import (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Ekspordi (&amp;E)</translation>
     </message>
 </context>
 <context>

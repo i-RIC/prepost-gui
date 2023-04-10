@@ -1,11 +1,14 @@
 #include "geodatapolylinegroup.h"
 #include "geodatapolylinegroupproxy.h"
-#include "geodatapolylinegroupcolorsettingdialog.h"
-
 #include "private/geodatapolylinegroup_impl.h"
 #include "private/geodatapolylinegroupproxy_impl.h"
-#include "private/geodatapolylinegroupproxy_setsettingcommand.h"
+#include "private/geodatapolylinegroupproxy_displaysettingwidget.h"
+#include "public/geodatapolylinegroup_displaysettingwidget.h"
 
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <misc/modifycommanddialog.h>
 #include <misc/zdepthrange.h>
 
 GeoDataPolyLineGroupProxy::GeoDataPolyLineGroupProxy(GeoDataPolyLineGroup* geodata) :
@@ -27,21 +30,11 @@ void GeoDataPolyLineGroupProxy::setupActors()
 
 	auto r = renderer();
 	auto col = actorCollection();
-	/*
-	auto stcc = lines->scalarsToColorsContainer();
-
-	auto mapper = dynamic_cast<vtkPolyDataMapper*> (impl->m_edgesActor->GetMapper());
-	mapper->SetInputData(lines->impl->m_edgesPolyData);
-	if (stcc != nullptr) {
-		mapper->SetLookupTable(stcc->vtkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-	}
-	*/
 
 	r->AddActor(impl->m_edgesActor);
 	col->AddItem(impl->m_edgesActor);
 
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataPolyLineGroupProxy::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -49,40 +42,61 @@ void GeoDataPolyLineGroupProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(1);
 }
 
+void GeoDataPolyLineGroupProxy::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
 QDialog* GeoDataPolyLineGroupProxy::propertyDialog(QWidget* parent)
 {
-	auto dialog = new GeoDataPolyLineGroupColorSettingDialog(parent);
-	dialog->setSetting(impl->m_setting);
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoData()->gridAttribute()->name(), parent);
+	auto widget = new DisplaySettingWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Lines Display Setting"));
+	dialog->resize(900, 700);
 
 	return dialog;
 }
 
-void GeoDataPolyLineGroupProxy::handlePropertyDialogAccepted(QDialog* propDialog)
+void GeoDataPolyLineGroupProxy::updateActorSetting()
 {
-	auto dialog = dynamic_cast<GeoDataPolyLineGroupColorSettingDialog*> (propDialog);
-
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this));
-}
-
-void GeoDataPolyLineGroupProxy::updateGraphics()
-{
-	auto cs = impl->m_setting;
+	auto lines = dynamic_cast<GeoDataPolyLineGroup*>(geoData());
+	auto ds = impl->m_displaySetting.displaySetting;
+	if (impl->m_displaySetting.usePreSetting) {
+		ds = lines->impl->m_displaySetting;
+	}
 
 	// color
-	impl->m_edgesActor->GetProperty()->SetColor(cs.color);
+	QColor c = ds.color;
+
+	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+
+	// opacity
+	impl->m_edgesActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
 	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPolyLineGroupColorSettingDialog::Arbitrary) {
+	if (ds.mapping == GeoDataPolyLineGroup::DisplaySetting::Mapping::Arbitrary) {
 		scalarVisibility = false;
 	}
-	impl->m_edgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+	if (scalarVisibility) {
+		vtkMapper* mapper = nullptr;
+		auto cs = colorMapSettingContainer();
 
-	// opacity
-	impl->m_edgesActor->GetProperty()->SetOpacity(cs.opacity);
+		mapper = cs->buildCellDataMapper(lines->impl->m_edgesPolyData, true);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
 
-	// pointSize
-	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(lines->impl->m_edgesPolyData);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
+	// line width
+	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
 }
 
 void GeoDataPolyLineGroupProxy::assignActorZValues(const ZDepthRange& range)
@@ -92,12 +106,12 @@ void GeoDataPolyLineGroupProxy::assignActorZValues(const ZDepthRange& range)
 
 void GeoDataPolyLineGroupProxy::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	impl->m_setting.load(node);
+	impl->m_displaySetting.load(node);
 
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataPolyLineGroupProxy::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	impl->m_setting.save(writer);
+	impl->m_displaySetting.save(writer);
 }

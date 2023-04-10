@@ -172,7 +172,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -185,6 +185,10 @@
     <message>
         <source>Range</source>
         <translation>范围</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
     </message>
 </context>
 <context>
@@ -325,7 +329,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -338,6 +342,10 @@
     <message>
         <source>Faces</source>
         <translation>面孔</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
     </message>
 </context>
 <context>
@@ -618,103 +626,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>一世</translation>
+        <translation type="vanished">一世</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>钾</translation>
+        <translation type="vanished">钾</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>范围</translation>
+        <translation type="vanished">范围</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>算我一个</translation>
+        <translation type="vanished">算我一个</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>我最大</translation>
+        <translation type="vanished">我最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>贾敏</translation>
+        <translation type="vanished">贾敏</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J最大</translation>
+        <translation type="vanished">J最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K敏</translation>
+        <translation type="vanished">K敏</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K最大</translation>
+        <translation type="vanished">K最大</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>启用</translation>
+        <translation type="vanished">启用</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>采样</translation>
+        <translation type="vanished">采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>所有顶点</translation>
+        <translation type="vanished">所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>采样率：</translation>
+        <translation type="vanished">采样率：</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K方向</translation>
+        <translation type="vanished">K方向</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>按标量值</translation>
+        <translation type="vanished">按标量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>箭头形状</translation>
+        <translation type="vanished">箭头形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>箭头大小：</translation>
+        <translation type="vanished">箭头大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>行宽：</translation>
+        <translation type="vanished">行宽：</translation>
     </message>
 </context>
 <context>
@@ -791,63 +799,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭头设置</translation>
+        <translation type="vanished">箭头设置</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>通用设置</translation>
+        <translation type="vanished">通用设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理价值：</translation>
+        <translation type="vanished">物理价值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>长度</translation>
+        <translation type="vanished">长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>汽车</translation>
+        <translation type="vanished">汽车</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>标准值：</translation>
+        <translation type="vanished">标准值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[多发性硬化症]</translation>
+        <translation type="vanished">[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕长度：</translation>
+        <translation type="vanished">屏幕长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>要绘制的最小值：</translation>
+        <translation type="vanished">要绘制的最小值：</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>面孔</translation>
+        <translation type="vanished">面孔</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>添加 (&amp;A)</translation>
+        <translation type="vanished">添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>消除 (&amp;R)</translation>
+        <translation type="vanished">消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>脸 %1</translation>
+        <translation type="vanished">脸 %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>长度图例</translation>
+        <translation type="vanished">长度图例</translation>
     </message>
 </context>
 <context>

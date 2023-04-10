@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+        <translation type="vanished">प्रदर्शन सेटिंग संपादित करें</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>क्रॉस-सेक्शन डेटा डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>क्रॉस-सेक्शन डेटा (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 रेखा %2 : "%3": ध्वज डेटा अमान्य है।</translation>
+        <translation type="vanished">%1 रेखा %2 : "%3": ध्वज डेटा अमान्य है।</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+        <translation type="vanished">प्रदर्शन सेटिंग संपादित करें</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>क्रॉस-सेक्शन डेटा डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>वीटीके फ़ाइल (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>बुनियादी</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>पृष्ठभूमि का रंग</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>क्रॉस सेक्शन लाइन्स</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>जेड स्केल:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>चौराहों के नाम</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>

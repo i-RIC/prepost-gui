@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Ordinare (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Deseleziona tutto (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Di base</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>LATTINA</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensione punto:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Larghezza della linea:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superficie</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Rompere le linee</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Spettacolo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Colore:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mappatura impostazione poligoni</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mappa dei colori per i valori</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Impostazioni di visualizzazione della nuvola di punti</translation>
+        <translation type="vanished">Impostazioni di visualizzazione della nuvola di punti</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Di base</translation>
+        <translation type="vanished">Di base</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>LATTINA</translation>
+        <translation type="vanished">LATTINA</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punti</translation>
+        <translation type="vanished">Punti</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensione punto:</translation>
+        <translation type="vanished">Dimensione punto:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Larghezza della linea:</translation>
+        <translation type="vanished">Larghezza della linea:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superficie</translation>
+        <translation type="vanished">Superficie</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; in &amp;quot;Modalità modifica puntiquot;, questa impostazione viene ignorata e i dati TIN sono sempre mostrato come punti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Rompere le linee</translation>
+        <translation type="vanished">Rompere le linee</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Spettacolo</translation>
+        <translation type="vanished">Spettacolo</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Colore:</translation>
+        <translation type="vanished">Colore:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Mappatura impostazione poligoni</translation>
+        <translation type="vanished">Mappatura impostazione poligoni</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Mappa dei colori per i valori</translation>
+        <translation type="vanished">Mappa dei colori per i valori</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importare (&amp;I)</translation>
+        <translation type="vanished">Importare (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Esportare (&amp;E)</translation>
+        <translation type="vanished">Esportare (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Rimuovi i triangoli con il lato lungo</translation>
+        <translation>Rimuovi i triangoli con il lato lungo</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Limite lunghezza bordo:</translation>
+        <translation>Limite lunghezza bordo:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

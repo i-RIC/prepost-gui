@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Rūšiuoti (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Taško debesies ekrano nustatymas</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Panaikinti visų pasirinkimą (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Taško debesies ekrano nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Taškai</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Vielinis rėmas</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Paviršius</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; „Taškų redagavimo režime“ į šį nustatymą nepaisoma, o TIN duomenys visada yra rodomi kaip taškai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Pertraukos linijos</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Daugiakampių žemėlapių nustatymas</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Vertybių spalvų schema</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Taško debesies ekrano nustatymas</translation>
+        <translation type="vanished">Taško debesies ekrano nustatymas</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Pagrindinis</translation>
+        <translation type="vanished">Pagrindinis</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Taškai</translation>
+        <translation type="vanished">Taškai</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taško dydis:</translation>
+        <translation type="vanished">Taško dydis:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Vielinis rėmas</translation>
+        <translation type="vanished">Vielinis rėmas</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linijos plotis:</translation>
+        <translation type="vanished">Linijos plotis:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Paviršius</translation>
+        <translation type="vanished">Paviršius</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; „Taškų redagavimo režime“ į šį nustatymą nepaisoma, o TIN duomenys visada yra rodomi kaip taškai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; „Taškų redagavimo režime“ į šį nustatymą nepaisoma, o TIN duomenys visada yra rodomi kaip taškai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Pertraukos linijos</translation>
+        <translation type="vanished">Pertraukos linijos</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Rodyti</translation>
+        <translation type="vanished">Rodyti</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Daugiakampių žemėlapių nustatymas</translation>
+        <translation type="vanished">Daugiakampių žemėlapių nustatymas</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Vertybių spalvų schema</translation>
+        <translation type="vanished">Vertybių spalvų schema</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importuoti (&amp;I)</translation>
+        <translation type="vanished">Importuoti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksportuoti (&amp;E)</translation>
+        <translation type="vanished">Eksportuoti (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Pašalinkite trikampius ilgu kraštu</translation>
+        <translation>Pašalinkite trikampius ilgu kraštu</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Ribinis krašto ilgis:</translation>
+        <translation>Ribinis krašto ilgis:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: spustelėjus mygtuką Taikyti, pašalinti trikampiai bus nudažyti tamsiai pilka. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: spustelėjus mygtuką Taikyti, pašalinti trikampiai bus nudažyti tamsiai pilka. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Coğrafi veri eşleme</translation>
+        <translation type="vanished">Coğrafi veri eşleme</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>TIN'lerle Eşleme</translation>
+        <translation type="vanished">TIN'lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
+        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Şablon eşleme</translation>
+        <translation type="vanished">Şablon eşleme</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Izgara hücre şekilleri ile ilgili olarak ızgara düğümlerine yakın coğrafi veri noktalarını bulun ve enterpolasyon için bu noktalardaki değerleri kullanın. Bu algoritma sadece yapılandırılmış gridler için kullanılabilir.</translation>
+        <translation type="vanished">Izgara hücre şekilleri ile ilgili olarak ızgara düğümlerine yakın coğrafi veri noktalarını bulun ve enterpolasyon için bu noktalardaki değerleri kullanın. Bu algoritma sadece yapılandırılmış gridler için kullanılabilir.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detay (&amp;D)...</translation>
+        <translation type="vanished">Detay (&amp;D)...</translation>
     </message>
 </context>
 <context>

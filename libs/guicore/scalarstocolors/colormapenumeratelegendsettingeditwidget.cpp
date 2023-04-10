@@ -57,3 +57,11 @@ void ColorMapEnumerateLegendSettingEditWidget::setSetting(const ColorMapEnumerat
 
 	ui->imageSettingWidget->setSetting(setting.imageSetting);
 }
+
+void ColorMapEnumerateLegendSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+{
+	ui->visibilityGroupBox->setDisabled(disabled);
+	ui->titleGroupBox->setDisabled(disabled);
+	ui->labelGroupBox->setDisabled(disabled);
+	ui->colorGroupBox->setDisabled(disabled);
+}

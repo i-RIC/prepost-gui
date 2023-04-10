@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>색상 설정 편집</translation>
+        <translation type="vanished">색상 설정 편집</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>포인트 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>이미지 파일 선택</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>모든 이미지 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">이미지 파일 선택</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">모든 이미지 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>디스플레이 설정 수정</translation>
+        <translation type="vanished">디스플레이 설정 수정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>가리키다 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>모양</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>포인트들</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>아이콘 이미지</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>이미지 가져오기 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>분명한 (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>최대 크기:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>가져온 이미지의 너비나 높이가 최대 크기보다 크면 너비나 높이가 최대 크기와 같아지도록 이미지가 자동으로 축소됩니다.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">포인트 데이터 표시 설정</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">모양</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">포인트들</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">포인트 크기:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">아이콘 이미지</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">이미지 가져오기 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">분명한 (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">최대 크기:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">가져온 이미지의 너비나 높이가 최대 크기보다 크면 너비나 높이가 최대 크기와 같아지도록 이미지가 자동으로 축소됩니다.</translation>
     </message>
 </context>
 </TS>

@@ -16,12 +16,12 @@ class PreProcessorGeoDataDataItem : public PreProcessorGeoDataDataItemInterface
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGeoDataDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGeoDataDataItem();
 
-	GeoData* geoData() const override {return m_geoData;}
-	void setGeoData(GeoData* geodata);
+	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const override;
+	GeoData* geoData() const override;
+	void setGeoData(GeoData* geodata) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;

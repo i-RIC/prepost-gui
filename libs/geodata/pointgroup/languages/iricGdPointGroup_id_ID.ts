@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Edit Pengaturan Warna</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Pengaturan Tampilan Poin</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Pilih file gambar</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Semua gambar (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Pilih file gambar</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Semua gambar (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Edit pengaturan tampilan</translation>
+        <translation type="vanished">Edit pengaturan tampilan</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Pengaturan Tampilan Data Poin</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Warna</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Warnai berdasarkan nilai</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <source>Form</source>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Ketika lebar atau tinggi gambar yang diimpor lebih besar dari ukuran Maks, gambar secara otomatis menyusut sehingga lebar atau tinggi menjadi sama dengan ukuran maks.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Warna Kustom</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Pengaturan Tampilan Data Poin</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Poin</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Ukuran Titik:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Gambar Ikon</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Impor gambar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Jernih (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Ukuran maks:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Ketika lebar atau tinggi gambar yang diimpor lebih besar dari ukuran Maks, gambar secara otomatis menyusut sehingga lebar atau tinggi menjadi sama dengan ukuran maks.</translation>
     </message>
 </context>
 </TS>

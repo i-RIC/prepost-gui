@@ -2,8 +2,10 @@
 #define MOUSEBOUNDINGBOX_H
 
 #include "../guicore_global.h"
+
 #include <QObject>
 #include <QPoint>
+
 #include <vtkSmartPointer.h>
 #include <vtkPolygon.h>
 #include <vtkUnstructuredGrid.h>
@@ -11,6 +13,8 @@
 #include <vtkActor.h>
 
 class VTK2DGraphicsView;
+
+class QPointF;
 
 class GUICOREDLL_EXPORT MouseBoundingBox : public QObject
 {
@@ -30,6 +34,8 @@ public:
 	void setZDepth(double z);
 
 	bool isInsideBox(double x, double y) const;
+	QPointF center() const;
+	double circumfenceCircleRadius() const;
 
 	vtkUnstructuredGrid* vtkGrid() const;
 	vtkUnstructuredGrid* vtkRegionGrid() const;

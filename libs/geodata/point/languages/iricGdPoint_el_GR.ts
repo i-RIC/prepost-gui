@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Επεξεργασία Συντεταγμένων Σημείων</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Μετακίνηση κορυφής</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Ορισμός κορυφής</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

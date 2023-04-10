@@ -70,7 +70,7 @@ void PolyLineController::clear()
 	setPolyLine(empty);
 }
 
-bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDistance, int* vid)
+bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDistance, int* vid) const
 {
 	auto polydata = impl->m_actor.pointsPolyData();
 	*vid = polydata->FindPoint(pos.x(), pos.y(), 0.0);
@@ -84,7 +84,7 @@ bool PolyLineController::isVertexSelectable(const QPointF& pos, double limitDist
 	return diff.lengthSquared() < limitDistance * limitDistance;
 }
 
-bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId)
+bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId) const
 {
 	double x[3] = {pos.x(), pos.y(), 0};
 	int subId;
@@ -132,7 +132,7 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 	return false;
 }
 
-int PolyLineController::findNearestLine(const QPointF& pos)
+int PolyLineController::findNearestLine(const QPointF& pos) const
 {
 	int edgeId = 0;
 	double minDistSquared;

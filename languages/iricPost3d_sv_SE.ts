@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Räckvidd</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Färgkarta</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Ansikten</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Färgkarta</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Riktning</translation>
+        <translation type="vanished">Riktning</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Räckvidd</translation>
+        <translation type="vanished">Räckvidd</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jag är i</translation>
+        <translation type="vanished">Jag är i</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Aktiverad</translation>
+        <translation type="vanished">Aktiverad</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Provtagning</translation>
+        <translation type="vanished">Provtagning</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Alla hörn</translation>
+        <translation type="vanished">Alla hörn</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Samplingshastighet:</translation>
+        <translation type="vanished">Samplingshastighet:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Jag-riktning</translation>
+        <translation type="vanished">Jag-riktning</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-riktning</translation>
+        <translation type="vanished">J-riktning</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-riktning</translation>
+        <translation type="vanished">K-riktning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Med skalvärde</translation>
+        <translation type="vanished">Med skalvärde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstorlek:</translation>
+        <translation type="vanished">Pilstorlek:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linjebredd:</translation>
+        <translation type="vanished">Linjebredd:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinställning</translation>
+        <translation type="vanished">Pilinställning</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Gemensam inställning</translation>
+        <translation type="vanished">Gemensam inställning</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysiskt värde:</translation>
+        <translation type="vanished">Fysiskt värde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Längd</translation>
+        <translation type="vanished">Längd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Bil</translation>
+        <translation type="vanished">Bil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardvärde:</translation>
+        <translation type="vanished">Standardvärde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Längd på skärmen:</translation>
+        <translation type="vanished">Längd på skärmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minsta värde att dra:</translation>
+        <translation type="vanished">Minsta värde att dra:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Ansikten</translation>
+        <translation type="vanished">Ansikten</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Ansikte %1</translation>
+        <translation type="vanished">Ansikte %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Längd Legend</translation>
+        <translation type="vanished">Längd Legend</translation>
     </message>
 </context>
 <context>

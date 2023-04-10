@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Fel (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Setare de afișare a norului de puncte</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Deselectează tot (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Setare de afișare a norului de puncte</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>De bază</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>STANIU</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Puncte</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Cadru de sarma</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lățimea liniei:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Suprafaţă</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; când se află în „Modul de editare puncte”, această setare este ignorată, iar datele TIN sunt întotdeauna prezentate ca puncte.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Linii de întrerupere</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Spectacol</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Setarea cartografierii poligoane</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Harta de culori pentru valori</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Setare de afișare a norului de puncte</translation>
+        <translation type="vanished">Setare de afișare a norului de puncte</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>De bază</translation>
+        <translation type="vanished">De bază</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>STANIU</translation>
+        <translation type="vanished">STANIU</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puncte</translation>
+        <translation type="vanished">Puncte</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensiunea punctului:</translation>
+        <translation type="vanished">Dimensiunea punctului:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Cadru de sarma</translation>
+        <translation type="vanished">Cadru de sarma</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lățimea liniei:</translation>
+        <translation type="vanished">Lățimea liniei:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Suprafaţă</translation>
+        <translation type="vanished">Suprafaţă</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; când se află în „Modul de editare puncte”, această setare este ignorată, iar datele TIN sunt întotdeauna prezentate ca puncte.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; când se află în „Modul de editare puncte”, această setare este ignorată, iar datele TIN sunt întotdeauna prezentate ca puncte.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Linii de întrerupere</translation>
+        <translation type="vanished">Linii de întrerupere</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Spectacol</translation>
+        <translation type="vanished">Spectacol</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Setarea cartografierii poligoane</translation>
+        <translation type="vanished">Setarea cartografierii poligoane</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Harta de culori pentru valori</translation>
+        <translation type="vanished">Harta de culori pentru valori</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Export (&amp;E)</translation>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Eliminați triunghiurile cu margine lungă</translation>
+        <translation>Eliminați triunghiurile cu margine lungă</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Lungime limită a muchiei:</translation>
+        <translation>Lungime limită a muchiei:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Notă &lt;/span&gt;: Când faceți clic pe butonul Aplicare, triunghiurile care vor fi eliminate vor fi pictate cu întuneric gri. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Notă &lt;/span&gt;: Când faceți clic pe butonul Aplicare, triunghiurile care vor fi eliminate vor fi pictate cu întuneric gri. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

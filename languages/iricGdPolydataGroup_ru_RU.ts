@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Добавить новое %1</translation>
+        <translation type="vanished">Добавить новое %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Настройка цвета (&amp;S)...</translation>
+        <translation type="vanished">Настройка цвета (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Редактировать настройки цвета</translation>
+        <translation type="vanished">Редактировать настройки цвета</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Копировать...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Настройка экрана (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Настройка цвета PolyData</translation>
+        <translation type="vanished">Настройка цвета PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Цвет по значению</translation>
+        <translation type="vanished">Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
 </context>
 <context>

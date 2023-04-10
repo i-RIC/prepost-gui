@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>색상 설정 편집</translation>
+        <translation type="vanished">색상 설정 편집</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>다각형 표시 설정</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>다각형 그룹 표시 설정</translation>
+        <translation type="vanished">다각형 그룹 표시 설정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>값으로 색상 지정</translation>
+        <translation type="vanished">값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>맞춤 색상</translation>
+        <translation type="vanished">맞춤 색상</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>선의 폭:</translation>
+        <translation type="vanished">선의 폭:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>디스플레이 설정 수정</translation>
+        <translation type="vanished">디스플레이 설정 수정</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>다각형 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>경고</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
     </message>
 </context>
 </TS>

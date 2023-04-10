@@ -1,13 +1,13 @@
-#include "geodatapointmapcellmappert.h"
+#include "geodatapointmapcellmapper.h"
 #include "geodatapointmaplandxmlimporter.h"
-#include "geodatapointmapnodemappert.h"
+#include "geodatapointmapnodemapper.h"
 #include "geodatapointmaprealexporter.h"
 #include "geodatapointmaprealimporter.h"
 #include "geodatapointmaprealtextimporter.h"
 #include "geodatapointmapstlexporter.h"
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmaptincreator.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 #include "geodatapointmaplandxmlexporter.h"
 #include "geodatapointmapvtkexporter.h"
 #include "geodatapointmapwebimporter.h"
@@ -24,16 +24,11 @@ GeoDataPointmapTINCreator::GeoDataPointmapTINCreator() :
 	exporters().push_back(new GeoDataPointmapRealExporter(this));
 	exporters().push_back(new GeoDataPointmapSTLExporter(this));
 	exporters().push_back(new GeoDataPointmapVTKExporter(this));
-
-	nodeMappers().push_back(new GeoDataPointmapNodeMapperT<double, vtkDoubleArray>(this));
-	cellMappers().push_back(new GeoDataPointmapCellMapperT<double, vtkDoubleArray>(this));
 }
 
 GeoData* GeoDataPointmapTINCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	GeoDataPointmap* data = new GeoDataPointMapT<double, vtkDoubleArray>(parent, this, condition);
-	data->setDefaultMapper();
-	return data;
+	return new GeoDataPointmap(parent, this, condition);
 }
 
 QString GeoDataPointmapTINCreator::name(unsigned int index) const

@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Seřadit (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavení zobrazení mračna bodů</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Odznačit vše (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Nastavení zobrazení mračna bodů</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Použijte Nastavení okna Předzpracování</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Základní</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>CÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Body</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Drátový model</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Šířka čáry:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Povrch</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ukázat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapování Nastavení polygonů</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Barevná mapa pro hodnoty</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Nastavení zobrazení mračna bodů</translation>
+        <translation type="vanished">Nastavení zobrazení mračna bodů</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Základní</translation>
+        <translation type="vanished">Základní</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>CÍN</translation>
+        <translation type="vanished">CÍN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Body</translation>
+        <translation type="vanished">Body</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Velikost bodu:</translation>
+        <translation type="vanished">Velikost bodu:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Drátový model</translation>
+        <translation type="vanished">Drátový model</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Povrch</translation>
+        <translation type="vanished">Povrch</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Break Lines</translation>
+        <translation type="vanished">Break Lines</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Ukázat</translation>
+        <translation type="vanished">Ukázat</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Mapování Nastavení polygonů</translation>
+        <translation type="vanished">Mapování Nastavení polygonů</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Barevná mapa pro hodnoty</translation>
+        <translation type="vanished">Barevná mapa pro hodnoty</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Vývozní (&amp;E)</translation>
+        <translation type="vanished">Vývozní (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Odstraňte trojúhelníky pomocí Long Edge</translation>
+        <translation>Odstraňte trojúhelníky pomocí Long Edge</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Mezní délka hrany:</translation>
+        <translation>Mezní délka hrany:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Když kliknete na tlačítko Použít, trojúhelníky, které budou odstraněny, budou namalovány tmavě šedá. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Když kliknete na tlačítko Použít, trojúhelníky, které budou odstraněny, budou namalovány tmavě šedá. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

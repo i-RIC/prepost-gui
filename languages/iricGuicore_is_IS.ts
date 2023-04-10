@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Basic</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Litakort</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Hunsa stillingu litastikunnar við innflutning</translation>
+        <translation type="vanished">Hunsa stillingu litastikunnar við innflutning</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Stærð og staðsetning</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Stefna:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Lárétt</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Lóðrétt</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Fjöldi merkimiða:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Sjálfvirk</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
+        <translation type="vanished">Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Útflutningur (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Fjöldi lita til að setja inn í hvern hluta</translation>
+        <translation type="vanished">Fjöldi lita til að setja inn í hvern hluta</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Gildissvið</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Fjöldi lita:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Eiginleiki</translation>
+        <translation type="vanished">Eiginleiki</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Notaðu stillingu forvinnslugluggans</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Stilling mynda</translation>
+        <translation type="vanished">Stilling mynda</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Gildissvið</translation>
+        <translation type="vanished">Gildissvið</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Sjálfvirk</translation>
+        <translation type="vanished">Sjálfvirk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Fylltu efra svæði</translation>
+        <translation type="vanished">Fylltu efra svæði</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Fylltu neðra svæði</translation>
+        <translation type="vanished">Fylltu neðra svæði</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Deildarnúmer:</translation>
+        <translation type="vanished">Deildarnúmer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Hámark:</translation>
+        <translation type="vanished">Hámark:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Litamynd</translation>
+        <translation type="vanished">Litamynd</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Litastilling</translation>
+        <translation type="vanished">Litastilling</translation>
     </message>
 </context>
 <context>

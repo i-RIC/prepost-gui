@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Quindi, definire la linea centrale della griglia. La linea centrale della griglia può essere definita come linea poligonale facendo clic con il mouse. Termina la definizione facendo doppio clic o premendo il tasto Invio.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Aggiungi vertice (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Rimuovi vertice (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Modifica coordinate (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Invertire la direzione della linea centrale (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

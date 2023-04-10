@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>多线坐标</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>添加顶点 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>删除顶点 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>编辑坐标 (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>反转中心线方向 (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

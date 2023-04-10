@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>De bază</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Harta de culori</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorați setarea barei de culoare la import</translation>
+        <translation type="vanished">Ignorați setarea barei de culoare la import</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Mărime și poziție</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Direcţie:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Orizontală</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Numar de etichete:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Când treceți la modul de gradare, valorile sunt setate la valoarea de mijloc a fiecărei secțiuni.</translation>
+        <translation type="vanished">Când treceți la modul de gradare, valorile sunt setate la valoarea de mijloc a fiecărei secțiuni.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Export (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Numărul de culori de inserat la fiecare secțiune</translation>
+        <translation type="vanished">Numărul de culori de inserat la fiecare secțiune</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Interval de valori</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Numar de culori:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formă</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Utilizați setarea ferestrei de preprocesare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Setarea Colormap</translation>
+        <translation type="vanished">Setarea Colormap</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Interval de valori</translation>
+        <translation type="vanished">Interval de valori</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automat</translation>
+        <translation type="vanished">Automat</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Umpleți zona superioară</translation>
+        <translation type="vanished">Umpleți zona superioară</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Umpleți zona inferioară</translation>
+        <translation type="vanished">Umpleți zona inferioară</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Număr divizie:</translation>
+        <translation type="vanished">Număr divizie:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Max:</translation>
+        <translation type="vanished">Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Setarea culorii</translation>
+        <translation type="vanished">Setarea culorii</translation>
     </message>
 </context>
 <context>

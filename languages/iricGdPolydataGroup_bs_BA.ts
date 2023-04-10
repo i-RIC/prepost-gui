@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Dodaj novi %1</translation>
+        <translation type="vanished">Dodaj novi %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Podešavanje boje (&amp;S)...</translation>
+        <translation type="vanished">Podešavanje boje (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Uređivanje podešavanja boje</translation>
+        <translation type="vanished">Uređivanje podešavanja boje</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopiraj...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Display Setting (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Color Setting</translation>
+        <translation type="vanished">PolyData Color Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Boja prema vrijednosti</translation>
+        <translation type="vanished">Boja prema vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
 </context>
 <context>

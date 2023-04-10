@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>การทำแผนที่ข้อมูลทางภูมิศาสตร์</translation>
+        <translation type="vanished">การทำแผนที่ข้อมูลทางภูมิศาสตร์</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>การทำแผนที่ด้วย TINs</translation>
+        <translation type="vanished">การทำแผนที่ด้วย TINs</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN ที่สร้างจากข้อมูลทางภูมิศาสตร์จะใช้สำหรับการทำแผนที่ ค่าแอตทริบิวต์ของโหนดกริดจะคำนวณเป็นค่าเฉลี่ยถ่วงน้ำหนักของค่าที่โหนด TIN</translation>
+        <translation type="vanished">TIN ที่สร้างจากข้อมูลทางภูมิศาสตร์จะใช้สำหรับการทำแผนที่ ค่าแอตทริบิวต์ของโหนดกริดจะคำนวณเป็นค่าเฉลี่ยถ่วงน้ำหนักของค่าที่โหนด TIN</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>การแมปเทมเพลต</translation>
+        <translation type="vanished">การแมปเทมเพลต</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>ค้นหาจุดข้อมูลทางภูมิศาสตร์ที่อยู่ใกล้กับโหนดกริด เกี่ยวกับรูปร่างของเซลล์กริด และใช้ค่าที่จุดเหล่านั้นสำหรับการแก้ไข อัลกอริทึมนี้ใช้ได้กับกริดที่มีโครงสร้างเท่านั้น</translation>
+        <translation type="vanished">ค้นหาจุดข้อมูลทางภูมิศาสตร์ที่อยู่ใกล้กับโหนดกริด เกี่ยวกับรูปร่างของเซลล์กริด และใช้ค่าที่จุดเหล่านั้นสำหรับการแก้ไข อัลกอริทึมนี้ใช้ได้กับกริดที่มีโครงสร้างเท่านั้น</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>รายละเอียด (&amp;D)...</translation>
+        <translation type="vanished">รายละเอียด (&amp;D)...</translation>
     </message>
 </context>
 <context>

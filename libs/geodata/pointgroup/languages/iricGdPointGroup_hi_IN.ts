@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">रंग सेटिंग संपादित करें</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>अंक प्रदर्शन सेटिंग</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>छवि फ़ाइल का चयन करें</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>सभी चित्र (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">छवि फ़ाइल का चयन करें</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">सभी चित्र (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>प्रदर्शन सेटिंग संपादित करें</translation>
+        <translation type="vanished">प्रदर्शन सेटिंग संपादित करें</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>अंक डेटा प्रदर्शन सेटिंग</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>रंग</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>मूल्य से रंग</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -218,7 +232,7 @@
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>आइकन छवियां</translation>
+        <translation>चिह्न छवियां</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>जब आयातित छवि की चौड़ाई या ऊँचाई अधिकतम आकार से बड़ी होती है, तो छवि स्वचालित रूप से सिकुड़ जाती है ताकि चौड़ाई या ऊँचाई अधिकतम आकार के बराबर हो जाए।</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">अंक डेटा प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">आकार</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">अंक</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">बिंदु का आकार:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">आइकन छवियां</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">छवि आयात करें (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">साफ़ (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">अधिकतम आकार:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">जब आयातित छवि की चौड़ाई या ऊँचाई अधिकतम आकार से बड़ी होती है, तो छवि स्वचालित रूप से सिकुड़ जाती है ताकि चौड़ाई या ऊँचाई अधिकतम आकार के बराबर हो जाए।</translation>
     </message>
 </context>
 </TS>

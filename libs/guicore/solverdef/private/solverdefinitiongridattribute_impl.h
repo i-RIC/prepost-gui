@@ -13,6 +13,7 @@ class ColorMapFactoryI;
 class SolverDefinitionGridAttribute::Impl
 {
 public:
+	Impl(SolverDefinitionGridAttribute* parent);
 	Impl(const QDomElement& elem, SolverDefinition* solverDef, SolverDefinitionGridAttribute* parent);
 	~Impl();
 

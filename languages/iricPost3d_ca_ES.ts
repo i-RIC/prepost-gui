@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Interval</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Cares</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Direcció</translation>
+        <translation type="vanished">Direcció</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Jo</translation>
+        <translation type="vanished">Jo</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Rang</translation>
+        <translation type="vanished">Rang</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation type="vanished">M'hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Màx</translation>
+        <translation type="vanished">J Màx</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K mín</translation>
+        <translation type="vanished">K mín</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K màx</translation>
+        <translation type="vanished">K màx</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Activat</translation>
+        <translation type="vanished">Activat</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Mostreig</translation>
+        <translation type="vanished">Mostreig</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Tots els vèrtexs</translation>
+        <translation type="vanished">Tots els vèrtexs</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Taxa de mostreig:</translation>
+        <translation type="vanished">Taxa de mostreig:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-direcció</translation>
+        <translation type="vanished">I-direcció</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>Direcció J</translation>
+        <translation type="vanished">Direcció J</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>Direcció K</translation>
+        <translation type="vanished">Direcció K</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valor escalar</translation>
+        <translation type="vanished">Per valor escalar</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Forma de fletxa</translation>
+        <translation type="vanished">Forma de fletxa</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Mida de la fletxa:</translation>
+        <translation type="vanished">Mida de la fletxa:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Configuració de la fletxa</translation>
+        <translation type="vanished">Configuració de la fletxa</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Configuració comuna</translation>
+        <translation type="vanished">Configuració comuna</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Llargada</translation>
+        <translation type="vanished">Llargada</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valor estàndard:</translation>
+        <translation type="vanished">Valor estàndard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Senyora]</translation>
+        <translation type="vanished">[Senyora]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Longitud a la pantalla:</translation>
+        <translation type="vanished">Longitud a la pantalla:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[píxel]</translation>
+        <translation type="vanished">[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valor mínim per dibuixar:</translation>
+        <translation type="vanished">Valor mínim per dibuixar:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Cares</translation>
+        <translation type="vanished">Cares</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Afegeix (&amp;A)</translation>
+        <translation type="vanished">Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Cara %1</translation>
+        <translation type="vanished">Cara %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Llegenda de longitud</translation>
+        <translation type="vanished">Llegenda de longitud</translation>
     </message>
 </context>
 <context>

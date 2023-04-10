@@ -3,19 +3,19 @@
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="vanished">頂点の追加(&amp;A)</translation>
+        <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="vanished">頂点の削除(&amp;R)</translation>
+        <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="vanished">座標の編集(&amp;O)...</translation>
+        <translation>座標の編集(&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="vanished">中心線の向きを反転(&amp;E)</translation>
+        <translation>中心線の向きを反転(&amp;E)</translation>
     </message>
     <message>
         <source>Finish Defining Polygon or Polygonal line</source>

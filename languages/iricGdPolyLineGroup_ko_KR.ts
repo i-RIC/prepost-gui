@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>색상 설정 편집</translation>
+        <translation type="vanished">색상 설정 편집</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>라인 표시 설정</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>폴리라인 그룹 표시 설정</translation>
+        <translation type="vanished">폴리라인 그룹 표시 설정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>값으로 색상 지정</translation>
+        <translation type="vanished">값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>맞춤 색상</translation>
+        <translation type="vanished">맞춤 색상</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>선의 폭:</translation>
+        <translation type="vanished">선의 폭:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>이 항목을 삭제하면 이 데이터와 관련된 모든 그래프 창도 제거됩니다. 이 항목을 삭제하시겠습니까?</translation>
+        <translation type="vanished">이 항목을 삭제하면 이 데이터와 관련된 모든 그래프 창도 제거됩니다. 이 항목을 삭제하시겠습니까?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>디스플레이 설정 수정</translation>
+        <translation type="vanished">디스플레이 설정 수정</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>라인 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI 셰이프 파일(선) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
     </message>
 </context>
 </TS>

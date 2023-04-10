@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Kartiranje geografskih podatkov</translation>
+        <translation type="vanished">Kartiranje geografskih podatkov</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kartiranje s TIN -ji</translation>
+        <translation type="vanished">Kartiranje s TIN -ji</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN -ji, ustvarjeni iz geografskih podatkov, se uporabljajo za preslikavo. Vrednosti atributov vozlišč mreže se izračunajo kot tehtano povprečje vrednosti na vozliščih TIN.</translation>
+        <translation type="vanished">TIN -ji, ustvarjeni iz geografskih podatkov, se uporabljajo za preslikavo. Vrednosti atributov vozlišč mreže se izračunajo kot tehtano povprečje vrednosti na vozliščih TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Preslikava predloge</translation>
+        <translation type="vanished">Preslikava predloge</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Poiščite geografske podatkovne točke, ki so blizu vozlišč mreže, glede oblik mrežnih celic in uporabite vrednosti na teh točkah za interpolacijo. Ta algoritem se lahko uporablja samo za strukturirana omrežja.</translation>
+        <translation type="vanished">Poiščite geografske podatkovne točke, ki so blizu vozlišč mreže, glede oblik mrežnih celic in uporabite vrednosti na teh točkah za interpolacijo. Ta algoritem se lahko uporablja samo za strukturirana omrežja.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Podrobnosti (&amp;D)...</translation>
+        <translation type="vanished">Podrobnosti (&amp;D)...</translation>
     </message>
 </context>
 <context>

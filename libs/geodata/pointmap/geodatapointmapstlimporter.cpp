@@ -1,5 +1,5 @@
 #include "geodatapointmapstlimporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
@@ -19,7 +19,6 @@
 #include <vtkDoubleArray.h>
 #include <vtkSTLReader.h>
 #include <vtkSmartPointer.h>
-#include <vtkVertex.h>
 
 GeoDataPointmapSTLImporter::GeoDataPointmapSTLImporter(GeoDataCreator* creator) :
 	GeoDataImporter("stl", tr("Stereolithography (STL)"), creator),
@@ -76,41 +75,37 @@ bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& 
 
 bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidget* /*w*/)
 {
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
-	vtkSTLReader* reader = vtkSTLReader::New();
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
+
+	auto reader = vtkSmartPointer<vtkSTLReader>::New();
 	reader->SetFileName(iRIC::toStr(filename()).c_str());
-	vtkPolyData* polydata = reader->GetOutput();
 	reader->Update();
+	vtkPolyData* polydata = reader->GetOutput();
 
-	pmap->vtkGrid()->Reset();
-	pmap->vtkValues()->Reset();
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto values = vtkSmartPointer<vtkDoubleArray>::New();
 
-	vtkPoints* points = pmap->vtkGrid()->GetPoints();
-	vtkDoubleArray* values = vtkDoubleArray::New();
-	vtkIdType i, numpoints;
-	numpoints = polydata->GetNumberOfPoints();
-	points->Allocate(numpoints);
-	values->Allocate(numpoints);
-	for (i = 0; i < numpoints; ++i) {
-		double tmpvec[3];
+	vtkIdType numPoints = polydata->GetNumberOfPoints();
+	points->Allocate(numPoints);
+	values->Allocate(numPoints);
+	double tmpvec[3];
+	for (vtkIdType i = 0; i < numPoints; ++i) {
 		polydata->GetPoints()->GetPoint(i, tmpvec);
 
-		values->InsertNextValue(tmpvec[2]);
 		QPointF p(tmpvec[0], tmpvec[1]);
-
 		if (m_converter != nullptr) {
 			p = m_converter->convert(p);
 		}
-
 		points->InsertNextPoint(p.x(), p.y(), 0);
+		values->InsertNextValue(tmpvec[2]);
 	}
-	points->Modified();
-	values->Modified();
+	auto tin = vtkSmartPointer<vtkPolyData>::New();
+	tin->SetPoints(points);
+	tin->SetPolys(polydata->GetPolys());
 
-	pmap->setSTLData(polydata, values);
+	pmap->setTin(tin, values);
 
-	reader->Delete();
-	values->Delete();
 	return true;
 }
 

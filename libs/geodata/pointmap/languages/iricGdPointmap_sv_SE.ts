@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Sortera (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display-inställning</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Avmarkera alla (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Point Cloud Display-inställning</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Använd inställning av förbearbetningsfönstret</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grundläggande</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TENN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poäng</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstorlek:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredd:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Yta</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Bryt linjer</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Kartläggning av polygoner</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Färgkarta för värden</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Point Cloud Display-inställning</translation>
+        <translation type="vanished">Point Cloud Display-inställning</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Grundläggande</translation>
+        <translation type="vanished">Grundläggande</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TENN</translation>
+        <translation type="vanished">TENN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poäng</translation>
+        <translation type="vanished">Poäng</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktstorlek:</translation>
+        <translation type="vanished">Punktstorlek:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linjebredd:</translation>
+        <translation type="vanished">Linjebredd:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Yta</translation>
+        <translation type="vanished">Yta</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs!&lt;/span&gt; I &amp;quot;Points Edit Modequot; ignoreras denna inställning och TIN-data är alltid visas som poäng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Bryt linjer</translation>
+        <translation type="vanished">Bryt linjer</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Show</translation>
+        <translation type="vanished">Show</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Kartläggning av polygoner</translation>
+        <translation type="vanished">Kartläggning av polygoner</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Färgkarta för värden</translation>
+        <translation type="vanished">Färgkarta för värden</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importera (&amp;I)</translation>
+        <translation type="vanished">Importera (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exportera (&amp;E)</translation>
+        <translation type="vanished">Exportera (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Ta bort trianglar med lång kant</translation>
+        <translation>Ta bort trianglar med lång kant</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Gräns för kantlängd:</translation>
+        <translation>Gräns för kantlängd:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: När du klickar på knappen Apply kommer trianglarna som ska tas bort att målas med mörka grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

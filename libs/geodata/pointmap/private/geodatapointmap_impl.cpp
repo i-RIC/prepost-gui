@@ -4,99 +4,57 @@
 
 GeoDataPointmap::Impl::Impl(GeoDataPointmap* pointmap) :
 	m_pointsManager {pointmap},
-	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
-	m_addCursor {m_addPixmap, 0, 0},
-	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
-	m_removeCursor {m_removePixmap, 0, 0},
-	m_interpPointAddPixmap {":/libs/guibase/images/cursorAdd.png"},
-	m_interpPointAddCursor {m_interpPointAddPixmap, 0, 0},
-	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
-	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
-
-	m_selectionModePoint {new QAction(QIcon(":/libs/geodata/pointmap/images/iconPointSelection.svg"), GeoDataPointmap::tr("Select point"), pointmap)},
-	m_selectionModePolygon {new QAction(GeoDataPointmap::tr("Select Points With &Polygon"), pointmap)},
-	m_addPointAction {new QAction(GeoDataPointmap::tr("&Add New Point"), pointmap)},
-	m_interpolatePointAction {new QAction(GeoDataPointmap::tr("&Interpolate Points"), pointmap)},
+	m_tinManager {&m_pointsManager, pointmap},
+	m_polygonsManager {&m_pointsManager, &m_tinManager, pointmap},
+	m_activeController {&m_tinManager},
+	m_tinNodeMapper {pointmap},
+	m_tinCellMapper {pointmap},
+	m_templateNodeMapper {pointmap},
+	m_templateCellMapper {pointmap},
+	m_polygonsNodeMapper {pointmap},
+	m_polygonsCellMapper {pointmap},
 	m_removeTrianglesWithLongEdgeAction {new QAction(GeoDataPointmap::tr("Remove Triangles &with Long edge..."), pointmap)},
-	m_displaySettingAction {new QAction(GeoDataPointmap::tr("Display &Setting..."), pointmap)},
-	m_editPointsAction {new QAction(GeoDataPointmap::tr("&Edit Selected Points..."), pointmap)},
-	m_editPointsDeleteAction {new QAction(GeoDataPointmap::tr("Delete Selected P&oints"), pointmap)},
-	m_editPointsExportAction {new QAction(GeoDataPointmap::tr("E&xport Selected Points..."), pointmap)},
-	m_editPointsLessThanAction {new QAction(GeoDataPointmap::tr("Delete Selected Points &Less Than Value..."), pointmap)},
-	m_editPointsGreaterThanAction {new QAction(GeoDataPointmap::tr("Delete Selected Points &Greater Than Value..."), pointmap)},
 	m_remeshAction {new QAction(GeoDataPointmap::tr("Remesh &TINs"), pointmap)},
-	m_addBreakLineAction {new QAction(GeoDataPointmap::tr("Add &Break Line"), pointmap)},
-	m_removeBreakLineAction {new QAction(GeoDataPointmap::tr("&Remove Break Line"), pointmap)},
-	m_removeAllBreakLinesAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), GeoDataPointmap::tr("Re&move All Break Lines..."), pointmap)},
-	m_mergeAction {new QAction(GeoDataPointmap::tr("Merge..."), pointmap)},
+	m_modeMenu {new QMenu(GeoDataPointmap::tr("Switch &Mode"))},
+	m_pointEditModeAction {new QAction("&Points Edit Mode", pointmap)},
+	m_tinEditModeAction {new QAction("&TIN Edit Mode", pointmap)},
+	m_polygonsEditModeAction {new QAction("&Polyons Edit Mode", pointmap)},
+	m_mergeAction {new QAction(GeoDataPointmap::tr("Mer&ge..."), pointmap)},
+	m_displaySettingAction {new QAction(GeoDataPointmap::tr("Display &Setting..."), pointmap)},
+	m_mappingSettingAction {new QAction(GeoDataPointmap::tr("&Mapping Setting..."), pointmap)},
+	m_rightClickingMenu {new QMenu()},
 	m_parent {pointmap}
-{}
+{
+	m_pointsManager.setTinManager(&m_tinManager);
+}
 
 GeoDataPointmap::Impl::~Impl()
-{}
+{
+	delete m_rightClickingMenu;
+}
 
 void GeoDataPointmap::Impl::setupActions()
 {
-	m_selectionModePoint->setCheckable(true);
-	GeoDataPointmap::connect(m_selectionModePoint, SIGNAL(triggered(bool)), m_parent, SLOT(selectionModePoint(bool)));
 
-	m_selectionModePolygon->setIcon(QIcon(":/libs/geodata/pointmap/images/iconPolygonSelection.svg"));
-	m_selectionModePolygon->setCheckable(true);
-	GeoDataPointmap::connect(m_selectionModePolygon, SIGNAL(triggered(bool)), m_parent, SLOT(selectionModePolygon(bool)));
+	GeoDataPointmap::connect(m_removeTrianglesWithLongEdgeAction, &QAction::triggered, [=](bool){m_parent->removeTrianglesWithLongEdgeStart();});
+	GeoDataPointmap::connect(m_displaySettingAction, &QAction::triggered, [=](bool){m_parent->openDisplaySettingDialog();});
+	GeoDataPointmap::connect(m_mappingSettingAction, &QAction::triggered, [=](bool){m_parent->openMappingSettingDialog();});
+	GeoDataPointmap::connect(m_remeshAction, &QAction::triggered, [=](bool){m_parent->remeshTin();});
 
-	m_addPointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconAddPoint.svg"));
-	m_addPointAction->setCheckable(true);
-	GeoDataPointmap::connect(m_addPointAction, SIGNAL(triggered(bool)), m_parent, SLOT(addPoints(bool)));
+	m_modeMenu->addAction(m_pointEditModeAction);
+	m_modeMenu->addAction(m_tinEditModeAction);
+	m_modeMenu->addAction(m_polygonsEditModeAction);
 
-	m_interpolatePointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconInterpolatePoint.svg"));
-	m_interpolatePointAction->setCheckable(true);
-	GeoDataPointmap::connect(m_interpolatePointAction, SIGNAL(triggered(bool)), m_parent, SLOT(interpolatePoints(bool)));
+	m_pointEditModeAction->setCheckable(true);
+	connect(m_pointEditModeAction, &QAction::triggered, m_parent, &GeoDataPointmap::togglePointsEditMode);
 
-	GeoDataPointmap::connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), m_parent, SLOT(removeTrianglesWithLongEdgeStart()));
+	m_tinEditModeAction->setCheckable(true);
+	connect(m_tinEditModeAction, &QAction::triggered, m_parent, &GeoDataPointmap::toggleTinEditMode);
 
-	GeoDataPointmap::connect(m_displaySettingAction, SIGNAL(triggered()), m_parent, SLOT(showDisplaySetting()));
+	m_polygonsEditModeAction->setCheckable(true);
+	connect(m_polygonsEditModeAction, &QAction::triggered, m_parent, &GeoDataPointmap::togglePolyonsEditMode);
 
-	m_editPointsAction->setCheckable(false);
-	GeoDataPointmap::connect(m_editPointsAction, SIGNAL(triggered(bool)), m_parent, SLOT(editPoints()));
-
-	m_editPointsDeleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsDeleteAction->setCheckable(false);
-	GeoDataPointmap::connect(m_editPointsDeleteAction, SIGNAL(triggered(bool)), m_parent, SLOT(editPointsDelete()));
-
-	m_editPointsExportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
-	m_editPointsExportAction->setCheckable(false);
-	GeoDataPointmap::connect(m_editPointsExportAction, SIGNAL(triggered(bool)), m_parent, SLOT(editPointsExport()));
-
-	m_editPointsLessThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsLessThanAction->setCheckable(false);
-	GeoDataPointmap::connect(m_editPointsLessThanAction, SIGNAL(triggered(bool)), m_parent, SLOT(editPointsLessThan()));
-
-	m_editPointsGreaterThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsGreaterThanAction->setCheckable(false);
-	GeoDataPointmap::connect(m_editPointsGreaterThanAction, SIGNAL(triggered(bool)), m_parent, SLOT(editPointsGreaterThan()));
-
-	enablePointSelectedActions(false);
-
-	GeoDataPointmap::connect(m_remeshAction, SIGNAL(triggered()), m_parent, SLOT(remeshTINS()));
-
-	m_addBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineAdd.svg"));
-	m_addBreakLineAction->setCheckable(true);
-	GeoDataPointmap::connect(m_addBreakLineAction, SIGNAL(triggered()), m_parent, SLOT(addBreakLine()));
-
-	m_removeBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineDelete.svg"));
-	m_removeBreakLineAction->setCheckable(true);
-	GeoDataPointmap::connect(m_removeBreakLineAction, SIGNAL(triggered()), m_parent, SLOT(removeBreakLine()));
-
-	GeoDataPointmap::connect(m_removeAllBreakLinesAction, SIGNAL(triggered()), m_parent, SLOT(removeAllBreakLines()));
+	m_tinEditModeAction->setChecked(true);
 
 	GeoDataPointmap::connect(m_mergeAction, SIGNAL(triggered()), m_parent, SLOT(mergePointmaps()));
-}
-
-void GeoDataPointmap::Impl::enablePointSelectedActions(bool enable)
-{
-	m_editPointsAction->setEnabled(enable);
-	m_editPointsDeleteAction->setEnabled(enable);
-	m_editPointsExportAction->setEnabled(enable);
-	m_editPointsGreaterThanAction->setEnabled(enable);
-	m_editPointsLessThanAction->setEnabled(enable);
 }

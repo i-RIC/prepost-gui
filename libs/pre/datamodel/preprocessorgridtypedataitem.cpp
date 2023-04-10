@@ -7,6 +7,7 @@
 #include "preprocessorhydraulicdatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 #include "private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h"
+#include "private/preprocessorgridtypedataitem_applycolormapsettingdialog.h"
 
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
@@ -222,7 +223,7 @@ ColorMapSettingContainerI* PreProcessorGridTypeDataItem::colorMapSetting(const s
 	return it->second;
 }
 
-std::map<std::string, ColorMapSettingContainerI*> PreProcessorGridTypeDataItem::colorMapSettings() const
+std::unordered_map<std::string, ColorMapSettingContainerI*> PreProcessorGridTypeDataItem::colorMapSettings() const
 {
 	return m_colorMapSettingContainers;
 }
@@ -346,7 +347,7 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 		m_colorMapLegendActors.insert({att->name(), actor});
 	}
 
-	// TODO complex　type test needed!
+	// TODO complex type test needed!
 	auto complexAtts = m_gridType->gridComplexAttributes();
 	for (auto att : complexAtts) {
 		auto c = att->createColorMapSettingContainer();
@@ -419,6 +420,7 @@ void PreProcessorGridTypeDataItem::applyColorMapSetting(const std::string& name)
 	for (const auto c : m_conditions) {
 		c->gridDataItem()->applyColorMapSetting(name);
 	}
+	emit colorMapSettingChanged(name);
 }
 
 void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
@@ -479,6 +481,11 @@ void PreProcessorGridTypeDataItem::setGridEdited()
 	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		(*cit)->setGridEdited();
 	}
+}
+
+ModifyCommandDialog* PreProcessorGridTypeDataItem::createApplyColorMapSettingDialog(const std::string& name, QWidget* parent)
+{
+	return new ApplyColorMapSettingDialog(name, parent, this);
 }
 
 QUndoCommand* PreProcessorGridTypeDataItem::createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply)

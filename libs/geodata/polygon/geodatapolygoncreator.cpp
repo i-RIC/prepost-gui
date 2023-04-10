@@ -29,11 +29,3 @@ bool GeoDataPolygonCreator::isCreatable() const
 {
 	return false;
 }
-
-GeoData* GeoDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	GeoDataPolygon* polygon = new GeoDataPolygon(parent, this, condition);
-	polygon->setPosition(condition->position());
-	polygon->setDefaultMapper();
-	return polygon;
-}

@@ -332,6 +332,10 @@
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>点群データ表示設定</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -525,6 +529,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>すべて選択解除 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>点群データ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
     </message>
 </context>
 <context>
@@ -1085,6 +1107,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>ワイヤーフレーム</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>補間された面</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注:&lt;/span&gt; &amp;quot;ポイント編集モードquot;の場合、この設定は無視され、TIN データは常にポイントとして表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>ブレークライン</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>マッピング設定ポリゴン</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>値のカラーマップ</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1298,78 +1379,78 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>点群データ表示設定</translation>
+        <translation type="vanished">点群データ表示設定</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>基本</translation>
+        <translation type="vanished">基本</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>点</translation>
+        <translation type="vanished">点</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>点のサイズ:</translation>
+        <translation type="vanished">点のサイズ:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>ワイヤーフレーム</translation>
+        <translation type="vanished">ワイヤーフレーム</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>線の幅:</translation>
+        <translation type="vanished">線の幅:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>補間された面</translation>
+        <translation type="vanished">補間された面</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注:&lt;/span&gt; &amp;quot;ポイント編集モードquot;の場合、この設定は無視され、TIN データは常にポイントとして表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注:&lt;/span&gt; &amp;quot;ポイント編集モードquot;の場合、この設定は無視され、TIN データは常にポイントとして表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>改行</translation>
+        <translation type="vanished">改行</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>見せる</translation>
+        <translation type="vanished">見せる</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色：</translation>
+        <translation type="vanished">色：</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>マッピング設定ポリゴン</translation>
+        <translation type="vanished">マッピング設定ポリゴン</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>値のカラーマップ</translation>
+        <translation type="vanished">値のカラーマップ</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>輸入 (&amp;I)</translation>
+        <translation type="vanished">輸入 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>輸出 (&amp;E)</translation>
+        <translation type="vanished">輸出 (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">長い辺を持つ三角形の削除</translation>
+        <translation>長い辺を持つ三角形の削除</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">しきい値の辺の長さ:</translation>
+        <translation>しきい値の辺の長さ:</translation>
     </message>
     <message>
         <source>Make sure all points are used</source>
@@ -1381,7 +1462,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

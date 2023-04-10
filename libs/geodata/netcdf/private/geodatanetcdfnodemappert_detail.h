@@ -38,7 +38,7 @@ GeoDataMapperSettingI* GeoDataNetcdfNodeMapperT<V, DA>::initialize(bool* boolMap
 		if (cellid >= 0) {
 			DoubleMappingSetting setting;
 			setting.target = i;
-			setting.indices.append(cellid);
+			setting.indices.push_back(cellid);
 			s->settings.push_back(setting);
 		}
 	}

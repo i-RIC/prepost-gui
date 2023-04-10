@@ -355,7 +355,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>디스플레이 설정 편집</translation>
+        <translation type="vanished">디스플레이 설정 편집</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>단면 데이터 표시 설정</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>횡단면 데이터 (&amp;C)</translation>
+    </message>
     <message>
         <source>  </source>
         <translation />
     </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation>단면 데이터 (&amp;C)</translation>
+        <translation type="vanished">단면 데이터 (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 선 %2 : "%3": 플래그 데이터가 잘못되었습니다.</translation>
+        <translation type="vanished">%1 선 %2 : "%3": 플래그 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>디스플레이 설정 수정</translation>
+        <translation type="vanished">디스플레이 설정 수정</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>단면 데이터 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK 파일 (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>기초적인</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>배경색</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; 색상표 탭을 사용하여 색상을 사용자 지정할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>단면선</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z 스케일:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>횡단면 이름</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>

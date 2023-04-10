@@ -5,11 +5,6 @@
 
 #include <guicore/pre/geodata/geodataproxy.h>
 
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkUnstructuredGrid.h>
-
 class GeoDataRiverSurvey;
 
 class GeoDataRiverSurveyProxy : public GeoDataProxy
@@ -23,11 +18,11 @@ public:
 	void setupActors() override;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 public slots:
-	void updateGraphics() override;
+	void updateActorSetting() override;
 
 private:
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -35,19 +30,11 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	GeoDataRiverSurveyDisplaySetting m_setting;
+	class DisplaySetting;
+	class DisplaySettingWidget;
 
-	vtkSmartPointer<vtkActor> m_centerAndBankLinesActor;
-	vtkSmartPointer<vtkActor> m_crossectionsActor;
-
-	vtkSmartPointer<vtkActor> m_backgroundActor;
-	vtkSmartPointer<vtkActor> m_crosssectionLinesActor;
-
-	vtkSmartPointer<vtkActor2D> m_labelActor;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
-
-	class SetSettingCommand;
+	class Impl;
+	Impl* impl;
 };
 
 #endif // GEODATARIVERSURVEYPROXY_H

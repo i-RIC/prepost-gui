@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Cài đặt hiển thị điểm</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Chọn tệp hình ảnh</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Tất cả hình ảnh (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Chọn tệp hình ảnh</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Tất cả hình ảnh (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Chỉnh sửa cài đặt hiển thị</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt hiển thị</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Cài đặt hiển thị dữ liệu điểm</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Màu sắc</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Màu theo giá trị</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <source>Form</source>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -234,7 +248,70 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Khi chiều rộng hoặc chiều cao của hình ảnh đã nhập lớn hơn Kích thước tối đa, hình ảnh sẽ tự động bị thu nhỏ lại để chiều rộng hoặc chiều cao bằng với kích thước tối đa.</translation>
+        <translation>Khi chiều rộng hoặc chiều cao của hình ảnh đã nhập lớn hơn Kích thước tối đa, hình ảnh sẽ tự động được thu nhỏ lại để chiều rộng hoặc chiều cao bằng với kích thước tối đa.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Cài đặt hiển thị dữ liệu điểm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Hình dạng</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">điểm</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Hình ảnh biểu tượng</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Nhập hình ảnh (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Thông thoáng (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Kích thước tối đa:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Khi chiều rộng hoặc chiều cao của hình ảnh đã nhập lớn hơn Kích thước tối đa, hình ảnh sẽ tự động bị thu nhỏ lại để chiều rộng hoặc chiều cao bằng với kích thước tối đa.</translation>
     </message>
 </context>
 </TS>

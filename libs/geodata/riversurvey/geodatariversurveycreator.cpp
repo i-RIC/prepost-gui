@@ -23,15 +23,12 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
-
-	nodeMappers().push_back(new GeoDataRiverSurveyNodeMapper(this));
 }
 
 GeoData* GeoDataRiverSurveyCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	GeoDataRiverSurvey* rs = new GeoDataRiverSurvey(parent, this, condition);
-	rs->setPosition(condition->position());
-	rs->setDefaultMapper();
+	rs->setMapper(new GeoDataRiverSurveyNodeMapper(this));
 	return rs;
 }
 

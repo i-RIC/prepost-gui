@@ -25,9 +25,11 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
+	void showPropertyDialog() override;
 
 	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -36,7 +38,9 @@ private:
 	GeoDataPolyDataGroupPolyData* createNewData() override;
 	GeoDataPolyData* createEditTargetData() override;
 	void updateActorSetting() override;
+    void updateActionConnections();
 	void updateMenu() override;
+	void updateMenu(QMenu* menu);
 	void updateActorSettingForEditTargetPolyData() override;
 
 	void updateVtkObjects() override;
@@ -50,7 +54,7 @@ private:
 
 	GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d) override;
 
-	class SetColorSettingCommand;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;
@@ -60,10 +64,7 @@ public:
 	friend class GeoDataPolygonGroupCsvImporter;
 	friend class GeoDataPolygonGroupProxy;
 	friend class GeoDataPolygonGroupShpImporter;
+	friend class GeoDataPointmap;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatapolygongroup_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOLYGONGROUP_H

@@ -25,8 +25,10 @@ GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	GeoDataNetcdf* data = new GeoDataNetcdfReal(parent, this, condition);
-	data->setPosition(condition->position());
-	data->setDefaultMapper();
-
+	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
+		data->setMapper(new GeoDataNetcdfNodeMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		data->setMapper(new GeoDataNetcdfCellMapperT<double, vtkDoubleArray>(this));
+	}
 	return data;
 }

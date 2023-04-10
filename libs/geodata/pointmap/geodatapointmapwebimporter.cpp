@@ -1,4 +1,4 @@
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 #include "geodatapointmapwebimporter.h"
 #include "geodatapointmapwebimporterregionselectdialog.h"
 #include "geodatapointmapwebimporterzoomleveldialog.h"
@@ -44,7 +44,7 @@ bool GeoDataPointmapWebImporter::isCompatibleWith(SolverDefinitionGridAttribute*
 
 bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
@@ -137,7 +137,7 @@ FINISH:
 
 	pmap->setPoints(points, values);
 	if (points->GetNumberOfPoints() > 3) {
-		pmap->doDelaunay();
+		pmap->rebuildTinFromPoints(false);
 	}
 	return true;
 }

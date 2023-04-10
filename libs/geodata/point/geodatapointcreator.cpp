@@ -23,11 +23,3 @@ bool GeoDataPointCreator::isCreatable() const
 {
 	return false;
 }
-
-GeoData* GeoDataPointCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	GeoDataPoint* point = new GeoDataPoint(parent, this, condition);
-	point->setPosition(condition->position());
-	point->setDefaultMapper();
-	return point;
-}

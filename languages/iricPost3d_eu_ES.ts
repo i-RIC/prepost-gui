@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Barrutia</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Aurpegiak</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Zuzendaritza</translation>
+        <translation type="vanished">Zuzendaritza</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Nik</translation>
+        <translation type="vanished">Nik</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Geh</translation>
+        <translation type="vanished">K Geh</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Gaituta</translation>
+        <translation type="vanished">Gaituta</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Laginketa</translation>
+        <translation type="vanished">Laginketa</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Erpin guztiak</translation>
+        <translation type="vanished">Erpin guztiak</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Laginketa-tasa:</translation>
+        <translation type="vanished">Laginketa-tasa:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-norabidea</translation>
+        <translation type="vanished">I-norabidea</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J norabidea</translation>
+        <translation type="vanished">J norabidea</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K norabidea</translation>
+        <translation type="vanished">K norabidea</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarraren arabera</translation>
+        <translation type="vanished">Balio eskalarraren arabera</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Gezi forma</translation>
+        <translation type="vanished">Gezi forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Geziaren tamaina:</translation>
+        <translation type="vanished">Geziaren tamaina:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Lerro zabalera:</translation>
+        <translation type="vanished">Lerro zabalera:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Geziaren ezarpena</translation>
+        <translation type="vanished">Geziaren ezarpena</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Ezarpen arrunta</translation>
+        <translation type="vanished">Ezarpen arrunta</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Luzera</translation>
+        <translation type="vanished">Luzera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Balio estandarra:</translation>
+        <translation type="vanished">Balio estandarra:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[anderea]</translation>
+        <translation type="vanished">[anderea]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pantailan luzera:</translation>
+        <translation type="vanished">Pantailan luzera:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Marrazteko gutxieneko balioa:</translation>
+        <translation type="vanished">Marrazteko gutxieneko balioa:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Aurpegiak</translation>
+        <translation type="vanished">Aurpegiak</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Aurpegia %1</translation>
+        <translation type="vanished">Aurpegia %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Luzera Kondaira</translation>
+        <translation type="vanished">Luzera Kondaira</translation>
     </message>
 </context>
 <context>

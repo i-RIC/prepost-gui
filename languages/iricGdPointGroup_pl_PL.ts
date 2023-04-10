@@ -19,7 +19,33 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Edycja ustawień kolorów</translation>
+        <translation type="vanished">Edycja ustawień kolorów</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Ustawienie wyświetlania punktów</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Wybierz plik obrazu</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Wszystkie obrazy (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Wybierz plik obrazu</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Wszystkie obrazy (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -146,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Edytuj ustawienie wyświetlania</translation>
+        <translation type="vanished">Edytuj ustawienie wyświetlania</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Użyj ustawienia okna przetwarzania wstępnego</translation>
     </message>
 </context>
 <context>
@@ -173,6 +210,108 @@
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Kształt</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Zwrotnica</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Rozmiar punktu:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Obrazy ikon</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Importuj obraz (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Jasne (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Największy rozmiar:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Gdy szerokość lub wysokość importowanego obrazu jest większa niż maksymalny rozmiar, obraz jest automatycznie zmniejszany, aby szerokość lub wysokość była równa maksymalnemu rozmiarowi.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Niestandardowy kolor</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Ustawienie wyświetlania danych punktów</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Kształt</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Zwrotnica</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Rozmiar punktu:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Obrazy ikon</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Importuj obraz (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Jasne (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Największy rozmiar:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Gdy szerokość lub wysokość importowanego obrazu jest większa niż maksymalny rozmiar, obraz jest automatycznie zmniejszany, aby szerokość lub wysokość była równa maksymalnemu rozmiarowi.</translation>
     </message>
 </context>
 </TS>

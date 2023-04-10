@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης γραμμών</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης ομάδας Polyline</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης ομάδας Polyline</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Χρώμα ανά τιμή</translation>
+        <translation type="vanished">Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>Η διαγραφή αυτού του στοιχείου θα καταργήσει επίσης τυχόν παράθυρα γραφημάτων που σχετίζονται με αυτά τα δεδομένα. Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το στοιχείο;</translation>
+        <translation type="vanished">Η διαγραφή αυτού του στοιχείου θα καταργήσει επίσης τυχόν παράθυρα γραφημάτων που σχετίζονται με αυτά τα δεδομένα. Είστε σίγουροι ότι θέλετε να διαγράψετε αυτό το στοιχείο;</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης οθόνης</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης γραμμών</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (Γραμμές) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χάρτης χρώματος</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
     </message>
 </context>
 </TS>

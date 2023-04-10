@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Diapazons</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Krāsu karte</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Sejas</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Krāsu karte</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Virziens</translation>
+        <translation type="vanished">Virziens</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Es</translation>
+        <translation type="vanished">Es</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>Dž</translation>
+        <translation type="vanished">Dž</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Diapazons</translation>
+        <translation type="vanished">Diapazons</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>ES piedalos</translation>
+        <translation type="vanished">ES piedalos</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Es Maks</translation>
+        <translation type="vanished">Es Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Maks</translation>
+        <translation type="vanished">J Maks</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Maks</translation>
+        <translation type="vanished">K Maks</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Iespējots</translation>
+        <translation type="vanished">Iespējots</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Paraugu ņemšana</translation>
+        <translation type="vanished">Paraugu ņemšana</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Visas virsotnes</translation>
+        <translation type="vanished">Visas virsotnes</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Paraugu ņemšanas ātrums:</translation>
+        <translation type="vanished">Paraugu ņemšanas ātrums:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-virziens</translation>
+        <translation type="vanished">I-virziens</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-virziens</translation>
+        <translation type="vanished">J-virziens</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-virziens</translation>
+        <translation type="vanished">K-virziens</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Bultas forma</translation>
+        <translation type="vanished">Bultas forma</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Bultas izmērs:</translation>
+        <translation type="vanished">Bultas izmērs:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Bultas iestatīšana</translation>
+        <translation type="vanished">Bultas iestatīšana</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Kopīgs iestatījums</translation>
+        <translation type="vanished">Kopīgs iestatījums</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Garums</translation>
+        <translation type="vanished">Garums</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standarta vērtība:</translation>
+        <translation type="vanished">Standarta vērtība:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[jaunkundze]</translation>
+        <translation type="vanished">[jaunkundze]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Garums ekrānā:</translation>
+        <translation type="vanished">Garums ekrānā:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimālā zīmējamā vērtība:</translation>
+        <translation type="vanished">Minimālā zīmējamā vērtība:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Sejas</translation>
+        <translation type="vanished">Sejas</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Pievienot (&amp;A)</translation>
+        <translation type="vanished">Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Noņemt (&amp;R)</translation>
+        <translation type="vanished">Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Seja %1</translation>
+        <translation type="vanished">Seja %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Garuma leģenda</translation>
+        <translation type="vanished">Garuma leģenda</translation>
     </message>
 </context>
 <context>

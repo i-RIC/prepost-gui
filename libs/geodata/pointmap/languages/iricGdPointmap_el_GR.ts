@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Είδος (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης Point Cloud</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Καταργήστε την επιλογή όλων (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης Point Cloud</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Βασικός</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ΚΑΣΣΙΤΕΡΟΣ</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Πόντοι</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Επιφάνεια</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Όταν βρίσκεστε σε &amp;quot;Λειτουργία επεξεργασίας σημείωνquot;, αυτή η ρύθμιση αγνοείται και τα δεδομένα TIN είναι πάντα εμφανίζονται ως σημεία.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Διακοπές</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>προβολή</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Χρώμα:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Αντιστοίχιση Ρύθμιση πολυγώνων</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Χάρτης χρωμάτων για τιμές</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης Point Cloud</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης Point Cloud</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Βασικός</translation>
+        <translation type="vanished">Βασικός</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ΚΑΣΣΙΤΕΡΟΣ</translation>
+        <translation type="vanished">ΚΑΣΣΙΤΕΡΟΣ</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Πόντοι</translation>
+        <translation type="vanished">Πόντοι</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Μέγεθος σημείου:</translation>
+        <translation type="vanished">Μέγεθος σημείου:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Επιφάνεια</translation>
+        <translation type="vanished">Επιφάνεια</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Όταν βρίσκεστε σε &amp;quot;Λειτουργία επεξεργασίας σημείωνquot;, αυτή η ρύθμιση αγνοείται και τα δεδομένα TIN είναι πάντα εμφανίζονται ως σημεία.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Όταν βρίσκεστε σε &amp;quot;Λειτουργία επεξεργασίας σημείωνquot;, αυτή η ρύθμιση αγνοείται και τα δεδομένα TIN είναι πάντα εμφανίζονται ως σημεία.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Διακοπές</translation>
+        <translation type="vanished">Διακοπές</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>προβολή</translation>
+        <translation type="vanished">προβολή</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation type="vanished">Χρώμα:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Αντιστοίχιση Ρύθμιση πολυγώνων</translation>
+        <translation type="vanished">Αντιστοίχιση Ρύθμιση πολυγώνων</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Χάρτης χρωμάτων για τιμές</translation>
+        <translation type="vanished">Χάρτης χρωμάτων για τιμές</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Εισαγωγή (&amp;I)</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Εξαγωγή (&amp;E)</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Αφαιρέστε τρίγωνα με μακρύ άκρο</translation>
+        <translation>Αφαιρέστε τρίγωνα με μακρύ άκρο</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Περιορισμός μήκους ακμής:</translation>
+        <translation>Περιορισμός μήκους ακμής:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

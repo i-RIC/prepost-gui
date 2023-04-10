@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Színbeállítás szerkesztése</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Pontok megjelenítési beállítása</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Válassza ki a képfájlt</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Minden kép (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Válassza ki a képfájlt</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Minden kép (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Megjelenítési beállítás szerkesztése</translation>
+        <translation type="vanished">Megjelenítési beállítás szerkesztése</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Használja az Előfeldolgozási ablak beállítását</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Pontadatok megjelenítési beállítása</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Szín</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Szín érték szerint</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Ha az importált kép szélessége vagy magassága nagyobb, mint a maximális méret, a kép automatikusan összezsugorodik, így a szélesség vagy magasság egyenlő lesz a maximális mérettel.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Pontadatok megjelenítési beállítása</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Alak</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Pontok</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Pontméret:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Ikon képek</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Kép importálása (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Egyértelmű (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Max méret:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Ha az importált kép szélessége vagy magassága nagyobb, mint a maximális méret, a kép automatikusan összezsugorodik, így a szélesség vagy magasság egyenlő lesz a maximális mérettel.</translation>
     </message>
 </context>
 </TS>

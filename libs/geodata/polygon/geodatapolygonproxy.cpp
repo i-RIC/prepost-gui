@@ -15,7 +15,7 @@ void GeoDataPolygonProxy::setupActors()
 
 	renderer()->AddActor(m_paintActor);
 	actorCollection()->AddItem(m_paintActor);
-	updateGraphics();
+	updateActorSetting();
 }
 
 void GeoDataPolygonProxy::doLoadFromProjectMainFile(const QDomNode& /*node*/)
@@ -24,7 +24,7 @@ void GeoDataPolygonProxy::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 void GeoDataPolygonProxy::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void GeoDataPolygonProxy::updateGraphics()
+void GeoDataPolygonProxy::updateActorSetting()
 {}
 
 void GeoDataPolygonProxy::updateZDepthRangeItemCount(ZDepthRange& range)

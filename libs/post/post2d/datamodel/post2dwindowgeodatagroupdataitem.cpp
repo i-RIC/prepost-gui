@@ -1,13 +1,18 @@
 #include "post2dwindowgeodatadataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
+#include "post2dwindowgridtypedataitem.h"
+#include "../post2dwindowgraphicsview.h"
+#include "private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h"
 
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
+#include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/base/iricmainwindowinterface.h>
 
 #include <QDomNodeList>
 #include <QMap>
@@ -18,14 +23,31 @@
 
 Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
-	m_condition {cond}
+	m_condition {cond},
+	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), Post2dWindowGeoDataGroupDataItem::tr("&Color Setting..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
 }
 
 SolverDefinitionGridAttribute* Post2dWindowGeoDataGroupDataItem::condition() const
 {
 	return m_condition;
+}
+
+DelegatedColorMapSettingContainer* Post2dWindowGeoDataGroupDataItem::colorMapSetting() const
+{
+	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
+	return typedi->colorMapSetting(condition()->name());
+}
+
+void Post2dWindowGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
+{
+	if (! m_condition->isReferenceInformation()) {
+		menu->addSeparator();
+		menu->addAction(m_editColorMapAction);
+	}
 }
 
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
@@ -58,7 +80,7 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 			// try to add.
 			GeoDataProxy* proxy = geoData->getProxy();
 			if (proxy != nullptr) {
-				connect(geoData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
+				connect(geoData, &GeoData::updateActorSettingExecuted, proxy, &GeoDataProxy::updateActorSetting);
 				Post2dWindowGeoDataDataItem* pItem = new Post2dWindowGeoDataDataItem(this);
 				pItem->setGeoDataProxy(proxy);
 				proxy->setupDataItem();
@@ -73,6 +95,32 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 	}
 	assignActorZValues(m_zDepthRange);
 	updateItemMap();
+}
+
+void Post2dWindowGeoDataGroupDataItem::applyColorMapSetting()
+{
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowGeoDataDataItem*>(child);
+		item->applyColorMapSetting();
+	}
+	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	setting->applyLegendImageSetting(dataModel()->graphicsView());
+}
+
+void Post2dWindowGeoDataGroupDataItem::editScalarsToColors()
+{
+	auto setting = colorMapSetting();
+	if (setting == nullptr) {return;}
+
+	auto dialog = new ScalarsToColorsEditDialog(this, mainWindow());
+	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
+	dialog->setSetting(setting);
+
+	dialog->show();
+
+	iricMainWindow()->enterModelessDialogMode();
+	connect(dialog, &QDialog::destroyed, [=](QObject*){iricMainWindow()->exitModelessDialogMode();});
 }
 
 void Post2dWindowGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Réglage des couleurs Modifier</translation>
+        <translation type="vanished">Réglage des couleurs Modifier</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Paramètre d'affichage des lignes</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation>Paramètre d'affichage du groupe de polylignes</translation>
+        <translation type="vanished">Paramètre d'affichage du groupe de polylignes</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Couleur par valeur</translation>
+        <translation type="vanished">Couleur par valeur</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Couleur personnalisée</translation>
+        <translation type="vanished">Couleur personnalisée</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Largeur de ligne:</translation>
+        <translation type="vanished">Largeur de ligne:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +61,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation>La suppression de cet élément supprimera également toutes les fenêtres graphiques associées à ces données. Êtes-vous sûr de bien vouloir supprimer cet élément?</translation>
+        <translation type="vanished">La suppression de cet élément supprimera également toutes les fenêtres graphiques associées à ces données. Êtes-vous sûr de bien vouloir supprimer cet élément?</translation>
     </message>
     <message>
         <source>line</source>
@@ -174,7 +178,22 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Modifier le paramètre d'affichage</translation>
+        <translation type="vanished">Modifier le paramètre d'affichage</translation>
+    </message>
+    <message>
+        <source>Lines Display Setting</source>
+        <translation>Paramètre d'affichage des lignes</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utiliser le paramètre de la fenêtre de prétraitement</translation>
     </message>
 </context>
 <context>
@@ -201,6 +220,33 @@
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation>ESRI Shapefile (Lignes) (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Largeur de ligne:</translation>
     </message>
 </context>
 </TS>

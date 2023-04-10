@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kolore ezarpenak editatzea</translation>
+        <translation type="vanished">Kolore ezarpenak editatzea</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Poligonoak bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Poligono-taldeen bistaratzeko ezarpena</translation>
+        <translation type="vanished">Poligono-taldeen bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Koloreztatu balioaren arabera</translation>
+        <translation type="vanished">Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lerroaren zabalera:</translation>
+        <translation type="vanished">Lerroaren zabalera:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Editatu pantailaren ezarpena</translation>
+        <translation type="vanished">Editatu pantailaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Poligonoak bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Abisua</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 </TS>

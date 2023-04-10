@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>種類 (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>點雲顯示設置</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>全部取消選擇 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>點雲顯示設置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>預處理窗口的使用設置</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>錫</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>積分</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>點大小：</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>線框</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>表面</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>斷線</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>展示</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>映射設置多邊形</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>值的顏色圖</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>點雲顯示設置</translation>
+        <translation type="vanished">點雲顯示設置</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>基本的</translation>
+        <translation type="vanished">基本的</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>錫</translation>
+        <translation type="vanished">錫</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>積分</translation>
+        <translation type="vanished">積分</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>點大小：</translation>
+        <translation type="vanished">點大小：</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>線框</translation>
+        <translation type="vanished">線框</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>表面</translation>
+        <translation type="vanished">表面</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;當處於“點編輯模式”時，此設置將被忽略，TIN 數據始終顯示為點。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>斷線</translation>
+        <translation type="vanished">斷線</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>展示</translation>
+        <translation type="vanished">展示</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>顏色：</translation>
+        <translation type="vanished">顏色：</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>映射設置多邊形</translation>
+        <translation type="vanished">映射設置多邊形</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>值的顏色圖</translation>
+        <translation type="vanished">值的顏色圖</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>進口 (&amp;I)</translation>
+        <translation type="vanished">進口 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>出口 (&amp;E)</translation>
+        <translation type="vanished">出口 (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">去除長邊三角形</translation>
+        <translation>去除長邊三角形</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">限制邊長：</translation>
+        <translation>限制邊長：</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

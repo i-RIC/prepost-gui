@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>เส้นพิกัด</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>เพิ่ม Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>ลบ Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>แก้ไขพิกัด (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>ทิศทางเส้นกึ่งกลางย้อนกลับ (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

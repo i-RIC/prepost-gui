@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>폴리라인 좌표</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>정점 추가 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>정점 제거 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>좌표 편집 (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>역 중심선 방향 (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

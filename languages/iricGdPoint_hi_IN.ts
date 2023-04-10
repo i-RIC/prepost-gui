@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>बिंदु निर्देशांक संपादित करें</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>वर्टेक्स ले जाएँ</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>वर्टेक्स सेट करें</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

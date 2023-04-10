@@ -11,11 +11,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
-        <translation>rivmaker 2.0.2</translation>
+        <translation type="vanished">rivmaker 2.0.2</translation>
     </message>
     <message>
         <source>Release Date: 2021/3/2</source>
-        <translation>Išleidimo data: 2021/3/2</translation>
+        <translation type="vanished">Išleidimo data: 2021/3/2</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.3</source>
+        <translation>rivmaker 2.0.3</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/4/28</source>
+        <translation>Išleidimo data: 2021-04-28</translation>
     </message>
 </context>
 <context>

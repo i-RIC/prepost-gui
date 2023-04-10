@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης χρώματος</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης πολυγώνων</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης ομάδας πολυγώνων</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης ομάδας πολυγώνων</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Χρώμα ανά τιμή</translation>
+        <translation type="vanished">Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Πλάτος γραμμής:</translation>
+        <translation type="vanished">Πλάτος γραμμής:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
+        <translation type="vanished">Επεξεργασία ρύθμισης οθόνης</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης πολυγώνων</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Προειδοποίηση</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χρωματικός χάρτης</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
     </message>
 </context>
 </TS>

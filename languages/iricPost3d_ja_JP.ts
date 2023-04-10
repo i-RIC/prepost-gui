@@ -180,7 +180,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -193,6 +193,10 @@
     <message>
         <source>Range</source>
         <translation>範囲</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -333,7 +337,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -346,6 +350,10 @@
     <message>
         <source>Faces</source>
         <translation>描画面設定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -634,103 +642,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>範囲</translation>
+        <translation type="vanished">範囲</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I 最小</translation>
+        <translation type="vanished">I 最小</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I 最大</translation>
+        <translation type="vanished">I 最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J 最小</translation>
+        <translation type="vanished">J 最小</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J 最大</translation>
+        <translation type="vanished">J 最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K 最小</translation>
+        <translation type="vanished">K 最小</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K 最大</translation>
+        <translation type="vanished">K 最大</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>有効</translation>
+        <translation type="vanished">有効</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>サンプリング</translation>
+        <translation type="vanished">サンプリング</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>全頂点に表示</translation>
+        <translation type="vanished">全頂点に表示</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I方向</translation>
+        <translation type="vanished">I方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K方向</translation>
+        <translation type="vanished">K方向</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>矢印形状</translation>
+        <translation type="vanished">矢印形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>矢印サイズ:</translation>
+        <translation type="vanished">矢印サイズ:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>線の太さ:</translation>
+        <translation type="vanished">線の太さ:</translation>
     </message>
 </context>
 <context>
@@ -807,63 +815,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ベクトル設定</translation>
+        <translation type="vanished">ベクトル設定</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>共通設定</translation>
+        <translation type="vanished">共通設定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>長さ</translation>
+        <translation type="vanished">長さ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>基準値:</translation>
+        <translation type="vanished">基準値:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>画面上での長さ:</translation>
+        <translation type="vanished">画面上での長さ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>表示する最小値:</translation>
+        <translation type="vanished">表示する最小値:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>描画面設定</translation>
+        <translation type="vanished">描画面設定</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>追加(A)</translation>
+        <translation type="vanished">追加(A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>削除(&amp;R)</translation>
+        <translation type="vanished">削除(&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>面%1</translation>
+        <translation type="vanished">面%1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>凡例の長さ</translation>
+        <translation type="vanished">凡例の長さ</translation>
     </message>
 </context>
 <context>

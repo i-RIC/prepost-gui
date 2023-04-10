@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Ezután határozza meg a rács középvonalát. A rács középvonala sokszögű vonalként definiálható egérkattintással. A definíció befejezéséhez kattintson duplán, vagy nyomja meg a Return gombot.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Add Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Távolítsa el a Vertexet (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Koordináták szerkesztése (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Fordított középvonali irány (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

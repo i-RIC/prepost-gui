@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Редагувати координати точки</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Перемістити вершину</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Встановити вершину</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

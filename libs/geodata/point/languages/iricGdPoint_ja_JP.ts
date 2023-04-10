@@ -81,6 +81,14 @@
         <source>Edit Point Coordinates</source>
         <translation>点の座標の編集</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>頂点を移動</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>頂点を設定</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

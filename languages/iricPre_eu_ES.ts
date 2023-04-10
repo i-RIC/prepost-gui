@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Datu geografikoen kartografia</translation>
+        <translation type="vanished">Datu geografikoen kartografia</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kartografia TINekin</translation>
+        <translation type="vanished">Kartografia TINekin</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Datu geografikoetatik sortutako TINak mapatzeko erabiltzen dira. Sareta-nodoen atributuaren balioak TIN nodoetako balioen batez besteko haztatu gisa kalkulatzen dira.</translation>
+        <translation type="vanished">Datu geografikoetatik sortutako TINak mapatzeko erabiltzen dira. Sareta-nodoen atributuaren balioak TIN nodoetako balioen batez besteko haztatu gisa kalkulatzen dira.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Txantiloien mapaketa</translation>
+        <translation type="vanished">Txantiloien mapaketa</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Bilatu sarearen nodoetatik gertu dauden datu geografikoak, sarearen gelaxken formei buruz, eta erabili balioak puntu horietan interpolatzeko. Algoritmo hau sareta egituratuetarako soilik erabil daiteke.</translation>
+        <translation type="vanished">Bilatu sarearen nodoetatik gertu dauden datu geografikoak, sarearen gelaxken formei buruz, eta erabili balioak puntu horietan interpolatzeko. Algoritmo hau sareta egituratuetarako soilik erabil daiteke.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Xehetasuna (&amp;D)...</translation>
+        <translation type="vanished">Xehetasuna (&amp;D)...</translation>
     </message>
 </context>
 <context>

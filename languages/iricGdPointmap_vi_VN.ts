@@ -3,50 +3,50 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Xóa điểm</translation>
+        <translation type="vanished">Xóa điểm</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Thuộc tính điểm đã chọn</translation>
+        <translation type="vanished">Thuộc tính điểm đã chọn</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Số điểm:</translation>
+        <translation type="vanished">Số điểm:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Tối thiểu:</translation>
+        <translation type="vanished">Tối thiểu:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Tối đa:</translation>
+        <translation type="vanished">Tối đa:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Xóa nhỏ hơn giá trị:</translation>
+        <translation type="vanished">Xóa nhỏ hơn giá trị:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation>Chỉnh sửa điểm</translation>
+        <translation type="vanished">Chỉnh sửa điểm</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Thêm điểm ngắt dòng</translation>
+        <translation type="vanished">Thêm điểm ngắt dòng</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Kết thúc xác định đường ngắt</translation>
+        <translation type="vanished">Kết thúc xác định đường ngắt</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Hủy bỏ xác định đường ngắt</translation>
+        <translation type="vanished">Hủy bỏ xác định đường ngắt</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Thêm điểm đường xen kẽ mới</translation>
+        <translation type="vanished">Thêm điểm đường xen kẽ mới</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Khi bạn chuyển sang chế độ này, bạn phải remesh TIN. Bạn có muốn remesh bây giờ không?</translation>
+        <translation type="vanished">Khi bạn chuyển sang chế độ này, bạn phải remesh TIN. Bạn có muốn remesh bây giờ không?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Chọn điểm</translation>
+        <translation type="vanished">Chọn điểm</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -102,11 +102,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Xóa các điểm đã chọn thấp hơn giá trị (&amp;L)...</translation>
+        <translation type="vanished">Xóa các điểm đã chọn thấp hơn giá trị (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Xóa các điểm đã chọn Lớn hơn giá trị (&amp;G)...</translation>
+        <translation type="vanished">Xóa các điểm đã chọn Lớn hơn giá trị (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -142,7 +142,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Khi bạn thêm đường ngắt, bạn phải chuyển sang hiển thị khung dây. Bạn có muốn chuyển sang hiển thị khung hình dây ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn thêm đường ngắt, bạn phải chuyển sang hiển thị khung dây. Bạn có muốn chuyển sang hiển thị khung hình dây ngay bây giờ không?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -150,7 +150,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Khi bạn xóa đường ngắt, bạn phải chuyển sang hiển thị khung dây. Bạn có muốn chuyển sang hiển thị khung hình dây ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn xóa đường ngắt, bạn phải chuyển sang hiển thị khung dây. Bạn có muốn chuyển sang hiển thị khung hình dây ngay bây giờ không?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -162,27 +162,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Khi bạn muốn loại bỏ các hình tam giác có cạnh dài, bạn phải chuyển Phương thức hiển thị sang Khung dây hoặc Bề mặt. Nếu bạn nhấn nút OK, Phương thức hiển thị được chuyển sang Wireframe</translation>
+        <translation type="vanished">Khi bạn muốn loại bỏ các hình tam giác có cạnh dài, bạn phải chuyển Phương thức hiển thị sang Khung dây hoặc Bề mặt. Nếu bạn nhấn nút OK, Phương thức hiển thị được chuyển sang Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Khi bạn chỉnh sửa điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn chỉnh sửa điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Khi bạn xóa điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn xóa điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>Bạn không thể xóa các điểm được sử dụng cho các đường ngắt.</translation>
+        <translation type="vanished">Bạn không thể xóa các điểm được sử dụng cho các đường ngắt.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Xóa điểm</translation>
+        <translation type="vanished">Xóa điểm</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Chọn tệp để xuất</translation>
+        <translation type="vanished">Chọn tệp để xuất</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -194,19 +194,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Đã xảy ra lỗi khi xuất sang %1.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi xuất sang %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Xóa điểm nhỏ hơn %1</translation>
+        <translation type="vanished">Xóa điểm nhỏ hơn %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Xóa điểm lớn hơn %1</translation>
+        <translation type="vanished">Xóa điểm lớn hơn %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Khi bạn nội suy điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn nội suy điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -214,7 +214,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Khi bạn thêm điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
+        <translation type="vanished">Khi bạn thêm điểm, bạn phải chuyển sang hiển thị điểm. Bạn có muốn chuyển sang hiển thị điểm ngay bây giờ không?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Hợp nhất...</translation>
+        <translation type="vanished">Hợp nhất...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Dữ liệu đám mây điểm (&amp;O)</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
-        <source>Delete Points</source>
-        <translation>Xóa điểm</translation>
+        <source>Switch &amp;Mode</source>
+        <translation>Chế độ chuyển đổi (&amp;M)</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Thuộc tính điểm đã chọn</translation>
+        <source>Mer&amp;ge...</source>
+        <translation>hợp nhất (&amp;G)...</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Số điểm:</translation>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Cài đặt ánh xạ (&amp;M)...</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Tối thiểu:</translation>
+        <source>Select file name to export</source>
+        <translation>Chọn tên tệp để xuất</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Tối đa:</translation>
+        <source>Failed to open %1.</source>
+        <translation>Không mở được %1.</translation>
     </message>
     <message>
-        <source>Delete greater than value:</source>
-        <translation>Xóa lớn hơn giá trị:</translation>
-    </message>
-</context>
-<context>
-    <name>GeoDataPointmapEditPtsDialog</name>
-    <message>
-        <source>Edit Points</source>
-        <translation>Chỉnh sửa điểm</translation>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Remesh TIN và khi hoàn tất, hãy chuyển sang Chế độ chỉnh sửa TIN.</translation>
     </message>
     <message>
-        <source>Selected point properties</source>
-        <translation>Thuộc tính điểm đã chọn</translation>
+        <source>Selection Mode</source>
+        <translation>Chế độ lựa chọn</translation>
     </message>
     <message>
-        <source>Number of Points:</source>
-        <translation>Số điểm:</translation>
+        <source>Select points with Rectangle Region</source>
+        <translation>Chọn điểm với Vùng hình chữ nhật</translation>
     </message>
     <message>
-        <source>Minimum:</source>
-        <translation>Tối thiểu:</translation>
+        <source>&amp;Filter selected points</source>
+        <translation>Lọc các điểm đã chọn (&amp;F)</translation>
     </message>
     <message>
-        <source>Maximum:</source>
-        <translation>Tối đa:</translation>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
     </message>
     <message>
-        <source>X-location</source>
-        <translation>Vị trí X</translation>
+        <source>&amp;Sort</source>
+        <translation>Loại (&amp;S)</translation>
     </message>
     <message>
-        <source>Y-location</source>
-        <translation>Vị trí Y</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Giá trị</translation>
+        <source>Point Cloud Display Setting</source>
+        <translation>Cài đặt hiển thị đám mây điểm</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePoints</name>
+    <name>GeoDataPointmap::PointsManager</name>
     <message>
-        <source>Interpolate Increment</source>
-        <translation>Nội suy tăng trưởng</translation>
+        <source>Warning</source>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Interpolation Setting</source>
-        <translation>Cài đặt nội suy</translation>
-    </message>
-    <message>
-        <source>Interpolation Increment:</source>
-        <translation>Gia tăng nội suy:</translation>
-    </message>
-    <message>
-        <source>Line Length:</source>
-        <translation>Độ dài dòng:</translation>
+        <source>You can not delete points used for break lines.</source>
+        <translation>Bạn không thể xóa các điểm được sử dụng cho các đường ngắt.</translation>
     </message>
 </context>
 <context>
-    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
     <message>
         <source>Warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Gia số nội suy phải lớn hơn 0 và nhỏ hơn độ dài dòng nội suy</translation>
+        <translation>Gia số nội suy phải lớn hơn 0 và nhỏ hơn độ dài đường nội suy</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
+    <message>
+        <source>Delete Points</source>
+        <translation type="vanished">Xóa điểm</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Thuộc tính điểm đã chọn</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Số điểm:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Tối đa:</translation>
+    </message>
+    <message>
+        <source>Delete greater than value:</source>
+        <translation type="vanished">Xóa lớn hơn giá trị:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapEditPtsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation type="vanished">Chỉnh sửa điểm</translation>
+    </message>
+    <message>
+        <source>Selected point properties</source>
+        <translation type="vanished">Thuộc tính điểm đã chọn</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation type="vanished">Số điểm:</translation>
+    </message>
+    <message>
+        <source>Minimum:</source>
+        <translation type="vanished">Tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Maximum:</source>
+        <translation type="vanished">Tối đa:</translation>
+    </message>
+    <message>
+        <source>X-location</source>
+        <translation type="vanished">Vị trí X</translation>
+    </message>
+    <message>
+        <source>Y-location</source>
+        <translation type="vanished">Vị trí Y</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="vanished">Giá trị</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePoints</name>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation type="vanished">Nội suy tăng trưởng</translation>
+    </message>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation type="vanished">Cài đặt nội suy</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation type="vanished">Gia tăng nội suy:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation type="vanished">Độ dài dòng:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapInterpolatePointsDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation type="vanished">Gia số nội suy phải lớn hơn 0 và nhỏ hơn độ dài dòng nội suy</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Bỏ chọn tất cả (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Cài đặt hiển thị đám mây điểm</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 điểm)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Nền tảng</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>điểm</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>khung dây</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Bề mặt</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Khi ở &amp;quot;Chế độ chỉnh sửa điểmquot;, cài đặt này bị bỏ qua và dữ liệu TIN luôn được hiển thị dưới dạng điểm.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>ngắt dòng</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Trình diễn</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Màu sắc:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Ánh xạ thiết lập đa giác</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Bản đồ màu cho các giá trị</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Cài đặt ánh xạ dữ liệu đám mây điểm</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Lập bản đồ với TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>TIN được tạo từ các điểm được sử dụng để lập bản đồ. Các giá trị thuộc tính lưới được xác định tại các nút hoặc ô lưới được tính là trung bình có trọng số của các giá trị được xác định tại các nút của tam giác chứa nút (hoặc tâm ô).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>ánh xạ mẫu</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm các điểm gần các nút lưới, liên quan đến hình dạng ô lưới và sử dụng các giá trị tại các điểm đó để nội suy.&lt;/p&gt;&lt;p&gt;Thuật toán này có thể được chỉ sử dụng cho lưới có cấu trúc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Chi tiết (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Thay đổi thuật toán ánh xạ cho từng khu vực được xác định bằng đa giác</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Xác định các khu vực dưới dạng đa giác và chỉ định thuật toán để ánh xạ các giá trị tại các nút lưới hoặc tâm ô từ các giá trị được xác định tại các điểm.&lt;/p&gt;&lt;p&gt;Người dùng có thể chọn từ bên dưới: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lập bản đồ giá trị tối thiểu của các điểm trong vòng tròn&lt;/li&gt;&lt;li&gt;Lập bản đồ giá trị tối đa của các điểm trong vòng tròn&lt;/li&gt;&lt;li&gt;Lập bản đồ giá trị trung bình có trọng số của các điểm trong vòng tròn&lt;/li&gt; &lt;li&gt;Ánh xạ giá trị từ TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Cài đặt ánh xạ mẫu</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>khu vực tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Tự động</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Thủ công</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Chiều dài luồng khôn ngoan [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Chiều rộng dòng chéo [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Số lần mở rộng mẫu:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Trọng số mũ:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Chỉnh sửa điểm</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Thuộc tính của các điểm đã chọn</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Số điểm:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Giá trị tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Gia trị lơn nhât:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Giá trị:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Lọc các điểm đã chọn</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Thuộc tính của các điểm đã chọn</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Số điểm:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Giá trị tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Gia trị lơn nhât:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>điều kiện lọc</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Chọn điểm có giá trị lớn hơn ngưỡng</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Chọn điểm có giá trị nhỏ hơn ngưỡng</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Giá trị ngưỡng:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Cài đặt nội suy</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Nội suy tăng</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Gia tăng nội suy:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Chiều dài dòng:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Phương pháp tính toán</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Bản đồ sử dụng TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Giá trị tối thiểu của các điểm trong bán kính</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Giá trị tối đa của các điểm trong bán kính</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Trung bình trọng số của các điểm trong bán kính</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Trọng số mũ k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; được sử dụng làm trọng số khi tính trung bình trọng số của các giá trị. r là khoảng cách từ điểm đến trung tâm nút hoặc ô mà giá trị được ánh xạ tới.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Bán kính đường tròn tìm điểm:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>tôi</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Khi ánh xạ được thực thi, các điểm trong vòng tròn có bán kính ở trên được tìm kiếm để ánh xạ các giá trị tới các nút lưới hoặc tâm ô.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Cài đặt hiển thị đám mây điểm</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Nền tảng</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">TÍN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">điểm</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Kích thước điểm:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">khung dây</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Bề mặt</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Khi ở &amp;quot;Chế độ chỉnh sửa điểmquot;, cài đặt này bị bỏ qua và dữ liệu TIN luôn được hiển thị dưới dạng điểm.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">ngắt dòng</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Trình diễn</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Màu sắc:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Ánh xạ thiết lập đa giác</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Bản đồ màu cho các giá trị</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Nhập khẩu (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Xuất khẩu (&amp;E)</translation>
     </message>
 </context>
 <context>

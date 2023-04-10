@@ -21,9 +21,13 @@
         <source>Color Setting Edit</source>
         <translation type="vanished">Litastilling Breyta</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>Punktaskjástilling</translation>
+    </message>
 </context>
 <context>
-    <name>GeoDataPointGroup::PropertyDialog</name>
+    <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
         <translation>Veldu myndskrá</translation>
@@ -31,6 +35,17 @@
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation>Allar myndir (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup::PropertyDialog</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="vanished">Veldu myndskrá</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="vanished">Allar myndir (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -157,7 +172,18 @@
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Breyta skjástillingu</translation>
+        <translation type="vanished">Breyta skjástillingu</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Notaðu stillingu á forvinnsluglugganum</translation>
     </message>
 </context>
 <context>
@@ -187,22 +213,10 @@
     </message>
 </context>
 <context>
-    <name>GeoDataPointGroup_PropertyDialog</name>
+    <name>GeoDataPointGroup_DisplaySettingWidget</name>
     <message>
-        <source>Points Data Display Setting</source>
-        <translation>Points Data Display Stilling</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation>Litur</translation>
-    </message>
-    <message>
-        <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>Sérsniðinn litur</translation>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Shape</source>
@@ -235,6 +249,69 @@
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
         <translation>Þegar breidd eða hæð innfluttu myndarinnar er stærri en Hámarksstærð, minnkar myndin sjálfkrafa þannig að breiddin eða hæðin verður jöfn hámarksstærð.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Sérsniðinn litur</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroup_PropertyDialog</name>
+    <message>
+        <source>Points Data Display Setting</source>
+        <translation type="vanished">Points Data Display Stilling</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="vanished">Lögun</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Stig</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punktastærð:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="vanished">Táknmyndir</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="vanished">Flytja inn mynd (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="vanished">Hreinsa (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="vanished">Hámarksstærð:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="vanished">Þegar breidd eða hæð innfluttu myndarinnar er stærri en Hámarksstærð, minnkar myndin sjálfkrafa þannig að breiddin eða hæðin verður jöfn hámarksstærð.</translation>
     </message>
 </context>
 </TS>

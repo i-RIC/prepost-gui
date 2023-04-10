@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Cartographie des données géographiques</translation>
+        <translation type="vanished">Cartographie des données géographiques</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Cartographie avec TIN</translation>
+        <translation type="vanished">Cartographie avec TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Les TIN créés à partir de données géographiques sont utilisés pour la cartographie. Les valeurs d'attribut des nœuds de grille sont calculées en tant que moyenne pondérée des valeurs aux nœuds TIN.</translation>
+        <translation type="vanished">Les TIN créés à partir de données géographiques sont utilisés pour la cartographie. Les valeurs d'attribut des nœuds de grille sont calculées en tant que moyenne pondérée des valeurs aux nœuds TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Mappage de modèle</translation>
+        <translation type="vanished">Mappage de modèle</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Recherchez des points de données géographiques proches des nœuds de la grille, concernant les formes des cellules de la grille, et utilisez les valeurs à ces points pour l'interpolation. Cet algorithme ne peut être utilisé que pour les grilles structurées.</translation>
+        <translation type="vanished">Recherchez des points de données géographiques proches des nœuds de la grille, concernant les formes des cellules de la grille, et utilisez les valeurs à ces points pour l'interpolation. Cet algorithme ne peut être utilisé que pour les grilles structurées.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Détail (&amp;D)...</translation>
+        <translation type="vanished">Détail (&amp;D)...</translation>
     </message>
 </context>
 <context>

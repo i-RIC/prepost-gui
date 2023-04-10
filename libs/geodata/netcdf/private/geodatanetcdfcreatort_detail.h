@@ -8,10 +8,7 @@
 template <class V, class DA>
 GeoDataNetcdfCreatorT<V, DA>::GeoDataNetcdfCreatorT(const QString& typeName) :
 	GeoDataNetcdfCreator(typeName)
-{
-	nodeMappers().push_back(new GeoDataNetcdfNodeMapperT<V, DA>(this));
-	cellMappers().push_back(new GeoDataNetcdfCellMapperT<V, DA>(this));
-}
+{}
 
 template <class V, class DA>
 bool GeoDataNetcdfCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition) const

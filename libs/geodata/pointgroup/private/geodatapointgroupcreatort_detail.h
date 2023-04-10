@@ -8,14 +8,23 @@
 template <typename V, typename DA>
 GeoDataPointGroupCreatorT<V, DA>::GeoDataPointGroupCreatorT(const QString& typeName) :
 	GeoDataPointGroupCreator {typeName}
-{
-	nodeMappers().push_back(new GeoDataPointGroupNodeMapperT<V, DA>(this));
-	cellMappers().push_back(new GeoDataPointGroupCellMapperT<V, DA>(this));
-}
+{}
 
 template <typename V, typename DA>
 GeoDataPointGroupCreatorT<V, DA>::~GeoDataPointGroupCreatorT()
 {}
+
+template <typename V, typename DA>
+GeoData* GeoDataPointGroupCreatorT<V, DA>::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+{
+	auto g = new GeoDataPointGroup(parent, this, condition);
+	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
+		g->setMapper(new GeoDataPointGroupNodeMapperT<V, DA>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		g->setMapper(new GeoDataPointGroupCellMapperT<V, DA>(this));
+	}
+	return g;
+}
 
 template <typename V, typename DA>
 bool GeoDataPointGroupCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute *condition) const

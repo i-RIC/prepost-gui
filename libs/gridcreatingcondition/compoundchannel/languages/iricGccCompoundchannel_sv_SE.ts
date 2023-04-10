@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Definiera därefter rutnätets mittlinje. Rutnätets mittlinje kan definieras som polygonal linje genom att klicka med musen. Slutför definieringen genom att dubbelklicka eller trycka på returtangenten.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Lägg till Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Ta bort Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Redigera koordinater (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Omvänd mittlinjeriktning (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

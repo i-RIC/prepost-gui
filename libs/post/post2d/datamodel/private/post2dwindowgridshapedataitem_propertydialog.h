@@ -31,7 +31,6 @@ private:
 	bool m_applied;
 	Post2dWindowGridShapeDataItem* m_item;
 
-private:
 	Ui::Post2dWindowGridShapeDataItem_PropertyDialog *ui;
 };
 

@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Kārtot (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktu mākoņa displeja iestatījums</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Noņemt visu atlasi (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktu mākoņa displeja iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Izmantojiet pirmsapstrādes loga iestatījumu</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pamata</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punkti</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkta lielums:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Stiepļu karkass</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Virsma</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Pārtraukuma līnijas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Kartēšanas daudzstūri</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Vērtību krāsu karte</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Punktu mākoņa displeja iestatījums</translation>
+        <translation type="vanished">Punktu mākoņa displeja iestatījums</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Pamata</translation>
+        <translation type="vanished">Pamata</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punkti</translation>
+        <translation type="vanished">Punkti</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punkta lielums:</translation>
+        <translation type="vanished">Punkta lielums:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Stiepļu karkass</translation>
+        <translation type="vanished">Stiepļu karkass</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Virsma</translation>
+        <translation type="vanished">Virsma</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Atrodoties sadaļā Punktu rediģēšanas režīms, šis iestatījums tiek ignorēts un TIN dati vienmēr tiek rādīti. parādīti kā punkti.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Pārtraukuma līnijas</translation>
+        <translation type="vanished">Pārtraukuma līnijas</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Rādīt</translation>
+        <translation type="vanished">Rādīt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Kartēšanas daudzstūri</translation>
+        <translation type="vanished">Kartēšanas daudzstūri</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Vērtību krāsu karte</translation>
+        <translation type="vanished">Vērtību krāsu karte</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importēt (&amp;I)</translation>
+        <translation type="vanished">Importēt (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksportēt (&amp;E)</translation>
+        <translation type="vanished">Eksportēt (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Noņemiet trīsstūrus ar garu malu</translation>
+        <translation>Noņemiet trīsstūrus ar garu malu</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Malu garuma ierobežojums:</translation>
+        <translation>Malu garuma ierobežojums:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: noklikšķinot uz pogas Lietot, trīsstūri, kas tiks noņemti, tiks nokrāsoti ar tumšu krāsu pelēks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

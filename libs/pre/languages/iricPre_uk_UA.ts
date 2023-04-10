@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Відображення географічних даних</translation>
+        <translation type="vanished">Відображення географічних даних</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Відображення за допомогою ІПН</translation>
+        <translation type="vanished">Відображення за допомогою ІПН</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>ІПН, створені на основі географічних даних, використовуються для картографування. Значення атрибутів вузлів сітки розраховуються як середньозважене значення значень у вузлах ІПН.</translation>
+        <translation type="vanished">ІПН, створені на основі географічних даних, використовуються для картографування. Значення атрибутів вузлів сітки розраховуються як середньозважене значення значень у вузлах ІПН.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Зіставлення шаблонів</translation>
+        <translation type="vanished">Зіставлення шаблонів</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Знайдіть точки географічних даних, які знаходяться поблизу вузлів сітки, щодо форм осередків сітки та використовуйте значення в цих точках для інтерполяції. Цей алгоритм можна використовувати лише для структурованих сіток.</translation>
+        <translation type="vanished">Знайдіть точки географічних даних, які знаходяться поблизу вузлів сітки, щодо форм осередків сітки та використовуйте значення в цих точках для інтерполяції. Цей алгоритм можна використовувати лише для структурованих сіток.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Деталь (&amp;D)...</translation>
+        <translation type="vanished">Деталь (&amp;D)...</translation>
     </message>
 </context>
 <context>

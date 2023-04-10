@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Svið</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Litakort</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Andlit</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Litakort</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Stefna</translation>
+        <translation type="vanished">Stefna</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Ég</translation>
+        <translation type="vanished">Ég</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>K</translation>
+        <translation type="vanished">K</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Svið</translation>
+        <translation type="vanished">Svið</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ég er í</translation>
+        <translation type="vanished">Ég er í</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Ég Max</translation>
+        <translation type="vanished">Ég Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J mín</translation>
+        <translation type="vanished">J mín</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K mín</translation>
+        <translation type="vanished">K mín</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Virkja</translation>
+        <translation type="vanished">Virkja</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Sýnataka</translation>
+        <translation type="vanished">Sýnataka</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Allir hornpunktar</translation>
+        <translation type="vanished">Allir hornpunktar</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Sýnatökuhlutfall:</translation>
+        <translation type="vanished">Sýnatökuhlutfall:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>Ég-stefnu</translation>
+        <translation type="vanished">Ég-stefnu</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-átt</translation>
+        <translation type="vanished">J-átt</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-átt</translation>
+        <translation type="vanished">K-átt</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Eftir stigstærð</translation>
+        <translation type="vanished">Eftir stigstærð</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Örform</translation>
+        <translation type="vanished">Örform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Örstærð:</translation>
+        <translation type="vanished">Örstærð:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Breidd línu:</translation>
+        <translation type="vanished">Breidd línu:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Örstilling</translation>
+        <translation type="vanished">Örstilling</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Sameiginleg stilling</translation>
+        <translation type="vanished">Sameiginleg stilling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Líkamlegt gildi:</translation>
+        <translation type="vanished">Líkamlegt gildi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengd</translation>
+        <translation type="vanished">Lengd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Sjálfvirk</translation>
+        <translation type="vanished">Sjálfvirk</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Staðlað gildi:</translation>
+        <translation type="vanished">Staðlað gildi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengd á skjá:</translation>
+        <translation type="vanished">Lengd á skjá:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixla]</translation>
+        <translation type="vanished">[pixla]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Lágmarksgildi til að draga:</translation>
+        <translation type="vanished">Lágmarksgildi til að draga:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Andlit</translation>
+        <translation type="vanished">Andlit</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Bæta við (&amp;A)</translation>
+        <translation type="vanished">Bæta við (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjarlægðu (&amp;R)</translation>
+        <translation type="vanished">Fjarlægðu (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Andlit %1</translation>
+        <translation type="vanished">Andlit %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Lengd Legend</translation>
+        <translation type="vanished">Lengd Legend</translation>
     </message>
 </context>
 <context>

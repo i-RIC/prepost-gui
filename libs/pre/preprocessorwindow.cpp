@@ -3,7 +3,6 @@
 #include "datamodel/preprocessorgridtypedataitem.h"
 #include "datamodel/preprocessorinputconditiondataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
-#include "factory/geodatafactory.h"
 #include "preobjectbrowser.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
@@ -446,11 +445,6 @@ bool PreProcessorWindow::checkMappingStatus()
 PreProcessorDataModelInterface* PreProcessorWindow::dataModel() const
 {
 	return m_dataModel;
-}
-
-GeoDataFactoryInterface* PreProcessorWindow::geoDataFactory() const
-{
-	return &(GeoDataFactory::instance());
 }
 
 bool PreProcessorWindow::setupCgnsFilesIfNeeded(bool readGrid)

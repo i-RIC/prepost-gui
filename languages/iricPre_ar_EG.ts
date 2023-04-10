@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>رسم خرائط البيانات الجغرافية</translation>
+        <translation type="vanished">رسم خرائط البيانات الجغرافية</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>رسم الخرائط باستخدام أرقام التعريف الضريبية</translation>
+        <translation type="vanished">رسم الخرائط باستخدام أرقام التعريف الضريبية</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>يتم استخدام TINs التي تم إنشاؤها من البيانات الجغرافية لرسم الخرائط. يتم حساب قيم سمات عقد الشبكة كمتوسط مرجح للقيم في عقد TIN.</translation>
+        <translation type="vanished">يتم استخدام TINs التي تم إنشاؤها من البيانات الجغرافية لرسم الخرائط. يتم حساب قيم سمات عقد الشبكة كمتوسط مرجح للقيم في عقد TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>تعيين القالب</translation>
+        <translation type="vanished">تعيين القالب</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>ابحث عن نقاط البيانات الجغرافية القريبة من عقد الشبكة ، فيما يتعلق بأشكال خلايا الشبكة ، واستخدم القيم الموجودة في تلك النقاط للاستيفاء. يمكن استخدام هذه الخوارزمية فقط للشبكات المهيكلة.</translation>
+        <translation type="vanished">ابحث عن نقاط البيانات الجغرافية القريبة من عقد الشبكة ، فيما يتعلق بأشكال خلايا الشبكة ، واستخدم القيم الموجودة في تلك النقاط للاستيفاء. يمكن استخدام هذه الخوارزمية فقط للشبكات المهيكلة.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>التفاصيل (&amp;D)...</translation>
+        <translation type="vanished">التفاصيل (&amp;D)...</translation>
     </message>
 </context>
 <context>

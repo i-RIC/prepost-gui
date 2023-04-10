@@ -1,5 +1,5 @@
 #include "geodatapointmaplandxmlimporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconvertdialog.h>
@@ -162,7 +162,7 @@ bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/,
 	}
 	f.close();
 
-	auto pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*> (data);
+	auto pmap = dynamic_cast<GeoDataPointmap*> (data);
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	auto polyData = vtkSmartPointer<vtkPolyData>::New();
 	auto cellArray = vtkSmartPointer<vtkCellArray>::New();
@@ -211,7 +211,7 @@ bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/,
 		cellArray->InsertNextCell(3, ids);
 	}
 	polyData->SetPolys(cellArray);
-	pmap->setSTLData(polyData, values);
+	pmap->setTin(polyData, values);
 	return true;
 }
 
@@ -220,7 +220,7 @@ bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/,
 	QFile f(filename());
 	bool ok = f.open(QFile::ReadOnly);
 
-	auto pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*> (data);
+	auto pmap = dynamic_cast<GeoDataPointmap*> (data);
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	auto polyData = vtkSmartPointer<vtkPolyData>::New();
 	auto cellArray = vtkSmartPointer<vtkCellArray>::New();
@@ -296,7 +296,7 @@ bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/,
 	}
 
 	polyData->SetPolys(cellArray);
-	pmap->setSTLData(polyData, values);
+	pmap->setTin(polyData, values);
 	return ok;
 }
 

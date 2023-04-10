@@ -1,5 +1,5 @@
 #include "geodatapointmapstlexporter.h"
-#include "geodatapointmapt.h"
+#include "geodatapointmap.h"
 
 #include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
@@ -19,14 +19,14 @@ GeoDataPointmapSTLExporter::GeoDataPointmapSTLExporter(GeoDataCreator* creator) 
 
 bool GeoDataPointmapSTLExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* /*w*/, ProjectData* pd)
 {
-	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
+	auto pmap = dynamic_cast<GeoDataPointmap*>(data);
 	vtkPolyData* polydata = vtkPolyData::New();
-	polydata->DeepCopy(pmap->delaunayedPolyData());
+	polydata->DeepCopy(pmap->tin());
 
 	double tmpvec[3];
 	vtkIdType i, numpoints;
 	numpoints = polydata->GetNumberOfPoints();
-	vtkDoubleArray* val = vtkDoubleArray::SafeDownCast(polydata->GetPointData()->GetArray("values"));
+	auto val = vtkDoubleArray::SafeDownCast(polydata->GetPointData()->GetArray("values"));
 	auto offset = pd->mainfile()->offset();
 	for (i = 0; i < numpoints; ++i) {
 		polydata->GetPoints()->GetPoint(i, tmpvec);

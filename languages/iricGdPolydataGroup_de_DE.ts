@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Neue hinzufügen %1</translation>
+        <translation type="vanished">Neue hinzufügen %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Farbeinstellung (&amp;S)...</translation>
+        <translation type="vanished">Farbeinstellung (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Farbeinstellung bearbeiten</translation>
+        <translation type="vanished">Farbeinstellung bearbeiten</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopieren...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Bildschirmeinstellung (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData-Farbeinstellung</translation>
+        <translation type="vanished">PolyData-Farbeinstellung</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farbe nach Wert</translation>
+        <translation type="vanished">Farbe nach Wert</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
 </context>
 <context>

@@ -35,7 +35,7 @@ GeoDataMapperSettingI* GeoDataPolygonGroupNodeMapperT<V, DA>::initialize(bool* b
 		auto pols = polygonGroup->polygonsInBoundingBox(point[0] - TINY_DOUBLE, point[0] + TINY_DOUBLE, point[1] - TINY_DOUBLE, point[1] + TINY_DOUBLE);
 
 		std::map<unsigned int, GeoDataPolygonGroupPolygon*> polsMap;
-		for (GeoDataPolygonGroupPolygon* p : pols) {
+		for (auto p : pols) {
 			if (p->isInside(QPointF(point[0], point[1]))) {
 				polsMap.insert({p->order(), p});
 			}

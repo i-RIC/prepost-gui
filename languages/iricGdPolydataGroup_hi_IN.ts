@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>नया जोड़ो %1</translation>
+        <translation type="vanished">नया जोड़ो %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>रंग सेटिंग (&amp;S)...</translation>
+        <translation type="vanished">रंग सेटिंग (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>रंग सेटिंग संपादित करें</translation>
+        <translation type="vanished">रंग सेटिंग संपादित करें</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>कॉपी...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>सेटिंग दिखाओ (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>पॉलीडाटा रंग सेटिंग</translation>
+        <translation type="vanished">पॉलीडाटा रंग सेटिंग</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>मूल्य के अनुसार रंग</translation>
+        <translation type="vanished">मूल्य के अनुसार रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
 </context>
 <context>

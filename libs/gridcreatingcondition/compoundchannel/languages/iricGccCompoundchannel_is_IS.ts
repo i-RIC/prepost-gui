@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Næst skaltu skilgreina miðlínu ristarinnar. Hægt er að skilgreina rist miðlínu sem marghyrnd lína með því að smella með músinni. Ljúktu við að skilgreina með því að tvísmella eða ýta á afturhnappinn.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Bæta við Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Fjarlægðu Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Breyta hnitum (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Snúið miðlínustefnu (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

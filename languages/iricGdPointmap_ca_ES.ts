@@ -3,27 +3,27 @@
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Suprimeix punts</translation>
+        <translation type="vanished">Suprimeix punts</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propietats dels punts seleccionats</translation>
+        <translation type="vanished">Propietats dels punts seleccionats</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Nombre de punts:</translation>
+        <translation type="vanished">Nombre de punts:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Mínim:</translation>
+        <translation type="vanished">Mínim:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Màxim:</translation>
+        <translation type="vanished">Màxim:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation>Suprimeix menys del valor:</translation>
+        <translation type="vanished">Suprimeix menys del valor:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Quan canvieu a aquest mode, heu de tornar a canviar els TIN. Voleu tornar a fer mescles ara?</translation>
+        <translation type="vanished">Quan canvieu a aquest mode, heu de tornar a canviar els TIN. Voleu tornar a fer mescles ara?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Select point</source>
-        <translation>Seleccioneu el punt</translation>
+        <translation type="vanished">Seleccioneu el punt</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
@@ -82,11 +82,11 @@
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation>Suprimeix els punts seleccionats inferiors al valor (&amp;L)...</translation>
+        <translation type="vanished">Suprimeix els punts seleccionats inferiors al valor (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation>Suprimeix els punts seleccionats superiors al valor (&amp;G)...</translation>
+        <translation type="vanished">Suprimeix els punts seleccionats superiors al valor (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Quan afegiu una línia de trencament, heu de canviar per mostrar els wireframes. Voleu canviar per mostrar els wireframes ara?</translation>
+        <translation type="vanished">Quan afegiu una línia de trencament, heu de canviar per mostrar els wireframes. Voleu canviar per mostrar els wireframes ara?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation>Quan elimineu la línia de trencament, heu de canviar per mostrar els filferros. Voleu canviar per mostrar els wireframes ara?</translation>
+        <translation type="vanished">Quan elimineu la línia de trencament, heu de canviar per mostrar els filferros. Voleu canviar per mostrar els wireframes ara?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -142,27 +142,27 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D'acord, el mètode de visualització canviarà a Wireframe</translation>
+        <translation type="vanished">Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D'acord, el mètode de visualització canviarà a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quan editeu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
+        <translation type="vanished">Quan editeu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quan elimineu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
+        <translation type="vanished">Quan elimineu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation>No podeu esborrar els punts utilitzats per a les línies de trencament.</translation>
+        <translation type="vanished">No podeu esborrar els punts utilitzats per a les línies de trencament.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation>Suprimeix punts</translation>
+        <translation type="vanished">Suprimeix punts</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation>Seleccioneu Fitxer per exportar</translation>
+        <translation type="vanished">Seleccioneu Fitxer per exportar</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -174,19 +174,19 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation type="vanished">S'ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation>Suprimeix menys de punts %1</translation>
+        <translation type="vanished">Suprimeix menys de punts %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation>Suprimeix punts superiors a %1</translation>
+        <translation type="vanished">Suprimeix punts superiors a %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quan interpoleu punts, heu de canviar per mostrar punts. Voleu canviar ara per mostrar punts?</translation>
+        <translation type="vanished">Quan interpoleu punts, heu de canviar per mostrar punts. Voleu canviar ara per mostrar punts?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -194,7 +194,7 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation>Quan afegiu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
+        <translation type="vanished">Quan afegiu punts, heu de canviar a mostrar punts. Voleu canviar ara per mostrar punts?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
@@ -202,23 +202,23 @@
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation>Afegeix un punt de línia de trencament</translation>
+        <translation type="vanished">Afegeix un punt de línia de trencament</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation>Cancel·la la definició de la línia de ruptura</translation>
+        <translation type="vanished">Cancel·la la definició de la línia de ruptura</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation>Acaba definint la línia de trencament</translation>
+        <translation type="vanished">Acaba definint la línia de trencament</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation>Edita punts</translation>
+        <translation type="vanished">Edita punts</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Afegiu un nou punt de línia d'intervenció</translation>
+        <translation type="vanished">Afegiu un nou punt de línia d'intervenció</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation>Combina...</translation>
+        <translation type="vanished">Combina...</translation>
     </message>
     <message>
         <source>There is no other data to merge in "%1" group.</source>
@@ -256,97 +256,167 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>Dades del núvol de punts (&amp;O)</translation>
     </message>
+    <message>
+        <source>Switch &amp;Mode</source>
+        <translation>Canvi de mode (&amp;M)</translation>
+    </message>
+    <message>
+        <source>Mer&amp;ge...</source>
+        <translation>Fusionar (&amp;G)...</translation>
+    </message>
+    <message>
+        <source>&amp;Mapping Setting...</source>
+        <translation>Configuració de mapes (&amp;M)...</translation>
+    </message>
+    <message>
+        <source>Select file name to export</source>
+        <translation>Seleccioneu el nom del fitxer per exportar</translation>
+    </message>
+    <message>
+        <source>Failed to open %1.</source>
+        <translation>No s'ha pogut obrir %1.</translation>
+    </message>
+    <message>
+        <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
+        <translation>Remella el TIN i quan s'hagi acabat, canvia al mode d'edició TIN.</translation>
+    </message>
+    <message>
+        <source>Selection Mode</source>
+        <translation>Mode de selecció</translation>
+    </message>
+    <message>
+        <source>Select points with Rectangle Region</source>
+        <translation>Seleccioneu punts amb Rectangle Region</translation>
+    </message>
+    <message>
+        <source>&amp;Filter selected points</source>
+        <translation>Filtra els punts seleccionats (&amp;F)</translation>
+    </message>
+    <message>
+        <source>Remesh &amp;TIN</source>
+        <translation>Remesh TIN (&amp;T)</translation>
+    </message>
+    <message>
+        <source>&amp;Sort</source>
+        <translation>Ordena (&amp;S)</translation>
+    </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuració de visualització del núvol de punts</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager</name>
+    <message>
+        <source>Warning</source>
+        <translation>Avís</translation>
+    </message>
+    <message>
+        <source>You can not delete points used for break lines.</source>
+        <translation>No podeu suprimir els punts utilitzats per a les línies de ruptura.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
+    <message>
+        <source>Warning</source>
+        <translation>Avís</translation>
+    </message>
+    <message>
+        <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
+        <translation>L'increment d'interpolació ha de ser superior a 0 i menor que la longitud de la línia d'interpolació</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation>Suprimeix punts</translation>
+        <translation type="vanished">Suprimeix punts</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propietats dels punts seleccionats</translation>
+        <translation type="vanished">Propietats dels punts seleccionats</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Nombre de punts:</translation>
+        <translation type="vanished">Nombre de punts:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Mínim:</translation>
+        <translation type="vanished">Mínim:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Màxim:</translation>
+        <translation type="vanished">Màxim:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation>Suprimeix més que el valor:</translation>
+        <translation type="vanished">Suprimeix més que el valor:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation>Edita punts</translation>
+        <translation type="vanished">Edita punts</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation>Propietats dels punts seleccionats</translation>
+        <translation type="vanished">Propietats dels punts seleccionats</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation>Nombre de punts:</translation>
+        <translation type="vanished">Nombre de punts:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation>Mínim:</translation>
+        <translation type="vanished">Mínim:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation>Màxim:</translation>
+        <translation type="vanished">Màxim:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation>Ubicació X.</translation>
+        <translation type="vanished">Ubicació X.</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation>Ubicació en Y</translation>
+        <translation type="vanished">Ubicació en Y</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolar l'increment</translation>
+        <translation type="vanished">Interpolar l'increment</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Configuració d’interpolació</translation>
+        <translation type="vanished">Configuració d’interpolació</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Increment d’interpolació:</translation>
+        <translation type="vanished">Increment d’interpolació:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation>Longitud de la línia:</translation>
+        <translation type="vanished">Longitud de la línia:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>L’increment d’interpolació ha de ser superior a 0 i inferior a la longitud de la línia d’interpolació</translation>
+        <translation type="vanished">L’increment d’interpolació ha de ser superior a 0 i inferior a la longitud de la línia d’interpolació</translation>
     </message>
 </context>
 <context>
@@ -404,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Desmarqueu-ho tot (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Configuració de visualització del núvol de punts</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
 </context>
 <context>
@@ -873,6 +961,342 @@
     <message>
         <source> (%1 points)</source>
         <translation>( %1 punts)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Bàsic</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punts</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Mida del punt:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Estructura de filferro</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Superfície</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Línies de ruptura</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Espectacle</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapeig Configuració de polígons</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mapa de colors per a valors</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog</name>
+    <message>
+        <source>Point Cloud Data Mapping Seting</source>
+        <translation>Configuració de mapatge de dades del núvol de punts</translation>
+    </message>
+    <message>
+        <source>Mapping with TIN</source>
+        <translation>Cartografia amb TIN</translation>
+    </message>
+    <message>
+        <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
+        <translation>Els TIN creats a partir de punts s'utilitzen per mapejar. Els valors dels atributs de la quadrícula definits als nodes o cel·les de la quadrícula es calculen com a mitjana ponderada dels valors definits als nodes del triangle que conté el node (o el centre de la cel·la).</translation>
+    </message>
+    <message>
+        <source>Template mapping</source>
+        <translation>Mapeig de plantilles</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerqueu punts que estiguin a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors d'aquests punts per a la interpolació.&lt;/p&gt;&lt;p&gt;Aquest algorisme pot ser utilitzar només per a quadrícules estructurades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Detail...</source>
+        <translation>Detall (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>Change the mapping algorithm for each area defined with polygons</source>
+        <translation>Canvieu l'algoritme de mapatge per a cada àrea definida amb polígons</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiu àrees com a polígons i especifiqueu l'algoritme per assignar valors als nodes de la quadrícula o als centres de cel·les a partir dels valors definits en els punts.&lt;/p&gt;&lt;p&gt;L'usuari pot seleccionar a continuació: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapa del valor mínim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor màxim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor mitjà ponderat dels punts dins del cercle&lt;/li&gt; &lt;li&gt;Valor del mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_MappingSettingDialog_TemplateDetailDialog</name>
+    <message>
+        <source>Template Mapping Setting</source>
+        <translation>Configuració de mapeig de plantilles</translation>
+    </message>
+    <message>
+        <source>Search region</source>
+        <translation>Cerca regió</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automàtic</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manual</translation>
+    </message>
+    <message>
+        <source>Stream-wise length[m]:</source>
+        <translation>Longitud pel corrent [m]:</translation>
+    </message>
+    <message>
+        <source>Cross-stream width[m]:</source>
+        <translation>Amplada transversal [m]:</translation>
+    </message>
+    <message>
+        <source>Number of Template Expansions:</source>
+        <translation>Nombre d'ampliacions de plantilles:</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent:</source>
+        <translation>Exponent de ponderació:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_EditPointsDialog</name>
+    <message>
+        <source>Edit Points</source>
+        <translation>Edita punts</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Propietats dels punts seleccionats</translation>
+    </message>
+    <message>
+        <source>Number of Points:</source>
+        <translation>Nombre de punts:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valor mínim:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valor màxim:</translation>
+    </message>
+    <message>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_FilterSelectedPointsDialog</name>
+    <message>
+        <source>Filter Selected Points</source>
+        <translation>Filtra els punts seleccionats</translation>
+    </message>
+    <message>
+        <source>Properties of selected points</source>
+        <translation>Propietats dels punts seleccionats</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Nombre de punts:</translation>
+    </message>
+    <message>
+        <source>Minimum value:</source>
+        <translation>Valor mínim:</translation>
+    </message>
+    <message>
+        <source>Maximum value:</source>
+        <translation>Valor màxim:</translation>
+    </message>
+    <message>
+        <source>Filtering condition</source>
+        <translation>Condició de filtració</translation>
+    </message>
+    <message>
+        <source>Select points with value greater than threshold</source>
+        <translation>Seleccioneu punts amb un valor superior al llindar</translation>
+    </message>
+    <message>
+        <source>Select points with value less than threshold</source>
+        <translation>Seleccioneu punts amb un valor inferior al llindar</translation>
+    </message>
+    <message>
+        <source>Threshold value:</source>
+        <translation>Valor llindar:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
+    <message>
+        <source>Interpolation Setting</source>
+        <translation>Configuració d'interpolació</translation>
+    </message>
+    <message>
+        <source>Interpolate Increment</source>
+        <translation>Interpolar l'increment</translation>
+    </message>
+    <message>
+        <source>Interpolation Increment:</source>
+        <translation>Increment d'interpolació:</translation>
+    </message>
+    <message>
+        <source>Line Length:</source>
+        <translation>Longitud de la línia:</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Calculation method</source>
+        <translation>Mètode de càlcul</translation>
+    </message>
+    <message>
+        <source>Map using TIN</source>
+        <translation>Mapa amb TIN</translation>
+    </message>
+    <message>
+        <source>Minimum value of points within radius</source>
+        <translation>Valor mínim de punts dins del radi</translation>
+    </message>
+    <message>
+        <source>Maximum value of points within radius</source>
+        <translation>Valor màxim de punts dins del radi</translation>
+    </message>
+    <message>
+        <source>Weighted average of points within radius</source>
+        <translation>Mitjana ponderada dels punts dins del radi</translation>
+    </message>
+    <message>
+        <source>Weighting Exponent k:</source>
+        <translation>Exponent de ponderació k:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; s'utilitza com a pes quan es calcula la mitjana ponderada dels valors. r és la distància des del punt fins al node o centre de la cel·la, al qual s'assigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius of circle to search for points:</source>
+        <translation>Radi del cercle per buscar punts:</translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation>m</translation>
+    </message>
+    <message>
+        <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
+        <translation>Quan s'executa el mapeig, es cerquen els punts amb el cercle amb el radi superior per assignar els valors als nodes de la quadrícula o als centres de cel·les.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmap_PropertyDialog</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation type="vanished">Configuració de visualització del núvol de punts</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="vanished">Bàsic</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="vanished">TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">Punts</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Mida del punt:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="vanished">Estructura de filferro</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="vanished">Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">Superfície</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation type="vanished">Línies de ruptura</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="vanished">Espectacle</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Color:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation type="vanished">Mapeig Configuració de polígons</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation type="vanished">Mapa de colors per als valors</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="vanished">Importar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation type="vanished">Exporta (&amp;E)</translation>
     </message>
 </context>
 <context>

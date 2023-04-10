@@ -11,6 +11,7 @@
 
 class ColorMapEngineI;
 class ColorMapFactoryI;
+class ColorMapLegendSettingContainerI;
 class ColorMapSettingContainerI;
 class ColorMapSettingEditDialog;
 class ColorMapSettingEditWidgetI;
@@ -38,6 +39,7 @@ public:
 		Node,           ///< Node (vertex)
 		CellCenter      ///< Cell center
 	};
+	SolverDefinitionGridAttribute();
 	SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order);
 	virtual ~SolverDefinitionGridAttribute();
 
@@ -78,6 +80,7 @@ public:
 	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
 
 	ColorMapSettingContainerI* createColorMapSettingContainer() const;
+	ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer() const;
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(QWidget* parent) const;
 	ColorMapSettingEditDialog* createColorMapSettingEditDialog(QWidget* parent) const;
 

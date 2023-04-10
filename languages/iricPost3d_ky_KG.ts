@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>Диапазон</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>Жүздөр</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Багыты</translation>
+        <translation type="vanished">Багыты</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>Мен</translation>
+        <translation type="vanished">Мен</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>Ж</translation>
+        <translation type="vanished">Ж</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>К.</translation>
+        <translation type="vanished">К.</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Мен Мин</translation>
+        <translation type="vanished">Мен Мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Мен Макс</translation>
+        <translation type="vanished">Мен Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>К Мин</translation>
+        <translation type="vanished">К Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Иштетилди</translation>
+        <translation type="vanished">Иштетилди</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Үлгүлөө</translation>
+        <translation type="vanished">Үлгүлөө</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>Бардык чокулар</translation>
+        <translation type="vanished">Бардык чокулар</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Тандоо ылдамдыгы:</translation>
+        <translation type="vanished">Тандоо ылдамдыгы:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I-багыт</translation>
+        <translation type="vanished">I-багыт</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J-багыты</translation>
+        <translation type="vanished">J-багыты</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K-багыты</translation>
+        <translation type="vanished">K-багыты</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Скалярдык мааниси боюнча</translation>
+        <translation type="vanished">Скалярдык мааниси боюнча</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Жебе формасы</translation>
+        <translation type="vanished">Жебе формасы</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Жебенин өлчөмү:</translation>
+        <translation type="vanished">Жебенин өлчөмү:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Саптын туурасы:</translation>
+        <translation type="vanished">Саптын туурасы:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Жебе жөндөөсү</translation>
+        <translation type="vanished">Жебе жөндөөсү</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>Жалпы жөндөө</translation>
+        <translation type="vanished">Жалпы жөндөө</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Length</translation>
+        <translation type="vanished">Length</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандарттык маани:</translation>
+        <translation type="vanished">Стандарттык маани:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Айым]</translation>
+        <translation type="vanished">[Айым]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Экрандын узундугу:</translation>
+        <translation type="vanished">Экрандын узундугу:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Тартуу үчүн минималдуу мааниси:</translation>
+        <translation type="vanished">Тартуу үчүн минималдуу мааниси:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Беттер</translation>
+        <translation type="vanished">Беттер</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Face %1</translation>
+        <translation type="vanished">Face %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>Узундук Легенда</translation>
+        <translation type="vanished">Узундук Легенда</translation>
     </message>
 </context>
 <context>

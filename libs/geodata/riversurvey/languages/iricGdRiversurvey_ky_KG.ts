@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>Дисплей жөндөөнү түзөтүү</translation>
+        <translation type="vanished">Дисплей жөндөөнү түзөтүү</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Кесилген маалыматтар чекиттүү булут маалыматтарын колдонуу менен түзүлөт. Кээ бир региондордо чекиттин булут маалыматтарында маалымат жок болгон жана ал пункттар үчүн 0 мааниси түзүлгөн. Эгер сиз кесилишинин абалын жана карта чекитинин булут дайындарын кайра тууралоону кааласаңыз, "Карта чекитинин булут маалыматтарын" колдонсоңуз болот.</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Cross-Section Data Display Setting</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>Cross-Section Data (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">Cross-Section Data (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 сызык %2 : "%3": Флаг дайындары жараксыз.</translation>
+        <translation type="vanished">%1 сызык %2 : "%3": Флаг дайындары жараксыз.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Дисплей жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Дисплей жөндөөсүн түзөтүү</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>Cross-Section Data Display Setting</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>VTK файлы (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>Фон түсү</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; Түстү Карта өтмөгү аркылуу ыңгайлаштыра аласыз.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>Crosssection Lines</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>Z масштабы:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Аты-жөнү</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>

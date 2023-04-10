@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Nền tảng</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Bỏ qua cài đặt thanh Màu khi nhập</translation>
+        <translation type="vanished">Bỏ qua cài đặt thanh Màu khi nhập</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Kích thước và Vị trí</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Phương hướng:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Nằm ngang</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Thẳng đứng</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Số nhãn:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Tự động</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Khi chuyển sang Chế độ chuyển màu, các giá trị được đặt thành giá trị ở giữa của mỗi phần.</translation>
+        <translation type="vanished">Khi chuyển sang Chế độ chuyển màu, các giá trị được đặt thành giá trị ở giữa của mỗi phần.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Xuất khẩu (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Số lượng màu để chèn vào mỗi phần</translation>
+        <translation type="vanished">Số lượng màu để chèn vào mỗi phần</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Phạm vi giá trị</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Số màu:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Mẫu đơn</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Thuộc tính</translation>
+        <translation type="vanished">Thuộc tính</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ tiền xử lý</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Cài đặt bản đồ màu</translation>
+        <translation type="vanished">Cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Phạm vi giá trị</translation>
+        <translation type="vanished">Phạm vi giá trị</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Tự động</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Điền vào khu vực phía trên</translation>
+        <translation type="vanished">Điền vào khu vực phía trên</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Tối thiểu:</translation>
+        <translation type="vanished">Tối thiểu:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Điền vào khu vực thấp hơn</translation>
+        <translation type="vanished">Điền vào khu vực thấp hơn</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Số bộ phận:</translation>
+        <translation type="vanished">Số bộ phận:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Tối đa:</translation>
+        <translation type="vanished">Tối đa:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Cài đặt màu sắc</translation>
+        <translation type="vanished">Cài đặt màu sắc</translation>
     </message>
 </context>
 <context>

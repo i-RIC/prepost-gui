@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+        <translation type="vanished">Importuojant nepaisyti spalvų juostos nustatymo</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Kryptis:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikalus</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Etikečių skaičius:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automatinis</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
+        <translation type="vanished">Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Eksportuoti (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Kiekviename skyriuje įterptinų spalvų skaičius</translation>
+        <translation type="vanished">Kiekviename skyriuje įterptinų spalvų skaičius</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Vertės diapazonas</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Spalvų skaičius:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributas</translation>
+        <translation type="vanished">Atributas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymus</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Spalvų žemėlapio nustatymas</translation>
+        <translation type="vanished">Spalvų žemėlapio nustatymas</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Vertių diapazonas</translation>
+        <translation type="vanished">Vertių diapazonas</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Užpildykite viršutinę sritį</translation>
+        <translation type="vanished">Užpildykite viršutinę sritį</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Užpildykite apatinę sritį</translation>
+        <translation type="vanished">Užpildykite apatinę sritį</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Skyriaus numeris:</translation>
+        <translation type="vanished">Skyriaus numeris:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maks.</translation>
+        <translation type="vanished">Maks.</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Spalvotas</translation>
+        <translation type="vanished">Spalvotas</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Spalvų nustatymas</translation>
+        <translation type="vanished">Spalvų nustatymas</translation>
     </message>
 </context>
 <context>

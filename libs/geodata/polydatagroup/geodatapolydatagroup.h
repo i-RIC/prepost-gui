@@ -3,7 +3,7 @@
 
 #include "gd_polydatagroup_global.h"
 
-#include <guicore/pre/geodata/geodata.h>
+#include <guicore/pre/geodata/geodatawithsinglemapper.h>
 
 #include <unordered_set>
 #include <vector>
@@ -22,7 +22,7 @@ class GeoDataPolyDataGroupPolyData;
 
 class vtkActor;
 
-class GD_POLYDATAGROUP_EXPORT GeoDataPolyDataGroup : public GeoData
+class GD_POLYDATAGROUP_EXPORT GeoDataPolyDataGroup : public GeoDataWithSingleMapper
 {
 	Q_OBJECT
 
@@ -65,7 +65,7 @@ public:
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 
-private slots:
+protected slots:
 	void addData();
 	void editName();
 	void editNameAndValue();
@@ -82,7 +82,6 @@ private slots:
 
 	void copy();
 
-protected slots:
 	void updateAttributeBrowser(bool force = false);
 
 protected:
@@ -154,6 +153,7 @@ private:
 
 public:
 	friend class GeoDataPolyDataGroupAttributeBrowser;
+	friend class GeoDataPointmap;
 };
 
 #ifdef _DEBUG

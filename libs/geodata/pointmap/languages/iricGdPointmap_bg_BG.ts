@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Вид (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Настройка на дисплея на облака от точки</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Деселектирайте всички (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Настройка на дисплея на облака от точки</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Използвайте настройката на прозореца за предварителна обработка</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Основен</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>ТИН</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Точки</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер на точката:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Телена рамка</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина на линията:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Повърхност</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Когато сте в &amp;quot;Режим за редактиране на точкиquot;, тази настройка се игнорира и TIN данните винаги се показани като точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Прекъснати линии</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Покажи</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>цвят:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Полигони за настройка на картографиране</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Цветна карта за стойности</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Настройка на дисплея на облака от точки</translation>
+        <translation type="vanished">Настройка на дисплея на облака от точки</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Основен</translation>
+        <translation type="vanished">Основен</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>ТИН</translation>
+        <translation type="vanished">ТИН</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Точки</translation>
+        <translation type="vanished">Точки</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Размер на точката:</translation>
+        <translation type="vanished">Размер на точката:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Телена рамка</translation>
+        <translation type="vanished">Телена рамка</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Повърхност</translation>
+        <translation type="vanished">Повърхност</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Когато сте в &amp;quot;режим на редактиране на точкиquot;, тази настройка се игнорира и TIN данните винаги се показани като точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Когато сте в &amp;quot;режим на редактиране на точкиquot;, тази настройка се игнорира и TIN данните винаги се показани като точки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Прекъснати линии</translation>
+        <translation type="vanished">Прекъснати линии</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Покажи</translation>
+        <translation type="vanished">Покажи</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>цвят:</translation>
+        <translation type="vanished">цвят:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Полигони за настройка на картографиране</translation>
+        <translation type="vanished">Полигони за настройка на картографиране</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Цветна карта за стойности</translation>
+        <translation type="vanished">Цветна карта за стойности</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Импортиране (&amp;I)</translation>
+        <translation type="vanished">Импортиране (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Експортиране (&amp;E)</translation>
+        <translation type="vanished">Експортиране (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Премахнете триъгълниците с Long Edge</translation>
+        <translation>Премахнете триъгълниците с Long Edge</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Пределна дължина на ръба:</translation>
+        <translation>Пределна дължина на ръба:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Забележка &lt;/span&gt;: Когато щракнете върху бутона за прилагане, триъгълниците, които ще бъдат премахнати, ще бъдат боядисани с тъмно сиво. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Забележка &lt;/span&gt;: Когато щракнете върху бутона за прилагане, триъгълниците, които ще бъдат премахнати, ще бъдат боядисани с тъмно сиво. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

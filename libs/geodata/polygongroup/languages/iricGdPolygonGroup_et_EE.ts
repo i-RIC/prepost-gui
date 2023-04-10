@@ -19,30 +19,34 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Värviseade Redigeerimine</translation>
+        <translation type="vanished">Värviseade Redigeerimine</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Hulknurkade kuvaseade</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>Hulknurkade rühma kuvamise seade</translation>
+        <translation type="vanished">Hulknurkade rühma kuvamise seade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Värv väärtuse järgi</translation>
+        <translation type="vanished">Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Joone laius:</translation>
+        <translation type="vanished">Joone laius:</translation>
     </message>
 </context>
 <context>
@@ -178,7 +182,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>Muutke kuvaseadet</translation>
+        <translation type="vanished">Muutke kuvaseadet</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>Hulknurkade kuvaseade</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
     </message>
 </context>
 <context>
@@ -218,6 +237,33 @@
     <message>
         <source>Warning</source>
         <translation>Hoiatus</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värvikaart</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Joone laius:</translation>
     </message>
 </context>
 </TS>

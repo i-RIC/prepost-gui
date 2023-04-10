@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Di base</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mappa dei colori</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignora l'impostazione della barra dei colori durante l'importazione</translation>
+        <translation type="vanished">Ignora l'impostazione della barra dei colori durante l'importazione</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Dimensioni e Posizione</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Direzione:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Orizzontale</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Verticale</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Numero di etichette:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avvertimento</translation>
+        <translation type="vanished">Avvertimento</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Quando si passa alla modalità Gradazione, i valori vengono impostati sul valore medio di ciascuna sezione.</translation>
+        <translation type="vanished">Quando si passa alla modalità Gradazione, i valori vengono impostati sul valore medio di ciascuna sezione.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importare (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Esportare (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Numero di colori da inserire in ogni sezione</translation>
+        <translation type="vanished">Numero di colori da inserire in ogni sezione</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Intervallo di valori</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Numero di colori:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Modulo</translation>
+        <translation type="vanished">Modulo</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attributo</translation>
+        <translation type="vanished">Attributo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importare (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Esportare (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Impostazione mappa colori</translation>
+        <translation type="vanished">Impostazione mappa colori</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Intervallo di valori</translation>
+        <translation type="vanished">Intervallo di valori</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatico</translation>
+        <translation type="vanished">Automatico</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Riempi l'area superiore</translation>
+        <translation type="vanished">Riempi l'area superiore</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>minimo:</translation>
+        <translation type="vanished">minimo:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Riempi l'area inferiore</translation>
+        <translation type="vanished">Riempi l'area inferiore</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Numero di divisione:</translation>
+        <translation type="vanished">Numero di divisione:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Massimo:</translation>
+        <translation type="vanished">Massimo:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mappa dei colori</translation>
+        <translation type="vanished">Mappa dei colori</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Impostazione del colore</translation>
+        <translation type="vanished">Impostazione del colore</translation>
     </message>
 </context>
 <context>

@@ -23,6 +23,7 @@ public:
 
 	void updateAutoNumberOfLabels();
 	void updateNumberOfLabelsIfNeeded();
+	void setDisableOtherThanImageSetting(bool disabled);
 
 private slots:
 	void handleAutoNumberOfLabels(bool checked);

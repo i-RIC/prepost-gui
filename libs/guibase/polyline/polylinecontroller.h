@@ -20,10 +20,10 @@ public:
 	void setPolyLine(const std::vector<QPointF>& polyLine);
 	void clear();
 
-	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid);
-	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId);
+	bool isVertexSelectable(const QPointF& pos, double limitDistance, int* vid) const;
+	bool isEdgeSelectable(const QPointF& pos, double limitDistance, int* edgeId) const;
 
-	int findNearestLine(const QPointF& pos);
+	int findNearestLine(const QPointF& pos) const;
 
 	vtkPolyData* pointsPolyData() const;
 	vtkPolyData* polyData() const;

@@ -1,6 +1,8 @@
 #ifndef GEODATAPOLYGONGROUPPOLYGON_H
 #define GEODATAPOLYGONGROUPPOLYGON_H
 
+#include "gd_polygongroup_global.h"
+
 #include <geodata/polydatagroup/geodatapolydatagrouppolydatawithboundingrect.h>
 
 #include <vector>
@@ -19,7 +21,7 @@ class QPointF;
 class QString;
 class QVariant;
 
-class GeoDataPolygonGroupPolygon : public GeoDataPolyDataGroupPolyDataWithBoundingRect
+class GD_POLYGONGROUP_EXPORT GeoDataPolygonGroupPolygon : public GeoDataPolyDataGroupPolyDataWithBoundingRect
 {
 public:
 	GeoDataPolygonGroupPolygon(GeoDataPolygonGroup* group);

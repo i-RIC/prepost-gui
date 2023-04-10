@@ -119,7 +119,11 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>表示色設定の編集</translation>
+        <translation type="vanished">表示色設定の編集</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>ポリゴンデータ表示設定</translation>
     </message>
 </context>
 <context>
@@ -164,23 +168,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation>ポリゴングループ表示設定</translation>
+        <translation type="vanished">ポリゴングループ表示設定</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>線の幅:</translation>
+        <translation type="vanished">線の幅:</translation>
     </message>
 </context>
 <context>
@@ -359,7 +363,22 @@
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>表示設定の編集</translation>
+        <translation type="vanished">表示設定の編集</translation>
+    </message>
+    <message>
+        <source>Polygons Display Setting</source>
+        <translation>ポリゴンデータ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
     </message>
 </context>
 <context>
@@ -483,6 +502,33 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation type="vanished">同じ列を名前と値両方に指定することはできません。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroup_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 </TS>

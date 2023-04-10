@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Chỉnh sửa tọa độ điểm</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Di chuyển đỉnh</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Đặt đỉnh</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

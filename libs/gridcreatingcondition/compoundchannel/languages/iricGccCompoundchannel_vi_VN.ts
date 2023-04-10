@@ -121,6 +121,22 @@
         <source>Polyline Coordinates</source>
         <translation>Tọa độ Polyline</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Thêm đỉnh (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Xóa đỉnh (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Chỉnh sửa tọa độ (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Đảo ngược hướng trung tâm (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

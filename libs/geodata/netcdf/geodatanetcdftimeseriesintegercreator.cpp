@@ -16,8 +16,11 @@ GeoDataNetcdfTimeSeriesIntegerCreator::GeoDataNetcdfTimeSeriesIntegerCreator() :
 
 GeoData* GeoDataNetcdfTimeSeriesIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
-	GeoDataNetcdf* data = new GeoDataNetcdfInteger(parent, this, condition);
-	data->setPosition(condition->position());
-	data->setDefaultMapper();
+	auto data = new GeoDataNetcdfInteger(parent, this, condition);
+	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
+		data->setMapper(new GeoDataNetcdfNodeMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		data->setMapper(new GeoDataNetcdfCellMapperT<int, vtkIntArray>(this));
+	}
 	return data;
 }

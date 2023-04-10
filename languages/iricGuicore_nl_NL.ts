@@ -166,7 +166,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -175,6 +175,10 @@
     <message>
         <source>Basic</source>
         <translation>Eenvoudig</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -367,7 +371,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Negeer de kleurenbalkinstelling bij het importeren</translation>
+        <translation type="vanished">Negeer de kleurenbalkinstelling bij het importeren</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -476,6 +480,26 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Size and Position</source>
         <translation>Grootte en positie</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Richting:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontaal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Verticaal</translation>
+    </message>
+    <message>
+        <source>Number of labels:</source>
+        <translation>Aantal etiketten:</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
     </message>
 </context>
 <context>
@@ -606,7 +630,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Value</source>
@@ -630,7 +654,22 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation>Bij het overschakelen naar de gradatiemodus worden de waarden ingesteld op de middelste waarde van elke sectie.</translation>
+        <translation type="vanished">Bij het overschakelen naar de gradatiemodus worden de waarden ingesteld op de middelste waarde van elke sectie.</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidgetWithImportExportButton</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export</source>
+        <translation>Exporteren (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -649,22 +688,49 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of colors to insert at each section</source>
-        <translation>Aantal kleuren dat bij elke sectie moet worden ingevoegd</translation>
+        <translation type="vanished">Aantal kleuren dat bij elke sectie moet worden ingevoegd</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>Waardebereik</translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation>Aantal kleuren:</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribuut</translation>
+        <translation type="vanished">Attribuut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
+    </message>
+</context>
+<context>
+    <name>DelegatedColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-processing Window</source>
+        <translation>Gebruik Instelling van voorverwerkingsvenster</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>Exporteren (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1441,39 +1507,39 @@ Do you really want to import this file?</source>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation>Instelling kleurenkaart</translation>
+        <translation type="vanished">Instelling kleurenkaart</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation>Waardebereik</translation>
+        <translation type="vanished">Waardebereik</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>automatisch</translation>
+        <translation type="vanished">automatisch</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Bovenste gebied vullen</translation>
+        <translation type="vanished">Bovenste gebied vullen</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min:</translation>
+        <translation type="vanished">Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Onderste gebied vullen</translation>
+        <translation type="vanished">Onderste gebied vullen</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation>Divisienummer:</translation>
+        <translation type="vanished">Divisienummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximaal:</translation>
+        <translation type="vanished">Maximaal:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kleurenkaart</translation>
+        <translation type="vanished">Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -2481,7 +2547,7 @@ Do you really want to import this file?</source>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation>Kleurinstelling</translation>
+        <translation type="vanished">Kleurinstelling</translation>
     </message>
 </context>
 <context>

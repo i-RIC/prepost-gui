@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>지리 데이터 매핑</translation>
+        <translation type="vanished">지리 데이터 매핑</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>TIN으로 매핑</translation>
+        <translation type="vanished">TIN으로 매핑</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>지리 데이터에서 생성된 TIN은 매핑에 사용됩니다. 그리드 노드 속성 값은 TIN 노드 값의 가중 평균으로 계산됩니다.</translation>
+        <translation type="vanished">지리 데이터에서 생성된 TIN은 매핑에 사용됩니다. 그리드 노드 속성 값은 TIN 노드 값의 가중 평균으로 계산됩니다.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>템플릿 매핑</translation>
+        <translation type="vanished">템플릿 매핑</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>그리드 셀 모양과 관련하여 그리드 노드에 가까운 지리 데이터 포인트를 찾고 해당 포인트의 값을 보간에 사용합니다. 이 알고리즘은 구조화된 그리드에만 사용할 수 있습니다.</translation>
+        <translation type="vanished">그리드 셀 모양과 관련하여 그리드 노드에 가까운 지리 데이터 포인트를 찾고 해당 포인트의 값을 보간에 사용합니다. 이 알고리즘은 구조화된 그리드에만 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>세부 사항 (&amp;D)...</translation>
+        <translation type="vanished">세부 사항 (&amp;D)...</translation>
     </message>
 </context>
 <context>

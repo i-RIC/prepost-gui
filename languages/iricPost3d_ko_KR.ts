@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -87,6 +87,10 @@
     <message>
         <source>Range</source>
         <translation>범위</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>
@@ -227,7 +231,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -240,6 +244,10 @@
     <message>
         <source>Faces</source>
         <translation>얼굴</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>
@@ -520,103 +528,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>방향</translation>
+        <translation type="vanished">방향</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>NS</translation>
+        <translation type="vanished">NS</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>제이</translation>
+        <translation type="vanished">제이</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>케이</translation>
+        <translation type="vanished">케이</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>나는 ~ 안에있다</translation>
+        <translation type="vanished">나는 ~ 안에있다</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>아이맥스</translation>
+        <translation type="vanished">아이맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>제이민</translation>
+        <translation type="vanished">제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>제이맥스</translation>
+        <translation type="vanished">제이맥스</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>케이 민</translation>
+        <translation type="vanished">케이 민</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>케이맥스</translation>
+        <translation type="vanished">케이맥스</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>활성화됨</translation>
+        <translation type="vanished">활성화됨</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>모든 정점</translation>
+        <translation type="vanished">모든 정점</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I 방향</translation>
+        <translation type="vanished">I 방향</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J 방향</translation>
+        <translation type="vanished">J 방향</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation>K 방향</translation>
+        <translation type="vanished">K 방향</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
 </context>
 <context>
@@ -693,63 +701,63 @@
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation>공통 설정</translation>
+        <translation type="vanished">공통 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>얼굴</translation>
+        <translation type="vanished">얼굴</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>얼굴 %1</translation>
+        <translation type="vanished">얼굴 %1</translation>
     </message>
     <message>
         <source>Length Legend</source>
-        <translation>길이 범례</translation>
+        <translation type="vanished">길이 범례</translation>
     </message>
 </context>
 <context>

@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Sorteeri (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktipilve kuvaseade</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Tühista kõigi valik (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Punktipilve kuvaseade</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Kasutage eeltöötluse akna seadistust</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Põhiline</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Punktid</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Traatkarkass</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Joone laius:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Pind</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Katkestusjooned</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näita</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Värv:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Polügoonide kaardistamine</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Väärtuste värvikaart</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Punktipilve kuvaseade</translation>
+        <translation type="vanished">Punktipilve kuvaseade</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Põhiline</translation>
+        <translation type="vanished">Põhiline</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punktid</translation>
+        <translation type="vanished">Punktid</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punkti suurus:</translation>
+        <translation type="vanished">Punkti suurus:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Traatkarkass</translation>
+        <translation type="vanished">Traatkarkass</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Joone laius:</translation>
+        <translation type="vanished">Joone laius:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Pind</translation>
+        <translation type="vanished">Pind</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Katkestusjooned</translation>
+        <translation type="vanished">Katkestusjooned</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Näita</translation>
+        <translation type="vanished">Näita</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Värv:</translation>
+        <translation type="vanished">Värv:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Polügoonide kaardistamine</translation>
+        <translation type="vanished">Polügoonide kaardistamine</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Värvikaart väärtuste jaoks</translation>
+        <translation type="vanished">Värvikaart väärtuste jaoks</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspordi (&amp;E)</translation>
+        <translation type="vanished">Ekspordi (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Eemaldage pika servaga kolmnurgad</translation>
+        <translation>Eemaldage pika servaga kolmnurgad</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Piira serva pikkust:</translation>
+        <translation>Piira serva pikkust:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: Kui klõpsate nupul Rakenda, värvitakse eemaldatavad kolmnurgad tumedaga hall. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: Kui klõpsate nupul Rakenda, värvitakse eemaldatavad kolmnurgad tumedaga hall. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -300,6 +300,10 @@
         <source>&amp;Sort</source>
         <translation>Sortiraj (&amp;S)</translation>
     </message>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Postavka prikaza oblaka tačaka</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager</name>
@@ -470,6 +474,24 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation>Poništi odabir svih (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy</name>
+    <message>
+        <source>Point Cloud Display Setting</source>
+        <translation>Postavka prikaza oblaka tačaka</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Koristite podešavanje prozora za prethodnu obradu</translation>
     </message>
 </context>
 <context>
@@ -942,6 +964,65 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Poeni</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Veličina tačke:</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation>Wireframe</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina linije:</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation>Površina</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena:&lt;/span&gt; Kada ste u &amp;quot;režimu za uređivanje bodovaquot;, ova postavka se zanemaruje i podaci o TIN-u su uvijek prikazano kao tačke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Break Lines</source>
+        <translation>Break Lines</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokaži</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Boja:</translation>
+    </message>
+    <message>
+        <source>Mapping Setting Polygons</source>
+        <translation>Mapiranje Postavljanje poligona</translation>
+    </message>
+    <message>
+        <source>Colormap for values</source>
+        <translation>Mapa boja za vrijednosti</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_MappingSettingDialog</name>
     <message>
         <source>Point Cloud Data Mapping Seting</source>
@@ -1155,82 +1236,82 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Postavka prikaza oblaka tačaka</translation>
+        <translation type="vanished">Postavka prikaza oblaka tačaka</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Basic</translation>
+        <translation type="vanished">Basic</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation>TIN</translation>
+        <translation type="vanished">TIN</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poeni</translation>
+        <translation type="vanished">Poeni</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Veličina tačke:</translation>
+        <translation type="vanished">Veličina tačke:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Širina linije:</translation>
+        <translation type="vanished">Širina linije:</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Površina</translation>
+        <translation type="vanished">Površina</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena:&lt;/span&gt; Kada ste u &amp;quot;režimu za uređivanje bodovaquot;, ova postavka se zanemaruje i podaci o TIN-u su uvijek prikazano kao tačke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena:&lt;/span&gt; Kada ste u &amp;quot;režimu za uređivanje bodovaquot;, ova postavka se zanemaruje i podaci o TIN-u su uvijek prikazano kao tačke.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
-        <translation>Break Lines</translation>
+        <translation type="vanished">Break Lines</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokaži</translation>
+        <translation type="vanished">Pokaži</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Boja:</translation>
+        <translation type="vanished">Boja:</translation>
     </message>
     <message>
         <source>Mapping Setting Polygons</source>
-        <translation>Mapiranje Postavljanje poligona</translation>
+        <translation type="vanished">Mapiranje Postavljanje poligona</translation>
     </message>
     <message>
         <source>Colormap for values</source>
-        <translation>Mapa boja za vrijednosti</translation>
+        <translation type="vanished">Mapa boja za vrijednosti</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Uvoz (&amp;I)</translation>
+        <translation type="vanished">Uvoz (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Izvoz (&amp;E)</translation>
+        <translation type="vanished">Izvoz (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="vanished">Uklonite trokute s dugačkim rubovima</translation>
+        <translation>Uklonite trokute s dugačkim rubovima</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Granična dužina ruba:</translation>
+        <translation>Granična dužina ruba:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Napomena &lt;/span&gt;: Kada kliknete na gumb za primjenu, trokutići koji će biti uklonjeni bit će obojeni tamnom bojom siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Napomena &lt;/span&gt;: Kada kliknete na gumb za primjenu, trokutići koji će biti uklonjeni bit će obojeni tamnom bojom siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

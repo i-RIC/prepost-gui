@@ -181,6 +181,11 @@ ColorMapSettingContainerI* PreProcessorBCSettingDataItem::colorMapSettingContain
 	return nullptr;
 }
 
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorBCSettingDataItem::groupDataItem() const
+{
+	return nullptr;
+}
+
 GeoData* PreProcessorBCSettingDataItem::geoData() const
 {
 	return m_polygon;

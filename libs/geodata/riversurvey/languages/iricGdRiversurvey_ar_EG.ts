@@ -351,7 +351,7 @@
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation>تحرير إعداد العرض</translation>
+        <translation type="vanished">تحرير إعداد العرض</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
@@ -401,16 +401,24 @@ In some region, data did not exists in point cloud data, and value 0 was mapped 
 If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. في بعض المناطق ، لم تكن البيانات موجودة في بيانات سحابة النقاط ، وتم تعيين القيمة 0 لتلك النقاط. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات سحابة نقطة الخريطة مرة أخرى ، يمكنك استخدام "Map point cloud data"</translation>
     </message>
-</context>
-<context>
-    <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>  </source>
-        <translation />
+        <source>Cross-Section Data Display Setting</source>
+        <translation>إعداد عرض بيانات المقطع العرضي</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
         <translation>بيانات المقطع العرضي (&amp;C)</translation>
+    </message>
+    <message>
+        <source>  </source>
+        <translation />
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey::Impl</name>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="vanished">بيانات المقطع العرضي (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1265,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 خط %2 : "%3": بيانات العلامة غير صالحة.</translation>
+        <translation type="vanished">%1 خط %2 : "%3": بيانات العلامة غير صالحة.</translation>
     </message>
     <message>
         <source>%1 line %2: "%3": Distance data is invalid.</source>
@@ -1327,7 +1335,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation>تحرير إعداد العرض</translation>
+        <translation type="vanished">تحرير إعداد العرض</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data Display Setting</source>
+        <translation>إعداد عرض بيانات المقطع العرضي</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
     </message>
 </context>
 <context>
@@ -1339,6 +1362,49 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>VTK File (*.vtk)</source>
         <translation>ملف VTK (*.vtk)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurvey_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>أساسي</translation>
+    </message>
+    <message>
+        <source>Background Color</source>
+        <translation>لون الخلفية</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; يمكنك تخصيص اللون باستخدام علامة التبويب Colormap. &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
+    </message>
+    <message>
+        <source>Crosssection Lines</source>
+        <translation>خطوط المقطع العرضي</translation>
+    </message>
+    <message>
+        <source>Z Scale: </source>
+        <translation>مقياس Z:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>لون:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>أسماء المقطع العرضي</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
     </message>
 </context>
 <context>

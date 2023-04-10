@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Kortlægning af geografiske data</translation>
+        <translation type="vanished">Kortlægning af geografiske data</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Kortlægning med TIN'er</translation>
+        <translation type="vanished">Kortlægning med TIN'er</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN'er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
+        <translation type="vanished">TIN'er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Kortlægning af skabeloner</translation>
+        <translation type="vanished">Kortlægning af skabeloner</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Find geografiske datapunkter, der er tæt på gitterknudepunkterne vedrørende gittercelleformerne, og brug værdierne på disse punkter til interpolation. Denne algoritme kan kun bruges til strukturerede net.</translation>
+        <translation type="vanished">Find geografiske datapunkter, der er tæt på gitterknudepunkterne vedrørende gittercelleformerne, og brug værdierne på disse punkter til interpolation. Denne algoritme kan kun bruges til strukturerede net.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalje (&amp;D)...</translation>
+        <translation type="vanished">Detalje (&amp;D)...</translation>
     </message>
 </context>
 <context>

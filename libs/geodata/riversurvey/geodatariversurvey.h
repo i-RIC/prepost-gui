@@ -2,10 +2,9 @@
 #define GEODATARIVERSURVEY_H
 
 #include "gd_riversurvey_global.h"
-#include <guicore/pre/geodata/geodata.h>
+#include <guicore/pre/geodata/geodatawithsinglemapper.h>
 #include "geodatariverpathpoint.h"
 #include "geodatarivershapeinterpolator.h"
-#include "geodatariversurveydisplaysetting.h"
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -27,7 +26,7 @@ class GridCreatingConditionRiverSurveyInterface;
  * but has interfaces to use QPolygon instances for input / output.
  * QPolygon has easier api to define polygons.
  */
-class GD_RIVERSURVEY_EXPORT GeoDataRiverSurvey : public GeoData
+class GD_RIVERSURVEY_EXPORT GeoDataRiverSurvey : public GeoDataWithSingleMapper
 {
 	Q_OBJECT
 
@@ -57,14 +56,15 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	bool getValueRange(double* min, double* max) override;
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
 	void applyColorMapSetting() override;
 
 	void showInitialDialog() override;
 
 	void updateInterpolators();
 	void updateShapeData();
+	void updateActorSetting() override;
 	void updateSelectionShapeData();
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;
@@ -81,6 +81,8 @@ public:
 	void informCtrlPointUpdateToCrosssectionWindows();
 
 	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
 
 private slots:
 	void generateData();
@@ -161,7 +163,7 @@ private:
 	RiverLeftBankSolver m_LeftBankSolver;
 	RiverRightBankSolver m_RightBankSolver;
 
-	GeoDataRiverSurveyDisplaySetting m_setting;
+	class DisplaySetting;
 
 	class PolyLineFinishDefiningCommand;
 	class PolyLineUpdateLabelsCommand;
@@ -181,7 +183,6 @@ private:
 	class RemoveExtensionCommand;
 	class RenameRiverPathPointCommand;
 	class RotateRiverCrosssectionCommand;
-	class SetDisplaySettingCommand;
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
 
@@ -205,9 +206,5 @@ public:
 
 	friend class GeoDataRiverSurveyProxy;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatariversurvey_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOLYGON_H

@@ -1,12 +1,12 @@
 #ifndef GEODATABACKGROUND_H
 #define GEODATABACKGROUND_H
 
-#include "../geodata/geodata.h"
+#include "../geodata/geodatawithsinglemapper.h"
 #include <QVariant>
 
 class QAction;
 
-class GeoDataBackground : public GeoData
+class GeoDataBackground : public GeoDataWithSingleMapper
 {
 	Q_OBJECT
 

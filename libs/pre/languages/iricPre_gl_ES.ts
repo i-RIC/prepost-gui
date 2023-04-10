@@ -1194,28 +1194,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation>Cartografía de datos xeográficos</translation>
+        <translation type="vanished">Cartografía de datos xeográficos</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>Asignación con TIN</translation>
+        <translation type="vanished">Asignación con TIN</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Os TIN creados a partir de datos xeográficos úsanse para o mapeo. Os valores dos atributos dos nodos de rede calcúlanse como media ponderada dos valores nos nodos TIN.</translation>
+        <translation type="vanished">Os TIN creados a partir de datos xeográficos úsanse para o mapeo. Os valores dos atributos dos nodos de rede calcúlanse como media ponderada dos valores nos nodos TIN.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation>Cartografía de modelos</translation>
+        <translation type="vanished">Cartografía de modelos</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Busque puntos de datos xeográficos que estean próximos aos nodos da cuadrícula, relativos ás formas das celas da cuadrícula, e use os valores neses puntos para a interpolación. Este algoritmo só se pode empregar para cuadrículas estruturadas.</translation>
+        <translation type="vanished">Busque puntos de datos xeográficos que estean próximos aos nodos da cuadrícula, relativos ás formas das celas da cuadrícula, e use os valores neses puntos para a interpolación. Este algoritmo só se pode empregar para cuadrículas estruturadas.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation>Detalle (&amp;D)...</translation>
+        <translation type="vanished">Detalle (&amp;D)...</translation>
     </message>
 </context>
 <context>

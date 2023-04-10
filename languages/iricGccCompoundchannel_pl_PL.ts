@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Następnie zdefiniuj linię środkową siatki. Linię środkową siatki można zdefiniować jako linię wielokątną, klikając myszką. Zakończ definiowanie przez dwukrotne kliknięcie lub naciśnięcie klawisza powrotu.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Dodaj wierzchołek (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Usuń Vertexa (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Edytuj współrzędne (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Odwróć kierunek linii środkowej (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

@@ -2,6 +2,7 @@
 #define GEODATAPOLYGONGROUPPROXY_IMPL_H
 
 #include "../geodatapolygongroupproxy.h"
+#include "geodatapolygongroupproxy_displaysetting.h"
 
 class GeoDataPolygonGroupProxy::Impl
 {
@@ -12,7 +13,7 @@ public:
 	vtkActor* m_edgesActor;
 	vtkActor* m_paintActor;
 
-	GeoDataPolygonGroupColorSettingDialog::Setting m_setting;
+	DisplaySetting m_displaySetting;
 };
 
 #endif // GEODATAPOLYGONGROUPPROXY_IMPL_H

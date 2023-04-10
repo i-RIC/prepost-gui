@@ -121,6 +121,22 @@
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>Στη συνέχεια, καθορίστε την κεντρική γραμμή πλέγματος. Η κεντρική γραμμή πλέγματος μπορεί να οριστεί ως πολυγωνική γραμμή κάνοντας κλικ στο ποντίκι. Ολοκληρώστε τον ορισμό κάνοντας διπλό κλικ ή πατώντας το πλήκτρο επιστροφής.</translation>
     </message>
+    <message>
+        <source>&amp;Add Vertex</source>
+        <translation>Προσθέστε Vertex (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Vertex</source>
+        <translation>Αφαιρέστε το Vertex (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Edit C&amp;oordinates...</source>
+        <translation>Επεξεργασία συντεταγμένων (&amp;O)...</translation>
+    </message>
+    <message>
+        <source>R&amp;everse Center Line Direction</source>
+        <translation>Αντίστροφη κεντρική κατεύθυνση γραμμής (&amp;E)</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>

@@ -4,8 +4,6 @@
 #include "../../guicore_global.h"
 #include <QMainWindow>
 
-class GeoDataFactoryInterface;
-
 class PreProcessorDataModelInterface;
 class PropertyBrowser;
 
@@ -23,7 +21,6 @@ public:
 	virtual bool checkMappingStatus() = 0;
 	virtual void checkCalculationConditionImportSourceUpdate() = 0;
 	virtual QString checkGrid(bool detail) = 0;
-	virtual GeoDataFactoryInterface* geoDataFactory() const = 0;
 };
 
 #endif // PREPROCESSORWINDOWINTERFACE_H

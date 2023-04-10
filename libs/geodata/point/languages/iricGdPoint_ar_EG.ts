@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>تحرير إحداثيات النقطة</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>تحريك الرأس</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>تعيين قمة</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Түзөтүү Пойнт Координаттары</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Чокусун жылдыруу</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Чокусун коюу</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

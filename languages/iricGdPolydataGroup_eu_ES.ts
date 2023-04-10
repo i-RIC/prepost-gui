@@ -3,7 +3,7 @@
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation>Gehitu berria %1</translation>
+        <translation type="vanished">Gehitu berria %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -59,7 +59,7 @@
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation>Koloreen ezarpena (&amp;S)...</translation>
+        <translation type="vanished">Koloreen ezarpena (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation>Kolore ezarpena Editatu</translation>
+        <translation type="vanished">Kolore ezarpena Editatu</translation>
     </message>
     <message>
         <source>Sort data</source>
@@ -100,6 +100,10 @@
     <message>
         <source>Copy...</source>
         <translation>Kopiatu...</translation>
+    </message>
+    <message>
+        <source>Display &amp;Setting...</source>
+        <translation>Bistaratzeko ezarpena (&amp;S)...</translation>
     </message>
 </context>
 <context>
@@ -140,19 +144,19 @@
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData kolore ezarpena</translation>
+        <translation type="vanished">PolyData kolore ezarpena</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Kolorea balioaren arabera</translation>
+        <translation type="vanished">Kolorea balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
 </context>
 <context>

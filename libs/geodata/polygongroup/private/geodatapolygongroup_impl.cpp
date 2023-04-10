@@ -4,6 +4,7 @@
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/geodata/geodatamapper.h>
 
 #include <QAction>
 
@@ -59,12 +60,12 @@ GeoDataPolygonGroup::Impl::~Impl()
 
 void GeoDataPolygonGroup::Impl::setupDummyPolygonForMenu()
 {
-	m_dummyPolygonForMenu->editNameAndValueAction()->setEnabled(false);
-	m_dummyPolygonForMenu->editNameAction()->setEnabled(false);
-	m_dummyPolygonForMenu->editValueAction()->setEnabled(false);
-	m_dummyPolygonForMenu->addVertexAction()->setEnabled(false);
-	m_dummyPolygonForMenu->removeVertexAction()->setEnabled(false);
-	m_dummyPolygonForMenu->coordEditAction()->setEnabled(false);
-	m_dummyPolygonForMenu->holeModeAction()->setEnabled(false);
-	m_dummyPolygonForMenu->deleteAction()->setEnabled(false);
+	m_dummyPolygonForMenu->editNameAndValueAction()->disconnect();
+	m_dummyPolygonForMenu->editNameAction()->disconnect();
+	m_dummyPolygonForMenu->editValueAction()->disconnect();
+	m_dummyPolygonForMenu->addVertexAction()->disconnect();
+	m_dummyPolygonForMenu->removeVertexAction()->disconnect();
+	m_dummyPolygonForMenu->coordEditAction()->disconnect();
+	m_dummyPolygonForMenu->holeModeAction()->disconnect();
+	m_dummyPolygonForMenu->deleteAction()->disconnect();
 }

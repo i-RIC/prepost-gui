@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Edytuj współrzędne punktu</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Przesuń wierzchołek</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Ustaw wierzchołek</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

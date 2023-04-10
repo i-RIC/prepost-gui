@@ -37,6 +37,14 @@
         <source>Edit Point Coordinates</source>
         <translation>Rediger punktkoordinater</translation>
     </message>
+    <message>
+        <source>Move vertex</source>
+        <translation>Flytt toppunktet</translation>
+    </message>
+    <message>
+        <source>Set vertex</source>
+        <translation>Sett toppunkt</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
