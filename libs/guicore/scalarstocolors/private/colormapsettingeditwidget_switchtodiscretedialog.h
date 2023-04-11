@@ -15,7 +15,7 @@ class ColorMapSettingEditWidget::SwitchToDiscreteDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit SwitchToDiscreteDialog(QWidget *parent = nullptr);
+	explicit SwitchToDiscreteDialog(QWidget *parent);
 	~SwitchToDiscreteDialog();
 
 	std::vector<ColorMapSettingValueColorPairContainer> newColors() const;
