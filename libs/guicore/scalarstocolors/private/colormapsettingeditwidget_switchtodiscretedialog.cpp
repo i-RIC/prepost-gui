@@ -18,6 +18,8 @@ ColorMapSettingEditWidget::SwitchToDiscreteDialog::SwitchToDiscreteDialog(QWidge
 	connect(ui->minValueEdit, &RealNumberEditWidget::valueChanged, [=](double){updateTable();});
 	connect(ui->maxValueEdit, &RealNumberEditWidget::valueChanged, [=](double){updateTable();});
 	connect<void(QSpinBox::*)(int)>(ui->colorsSpinBox, &QSpinBox::valueChanged, [=](int){updateTable();});
+	connect<void(QSpinBox::*)(int)>(ui->decimalSpinBox, &QSpinBox::valueChanged, [=](int){updateTable();});
+	connect(ui->logScaleCheckBox, &QCheckBox::toggled, [=](bool){updateTable();});
 
 	ui->colorsTableView->setModel(&m_model);
 	auto delegate = new Delegate(this);
@@ -71,6 +73,8 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
 	double min = ui->minValueEdit->value();
 	double max = ui->maxValueEdit->value();
 	int colNum = ui->colorsSpinBox->value();
+	int decimals = ui->decimalSpinBox->value();
+	bool logScale = ui->logScaleCheckBox->isChecked();
 
 	m_newColors.clear();
 	double origStep = 1.0 / (m_originalColors.size() - 1);
@@ -97,8 +101,23 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
 		m_newColors.push_back(newC);
 	}
 
-	for (int i = 0; i < m_newColors.size(); ++i) {
-		m_newColors[i].value = (i + 1) / static_cast<double> (m_newColors.size());
+	if (logScale) {
+		if (min <= 0) {min = 1.0E-6;}
+		auto logmin = std::log(min);
+		auto logmax = std::log(max);
+		for (int i = 0; i < m_newColors.size(); ++i) {
+			double v = (i + 1) / static_cast<double> (m_newColors.size());
+			double v2 = QString::number(std::exp(logmin + (logmax - logmin) * v), 'f', decimals).toDouble();
+			double v3 = (v2 - min) / (max - min);
+			m_newColors[i].value = v3;
+		}
+	} else {
+		for (int i = 0; i < m_newColors.size(); ++i) {
+			double v = (i + 1) / static_cast<double> (m_newColors.size());
+			double v2 = QString::number(min + (max - min) * v, 'f', decimals).toDouble();
+			double v3 = (v2 - min) / (max - min);
+			m_newColors[i].value = v3;
+		}
 	}
 	m_model.setColumnCount(3);
 	m_model.setRowCount(m_newColors.size());
