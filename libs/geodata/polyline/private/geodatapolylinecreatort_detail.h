@@ -35,7 +35,7 @@ bool GeoDataPolyLineCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttrib
 	if (cond == nullptr) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
 
-	return condition->isReferenceInformation();
+	return true;
 }
 
 #endif // GEODATAPOLYLINECREATORT_DETAIL_H

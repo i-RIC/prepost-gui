@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 						// This is the project file name.
 						QString projectFile = codec->toUnicode(argv[i]);
 						QFileInfo finfo(projectFile);
-						if (finfo.suffix() == "cgn") {
+						if (finfo.suffix() == "cgn" || finfo.suffix() == "cgns") {
 							// cgns file specified.
 							w.importCalculationResult(projectFile);
 						} else {

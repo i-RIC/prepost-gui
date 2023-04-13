@@ -2,6 +2,7 @@
 #define GEODATAPOLYLINEABSTRACTPOLYLINE_IMPL_H
 
 #include "../geodatapolylineabstractpolyline.h"
+#include "geodatapolyline_displaysetting.h"
 
 #include <guibase/polyline/polylinecontroller.h>
 
@@ -22,8 +23,6 @@ public:
 	GeoDataPolyLine* m_parent;
 	vtkActor* m_linesActor;
 	vtkActor* m_pointsActor;
-	ColorMapSettingContainerI* m_colorMapSettingContiner;
-	GeoDataPolyDataColorSettingDialog::Mapping m_mapping;
 
 	PolyLineController m_polylineController;
 	vtkDoubleArray* m_linesScalarValues;

@@ -31,10 +31,6 @@ class GD_POLYLINE_EXPORT GeoDataPolyLine : public GeoDataPolyData
 {
 	Q_OBJECT
 
-private:
-	const static int normalEdgeWidth = 1;
-	const static int selectedEdgeWidth = 2;
-
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -57,7 +53,7 @@ public:
 	GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	~GeoDataPolyLine() override;
 
-	void setLineWidth(int lineWidth);
+	QColor color() const;
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
@@ -94,6 +90,11 @@ public:
 
 	GeoDataPolyLineImplPolyLine* polyLine() const;
 
+	QDialog* propertyDialog(QWidget* parent) override;
+	void showPropertyDialog() override;
+
+	class DisplaySettingWidget;
+
 public slots:
 	void restoreMouseEventMode();
 
@@ -115,7 +116,7 @@ private:
 
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateScalarValues() override;
-	void updateActorSettings() override;
+	void updateActorSetting() override;
 	bool polylineHasThreeVertices();
 	void updateMouseEventMode();
 	void updateActionStatus();
@@ -138,6 +139,7 @@ private:
 	class RemoveVertexCommand;
 
 	class CoordinatesEditor;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;
@@ -150,9 +152,5 @@ public:
 	friend class GeoDataPolyLineShapeExporter;
 	friend class GeoDataPolyLineProxy;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatapolyline_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOLYLINE_H

@@ -24,19 +24,23 @@ public:
 	ColorMapLegendSettingContainerI* legendSetting() const;
 	void setLegendSetting(ColorMapLegendSettingContainerI* setting);
 
-	virtual void setDisableOtherThanImageSetting(bool disabled) = 0;
+	virtual void setDisableOtherThanLegendVisible(bool disabled) = 0;
 	virtual QUndoCommand* createModifyCommand() const = 0;
 
 public slots:
 	virtual void importSetting() = 0;
 	virtual void exportSetting() = 0;
 
-private:
+private slots:
 	virtual void setupWidget() = 0;
+	virtual void updateImageSetting() = 0;
 
 protected:
 	ColorMapSettingContainerI* m_setting;
 	ColorMapLegendSettingContainerI* m_legendSetting;
+
+private:
+	QMetaObject::Connection m_updateImageSettingConnection;
 };
 
 #endif // COLORMAPSETTINGEDITWIDGETI_H

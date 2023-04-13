@@ -6,6 +6,7 @@
 ColorMapLegendSettingEditWidget::ColorMapLegendSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
 	m_colorMapSetting {nullptr},
+	m_delegateMode {false},
 	ui(new Ui::ColorMapLegendSettingEditWidget)
 {
 	ui->setupUi(this);
@@ -21,17 +22,20 @@ ColorMapLegendSettingContainer ColorMapLegendSettingEditWidget::setting() const
 {
 	ColorMapLegendSettingContainer ret;
 
-	if (ui->visibilityWhenSelectedRadioButton->isChecked()) {
-		ret.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::WhenSelected;
-	} else if (ui->visibilityAlwaysRadioButton->isChecked()) {
-		ret.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
-	} else if (ui->visibilityNeverRadioButton->isChecked()) {
-		ret.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Never;
-	}
+	ret.visible = ui->visibleCheckBox->isChecked();
 	if (ui->horizontalRadioButton->isChecked()) {
 		ret.direction = ColorMapLegendSettingContainer::Direction::Horizontal;
 	} else if (ui->verticalRadioButton->isChecked()) {
 		ret.direction = ColorMapLegendSettingContainer::Direction::Vertical;
+	}
+	ret.barAutoWidth = ui->barWidthAutoCheckBox->isChecked();
+	ret.barWidth = ui->barWidthSpinBox->value();
+	if (ui->leftRadioButton->isChecked()) {
+		ret.barAlign = ColorMapLegendSettingContainer::BarAlign::Left;
+	} else if (ui->centerRadioButton->isChecked()) {
+		ret.barAlign = ColorMapLegendSettingContainer::BarAlign::Center;
+	} else if (ui->rightRadioButton->isChecked()) {
+		ret.barAlign = ColorMapLegendSettingContainer::BarAlign::Right;
 	}
 	ret.title = ui->titleEdit->text();
 	ret.labelFormat = ui->labelFormatEdit->text();
@@ -45,36 +49,51 @@ ColorMapLegendSettingContainer ColorMapLegendSettingEditWidget::setting() const
 	ret.backgroundOpacity = ui->backgroundOpacitySlider->opacityPercent();
 	ret.imageSetting = ui->imageSettingWidget->setting();
 
+	ret.setDelegateMode(m_delegateMode);
 	return ret;
 }
 
 void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingContainer& setting)
 {
-	if (setting.visibilityMode == ColorMapLegendSettingContainer::VisibilityMode::WhenSelected) {
-		ui->visibilityWhenSelectedRadioButton->setChecked(true);
-	} else if (setting.visibilityMode == ColorMapLegendSettingContainer::VisibilityMode::Always) {
-		ui->visibilityAlwaysRadioButton->setChecked(true);
-	} else if (setting.visibilityMode == ColorMapLegendSettingContainer::VisibilityMode::Never) {
-		ui->visibilityNeverRadioButton->setChecked(true);
+	m_delegateMode = setting.delegateMode();
+
+	ColorMapLegendSettingContainer s;
+
+	if (setting.delegateMode()) {
+		s = setting.colorMapSetting()->legend;
+		s.visible = setting.visible;
+	} else {
+		s = setting;
 	}
-	if (setting.direction == ColorMapLegendSettingContainer::Direction::Horizontal) {
+
+	ui->visibleCheckBox->setChecked(s.visible);
+	if (s.direction == ColorMapLegendSettingContainer::Direction::Horizontal) {
 		ui->horizontalRadioButton->setChecked(true);
-	} else if (setting.direction == ColorMapLegendSettingContainer::Direction::Vertical) {
+	} else if (s.direction == ColorMapLegendSettingContainer::Direction::Vertical) {
 		ui->verticalRadioButton->setChecked(true);
 	}
-	ui->titleEdit->setText(setting.title);
-	ui->labelFormatEdit->setText(setting.labelFormat);
-	ui->numLabelsAutoCheckBox->setChecked(setting.autoNumberOfLabels);
-	ui->numLabelsSpinBox->setValue(setting.numberOfLabels);
-	ui->titleFontWidget->setFont(setting.titleFont);
-	ui->labelFontWidget->setFont(setting.labelFont);
-	ui->titleColorWidget->setColor(setting.titleColor);
-	ui->labelColorWidget->setColor(setting.labelColor);
-	ui->backgroundColorWidget->setColor(setting.backgroundColor);
-	ui->backgroundOpacitySlider->setOpacityPercent(setting.backgroundOpacity);
+	ui->barWidthAutoCheckBox->setChecked(s.barAutoWidth);
+	ui->barWidthSpinBox->setValue(s.barWidth);
+	if (s.barAlign == ColorMapLegendSettingContainer::BarAlign::Left) {
+		ui->leftRadioButton->setChecked(true);
+	} else if (s.barAlign == ColorMapLegendSettingContainer::BarAlign::Center) {
+		ui->centerRadioButton->setChecked(true);
+	} else if (s.barAlign == ColorMapLegendSettingContainer::BarAlign::Right) {
+		ui->rightRadioButton->setChecked(true);
+	}
+	ui->titleEdit->setText(s.title);
+	ui->labelFormatEdit->setText(s.labelFormat);
+	ui->numLabelsAutoCheckBox->setChecked(s.autoNumberOfLabels);
+	ui->numLabelsSpinBox->setValue(s.numberOfLabels);
+	ui->titleFontWidget->setFont(s.titleFont);
+	ui->labelFontWidget->setFont(s.labelFont);
+	ui->titleColorWidget->setColor(s.titleColor);
+	ui->labelColorWidget->setColor(s.labelColor);
+	ui->backgroundColorWidget->setColor(s.backgroundColor);
+	ui->backgroundOpacitySlider->setOpacityPercent(s.backgroundOpacity);
 
-	ui->imageSettingWidget->setSetting(setting.imageSetting);
-	m_colorMapSetting = setting.colorMapSetting();
+	ui->imageSettingWidget->setSetting(s.imageSetting);
+	m_colorMapSetting = s.colorMapSetting();
 
 	updateAutoNumberOfLabels();
 	updateNumberOfLabelsIfNeeded();
@@ -104,13 +123,20 @@ void ColorMapLegendSettingEditWidget::updateNumberOfLabelsIfNeeded()
 	ui->numLabelsSpinBox->setValue(numCols);
 }
 
-void ColorMapLegendSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+void ColorMapLegendSettingEditWidget::setDisableOtherThanVisible(bool disabled)
 {
-	ui->visibilityGroupBox->setDisabled(disabled);
 	ui->directionGroupBox->setDisabled(disabled);
 	ui->titleGroupBox->setDisabled(disabled);
 	ui->labelGroupBox->setDisabled(disabled);
 	ui->colorGroupBox->setDisabled(disabled);
+	ui->imageSettingGroupBox->setDisabled(disabled);
+	ui->barWidthGroupBox->setDisabled(disabled);
+	ui->alignmentGroupBox->setDisabled(disabled);
+}
+
+void ColorMapLegendSettingEditWidget::setImageSetting(const ImageSettingContainer& setting)
+{
+	ui->imageSettingWidget->setSetting(setting);
 }
 
 void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool checked)

@@ -19,12 +19,11 @@ public:
 	int m_selectedVertexId;
 	int m_selectedEdgeId;
 
+	bool m_active;
 	GeoDataPolygon* m_parent;
 
 	vtkActor* m_linesActor;
 	vtkActor* m_pointsActor;
-	ColorMapSettingContainerI* m_colorMapSettingContiner;
-	GeoDataPolyDataColorSettingDialog::Mapping m_mapping;
 
 	PolygonController m_polygonController;
 	vtkDoubleArray* m_linesScalarValues;

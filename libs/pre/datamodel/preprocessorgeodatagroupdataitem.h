@@ -9,6 +9,7 @@
 #include <misc/compositecontainer.h>
 #include <misc/stringcontainer.h>
 
+class ColorMapSettingToolBarWidgetController;
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
@@ -76,11 +77,6 @@ public:
 	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
 	GeoDataCreator* getPointMapCreator() override;
 
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
-	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
-	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -141,7 +137,9 @@ protected:
 	QAction* m_deleteAllAction;
 	QSignalMapper* m_importSignalMapper;
 	QSignalMapper* m_addSignalMapper;
+	ColorMapSettingToolBarWidgetController* m_toolBarWidgetController;
 	SolverDefinitionGridAttribute* m_condition;
+
 	GridAttributeDimensionsContainer* m_dimensions;
 
 	PreProcessorGeoDataDataItem* m_backgroundItem;

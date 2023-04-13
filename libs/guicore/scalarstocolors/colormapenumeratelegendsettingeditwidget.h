@@ -8,6 +8,7 @@ class ColorMapEnumerateLegendSettingEditWidget;
 }
 
 class ColorMapEnumerateLegendSettingContainer;
+class ImageSettingContainer;
 
 class ColorMapEnumerateLegendSettingEditWidget : public QWidget
 {
@@ -19,9 +20,11 @@ public:
 
 	ColorMapEnumerateLegendSettingContainer setting() const;
 	void setSetting(const ColorMapEnumerateLegendSettingContainer& setting);
-	void setDisableOtherThanImageSetting(bool disabled);
+	void setImageSetting(const ImageSettingContainer& setting);
+	void setDisableOtherThanImageVisible(bool disabled);
 
 private:
+	bool m_delegateMode;
 	Ui::ColorMapEnumerateLegendSettingEditWidget *ui;
 };
 

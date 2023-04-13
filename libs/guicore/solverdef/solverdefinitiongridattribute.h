@@ -15,6 +15,7 @@ class ColorMapLegendSettingContainerI;
 class ColorMapSettingContainerI;
 class ColorMapSettingEditDialog;
 class ColorMapSettingEditWidgetI;
+class ColorMapSettingToolBarWidgetI;
 class ColorTransferFunctionContainer;
 class Grid;
 class GridAttributeContainer;
@@ -83,6 +84,7 @@ public:
 	ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer() const;
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(QWidget* parent) const;
 	ColorMapSettingEditDialog* createColorMapSettingEditDialog(QWidget* parent) const;
+	ColorMapSettingToolBarWidgetI* createColorMapSettingToolbarWidget(QWidget* parent) const;
 
 	//@}
 protected:

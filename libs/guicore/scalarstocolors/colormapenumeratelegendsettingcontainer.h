@@ -6,6 +6,7 @@
 #include "colormaplegendsettingcontaineri.h"
 
 #include <guicore/image/imagesettingcontainer.h>
+#include <misc/boolcontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/doublecontainer.h>
@@ -19,10 +20,14 @@ class ColorMapEnumerateSettingContainer;
 class GUICOREDLL_EXPORT ColorMapEnumerateLegendSettingContainer : public CompositeContainer, public ColorMapLegendSettingContainerI
 {
 public:
-	enum class VisibilityMode {
-		Always,
-		WhenSelected,
-		Never,
+	enum class Direction {
+		Horizontal,
+		Vertical
+	};
+	enum class BarAlign {
+		Left,
+		Center,
+		Right
 	};
 
 	ColorMapEnumerateLegendSettingContainer();
@@ -32,16 +37,26 @@ public:
 	ColorMapEnumerateSettingContainer* colorMapSetting() const;
 	void setColorMapSetting(ColorMapEnumerateSettingContainer* c);
 
+	bool delegateMode() const override;
+	void setDelegateMode(bool delegateMode) override;
+
 	void copy(const ColorMapLegendSettingContainerI& setting) override;
+	void setVisible(bool visible) override;
 	void setTitle(const QString& title) override;
 	ColorMapSettingContainerI* setting() const override;
 	void setSetting(ColorMapSettingContainerI* setting) override;
 	ImageSettingContainer* imgSetting() override;
 
+	void copyValue(const XmlAttributeContainer& c) override;
+	void copyWithColorMap(const ColorMapEnumerateLegendSettingContainer& c);
 	ColorMapEnumerateLegendSettingContainer& operator=(const ColorMapEnumerateLegendSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	EnumContainerT<VisibilityMode> visibilityMode;
+	BoolContainer visible;
+	EnumContainerT<Direction> direction;
+	BoolContainer barAutoWidth;
+	IntContainer barWidth;
+	EnumContainerT<BarAlign> barAlign;
 
 	StringContainer title;
 
@@ -57,6 +72,7 @@ public:
 
 private:
 	ColorMapEnumerateSettingContainer* m_colorMapSetting;
+	bool m_delegateMode;
 
 	class ImageBuilder;
 	ImageBuilder* m_imageBuilder;

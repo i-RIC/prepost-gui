@@ -2,8 +2,7 @@
 #define GEODATAPOLYGONABSTRACTPOLYGON_H
 
 #include "gd_polygon_global.h"
-
-#include <geodata/polydata/geodatapolydatacolorsettingdialog.h>
+#include "private/geodatapolygon_displaysetting.h"
 
 #include <QObject>
 
@@ -34,6 +33,7 @@ public:
 	bool isPolygonSelectable(const QPointF& pos);
 
 	vtkPolygon* getVtkPolygon() const;
+	vtkPolyData* edgesPolyData() const;
 	void applyVtkPolygonShape();
 
 	void setZDepthRange(double min, double max);
@@ -48,13 +48,7 @@ public:
 
 	virtual void finishDefinition();
 
-	void setColorMapSettingContainer(ColorMapSettingContainerI* c);
-	void setColor(const QColor& color);
-	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping mapping);
 	void updateActorSetting();
-
-	int lineWidth() const;
-	void setLineWidth(int lineWidth);
 
 protected:
 	const PolygonController& polygonController() const;

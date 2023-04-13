@@ -39,5 +39,5 @@ void GeoDataPoint::MoveVertexCommand::apply(const QPointF& point)
 {
 	m_point->setPoint(point);
 	m_point->updateScalarValues();
-	m_point->updateActorSettings();
+	m_point->updateActorSetting();
 }

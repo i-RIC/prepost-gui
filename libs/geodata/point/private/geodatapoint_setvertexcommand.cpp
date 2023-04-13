@@ -14,7 +14,7 @@ void GeoDataPoint::SetVertexCommand::redo()
 {
 	m_point->setPoint(m_position);
 	m_point->updateScalarValues();
-	m_point->updateActorSettings();
+	m_point->updateActorSetting();
 }
 
 void GeoDataPoint::SetVertexCommand::undo()

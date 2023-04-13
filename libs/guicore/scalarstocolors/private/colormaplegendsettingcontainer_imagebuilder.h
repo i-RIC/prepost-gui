@@ -15,13 +15,13 @@ public:
 	bool build(QImage* image) override;
 
 private:
-	void buildVertical(QPainter* painter, QImage *image);
-	void buildContinuousVertical(QPainter* painter, int top, int bottom, QImage* image);
-	void buildDiscreteVertical(QPainter* painter, int top, int bottom, QImage* image);
+	void buildVertical(QPainter* painter, QImage *image, const ColorMapLegendSettingContainer& s);
+	void buildContinuousVertical(QPainter* painter, int top, int bottom, QImage* image, const ColorMapLegendSettingContainer& s);
+	void buildDiscreteVertical(QPainter* painter, int top, int bottom, QImage* image, const ColorMapLegendSettingContainer& s);
 
-	void buildHorizontal(QPainter* painter, QImage *image);
-	void buildContinuousHorizontal(QPainter* painter, int top, int bottom, QImage* image);
-	void buildDiscreteHorizontal(QPainter* painter, int top, int bottom, QImage* image);
+	void buildHorizontal(QPainter* painter, QImage *image, const ColorMapLegendSettingContainer& s);
+	void buildContinuousHorizontal(QPainter* painter, int top, int bottom, QImage* image, const ColorMapLegendSettingContainer& s);
+	void buildDiscreteHorizontal(QPainter* painter, int top, int bottom, QImage* image, const ColorMapLegendSettingContainer& s);
 
 	ColorMapLegendSettingContainer* m_setting;
 };

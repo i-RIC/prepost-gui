@@ -5,10 +5,14 @@
 #include <QFont>
 
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
-	CompositeContainer({&visibilityMode, &direction, &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
+	CompositeContainer({&visible, &direction, &barAutoWidth, &barWidth, &barAlign,
+										 &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
 										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &imageSetting}),
-	visibilityMode {"visibilityMode", VisibilityMode::WhenSelected},
+	visible {"visible", true},
 	direction {"direction", Direction::Vertical},
+	barAutoWidth {"barAutoWidth", false},
+	barWidth {"barWidth", 30},
+	barAlign {"barAlign", BarAlign::Center},
 	title {"title"},
 	autoNumberOfLabels {"autoNumberOfLabels", true},
 	numberOfLabels {"numberOfLabels"},
@@ -21,6 +25,7 @@ ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	backgroundOpacity {"backgroundOpacity", 20},
 	imageSetting {},
 	m_colorMapSetting {nullptr},
+	m_delegateMode {false},
 	m_imageBuilder {new ImageBuilder {this}}
 {
 	auto& is = imageSetting;
@@ -54,9 +59,30 @@ void ColorMapLegendSettingContainer::setColorMapSetting(ColorMapSettingContainer
 	m_colorMapSetting = c;
 }
 
+bool ColorMapLegendSettingContainer::delegateMode() const
+{
+	return m_delegateMode;
+}
+
+void ColorMapLegendSettingContainer::setDelegateMode(bool delegateMode)
+{
+	m_delegateMode = delegateMode;
+	if (delegateMode) {
+		imageSetting.setSetting(&m_colorMapSetting->legend.imageSetting);
+	} else {
+		imageSetting.setSetting(&imageSetting);
+	}
+}
+
 void ColorMapLegendSettingContainer::copy(const ColorMapLegendSettingContainerI& setting)
 {
 	copyValue(dynamic_cast<const ColorMapLegendSettingContainer&> (setting));
+}
+
+void ColorMapLegendSettingContainer::setVisible(bool visible)
+{
+	this->visible = visible;
+	this->visible.setDefaultValue(visible);
 }
 
 void ColorMapLegendSettingContainer::setTitle(const QString& t)
@@ -77,6 +103,21 @@ void ColorMapLegendSettingContainer::setSetting(ColorMapSettingContainerI* setti
 ImageSettingContainer* ColorMapLegendSettingContainer::imgSetting()
 {
 	return &imageSetting;
+}
+
+void ColorMapLegendSettingContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const auto& c2 = dynamic_cast<const ColorMapLegendSettingContainer&>(c);
+	CompositeContainer::copyValue(c2);
+
+	m_delegateMode = c2.m_delegateMode;
+}
+
+
+void ColorMapLegendSettingContainer::copyWithColorMap(const ColorMapLegendSettingContainer &c)
+{
+	copyValue(c);
+	m_colorMapSetting = c.m_colorMapSetting;
 }
 
 ColorMapLegendSettingContainer& ColorMapLegendSettingContainer::operator=(const ColorMapLegendSettingContainer& c)

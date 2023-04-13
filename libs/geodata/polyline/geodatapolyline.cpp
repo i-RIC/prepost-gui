@@ -10,19 +10,26 @@
 #include "private/geodatapolyline_movevertexcommand.h"
 #include "private/geodatapolyline_pushnewpointcommand.h"
 #include "private/geodatapolyline_removevertexcommand.h"
+#include "public/geodatapolyline_displaysettingwidget.h"
 
 #include <iriclib_polyline.h>
 
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
+#include <misc/modifycommanddialog.h>
 #include <misc/stringtool.h>
 
 #include <QAction>
@@ -86,18 +93,9 @@ GeoDataPolyLine::GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, So
 	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
-	setColor(Qt::black);
-	setOpacity(100);
-
-	auto cs = colorMapSettingContainer();
-	if (cs != nullptr) {
-		impl->m_polyLine->setColorMapSettingContainer(cs);
-	}
-
 	impl->m_mouseEventMode = meBeforeDefining;
 
-	updateActorSettings();
+	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -106,9 +104,9 @@ GeoDataPolyLine::~GeoDataPolyLine()
 	delete impl;
 }
 
-void GeoDataPolyLine::setLineWidth(int lineWidth)
+QColor GeoDataPolyLine::color() const
 {
-	impl->m_polyLine->setLineWidth(lineWidth);
+	return impl->m_displaySetting.color;
 }
 
 void GeoDataPolyLine::setupMenu()
@@ -440,7 +438,7 @@ void GeoDataPolyLine::loadExternalData(const QString& filename)
 	} else {
 		impl->m_mouseEventMode = meBeforeDefining;
 	}
-	updateActorSettings();
+	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -655,12 +653,11 @@ void GeoDataPolyLine::updateScalarValues()
 	impl->m_polyLine->updateScalarValues();
 }
 
-void GeoDataPolyLine::updateActorSettings()
+void GeoDataPolyLine::updateActorSetting()
 {
-	auto cs = colorSetting();
-	impl->m_polyLine->setColor(cs.color);
-	impl->m_polyLine->setMapping(cs.mapping);
-	impl->m_polyLine->setOpacity(cs.opacity);
+	impl->m_polyLine->updateActorSetting();
+
+	emit updateActorSettingExecuted();
 }
 
 GeoDataProxy* GeoDataPolyLine::getProxy()
@@ -703,6 +700,34 @@ geos::geom::LineString* GeoDataPolyLine::getGeosLineString(const QPointF& offset
 GeoDataPolyLineImplPolyLine* GeoDataPolyLine::polyLine() const
 {
 	return impl->m_polyLine;
+}
+
+QDialog* GeoDataPolyLine::propertyDialog(QWidget* parent)
+{
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
+	auto widget = new DisplaySettingWidget(dialog);
+
+	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
+		widget->setIsReferenceInformation(true);
+	} else {
+		auto colorMapWidget = geoDataGroupDataItem()->condition()->createColorMapSettingEditWidget(widget);
+		auto colormap = geoDataDataItem()->colorMapSettingContainer();
+		colorMapWidget->setSetting(colormap);
+		auto colorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(colorMapWidget, widget);
+
+		widget->setColorMapWidget(colorMapWidget2);
+	}
+	widget->setSetting(&impl->m_displaySetting);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Line Display Setting"));
+	dialog->resize(900, 700);
+
+	return dialog;
+}
+
+void GeoDataPolyLine::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 bool GeoDataPolyLine::isReady() const

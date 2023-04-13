@@ -49,6 +49,13 @@ public:
 	QPointF point() const;
 	void setPoint(const QPointF& point);
 
+	QDialog* propertyDialog(QWidget* parent) override;
+	void showPropertyDialog() override;
+
+	GeoDataProxy* getProxy() override;
+
+	class DisplaySettingWidget;
+
 signals:
 	void modified();
 
@@ -66,7 +73,7 @@ private:
 
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateScalarValues() override;
-	void updateActorSettings() override;
+	void updateActorSetting() override;
 	void updateMouseEventMode();
 
 	bool isReady() const override;
@@ -81,6 +88,7 @@ private:
 	class SetVertexCommand;
 
 	class CoordinatesEditor;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;
@@ -88,10 +96,7 @@ private:
 public:
 	friend class GeoDataPointGroup;
 	friend class GeoDataPointGroupPoint;
+	friend class GeoDataPointProxy;
 };
-
-#ifdef _DEBUG
-	#include "private/geodatapoint_impl.h"
-#endif // _DEBUG
 
 #endif // GEODATAPOINT_H

@@ -26,8 +26,6 @@ GeoDataPolyLineGroupProxy::~GeoDataPolyLineGroupProxy()
 
 void GeoDataPolyLineGroupProxy::setupActors()
 {
-	auto lines = dynamic_cast<GeoDataPolyLineGroup*> (geoData());
-
 	auto r = renderer();
 	auto col = actorCollection();
 
@@ -75,15 +73,11 @@ void GeoDataPolyLineGroupProxy::updateActorSetting()
 	impl->m_edgesActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
-	bool scalarVisibility = true;
-	if (ds.mapping == GeoDataPolyLineGroup::DisplaySetting::Mapping::Arbitrary) {
-		scalarVisibility = false;
-	}
-	if (scalarVisibility) {
+	auto cm = colorMapSettingContainer();
+	if (ds.mapping == GeoDataPolyLineGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
 		vtkMapper* mapper = nullptr;
-		auto cs = colorMapSettingContainer();
 
-		mapper = cs->buildCellDataMapper(lines->impl->m_edgesPolyData, true);
+		mapper = cm->buildCellDataMapper(lines->impl->m_edgesPolyData, true);
 		impl->m_edgesActor->SetMapper(mapper);
 		mapper->Delete();
 	} else {

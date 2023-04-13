@@ -9,6 +9,7 @@
 
 #include <vector>
 
+class ColorMapSettingToolBarWidgetController;
 class GridComplexConditionDialog;
 class QAction;
 
@@ -34,6 +35,7 @@ public:
 
 	void setupGroups(int count) override;
 	std::vector<GridComplexConditionGroup*> groups() const override;
+	bool addToolBarButtons(QToolBar* parent) override;
 
 public slots:
 	void showEditGroupDialog();
@@ -50,6 +52,7 @@ private:
 	bool m_isCustomModified;
 	QColor m_undefinedColor;
 
+	ColorMapSettingToolBarWidgetController* m_toolBarWidgetController;
 	std::vector<GridComplexConditionGroup*> m_groups;
 	GridComplexConditionDialog* m_dialog;
 

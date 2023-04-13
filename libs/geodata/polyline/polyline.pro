@@ -110,6 +110,7 @@ HEADERS += gd_polyline_global.h \
            geodatapolylineshapeexporter.h \
            private/geodatapolyline_addvertexcommand.h \
            private/geodatapolyline_coordinateseditor.h \
+           private/geodatapolyline_displaysetting.h \
            private/geodatapolyline_editcoordinatescommand.h \
            private/geodatapolyline_finishpolylinedefinitioncommand.h \
            private/geodatapolyline_impl.h \
@@ -121,9 +122,14 @@ HEADERS += gd_polyline_global.h \
            private/geodatapolylineabstractpolyline_impl.h \
            private/geodatapolylinecellmappert_detail.h \
            private/geodatapolylinecreatort_detail.h \
-           private/geodatapolylinenodemappert_detail.h
-FORMS += \
-         geodatapolylineimportersettingdialog.ui
+           private/geodatapolylinenodemappert_detail.h \
+           private/geodatapolylineproxy_displaysetting.h \
+           private/geodatapolylineproxy_displaysettingwidget.h \
+           private/geodatapolylineproxy_impl.h \
+           public/geodatapolyline_displaysettingwidget.h
+FORMS += geodatapolylineimportersettingdialog.ui \
+         private/geodatapolylineproxy_displaysettingwidget.ui \
+         public/geodatapolyline_displaysettingwidget.ui
 SOURCES += geodatapolyline.cpp \
            geodatapolylineabstractpolyline.cpp \
            geodatapolylinecellmappersetting.cpp \
@@ -137,13 +143,18 @@ SOURCES += geodatapolyline.cpp \
            geodatapolylineshapeexporter.cpp \
            private/geodatapolyline_addvertexcommand.cpp \
            private/geodatapolyline_coordinateseditor.cpp \
+           private/geodatapolyline_displaysetting.cpp \
            private/geodatapolyline_editcoordinatescommand.cpp \
            private/geodatapolyline_finishpolylinedefinitioncommand.cpp \
            private/geodatapolyline_modifyabstractpolylinecommand.cpp \
            private/geodatapolyline_movepolylinecommand.cpp \
            private/geodatapolyline_movevertexcommand.cpp \
            private/geodatapolyline_pushnewpointcommand.cpp \
-           private/geodatapolyline_removevertexcommand.cpp
+           private/geodatapolyline_removevertexcommand.cpp \
+           private/geodatapolylineproxy_displaysetting.cpp \
+           private/geodatapolylineproxy_displaysettingwidget.cpp \
+           private/geodatapolylineproxy_impl.cpp \
+           public/geodatapolyline_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdPolyLine_ar_EG.ts \
                 languages/iricGdPolyLine_bg_BG.ts \
                 languages/iricGdPolyLine_bs_BA.ts \

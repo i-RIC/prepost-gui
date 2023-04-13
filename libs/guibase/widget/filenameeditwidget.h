@@ -37,6 +37,9 @@ public:
 
 	void setSaveMode(bool saveMode);
 
+signals:
+	void changed(const QString& fileName);
+
 private slots:
 	void openDialog();
 

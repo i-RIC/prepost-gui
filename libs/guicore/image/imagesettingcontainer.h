@@ -7,14 +7,18 @@
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
 
+#include <QObject>
+
 class VTKGraphicsView;
 
 class QRect;
 
 class vtkActor2D;
 
-class GUICOREDLL_EXPORT ImageSettingContainer : public CompositeContainer
+class GUICOREDLL_EXPORT ImageSettingContainer : public QObject, public CompositeContainer
 {
+	Q_OBJECT
+
 public:
 	enum class Position {
 		Top,
@@ -34,6 +38,8 @@ public:
 	ImageSettingContainer(const ImageSettingContainer& c);
 	~ImageSettingContainer();
 
+	void setSetting(ImageSettingContainer* setting);
+
 	ImageSettingContainer& operator=(const ImageSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
@@ -42,6 +48,7 @@ public:
 	void setImageBuilder(ImageBuilder* builder);
 
 	void apply(VTKGraphicsView* view) const;
+	QImage buildImage(QWidget* w) const;
 	Controller* controller();
 	QRect rect(VTKGraphicsView* view) const;
 
@@ -51,10 +58,15 @@ public:
 	IntContainer width;
 	IntContainer height;
 
+signals:
+	void updated();
+
 private:
 	vtkActor2D* m_actor;
 	ImageBuilder* m_imageBuilder;
 	Controller* m_controller;
+
+	ImageSettingContainer* m_setting;
 
 	class MoveCommand;
 	class UpdateCommand;

@@ -4,6 +4,8 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h"
+#include "private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h"
+#include "../post2dwindowgraphicsview.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/image/imagesettingcontainer.h>
@@ -88,6 +90,16 @@ Post2dWindowGridTypeDataItem::~Post2dWindowGridTypeDataItem()
 {
 	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it) {
 		delete *z_it;
+	}
+
+	for (auto& pair : m_colorMapSettingContainers) {
+		delete pair.second;
+	}
+
+	auto r = renderer();
+	for (auto pair : m_colorMapLegendActors) {
+		r->RemoveActor2D(pair.second);
+		pair.second->Delete();
 	}
 }
 
@@ -252,6 +264,15 @@ void Post2dWindowGridTypeDataItem::update()
 	}
 }
 
+void Post2dWindowGridTypeDataItem::handleResize(VTKGraphicsView* v)
+{
+	for (const auto& pair : m_colorMapSettingContainers) {
+		pair.second->applyLegendImageSetting(v);
+	}
+
+	GraphicsWindowDataItem::handleResize(v);
+}
+
 void Post2dWindowGridTypeDataItem::applyColorMapSetting(const std::string& name)
 {
 	auto i = m_geoDataItem->groupDataItem(name);
@@ -267,16 +288,23 @@ void Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated(const std::st
 void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGridTypeDataItemInterface* item)
 {
 	auto r = renderer();
+	auto v = dataModel()->graphicsView();
 	auto atts = item->gridType()->gridAttributes();
 	for (auto att : atts) {
 		auto c = new DelegatedColorMapSettingContainer();
 
 		c->preSetting = att->createColorMapLegendSettingContainer();
-		c->preSetting->setSetting(item->colorMapSetting(att->name()));
+		auto preColorMapSetting = item->colorMapSetting(att->name());
+		c->preSetting->setSetting(preColorMapSetting);
 		c->preSetting->copy(*c->preSetting->setting()->legendSetting());
+		c->preSetting->setDelegateMode(true);
+		c->preSetting->imgSetting()->controller()->setItem(this);
+		auto handler = new PreColorMapSettingUpdateHandler(c, v, this);
+		connect(preColorMapSetting, &ColorMapSettingContainerI::updated, handler, &PreColorMapSettingUpdateHandler::handle);
 
 		c->customSetting = att->createColorMapSettingContainer();
 		c->customSetting->copy(*c->preSetting->setting());
+		c->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
 		m_colorMapSettingContainers.insert({att->name(), c});
 
 		auto actor = vtkActor2D::New();

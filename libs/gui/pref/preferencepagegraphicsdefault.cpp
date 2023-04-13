@@ -13,11 +13,6 @@ PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget* parent) :
 
 	ui->gridColorWidget->setColor(m_settings.value("gridcolor", QColor(Qt::black)).value<QColor>());
 
-	int cm = m_settings.value("colormap", static_cast<int>(ColorMapSettingWidget::Rainbow)).value<int>();
-	ColorMapSettingWidget::ColorMap cmVal = static_cast<ColorMapSettingWidget::ColorMap>(cm);
-	ui->colorMapWidget->setColorMap(cmVal);
-	ui->colorMapWidget->disableCustom();
-
 	ui->vectorFactor->setValue(m_settings.value("vectorfactor", 1.0).value<double>());
 	ui->vectorColorWidget->setColor(m_settings.value("vectorcolor", QColor(Qt::black)).value<QColor>());
 	ui->vectorArrowSizeSpinBox->setValue(m_settings.value("vectorarrowsize", 3).value<int>());
@@ -38,9 +33,6 @@ PreferencePageGraphicsDefault::~PreferencePageGraphicsDefault()
 void PreferencePageGraphicsDefault::update()
 {
 	m_settings.setValue("gridcolor", ui->gridColorWidget->color());
-
-	ColorMapSettingWidget::ColorMap cm = ui->colorMapWidget->colorMap();
-	m_settings.setValue("colormap", static_cast<int>(cm));
 
 	m_settings.setValue("vectorfactor", ui->vectorFactor->value());
 	m_settings.setValue("vectorcolor", ui->vectorColorWidget->color());

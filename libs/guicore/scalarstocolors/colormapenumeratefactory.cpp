@@ -2,6 +2,7 @@
 #include "colormapenumeratelegendsettingcontainer.h"
 #include "colormapenumeratesettingcontainer.h"
 #include "colormapenumeratesettingeditwidget.h"
+#include "colormapenumeratesettingtoolbarwidget.h"
 
 ColorMapSettingContainerI* ColorMapEnumerateFactory::createSettingContainer()
 {
@@ -16,4 +17,9 @@ ColorMapLegendSettingContainerI* ColorMapEnumerateFactory::createLegendSettingCo
 ColorMapSettingEditWidgetI* ColorMapEnumerateFactory::createSettingEditWidget(QWidget* parent)
 {
 	return new ColorMapEnumerateSettingEditWidget(parent);
+}
+
+ColorMapSettingToolBarWidgetI* ColorMapEnumerateFactory::createToolbarWidget(QWidget* parent)
+{
+	return new ColorMapEnumerateSettingToolBarWidget(parent);
 }

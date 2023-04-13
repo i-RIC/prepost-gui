@@ -73,17 +73,12 @@ void GeoDataNetcdfProxy::updateActorSetting()
 	impl->m_actor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
-	bool scalarVisibility = true;
-	if (ds.mapping == GeoDataNetcdf::DisplaySetting::Mapping::Arbitrary) {
-		scalarVisibility = false;
-	}
-
-	if (scalarVisibility) {
+	auto cm = colorMapSettingContainer();
+	if (ds.mapping == GeoDataNetcdf::DisplaySetting::Mapping::Value && (cm != nullptr)) {
 		vtkMapper* mapper = nullptr;
-		auto cs = colorMapSettingContainer();
 
 		netcdf->m_threshold->Update();
-		mapper = cs->buildCellDataMapper(netcdf->m_threshold->GetOutput(), false);
+		mapper = cm->buildCellDataMapper(netcdf->m_threshold->GetOutput(), false);
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 

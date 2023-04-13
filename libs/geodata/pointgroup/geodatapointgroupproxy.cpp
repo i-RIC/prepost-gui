@@ -92,15 +92,11 @@ void GeoDataPointGroupProxy::updateActorSetting()
 		impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 
 		// mapping
-		bool scalarVisibility = true;
-		if (ds.mapping == GeoDataPointGroup::DisplaySetting::Mapping::Arbitrary) {
-			scalarVisibility = false;
-		}
-		if (scalarVisibility) {
+		auto cm = colorMapSettingContainer();
+		if (ds.mapping == GeoDataPointGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
 			vtkMapper* mapper = nullptr;
-			auto cs = colorMapSettingContainer();
 
-			mapper = cs->buildCellDataMapper(points->impl->m_pointsPolyData, true);
+			mapper = cm->buildCellDataMapper(points->impl->m_pointsPolyData, true);
 			impl->m_pointsActor->SetMapper(mapper);
 			mapper->Delete();
 		} else {

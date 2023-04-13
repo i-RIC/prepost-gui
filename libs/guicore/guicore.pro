@@ -253,8 +253,6 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
-           pre/geodata/geodatafactory.h \
-           pre/geodata/geodatawithsinglemapper.h \
            project/addiblegcptablemodel.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
@@ -279,6 +277,7 @@ HEADERS += guicore_global.h \
            scalarstocolors/colormapenumeratelegendsettingeditwidget.h \
            scalarstocolors/colormapenumeratesettingcontainer.h \
            scalarstocolors/colormapenumeratesettingeditwidget.h \
+           scalarstocolors/colormapenumeratesettingtoolbarwidget.h \
            scalarstocolors/colormapfactory.h \
            scalarstocolors/colormapfactoryi.h \
            scalarstocolors/colormaplegendsettingcontainer.h \
@@ -291,10 +290,15 @@ HEADERS += guicore_global.h \
            scalarstocolors/colormapsettingeditwidget.h \
            scalarstocolors/colormapsettingeditwidgeti.h \
            scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h \
+           scalarstocolors/colormapsettingmodifycommand.h \
+           scalarstocolors/colormapsettingtoolbarwidget.h \
+           scalarstocolors/colormapsettingtoolbarwidgetcontroller.h \
+           scalarstocolors/colormapsettingtoolbarwidgeti.h \
            scalarstocolors/colormapsettingvaluecolorpaircontainer.h \
            scalarstocolors/delegatedcolormapsettingcontainer.h \
            scalarstocolors/delegatedcolormapsettingeditwidget.h \
            scalarstocolors/discretevaluesutil.h \
+           scalarstocolors/ui_geodatabackgroundeditdialog.h \
            solverdef/enumloader.h \
            solverdef/enumloadert.h \
            solverdef/integerenumloader.h \
@@ -385,6 +389,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatacellmappert.h \
            pre/geodata/geodatacreator.h \
            pre/geodata/geodataexporter.h \
+           pre/geodata/geodatafactory.h \
            pre/geodata/geodataimporter.h \
            pre/geodata/geodatamapper.h \
            pre/geodata/geodatamappersettingi.h \
@@ -392,6 +397,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatanodemappert.h \
            pre/geodata/geodataproxy.h \
            pre/geodata/geodatawebimporter.h \
+           pre/geodata/geodatawithsinglemapper.h \
            pre/geodatabackground/geodatabackground.h \
            pre/geodatabackground/geodatabackgroundcellmappert.h \
            pre/geodatabackground/geodatabackgroundcomplex.h \
@@ -477,9 +483,13 @@ HEADERS += guicore_global.h \
            scalarstocolors/private/colormapenumeratelegendsettingcontainer_imagebuilder.h \
            scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller.h \
            scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller_delegate.h \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.h \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog_setting.h \
            scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.h \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.h \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.h \
+           scalarstocolors/private/colormapsettingeditwidget_importdialog.h \
+           scalarstocolors/private/colormapsettingeditwidget_importdialog_setting.h \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.h \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog_delegate.h \
            solverdef/private/enumloadert_detail.h \
@@ -648,10 +658,12 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          region/region2dsettingeditwidget.ui \
          scalarstocolors/colormapenumeratelegendsettingeditwidget.ui \
          scalarstocolors/colormapenumeratesettingeditwidget.ui \
+         scalarstocolors/colormapenumeratesettingtoolbarwidget.ui \
          scalarstocolors/colormaplegendsettingeditwidget.ui \
          scalarstocolors/colormapsettingeditdialog.ui \
          scalarstocolors/colormapsettingeditwidget.ui \
          scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.ui \
+         scalarstocolors/colormapsettingtoolbarwidget.ui \
          scalarstocolors/delegatedcolormapsettingeditwidget.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
@@ -659,6 +671,8 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          pre/complex/gridcomplexconditionwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
          project/inputcond/inputconditiondialog.ui \
+         scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.ui \
+         scalarstocolors/private/colormapsettingeditwidget_importdialog.ui \
          scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
          pre/gridcond/base/gridattributeeditnameandvaluedialog.ui \
@@ -748,8 +762,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
-           pre/geodata/geodatafactory.cpp \
-           pre/geodata/geodatawithsinglemapper.cpp \
            project/addiblegcptablemodel.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
@@ -773,6 +785,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            scalarstocolors/colormapenumeratelegendsettingeditwidget.cpp \
            scalarstocolors/colormapenumeratesettingcontainer.cpp \
            scalarstocolors/colormapenumeratesettingeditwidget.cpp \
+           scalarstocolors/colormapenumeratesettingtoolbarwidget.cpp \
            scalarstocolors/colormapfactory.cpp \
            scalarstocolors/colormaplegendsettingcontainer.cpp \
            scalarstocolors/colormaplegendsettingeditwidget.cpp \
@@ -783,6 +796,10 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            scalarstocolors/colormapsettingeditwidget.cpp \
            scalarstocolors/colormapsettingeditwidgeti.cpp \
            scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.cpp \
+           scalarstocolors/colormapsettingmodifycommand.cpp \
+           scalarstocolors/colormapsettingtoolbarwidget.cpp \
+           scalarstocolors/colormapsettingtoolbarwidgetcontroller.cpp \
+           scalarstocolors/colormapsettingtoolbarwidgeti.cpp \
            scalarstocolors/colormapsettingvaluecolorpaircontainer.cpp \
            scalarstocolors/delegatedcolormapsettingcontainer.cpp \
            scalarstocolors/delegatedcolormapsettingeditwidget.cpp \
@@ -861,10 +878,12 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            pre/geodata/geodata.cpp \
            pre/geodata/geodatacreator.cpp \
            pre/geodata/geodataexporter.cpp \
+           pre/geodata/geodatafactory.cpp \
            pre/geodata/geodataimporter.cpp \
            pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
            pre/geodata/geodatawebimporter.cpp \
+           pre/geodata/geodatawithsinglemapper.cpp \
            pre/geodatabackground/geodatabackground.cpp \
            pre/geodatabackground/geodatabackgroundcomplex.cpp \
            pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \
@@ -929,9 +948,13 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            scalarstocolors/private/colormapenumeratelegendsettingcontainer_imagebuilder.cpp \
            scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller.cpp \
            scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller_delegate.cpp \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.cpp \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog_setting.cpp \
            scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.cpp \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.cpp \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_importdialog.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_importdialog_setting.cpp \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.cpp \
            scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog_delegate.cpp \
            post/post2d/base/post2dwindowgridtypedataiteminterface.cpp \

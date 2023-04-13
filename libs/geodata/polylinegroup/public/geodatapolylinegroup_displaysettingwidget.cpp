@@ -1,4 +1,5 @@
 #include "geodatapolylinegroup_displaysettingwidget.h"
+#include "../private/geodatapolylinegroup_displaysetting.h"
 #include "ui_geodatapolylinegroup_displaysettingwidget.h"
 
 #include <misc/mergesupportedlistcommand.h>

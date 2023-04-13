@@ -19,9 +19,7 @@ Post2dWindowNodeScalarGroupDataItem::Setting::Setting() :
 	colorMapSetting {},
 	regionSetting {},
 	opacity {"opacity", 50}
-{
-	colorMapSetting.legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
-}
+{}
 
 Post2dWindowNodeScalarGroupDataItem::Setting::Setting(const Setting& setting) :
 	Setting {}

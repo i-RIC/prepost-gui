@@ -13,7 +13,8 @@ RealNumberEditWidget::Impl::Impl() :
 	m_maximum {0},
 	m_minimumIsSet {false},
 	m_minimum {0},
-	m_acceptEvents {false}
+	m_acceptEvents {false},
+	m_informChangeOnFocusOutOnly {false}
 {}
 
 // public interfaces
@@ -97,6 +98,11 @@ void RealNumberEditWidget::setAcceptEvents(bool accept)
 	impl->m_acceptEvents = accept;
 }
 
+void RealNumberEditWidget::setInformChangeOnFocusOutOnly(bool onFocusOutOnly)
+{
+	impl->m_informChangeOnFocusOutOnly = onFocusOutOnly;
+}
+
 void RealNumberEditWidget::closeEvent(QCloseEvent* e)
 {
 	if (updateValue(true)) {
@@ -122,6 +128,8 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 
 void RealNumberEditWidget::handleTextEdited()
 {
+	if (impl->m_informChangeOnFocusOutOnly) {return;}
+
 	updateValue(true);
 }
 
@@ -143,13 +151,13 @@ bool RealNumberEditWidget::updateValue(bool inhibitMessage)
 	}
 	if (impl->m_minimumIsSet && tmpVal < impl->m_minimum) {
 		if (! inhibitMessage) {
-			QMessageBox::warning(this, tr("Warning"), tr("Minimum value is %1.").arg(impl->m_minimum));
+			QMessageBox::warning(this, tr("Warning"), tr("Value smaller than %1 in not allowed.").arg(impl->m_minimum));
 		}
 		return false;
 	}
 	if (impl->m_maximumIsSet && tmpVal > impl->m_maximum) {
 		if (! inhibitMessage) {
-			QMessageBox::warning(this, tr("Warning"), tr("Maximum value is %1.").arg(impl->m_maximum));
+			QMessageBox::warning(this, tr("Warning"), tr("Valur larger than %1 is not allowed.").arg(impl->m_maximum));
 		}
 		return false;
 	}

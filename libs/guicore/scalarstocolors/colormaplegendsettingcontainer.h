@@ -20,14 +20,14 @@ class ColorMapSettingContainer;
 class GUICOREDLL_EXPORT ColorMapLegendSettingContainer : public CompositeContainer, public ColorMapLegendSettingContainerI
 {
 public:
-	enum class VisibilityMode {
-		Always,
-		WhenSelected,
-		Never,
-	};
 	enum class Direction {
 		Horizontal,
 		Vertical
+	};
+	enum class BarAlign {
+		Left,
+		Center,
+		Right
 	};
 
 	ColorMapLegendSettingContainer();
@@ -37,17 +37,26 @@ public:
 	ColorMapSettingContainer* colorMapSetting() const;
 	void setColorMapSetting(ColorMapSettingContainer* c);
 
+	bool delegateMode() const override;
+	void setDelegateMode(bool delegateMode) override;
+
 	void copy(const ColorMapLegendSettingContainerI& setting) override;
+	void setVisible(bool visible) override;
 	void setTitle(const QString& title) override;
 	ColorMapSettingContainerI* setting() const override;
 	void setSetting(ColorMapSettingContainerI* setting) override;
 	ImageSettingContainer* imgSetting() override;
 
+	void copyValue(const XmlAttributeContainer& c) override;
+	void copyWithColorMap(const ColorMapLegendSettingContainer& c);
 	ColorMapLegendSettingContainer& operator=(const ColorMapLegendSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	EnumContainerT<VisibilityMode> visibilityMode;
+	BoolContainer visible;
 	EnumContainerT<Direction> direction;
+	BoolContainer barAutoWidth;
+	IntContainer barWidth;
+	EnumContainerT<BarAlign> barAlign;
 
 	StringContainer title;
 
@@ -68,6 +77,7 @@ public:
 
 private:
 	ColorMapSettingContainer* m_colorMapSetting;
+	bool m_delegateMode;
 
 	class ImageBuilder;
 	ImageBuilder* m_imageBuilder;

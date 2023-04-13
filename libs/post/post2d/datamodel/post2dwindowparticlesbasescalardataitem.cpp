@@ -23,7 +23,6 @@ Post2dWindowParticlesBaseScalarDataItem::Post2dWindowParticlesBaseScalarDataItem
 	auto cap = gType->output(name)->caption();
 	m_colorMapSetting.valueCaption = cap;
 	m_colorMapSetting.legend.title = cap;
-	m_colorMapSetting.legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
 }
 
 Post2dWindowParticlesBaseScalarDataItem::~Post2dWindowParticlesBaseScalarDataItem()

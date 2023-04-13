@@ -25,7 +25,8 @@ ImageSettingContainer::ImageSettingContainer() :
 	height {"height", 100},
 	m_actor {nullptr},
 	m_imageBuilder {nullptr},
-	m_controller {new Controller {this}}
+	m_controller {new Controller {this}},
+	m_setting {this}
 {}
 
 ImageSettingContainer::ImageSettingContainer(const ImageSettingContainer& c) :
@@ -37,6 +38,11 @@ ImageSettingContainer::ImageSettingContainer(const ImageSettingContainer& c) :
 ImageSettingContainer::~ImageSettingContainer()
 {
 	delete m_controller;
+}
+
+void ImageSettingContainer::setSetting(ImageSettingContainer* setting)
+{
+	m_setting = setting;
 }
 
 ImageSettingContainer& ImageSettingContainer::operator=(const ImageSettingContainer& c)
@@ -74,7 +80,7 @@ void ImageSettingContainer::apply(VTKGraphicsView* v) const
 
 	item->actor2DCollection()->RemoveItem(m_actor);
 
-	QImage canvasImage(int(width * v->devicePixelRatioF()), int(height * v->devicePixelRatioF()), QImage::Format::Format_ARGB32);
+	QImage canvasImage(int(m_setting->width * v->devicePixelRatioF()), int(m_setting->height * v->devicePixelRatioF()), QImage::Format::Format_ARGB32);
 	canvasImage.setDevicePixelRatio(v->devicePixelRatioF());
 	canvasImage.fill(Qt::transparent);
 
@@ -93,12 +99,23 @@ void ImageSettingContainer::apply(VTKGraphicsView* v) const
 	mapper->SetInputData(imgToImg->GetOutput());
 	m_actor->SetMapper(mapper);
 
-	auto r = rect(v);
+	auto r = m_setting->rect(v);
 
 	m_actor->SetPosition(r.left(), v->height() * v->devicePixelRatioF() - r.bottom());
 
 	item->actor2DCollection()->AddItem(m_actor);
 	item->updateVisibilityWithoutRendering();
+}
+
+QImage ImageSettingContainer::buildImage(QWidget* w) const
+{
+	QImage canvasImage(int(width) * w->devicePixelRatioF(), int(height * w->devicePixelRatioF()), QImage::Format::Format_ARGB32);
+	canvasImage.setDevicePixelRatio(w->devicePixelRatioF());
+	canvasImage.fill(Qt::transparent);
+
+	m_imageBuilder->build(&canvasImage);
+
+	return canvasImage;
 }
 
 ImageSettingContainer::Controller* ImageSettingContainer::controller()

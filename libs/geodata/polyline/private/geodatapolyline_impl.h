@@ -2,6 +2,7 @@
 #define GEODATAPOLYLINE_IMPL_H
 
 #include "../geodatapolyline.h"
+#include "geodatapolyline_displaysetting.h"
 
 #include <misc/zdepthrange.h>
 
@@ -36,6 +37,8 @@ public:
 	QCursor m_addCursor;
 	QCursor m_removeCursor;
 	QCursor m_movePointCursor;
+
+	DisplaySetting m_displaySetting;
 };
 
 #endif // GEODATAPOLYLINE_IMPL_H

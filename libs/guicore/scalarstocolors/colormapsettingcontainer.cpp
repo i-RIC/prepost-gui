@@ -15,6 +15,8 @@
 #include <vtkSmartPointer.h>
 #include <vtkPolyDataMapper.h>
 
+#include <misc/iricrootpath.h>
+
 #include <unordered_map>
 
 namespace {
@@ -85,6 +87,7 @@ ColorMapSettingContainer::ColorMapSettingContainer() :
 	legend {}
 {
 	legend.setColorMapSetting(this);
+	connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapSettingContainer::updated);
 
 	transitionMode = TransitionMode::Continuous;
 	valueMode = ValueMode::Relative;
@@ -99,6 +102,8 @@ ColorMapSettingContainer::ColorMapSettingContainer() :
 	colors.push_back(ColorMapSettingValueColorPairContainer(0.5, QColor(0, 255, 0)));
 	colors.push_back(ColorMapSettingValueColorPairContainer(0.75, QColor(255, 255, 0)));
 	colors.push_back(ColorMapSettingValueColorPairContainer(1, QColor(255, 0, 0)));
+
+	importDefault();
 }
 
 ColorMapSettingContainer::ColorMapSettingContainer(const ColorMapSettingContainer& c) :
@@ -132,6 +137,7 @@ void ColorMapSettingContainer::load(const QDomNode& node)
 		pair.load(itemNode);
 		colors.push_back(pair);
 	}
+	emit updated();
 }
 
 void ColorMapSettingContainer::save(QXmlStreamWriter& writer) const
@@ -150,6 +156,14 @@ void ColorMapSettingContainer::copy(const ColorMapSettingContainerI& c)
 	copyValue(dynamic_cast<const ColorMapSettingContainer&> (c));
 }
 
+ColorMapSettingContainerI* ColorMapSettingContainer::copy()
+{
+	auto s = new ColorMapSettingContainer();
+	s->copy(*this);
+
+	return s;
+}
+
 void ColorMapSettingContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const auto& c2 = dynamic_cast<const ColorMapSettingContainer&>(c);
@@ -159,6 +173,46 @@ void ColorMapSettingContainer::copyValue(const XmlAttributeContainer& c)
 	autoMinValue = c2.autoMinValue;
 	autoMaxValue = c2.autoMaxValue;
 	valueCaption = c2.valueCaption;
+
+	emit updated();
+}
+
+bool ColorMapSettingContainer::importData(const QString& fileName)
+{
+	QFile f(fileName);
+	QDomDocument doc;
+
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+
+	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
+	if (! ok) {
+		return false;
+	}
+	auto elem = doc.documentElement();
+	if (elem.nodeName() != "ColorMapSetting") {
+		return false;
+	}
+	load(elem);
+	return true;
+}
+
+bool ColorMapSettingContainer::exportData(const QString& fileName)
+{
+	QFile f(fileName);
+	bool ok = f.open(QFile::WriteOnly);
+	if (! ok) {return false;}
+
+	QXmlStreamWriter writer(&f);
+	writer.writeStartDocument();
+	writer.writeStartElement("ColorMapSetting");
+	save(writer);
+	writer.writeEndElement();
+	writer.writeEndDocument();
+	f.close();
+
+	return true;
 }
 
 vtkMapper* ColorMapSettingContainer::buildCellDataMapper(vtkDataSet* data, bool ignoreTransparent)
@@ -613,6 +667,21 @@ double ColorMapSettingContainer::getColorTableMinValue() const
 		} else {
 			return minValue;
 		}
+	}
+}
+
+void ColorMapSettingContainer::importDefault()
+{
+	QDir dir(iRICRootPath::get());
+	dir.cdUp();
+	dir.cdUp();
+	QStringList paths;
+	paths.append(dir.absoluteFilePath("private/colormaps/default.cmsetting"));
+	paths.append(dir.absoluteFilePath("colormaps/default.cmsetting"));
+	for (auto path : paths) {
+		bool ok = importData(path);
+
+		if (ok) {return;}
 	}
 }
 

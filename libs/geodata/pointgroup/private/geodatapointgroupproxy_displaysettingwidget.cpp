@@ -1,8 +1,8 @@
-#include "geodatapointgroup_displaysettingwidget.h"
 #include "geodatapointgroup_impl.h"
 #include "geodatapointgroupproxy_displaysetting.h"
 #include "geodatapointgroupproxy_displaysettingwidget.h"
 #include "geodatapointgroupproxy_impl.h"
+#include "../public/geodatapointgroup_displaysettingwidget.h"
 #include "ui_geodatapointgroupproxy_displaysettingwidget.h"
 
 #include <guicore/post/post2d/base/post2dwindowgeodatadataiteminterface.h>

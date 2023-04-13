@@ -38,7 +38,6 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
 		auto cs = new ColorMapSettingContainer();
 		auto caption = gt->output(pair.first)->caption();
-		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
 		cs->valueCaption = caption;
 		cs->legend.title = caption;
 		cs->setAutoValueRange(pair.second);

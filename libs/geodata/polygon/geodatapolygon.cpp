@@ -6,25 +6,32 @@
 #include "private/geodatapolygon_addholepolygoncommand.h"
 #include "private/geodatapolygon_addvertexcommand.h"
 #include "private/geodatapolygon_coordinateseditor.h"
+#include "private/geodatapolygon_displaysetting.h"
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
 #include "private/geodatapolygon_impl.h"
 #include "private/geodatapolygon_movepolygoncommand.h"
 #include "private/geodatapolygon_movevertexcommand.h"
 #include "private/geodatapolygon_pushnewpointcommand.h"
 #include "private/geodatapolygon_removevertexcommand.h"
+#include "public/geodatapolygon_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
+#include <misc/modifycommanddialog.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
@@ -125,14 +132,9 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	auto cs = colorMapSettingContainer();
-	if (cs != nullptr) {
-		impl->m_regionPolygon->setColorMapSettingContainer(cs);
-	}
-
 	impl->m_mouseEventMode = meBeforeDefining;
 	if (gridAttribute() && gridAttribute()->isReferenceInformation()) {
-		setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
 
 	impl->m_scalarValues->SetName("polygonvalue");
@@ -142,7 +144,7 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	actorCollection()->AddItem(impl->m_actor);
 	renderer()->AddActor(impl->m_actor);
 
-	updateActorSettings();
+	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -160,10 +162,7 @@ GeoDataPolygon::~GeoDataPolygon()
 
 void GeoDataPolygon::setLineWidth(int lineWidth)
 {
-	impl->m_regionPolygon->setLineWidth(lineWidth);
-	for (auto h : impl->m_holePolygons) {
-		h->setLineWidth(lineWidth);
-	}
+	impl->m_displaySetting.lineWidth = lineWidth;
 }
 
 void GeoDataPolygon::setupMenu()
@@ -243,6 +242,7 @@ void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
 	impl->m_regionPolygon->setSelected(true);
 	impl->m_selectedPolygon = impl->m_regionPolygon;
 
+	updateActorSetting();
 	updateMouseCursor(v);
 }
 
@@ -256,6 +256,7 @@ void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
 	if (impl->m_selectedPolygon != nullptr) {
 		impl->m_selectedPolygon->setSelected(false);
 	}
+	updateActorSetting();
 	v->unsetCursor();
 }
 
@@ -597,6 +598,27 @@ void GeoDataPolygon::setShape(geos::geom::Polygon* polygon, const std::vector<un
 	updateActionStatus();
 }
 
+void GeoDataPolygon::setColor(const QColor& color)
+{
+	impl->m_displaySetting.color = color;
+	updateActorSetting();
+}
+
+void GeoDataPolygon::setOpacity(int opacity)
+{
+	impl->m_displaySetting.opacity = opacity;
+	updateActorSetting();
+}
+
+void GeoDataPolygon::setMapping(Mapping mapping)
+{
+	if (mapping == Mapping::Arbitrary) {
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
+	} else if (mapping == Mapping::Value) {
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Value;
+	}
+}
+
 void GeoDataPolygon::addVertexMode(bool on)
 {
 	if (on) {
@@ -650,7 +672,6 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			holePol->setPolygon(qpol);
 			holePol->setActive(false);
 			holePol->setSelected(false);
-			holePol->setColorMapSettingContainer(colorMapSettingContainer());
 			impl->m_holePolygons.push_back(holePol);
 		}
 		delete pol;
@@ -698,7 +719,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 	}
 	deselectAll();
 	updatePolyData(true);
-	updateActorSettings();
+	updateActorSetting();
 	updateActionStatus();
 }
 
@@ -1105,8 +1126,6 @@ void GeoDataPolygon::clear()
 
 	impl->m_regionPolygon = new GeoDataPolygonRegionPolygon(this);
 	impl->m_regionPolygon->setSelected(true);
-	impl->m_regionPolygon->setColorMapSettingContainer(colorMapSettingContainer());
-	impl->m_regionPolygon->setMapping(colorSetting().mapping);
 	impl->m_regionPolygon->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
 	impl->m_mouseEventMode = meBeforeDefining;
 	impl->m_selectedPolygon = impl->m_regionPolygon;
@@ -1135,14 +1154,7 @@ GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
 
 	pol->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
-	auto cs = colorMapSettingContainer();
-	if (cs != nullptr) {
-		pol->setColorMapSettingContainer(cs);
-	}
 	pol->setActive(true);
-	pol->setColor(color());
-	pol->setLineWidth(impl->m_regionPolygon->lineWidth() / 2.0);
-	pol->setMapping(colorSetting().mapping);
 
 	return pol;
 }
@@ -1353,26 +1365,27 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 	}
 }
 
-void GeoDataPolygon::updateActorSettings()
+void GeoDataPolygon::updateActorSetting()
 {
-	auto cs = colorSetting();
+	auto col = actorCollection();
+	col->RemoveAllItems();
+	col->AddItem(impl->m_actor);
+
+	auto& ds = impl->m_displaySetting;
+
 	// color
-	impl->m_regionPolygon->setColor(cs.color);
-	for (auto hole : impl->m_holePolygons) {
-		hole->setColor(cs.color);
-	}
-	impl->m_actor->GetProperty()->SetColor(cs.color);
+	impl->m_actor->GetProperty()->SetColor(ds.color);
 
 	// opacity
-	impl->m_actor->GetProperty()->SetOpacity(cs.opacity);
+	impl->m_actor->GetProperty()->SetOpacity(ds.opacity);
 
 	auto cm = colorMapSettingContainer();
 	if (cm == nullptr) {
-		cs.mapping = GeoDataPolyDataColorSettingDialog::Arbitrary;
+		ds.mapping = DisplaySetting::Mapping::Arbitrary;
 	}
 
 	// mapping
-	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
+	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		mapper->SetInputData(impl->m_polyData);
 		impl->m_actor->SetMapper(mapper);
@@ -1382,10 +1395,14 @@ void GeoDataPolygon::updateActorSettings()
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 	}
-	impl->m_regionPolygon->setMapping(cs.mapping);
 	for (auto hole : impl->m_holePolygons) {
-		hole->setMapping(cs.mapping);
+		hole->updateActorSetting();
 	}
+	impl->m_regionPolygon->updateActorSetting();
+
+	updateVisibilityWithoutRendering();
+
+	emit updateActorSettingExecuted();
 }
 
 void GeoDataPolygon::renderGraphics()
@@ -1415,7 +1432,7 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 
 	unlockMutex();
 
-	updateActorSettings();
+	updateActorSetting();
 
 	if (noDraw) {return;}
 
@@ -1542,6 +1559,34 @@ GeoDataPolygon::SelectMode GeoDataPolygon::selectMode() const
 void GeoDataPolygon::setBCSettingMode(bool mode)
 {
 	impl->m_bcSettingMode = mode;
+}
+
+QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
+{
+	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
+	auto widget = new DisplaySettingWidget(dialog);
+
+	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
+		widget->setIsReferenceInformation(true);
+	} else {
+		auto colorMapWidget = geoDataGroupDataItem()->condition()->createColorMapSettingEditWidget(widget);
+		auto colormap = geoDataDataItem()->colorMapSettingContainer();
+		colorMapWidget->setSetting(colormap);
+		auto colorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(colorMapWidget, widget);
+
+		widget->setColorMapWidget(colorMapWidget2);
+	}
+	widget->setSetting(&impl->m_displaySetting);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Polygon Display Setting"));
+	dialog->resize(900, 700);
+
+	return dialog;
+}
+
+void GeoDataPolygon::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 geos::geom::Polygon* GeoDataPolygon::getGeosPolygon(const QPointF& offset)

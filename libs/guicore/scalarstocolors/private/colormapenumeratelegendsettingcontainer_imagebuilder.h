@@ -13,7 +13,8 @@ public:
 	bool build(QImage* image) override;
 
 private:
-	void buildDiscrete(QPainter* painter, int top, int bottom, QImage* image);
+	void buildDiscreteVertical(QPainter* painter, int top, int bottom, QImage* image, const ColorMapEnumerateLegendSettingContainer& s);
+	void buildDiscreteHorizontal(QPainter* painter, int top, int bottom, QImage* image, const ColorMapEnumerateLegendSettingContainer& s);
 
 	ColorMapEnumerateLegendSettingContainer* m_setting;
 };

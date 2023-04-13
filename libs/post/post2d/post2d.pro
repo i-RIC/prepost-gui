@@ -135,6 +135,7 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h \
+           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -246,6 +247,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.cpp \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.cpp \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \

@@ -43,7 +43,6 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 		auto caption = gt->output(name)->caption();
 		cs->valueCaption = caption;
 		cs->legend.title = caption;
-		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
 		m_colorMapSettings.insert({name, cs});
 	}
 

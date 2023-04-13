@@ -13,7 +13,7 @@
 class EnumLoader;
 class vtkIntArray;
 
-class GUICOREDLL_EXPORT ColorMapEnumerateSettingContainer : public CompositeContainer, public ColorMapSettingContainerI
+class GUICOREDLL_EXPORT ColorMapEnumerateSettingContainer : public ColorMapSettingContainerI, public CompositeContainer
 {
 public:
 	ColorMapEnumerateSettingContainer();
@@ -35,8 +35,12 @@ public:
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;
 	void copy(const ColorMapSettingContainerI& c) override;
+	ColorMapSettingContainerI* copy() override;
 
 	void copyValue(const XmlAttributeContainer& c) override;
+
+	bool importData(const QString& fileName);
+	bool exportData(const QString& fileName);
 
 	std::vector<ColorMapSettingValueColorPairContainer> colors;
 

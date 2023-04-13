@@ -24,8 +24,8 @@
 #include <QApplication>
 #include <QDialog>
 
-GraphicsWindowDataModel::GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem* parent)
-	: GraphicsWindowSimpleDataModel(w, parent)
+GraphicsWindowDataModel::GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem* parent) :
+	GraphicsWindowSimpleDataModel(w, parent)
 {
 //	graphicsView() = dynamic_cast<VTKGraphicsView*>(w->centralWidget());
 	m_rootDataItem = nullptr;
@@ -228,6 +228,8 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 	m_operationToolBar->addAction(m_objectBrowserView->moveUpAction());
 	m_operationToolBar->addAction(m_objectBrowserView->moveDownAction());
 	m_operationToolBar->addAction(m_objectBrowserView->deleteAction());
+	m_operationToolBar->addSeparator();
+	m_operationToolBar->addAction(m_objectBrowserView->propertyAction());
 
 	if (dataItem == nullptr) {
 		m_objectBrowserView->moveUpAction()->setDisabled(true);
@@ -253,6 +255,10 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 	}
 
 	m_objectBrowserView->deleteAction()->setEnabled(dataItem->isDeletable());
+
+	auto dialog = dataItem->propertyDialog(mainWindow());
+	m_objectBrowserView->propertyAction()->setEnabled(dialog != nullptr);
+	delete dialog;
 }
 
 void GraphicsWindowDataModel::handleObjectBrowserSelectionChange()

@@ -22,6 +22,10 @@ public:
 	void updateChildren();
 	void applyColorMapSetting();
 
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+
 private slots:
 	void editScalarsToColors();
 

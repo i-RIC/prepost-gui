@@ -30,7 +30,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_13">
+        <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0,1">
          <item>
           <widget class="QGroupBox" name="commonGroupBox">
            <property name="title">
@@ -49,51 +49,6 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <widget class="QGroupBox" name="colorBarGroupBox">
-              <property name="title">
-               <string>Color Bar</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_7">
-               <item>
-                <widget class="QGroupBox" name="colorBarTitleGroupBox">
-                 <property name="title">
-                  <string>Title</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_3">
-                  <item>
-                   <widget class="vtkTextPropertySettingWidget" name="colorBarTitleWidget" native="true"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QGroupBox" name="colorBarLabelGroupBox">
-                 <property name="title">
-                  <string>Labels</string>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_6">
-                  <item>
-                   <widget class="vtkTextPropertySettingWidget" name="colorBarLabelWidget" native="true"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QGroupBox" name="arrowGroupBox">
-              <property name="title">
-               <string>Arrow Length Legend</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <item>
-                <widget class="vtkTextPropertySettingWidget" name="arrowWidget" native="true"/>
-               </item>
-              </layout>
-             </widget>
-            </item>
            </layout>
           </widget>
          </item>
@@ -102,7 +57,7 @@
            <property name="title">
             <string>Pre-processing Window</string>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_10">
+           <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0,0,0,1">
             <item>
              <widget class="QGroupBox" name="upstreamGroupBox">
               <property name="title">
@@ -250,15 +205,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>vtkTextPropertySettingWidget</class>
-   <extends>QWidget</extends>
-   <header>guibase/vtktextpropertysettingwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>QFontEditWidget</class>
    <extends>QWidget</extends>
    <header>misc/qfonteditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>vtkTextPropertySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/vtktextpropertysettingwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

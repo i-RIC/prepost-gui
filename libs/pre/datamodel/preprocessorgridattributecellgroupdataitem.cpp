@@ -347,6 +347,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateAttributeBrowser(vtkIdTyp
 			if (group->condition()->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 
 			auto v = ccond->value(cellid);
+			if (v == 0) {v = 1;} // in case not mapped yet, change value to Default (= 1)
 			GridComplexConditionGroup* g = group->groups().at(v - 1);
 			PropertyBrowserAttribute att(group->condition()->caption(), g->caption());
 			atts.append(att);

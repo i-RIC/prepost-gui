@@ -12,10 +12,12 @@ void ImageSettingContainer::UpdateCommand::redo()
 {
 	*m_setting = m_newSetting;
 	m_setting->apply(m_view);
+	emit m_setting->updated();
 }
 
 void ImageSettingContainer::UpdateCommand::undo()
 {
 	*m_setting = m_oldSetting;
 	m_setting->apply(m_view);
+	emit m_setting->updated();
 }
