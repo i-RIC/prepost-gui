@@ -7,6 +7,7 @@
 #include "private/post2dwindownodescalargroupdataitem_shapeexporter.h"
 
 #include <cs/coordinatesystem.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -81,7 +82,12 @@ const ColorMapSettingContainer& Post2dWindowNodeScalarGroupDataItem::colorMapSet
 void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data(m_solutionPosition) == nullptr) {return;}
+	if (cont == nullptr || cont->data(m_solutionPosition) == nullptr) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOffWithEmptyPolyData();
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+		return;
+	}
 
 	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->nodeValueRange(m_target);
 	m_setting.colorMapSetting.setAutoValueRange(range);

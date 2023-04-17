@@ -9,6 +9,7 @@ class GUIBASEDLL_EXPORT vtkPolyDataMapperUtil
 {
 public:
 	static vtkPolyDataMapper* createWithScalarVisibilityOff();
+	static vtkPolyDataMapper* createWithScalarVisibilityOffWithEmptyPolyData();
 
 private:
 	vtkPolyDataMapperUtil();

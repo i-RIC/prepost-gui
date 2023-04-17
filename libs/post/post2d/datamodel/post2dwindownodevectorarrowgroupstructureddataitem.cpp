@@ -20,8 +20,12 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 
 vtkPointSet* Post2dWindowNodeVectorArrowGroupStructuredDataItem::buildFilteredData()
 {
-	auto data = zoneDataItem()->dataContainer()->data()->data();
-	auto clippedData = m_regionSetting.buildNodeFilteredData(data);
+	auto dc = zoneDataItem()->dataContainer();
+	if (dc == nullptr) {return nullptr;}
+	auto data = dc->data();
+	if (data == nullptr) {return nullptr;}
+	auto data2 = data->data();
+	auto clippedData = m_regionSetting.buildNodeFilteredData(data2);
 
 	auto structured = vtkStructuredGrid::SafeDownCast(clippedData);
 	if (structured == nullptr) {

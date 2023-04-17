@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>หน้าต่างมุมมองตานกแบบกริด</translation>
     </message>
 </context>
@@ -661,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 จะไม่ถูกแมปหลังจากแก้ไขครั้งล่าสุด คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>การตั้งค่าเงื่อนไขขอบเขต "%1" ไม่ถูกแมปหลังจากแก้ไขครั้งที่แล้ว คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>การตั้งค่าเงื่อนไขขอบเขต &quot;%1&quot; ไม่ถูกแมปหลังจากแก้ไขครั้งที่แล้ว คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -911,14 +913,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>หมายเหตุ: เมื่อเปิดใช้งานรูปแบบ รูปแบบที่ชื่อ "ค่าเริ่มต้น" จะถูกสร้างขึ้น และข้อมูลทางภูมิศาสตร์ทั้งหมดจะถูกย้ายไปที่รูปแบบนั้น คุณสามารถเพิ่ม เปลี่ยนชื่อ ลบรูปแบบต่างๆ จาก "Object Browser" คุณสามารถย้าย คัดลอกข้อมูลทางภูมิศาสตร์ระหว่างรูปแบบต่างๆ ข้อมูลแอตทริบิวต์กริดที่สร้างขึ้นจากรูปแบบที่คุณเลือกด้วย "รูปแบบต่างๆ เพื่อส่งผ่านไปยังตัวแก้ปัญหา" จะถูกส่งผ่านไปยังตัวแก้ปัญหา คุณสามารถเตรียมรูปแบบต่างๆ สลับรูปแบบที่จะส่งต่อไปยังตัวแก้ปัญหา และตรวจสอบให้แน่ใจว่าผลของความแตกต่างนั้นเป็นอย่างไร</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>หมายเหตุ: เมื่อเปิดใช้งานรูปแบบ รูปแบบที่ชื่อ &quot;ค่าเริ่มต้น&quot; จะถูกสร้างขึ้น และข้อมูลทางภูมิศาสตร์ทั้งหมดจะถูกย้ายไปที่รูปแบบนั้น คุณสามารถเพิ่ม เปลี่ยนชื่อ ลบรูปแบบต่างๆ จาก &quot;Object Browser&quot; คุณสามารถย้าย คัดลอกข้อมูลทางภูมิศาสตร์ระหว่างรูปแบบต่างๆ ข้อมูลแอตทริบิวต์กริดที่สร้างขึ้นจากรูปแบบที่คุณเลือกด้วย &quot;รูปแบบต่างๆ เพื่อส่งผ่านไปยังตัวแก้ปัญหา&quot; จะถูกส่งผ่านไปยังตัวแก้ปัญหา คุณสามารถเตรียมรูปแบบต่างๆ สลับรูปแบบที่จะส่งต่อไปยังตัวแก้ปัญหา และตรวจสอบให้แน่ใจว่าผลของความแตกต่างนั้นเป็นอย่างไร</translation>
     </message>
 </context>
 <context>
@@ -1133,9 +1135,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>ดำเนินการ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>แอตทริบิวต์ต่อไปนี้ไม่ได้ถูกแมป เนื่องจากค่าเอาต์พุตของตัวสร้างกริดสำหรับแอตทริบิวต์เหล่านี้ หากคุณต้องการบังคับแมปข้อมูลทางภูมิศาสตร์สำหรับพวกเขา โปรดทำแผนที่ด้วยตนเองด้วยเมนู "Grid" -&gt; "Attributes Mapping" -&gt; "Execute"</translation>
+        <translation>แอตทริบิวต์ต่อไปนี้ไม่ได้ถูกแมป เนื่องจากค่าเอาต์พุตของตัวสร้างกริดสำหรับแอตทริบิวต์เหล่านี้ หากคุณต้องการบังคับแมปข้อมูลทางภูมิศาสตร์สำหรับพวกเขา โปรดทำแผนที่ด้วยตนเองด้วยเมนู &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1154,12 +1156,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>การทำแผนที่ข้อมูลทางภูมิศาสตร์เสร็จสิ้น</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>แอตทริบิวต์กริด "%1" ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>แอตทริบิวต์กริด &quot;%1&quot; ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>เงื่อนไขขอบเขต "%1" ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>เงื่อนไขขอบเขต &quot;%1&quot; ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
     </message>
 </context>
 <context>
@@ -1177,20 +1179,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>รถยนต์</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;เมื่อสร้างตารางแล้ว ระบบจะถามคุณว่า เพื่อดำเนินการแมปแอตทริบิวต์ทุกครั้ง&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;เมื่อสร้างตารางแล้ว ระบบจะถามคุณว่า เพื่อดำเนินการแมปแอตทริบิวต์ทุกครั้ง&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>คู่มือ</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>การแมปแอตทริบิวต์จะดำเนินการเฉพาะเมื่อคุณเลือกเมนู "ดำเนินการ" ด้วยตนเอง</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>การแมปแอตทริบิวต์จะดำเนินการเฉพาะเมื่อคุณเลือกเมนู &quot;ดำเนินการ&quot; ด้วยตนเอง</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1595,7 +1597,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m)</source>
-        <translation>ระยะทาง (ม.)</translation>
+        <translation type="vanished">ระยะทาง (ม.)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1898,8 +1904,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>การตั้งค่าแผนที่สี</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2016,7 +2022,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>ตั้งค่าสเกลาร์บาร์ (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>เปิดหน้าต่างมุมมองเบิร์ดอาย (&amp;B)</translation>
     </message>
     <message>

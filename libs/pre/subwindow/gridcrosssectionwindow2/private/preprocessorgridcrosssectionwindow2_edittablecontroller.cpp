@@ -45,9 +45,15 @@ bool PreProcessorGridCrosssectionWindow2::EditTableController::saveCsvFile(const
 	if (! ok) {return false;}
 
 	QTextStream stream(&file);
+	QString originStr;
+	if (m_impl->m_controller->targetDirection() == Direction::I) {
+		originStr = "J = 1";
+	} else if (m_impl->m_controller->targetDirection() == Direction::I) {
+		originStr = "I = 1";
+	}
 
 	stream << PreProcessorGridCrosssectionWindow2::tr("Index")
-				 << "," << PreProcessorGridCrosssectionWindow2::tr("Distance(m)");
+				 << "," << PreProcessorGridCrosssectionWindow2::tr("Distance(m) from %1").arg(originStr);
 	for (auto s : activeSettings) {
 		stream << "," << s->attribute()->caption();
 	}

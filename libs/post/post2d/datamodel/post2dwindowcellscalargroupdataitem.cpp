@@ -5,6 +5,7 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowcellscalargroupdataitem_propertydialog.h"
 
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainerutil.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -68,7 +69,12 @@ const std::string& Post2dWindowCellScalarGroupDataItem::target() const
 void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
+	if (cont == nullptr || cont->data() == nullptr) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOffWithEmptyPolyData();
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+		return;
+	}
 
 	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->cellValueRange(m_target);
 	m_setting.colorMapSetting.setAutoValueRange(range);
