@@ -55,15 +55,10 @@ win32 {
 # Input
 HEADERS += gd_polydata_global.h \
            geodatapolydata.h \
-           geodatapolydatacolorsettingdialog.h \
            private/geodatapolydata_editnameandvaluecommand.h \
-           private/geodatapolydata_impl.h \
-           private/geodatapolydata_setcolorsettingcommand.h
-FORMS += geodatapolydatacolorsettingdialog.ui
+           private/geodatapolydata_impl.h
 SOURCES += geodatapolydata.cpp \
-           geodatapolydatacolorsettingdialog.cpp \
-           private/geodatapolydata_editnameandvaluecommand.cpp \
-           private/geodatapolydata_setcolorsettingcommand.cpp
+           private/geodatapolydata_editnameandvaluecommand.cpp
 TRANSLATIONS += languages/iricGdPolydata_ar_EG.ts \
                 languages/iricGdPolydata_bg_BG.ts \
                 languages/iricGdPolydata_bs_BA.ts \

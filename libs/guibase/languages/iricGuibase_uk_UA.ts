@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Користувацька кольорова карта</translation>
+        <translation type="vanished">Користувацька кольорова карта</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="vanished">Тип:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Два кольори</translation>
+        <translation type="vanished">Два кольори</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Три кольори</translation>
+        <translation type="vanished">Три кольори</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Довільно</translation>
+        <translation type="vanished">Довільно</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Два кольори/ три кольори</translation>
+        <translation type="vanished">Два кольори/ три кольори</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максимальне значення</translation>
+        <translation type="vanished">Максимальне значення</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Середня вартість</translation>
+        <translation type="vanished">Середня вартість</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Цінність</translation>
+        <translation type="vanished">Цінність</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Мінімальне значення</translation>
+        <translation type="vanished">Мінімальне значення</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Додати (&amp;A)</translation>
+        <translation type="vanished">Додати (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Видалити (&amp;R)</translation>
+        <translation type="vanished">Видалити (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Імпорт (&amp;I)</translation>
+        <translation type="vanished">Імпорт (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Експорт (&amp;E)</translation>
+        <translation type="vanished">Експорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Імпортувати налаштування кольорової карти</translation>
+        <translation type="vanished">Імпортувати налаштування кольорової карти</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файл (*.csv)</translation>
+        <translation type="vanished">CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 не існує.</translation>
+        <translation type="vanished">Файл %1 не існує.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 не вдалося відкрити.</translation>
+        <translation type="vanished">Файл %1 не вдалося відкрити.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Експортувати налаштування кольорової карти</translation>
+        <translation type="vanished">Експортувати налаштування кольорової карти</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>На замовлення</translation>
+        <translation type="vanished">На замовлення</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Налаштування...</translation>
+        <translation type="vanished">Налаштування...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Мінімальне значення - це %1.</translation>
+        <translation type="vanished">Мінімальне значення - це %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максимальне значення становить %1.</translation>
+        <translation type="vanished">Максимальне значення становить %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Значення менше ніж %1 в не допускається.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur більший ніж %1 не дозволено.</translation>
     </message>
 </context>
 <context>

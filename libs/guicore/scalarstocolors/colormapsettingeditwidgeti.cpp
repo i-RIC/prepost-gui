@@ -1,4 +1,7 @@
 #include "colormapsettingeditwidgeti.h"
+#include "colormapsettingcontaineri.h"
+#include "colormaplegendsettingcontaineri.h"
+#include "../image/imagesettingcontainer.h"
 
 ColorMapSettingEditWidgetI::ColorMapSettingEditWidgetI(QWidget* parent) :
 	QWidget {parent},
@@ -19,6 +22,9 @@ void ColorMapSettingEditWidgetI::setSetting(ColorMapSettingContainerI* setting)
 	m_setting = setting;
 	m_legendSetting = nullptr;
 
+	disconnect(m_updateImageSettingConnection);
+	m_updateImageSettingConnection = connect(setting->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &ColorMapSettingEditWidgetI::updateImageSetting);
+
 	setupWidget();
 }
 
@@ -31,6 +37,13 @@ void ColorMapSettingEditWidgetI::setLegendSetting(ColorMapLegendSettingContainer
 {
 	m_legendSetting = setting;
 	m_setting = nullptr;
+	disconnect(m_updateImageSettingConnection);
+
+	if (setting->delegateMode()) {
+		m_updateImageSettingConnection = connect(setting->setting()->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &ColorMapSettingEditWidgetI::updateImageSetting);
+	} else {
+		m_updateImageSettingConnection = connect(setting->imgSetting(), &ImageSettingContainer::updated, this, &ColorMapSettingEditWidgetI::updateImageSetting);
+	}
 
 	setupWidget();
 }

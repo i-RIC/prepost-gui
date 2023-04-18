@@ -5,6 +5,7 @@
 #include "private/geodatariversurveyproxy_impl.h"
 #include "private/geodatariversurveyproxy_displaysettingwidget.h"
 
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
@@ -17,6 +18,7 @@
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
 #include <vtkDataSetMapper.h>
+#include <vtkGeometryFilter.h>
 #include <vtkLabeledDataMapper.h>
 #include <vtkLine.h>
 #include <vtkPoints.h>
@@ -155,8 +157,17 @@ void GeoDataRiverSurveyProxy::updateActorSetting()
 		col->AddItem(impl->m_backgroundActor);
 		impl->m_backgroundActor->GetProperty()->SetOpacity(ds.opacity);
 
-		auto cs = colorMapSettingContainer();
-		auto mapper = cs->buildPointDataMapper(rs->impl->m_backgroundGrid);
+		auto cm = colorMapSettingContainer();
+		vtkMapper* mapper = nullptr;
+		if (cm != nullptr) {
+			mapper = cm->buildPointDataMapper(rs->impl->m_backgroundGrid);
+		} else {
+			auto geomFilter = vtkSmartPointer<vtkGeometryFilter>::New();
+			geomFilter->SetInputData(rs->impl->m_backgroundGrid);
+			auto polyDataMapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+			polyDataMapper->SetInputConnection(geomFilter->GetOutputPort());
+			mapper = polyDataMapper;
+		}
 		impl->m_backgroundActor->SetMapper(mapper);
 		mapper->Delete();
 	}

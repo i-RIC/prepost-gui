@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
-    <height>380</height>
+    <width>375</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,21 +36,35 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>385</width>
-        <height>378</height>
+        <width>373</width>
+        <height>520</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,1">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,1">
        <item>
-        <widget class="QGroupBox" name="visibilityGroupBox">
-         <property name="title">
-          <string>Visibility</string>
+        <widget class="QCheckBox" name="visibleCheckBox">
+         <property name="text">
+          <string>Visible</string>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="directionGroupBox">
+         <property name="title">
+          <string>Direction:</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
-           <widget class="QRadioButton" name="visibilityWhenSelectedRadioButton">
+           <widget class="QRadioButton" name="horizontalRadioButton">
             <property name="text">
-             <string>When selected</string>
+             <string>Horizontal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="verticalRadioButton">
+            <property name="text">
+             <string>Vertical</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -58,27 +72,13 @@
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="visibilityAlwaysRadioButton">
-            <property name="text">
-             <string>Always</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="visibilityNeverRadioButton">
-            <property name="text">
-             <string>Never</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
+           <spacer name="horizontalSpacer_7">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>85</width>
+              <width>113</width>
               <height>20</height>
              </size>
             </property>
@@ -274,6 +274,104 @@
         </layout>
        </item>
        <item>
+        <widget class="QGroupBox" name="barWidthGroupBox">
+         <property name="title">
+          <string>Bar Width</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QCheckBox" name="barWidthAutoCheckBox">
+            <property name="text">
+             <string>Auto</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="barWidthSpinBox">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>9999</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="barWidthUnitLabel">
+            <property name="text">
+             <string>px</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>283</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="alignmentGroupBox">
+         <property name="title">
+          <string>Alignment</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QRadioButton" name="leftRadioButton">
+            <property name="text">
+             <string>Left</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="centerRadioButton">
+            <property name="text">
+             <string>Center</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rightRadioButton">
+            <property name="text">
+             <string>Right</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>238</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -322,5 +420,38 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>barWidthAutoCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>barWidthSpinBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>44</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>414</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>barWidthGroupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

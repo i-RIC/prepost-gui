@@ -77,7 +77,6 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 		auto caption = gType->output(name)->caption();
 		cs->valueCaption = caption;
 		cs->legend.title = caption;
-		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
 		cs->setAutoValueRange(pair.second);
 		m_colorMapSettings.insert({name, cs});
 	}

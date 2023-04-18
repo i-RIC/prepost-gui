@@ -277,6 +277,7 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
+           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -426,6 +427,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_controller.ui \
          subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingeditdialog.ui
 SOURCES += preobjectbrowser.cpp \
+           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \

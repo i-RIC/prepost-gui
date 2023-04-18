@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barre de couleur</translation>
+        <translation type="vanished">Barre de couleur</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titre</translation>
+        <translation type="vanished">Titre</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Étiquettes</translation>
+        <translation type="vanished">Étiquettes</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Légende de la longueur des flèches</translation>
+        <translation type="vanished">Légende de la longueur des flèches</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Carte des couleurs</translation>
+        <translation type="vanished">Carte des couleurs</translation>
     </message>
     <message>
         <source>Background Image</source>

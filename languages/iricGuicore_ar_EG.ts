@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>الرؤية</translation>
+        <translation type="vanished">الرؤية</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>عند التحديد</translation>
+        <translation type="vanished">عند التحديد</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>دائماً</translation>
+        <translation type="vanished">دائماً</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>أبداً</translation>
+        <translation type="vanished">أبداً</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>الحجم والموقع</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>اتجاه:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>أفقي</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>رَأسِيّ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>عرض شريط</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>آلي</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>مقصف</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>تنسيق</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>غادر</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>مركز</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>يمين</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>حدد ملفًا للاستيراد</translation>
+        <translation type="vanished">حدد ملفًا للاستيراد</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>إعداد خريطة الألوان (*.cmsetting)</translation>
+        <translation type="vanished">إعداد خريطة الألوان (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
+        <translation type="vanished">حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>شفاف</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>تعداد إعداد مخطط الألوان (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>تعداد إعداد مخطط الألوان (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>حدث خطأ أثناء استيراد الإعداد من %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>عام (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>خاص (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>استيراد إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>وضع</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>اختر من المعايير</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>حدد الملف</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>المعايير</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>سمات الاستيراد</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>اتجاه</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>إعداد الخط</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>عرض التسمية</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ملصق</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>خلفية</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>الحجم والموقع</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>موضع</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>مقاس</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>عرض شريط</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>تنسيق</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>أفقي</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>رَأسِيّ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>الرؤية</translation>
+        <translation type="vanished">الرؤية</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>عند التحديد</translation>
+        <translation type="vanished">عند التحديد</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>دائماً</translation>
+        <translation type="vanished">دائماً</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>أبداً</translation>
+        <translation type="vanished">أبداً</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>آلي</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>عرض شريط</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>مقصف</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>تنسيق</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>غادر</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>مركز</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>يمين</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>الإعدادات المسبقة:</translation>
+        <translation type="vanished">الإعدادات المسبقة:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>تجاهل إعداد شريط الألوان عند الاستيراد</translation>
+        <translation type="vanished">تجاهل إعداد شريط الألوان عند الاستيراد</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>حدد ملفًا للاستيراد</translation>
+        <translation type="vanished">حدد ملفًا للاستيراد</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
+        <translation type="vanished">حدث خطأ أثناء التحميل %1 خطأ تحليلي %2 في %3 ، عمود %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(يرجى تحديد عنصر لتطبيقه)</translation>
+        <translation type="vanished">(يرجى تحديد عنصر لتطبيقه)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">عند التبديل إلى وضع التدرج اللوني ، يتم تعيين القيم على القيمة المتوسطة لكل قسم.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>عكس الألوان (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>القسمة المتساوية (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>إعداد خريطة الألوان (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>حدث خطأ أثناء استيراد الإعداد من %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>عام (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>خاص (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>يصدّر (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>استيراد إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>وضع</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>اختر من المعايير</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>حدد الملف</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>المعايير</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>سمات الاستيراد</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>اتجاه</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>إعداد الخط</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>عرض التسمية</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>شكل</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>عدد الملصقات</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ملصق</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>خلفية</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>الحجم والموقع</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>موضع</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>مقاس</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>عرض شريط</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>تنسيق</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>عدد الألوان:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>خيارات</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>قيمة المنازل العشرية:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>تسجيل نطاق:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>ممكن</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>أفقي</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>رَأسِيّ</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>اللون:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: يمكنك استخدام أحرف ASCII فقط للاسم. &lt;/ span&gt; &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
     </message>
 </context>
 <context>

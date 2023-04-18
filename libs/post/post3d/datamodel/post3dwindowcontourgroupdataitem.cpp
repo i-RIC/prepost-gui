@@ -26,7 +26,6 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
 	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
 	m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
-	m_colorMapSetting.legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
 	m_colorMapSetting.setAutoValueRange(valueRange());
 
 	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();

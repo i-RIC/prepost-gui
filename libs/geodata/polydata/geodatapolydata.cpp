@@ -1,7 +1,6 @@
 #include "geodatapolydata.h"
 #include "private/geodatapolydata_editnameandvaluecommand.h"
 #include "private/geodatapolydata_impl.h"
-#include "private/geodatapolydata_setcolorsettingcommand.h"
 
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -47,30 +46,6 @@ void GeoDataPolyData::setVariantValueAndEmitEdited(const QVariant& value)
 	pushCommand(new EditNameAndValueCommand(caption(), value, this));
 }
 
-QColor GeoDataPolyData::color() const
-{
-	return impl->m_setting.color;
-}
-
-QDialog* GeoDataPolyData::propertyDialog(QWidget* parent)
-{
-	auto dialog = new GeoDataPolyDataColorSettingDialog(parent);
-	dialog->setWindowTitle(tr("%1 Color Setting").arg(shapeNameCamelCase()));
-	dialog->setSetting(impl->m_setting);
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
-	}
-
-	return dialog;
-}
-
-void GeoDataPolyData::handlePropertyDialogAccepted(QDialog* d)
-{
-	auto dialog = dynamic_cast<GeoDataPolyDataColorSettingDialog*>(d);
-	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
-}
-
 const QVariant& GeoDataPolyData::variantValue() const
 {
 	int index = 0;
@@ -103,6 +78,11 @@ bool GeoDataPolyData::getValueRange(double* min, double* max)
 	*max = variantValue().toDouble();
 
 	return isReady();
+}
+
+void GeoDataPolyData::applyColorMapSetting()
+{
+	updateActorSetting();
 }
 
 void GeoDataPolyData::updateFilename()
@@ -177,46 +157,6 @@ void GeoDataPolyData::handleDimensionValuesChange(const std::vector<QVariant>& b
 void GeoDataPolyData::editColorSetting()
 {
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
-}
-
-void GeoDataPolyData::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_setting.load(node);
-}
-
-void GeoDataPolyData::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_setting.save(writer);
-}
-
-void GeoDataPolyData::setMapping(GeoDataPolyDataColorSettingDialog::Mapping m)
-{
-	impl->m_setting.mapping = m;
-	updateActorSettings();
-}
-
-void GeoDataPolyData::setOpacity(int opacity)
-{
-	impl->m_setting.opacity = opacity;
-	updateActorSettings();
-}
-
-void GeoDataPolyData::setColor(const QColor& color)
-{
-	impl->m_setting.color = color;
-	updateActorSettings();
-}
-
-GeoDataPolyDataColorSettingDialog::Setting GeoDataPolyData::colorSetting() const
-{
-	return impl->m_setting;
-}
-
-void GeoDataPolyData::setColorSetting(GeoDataPolyDataColorSettingDialog::Setting setting)
-{
-	impl->m_setting = setting;
 }
 
 void GeoDataPolyData::setupValues()

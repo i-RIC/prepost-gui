@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Kolorearen mapa pertsonalizatua</translation>
+        <translation type="vanished">Kolorearen mapa pertsonalizatua</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Mota:</translation>
+        <translation type="vanished">Mota:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Bi Kolore</translation>
+        <translation type="vanished">Bi Kolore</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Hiru kolore</translation>
+        <translation type="vanished">Hiru kolore</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrarioa</translation>
+        <translation type="vanished">Arbitrarioa</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Bi kolore / Hiru kolore</translation>
+        <translation type="vanished">Bi kolore / Hiru kolore</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Gehieneko balioa</translation>
+        <translation type="vanished">Gehieneko balioa</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Balio ertaina</translation>
+        <translation type="vanished">Balio ertaina</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Balioa</translation>
+        <translation type="vanished">Balioa</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Gutxieneko balioa</translation>
+        <translation type="vanished">Gutxieneko balioa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Inportatu (&amp;I)</translation>
+        <translation type="vanished">Inportatu (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Esportatu (&amp;E)</translation>
+        <translation type="vanished">Esportatu (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Inportatu kolore-mapa ezarpena</translation>
+        <translation type="vanished">Inportatu kolore-mapa ezarpena</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV fitxategia (*.csv)</translation>
+        <translation type="vanished">CSV fitxategia (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fitxategia %1 ez da existitzen.</translation>
+        <translation type="vanished">Fitxategia %1 ez da existitzen.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fitxategia %1 ezin izan da ireki.</translation>
+        <translation type="vanished">Fitxategia %1 ezin izan da ireki.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Esportatu kolore-mapa ezarpena</translation>
+        <translation type="vanished">Esportatu kolore-mapa ezarpena</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pertsonalizatua</translation>
+        <translation type="vanished">Pertsonalizatua</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Ezartzen...</translation>
+        <translation type="vanished">Ezartzen...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Gutxieneko balioa da %1.</translation>
+        <translation type="vanished">Gutxieneko balioa da %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Gehienezko balioa da %1.</translation>
+        <translation type="vanished">Gehienezko balioa da %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>baino balio txikiagoa %1 ez da onartzen.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Balioa baino handiagoa %1 ez da onartzen.</translation>
     </message>
 </context>
 <context>

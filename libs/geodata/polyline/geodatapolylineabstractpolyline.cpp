@@ -1,8 +1,10 @@
 #include "geodatapolyline.h"
 #include "geodatapolylineabstractpolyline.h"
 #include "private/geodatapolylineabstractpolyline_impl.h"
+#include "private/geodatapolyline_impl.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 
 #include <vtkActor.h>
@@ -28,7 +30,6 @@ GeoDataPolyLineAbstractPolyLine::Impl::Impl(GeoDataPolyLine* parent) :
 	m_parent {parent},
 	m_linesActor {vtkActor::New()},
 	m_pointsActor {vtkActor::New()},
-	m_colorMapSettingContiner {nullptr},
 	m_polylineController {},
 	m_linesScalarValues {vtkDoubleArray::New()},
 	m_pointsScalarValues {vtkDoubleArray::New()}
@@ -117,6 +118,11 @@ std::vector<QPointF> GeoDataPolyLineAbstractPolyLine::cleanedPolyLine(const QPoi
 	return pol;
 }
 
+vtkPolyData* GeoDataPolyLineAbstractPolyLine::linePolyData() const
+{
+	return impl->m_polylineController.polyData();
+}
+
 bool GeoDataPolyLineAbstractPolyLine::isVertexSelectable(const QPointF& pos, double distlimit)
 {
 	return impl->m_polylineController.isVertexSelectable(pos, distlimit, &impl->m_selectedVertexId);
@@ -165,48 +171,37 @@ void GeoDataPolyLineAbstractPolyLine::setActive(bool active)
 	col->RemoveItem(impl->m_pointsActor);
 	if (active) {
 		col->AddItem(impl->m_pointsActor);
-		impl->m_linesActor->GetProperty()->SetLineWidth(GeoDataPolyLine::selectedEdgeWidth);
+		updateActorSetting();
 	} else {
 		impl->m_pointsActor->VisibilityOff();
-		impl->m_linesActor->GetProperty()->SetLineWidth(GeoDataPolyLine::normalEdgeWidth);
+		impl->m_linesActor->GetProperty()->SetLineWidth(impl->m_parent->impl->m_displaySetting.lineWidth);
 	}
+
 	impl->m_parent->updateVisibilityWithoutRendering();
 }
 
 void GeoDataPolyLineAbstractPolyLine::finishDefinition()
 {}
 
-void GeoDataPolyLineAbstractPolyLine::setColorMapSettingContainer(ColorMapSettingContainerI* c)
-{
-	impl->m_colorMapSettingContiner = c;
-}
-
-void GeoDataPolyLineAbstractPolyLine::setColor(const QColor& color)
-{
-	double rate = 0.8;
-	double dr = color.redF() * rate;
-	double dg = color.greenF() * rate;
-	double db = color.blueF() * rate;
-
-	impl->m_linesActor->GetProperty()->SetColor(dr, dg, db);
-	impl->m_pointsActor->GetProperty()->SetColor(dr, dg, db);
-}
-
-void GeoDataPolyLineAbstractPolyLine::setOpacity(double opacity)
-{
-	impl->m_linesActor->GetProperty()->SetOpacity(opacity);
-	impl->m_pointsActor->GetProperty()->SetOpacity(opacity);
-}
-
-void GeoDataPolyLineAbstractPolyLine::setMapping(GeoDataPolyDataColorSettingDialog::Mapping m)
-{
-	impl->m_mapping = m;
-	updateActorSetting();
-}
-
 void GeoDataPolyLineAbstractPolyLine::updateActorSetting()
 {
-	if (impl->m_mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
+	auto ds = impl->m_parent->impl->m_displaySetting;
+
+	// color
+	impl->m_linesActor->GetProperty()->SetColor(ds.color);
+	impl->m_pointsActor->GetProperty()->SetColor(ds.color);
+
+	// opacity
+	impl->m_linesActor->GetProperty()->SetOpacity(ds.opacity);
+	impl->m_pointsActor->GetProperty()->SetOpacity(ds.opacity);
+
+	// lineWidth
+	impl->m_linesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
+	impl->m_pointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
+
+	// mapping
+	auto cm = impl->m_parent->geoDataDataItem()->colorMapSettingContainer();
+	if (ds.mapping == GeoDataPolyLine::DisplaySetting::Mapping::Arbitrary || (cm == nullptr)) {
 		vtkPolyDataMapper* mapper = nullptr;
 
 		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
@@ -221,20 +216,14 @@ void GeoDataPolyLineAbstractPolyLine::updateActorSetting()
 	} else {
 		vtkMapper* mapper = nullptr;
 
-		mapper = impl->m_colorMapSettingContiner->buildCellDataMapper(impl->m_polylineController.polyData(), true);
+		mapper = cm->buildCellDataMapper(impl->m_polylineController.polyData(), true);
 		impl->m_linesActor->SetMapper(mapper);
 		mapper->Delete();
 
-		mapper = impl->m_colorMapSettingContiner->buildCellDataMapper(impl->m_polylineController.pointsPolyData(), true);
+		mapper = cm->buildCellDataMapper(impl->m_polylineController.pointsPolyData(), true);
 		impl->m_pointsActor->SetMapper(mapper);
 		mapper->Delete();
 	}
-}
-
-void GeoDataPolyLineAbstractPolyLine::setLineWidth(int lineWidth)
-{
-	impl->m_linesActor->GetProperty()->SetLineWidth(lineWidth * 2);
-	impl->m_pointsActor->GetProperty()->SetPointSize(lineWidth * 5);
 }
 
 const PolyLineController& GeoDataPolyLineAbstractPolyLine::polylineController() const

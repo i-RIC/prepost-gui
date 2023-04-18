@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitas</translation>
+        <translation type="vanished">Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Saat dipilih</translation>
+        <translation type="vanished">Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Selalu</translation>
+        <translation type="vanished">Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Tidak pernah</translation>
+        <translation type="vanished">Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Ukuran dan Posisi</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Bisa dilihat</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Arah:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lebar Batang</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Mobil</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Penyelarasan</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Kiri</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Tengah</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Benar</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pilih file untuk diimpor</translation>
+        <translation type="vanished">Pilih file untuk diimpor</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+        <translation type="vanished">Pengaturan peta warna (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparan</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publik (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Pribadi (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Impor Pengaturan Peta Warna</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Pilih dari standar</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Pilih file</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Mengajukan</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atribut untuk Impor</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Arah</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Pengaturan Font</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Tampilan Label</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Latar belakang</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Ukuran dan Posisi</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posisi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukuran</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lebar Batang</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Penyelarasan</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pratinjau</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Diskriminasi rasial</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitas</translation>
+        <translation type="vanished">Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Saat dipilih</translation>
+        <translation type="vanished">Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Selalu</translation>
+        <translation type="vanished">Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Tidak pernah</translation>
+        <translation type="vanished">Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Mobil</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Bisa dilihat</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lebar Batang</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Penyelarasan</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Kiri</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Tengah</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Benar</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Preset:</translation>
+        <translation type="vanished">Preset:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Abaikan pengaturan bilah Warna saat mengimpor</translation>
+        <translation type="vanished">Abaikan pengaturan bilah Warna saat mengimpor</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pilih file untuk diimpor</translation>
+        <translation type="vanished">Pilih file untuk diimpor</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
+        <translation type="vanished">Terjadi kesalahan saat memuat %1 Kesalahan parse %2 pada %3, kolom %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Silakan pilih item untuk diterapkan)</translation>
+        <translation type="vanished">(Silakan pilih item untuk diterapkan)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Saat beralih ke Mode Gradasi, nilainya diatur ke nilai tengah setiap bagian.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Membalikkan warna (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Pembagian yang setara (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publik (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Pribadi (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Ekspor (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Impor Pengaturan Peta Warna</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Pilih dari standar</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Pilih file</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Mengajukan</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atribut untuk Impor</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Arah</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Pengaturan Font</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Tampilan Label</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Jumlah label</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Latar belakang</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Ukuran dan Posisi</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posisi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukuran</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lebar Batang</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Penyelarasan</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pratinjau</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Jumlah warna:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Pilihan</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Nilai tempat desimal:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Skala log:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Diaktifkan</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Diskriminasi rasial</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

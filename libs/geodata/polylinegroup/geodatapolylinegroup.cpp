@@ -7,6 +7,7 @@
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polyline/geodatapolyline.h>
+#include <geodata/polyline/private/geodatapolyline_impl.h>
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -311,7 +312,6 @@ QDialog* GeoDataPolyLineGroup::propertyDialog(QWidget* parent)
 {
 	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
 	auto widget = new DisplaySettingWidget(dialog);
-	widget->setSetting(&impl->m_displaySetting);
 
 	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
 		widget->setIsReferenceInformation(true);
@@ -323,6 +323,7 @@ QDialog* GeoDataPolyLineGroup::propertyDialog(QWidget* parent)
 
 		widget->setColorMapWidget(colorMapWidget2);
 	}
+	widget->setSetting(&impl->m_displaySetting);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Lines Display Setting"));
 	dialog->resize(900, 700);
@@ -538,12 +539,16 @@ void GeoDataPolyLineGroup::updateActorSettingForEditTargetPolyData()
 	auto targetData = dynamic_cast<GeoDataPolyLine*> (t);
 
 	const auto& ds = impl->m_displaySetting;
-	targetData->setColor(ds.color);
-	targetData->setOpacity(ds.opacity);
+	auto& l_ds = targetData->impl->m_displaySetting;
+
+	l_ds.color = ds.color;
+	l_ds.opacity = ds.opacity;
+	l_ds.lineWidth = ds.lineWidth;
 	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+		l_ds.mapping = GeoDataPolyLine::DisplaySetting::Mapping::Arbitrary;
 	} else {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+		l_ds.mapping = GeoDataPolyLine::DisplaySetting::Mapping::Value;
 	}
-	targetData->setLineWidth(ds.lineWidth);
+
+	targetData->updateActorSetting();
 }

@@ -1,8 +1,8 @@
 #include "geodatapolygongroup.h"
 #include "geodatapolygongroupproxy.h"
 #include "private/geodatapolygongroup_impl.h"
-#include "private/geodatapolygongroupproxy_impl.h"
 #include "private/geodatapolygongroupproxy_displaysettingwidget.h"
+#include "private/geodatapolygongroupproxy_impl.h"
 #include "public/geodatapolygongroup_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -78,19 +78,15 @@ void GeoDataPolygonGroupProxy::updateActorSetting()
 	impl->m_paintActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
-	bool scalarVisibility = true;
-	if (ds.mapping == GeoDataPolygonGroup::DisplaySetting::Mapping::Arbitrary) {
-		scalarVisibility = false;
-	}
-	if (scalarVisibility) {
+	auto cm = colorMapSettingContainer();
+	if (ds.mapping == GeoDataPolygonGroup::DisplaySetting::Mapping::Value && (cm != nullptr)) {
 		vtkMapper* mapper = nullptr;
-		auto cs = colorMapSettingContainer();
 
-		mapper = cs->buildCellDataMapper(polygons->impl->m_edgesPolyData, true);
+		mapper = cm->buildCellDataMapper(polygons->impl->m_edgesPolyData, true);
 		impl->m_edgesActor->SetMapper(mapper);
 		mapper->Delete();
 
-		mapper = cs->buildCellDataMapper(polygons->impl->m_paintPolyData, false);
+		mapper = cm->buildCellDataMapper(polygons->impl->m_paintPolyData, false);
 		impl->m_paintActor->SetMapper(mapper);
 		mapper->Delete();
 	} else {
@@ -113,7 +109,8 @@ void GeoDataPolygonGroupProxy::updateActorSetting()
 
 void GeoDataPolygonGroupProxy::assignActorZValues(const ZDepthRange& range)
 {
-	impl->m_edgesActor->SetPosition(0, 0, range.min());
+	impl->m_edgesActor->SetPosition(0, 0, range.max());
+	impl->m_paintActor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPolygonGroupProxy::doLoadFromProjectMainFile(const QDomNode& node)

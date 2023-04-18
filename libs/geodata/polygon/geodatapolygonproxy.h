@@ -5,29 +5,35 @@
 
 #include <guicore/pre/geodata/geodataproxy.h>
 
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-
 class GeoDataPolygonProxy : public GeoDataProxy
 {
 	Q_OBJECT
 
 public:
-	GeoDataPolygonProxy(GeoDataPolygon* geodata) : GeoDataProxy(geodata) {}
+	GeoDataPolygonProxy(GeoDataPolygon* geodata);
+	~GeoDataPolygonProxy();
+
 	void setupActors() override;
+
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
 
 public slots:
 	void updateActorSetting() override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
-private:
-	vtkSmartPointer<vtkActor> m_paintActor;
-	vtkSmartPointer<vtkActor> m_linesActor;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	class DisplaySetting;
+	class DisplaySettingWidget;
+
+	class Impl;
+	Impl* impl;
 };
 
 #endif // GEODATAPOLYGONPROXY_H

@@ -61,7 +61,10 @@ LIBS += -liricGuicore
 LIBS += \
 	-lvtkCommonCore-$${VTK_MAJ_MIN} \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
-	-lvtkRenderingCore-$${VTK_MAJ_MIN}
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkImagingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
+	-lvtkRenderingQt-$${VTK_MAJ_MIN}
 
 # iriclib
 
@@ -99,8 +102,10 @@ HEADERS += gd_point_global.h \
            geodatapointcreator.h \
            geodatapointcreatort.h \
            geodatapointnodemappert.h \
+           geodatapointproxy.h \
            geodatapointrealcreator.h \
            private/geodatapoint_coordinateseditor.h \
+           private/geodatapoint_displaysetting.h \
            private/geodatapoint_editcoordinatescommand.h \
            private/geodatapoint_finishpointdefinitioncommand.h \
            private/geodatapoint_impl.h \
@@ -108,16 +113,28 @@ HEADERS += gd_point_global.h \
            private/geodatapoint_setvertexcommand.h \
            private/geodatapointcellmappert_detail.h \
            private/geodatapointcreatort_detail.h \
-           private/geodatapointnodemappert_detail.h
-FORMS += geodatapointcolorsimplesettingdialog.ui
+           private/geodatapointnodemappert_detail.h \
+           private/geodatapointproxy_displaysetting.h \
+           private/geodatapointproxy_displaysettingwidget.h \
+           private/geodatapointproxy_impl.h \
+           public/geodatapoint_displaysettingwidget.h
+FORMS += geodatapointcolorsimplesettingdialog.ui \
+         private/geodatapointproxy_displaysettingwidget.ui \
+         public/geodatapoint_displaysettingwidget.ui
 SOURCES += geodatapoint.cpp \
            geodatapointcreator.cpp \
+           geodatapointproxy.cpp \
            geodatapointrealcreator.cpp \
            private/geodatapoint_coordinateseditor.cpp \
+           private/geodatapoint_displaysetting.cpp \
            private/geodatapoint_editcoordinatescommand.cpp \
            private/geodatapoint_finishpointdefinitioncommand.cpp \
            private/geodatapoint_movevertexcommand.cpp \
-           private/geodatapoint_setvertexcommand.cpp
+           private/geodatapoint_setvertexcommand.cpp \
+           private/geodatapointproxy_displaysetting.cpp \
+           private/geodatapointproxy_displaysettingwidget.cpp \
+           private/geodatapointproxy_impl.cpp \
+           public/geodatapoint_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdPoint_ar_EG.ts \
                 languages/iricGdPoint_bg_BG.ts \
                 languages/iricGdPoint_bs_BA.ts \

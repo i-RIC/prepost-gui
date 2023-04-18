@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Színbeállítás</translation>
+        <translation type="vanished">%1 Színbeállítás</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Színbeállítás szerkesztése</translation>
+        <translation type="vanished">Színbeállítás szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData színbeállítás</translation>
+        <translation type="vanished">PolyData színbeállítás</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Színezze érték szerint</translation>
+        <translation type="vanished">Színezze érték szerint</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
 </context>
 </TS>

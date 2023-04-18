@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Kolore Barra</translation>
+        <translation type="vanished">Kolore Barra</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Izenburua</translation>
+        <translation type="vanished">Izenburua</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketak</translation>
+        <translation type="vanished">Etiketak</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Geziaren luzera kondaira</translation>
+        <translation type="vanished">Geziaren luzera kondaira</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Kolore Mapa</translation>
+        <translation type="vanished">Kolore Mapa</translation>
     </message>
     <message>
         <source>Background Image</source>

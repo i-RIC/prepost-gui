@@ -2,8 +2,7 @@
 #define GEODATAPOLYLINEABSTRACTPOLYLINE_H
 
 #include "gd_polyline_global.h"
-
-#include <geodata/polydata/geodatapolydatacolorsettingdialog.h>
+#include "private/geodatapolyline_displaysetting.h"
 
 #include <QObject>
 
@@ -28,6 +27,7 @@ public:
 	std::vector<QPointF> polyLine(const QPointF& offset = QPointF(0, 0)) const;
 	void setPolyLine(const std::vector<QPointF>& p);
 	std::vector<QPointF> cleanedPolyLine(const QPointF& offset = QPointF(0, 0)) const;
+	vtkPolyData* linePolyData() const;
 
 	bool isVertexSelectable(const QPointF& pos, double distlimit);
 	bool isEdgeSelectable(const QPointF& pos, double distlimit);
@@ -43,11 +43,6 @@ public:
 
 	virtual void finishDefinition();
 
-	void setColorMapSettingContainer(ColorMapSettingContainerI* c);
-	void setColor(const QColor& color);
-	void setOpacity(double opacity);
-	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
-	void setLineWidth(int lineWidth);
 	void updateActorSetting();
 
 protected:

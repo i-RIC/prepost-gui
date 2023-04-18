@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимост</translation>
+        <translation type="vanished">Видимост</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Когато е избрано</translation>
+        <translation type="vanished">Когато е избрано</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Винаги</translation>
+        <translation type="vanished">Винаги</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Никога</translation>
+        <translation type="vanished">Никога</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Размер и позиция</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видими</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Посока:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Хоризонтална</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикална</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина на лентата</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Автоматичен</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Подравняване</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Наляво</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Център</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>вярно</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Изберете файл за импортиране</translation>
+        <translation type="vanished">Изберете файл за импортиране</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Настройка на цветовата карта (*.cmsetting)</translation>
+        <translation type="vanished">Настройка на цветовата карта (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Възникна грешка при зареждането %1 Грешка при анализа %2 при %3, колона %4</translation>
+        <translation type="vanished">Възникна грешка при зареждането %1 Грешка при анализа %2 при %3, колона %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Прозрачен</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Избройте настройката на цветовата карта (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Избройте настройката на цветовата карта (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Грешка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Възникна грешка при импортиране на настройка от %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Обществено (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>частно (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Импортиране на настройките на цветовата карта</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Изберете от стандартите</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Избери файл</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Атрибути за импортиране</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Посока</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заглавие</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Настройка на шрифта</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Дисплей на етикета</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Етикет</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Заден план</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Размер и позиция</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина на лентата</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Подравняване</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Преглед</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Цветна лента</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Хоризонтална</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикална</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимост</translation>
+        <translation type="vanished">Видимост</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Когато е избрано</translation>
+        <translation type="vanished">Когато е избрано</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Винаги</translation>
+        <translation type="vanished">Винаги</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Никога</translation>
+        <translation type="vanished">Никога</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Автоматичен</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видимо</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина на лентата</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Подравняване</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Наляво</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Център</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>вярно</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Предварителни настройки:</translation>
+        <translation type="vanished">Предварителни настройки:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Игнорирайте настройката на цветната лента при импортиране</translation>
+        <translation type="vanished">Игнорирайте настройката на цветната лента при импортиране</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Изберете файл за импортиране</translation>
+        <translation type="vanished">Изберете файл за импортиране</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Възникна грешка при зареждането %1 Грешка при анализа %2 при %3, колона %4</translation>
+        <translation type="vanished">Възникна грешка при зареждането %1 Грешка при анализа %2 при %3, колона %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Моля, изберете елемент за прилагане)</translation>
+        <translation type="vanished">(Моля, изберете елемент за прилагане)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">При превключване към градационен режим стойностите се задават на средната стойност на всеки раздел.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Обратни цветове (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Равно деление (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Настройка на цветовата карта (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Грешка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Възникна грешка при импортиране на настройка от %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Обществен (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>частно (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Експортиране (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Импортиране на настройките на цветовата карта</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Изберете от стандартите</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Избери файл</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Атрибути за импортиране</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Посока</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заглавие</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Настройка на шрифта</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Дисплей на етикета</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Форматиране</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Брой етикети</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Етикет</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Заден план</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Размер и позиция</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина на лентата</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Подравняване</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Преглед</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Брой цветове:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Настроики</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Знаци след десетичната запетая:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Логистическа скала:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Активирано</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Цветна лента</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Хоризонтална</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикална</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Цвят:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка: Можете да използвате само ASCII знаци за име.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

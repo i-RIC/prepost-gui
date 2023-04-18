@@ -74,16 +74,16 @@
         <translation>検索:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;日本の19座標系 (EPSG:2443 - 2461) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;日本の19座標系 (EPSG:2443 - 2461) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://vldb.gsi.go.jp/sokuchi/patchjgd/download/Help/jpc/jpcmap1_19.htm&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://vldb.gsi.go.jp/sokuchi/patchjgd/download/Help/jpc/jpcmap1_19.htm&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;日本の19座標系 (EPSG:2443 - 2461) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://vldb.gsi.go.jp/sokuchi/patchjgd/download/Help/jpc/jpcmap1_19.htm"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://vldb.gsi.go.jp/sokuchi/patchjgd/download/Help/jpc/jpcmap1_19.htm"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;日本の19座標系 (EPSG:2443 - 2461) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;UTM 座標系 (EPSG:32601 - 32760 など) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;UTM 座標系 (EPSG:32601 - 32760 など) に関するヒント&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -693,9 +693,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>フォルダ &quot;%1&quot; 内の格子生成プログラム定義ファイルを読み込み中にエラーが発生しました。この格子生成プログラムは無視されます。
+        <translation>フォルダ "%1" 内の格子生成プログラム定義ファイルを読み込み中にエラーが発生しました。この格子生成プログラムは無視されます。
 %2</translation>
     </message>
 </context>
@@ -2075,7 +2075,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>河川中心点からの距離</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>「左岸」は、下流方向を向いた時に左側に見える岸です。</translation>
     </message>
 </context>
@@ -2594,16 +2594,16 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>再分割領域内での、セルの最大面積を指定してください。</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2652,16 +2652,16 @@ p, li { white-space: pre-wrap; }
         <translation>小さい値を指定すると細かい格子が生成されます。</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_ja_JP.ts -->
@@ -5713,11 +5713,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>頂点を移動</translation>
     </message>
     <message>
         <source>Set vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>頂点を設定</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation>点データ 表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>画像ファイルの選択</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>すべての画像(*.jpg *.jpeg *.png);;Jpeg 画像(*.jpg *.jpeg);;PNG 画像(*.png)</translation>
     </message>
 </context>
 <context>
@@ -5740,6 +5755,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>点%1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>形状</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>アイコン画像</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>画像のインポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>クリア (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>最大サイズ:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>インポートした画像の幅もしくは高さが最大サイズより大きい場合、幅もしくは高さが最大サイズと同じになるよう画像を縮小します。</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_ja_JP.ts -->
@@ -6032,7 +6109,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1の表示色の設定</translation>
+        <translation type="vanished">%1の表示色の設定</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -6060,7 +6137,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>表示色設定の編集</translation>
+        <translation type="vanished">表示色設定の編集</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -6071,19 +6148,19 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>表示色の設定</translation>
+        <translation type="vanished">表示色の設定</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_ja_JP.ts -->
@@ -6774,6 +6851,10 @@ p, li { white-space: pre-wrap; }
         <source>Polygon name and value change</source>
         <translation type="vanished">ポリゴンの名前と値の変更</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>ポリゴンデータ表示設定</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonAbstractPolygon</name>
@@ -6943,6 +7024,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>ポリゴンデータ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shape file</source>
@@ -6959,6 +7058,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 <context>
@@ -7914,6 +8040,10 @@ p, li { white-space: pre-wrap; }
         <source>PolyLine Coordinates</source>
         <translation>折れ線の頂点座標</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>ラインデータ表示設定</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineAbstractPolyLine</name>
@@ -8114,6 +8244,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>ラインデータ表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>プリプロセッサーの設定を使用</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shape file</source>
@@ -8126,6 +8274,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>値により自動設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 <context>
@@ -11229,11 +11404,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>グラフウィンドウの初期化に失敗しました。計算結果が正しく読み込まれていません。</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="vanished">この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「横断測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -11328,8 +11503,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>最初の列のタイトルは "X" でなくてはなりません。</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -11408,8 +11583,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>最初の列のタイトルは "X" でなくてはなりません。</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -12382,7 +12557,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>TextLabel</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>Setting...</source>
@@ -12576,7 +12751,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>実測値 (%1)</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="vanished">この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -12671,8 +12846,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="vanished">最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation type="vanished">最初の列のタイトルは "X" でなくてはなりません。</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -12716,8 +12891,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="vanished">最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation type="vanished">最初の列のタイトルは "X" でなくてはなりません。</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -13177,102 +13352,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>カスタムカラーマップ</translation>
+        <translation type="vanished">カスタムカラーマップ</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>種類:</translation>
+        <translation type="vanished">種類:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>2色</translation>
+        <translation type="vanished">2色</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>3色</translation>
+        <translation type="vanished">3色</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>任意</translation>
+        <translation type="vanished">任意</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>2色/3色</translation>
+        <translation type="vanished">2色/3色</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>最大値</translation>
+        <translation type="vanished">最大値</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>中間値</translation>
+        <translation type="vanished">中間値</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>最小値</translation>
+        <translation type="vanished">最小値</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <translation type="vanished">追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>削除(&amp;R)</translation>
+        <translation type="vanished">削除(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>インポート(&amp;I)</translation>
+        <translation type="vanished">インポート(&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>エクスポート(&amp;E)</translation>
+        <translation type="vanished">エクスポート(&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>カラーマップ設定のインポート</translation>
+        <translation type="vanished">カラーマップ設定のインポート</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSVファイル (*.csv)</translation>
+        <translation type="vanished">CSVファイル (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>%1 は存在しません。</translation>
+        <translation type="vanished">%1 は存在しません。</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>%1 を開けませんでした。</translation>
+        <translation type="vanished">%1 を開けませんでした。</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>カラーマップ設定のエクスポート</translation>
+        <translation type="vanished">カラーマップ設定のエクスポート</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>手動</translation>
+        <translation type="vanished">手動</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>設定...</translation>
+        <translation type="vanished">設定...</translation>
     </message>
 </context>
 <context>
@@ -13650,11 +13825,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>最小値は %1 です</translation>
+        <translation type="vanished">最小値は %1 です</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>最大値は %1 です。</translation>
+        <translation type="vanished">最大値は %1 です。</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>%1 より小さい値は入力できません。</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>%1 より大きい値は入力できません。</translation>
     </message>
 </context>
 <context>
@@ -14698,19 +14881,19 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選択されている時のみ</translation>
+        <translation type="vanished">選択されている時のみ</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>常に</translation>
+        <translation type="vanished">常に</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>表示しない</translation>
+        <translation type="vanished">表示しない</translation>
     </message>
     <message>
         <source>Title</source>
@@ -14748,6 +14931,50 @@ Do you really want to import this file?</source>
         <source>Size and Position</source>
         <translation>サイズと位置</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示する</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>向き:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左寄せ</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中央寄せ</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>右寄せ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -14769,16 +14996,16 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>インポートするファイルの選択</translation>
+        <translation type="vanished">インポートするファイルの選択</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>カラーマップ設定 (*.cmsetting)</translation>
+        <translation type="vanished">カラーマップ設定 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>%1 の読み込み中にエラーが発生しました。
+        <translation type="vanished">%1 の読み込み中にエラーが発生しました。
 パースエラー %2: at %3, column %4</translation>
     </message>
     <message>
@@ -14805,6 +15032,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>透明</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>列挙型カラーマップ設定 (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>列挙型カラーマップ設定 (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>%1 から設定の読み込み中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>パブリック (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>プライベート (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>カラーマップ設定のインポート</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>標準設定から選択</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>ファイルを選択</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準設定</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>インポートする属性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>向き</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>フォント設定</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -14814,19 +15170,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選択されている時のみ</translation>
+        <translation type="vanished">選択されている時のみ</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>常に</translation>
+        <translation type="vanished">常に</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>表示しない</translation>
+        <translation type="vanished">表示しない</translation>
     </message>
     <message>
         <source>Title</source>
@@ -14892,6 +15248,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示する</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左寄せ</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中央寄せ</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>右寄せ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -14920,11 +15304,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>プリセット:</translation>
+        <translation type="vanished">プリセット:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>インポート時に凡例の設定を反映しない</translation>
+        <translation type="vanished">インポート時に凡例の設定を反映しない</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -14984,7 +15368,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>インポートするファイルの選択</translation>
+        <translation type="vanished">インポートするファイルの選択</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -15005,12 +15389,12 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>%1 の読み込み中にエラーが発生しました。
+        <translation type="vanished">%1 の読み込み中にエラーが発生しました。
 パースエラー %2: at %3, column %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(読み込む項目を選択してください)</translation>
+        <translation type="vanished">(読み込む項目を選択してください)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -15048,6 +15432,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>色の反転 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>均等割 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>カラーマップ設定 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>%1 から設定の読み込み中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>パブリック (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>プライベート (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -15062,6 +15477,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>エクスポート(&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>カラーマップ設定のインポート</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>標準設定から選択</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>ファイルを選択</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準設定</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>インポートする属性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>向き</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>フォント設定</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>ラベルの数</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
     </message>
 </context>
 <context>
@@ -15089,6 +15595,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>色の数:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>オプション</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>小数点以下の桁数:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>ログスケール:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>有効</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
     </message>
 </context>
 <context>
@@ -15561,6 +16102,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>色:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考: 名前には ASCII 文字のみ使用できます。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -29538,19 +30083,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>カラーバー</translation>
+        <translation type="vanished">カラーバー</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>タイトル</translation>
+        <translation type="vanished">タイトル</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>ラベル</translation>
+        <translation type="vanished">ラベル</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>ベクトル長さの凡例</translation>
+        <translation type="vanished">ベクトル長さの凡例</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -29736,7 +30281,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color Map</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -35012,8 +35557,8 @@ Option -&gt; Preferences</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>列 %1 において、断面&quot;%3&quot; の値 &quot;%2&quot; は不正です。この値は無視されます。</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>列 %1 において、断面"%3" の値 "%2" は不正です。この値は無視されます。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -35254,22 +35799,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>編集...</translation>
     </message>
 </context>
 <context>
@@ -40566,11 +41111,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>横断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
+        <translation type="vanished">横断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>縦断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
+        <translation type="vanished">縦断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
         <source>To open a Crosssection Window, Please select only one grid node.</source>
@@ -40825,6 +41370,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>格子断面 (%1) I = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>格子横断図ウィンドウ</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>ビュー設定ツールバー</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>表示設定ツールバー</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>自動フィット</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縦横比 (V/H): 1 / </translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>縦横比を固定</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>領域を固定</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>目盛り</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左右岸</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縦横比</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>表示設定</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>コントローラー</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>左岸側</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>右岸側</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縦横比 (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>%1 の作成でエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>インデックス</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">距離 (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation>%1 からの距離(m)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>上流側</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>下流側</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>右岸側</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>左岸側</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>CSV ファイルのエクスポート</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>格子属性表示設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>スナップショットの保存</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>I方向</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J方向</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>セル中心の値</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>上流側</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>下流側</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>スナップショット (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSVエクスポート(&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>格子横断図ウィンドウ表示設定</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>背景格子</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>線</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>ドット</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平方向</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>主線</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>補助線</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直方向</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>目盛り</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>フォント:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左右岸</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縦横比</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>エクスポート設定</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>フォルダとプレフィックス</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>フォルダ:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>プレフィックス:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>断面</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>現在の断面のみ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全て</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>カスタム</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>I 最小値:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I 最大値:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>間引き:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>格子属性表示設定</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>標高のグラフ</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>個別のグラフ</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>標高のグラフ 設定</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>線の色:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線幅:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>点を表示</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>点のサイズ</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>インデックスを表示</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>フォントの色:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>フォント:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>間引き:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>個別のグラフ 設定</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>グラフの高さ:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[ピクセル]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>タイトルのフォント:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>軸の色:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>軸のフォント:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>プリプロセッサーでの設定を使う</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>タイトルを表示</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>タイトルの色</translation>
     </message>
 </context>
 <context>
@@ -42019,11 +42971,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>リヴメーカー 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">リリース日: 2021/4/28</translation>
+        <translation>発売日：2021/4/28</translation>
     </message>
 </context>
 <context>
@@ -42199,16 +43151,16 @@ This algorithm can be used only for structured grids.</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation type="vanished">不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...</source>
+        <translation type="vanished">不正な名前です。名前は "X1", "X2",などとして下さい。</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,もしくは &quot;XS1&quot;, &quot;XS2&quot; などとして下さい。</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>不正な名前です。名前は "X1", "X2",もしくは "XS1", "XS2" などとして下さい。</translation>
     </message>
 </context>
 <context>

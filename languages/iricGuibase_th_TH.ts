@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>แผนที่สีที่กำหนดเอง</translation>
+        <translation type="vanished">แผนที่สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>พิมพ์:</translation>
+        <translation type="vanished">พิมพ์:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>สองสี</translation>
+        <translation type="vanished">สองสี</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>สามสี</translation>
+        <translation type="vanished">สามสี</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>โดยพลการ</translation>
+        <translation type="vanished">โดยพลการ</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>สองสี / สามสี</translation>
+        <translation type="vanished">สองสี / สามสี</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>มูลค่าสูงสุด</translation>
+        <translation type="vanished">มูลค่าสูงสุด</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>ค่ากลาง</translation>
+        <translation type="vanished">ค่ากลาง</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>ค่า</translation>
+        <translation type="vanished">ค่า</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>มูลค่าขั้นต่ำ</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำ</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>เพิ่ม (&amp;A)</translation>
+        <translation type="vanished">เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>ลบ (&amp;R)</translation>
+        <translation type="vanished">ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>นำเข้า (&amp;I)</translation>
+        <translation type="vanished">นำเข้า (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>ส่งออก (&amp;E)</translation>
+        <translation type="vanished">ส่งออก (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>นำเข้าการตั้งค่า Colormap</translation>
+        <translation type="vanished">นำเข้าการตั้งค่า Colormap</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>ไฟล์ CSV (*.csv)</translation>
+        <translation type="vanished">ไฟล์ CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>ไฟล์ %1 ไม่มีอยู่</translation>
+        <translation type="vanished">ไฟล์ %1 ไม่มีอยู่</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>ไฟล์ %1 เปิดไม่ได้.</translation>
+        <translation type="vanished">ไฟล์ %1 เปิดไม่ได้.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>ส่งออกการตั้งค่าแผนที่สี</translation>
+        <translation type="vanished">ส่งออกการตั้งค่าแผนที่สี</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>กำหนดเอง</translation>
+        <translation type="vanished">กำหนดเอง</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>กำลังตั้งค่า...</translation>
+        <translation type="vanished">กำลังตั้งค่า...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>ค่าต่ำสุดคือ %1.</translation>
+        <translation type="vanished">ค่าต่ำสุดคือ %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>ค่าสูงสุดคือ %1.</translation>
+        <translation type="vanished">ค่าสูงสุดคือ %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>ค่าน้อยกว่า %1 ไม่อนุญาต</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur ที่มีขนาดใหญ่กว่า %1 ไม่อนุญาต</translation>
     </message>
 </context>
 <context>

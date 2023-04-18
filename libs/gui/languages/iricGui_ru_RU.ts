@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Цветная полоса</translation>
+        <translation type="vanished">Цветная полоса</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Заголовок</translation>
+        <translation type="vanished">Заголовок</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Этикетки</translation>
+        <translation type="vanished">Этикетки</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Легенда длины стрелы</translation>
+        <translation type="vanished">Легенда длины стрелы</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Цветовая карта</translation>
+        <translation type="vanished">Цветовая карта</translation>
     </message>
     <message>
         <source>Background Image</source>

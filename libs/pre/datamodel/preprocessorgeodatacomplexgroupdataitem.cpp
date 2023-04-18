@@ -6,6 +6,7 @@
 #include "preprocessorgeodatatopdataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/complex/gridcomplexconditiondialog.h>
 #include <guicore/pre/complex/gridcomplexconditionwidget.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
@@ -18,6 +19,8 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapenumeratesettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/iricundostack.h>
@@ -63,6 +66,10 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 
 	m_editGroupAction = new QAction(PreProcessorGeoDataComplexGroupDataItem::tr("Edit &Groups..."), this);
 	connect(m_editGroupAction, SIGNAL(triggered()), this, SLOT(showEditGroupDialog()));
+
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent->parent());
+	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), preProcessorWindow());
+
 	createDefaultGroup();
 	addBackground();
 	updateColorMap();
@@ -435,4 +442,23 @@ void PreProcessorGeoDataComplexGroupDataItem::setupGroups(int count)
 std::vector<GridComplexConditionGroup*> PreProcessorGeoDataComplexGroupDataItem::groups() const
 {
 	return m_groups;
+}
+
+bool PreProcessorGeoDataComplexGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	bool added = false;
+
+	toolBar->addAction(m_editColorMapAction);
+	toolBar->addSeparator();
+	added = true;
+
+	if (m_toolBarWidgetController != nullptr) {
+		auto widget = m_toolBarWidgetController->widget();
+		widget->setParent(toolBar);
+		widget->show();
+		toolBar->addWidget(widget);
+		added = true;
+	}
+
+	return added;
 }

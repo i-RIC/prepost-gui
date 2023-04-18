@@ -11,6 +11,7 @@
 
 #include <unordered_map>
 
+class ColorMapSettingToolBarWidgetController;
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
@@ -50,6 +51,8 @@ public:
 
 	void handleResize(VTKGraphicsView* v) override;
 
+	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
+
 public slots:
 	void addNewCondition();
 	void changeValueRange(const std::string& name);
@@ -79,6 +82,7 @@ private:
 
 	class ApplyColorMapSettingAndRenderCommand;
 	class ApplyColorMapSettingDialog;
+	class ToolBarWidgetController;
 };
 
 #endif // PREPROCESSORGRIDTYPEDATAITEM_H

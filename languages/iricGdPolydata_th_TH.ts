@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 การตั้งค่าสี</translation>
+        <translation type="vanished">%1 การตั้งค่าสี</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -50,19 +50,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>การตั้งค่าสี PolyData</translation>
+        <translation type="vanished">การตั้งค่าสี PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>สีตามค่า</translation>
+        <translation type="vanished">สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
 </context>
 </TS>

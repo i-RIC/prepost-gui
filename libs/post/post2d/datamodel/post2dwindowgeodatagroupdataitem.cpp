@@ -10,6 +10,9 @@
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
+#include <guicore/image/imagesettingcontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -27,6 +30,7 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), Post2dWindowGeoDataGroupDataItem::tr("&Color Setting..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	applyColorMapSetting();
 
 	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
 }
@@ -70,6 +74,8 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 	for (int i = 0; i < origChildren.size(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(origChildren.at(i));
 		GeoData* geoData = item->geoData();
+		if (geoData == nullptr) {continue;}
+
 		if (map.contains(geoData)) {
 			m_childItems.push_back(map.value(geoData));
 			m_standardItem->appendRow(map.value(geoData)->standardItem());
@@ -105,7 +111,36 @@ void Post2dWindowGeoDataGroupDataItem::applyColorMapSetting()
 	}
 	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
 	auto setting = typedi->colorMapSetting(condition()->name());
-	setting->applyLegendImageSetting(dataModel()->graphicsView());
+	if (setting != nullptr) {
+		setting->applyLegendImageSetting(dataModel()->graphicsView());
+	}
+}
+
+void Post2dWindowGeoDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	auto setting = colorMapSetting();
+	if (setting == nullptr) {return;}
+	if (setting->usePreSetting) {return;}
+
+	setting->customSetting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+}
+
+void Post2dWindowGeoDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	auto setting = colorMapSetting();
+	if (setting == nullptr) {return;}
+	if (setting->usePreSetting) {return;}
+
+	setting->customSetting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+}
+
+void Post2dWindowGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	auto setting = colorMapSetting();
+	if (setting == nullptr) {return;}
+	if (setting->usePreSetting) {return;}
+
+	setting->customSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 }
 
 void Post2dWindowGeoDataGroupDataItem::editScalarsToColors()
@@ -114,6 +149,7 @@ void Post2dWindowGeoDataGroupDataItem::editScalarsToColors()
 	if (setting == nullptr) {return;}
 
 	auto dialog = new ScalarsToColorsEditDialog(this, mainWindow());
+	dialog->setAttribute(Qt::WA_DeleteOnClose);
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	dialog->setSetting(setting);
 

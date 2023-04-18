@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GeoDataPolygonProxy_DisplaySettingWidget</class>
+ <widget class="QWidget" name="GeoDataPolygonProxy_DisplaySettingWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>766</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="usePreCheckBox">
+     <property name="text">
+      <string>Use Setting of Pre-Processing Window</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="GeoDataPolygon::DisplaySettingWidget" name="displaySettingWidget" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GeoDataPolygon::DisplaySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>geodata/polygon/public/geodatapolygon_displaysettingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>usePreCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>displaySettingWidget</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Spalvų juosta</translation>
+        <translation type="vanished">Spalvų juosta</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Pavadinimas</translation>
+        <translation type="vanished">Pavadinimas</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketės</translation>
+        <translation type="vanished">Etiketės</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Rodyklės ilgio legenda</translation>
+        <translation type="vanished">Rodyklės ilgio legenda</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Spalvų žemėlapis</translation>
+        <translation type="vanished">Spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Background Image</source>

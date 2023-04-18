@@ -11724,19 +11724,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>カラーバー</translation>
+        <translation type="vanished">カラーバー</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>タイトル</translation>
+        <translation type="vanished">タイトル</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>ラベル</translation>
+        <translation type="vanished">ラベル</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>ベクトル長さの凡例</translation>
+        <translation type="vanished">ベクトル長さの凡例</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -11922,7 +11922,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color Map</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
     <message>
         <source>Background Image</source>

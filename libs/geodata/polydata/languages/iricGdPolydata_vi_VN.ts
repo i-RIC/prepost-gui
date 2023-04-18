@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Cài đặt màu sắc</translation>
+        <translation type="vanished">%1 Cài đặt màu sắc</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Chỉnh sửa cài đặt màu</translation>
+        <translation type="vanished">Chỉnh sửa cài đặt màu</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -50,19 +50,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Cài đặt màu PolyData</translation>
+        <translation type="vanished">Cài đặt màu PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Màu sắc theo giá trị</translation>
+        <translation type="vanished">Màu sắc theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
 </context>
 </TS>

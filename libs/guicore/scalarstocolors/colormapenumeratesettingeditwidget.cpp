@@ -1,9 +1,10 @@
 #include "colormapenumeratesettingeditwidget.h"
 #include "ui_colormapenumeratesettingeditwidget.h"
 #include "private/colormapenumeratesettingeditwidget_colortablecontroller.h"
+#include "private/colormapenumeratesettingeditwidget_importdialog.h"
 #include "../solverdef/enumloader.h"
 
-#include <misc/lastiodirectory.h>
+#include <misc/iricrootpath.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
@@ -15,6 +16,19 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
+
+namespace {
+
+QString privateColormapsPath()
+{
+	QDir dir(iRICRootPath::get());
+	dir.cdUp();
+	dir.cdUp();
+	dir.cd("private/colormaps");
+	return dir.absolutePath();
+}
+
+} // namespace
 
 ColorMapEnumerateSettingEditWidget::ColorMapEnumerateSettingEditWidget(QWidget *parent) :
 	ColorMapSettingEditWidgetI(parent),
@@ -47,13 +61,15 @@ ColorMapEnumerateSettingContainer ColorMapEnumerateSettingEditWidget::concreteSe
 void ColorMapEnumerateSettingEditWidget::setConcreteSetting(const ColorMapEnumerateSettingContainer& setting)
 {
 	m_concreteSetting = setting;
+	m_concreteSetting.legend.copyWithColorMap(setting.legend);
+
 	applySetting();
 }
 
-void ColorMapEnumerateSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+void ColorMapEnumerateSettingEditWidget::setDisableOtherThanLegendVisible(bool disabled)
 {
 	ui->colorsGroupBox->setDisabled(disabled);
-	ui->legendWidget->setDisableOtherThanImageSetting(disabled);
+	ui->legendWidget->setDisableOtherThanImageVisible(disabled);
 }
 
 QUndoCommand* ColorMapEnumerateSettingEditWidget::createModifyCommand() const
@@ -86,57 +102,30 @@ QUndoCommand* ColorMapEnumerateSettingEditWidget::createModifyCommand() const
 
 void ColorMapEnumerateSettingEditWidget::importSetting()
 {
-	ColorMapEnumerateSettingContainer backup = m_concreteSetting;
+	ImportDialog dialog(this);
+	dialog.setOriginalSetting(m_concreteSetting);
 
-	auto fname = QFileDialog::getOpenFileName(this, tr("Select file to import"),
-																						LastIODirectory::get(), tr("Colormap setting (*.cmsetting)"));
-	if (fname.isNull()) {return;}
+	auto ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
 
-	QFile f(fname);
-	QDomDocument doc;
-
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-
-	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-	if (! ok) {
-		auto msg = tr("Error occured while loading %1\nParse error %2 at %3, column %4")
-				.arg(QDir::toNativeSeparators(fname))
-				.arg(errorStr).arg(errorLine).arg(errorColumn);
-		QMessageBox::critical(this, tr("Error"), msg);
-		return;
-	}
-	m_concreteSetting.load(doc.documentElement());
+	m_concreteSetting = dialog.setting();
 
 	applySetting();
-
-	QFileInfo info(f);
-	LastIODirectory::set(info.absolutePath());
 }
 
 void ColorMapEnumerateSettingEditWidget::exportSetting()
 {
 	auto fname = QFileDialog::getSaveFileName(this, tr("Input file name to export"),
-																						LastIODirectory::get(), tr("Colormap setting (*.cmsetting)"));
+																						privateColormapsPath(), tr("Enumerate colormap setting (*.ecmsetting)"));
 	if (fname.isNull()) {return;}
 
-	QFile f(fname);
-	bool ok = f.open(QFile::WriteOnly);
+	bool ok = m_concreteSetting.exportData(fname);
 	if (! ok) {
 		auto msg = tr("Error occured while opening %1")
 				.arg(QDir::toNativeSeparators(fname));
 		QMessageBox::critical(this, tr("Error"), msg);
 		return;
 	}
-
-	auto s = concreteSetting();
-	QXmlStreamWriter writer(&f);
-	s.save(writer);
-	f.close();
-
-	QFileInfo info(f);
-	LastIODirectory::set(info.absolutePath());
 }
 
 
@@ -161,11 +150,30 @@ void ColorMapEnumerateSettingEditWidget::setupWidget()
 	if (m_legendSetting != nullptr) {
 		auto ls = dynamic_cast <ColorMapEnumerateLegendSettingContainer*> (m_legendSetting);
 		newSetting = *(ls->colorMapSetting());
-		newSetting.legend = *ls;
+		newSetting.legend.copyWithColorMap(*ls);
 	} else if (m_setting != nullptr) {
 		auto s = dynamic_cast <ColorMapEnumerateSettingContainer*> (m_setting);
 		newSetting = *s;
 	}
 
 	setConcreteSetting(newSetting);
+}
+
+void ColorMapEnumerateSettingEditWidget::updateImageSetting()
+{
+	ColorMapEnumerateLegendSettingContainer newSetting;
+
+	if (m_legendSetting != nullptr) {
+		auto ls = dynamic_cast <ColorMapEnumerateLegendSettingContainer*> (m_legendSetting);
+		if (ls->delegateMode()) {
+			newSetting = ls->colorMapSetting()->legend;
+		} else {
+			newSetting = *ls;
+		}
+	} else if (m_setting != nullptr) {
+		auto s = dynamic_cast <ColorMapEnumerateSettingContainer*> (m_setting);
+		newSetting = s->legend;
+	}
+
+	ui->legendWidget->setImageSetting(newSetting.imageSetting);
 }

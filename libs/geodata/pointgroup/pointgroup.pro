@@ -119,7 +119,6 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
            private/geodatapointgroup_displaysetting.h \
-           private/geodatapointgroup_displaysettingwidget.h \
            private/geodatapointgroup_impl.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
@@ -127,10 +126,11 @@ HEADERS += gd_pointgroup_global.h \
            private/geodatapointgrouppoint_impl.h \
            private/geodatapointgroupproxy_displaysetting.h \
            private/geodatapointgroupproxy_displaysettingwidget.h \
-           private/geodatapointgroupproxy_impl.h
+           private/geodatapointgroupproxy_impl.h \
+           public/geodatapointgroup_displaysettingwidget.h
 FORMS += geodatapointgroupcolorsettingdialog.ui \
-         private/geodatapointgroup_displaysettingwidget.ui \
-         private/geodatapointgroupproxy_displaysettingwidget.ui
+         private/geodatapointgroupproxy_displaysettingwidget.ui \
+         public/geodatapointgroup_displaysettingwidget.ui
 SOURCES += geodatapointgroup.cpp \
            geodatapointgroupcolorsettingdialog.cpp \
            geodatapointgroupcreator.cpp \
@@ -143,11 +143,11 @@ SOURCES += geodatapointgroup.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
            private/geodatapointgroup_displaysetting.cpp \
-           private/geodatapointgroup_displaysettingwidget.cpp \
            private/geodatapointgroup_impl.cpp \
            private/geodatapointgroupproxy_displaysetting.cpp \
            private/geodatapointgroupproxy_displaysettingwidget.cpp \
-           private/geodatapointgroupproxy_impl.cpp
+           private/geodatapointgroupproxy_impl.cpp \
+           public/geodatapointgroup_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdPointGroup_ar_EG.ts \
                 languages/iricGdPointGroup_bg_BG.ts \
                 languages/iricGdPointGroup_bs_BA.ts \

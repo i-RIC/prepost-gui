@@ -216,6 +216,11 @@ ColorMapSettingEditDialog* SolverDefinitionGridAttribute::createColorMapSettingE
 	return dialog;
 }
 
+ColorMapSettingToolBarWidgetI* SolverDefinitionGridAttribute::createColorMapSettingToolbarWidget(QWidget* parent) const
+{
+	return impl->m_colorMapFactory->createToolbarWidget(parent);
+}
+
 void SolverDefinitionGridAttribute::setPosition(Position pos)
 {
 	impl->m_position = pos;

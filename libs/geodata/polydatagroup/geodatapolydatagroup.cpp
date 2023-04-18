@@ -742,23 +742,6 @@ QAction* GeoDataPolyDataGroup::copyAction() const
 	return impl->m_copyAction;
 }
 
-/*
-void GeoDataPolyDataGroup::updateActorSettingForEditTargetPolyData()
-{
-	auto targetData = editTargetData();
-	if (targetData == nullptr) {return;}
-
-	const auto& cs = impl->m_colorSetting;
-	targetData->setColor(cs.color);
-	targetData->setOpacity(cs.opacity);
-	if (cs.mapping == GeoDataPolyDataGroupColorSettingDialog::Arbitrary) {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
-	} else {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
-	}
-}
-*/
-
 void GeoDataPolyDataGroup::updateAttributeBrowser(bool force)
 {
 	impl->updateAttributeBrowser(force);

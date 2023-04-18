@@ -53,18 +53,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="title">
-        <string>Color Map</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="ColorMapSettingWidget" name="colorMapWidget" native="true"/>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
       <widget class="QGroupBox" name="backgroundGroupBox">
        <property name="title">
         <string>Background Image</string>
@@ -357,12 +345,6 @@
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
    <header>guibase/widget/coloreditwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ColorMapSettingWidget</class>
-   <extends>QWidget</extends>
-   <header>guibase/colormap/colormapsettingwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

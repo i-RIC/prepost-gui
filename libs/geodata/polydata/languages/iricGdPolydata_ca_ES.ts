@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Configuració del color</translation>
+        <translation type="vanished">%1 Configuració del color</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Editeu la configuració del color</translation>
+        <translation type="vanished">Editeu la configuració del color</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Configuració del color de PolyData</translation>
+        <translation type="vanished">Configuració del color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color per valor</translation>
+        <translation type="vanished">Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
 </context>
 </TS>

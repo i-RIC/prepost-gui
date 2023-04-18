@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>görünürlük</translation>
+        <translation type="vanished">görünürlük</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>seçildiğinde</translation>
+        <translation type="vanished">seçildiğinde</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Her zaman</translation>
+        <translation type="vanished">Her zaman</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Asla</translation>
+        <translation type="vanished">Asla</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Boyut ve Konum</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Yön:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Yatay</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Dikey</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Çubuk Genişliği</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Oto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>piksel</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Hizalama</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Sol</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>merkez</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Sağ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>İçe aktarılacak dosyayı seçin</translation>
+        <translation type="vanished">İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Renk haritası ayarı (*.cmsetting)</translation>
+        <translation type="vanished">Renk haritası ayarı (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
+        <translation type="vanished">yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Şeffaf</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Renk haritası ayarını numaralandır (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Renk haritası ayarını numaralandır (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Şuradan ayar içe aktarılırken hata oluştu: %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Halk (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Özel (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Renk Haritası Ayarını İçe Aktar</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>mod</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>standartlardan seçin</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Dosya Seç</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>standartlar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>İçe Aktarılacak Nitelikler</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Yön</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Yazı Tipi Ayarı</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiket Ekranı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Arka plan</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Boyut ve Konum</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Çubuk Genişliği</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Hizalama</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ön izleme</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Renk barı</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Yatay</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Dikey</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>görünürlük</translation>
+        <translation type="vanished">görünürlük</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>seçildiğinde</translation>
+        <translation type="vanished">seçildiğinde</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Her zaman</translation>
+        <translation type="vanished">Her zaman</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Asla</translation>
+        <translation type="vanished">Asla</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Oto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Çubuk Genişliği</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>piksel</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Hizalama</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Sol</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>merkez</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Sağ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>ön ayarlar:</translation>
+        <translation type="vanished">ön ayarlar:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>İçe aktarırken Renk çubuğu ayarını yoksay</translation>
+        <translation type="vanished">İçe aktarırken Renk çubuğu ayarını yoksay</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>İçe aktarılacak dosyayı seçin</translation>
+        <translation type="vanished">İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
+        <translation type="vanished">yüklenirken hata oluştu %1 Ayrıştırma hatası %2 de %3, kolon %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Lütfen uygulanacak öğeyi seçin)</translation>
+        <translation type="vanished">(Lütfen uygulanacak öğeyi seçin)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Derecelendirme Moduna geçerken, değerler her bölümün orta değerine ayarlanır.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Ters renkler (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>eşit bölme (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Renk haritası ayarı (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Şuradan ayar içe aktarılırken hata oluştu: %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Halk (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Özel (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>İhracat (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Renk Haritası Ayarını İçe Aktar</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>mod</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>standartlardan seçin</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Dosya Seç</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>standartlar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>İçe Aktarılacak Nitelikler</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Yön</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Yazı Tipi Ayarı</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiket Ekranı</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>etiket sayısı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Arka plan</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Boyut ve Konum</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Çubuk Genişliği</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Hizalama</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ön izleme</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>renk sayısı:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Değer ondalık basamaklar:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Günlük ölçeği:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Etkinleştirilmiş</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Renk barı</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Yatay</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Dikey</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not: Ad için yalnızca ASCII karakterleri kullanabilirsiniz.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

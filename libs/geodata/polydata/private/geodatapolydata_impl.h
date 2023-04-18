@@ -12,7 +12,6 @@ class GeoDataPolyData::Impl
 public:
 	Impl(GeoDataPolyData* parent);
 
-	GeoDataPolyDataColorSettingDialog::Setting m_setting;
 	std::vector<QVariant> m_variantValues;
 
 	QAction* m_editNameAction;

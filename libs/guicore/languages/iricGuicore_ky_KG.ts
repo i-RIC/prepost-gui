@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Көрүнүү</translation>
+        <translation type="vanished">Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Тандалганда</translation>
+        <translation type="vanished">Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Ар дайым</translation>
+        <translation type="vanished">Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Эч качан</translation>
+        <translation type="vanished">Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Өлчөмү жана абалы</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Багыты:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикалдуу</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Bar Width</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Тегиздөө</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Солго</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Борбор</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Туура</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+        <translation type="vanished">Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
+        <translation type="vanished">Түс картасынын жөндөөсү (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+        <translation type="vanished">Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Ачык</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Түс картасынын жөндөөлөрүн санаңыз (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Түс картасынын жөндөөлөрүн санаңыз (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Жөндөөлөрдү импорттоодо ката кетти %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>коомдук (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Жеке (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Түс картасынын жөндөөлөрүн импорттоо</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Стандарттардан тандаңыз</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Файлды тандаңыз</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарттар</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Импорттоо атрибуттары</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Багыт</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Font Setting</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Белги дисплей</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Белги</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Көлөм жана Позиция</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Өлчөмү</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Bar Width</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Тегиздөө</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Алдын ала көрүү</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Түс тилкеси</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикалдуу</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Көрүнүү</translation>
+        <translation type="vanished">Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Тандалганда</translation>
+        <translation type="vanished">Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Ар дайым</translation>
+        <translation type="vanished">Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Эч качан</translation>
+        <translation type="vanished">Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Авто</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Bar Width</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Тегиздөө</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Солго</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Борбор</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Туура</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Алдын ала орнотуулар:</translation>
+        <translation type="vanished">Алдын ала орнотуулар:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
+        <translation type="vanished">Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+        <translation type="vanished">Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+        <translation type="vanished">Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Колдонуу үчүн нерсени тандаңыз)</translation>
+        <translation type="vanished">(Колдонуу үчүн нерсени тандаңыз)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Тескери түстөр (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Бирдей бөлүү (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Жөндөөлөрдү импорттоодо ката кетти %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>коомдук (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Жеке (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Экспорт (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Түс картасынын жөндөөлөрүн импорттоо</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Стандарттардан тандаңыз</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Файлды тандаңыз</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарттар</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Импорттоо атрибуттары</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Багыт</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Font Setting</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Белги дисплей</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Энбелгилердин саны</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Белги</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Өлчөмү жана абалы</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Өлчөмү</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Bar Width</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Тегиздөө</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Алдын ала көрүү</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Түстөрдүн саны:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Параметрлер</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Ондук орундардын мааниси:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Тармактын масштабы:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Иштетилди</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Түс тилкеси</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикалдуу</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү: Аты үчүн ASCII символдорун гана колдоно аласыз.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

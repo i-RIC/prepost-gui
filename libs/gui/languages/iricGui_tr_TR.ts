@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Renk barı</translation>
+        <translation type="vanished">Renk barı</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Başlık</translation>
+        <translation type="vanished">Başlık</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketler</translation>
+        <translation type="vanished">Etiketler</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Ok Uzunluğu Göstergesi</translation>
+        <translation type="vanished">Ok Uzunluğu Göstergesi</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Renk Haritası</translation>
+        <translation type="vanished">Renk Haritası</translation>
     </message>
     <message>
         <source>Background Image</source>

@@ -2,10 +2,10 @@
 #include "ui_colormapsettingeditwidget.h"
 #include "private/colormapsettingeditwidget_colortablecontroller.h"
 #include "private/colormapsettingeditwidget_switchtodiscretedialog.h"
+#include "private/colormapsettingeditwidget_importdialog.h"
 
 #include <misc/iricrootpath.h>
 #include <misc/informationdialog.h>
-#include <misc/lastiodirectory.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuechangert.h>
@@ -36,6 +36,15 @@ void addSettingFileNames(const QString& folderName, QComboBox* combobox, std::ve
 	}
 }
 
+QString privateColormapsPath()
+{
+	QDir dir(iRICRootPath::get());
+	dir.cdUp();
+	dir.cdUp();
+	dir.cd("private/colormaps");
+	return dir.absolutePath();
+}
+
 } // namespace
 
 ColorMapSettingEditWidget::ColorMapSettingEditWidget(QWidget *parent) :
@@ -53,10 +62,14 @@ ColorMapSettingEditWidget::ColorMapSettingEditWidget(QWidget *parent) :
 	connect(ui->maxValueEdit, &RealNumberEditWidget::valueChanged, this, &ColorMapSettingEditWidget::changeMaxValue);
 	connect(ui->addButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::addColor);
 	connect(ui->removeButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::removeColor);
+	connect(ui->reverseButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::reverseColors);
+	connect(ui->equalDevisionButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::divideEqually);
 	connect(ui->colorModeAutoRadioButton, &QRadioButton::clicked, this, &ColorMapSettingEditWidget::switchToAutoMode);
 	connect(ui->colorModeManualRadioButton, &QRadioButton::clicked, this, &ColorMapSettingEditWidget::switchToManualMode);
-	connect<void(QComboBox::*)(int)>(ui->colorPatternSelectComboBox, &QComboBox::currentIndexChanged, this, &ColorMapSettingEditWidget::selectColorMapSetting);
 	connect(ui->switchModeButton, &QPushButton::clicked, [=](bool) {this->switchTransitionMode();});
+
+	ui->minValueEdit->setInformChangeOnFocusOutOnly(true);
+	ui->maxValueEdit->setInformChangeOnFocusOutOnly(true);
 
 	m_colorTableController = new ColorTableController(this);
 
@@ -99,14 +112,14 @@ ColorMapSettingContainer ColorMapSettingEditWidget::concreteSetting() const
 void ColorMapSettingEditWidget::setConcreteSetting(const ColorMapSettingContainer& setting)
 {
 	m_concreteSetting = setting;
+	m_concreteSetting.legend.copyWithColorMap(setting.legend);
+
 	applySettingOtherThanLegend();
 	ui->legendWidget->setSetting(m_concreteSetting.legend);
 }
 
-void ColorMapSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
+void ColorMapSettingEditWidget::setDisableOtherThanLegendVisible(bool disabled)
 {
-	ui->colorPatternSelectComboBox->setDisabled(disabled);
-	ui->ignoreColorBarSettingCheckBox->setDisabled(disabled);
 	ui->colorModeGroupBox->setDisabled(disabled);
 	//ui->valueRangeGroupBox->setDisabled(disabled);
 	ui->autoValueRangeCheckBox->setDisabled(disabled);
@@ -115,7 +128,7 @@ void ColorMapSettingEditWidget::setDisableOtherThanImageSetting(bool disabled)
 	ui->colorsGroupBox->setDisabled(disabled);
 	ui->switchModeButton->setDisabled(disabled);
 
-	ui->legendWidget->setDisableOtherThanImageSetting(disabled);
+	ui->legendWidget->setDisableOtherThanVisible(disabled);
 }
 
 QUndoCommand* ColorMapSettingEditWidget::createModifyCommand() const
@@ -148,49 +161,31 @@ QUndoCommand* ColorMapSettingEditWidget::createModifyCommand() const
 
 void ColorMapSettingEditWidget::importSetting()
 {
-	auto fname = QFileDialog::getOpenFileName(this, tr("Select file to import"),
-											  LastIODirectory::get(), tr("Colormap setting (*.cmsetting)"));
-	if (fname.isNull()) {return;}
+	ImportDialog dialog(this);
+	dialog.setOriginalSetting(m_concreteSetting);
 
-	importSetting(fname, false);
+	auto ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	m_concreteSetting = dialog.setting();
+
+	applySettingOtherThanLegend();
+	ui->legendWidget->setSetting(m_concreteSetting.legend);
 }
 
 void ColorMapSettingEditWidget::exportSetting()
 {
 	auto fname = QFileDialog::getSaveFileName(this, tr("Input file name to export"),
-											  LastIODirectory::get(), tr("Colormap setting (*.cmsetting)"));
+												privateColormapsPath(), tr("Colormap setting (*.cmsetting)"));
 	if (fname.isNull()) {return;}
 
-	QFile f(fname);
-	bool ok = f.open(QFile::WriteOnly);
+	bool ok = m_concreteSetting.exportData(fname);
 	if (! ok) {
 		auto msg = tr("Error occured while opening %1")
 				.arg(QDir::toNativeSeparators(fname));
 		QMessageBox::critical(this, tr("Error"), msg);
 		return;
 	}
-
-	auto s = concreteSetting();
-	QXmlStreamWriter writer(&f);
-	writer.writeStartDocument();
-	writer.writeStartElement("ColorMapSetting");
-	s.save(writer);
-	writer.writeEndElement();
-	writer.writeEndDocument();
-	f.close();
-
-	QFileInfo info(f);
-	LastIODirectory::set(info.absolutePath());
-}
-
-void ColorMapSettingEditWidget::selectColorMapSetting(int index)
-{
-	ui->colorPatternSelectComboBox->blockSignals(true);
-	ui->colorPatternSelectComboBox->setCurrentIndex(0);
-	ui->colorPatternSelectComboBox->blockSignals(false);
-
-	auto fname = m_importTargetFileNames.at(index - 1);
-	importSetting(fname, ui->ignoreColorBarSettingCheckBox->isChecked());
 }
 
 void ColorMapSettingEditWidget::switchToAutoMode()
@@ -262,6 +257,37 @@ void ColorMapSettingEditWidget::switchTransitionMode()
 	ui->legendWidget->updateAutoNumberOfLabels();
 }
 
+void ColorMapSettingEditWidget::reverseColors()
+{
+	auto tmpColors = m_concreteSetting.colors;
+	for (int i = 0; i < tmpColors.size(); ++i) {
+		m_concreteSetting.colors[tmpColors.size() - 1 - i].color = tmpColors[i].color;
+	}
+	m_colorTableController->applyToTable();
+}
+
+void ColorMapSettingEditWidget::divideEqually()
+{
+	auto& colors = m_concreteSetting.colors;
+	if (m_concreteSetting.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
+		double min = colors.at(0).value.value();
+		double max = colors.at(colors.size() - 1).value.value();
+
+		for (int i = 1; i < colors.size() - 1; ++i) {
+			colors[i].value = min + (max - min) * i / (colors.size() - 1);
+		}
+	} else {
+		double min = m_concreteSetting.colorTableMinValue;
+		double max = colors.at(colors.size() - 1).value.value();
+
+		for (int i = 0; i < colors.size() - 1; ++i) {
+			colors[i].value = min + (max - min) * (i + 1) / colors.size();
+		}
+	}
+
+	m_colorTableController->applyToTable();
+}
+
 void ColorMapSettingEditWidget::switchAutoValueRange(bool automatic)
 {
 	if (m_applying) {return;}
@@ -323,6 +349,7 @@ void ColorMapSettingEditWidget::addColor()
 			colors.insert(colors.begin(), newColor);
 			m_concreteSetting.colorTableMinValue -= delta;
 		}
+		normalizeColors();
 	} else {
 		ColorMapSettingValueColorPairContainer newColor;
 		newColor.value = (colors.at(row - 1).value + colors.at(row).value) * 0.5;
@@ -349,15 +376,21 @@ void ColorMapSettingEditWidget::removeColor()
 		rowSet.insert(colors.size() - 1 - r.row());
 	}
 
+	int firstCol = -1;
 	for (unsigned int i = 0; i < colors.size(); ++i) {
 		const auto& c = colors.at(i);
 		if (rowSet.find(i) != rowSet.end()) {
 			continue;
 		}
 		newColors.push_back(c);
+		if (firstCol == -1) {firstCol = i;}
+	}
+	if (firstCol != 0) {
+		m_concreteSetting.colorTableMinValue = colors.at(firstCol - 1).value;
 	}
 
 	colors = newColors;
+	normalizeColors();
 
 	m_colorTableController->applyToTable();
 
@@ -372,38 +405,6 @@ QTableView* ColorMapSettingEditWidget::colorTable() const
 QPushButton* ColorMapSettingEditWidget::removeButton() const
 {
 	return ui->removeButton;
-}
-
-void ColorMapSettingEditWidget::importSetting(const QString& fileName, bool ignoreLegendSetting)
-{
-	ColorMapSettingContainer backup = m_concreteSetting;
-
-	QFile f(fileName);
-	QDomDocument doc;
-
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-
-	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-	if (! ok) {
-		auto msg = tr("Error occured while loading %1\nParse error %2 at %3, column %4")
-				.arg(QDir::toNativeSeparators(fileName))
-				.arg(errorStr).arg(errorLine).arg(errorColumn);
-		QMessageBox::critical(this, tr("Error"), msg);
-		return;
-	}
-	m_concreteSetting.load(doc.documentElement());
-	if (ignoreLegendSetting) {
-		m_concreteSetting.legend = backup.legend;
-	}
-	m_concreteSetting.valueCaption = backup.valueCaption;
-
-	applySettingOtherThanLegend();
-	ui->legendWidget->setSetting(m_concreteSetting.legend);
-
-	QFileInfo info(f);
-	LastIODirectory::set(info.absolutePath());
 }
 
 void ColorMapSettingEditWidget::applySettingOtherThanLegend()
@@ -430,6 +431,9 @@ void ColorMapSettingEditWidget::applySettingOtherThanLegend()
 		ui->minValueEdit->setValue(s.minValue);
 		ui->maxValueEdit->setValue(s.maxValue);
 	}
+	ui->minValueEdit->setMaximum(ui->maxValueEdit->value());
+	ui->maxValueEdit->setMinimum(ui->minValueEdit->value());
+
 	ui->valueRangeGroupBox->setEnabled(s.valueMode == ColorMapSettingContainer::ValueMode::Relative);
 
 	if (s.valueMode == ColorMapSettingContainer::ValueMode::Relative) {
@@ -470,6 +474,7 @@ void ColorMapSettingEditWidget::fixData()
 
 void ColorMapSettingEditWidget::setupColorPatternSelectComboBox()
 {
+	/*
 	QDir iricDir(iRICRootPath::get());
 	iricDir.cdUp();
 	iricDir.cdUp();
@@ -482,6 +487,7 @@ void ColorMapSettingEditWidget::setupColorPatternSelectComboBox()
 	addSettingFileNames(iricDir.absoluteFilePath("private/colormaps"), ui->colorPatternSelectComboBox, &m_importTargetFileNames);
 
 	ui->colorPatternSelectComboBox->blockSignals(false);
+	*/
 }
 
 void ColorMapSettingEditWidget::updateSwitchButtonText()
@@ -532,11 +538,47 @@ void ColorMapSettingEditWidget::switchTransitionModeToDiscrete()
 	m_concreteSetting.autoValueRange = false;
 	m_concreteSetting.minValue = dialog.minValue();
 	m_concreteSetting.maxValue = dialog.maxValue();
+	m_concreteSetting.colorTableMinValue = 0;
 	m_concreteSetting.colors = dialog.newColors();
 	m_concreteSetting.valueMode = ColorMapSettingContainer::ValueMode::Relative;
 	m_concreteSetting.transitionMode = ColorMapSettingContainer::TransitionMode::Discrete;
 
 	applySettingOtherThanLegend();
+}
+
+void ColorMapSettingEditWidget::normalizeColors()
+{
+	if (m_concreteSetting.valueMode == ColorMapSettingContainer::ValueMode::Absolute) {return;}
+	auto& colors = m_concreteSetting.colors;
+	double min, max;
+	if (m_concreteSetting.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
+		if (colors.at(0).value.value() == 0 && colors.at(colors.size() - 1).value.value() == 1) {return;}
+		min = colors.at(0).value.value();
+		max = colors.at(colors.size() - 1).value.value();
+	} else {
+		if (m_concreteSetting.colorTableMinValue.value() == 0 && colors.at(colors.size() - 1).value.value() == 1) {return;}
+		min = m_concreteSetting.colorTableMinValue;
+		max = colors.at(colors.size() - 1).value.value();
+	}
+	if (! m_concreteSetting.autoValueRange) {
+		double oldMin = m_concreteSetting.minValue;
+		double oldMax = m_concreteSetting.maxValue;
+		double newMin = oldMin + (oldMax - oldMin) * min;
+		double newMax = oldMin + (oldMax - oldMin) * max;
+
+		m_concreteSetting.minValue = newMin;
+		m_concreteSetting.maxValue = newMax;
+
+		ui->minValueEdit->setValue(newMin);
+		ui->maxValueEdit->setValue(newMax);
+	}
+	auto offset = - min;
+	auto scale = 1 / (max - min);
+
+	m_concreteSetting.colorTableMinValue = 0;
+	for (auto& c : colors) {
+		c.value = (c.value + offset) * scale;
+	}
 }
 
 void ColorMapSettingEditWidget::setupWidget()
@@ -546,11 +588,30 @@ void ColorMapSettingEditWidget::setupWidget()
 	if (m_legendSetting != nullptr) {
 		auto ls = dynamic_cast <ColorMapLegendSettingContainer*> (m_legendSetting);
 		newSetting = *(ls->colorMapSetting());
-		newSetting.legend = *ls;
+		newSetting.legend.copyWithColorMap(*ls);
 	} else if (m_setting != nullptr) {
 		auto s = dynamic_cast <ColorMapSettingContainer*> (m_setting);
 		newSetting = *s;
 	}
 
 	setConcreteSetting(newSetting);
+}
+
+void ColorMapSettingEditWidget::updateImageSetting()
+{
+	ColorMapLegendSettingContainer newSetting;
+
+	if (m_legendSetting != nullptr) {
+		auto ls = dynamic_cast <ColorMapLegendSettingContainer*> (m_legendSetting);
+		if (ls->delegateMode()) {
+			newSetting = ls->colorMapSetting()->legend;
+		} else {
+			newSetting = *ls;
+		}
+	} else if (m_setting != nullptr) {
+		auto s = dynamic_cast <ColorMapSettingContainer*> (m_setting);
+		newSetting = s->legend;
+	}
+
+	ui->legendWidget->setImageSetting(newSetting.imageSetting);
 }

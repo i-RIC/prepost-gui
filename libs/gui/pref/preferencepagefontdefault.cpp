@@ -12,9 +12,6 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 {
 	ui->setupUi(this);
 	ui->bcNamesWidget->hideColor();
-	ui->arrowWidget->hideColor();
-	ui->colorBarTitleWidget->hideSize();
-	ui->colorBarLabelWidget->hideSize();
 
 	QSettings settings;
 
@@ -22,19 +19,6 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	s_gridIndices.fontSize = 15;
 	s_gridIndices.loadSetting(settings, "fontsetting/gridindices");
 	ui->gridShapeWidget->setSetting(s_gridIndices);
-
-	vtkTextPropertySettingContainer s_colorBarTitle;
-	s_colorBarTitle.loadSetting(settings, "fontsetting/colorbar_title");
-	ui->colorBarTitleWidget->setSetting(s_colorBarTitle);
-
-	vtkTextPropertySettingContainer s_colorBarLabel;
-	s_colorBarLabel.loadSetting(settings, "fontsetting/colorbar_label");
-	ui->colorBarLabelWidget->setSetting(s_colorBarLabel);
-
-	vtkTextPropertySettingContainer s_arrows;
-	s_arrows.fontSize = 10;
-	s_arrows.loadSetting(settings, "fontsetting/arrow");
-	ui->arrowWidget->setSetting(s_arrows);
 
 	vtkTextPropertySettingContainer s_upstream;
 	s_upstream.fontSize = 17;
@@ -89,15 +73,6 @@ void PreferencePageFontDefault::update()
 
 	s = ui->gridShapeWidget->setting();
 	s.saveSetting(&settings, "fontsetting/gridindices");
-
-	s = ui->colorBarTitleWidget->setting();
-	s.saveSetting(&settings, "fontsetting/colorbar_title");
-
-	s = ui->colorBarLabelWidget->setting();
-	s.saveSetting(&settings, "fontsetting/colorbar_label");
-
-	s = ui->arrowWidget->setting();
-	s.saveSetting(&settings, "fontsetting/arrow");
 
 	s = ui->upstreamWidget->setting();
 	s.saveSetting(&settings, "fontsetting/upstream");

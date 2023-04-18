@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Barvni zemljevid po meri</translation>
+        <translation type="vanished">Barvni zemljevid po meri</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Vrsta:</translation>
+        <translation type="vanished">Vrsta:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dve barvi</translation>
+        <translation type="vanished">Dve barvi</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tri barve</translation>
+        <translation type="vanished">Tri barve</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrarna</translation>
+        <translation type="vanished">Arbitrarna</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dve barvi/ tri barve</translation>
+        <translation type="vanished">Dve barvi/ tri barve</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Največja vrednost</translation>
+        <translation type="vanished">Največja vrednost</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Srednja vrednost</translation>
+        <translation type="vanished">Srednja vrednost</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vrednost</translation>
+        <translation type="vanished">Vrednost</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Najmanjša vrednost</translation>
+        <translation type="vanished">Najmanjša vrednost</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Uvoz (&amp;I)</translation>
+        <translation type="vanished">Uvoz (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Izvoz (&amp;E)</translation>
+        <translation type="vanished">Izvoz (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Uvozi nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Uvozi nastavitev barvnega zemljevida</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV datoteko (*.csv)</translation>
+        <translation type="vanished">CSV datoteko (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>mapa %1 ne obstaja.</translation>
+        <translation type="vanished">mapa %1 ne obstaja.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>mapa %1 ni bilo mogoče odpreti.</translation>
+        <translation type="vanished">mapa %1 ni bilo mogoče odpreti.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Izvozi nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Izvozi nastavitev barvnega zemljevida</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Po meri</translation>
+        <translation type="vanished">Po meri</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Nastavitev...</translation>
+        <translation type="vanished">Nastavitev...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Najmanjša vrednost je %1.</translation>
+        <translation type="vanished">Najmanjša vrednost je %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Največja vrednost je %1.</translation>
+        <translation type="vanished">Največja vrednost je %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Vrednost manjša od %1 v ni dovoljeno.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Vrednost večja od %1 ni dovoljeno.</translation>
     </message>
 </context>
 <context>

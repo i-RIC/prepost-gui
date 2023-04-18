@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>カスタムカラーマップ</translation>
+        <translation type="vanished">カスタムカラーマップ</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>種類:</translation>
+        <translation type="vanished">種類:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>2色</translation>
+        <translation type="vanished">2色</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>3色</translation>
+        <translation type="vanished">3色</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>任意</translation>
+        <translation type="vanished">任意</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>2色/3色</translation>
+        <translation type="vanished">2色/3色</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>最大値</translation>
+        <translation type="vanished">最大値</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>中間値</translation>
+        <translation type="vanished">中間値</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>値</translation>
+        <translation type="vanished">値</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>最小値</translation>
+        <translation type="vanished">最小値</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <translation type="vanished">追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>削除(&amp;R)</translation>
+        <translation type="vanished">削除(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>インポート(&amp;I)</translation>
+        <translation type="vanished">インポート(&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>エクスポート(&amp;E)</translation>
+        <translation type="vanished">エクスポート(&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>カラーマップ設定のインポート</translation>
+        <translation type="vanished">カラーマップ設定のインポート</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSVファイル (*.csv)</translation>
+        <translation type="vanished">CSVファイル (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>%1 は存在しません。</translation>
+        <translation type="vanished">%1 は存在しません。</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>%1 を開けませんでした。</translation>
+        <translation type="vanished">%1 を開けませんでした。</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>カラーマップ設定のエクスポート</translation>
+        <translation type="vanished">カラーマップ設定のエクスポート</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>手動</translation>
+        <translation type="vanished">手動</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>設定...</translation>
+        <translation type="vanished">設定...</translation>
     </message>
 </context>
 <context>
@@ -509,11 +509,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>最小値は %1 です</translation>
+        <translation type="vanished">最小値は %1 です</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>最大値は %1 です。</translation>
+        <translation type="vanished">最大値は %1 です。</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>%1 より小さい値は入力できません。</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>%1 より大きい値は入力できません。</translation>
     </message>
 </context>
 <context>

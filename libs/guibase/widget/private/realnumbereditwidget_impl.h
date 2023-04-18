@@ -17,6 +17,7 @@ public:
 	double m_minimum;
 
 	bool m_acceptEvents;
+	bool m_informChangeOnFocusOutOnly;
 };
 
 #endif // REALNUMBEREDITWIDGET_IMPL_H

@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
-
+<!-- gridlandxmlexporter_ca_ES.ts -->
 <context>
     <name>GridLandXmlExporter</name>
     <message>
@@ -22,7 +24,7 @@
         <translation>Fitxers LandXml (*.xml)</translation>
     </message>
 </context>
-
+<!-- iricAxis2d_ca_ES.ts -->
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -30,7 +32,7 @@
         <translation>Eixos</translation>
     </message>
 </context>
-
+<!-- iricAxis3d_ca_ES.ts -->
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -38,7 +40,7 @@
         <translation>Eixos</translation>
     </message>
 </context>
-
+<!-- iricCs_ca_ES.ts -->
 <context>
     <name>CoordinateSystemConvertDialog</name>
     <message>
@@ -84,7 +86,7 @@
         <translation>(Sense especificar)</translation>
     </message>
 </context>
-
+<!-- iricDistancemeasure_ca_ES.ts -->
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
@@ -238,7 +240,7 @@
         <translation>Color:</translation>
     </message>
 </context>
-
+<!-- iricGccCenterandwidth_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -360,7 +362,7 @@
         <translation>En primer lloc, definiu la línia poligonal fent clic amb el ratolí. La línia poligonal s’utilitza com a línia central de la quadrícula. A continuació, definiu l'amplada, el nombre de divisió de la quadrícula en direcció I i direcció J.</translation>
     </message>
 </context>
-
+<!-- iricGccCompoundchannel_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -550,7 +552,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Definiu un polígon com la regió per crear una quadrícula i un altre polígon com la regió del canal d’aigua baixa. A continuació, afegiu una línia poligonal com a centre del riu. La regió del canal d’aigua baixa s’ha d’incloure a la regió de creació de xarxa i la línia central del riu s’ha d’incloure a la regió del canal d’aigua baixa.</translation>
     </message>
 </context>
-
+<!-- iricGccExternalprogram_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -613,7 +615,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Error desconegut (codi d'error: %1 )</translation>
     </message>
 </context>
-
+<!-- iricGccGridcombine_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -735,7 +737,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Elevació de les cèl·lules d’obstacles:</translation>
     </message>
 </context>
-
+<!-- iricGccGridgenerator_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -957,7 +959,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Variació d'amplada [m]:</translation>
     </message>
 </context>
-
+<!-- iricGccLaplace_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
@@ -1261,7 +1263,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Crea una quadrícula (&amp;G)</translation>
     </message>
 </context>
-
+<!-- iricGccPoisson_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -1452,7 +1454,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Nombre màxim d'iteració:</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregionlonlat_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1502,7 +1504,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregion_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1552,7 +1554,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey15d_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -1776,7 +1778,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>"Marge esquerre" és el marge que es veu al costat esquerre, quan es gira en direcció aigües avall.</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -1976,7 +1978,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Final de la línia transversal:</translation>
     </message>
 </context>
-
+<!-- iricGccTriangle_ca_ES.ts -->
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2287,7 +2289,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdNetcdf_ca_ES.ts -->
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -2296,7 +2298,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>S'ha produït un error en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
@@ -2365,7 +2367,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The time interval between the selected files are not the same.</source>
-        <translation>L'interval de temps entre els fitxers seleccionats no és el mateix.</translation>
+        <translation>L&apos;interval de temps entre els fitxers seleccionats no és el mateix.</translation>
     </message>
 </context>
 <context>
@@ -2376,11 +2378,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l'hora.</translation>
+        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l&apos;hora.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Pattern:</source>
@@ -2395,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Reconeix el resultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; "&gt; Any: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mes: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Dia: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minut: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; &quot;&gt; Any: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mes: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Dia: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hora: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minut: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2422,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.tif o *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2438,7 +2440,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
-        <translation>S'estan important dades...</translation>
+        <translation>S&apos;estan important dades...</translation>
     </message>
     <message>
         <source>GDAL</source>
@@ -2474,7 +2476,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation>Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -2496,16 +2498,16 @@ p, li { white-space: pre-wrap; }
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation>S'ha produït un error en inicialitzar libpng.</translation>
+        <translation>S&apos;ha produït un error en inicialitzar libpng.</translation>
     </message>
 </context>
 <context>
@@ -2532,11 +2534,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation>S'ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
@@ -2548,11 +2550,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation>S'ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
+        <translation>S&apos;ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation>S'ha produït un error en analitzar %1.</translation>
+        <translation>S&apos;ha produït un error en analitzar %1.</translation>
     </message>
 </context>
 <context>
@@ -2579,7 +2581,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="vanished">S'ha produït un error en analitzar la definició del temps: %1</translation>
+        <translation type="vanished">S&apos;ha produït un error en analitzar la definició del temps: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
@@ -2587,7 +2589,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation>Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
 </context>
 <context>
@@ -2598,7 +2600,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Ha fallat el reconeixement automàtic de l'hora original. Especifiqueu la data original.</translation>
+        <translation>Ha fallat el reconeixement automàtic de l&apos;hora original. Especifiqueu la data original.</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -2707,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió "Temps".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió &quot;Temps&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2728,15 +2730,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation>Les dades ràster de sèries temporals ja s'han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
+        <translation>Les dades ràster de sèries temporals ja s&apos;han importat. Si voleu importar altres dades, suprimiu primer les dades ja importades.</translation>
     </message>
     <message>
         <source>Error occured when importing data converted from %1.</source>
-        <translation>S'ha produït un error en importar les dades des de convertides %1.</translation>
+        <translation>S&apos;ha produït un error en importar les dades des de convertides %1.</translation>
     </message>
     <message>
         <source>Error occured when opening %1.</source>
-        <translation>S'ha produït un error en obrir %1.</translation>
+        <translation>S&apos;ha produït un error en obrir %1.</translation>
     </message>
 </context>
 <context>
@@ -2762,7 +2764,7 @@ p, li { white-space: pre-wrap; }
         <translation>Mapa de colors</translation>
     </message>
 </context>
-
+<!-- iricGdPointGroup_ca_ES.ts -->
 <context>
     <name>GeoDataPointGroup</name>
     <message>
@@ -2794,7 +2796,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointGroup::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation>Seleccioneu el fitxer d'imatge</translation>
+        <translation>Seleccioneu el fitxer d&apos;imatge</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
@@ -2805,7 +2807,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointGroup::PropertyDialog</name>
     <message>
         <source>Select image file</source>
-        <translation type="vanished">Seleccioneu el fitxer d'imatge</translation>
+        <translation type="vanished">Seleccioneu el fitxer d&apos;imatge</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
@@ -2866,7 +2868,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -2889,47 +2891,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 3 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 3 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir com a mínim 4 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir com a mínim 4 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser "%2", però"%3" és donat.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser &quot;%2&quot;, però&quot;%3&quot; és donat.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir almenys 3 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir almenys 3 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir com a mínim 4 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir com a mínim 4 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "x" a la línia %1. "x" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;x&quot; a la línia %1. &quot;x&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "y" a la línia %1. "y" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;y&quot; a la línia %1. &quot;y&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "valor" a la línia %1. "valor" ha de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;valor&quot; a la línia %1. &quot;valor&quot; ha de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
 </context>
 <context>
@@ -2996,7 +2998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>Imatges d'icones</translation>
+        <translation>Imatges d&apos;icones</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -3012,7 +3014,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
+        <translation>Quan l&apos;amplada o l&apos;alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l&apos;amplada o l&apos;alçada sigui igual a la mida màxima.</translation>
     </message>
     <message>
         <source>Color</source>
@@ -3059,7 +3061,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="vanished">Imatges d'icones</translation>
+        <translation type="vanished">Imatges d&apos;icones</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -3075,10 +3077,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="vanished">Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
+        <translation type="vanished">Quan l&apos;amplada o l&apos;alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l&apos;amplada o l&apos;alçada sigui igual a la mida màxima.</translation>
     </message>
 </context>
-
+<!-- iricGdPointmap_ca_ES.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -3198,7 +3200,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>S'ha acabat la reparació dels TIN.</translation>
+        <translation>S&apos;ha acabat la reparació dels TIN.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -3222,7 +3224,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D'acord, el mètode de visualització canviarà a Wireframe</translation>
+        <translation type="vanished">Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D&apos;acord, el mètode de visualització canviarà a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -3254,7 +3256,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">S'ha produït un error en exportar a %1.</translation>
+        <translation type="vanished">S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -3278,7 +3280,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s'utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
+        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s&apos;utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -3298,7 +3300,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="vanished">Afegiu un nou punt de línia d'intervenció</translation>
+        <translation type="vanished">Afegiu un nou punt de línia d&apos;intervenció</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -3309,16 +3311,16 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Combina...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation>%1 s'han trobat punts duplicats a objectius de combinació i s'han omès.</translation>
+        <translation>%1 s&apos;han trobat punts duplicats a objectius de combinació i s&apos;han omès.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
+        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -3330,7 +3332,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Per interpolar punts, heu d'especificar més de dos punts i l'últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
+        <translation>Per interpolar punts, heu d&apos;especificar més de dos punts i l&apos;últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -3354,11 +3356,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation>No s'ha pogut obrir %1.</translation>
+        <translation>No s&apos;ha pogut obrir %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation>Remella el TIN i quan s'hagi acabat, canvia al mode d'edició TIN.</translation>
+        <translation>Remella el TIN i quan s&apos;hagi acabat, canvia al mode d&apos;edició TIN.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
@@ -3404,7 +3406,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>L'increment d'interpolació ha de ser superior a 0 i menor que la longitud de la línia d'interpolació</translation>
+        <translation>L&apos;increment d&apos;interpolació ha de ser superior a 0 i menor que la longitud de la línia d&apos;interpolació</translation>
     </message>
 </context>
 <context>
@@ -3473,7 +3475,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="vanished">Interpolar l'increment</translation>
+        <translation type="vanished">Interpolar l&apos;increment</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
@@ -3511,7 +3513,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>S'ha produït un error en exportar a %1</translation>
+        <translation>S&apos;ha produït un error en exportar a %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -3530,7 +3532,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation>Error d'anàlisi %1 a la línia %2 columna %3</translation>
+        <translation>Error d&apos;anàlisi %1 a la línia %2 columna %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
@@ -3597,7 +3599,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -3612,7 +3614,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -3646,11 +3648,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation>No s'han trobat prou línies de capçalera al fitxer.</translation>
+        <translation>No s&apos;han trobat prou línies de capçalera al fitxer.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
@@ -3662,7 +3664,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation>%1 s'han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
+        <translation>%1 s&apos;han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
@@ -3686,15 +3688,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation>No s'ha especificat cap delimitador</translation>
+        <translation>No s&apos;ha especificat cap delimitador</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>No hi ha prou valors per llegir "%1"."%1"la columna és %2 però %3 valors d'entrada.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>No hi ha prou valors per llegir &quot;%1&quot;.&quot;%1&quot;la columna és %2 però %3 valors d&apos;entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>S'ha produït un error en llegir "%1"valor". %1 "el valor ha de ser un nombre real, però"%2"s'ha especificat.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>S&apos;ha produït un error en llegir &quot;%1&quot;valor&quot;. %1 &quot;el valor ha de ser un nombre real, però&quot;%2&quot;s&apos;ha especificat.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3713,7 +3715,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation>Configuració d'importació</translation>
+        <translation>Configuració d&apos;importació</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -3764,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Personatge de la cita:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -3773,7 +3775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Escape character:</source>
-        <translation>Personatge d'escapament:</translation>
+        <translation>Personatge d&apos;escapament:</translation>
     </message>
     <message>
         <source>\</source>
@@ -3829,11 +3831,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s'importen.</translation>
+        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s&apos;importen.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Coordinate System</source>
@@ -3902,7 +3904,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -3974,7 +3976,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l'esquerra per seleccionar l'àrea.</translation>
+        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l&apos;esquerra per seleccionar l&apos;àrea.</translation>
     </message>
 </context>
 <context>
@@ -4078,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d&apos;edició de puntsquot;, aquesta configuració s&apos;ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4114,7 +4116,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation>Els TIN creats a partir de punts s'utilitzen per mapejar. Els valors dels atributs de la quadrícula definits als nodes o cel·les de la quadrícula es calculen com a mitjana ponderada dels valors definits als nodes del triangle que conté el node (o el centre de la cel·la).</translation>
+        <translation>Els TIN creats a partir de punts s&apos;utilitzen per mapejar. Els valors dels atributs de la quadrícula definits als nodes o cel·les de la quadrícula es calculen com a mitjana ponderada dels valors definits als nodes del triangle que conté el node (o el centre de la cel·la).</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -4122,7 +4124,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerqueu punts que estiguin a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors d'aquests punts per a la interpolació.&lt;/p&gt;&lt;p&gt;Aquest algorisme pot ser utilitzar només per a quadrícules estructurades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerqueu punts que estiguin a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors d&apos;aquests punts per a la interpolació.&lt;/p&gt;&lt;p&gt;Aquest algorisme pot ser utilitzar només per a quadrícules estructurades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
@@ -4130,11 +4132,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation>Canvieu l'algoritme de mapatge per a cada àrea definida amb polígons</translation>
+        <translation>Canvieu l&apos;algoritme de mapatge per a cada àrea definida amb polígons</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiu àrees com a polígons i especifiqueu l'algoritme per assignar valors als nodes de la quadrícula o als centres de cel·les a partir dels valors definits en els punts.&lt;/p&gt;&lt;p&gt;L'usuari pot seleccionar a continuació: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapa del valor mínim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor màxim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor mitjà ponderat dels punts dins del cercle&lt;/li&gt; &lt;li&gt;Valor del mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiu àrees com a polígons i especifiqueu l&apos;algoritme per assignar valors als nodes de la quadrícula o als centres de cel·les a partir dels valors definits en els punts.&lt;/p&gt;&lt;p&gt;L&apos;usuari pot seleccionar a continuació: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapa del valor mínim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor màxim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor mitjà ponderat dels punts dins del cercle&lt;/li&gt; &lt;li&gt;Valor del mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -4165,7 +4167,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'ampliacions de plantilles:</translation>
+        <translation>Nombre d&apos;ampliacions de plantilles:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -4250,15 +4252,15 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Configuració d'interpolació</translation>
+        <translation>Configuració d&apos;interpolació</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolar l'increment</translation>
+        <translation>Interpolar l&apos;increment</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Increment d'interpolació:</translation>
+        <translation>Increment d&apos;interpolació:</translation>
     </message>
     <message>
         <source>Line Length:</source>
@@ -4296,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Exponent de ponderació k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; s'utilitza com a pes quan es calcula la mitjana ponderada dels valors. r és la distància des del punt fins al node o centre de la cel·la, al qual s'assigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; s&apos;utilitza com a pes quan es calcula la mitjana ponderada dels valors. r és la distància des del punt fins al node o centre de la cel·la, al qual s&apos;assigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4309,7 +4311,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation>Quan s'executa el mapeig, es cerquen els punts amb el cercle amb el radi superior per assignar els valors als nodes de la quadrícula o als centres de cel·les.</translation>
+        <translation>Quan s&apos;executa el mapeig, es cerquen els punts amb el cercle amb el radi superior per assignar els valors als nodes de la quadrícula o als centres de cel·les.</translation>
     </message>
 </context>
 <context>
@@ -4347,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d&apos;edició de puntsquot;, aquesta configuració s&apos;ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4390,11 +4392,11 @@ p, li { white-space: pre-wrap; }
         <translation>Longitud límit de vora:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s'eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s&apos;eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdPoint_ca_ES.ts -->
 <context>
     <name>GeoDataPoint</name>
     <message>
@@ -4441,6 +4443,21 @@ p, li { white-space: pre-wrap; }
         <source>Set vertex</source>
         <translation>Establir vèrtex</translation>
     </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
@@ -4464,7 +4481,69 @@ p, li { white-space: pre-wrap; }
         <translation>Punt %1</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_ca_ES.ts -->
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
@@ -4496,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Esteu segur que voleu suprimir els seleccionats? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -4592,7 +4671,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation>Barra d'eines d'ordenació</translation>
+        <translation>Barra d&apos;eines d&apos;ordenació</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
@@ -4687,14 +4766,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation>%1 Configuració d'importació de grup</translation>
+        <translation>%1 Configuració d&apos;importació de grup</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation>Configuració d'importació de PolyData</translation>
+        <translation>Configuració d&apos;importació de PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -4706,11 +4785,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l'atribut del fitxer Forma</translation>
+        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation>El nom s'estableix automàticament (per exemple, PolyData1)</translation>
+        <translation>El nom s&apos;estableix automàticament (per exemple, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4733,7 +4812,7 @@ p, li { white-space: pre-wrap; }
         <translation>Sistema de coordenades:</translation>
     </message>
 </context>
-
+<!-- iricGdPolydata_ca_ES.ts -->
 <context>
     <name>GeoDataPolyData</name>
     <message>
@@ -4754,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Configuració del color</translation>
+        <translation type="vanished">%1 Configuració del color</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4778,29 +4857,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Editeu la configuració del color</translation>
+        <translation type="vanished">Editeu la configuració del color</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Configuració del color de PolyData</translation>
+        <translation type="vanished">Configuració del color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Color per valor</translation>
+        <translation type="vanished">Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Color personalitzat</translation>
+        <translation type="vanished">Color personalitzat</translation>
     </message>
 </context>
-
+<!-- iricGdPolygonGroup_ca_ES.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4882,7 +4961,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -4913,71 +4992,71 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser "%2", però"%3" és donat.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser &quot;%2&quot;, però&quot;%3&quot; és donat.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation>S'ha produït un error en llegir la línia %1. No hi ha dades.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. No hi ha dades.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. El polígon ha de tenir almenys tres punts.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. El polígon ha de tenir almenys tres punts.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "pid" a la línia %1. "pid" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;pid&quot; a la línia %1. &quot;pid&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "vid" a la línia %1. "vid" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;vid&quot; a la línia %1. &quot;vid&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "x" a la línia %1. "x" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;x&quot; a la línia %1. &quot;x&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "y" a la línia %1. "y" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;y&quot; a la línia %1. &quot;y&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "valor" a la línia %1. "valor" ha de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;valor&quot; a la línia %1. &quot;valor&quot; ha de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "nom" hauria de ser el mateix per a les línies on els valors "pid" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;nom&quot; hauria de ser el mateix per a les línies on els valors &quot;pid&quot; són els mateixos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "valor" ha de ser el mateix per a les línies on els valors "pid" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;valor&quot; ha de ser el mateix per a les línies on els valors &quot;pid&quot; són els mateixos.</translation>
     </message>
 </context>
 <context>
@@ -5068,7 +5147,7 @@ p, li { white-space: pre-wrap; }
         <translation>Amplada de línia:</translation>
     </message>
 </context>
-
+<!-- iricGdPolygon_ca_ES.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -5179,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Elimineu el vèrtex del polígon</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5254,7 +5337,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation>Configuració d'importació de polígons</translation>
+        <translation>Configuració d&apos;importació de polígons</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -5266,11 +5349,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l'atribut del fitxer Forma</translation>
+        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation>El nom s'estableix automàticament (per exemple, polígon1)</translation>
+        <translation>El nom s&apos;estableix automàticament (per exemple, polígon1)</translation>
     </message>
     <message>
         <source>Value</source>
@@ -5290,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,7 +5401,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Color</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Color per valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolyLineGroup_ca_ES.ts -->
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
@@ -5386,7 +5514,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -5405,71 +5533,71 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser "%2", però"%3" és donat.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser &quot;%2&quot;, però&quot;%3&quot; és donat.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation>S'ha produït un error en llegir la línia %1. No hi ha dades.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. No hi ha dades.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. La línia ha de tenir almenys dos punts.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. La línia ha de tenir almenys dos punts.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "tapa" a la línia %1. "tapa" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;tapa&quot; a la línia %1. &quot;tapa&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "vid" a la línia %1. "vid" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;vid&quot; a la línia %1. &quot;vid&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "x" a la línia %1. "x" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;x&quot; a la línia %1. &quot;x&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "y" a la línia %1. "y" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;y&quot; a la línia %1. &quot;y&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "valor" a la línia %1. "valor" ha de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;valor&quot; a la línia %1. &quot;valor&quot; ha de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "nom" hauria de ser el mateix per a les línies on els valors de "tapa" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;nom&quot; hauria de ser el mateix per a les línies on els valors de &quot;tapa&quot; són els mateixos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "valor" hauria de ser el mateix per a les línies on els valors de "tapa" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;valor&quot; hauria de ser el mateix per a les línies on els valors de &quot;tapa&quot; són els mateixos.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5551,7 +5679,7 @@ p, li { white-space: pre-wrap; }
         <translation>Amplada de línia:</translation>
     </message>
 </context>
-
+<!-- iricGdPolyLine_ca_ES.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -5630,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>Elimineu PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5673,7 +5805,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation>Configuració d'importació de PolyLine</translation>
+        <translation>Configuració d&apos;importació de PolyLine</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -5685,11 +5817,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carrega des de l'atribut del fitxer Forma</translation>
+        <translation>Carrega des de l&apos;atribut del fitxer Forma</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation>El nom s'estableix automàticament (per exemple, Polyline1)</translation>
+        <translation>El nom s&apos;estableix automàticament (per exemple, Polyline1)</translation>
     </message>
     <message>
         <source>Value</source>
@@ -5709,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,12 +5869,39 @@ p, li { white-space: pre-wrap; }
         <translation>Fitxer ESRI Shape (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdRiversurvey_ca_ES.ts -->
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation>Mou el punt d'elevació</translation>
+        <translation>Mou el punt d&apos;elevació</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
@@ -5752,7 +5929,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation>Mou els punts d'elevació</translation>
+        <translation>Mou els punts d&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -5833,7 +6010,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation>Insereix tres punts d'altitud 0</translation>
+        <translation>Insereix tres punts d&apos;altitud 0</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
@@ -5841,7 +6018,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation>Creeu una secció transversal de Back and Forth: Nombre de dades d'interpolació</translation>
+        <translation>Creeu una secció transversal de Back and Forth: Nombre de dades d&apos;interpolació</translation>
     </message>
 </context>
 <context>
@@ -6044,7 +6221,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation>Mou el final de la línia d'extensió</translation>
+        <translation>Mou el final de la línia d&apos;extensió</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
@@ -6100,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Les dades de secció transversal es generen mitjançant dades del núvol de punts. Si voleu ajustar de nou la posició de la secció transversal i les dades del mapa de punts, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Les dades de secció transversal es generen mitjançant dades del núvol de punts. Si voleu ajustar de nou la posició de la secció transversal i les dades del mapa de punts, podeu utilitzar &quot;Dades del núvol de punts del mapa&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6113,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar &quot;Dades del núvol de punts del mapa&quot;</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. En algunes regions, les dades no existien a les dades del núvol de punts i es va assignar el valor 0 per a aquests punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar "Dades del núvol de punts del mapa"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Les dades de la secció transversal es generen mitjançant dades del núvol de punts. En algunes regions, les dades no existien a les dades del núvol de punts i es va assignar el valor 0 per a aquests punts. Si voleu tornar a ajustar la posició de la secció transversal i les dades del núvol de punts del mapa, podeu utilitzar &quot;Dades del núvol de punts del mapa&quot;</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6132,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6240,7 +6417,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
@@ -6267,7 +6444,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation>Distància a l'edició</translation>
+        <translation>Distància a l&apos;edició</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
@@ -6283,7 +6460,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation>Especifiqueu l'elevació del punt final</translation>
+        <translation>Especifiqueu l&apos;elevació del punt final</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
@@ -6339,11 +6516,11 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation>La configuració de l'elevació i el gradient no és vàlida.</translation>
+        <translation>La configuració de l&apos;elevació i el gradient no és vàlida.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Quan especifiqueu l'elevació del punt final, no pot ser igual al punt d'inici. Si voleu dibuixar una línia horitzontal, seleccioneu "Especifica la distància horitzontal".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Quan especifiqueu l&apos;elevació del punt final, no pot ser igual al punt d&apos;inici. Si voleu dibuixar una línia horitzontal, seleccioneu &quot;Especifica la distància horitzontal&quot;.</translation>
     </message>
 </context>
 <context>
@@ -6354,15 +6531,15 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation>Barra d'eines de secció transversal</translation>
+        <translation>Barra d&apos;eines de secció transversal</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation>Veure la barra d'eines de configuració</translation>
+        <translation>Veure la barra d&apos;eines de configuració</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barra d'eines de configuració de la pantalla</translation>
+        <translation>Barra d&apos;eines de configuració de la pantalla</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
@@ -6386,11 +6563,11 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation>Punt d'elevació (&amp;E)</translation>
+        <translation>Punt d&apos;elevació (&amp;E)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation>Inactiveu mitjançant l'elevació de l'aigua (&amp;W)</translation>
+        <translation>Inactiveu mitjançant l&apos;elevació de l&apos;aigua (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
@@ -6406,11 +6583,11 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="vanished">Relació d'aspecte: 1 /</translation>
+        <translation type="vanished">Relació d&apos;aspecte: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Correcció de la relació d'aspecte</translation>
+        <translation>Correcció de la relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
@@ -6430,7 +6607,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -6458,7 +6635,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation>Edita el punt d'elevació</translation>
+        <translation>Edita el punt d&apos;elevació</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -6478,7 +6655,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation>Suprimeix els punts d'elevació</translation>
+        <translation>Suprimeix els punts d&apos;elevació</translation>
     </message>
     <message>
         <source>Information</source>
@@ -6490,7 +6667,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation>Inactiveu els punts d'elevació mitjançant l'elevació de l'aigua</translation>
+        <translation>Inactiveu els punts d&apos;elevació mitjançant l&apos;elevació de l&apos;aigua</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
@@ -6502,7 +6679,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation>Eliminar l'elevació de la superfície de l'aigua</translation>
+        <translation>Eliminar l&apos;elevació de la superfície de l&apos;aigua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -6518,7 +6695,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation>Seleccioneu Elevació de la superfície de l'aigua per utilitzar-la</translation>
+        <translation>Seleccioneu Elevació de la superfície de l&apos;aigua per utilitzar-la</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
@@ -6526,7 +6703,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relació d'aspecte (V/H): 1/</translation>
+        <translation>Relació d&apos;aspecte (V/H): 1/</translation>
     </message>
 </context>
 <context>
@@ -6545,7 +6722,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation>Inactiveu mitjançant l'elevació de l'aigua (&amp;W)</translation>
+        <translation>Inactiveu mitjançant l&apos;elevació de l&apos;aigua (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -6557,11 +6734,11 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="vanished">Relació d'aspecte: 1 / %1</translation>
+        <translation type="vanished">Relació d&apos;aspecte: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation>Inactiveu els punts d'elevació</translation>
+        <translation>Inactiveu els punts d&apos;elevació</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -6573,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Editeu la secció transversal fent clic amb el ratolí. Acabeu d'editar fent doble clic o prement la tecla Retorn. Podeu editar amb precisió la secció transversal introduint valors del quadre de diàleg. Introduïu el mode d'edició de diàleg des de "Edita des del diàleg" al menú del botó dret.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Editeu la secció transversal fent clic amb el ratolí. Acabeu d&apos;editar fent doble clic o prement la tecla Retorn. Podeu editar amb precisió la secció transversal introduint valors del quadre de diàleg. Introduïu el mode d&apos;edició de diàleg des de &quot;Edita des del diàleg&quot; al menú del botó dret.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6586,7 +6763,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d'aspecte (V/H): 1/ %1</translation>
+        <translation>Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
@@ -6670,7 +6847,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation>Distància entre els punts d'elevació [m]:</translation>
+        <translation>Distància entre els punts d&apos;elevació [m]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
@@ -6700,7 +6877,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation>Configuració del format d'exportació</translation>
+        <translation>Configuració del format d&apos;exportació</translation>
     </message>
     <message>
         <source>Separator:</source>
@@ -6766,48 +6943,48 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Error</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor LX no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor LX no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor LY no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor LY no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor RX no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor RX no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor RY no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor RY no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 línia %2 "%3": El recompte de punts no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El recompte de punts no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 línia %2 "%3": Valor d'índex no vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 línia %2 &quot;%3&quot;: Valor d&apos;índex no vàlid</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 línia %2 : dades de seccions transversals per a %3 No és suficient</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor de la distància no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor de la distància no és vàlid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 línia %2 "%3": El valor de l'elevació no és vàlid</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 línia %2 &quot;%3&quot;: El valor de l&apos;elevació no és vàlid</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation>No s'han trobat dades de #survey. Serà ignorat.</translation>
+        <translation>No s&apos;han trobat dades de #survey. Serà ignorat.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation>No s'han trobat dades de la secció x. Serà ignorat.</translation>
+        <translation>No s&apos;han trobat dades de la secció x. Serà ignorat.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
@@ -6831,15 +7008,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
         <translation>%1 Línia %2 : Error de lectura. Necessita almenys dos valors.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Línia %2 : Error de lectura. No és el valor real del número "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Línia %2 : Error de lectura. No és el valor real del número &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -6878,7 +7055,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation>On l'elevació és la més petita</translation>
+        <translation>On l&apos;elevació és la més petita</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
@@ -6898,7 +7075,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation>On l'elevació és la més petita de baix nivell</translation>
+        <translation>On l&apos;elevació és la més petita de baix nivell</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
@@ -6943,7 +7120,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation>Distància entre els punts d'elevació [m]:</translation>
+        <translation>Distància entre els punts d&apos;elevació [m]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
@@ -6962,39 +7139,39 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation>%1 Línia %2 : KP no s'introdueix</translation>
+        <translation>%1 Línia %2 : KP no s&apos;introdueix</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Línia %2 "%3": El valor LX no és vàlid</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Línia %2 &quot;%3&quot;: El valor LX no és vàlid</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Línia %2 "%3": El valor LY no és vàlid</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Línia %2 &quot;%3&quot;: El valor LY no és vàlid</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Línia %2 "%3": El valor RX no és vàlid</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Línia %2 &quot;%3&quot;: El valor RX no és vàlid</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Línia %2 "%3": El valor RY no és vàlid</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Línia %2 &quot;%3&quot;: El valor RY no és vàlid</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation>No s'han trobat dades del marcador de distància. Serà ignorat.</translation>
+        <translation>No s&apos;han trobat dades del marcador de distància. Serà ignorat.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 línia %2 : "%3": Les dades de la marca no són vàlides.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 línia %2 : &quot;%3&quot;: Les dades de la marca no són vàlides.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 línia %2 : "%3": Les dades de distància no són vàlides.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 línia %2 : &quot;%3&quot;: Les dades de distància no són vàlides.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 línia %2 : "%3": Les dades de l'elevació no són vàlides.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 línia %2 : &quot;%3&quot;: Les dades de l&apos;elevació no són vàlides.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7002,11 +7179,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation>No s'han trobat dades de la secció transversal. Serà ignorat.</translation>
+        <translation>No s&apos;han trobat dades de la secció transversal. Serà ignorat.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation>Les dades de secció transversal contenien dades amb les mateixes distàncies. S'utilitzen les dades amb menor elevació.: %1</translation>
+        <translation>Les dades de secció transversal contenien dades amb les mateixes distàncies. S&apos;utilitzen les dades amb menor elevació.: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
@@ -7104,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Visible</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; podeu personalitzar el color mitjançant la pestanya Mapa de colors.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; podeu personalitzar el color mitjançant la pestanya Mapa de colors.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -7135,7 +7312,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Mou els punts de control</translation>
     </message>
 </context>
-
+<!-- iricGeoIO_ca_ES.ts -->
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -7274,7 +7451,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Seleccioneu el fitxer per exportar</translation>
     </message>
 </context>
-
+<!-- iricGraph2dhybrid_ca_ES.ts -->
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -8176,7 +8353,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>EdgeJ</translation>
     </message>
 </context>
-
+<!-- iricGraph2dscattered_ca_ES.ts -->
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -8525,7 +8702,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Color:</translation>
     </message>
 </context>
-
+<!-- iricGraph2dverification_ca_ES.ts -->
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
@@ -8763,7 +8940,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Valors mesurats vs. Errors residuals</translation>
     </message>
 </context>
-
+<!-- iricGraph2d_ca_ES.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -8931,7 +9108,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Canvi d’element del navegador d’objectes</translation>
     </message>
 </context>
-
+<!-- iricGuibase_ca_ES.ts -->
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -8969,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Mapa de colors personalitzat</translation>
+        <translation type="vanished">Mapa de colors personalitzat</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipus:</translation>
+        <translation type="vanished">Tipus:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dos colors</translation>
+        <translation type="vanished">Dos colors</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tres colors</translation>
+        <translation type="vanished">Tres colors</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrari</translation>
+        <translation type="vanished">Arbitrari</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dos colors / Tres colors</translation>
+        <translation type="vanished">Dos colors / Tres colors</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Valor màxim</translation>
+        <translation type="vanished">Valor màxim</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Valor mitjà</translation>
+        <translation type="vanished">Valor mitjà</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Valor mínim</translation>
+        <translation type="vanished">Valor mínim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Afegeix (&amp;A)</translation>
+        <translation type="vanished">Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importar (&amp;I)</translation>
+        <translation type="vanished">Importar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exporta (&amp;E)</translation>
+        <translation type="vanished">Exporta (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importa la configuració del mapa de colors</translation>
+        <translation type="vanished">Importa la configuració del mapa de colors</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Fitxer CSV (*.csv)</translation>
+        <translation type="vanished">Fitxer CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Dossier %1 no existeix.</translation>
+        <translation type="vanished">Dossier %1 no existeix.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Dossier %1 no s'ha pogut obrir.</translation>
+        <translation type="vanished">Dossier %1 no s&apos;ha pogut obrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Exporta la configuració del mapa de colors</translation>
+        <translation type="vanished">Exporta la configuració del mapa de colors</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalitzat</translation>
+        <translation type="vanished">Personalitzat</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>S'està configurant...</translation>
+        <translation type="vanished">S&apos;està configurant...</translation>
     </message>
 </context>
 <context>
@@ -9301,7 +9478,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation>Punt d'ajust</translation>
+        <translation>Punt d&apos;ajust</translation>
     </message>
 </context>
 <context>
@@ -9393,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>El valor mínim és %1.</translation>
+        <translation type="vanished">El valor mínim és %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>El valor màxim és %1.</translation>
+        <translation type="vanished">El valor màxim és %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9435,11 +9620,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -9447,9 +9632,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Especifiqueu el format numèric en format printf. Per exemple: " %5.2f "per a 3.141592 -&gt; 3,14" %4.2e "per a 12300 -&gt; 1,23e + 004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifiqueu el format numèric en format printf. Per exemple: &quot; %5.2f &quot;per a 3.141592 -&gt; 3,14&quot; %4.2e &quot;per a 12300 -&gt; 1,23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -9477,7 +9662,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -9485,7 +9670,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -9520,7 +9705,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -9551,7 +9736,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Show actual time</source>
-        <translation>Mostra l'hora real</translation>
+        <translation>Mostra l&apos;hora real</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
@@ -9575,7 +9760,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Actual time format</source>
-        <translation>Format d'hora real</translation>
+        <translation>Format d&apos;hora real</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
@@ -9603,7 +9788,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d'hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d&apos;hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show Time Zone</source>
@@ -9646,7 +9831,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation>Configuració de la pantalla de l'eix</translation>
+        <translation>Configuració de la pantalla de l&apos;eix</translation>
     </message>
     <message>
         <source>X-Axis</source>
@@ -9666,7 +9851,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>min</source>
@@ -9786,7 +9971,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Mida:</translation>
     </message>
 </context>
-
+<!-- iricGuicore_ca_ES.ts -->
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
@@ -10007,7 +10192,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">Arxivat %1, l'increment de coordenades X per píxel i l'increment de coordenades Y per píxel. És acceptable, però pot estar malament.</translation>
+        <translation type="vanished">Arxivat %1, l&apos;increment de coordenades X per píxel i l&apos;increment de coordenades Y per píxel. És acceptable, però pot estar malament.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -10034,7 +10219,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Especifiqueu la posició, l'escala i l'angle de gir del vèrtex inferior esquerre</translation>
+        <translation>Especifiqueu la posició, l&apos;escala i l&apos;angle de gir del vèrtex inferior esquerre</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
@@ -10066,11 +10251,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu la distància en metres que correspon a l'amplada d'un píxel de la imatge. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu la distància en metres que correspon a l&apos;amplada d&apos;un píxel de la imatge. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu l'angle de la vora inferior de la imatge contra l'eix X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu l&apos;angle de la vora inferior de la imatge contra l&apos;eix X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -10100,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitat</translation>
+        <translation type="vanished">Visibilitat</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Quan es selecciona</translation>
+        <translation type="vanished">Quan es selecciona</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Sempre</translation>
+        <translation type="vanished">Sempre</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mai</translation>
+        <translation type="vanished">Mai</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10128,7 +10313,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Color</source>
@@ -10149,6 +10334,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>Mida i posició</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Direcció:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horitzontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertical</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automàtic</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10171,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Seleccioneu el fitxer per importar</translation>
+        <translation type="vanished">Seleccioneu el fitxer per importar</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Configuració del mapa de colors (*.cmsetting)</translation>
+        <translation type="vanished">Configuració del mapa de colors (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>S'ha produït un error en carregar %1 Error d'anàlisi %2 a les %3, columna %4</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar %1 Error d&apos;anàlisi %2 a les %3, columna %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10192,7 +10421,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir %1</translation>
+        <translation>S&apos;ha produït un error en obrir %1</translation>
     </message>
     <message>
         <source>Value</source>
@@ -10206,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Títol</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Visualització d&apos;etiquetes</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Color</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Antecedents</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Mida i posició</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posició</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horitzontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertical</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10215,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitat</translation>
+        <translation type="vanished">Visibilitat</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Quan es selecciona</translation>
+        <translation type="vanished">Quan es selecciona</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Sempre</translation>
+        <translation type="vanished">Sempre</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mai</translation>
+        <translation type="vanished">Mai</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10243,7 +10601,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -10283,11 +10641,39 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Auto</source>
         <translation>Automàtic</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10317,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Presets:</translation>
+        <translation type="vanished">Presets:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignoreu la configuració de la barra de color en importar</translation>
+        <translation type="vanished">Ignoreu la configuració de la barra de color en importar</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10381,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Seleccioneu el fitxer per importar</translation>
+        <translation type="vanished">Seleccioneu el fitxer per importar</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10393,7 +10779,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir %1</translation>
+        <translation>S&apos;ha produït un error en obrir %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10402,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>S'ha produït un error en carregar %1 Error d'anàlisi %2 a les %3, columna %4</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar %1 Error d&apos;anàlisi %2 a les %3, columna %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Seleccioneu l'element que voleu aplicar)</translation>
+        <translation type="vanished">(Seleccioneu l&apos;element que voleu aplicar)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10442,7 +10828,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="vanished">Quan es canvia al mode de gradació, els valors s'estableixen al valor mitjà de cada secció.</translation>
+        <translation type="vanished">Quan es canvia al mode de gradació, els valors s&apos;estableixen al valor mitjà de cada secció.</translation>
+    </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Configuració del mapa de colors (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10458,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exporta (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Títol</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Visualització d&apos;etiquetes</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Color</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Antecedents</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Mida i posició</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posició</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10485,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Nombre de colors:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Activat</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horitzontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertical</translation>
     </message>
 </context>
 <context>
@@ -10590,7 +11133,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation>Valor d'edició de fons</translation>
+        <translation>Valor d&apos;edició de fons</translation>
     </message>
 </context>
 <context>
@@ -10627,7 +11170,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation>No s'ha seleccionat cap punt.</translation>
+        <translation>No s&apos;ha seleccionat cap punt.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
@@ -10657,7 +11200,7 @@ Parse error %2 at %3, column %4</source>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation>Barra d'eines d'operació</translation>
+        <translation>Barra d&apos;eines d&apos;operació</translation>
     </message>
 </context>
 <context>
@@ -10839,6 +11382,10 @@ Parse error %2 at %3, column %4</source>
         <source>Color:</source>
         <translation>Color:</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
@@ -10886,7 +11433,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation>Distància des de l'esquerra</translation>
+        <translation>Distància des de l&apos;esquerra</translation>
     </message>
     <message>
         <source>Distance from right</source>
@@ -10932,20 +11479,20 @@ Parse error %2 at %3, column %4</source>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation>El node de definició no s'emmagatzema</translation>
+        <translation>El node de definició no s&apos;emmagatzema</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Tipus de valor incorrecte "%1"està definit.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Tipus de valor incorrecte &quot;%1&quot;està definit.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Tipus de condició incorrecte "%1"està definit.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Tipus de condició incorrecte &quot;%1&quot;està definit.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>S'ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
+        <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
@@ -11004,11 +11551,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>S'ha produït un error en desar.</translation>
+        <translation>S&apos;ha produït un error en desar.</translation>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>No s'ha pogut obrir el fitxer CGNS.</translation>
+        <translation>No s&apos;ha pogut obrir el fitxer CGNS.</translation>
     </message>
 </context>
 <context>
@@ -11168,7 +11715,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -11180,7 +11727,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 són valors per a abastos. Per exemple, l'entrada de valor a la segona fila és per a un interval entre la primera fila i la segona fila.</translation>
+        <translation>%1 són valors per a abastos. Per exemple, l&apos;entrada de valor a la segona fila és per a un interval entre la primera fila i la segona fila.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
@@ -11208,16 +11755,16 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>Dossier %1 s'actualitza després d'importar-se a la condició de càlcul %2. Voleu importar el fitxer actualitzat?</translation>
+        <translation>Dossier %1 s&apos;actualitza després d&apos;importar-se a la condició de càlcul %2. Voleu importar el fitxer actualitzat?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Podeu copiar i enganxar els valors amb la drecera "Ctrl + C" i "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Podeu copiar i enganxar els valors amb la drecera &quot;Ctrl + C&quot; i &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation>S'han trobat els problemes següents:</translation>
+        <translation>S&apos;han trobat els problemes següents:</translation>
     </message>
     <message>
         <source>
@@ -11241,7 +11788,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Data d'inici:</translation>
+        <translation>Data d&apos;inici:</translation>
     </message>
     <message>
         <source>End Date:</source>
@@ -11265,7 +11812,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation>Data d'inici no anterior a la data de finalització.</translation>
+        <translation>Data d&apos;inici no anterior a la data de finalització.</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -11288,7 +11835,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>El contingut de l'àrea de text es sobreescriu amb la plantilla</translation>
+        <translation>El contingut de l&apos;àrea de text es sobreescriu amb la plantilla</translation>
     </message>
 </context>
 <context>
@@ -11334,15 +11881,15 @@ Do you really want to import this file?</source>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation>S'estan important dades mesurades...</translation>
+        <translation>S&apos;estan important dades mesurades...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Les dues primeres columnes han de ser "X" i "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Les dues primeres columnes han de ser &quot;X&quot; i &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -11350,7 +11897,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation>S'han trobat dades incorrectes: %1</translation>
+        <translation>S&apos;han trobat dades incorrectes: %1</translation>
     </message>
 </context>
 <context>
@@ -11434,18 +11981,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation>S&apos;ha produït un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>S'està comprovant l'argument de %1 fracassat. Arguments no vàlids: %2.</translation>
+        <translation>S&apos;està comprovant l&apos;argument de %1 fracassat. Arguments no vàlids: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edita la variable de resultat de l'operació simple</translation>
+        <translation>Edita la variable de resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
@@ -11465,7 +12012,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>El nom de la variable no s'introdueix.</translation>
+        <translation>El nom de la variable no s&apos;introdueix.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
@@ -11476,7 +12023,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edita el resultat de l'operació simple</translation>
+        <translation>Edita el resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -11488,7 +12035,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul de l'entrada</translation>
+        <translation>Resultats del càlcul de l&apos;entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -11503,8 +12050,8 @@ Do you really want to import this file?</source>
         <translation>Definició de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -11512,7 +12059,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d'error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d&apos;error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -11548,7 +12095,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>El nom no s'introdueix.</translation>
+        <translation>El nom no s&apos;introdueix.</translation>
     </message>
     <message>
         <source>This name is already used</source>
@@ -11563,7 +12110,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Llista de resultats d'operacions simples</translation>
+        <translation>Llista de resultats d&apos;operacions simples</translation>
     </message>
     <message>
         <source>Name</source>
@@ -11582,8 +12129,8 @@ Do you really want to import this file?</source>
         <translation>A baix (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: l'ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: l&apos;ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -11694,7 +12241,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -11749,7 +12296,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
 </context>
 <context>
@@ -11760,7 +12307,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation>S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -11768,7 +12315,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation>No s'ha pogut carregar el resultat del càlcul de la visualització. Torneu-ho a provar més tard o espereu fins al final del càlcul.</translation>
+        <translation>No s&apos;ha pogut carregar el resultat del càlcul de la visualització. Torneu-ho a provar més tard o espereu fins al final del càlcul.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
@@ -11784,23 +12331,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers VTK...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers CSV...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers de format ESRI...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers de format ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation>S'ha produït un error en desar %1</translation>
+        <translation>S&apos;ha produït un error en desar %1</translation>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers TPO...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers TPO...</translation>
     </message>
 </context>
 <context>
@@ -11811,7 +12358,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation>S&apos;ha produït un error: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -11819,14 +12366,14 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, es restableix l'índex de l'etiqueta perquè s'ha canviat la mida de la quadrícula.</translation>
+        <translation>I, J, K, es restableix l&apos;índex de l&apos;etiqueta perquè s&apos;ha canviat la mida de la quadrícula.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Edita l'argument del resultat de la cadena</translation>
+        <translation>Edita l&apos;argument del resultat de la cadena</translation>
     </message>
     <message>
         <source>Position:</source>
@@ -11897,7 +12444,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul de l'entrada</translation>
+        <translation>Resultats del càlcul de l&apos;entrada</translation>
     </message>
     <message>
         <source>Type</source>
@@ -11936,8 +12483,8 @@ Do you really want to import this file?</source>
         <translation>Definició de sortida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -11984,7 +12531,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
 </context>
 <context>
@@ -12020,11 +12567,11 @@ Do you really want to import this file?</source>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation>S'està carregant el fitxer del projecte...</translation>
+        <translation>S&apos;està carregant el fitxer del projecte...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation>S'està desant el fitxer del projecte...</translation>
+        <translation>S&apos;està desant el fitxer del projecte...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -12032,7 +12579,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation>No s'ha pogut sobreescriure %1.</translation>
+        <translation>No s&apos;ha pogut sobreescriure %1.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -12040,15 +12587,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation>S'està desant el projecte...</translation>
+        <translation>S&apos;està desant el projecte...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation>S'està obrint el projecte...</translation>
+        <translation>S&apos;està obrint el projecte...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">L'atribut de quadrícula d'elevació no està definit per al tipus de quadrícula %1. Funcions d'E / S de quadrícula, és possible que les funcions de creació de quadrícules no funcionin correctament per a aquests tipus de quadrícules.</translation>
+        <translation type="vanished">L&apos;atribut de quadrícula d&apos;elevació no està definit per al tipus de quadrícula %1. Funcions d&apos;E / S de quadrícula, és possible que les funcions de creació de quadrícules no funcionin correctament per a aquests tipus de quadrícules.</translation>
     </message>
 </context>
 <context>
@@ -12075,11 +12622,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>No s'ha pogut exportar el fitxer CGNS. Un altre procés bloqueja el fitxer especificat.</translation>
+        <translation>No s&apos;ha pogut exportar el fitxer CGNS. Un altre procés bloqueja el fitxer especificat.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation>S'ha produït un error en obrir el fitxer CGNS al fitxer del projecte: %1</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer CGNS al fitxer del projecte: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -12087,7 +12634,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="vanished">%1 No s'ha pogut desar el fitxer del projecte.</translation>
+        <translation type="vanished">%1 No s&apos;ha pogut desar el fitxer del projecte.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -12103,11 +12650,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>La imatge de fons no s'ha afegit. Siusplau torna-ho a provar.</translation>
+        <translation>La imatge de fons no s&apos;ha afegit. Siusplau torna-ho a provar.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>S'ha especificat un fitxer d'imatge no vàlid.</translation>
+        <translation>S&apos;ha especificat un fitxer d&apos;imatge no vàlid.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -12127,11 +12674,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation>S'ha produït un error en carregar %1.</translation>
+        <translation>S&apos;ha produït un error en carregar %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">Aquest fitxer és per al solucionador %1 %2. No és compatible amb el solucionador que utilitzeu, de manera que potser fallarà la importació d'aquest fitxer. Confirmes que vols importar aquest fitxer?</translation>
+        <translation type="vanished">Aquest fitxer és per al solucionador %1 %2. No és compatible amb el solucionador que utilitzeu, de manera que potser fallarà la importació d&apos;aquest fitxer. Confirmes que vols importar aquest fitxer?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -12139,15 +12686,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Dossier %1 no s'ha pogut obrir.</translation>
+        <translation>Dossier %1 no s&apos;ha pogut obrir.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation>No s'ha seleccionat el sistema de coordenades.</translation>
+        <translation>No s&apos;ha seleccionat el sistema de coordenades.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>S'ha produït un error en obrir el fitxer CGNS al fitxer del projecte: Case1.cgn</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer CGNS al fitxer del projecte: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
@@ -12191,8 +12738,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Espai de treball "%1"té %2 carpetes de projectes que sembla que ja no s’utilitzen. Voleu eliminar-los?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espai de treball &quot;%1&quot;té %2 carpetes de projectes que sembla que ja no s’utilitzen. Voleu eliminar-los?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -12250,7 +12797,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation>Nom de l'atribut</translation>
+        <translation>Nom de l&apos;atribut</translation>
     </message>
     <message>
         <source>Value</source>
@@ -12269,11 +12816,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Mou l'element cap avall</translation>
+        <translation>Mou l&apos;element cap avall</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation>Mou l'element cap amunt</translation>
+        <translation>Mou l&apos;element cap amunt</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
@@ -12316,7 +12863,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -12349,11 +12896,11 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Una línia de vora es creua amb la d'una altra cel·la d'aquesta quadrícula.</translation>
+        <translation>Una línia de vora es creua amb la d&apos;una altra cel·la d&apos;aquesta quadrícula.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>La relació d'aspecte de la cel·la de quadrícula supera el valor límit %1 en més d’una cel·la.</translation>
+        <translation>La relació d&apos;aspecte de la cel·la de quadrícula supera el valor límit %1 en més d’una cel·la.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
@@ -12373,11 +12920,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Cel·les en què la relació d'aspecte de les vores de la cel·la supera %1</translation>
+        <translation>* Cel·les en què la relació d&apos;aspecte de les vores de la cel·la supera %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Relació d'aspecte</translation>
+        <translation>I, J, Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Edge length too small</source>
@@ -12385,7 +12932,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Cèl·lules on l'angle del vèrtex cel·lular és inferior %1</translation>
+        <translation>* Cèl·lules on l&apos;angle del vèrtex cel·lular és inferior %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
@@ -12479,7 +13026,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation>Canvi d'imatge de fons</translation>
+        <translation>Canvi d&apos;imatge de fons</translation>
     </message>
 </context>
 <context>
@@ -12529,10 +13076,10 @@ Do you really want to import this file?</source>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>No s'especifica el número de compilació del número de versió.</translation>
+        <translation>No s&apos;especifica el número de compilació del número de versió.</translation>
     </message>
 </context>
-
+<!-- iricGui_ca_ES.ts -->
 <context>
     <name>AnimationController</name>
     <message>
@@ -12622,7 +13169,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File name</source>
-        <translation>Nom de l'arxiu</translation>
+        <translation>Nom de l&apos;arxiu</translation>
     </message>
     <message>
         <source>Prefix :</source>
@@ -12702,7 +13249,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>S'està creant la carpeta %1 fracassat.</translation>
+        <translation>S&apos;està creant la carpeta %1 fracassat.</translation>
     </message>
 </context>
 <context>
@@ -12721,7 +13268,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Nota: Aquesta característica només està disponible quan s'ha especificat un sistema de coordenades.</translation>
+        <translation>Nota: Aquesta característica només està disponible quan s&apos;ha especificat un sistema de coordenades.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -12767,7 +13314,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File name</source>
-        <translation>Nom de l'arxiu</translation>
+        <translation>Nom de l&apos;arxiu</translation>
     </message>
     <message>
         <source>Play speed</source>
@@ -12889,7 +13436,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Més d'una finestra de visualització té una regió transparent. No es poden desar en imatges de fons transparents. Seleccioneu el fons blanc o cancel·leu i inhabiliteu la transparència per a contorns, etc.</translation>
+        <translation>Més d&apos;una finestra de visualització té una regió transparent. No es poden desar en imatges de fons transparents. Seleccioneu el fons blanc o cancel·leu i inhabiliteu la transparència per a contorns, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
@@ -12900,21 +13447,21 @@ Do you really want to import this file?</source>
     <name>ContinuousSnapshotWizard</name>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation>Instantània contínua / Pel·lícula / Assistent d'exportació de Google Earth</translation>
+        <translation>Instantània contínua / Pel·lícula / Assistent d&apos;exportació de Google Earth</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation>S'està esperant que el solucionador copiï el fitxer CGNS...</translation>
+        <translation>S&apos;està esperant que el solucionador copiï el fitxer CGNS...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Configuració d'importació d'imatges de Google Map</translation>
+        <translation>Configuració d&apos;importació d&apos;imatges de Google Map</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -12950,7 +13497,7 @@ Do you really want to import this file?</source>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation>Quan actualitzeu iRIC, heu de tancar iRIC abans de llançar iRIC Maintainance. Quan tingueu finestres iRIC diferents d'aquest, tanqueu-les manualment.</translation>
+        <translation>Quan actualitzeu iRIC, heu de tancar iRIC abans de llançar iRIC Maintainance. Quan tingueu finestres iRIC diferents d&apos;aquest, tanqueu-les manualment.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
@@ -12966,7 +13513,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Aquesta funció està pensada per ser utilitzada per desenvolupadors de solucionadors o desenvolupadors de programes de creació de quadrícules, no per usuaris. Aquest assistent generarà o actualitzarà fitxers de traducció per a fitxers de definició de solucionadors i fitxers de definició de programes de creació de quadrícules que es registren al sistema iRIC. Heu d'especificar el nom del solucionador (o programa de creació de quadrícules) i la llista d'idiomes per als que vulgueu crear o actualitzar fitxers de traducció.</translation>
+        <translation>Aquesta funció està pensada per ser utilitzada per desenvolupadors de solucionadors o desenvolupadors de programes de creació de quadrícules, no per usuaris. Aquest assistent generarà o actualitzarà fitxers de traducció per a fitxers de definició de solucionadors i fitxers de definició de programes de creació de quadrícules que es registren al sistema iRIC. Heu d&apos;especificar el nom del solucionador (o programa de creació de quadrícules) i la llista d&apos;idiomes per als que vulgueu crear o actualitzar fitxers de traducció.</translation>
     </message>
 </context>
 <context>
@@ -12983,8 +13530,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccioneu Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Quan creeu un projecte nou, heu de seleccionar el solucionador que cal utilitzar per al càlcul. Seleccioneu un solucionador i premeu el botó "D'acord".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Quan creeu un projecte nou, heu de seleccionar el solucionador que cal utilitzar per al càlcul. Seleccioneu un solucionador i premeu el botó &quot;D&apos;acord&quot;.</translation>
     </message>
 </context>
 <context>
@@ -13085,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barra de colors</translation>
+        <translation type="vanished">Barra de colors</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Títol</translation>
+        <translation type="vanished">Títol</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiquetes</translation>
+        <translation type="vanished">Etiquetes</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Llegenda de longitud de fletxa</translation>
+        <translation type="vanished">Llegenda de longitud de fletxa</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13109,7 +13656,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation>Noms de les seccions transversals de dades de l'enquesta fluvial</translation>
+        <translation>Noms de les seccions transversals de dades de l&apos;enquesta fluvial</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
@@ -13137,11 +13684,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation>Títol de l'eix:</translation>
+        <translation>Títol de l&apos;eix:</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation>Ticks de l'eix:</translation>
+        <translation>Ticks de l&apos;eix:</translation>
     </message>
 </context>
 <context>
@@ -13156,7 +13703,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation>Nota: La configuració d'idioma s'aplica quan es llança iRIC la propera vegada.</translation>
+        <translation>Nota: La configuració d&apos;idioma s&apos;aplica quan es llança iRIC la propera vegada.</translation>
     </message>
     <message>
         <source>Working Directory</source>
@@ -13164,15 +13711,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation>Nota: Working Directory s'utilitza per emmagatzemar fitxers que utilitza iRIC.</translation>
+        <translation>Nota: Working Directory s&apos;utilitza per emmagatzemar fitxers que utilitza iRIC.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="vanished">Copieu el projecte de carpeta al directori de treball quan s'obre</translation>
+        <translation type="vanished">Copieu el projecte de carpeta al directori de treball quan s&apos;obre</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation>S'està comprovant si hi ha actualitzacions</translation>
+        <translation>S&apos;està comprovant si hi ha actualitzacions</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
@@ -13196,7 +13743,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation>Nombre màxim d'índexs dibuixats:</translation>
+        <translation>Nombre màxim d&apos;índexs dibuixats:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
@@ -13232,7 +13779,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>El directori de treball s'ha canviat, però el nou directori de treball s'utilitza DESPRÉS de sortir de la GUI iRIC.</translation>
+        <translation>El directori de treball s&apos;ha canviat, però el nou directori de treball s&apos;utilitza DESPRÉS de sortir de la GUI iRIC.</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -13240,7 +13787,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation>Nota: s'utilitza per executar solucions escrites en Python.</translation>
+        <translation>Nota: s&apos;utilitza per executar solucions escrites en Python.</translation>
     </message>
 </context>
 <context>
@@ -13259,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -13271,7 +13818,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation>Nota: es canviarà automàticament la mida de la càrrega d'una imatge l'amplada (o alçada) superior al màxim.</translation>
+        <translation>Nota: es canviarà automàticament la mida de la càrrega d&apos;una imatge l&apos;amplada (o alçada) superior al màxim.</translation>
     </message>
     <message>
         <source>Vector</source>
@@ -13330,7 +13877,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation>Comproveu que la relació d'aspecte de les vores de la cel·la sigui inferior a</translation>
+        <translation>Comproveu que la relació d&apos;aspecte de les vores de la cel·la sigui inferior a</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
@@ -13346,11 +13893,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation>L'angle de comprovació de la cel·la és superior a</translation>
+        <translation>L&apos;angle de comprovació de la cel·la és superior a</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation>Nota: la configuració d'aquesta pàgina només s'aplica a les quadrícules estructurades.</translation>
+        <translation>Nota: la configuració d&apos;aquesta pàgina només s&apos;aplica a les quadrícules estructurades.</translation>
     </message>
 </context>
 <context>
@@ -13385,7 +13932,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Nom d'usuari:</translation>
+        <translation>Nom d&apos;usuari:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -13400,7 +13947,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation>Llista de fraccions per a l'edició de seccions:</translation>
+        <translation>Llista de fraccions per a l&apos;edició de seccions:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -13428,7 +13975,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation>Esteu segur que voleu suprimir l'element seleccionat?</translation>
+        <translation>Esteu segur que voleu suprimir l&apos;element seleccionat?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
@@ -13458,7 +14005,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinates in Status Bar</source>
-        <translation>Coordenades a la barra d'estat</translation>
+        <translation>Coordenades a la barra d&apos;estat</translation>
     </message>
     <message>
         <source>Decimal places:</source>
@@ -13466,7 +14013,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Attribute Browser</source>
-        <translation>Navegador d'atributs</translation>
+        <translation>Navegador d&apos;atributs</translation>
     </message>
     <message>
         <source>Decimal places</source>
@@ -13513,11 +14060,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Introduïu la clau de l'API de Google Maps (&amp;I)</translation>
+        <translation>Introduïu la clau de l&apos;API de Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ara necessita una clau API per utilitzar Google Maps mitjançant iRIC. Obteniu la vostra pròpia clau de l'API de Google Maps i introduïu-la aquí per utilitzar les imatges de Google Maps com a imatges de fons en el processador previ i en el Windows de processament 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ara necessita una clau API per utilitzar Google Maps mitjançant iRIC. Obteniu la vostra pròpia clau de l&apos;API de Google Maps i introduïu-la aquí per utilitzar les imatges de Google Maps com a imatges de fons en el processador previ i en el Windows de processament 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -13525,7 +14072,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Introduïu la clau de l'API de Google Maps</translation>
+        <translation>Introduïu la clau de l&apos;API de Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
@@ -13587,7 +14134,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation>Editeu dades d'elevació web</translation>
+        <translation>Editeu dades d&apos;elevació web</translation>
     </message>
 </context>
 <context>
@@ -13625,11 +14172,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Filename:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation>Hora de l'última actualització:</translation>
+        <translation>Hora de l&apos;última actualització:</translation>
     </message>
     <message>
         <source>Solver:</source>
@@ -13669,11 +14216,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation>(Encara no s'ha desat)</translation>
+        <translation>(Encara no s&apos;ha desat)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation>S'ha acabat la configuració</translation>
+        <translation>S&apos;ha acabat la configuració</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
@@ -13854,9 +14401,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>S'ha produït un error en carregar el fitxer de definició del solucionador a la carpeta "%1". Aquest solucionador s'ignora. %2</translation>
+        <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador a la carpeta &quot;%1&quot;. Aquest solucionador s&apos;ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -13886,14 +14433,14 @@ Do you want to launch iRIC Maintainance?</source>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation>Assistent d'actualització de la traducció de fitxers de definició</translation>
+        <translation>Assistent d&apos;actualització de la traducció de fitxers de definició</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation>Pàgina d'inici de l'ICRIC</translation>
+        <translation>Pàgina d&apos;inici de l&apos;ICRIC</translation>
     </message>
     <message>
         <source>iRIC </source>
@@ -13948,7 +14495,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation>S'ha produït un error en carregar el fitxer de definició de Solver.</translation>
+        <translation>S&apos;ha produït un error en carregar el fitxer de definició de Solver.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
@@ -13975,7 +14522,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sembla que aquest projecte l’obre una altra finestra GUI iRIC. No podeu obrir una carpeta de projecte des de diverses finestres de la GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>El projecte obert no es copia al directori de treball i se us obligarà a desar les modificacions que feu a aquest projecte. Si voleu conservar el projecte actual, deseu-lo primer en un altre projecte.</translation>
     </message>
     <message>
@@ -13992,7 +14539,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation>Aquest projecte s'ha modificat. Voleu estalviar?</translation>
+        <translation>Aquest projecte s&apos;ha modificat. Voleu estalviar?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
@@ -14012,11 +14559,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation>La carpeta del projecte ha d'estar buida.</translation>
+        <translation>La carpeta del projecte ha d&apos;estar buida.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation>No s'ha pogut desar el projecte.</translation>
+        <translation>No s&apos;ha pogut desar el projecte.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
@@ -14028,7 +14575,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation>El projecte s'ha desat correctament a %1.</translation>
+        <translation>El projecte s&apos;ha desat correctament a %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
@@ -14040,7 +14587,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation>S'ha copiat la instantània al porta-retalls.</translation>
+        <translation>S&apos;ha copiat la instantània al porta-retalls.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
@@ -14060,7 +14607,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation>%1 ja existeix i no s'ha pogut eliminar. El fitxer de pel·lícula no es publica.</translation>
+        <translation>%1 ja existeix i no s&apos;ha pogut eliminar. El fitxer de pel·lícula no es publica.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -14088,7 +14635,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation>S'han especificat opcions desconegudes. Es descuiden. %1</translation>
+        <translation>S&apos;han especificat opcions desconegudes. Es descuiden. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
@@ -14100,7 +14647,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation>S'ha esborrat el resultat del càlcul.</translation>
+        <translation>S&apos;ha esborrat el resultat del càlcul.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -14124,19 +14671,19 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation>S'estan desant partícules com a fitxers VTK...</translation>
+        <translation>S&apos;estan desant partícules com a fitxers VTK...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>S'ha produït un error en desar.</translation>
+        <translation>S&apos;ha produït un error en desar.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation>La subfinestra activa actualment no admet l'exportació de la figura del contorn.</translation>
+        <translation>La subfinestra activa actualment no admet l&apos;exportació de la figura del contorn.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14148,7 +14695,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation>S'està desant la figura del contorn com a fitxers de format ESRI...</translation>
+        <translation>S&apos;està desant la figura del contorn com a fitxers de format ESRI...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
@@ -14168,11 +14715,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation>S'està desant el fitxer KMZ...</translation>
+        <translation>S&apos;està desant el fitxer KMZ...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation>Google Earth KMZ s'exporta a %1 amb èxit.</translation>
+        <translation>Google Earth KMZ s&apos;exporta a %1 amb èxit.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
@@ -14249,19 +14796,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation>No s'ha pogut desar la instantània.</translation>
+        <translation>No s&apos;ha pogut desar la instantània.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation>S'ha especificat un nom de fitxer incorrecte.</translation>
+        <translation>S&apos;ha especificat un nom de fitxer incorrecte.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation>La instantània s'ha desat correctament a %1.</translation>
+        <translation>La instantània s&apos;ha desat correctament a %1.</translation>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation>Tots els fitxers a %1 s'elimina.</translation>
+        <translation>Tots els fitxers a %1 s&apos;elimina.</translation>
     </message>
     <message>
         <source>%1 %2</source>
@@ -14276,8 +14823,8 @@ Option -&gt; Preferences</source>
         <translation>Fitxer de configuració (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Per exportar el fitxer de forma, canvieu el mode de color a "Mode discret".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Per exportar el fitxer de forma, canvieu el mode de color a &quot;Mode discret&quot;.</translation>
     </message>
 </context>
 <context>
@@ -14300,7 +14847,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>copyright</source>
-        <translation>drets d'autor</translation>
+        <translation>drets d&apos;autor</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -14316,7 +14863,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation>Condicions d'ús:</translation>
+        <translation>Condicions d&apos;ús:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
@@ -14431,7 +14978,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation>Mostra la pàgina d'inici de l'ICRIC...</translation>
+        <translation>Mostra la pàgina d&apos;inici de l&apos;ICRIC...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -14483,15 +15030,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation>Barra d'eines (&amp;T)</translation>
+        <translation>Barra d&apos;eines (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation>Barra d'eines principal (&amp;M)</translation>
+        <translation>Barra d&apos;eines principal (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation>Barra d'eines de la llista de Windows (&amp;W)</translation>
+        <translation>Barra d&apos;eines de la llista de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
@@ -14499,7 +15046,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation>Navegador d'objectes (&amp;O)</translation>
+        <translation>Navegador d&apos;objectes (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
@@ -14507,7 +15054,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation>Barra d'estat (&amp;S)</translation>
+        <translation>Barra d&apos;estat (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
@@ -14571,7 +15118,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation>Mou-te a l'esquerra (&amp;L)</translation>
+        <translation>Mou-te a l&apos;esquerra (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
@@ -14624,7 +15171,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -14632,7 +15179,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation>Finestra PreProcessador d'enfocament (&amp;P)</translation>
+        <translation>Finestra PreProcessador d&apos;enfocament (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
@@ -14651,8 +15198,8 @@ Option -&gt; Preferences</source>
         <translation>Obre una nova finestra de post-processament 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Obriu una nova finestra de postprocessament 2D Bird's Eye</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Obriu una nova finestra de postprocessament 2D Bird&apos;s Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -14744,11 +15291,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation>Barra d'eines principal</translation>
+        <translation>Barra d&apos;eines principal</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation>Barra d'eines llista de finestres</translation>
+        <translation>Barra d&apos;eines llista de finestres</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -14767,7 +15314,7 @@ Option -&gt; Preferences</source>
         <translation>Dades geogràfiques (elevació del web)</translation>
     </message>
 </context>
-
+<!-- iricHdRiversurveywaterelevation_ca_ES.ts -->
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -14814,7 +15361,7 @@ Option -&gt; Preferences</source>
         <translation>El nombre d’elements ha de ser el mateix a cada línia.</translation>
     </message>
 </context>
-
+<!-- iricMeasureddata_ca_ES.ts -->
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -15008,7 +15555,7 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Configuració de la barra de color (&amp;C)</translation>
     </message>
 </context>
-
+<!-- iricMisc_ca_ES.ts -->
 <context>
     <name>InformationDialog</name>
     <message>
@@ -15057,28 +15604,28 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Interval d'animació en segons:</translation>
+        <translation>Interval d&apos;animació en segons:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation>Arxiu d'obertura %1 fracassat.</translation>
+        <translation>Arxiu d&apos;obertura %1 fracassat.</translation>
     </message>
 </context>
-
+<!-- iricPost2dbirdeye_ca_ES.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Postprocessament ocular (2D): %1</translation>
     </message>
     <message>
@@ -15162,7 +15709,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valor escalar d'elevació</translation>
+        <translation type="vanished">Valor escalar d&apos;elevació</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -15198,7 +15745,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l'interval de valors, el valor màxim és més petit que el valor mínim.</translation>
+        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és més petit que el valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -15239,7 +15786,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Valor escalar per a l'elevació</translation>
+        <translation>Valor escalar per a l&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -15318,7 +15865,7 @@ Option -&gt; Preferences</source>
         <translation>Edita el color de fons</translation>
     </message>
 </context>
-
+<!-- iricPost2d_ca_ES.ts -->
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -15342,7 +15889,7 @@ Option -&gt; Preferences</source>
     <name>Post2dObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
@@ -15705,7 +16252,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l&apos;interval de valors s&apos;ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -15758,8 +16305,8 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
     </message>
 </context>
 <context>
@@ -15790,7 +16337,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -16065,7 +16612,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l&apos;interval de valors s&apos;ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -16076,8 +16623,8 @@ Option -&gt; Preferences</source>
         <translation>Configuració escalar (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation>Per exportar KML per a Street View, el mode de color ha de ser "Mode discret".</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>Per exportar KML per a Street View, el mode de color ha de ser &quot;Mode discret&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16114,16 +16661,16 @@ Option -&gt; Preferences</source>
         <translation>Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Escalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation>Per exportar el fitxer de forma, canvieu la configuració del color a "Mode discret".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation>Per exportar el fitxer de forma, canvieu la configuració del color a &quot;Mode discret&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16260,17 +16807,17 @@ Option -&gt; Preferences</source>
         <translation>Interval de temps de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16310,15 +16857,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Especifiqueu l'àrea per generar partícules.</translation>
+        <translation>Especifiqueu l&apos;àrea per generar partícules.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Especifiqueu l'àrea per generar partícules, per rang d'índexs de quadrícula (I, J).</translation>
+        <translation>Especifiqueu l&apos;àrea per generar partícules, per rang d&apos;índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -16334,19 +16881,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation>Interval d&apos;espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -16357,12 +16904,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Mida:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16400,17 +16947,17 @@ p, li { white-space: pre-wrap; }
         <translation>Interval de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16442,7 +16989,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Punts d'inici</translation>
+        <translation>Punts d&apos;inici</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
@@ -16481,12 +17028,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Mida:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16555,7 +17102,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Mostra el navegador d'atributs</translation>
+        <translation>Mostra el navegador d&apos;atributs</translation>
     </message>
 </context>
 <context>
@@ -16675,15 +17222,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions</translation>
+        <translation>Especifiqueu l&apos;àrea per iniciar les racionalitzacions</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions, per rang d'índexs de quadrícula (I, J).</translation>
+        <translation>Especifiqueu l&apos;àrea per iniciar les racionalitzacions, per rang d&apos;índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -16699,17 +17246,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation>Interval d&apos;espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si n'especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Si n&apos;especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -16740,12 +17287,12 @@ p, li { white-space: pre-wrap; }
         <translation>Amplada:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16772,7 +17319,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Punts d'inici</translation>
+        <translation>Punts d&apos;inici</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
@@ -16811,12 +17358,12 @@ p, li { white-space: pre-wrap; }
         <translation>Amplada:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16865,12 +17412,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Actualitza el paràmetre escalar polígon</translation>
     </message>
 </context>
-
+<!-- iricPost3d_ca_ES.ts -->
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
@@ -17037,7 +17584,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17228,7 +17775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17283,7 +17830,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17348,7 +17895,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17419,7 +17966,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>I Min</source>
-        <translation type="vanished">M'hi apunto</translation>
+        <translation type="vanished">M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17701,17 +18248,17 @@ p, li { white-space: pre-wrap; }
         <translation>Interval de temps de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -17751,15 +18298,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Especifiqueu l'àrea per generar partícules.</translation>
+        <translation>Especifiqueu l&apos;àrea per generar partícules.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Especifiqueu l'àrea per generar partícules, per rang d'índexs de quadrícula (I, J, K).</translation>
+        <translation>Especifiqueu l&apos;àrea per generar partícules, per rang d&apos;índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17783,19 +18330,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation>Interval d&apos;espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17806,12 +18353,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Mida:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17928,15 +18475,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions.</translation>
+        <translation>Especifiqueu l&apos;àrea per iniciar les racionalitzacions.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions, per rang d'índexs de quadrícula (I, J, K).</translation>
+        <translation>Especifiqueu l&apos;àrea per iniciar les racionalitzacions, per rang d&apos;índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17960,17 +18507,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation>Interval d&apos;espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si n'especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Si n&apos;especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -18001,12 +18548,12 @@ p, li { white-space: pre-wrap; }
         <translation>Amplada:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18048,7 +18595,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Actualitza la configuració escalar de les partícules</translation>
     </message>
 </context>
-
+<!-- iricPostbase_ca_ES.ts -->
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
@@ -18130,7 +18677,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d'atribut</translation>
+        <translation type="vanished">Color per valor d&apos;atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -18153,7 +18700,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valor de l'atribut:</translation>
+        <translation type="vanished">Valor de l&apos;atribut:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -18251,7 +18798,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d'atribut</translation>
+        <translation type="vanished">Color per valor d&apos;atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -18285,18 +18832,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Canvieu la mida de l'etiqueta</translation>
+        <translation>Canvieu la mida de l&apos;etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Edita la configuració de l'etiqueta</translation>
+        <translation>Edita la configuració de l&apos;etiqueta</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Configuració d'etiquetes</translation>
+        <translation>Configuració d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -18375,7 +18922,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editeu la configuració de l'hora</translation>
+        <translation>Editeu la configuració de l&apos;hora</translation>
     </message>
 </context>
 <context>
@@ -18415,7 +18962,7 @@ p, li { white-space: pre-wrap; }
         <translation>Nota: només es poden utilitzar caràcters en anglès per al títol.</translation>
     </message>
 </context>
-
+<!-- iricPre_ca_ES.ts -->
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -18486,7 +19033,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>S'ha produït un error en importar la quadrícula.</translation>
+        <translation>S&apos;ha produït un error en importar la quadrícula.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -18529,8 +19076,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
-        <translation>Finestra de visualització d'ulls de quadrícula</translation>
+        <source>Grid Bird&apos;s-Eye View Window</source>
+        <translation>Finestra de visualització d&apos;ulls de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -18606,7 +19153,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="vanished">Edita l'escala de direcció Z</translation>
+        <translation type="vanished">Edita l&apos;escala de direcció Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -18625,7 +19172,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Edita l'escala de direcció Z</translation>
+        <translation>Edita l&apos;escala de direcció Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
@@ -18691,7 +19238,7 @@ Do you really want to import grid from this file?</source>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
@@ -18931,11 +19478,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation>La condició de càlcul s'ha importat amb èxit des del fitxer especificat.</translation>
+        <translation>La condició de càlcul s&apos;ha importat amb èxit des del fitxer especificat.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation>La condició de càlcul s'ha importat correctament des de %1.</translation>
+        <translation>La condició de càlcul s&apos;ha importat correctament des de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -18943,7 +19490,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation>No s'ha pogut importar la condició de càlcul.</translation>
+        <translation>No s&apos;ha pogut importar la condició de càlcul.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
@@ -18955,15 +19502,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation>S'està exportant la condició de càlcul...</translation>
+        <translation>S&apos;està exportant la condició de càlcul...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation>La condició de càlcul s'exporta correctament a %1.</translation>
+        <translation>La condició de càlcul s&apos;exporta correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation>No s'ha pogut exportar la condició de càlcul.</translation>
+        <translation>No s&apos;ha pogut exportar la condició de càlcul.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
@@ -19063,7 +19610,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation>(Encara no s'ha seleccionat cap algorisme)</translation>
+        <translation>(Encara no s&apos;ha seleccionat cap algorisme)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -19075,11 +19622,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation>%1 no es mapen després d'editar-se l'última vegada. Voleu executar el mapatge ara?</translation>
+        <translation>%1 no es mapen després d&apos;editar-se l&apos;última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuració de la condició límit "%1"no es mapeja després que s'hagi editat l'última vegada. Voleu executar el mapatge ara?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuració de la condició límit &quot;%1&quot;no es mapeja després que s&apos;hagi editat l&apos;última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19087,7 +19634,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation>Assignació de dades geogràfiques, la condició del límit s'ha acabat correctament.</translation>
+        <translation>Assignació de dades geogràfiques, la condició del límit s&apos;ha acabat correctament.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -19184,11 +19731,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation>Seleccioneu l'algorisme</translation>
+        <translation>Seleccioneu l&apos;algorisme</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation>Seleccioneu l'algorisme per importar dades</translation>
+        <translation>Seleccioneu l&apos;algorisme per importar dades</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -19196,7 +19743,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -19212,7 +19759,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation>S'estan important dades...</translation>
+        <translation>S&apos;estan important dades...</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -19220,7 +19767,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation>S'ha cancel·lat la importació.</translation>
+        <translation>S&apos;ha cancel·lat la importació.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19281,7 +19828,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Importa l'elevació del web (&amp;I)...</translation>
+        <translation>Importa l&apos;elevació del web (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -19328,14 +19875,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: quan la variació està activada, es crea una variació anomenada "Per defecte" i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del "Navegador d'objectes". Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l'atribut de la graella creades a partir de la variació que seleccioneu amb "Variació per passar al solucionador" es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l'efecte de la diferència.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: quan la variació està activada, es crea una variació anomenada &quot;Per defecte&quot; i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del &quot;Navegador d&apos;objectes&quot;. Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l&apos;atribut de la graella creades a partir de la variació que seleccioneu amb &quot;Variació per passar al solucionador&quot; es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l&apos;efecte de la diferència.</translation>
     </message>
 </context>
 <context>
@@ -19377,7 +19924,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation>No s'ha pogut importar la quadrícula.</translation>
+        <translation>No s&apos;ha pogut importar la quadrícula.</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -19396,7 +19943,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -19452,11 +19999,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -19479,7 +20026,7 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs de cel·la de quadrícula</translation>
+        <translation>Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -19550,9 +20097,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú "Quadrícula" -&gt; "Assignació d'atributs" -&gt; "Executa".</translation>
+        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú &quot;Quadrícula&quot; -&gt; &quot;Assignació d&apos;atributs&quot; -&gt; &quot;Executa&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19568,22 +20115,22 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation>S'han acabat les assignacions de dades geogràfiques</translation>
+        <translation>S&apos;han acabat les assignacions de dades geogràfiques</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>L'atribut de la quadrícula "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>L&apos;atribut de la quadrícula &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condició límit "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condició límit &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation>Configuració de mapatge d'atributs de quadrícula</translation>
+        <translation>Configuració de mapatge d&apos;atributs de quadrícula</translation>
     </message>
     <message>
         <source>Execute mapping</source>
@@ -19594,20 +20141,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automàtic</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d'atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d&apos;atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>El mapatge d'atributs només s'executa quan seleccioneu manualment el menú "Executa".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>El mapatge d&apos;atributs només s&apos;executa quan seleccioneu manualment el menú &quot;Executa&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -19679,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Per obrir una finestra de secció transversal, seleccioneu només un node de quadrícula.</translation>
+        <translation type="vanished">Per obrir una finestra de secció transversal, seleccioneu només un node de quadrícula.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Per obrir una finestra de secció transversal longitudinal, seleccioneu només un node de quadrícula.</translation>
+        <translation type="vanished">Per obrir una finestra de secció transversal longitudinal, seleccioneu només un node de quadrícula.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19695,11 +20242,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -19742,7 +20289,7 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs del node de quadrícula</translation>
+        <translation>Configuració de visualització d&apos;atributs del node de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -19796,7 +20343,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'expansions de plantilla:</translation>
+        <translation>Nombre d&apos;expansions de plantilla:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -19862,11 +20409,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation>Esteu segur que voleu restablir l'estat predeterminat de la condició de creació de quadrícula?</translation>
+        <translation>Esteu segur que voleu restablir l&apos;estat predeterminat de la condició de creació de quadrícula?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation>Quan canvieu l'algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
+        <translation>Quan canvieu l&apos;algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -19929,6 +20476,413 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Finestra de secció transversal de la quadrícula</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Veure la barra d&apos;eines de configuració</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Barra d&apos;eines de configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Reescala automàtica</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Relació d&apos;aspecte (V/H): 1/</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Corregir la relació d&apos;aspecte</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Arregla la regió</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Quadrícula</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Escala</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Marcadors de marge esquerra/dreta</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Relació d&apos;aspecte</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Configuració de la pantalla</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controlador</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Ribera Esquerra</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Ribera dreta</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Relació d&apos;aspecte (V/H): 1/ %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>S&apos;ha produït un error en fer-ho %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Índex</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Distància (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Costa amunt</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Costat Avall</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Costat dret</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Costat esquerre</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Exporta fitxers CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Configuració de visualització de l&apos;atribut de la quadrícula (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Desa les instantànies</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direcció</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posició</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Valors de les cel·les</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Costa amunt</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Costa avall</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Instantània (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>Exportació CSV (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Configuració de visualització de la finestra de la secció transversal de la quadrícula</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Quadrícula de fons</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipus</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Línies</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Punts</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horitzontal</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automàtic</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Escala</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Subescala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Escales</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Font:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Marcadors de marge esquerra/dreta</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Relació d&apos;aspecte</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Configuració d&apos;exportació</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Carpeta i prefix (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Carpeta:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Prefix:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Secció transversal</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Només actual</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tots</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Personalitzat</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>M&apos;hi apunto:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I Màxim:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Percentatge de salts:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Configuració de visualització d&apos;atributs de quadrícula</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Bàsic</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Gràfic de cotes</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Gràfic independent</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Configuració de la carta d&apos;elevació</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Color de línia:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Mostra punts</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Mida del punt</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Mostra els índexs</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Color de la lletra:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Font:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Percentatge de salts:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Configuració independent del gràfic</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Alçada del gràfic:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[píxels]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Tipus de lletra del títol:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Color de l&apos;eix:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Font de l&apos;eix:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Configuració del mapa de colors</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Mostra el títol</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Color del títol</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
@@ -19971,7 +20925,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation>S'està exportant la quadrícula...</translation>
+        <translation>S&apos;està exportant la quadrícula...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -19979,7 +20933,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation>La quadrícula s'ha exportat correctament a %1.</translation>
+        <translation>La quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
@@ -20026,7 +20980,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configureu la barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Obriu la finestra de vista d’ocell (&amp;B)</translation>
     </message>
     <message>
@@ -20162,7 +21116,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -20298,7 +21252,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation>Canvia la configuració de mapatge d'atributs</translation>
+        <translation>Canvia la configuració de mapatge d&apos;atributs</translation>
     </message>
 </context>
 <context>
@@ -20365,7 +21319,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation>La quadrícula encara no s'ha creat ni importat.</translation>
+        <translation>La quadrícula encara no s&apos;ha creat ni importat.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
@@ -20427,11 +21381,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="vanished">Visualització d'etiquetes</translation>
+        <translation type="vanished">Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="vanished">Nombre d'etiquetes:</translation>
+        <translation type="vanished">Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -20463,7 +21417,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="vanished">Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -20471,7 +21425,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="vanished">Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -20556,7 +21510,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation>Mou els punts d'elevació</translation>
+        <translation>Mou els punts d&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -20591,7 +21545,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation>Edita el punt d'elevació</translation>
+        <translation>Edita el punt d&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -20601,7 +21555,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Mou (&amp;M)</translation>
     </message>
 </context>
-
+<!-- iricSolverconsole_ca_ES.ts -->
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -20618,7 +21572,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation>Aquest projecte s'obre en mode només de publicació. No podeu executar el solucionador.</translation>
+        <translation>Aquest projecte s&apos;obre en mode només de publicació. No podeu executar el solucionador.</translation>
     </message>
     <message>
         <source>Show Detail</source>
@@ -20642,11 +21596,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation>S'ha produït un error. %1</translation>
+        <translation>S&apos;ha produït un error. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Us recomanem que deseu el projecte abans d'iniciar el solucionador. Voleu estalviar?</translation>
+        <translation>Us recomanem que deseu el projecte abans d&apos;iniciar el solucionador. Voleu estalviar?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -20713,7 +21667,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation>S'està exportant el registre de la consola del solucionador...</translation>
+        <translation>S&apos;està exportant el registre de la consola del solucionador...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
@@ -20725,10 +21679,10 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation>No s'ha pogut exportar el registre de la consola del solucionador.</translation>
+        <translation>No s&apos;ha pogut exportar el registre de la consola del solucionador.</translation>
     </message>
 </context>
-
+<!-- rivmaker_ca_ES.ts -->
 <context>
     <name>AboutDialog</name>
     <message>
@@ -22106,7 +23060,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Punts d’elevació de l’aigua</translation>
     </message>
 </context>
-
+<!-- structured15dgridwithcrosssectionhecrasexporter_ca_ES.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22121,7 +23075,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>HEC-RAS</translation>
     </message>
 </context>
-
+<!-- structured2dgridgdalimporter_ca_ES.ts -->
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
@@ -22137,7 +23091,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Arxius ASCII ArcInfo (*.asc)</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvexporter_ca_ES.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22152,7 +23106,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays CSV</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvimporter_ca_ES.ts -->
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -22173,7 +23127,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>S'han ignorat les columnes següents. %1</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridexporter_ca_ES.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22188,7 +23142,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fitxer RIC-Nays Grid</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridimporter_ca_ES.ts -->
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -22208,7 +23162,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Els valors de la marca de cel·la no es carregaran.</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkexporter_ca_ES.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22223,7 +23177,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fitxer VTK</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkimporter_ca_ES.ts -->
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
@@ -22243,7 +23197,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Còpia %1 a %2 fracassat.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridtriangleimporter_ca_ES.ts -->
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -22263,7 +23217,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>%1 no existeix.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkexporter_ca_ES.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22278,7 +23232,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fitxer VTK</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkimporter_ca_ES.ts -->
 <context>
     <name>Unstructured2dGridVtkImporter</name>
     <message>

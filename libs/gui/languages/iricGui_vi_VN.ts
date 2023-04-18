@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Thanh màu</translation>
+        <translation type="vanished">Thanh màu</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Tiêu đề</translation>
+        <translation type="vanished">Tiêu đề</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>nhãn</translation>
+        <translation type="vanished">nhãn</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Chiều dài mũi tên</translation>
+        <translation type="vanished">Chiều dài mũi tên</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Bản đồ màu</translation>
+        <translation type="vanished">Bản đồ màu</translation>
     </message>
     <message>
         <source>Background Image</source>

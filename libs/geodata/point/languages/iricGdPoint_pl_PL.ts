@@ -45,6 +45,21 @@
         <source>Set vertex</source>
         <translation>Ustaw wierzchołek</translation>
     </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation>Ustawienie wyświetlania punktów</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation>Wybierz plik obrazu</translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation>Wszystkie obrazy (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
@@ -66,6 +81,68 @@
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Użyj ustawienia okna przetwarzania wstępnego</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation>Kształt</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>Zwrotnica</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Rozmiar punktu:</translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation>Obrazy ikon</translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation>Importuj obraz (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>Jasne (&amp;C)</translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation>Największy rozmiar:</translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation>Gdy szerokość lub wysokość importowanego obrazu jest większa niż maksymalny rozmiar, obraz jest automatycznie zmniejszany, aby szerokość lub wysokość była równa maksymalnemu rozmiarowi.</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Niestandardowy kolor</translation>
     </message>
 </context>
 </TS>

@@ -30,6 +30,7 @@ ColorMapEnumerateSettingContainer::ColorMapEnumerateSettingContainer() :
 	legend {}
 {
 	legend.setColorMapSetting(this);
+	connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapEnumerateSettingContainer::updated);
 }
 
 ColorMapEnumerateSettingContainer::ColorMapEnumerateSettingContainer(const ColorMapEnumerateSettingContainer& c) :
@@ -63,6 +64,7 @@ void ColorMapEnumerateSettingContainer::load(const QDomNode& node)
 		pair.load(itemNode);
 		colors.push_back(pair);
 	}
+	emit updated();
 }
 
 void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
@@ -81,6 +83,14 @@ void ColorMapEnumerateSettingContainer::copy(const ColorMapSettingContainerI& c)
 	copyValue(dynamic_cast<const ColorMapEnumerateSettingContainer&> (c));
 }
 
+ColorMapSettingContainerI* ColorMapEnumerateSettingContainer::copy()
+{
+	auto s = new ColorMapEnumerateSettingContainer();
+	s->copy(*this);
+
+	return s;
+}
+
 void ColorMapEnumerateSettingContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const auto& c2 = dynamic_cast<const ColorMapEnumerateSettingContainer&>(c);
@@ -89,6 +99,46 @@ void ColorMapEnumerateSettingContainer::copyValue(const XmlAttributeContainer& c
 	colors = c2.colors;
 	valueCaption = c2.valueCaption;
 	valueCaptions = c2.valueCaptions;
+
+	emit updated();
+}
+
+bool ColorMapEnumerateSettingContainer::importData(const QString& fileName)
+{
+	QFile f(fileName);
+	QDomDocument doc;
+
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+
+	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
+	if (! ok) {
+		return false;
+	}
+	auto elem = doc.documentElement();
+	if (elem.nodeName() != "EnumerateColorMapSetting") {
+		return false;
+	}
+	load(elem);
+	return true;
+}
+
+bool ColorMapEnumerateSettingContainer::exportData(const QString& fileName)
+{
+	QFile f(fileName);
+	bool ok = f.open(QFile::WriteOnly);
+	if (! ok) {return false;}
+
+	QXmlStreamWriter writer(&f);
+	writer.writeStartDocument();
+	writer.writeStartElement("EnumerateColorMapSetting");
+	save(writer);
+	writer.writeEndElement();
+	writer.writeEndDocument();
+	f.close();
+
+	return true;
 }
 
 void ColorMapEnumerateSettingContainer::setup(const EnumLoader* enumLoader)

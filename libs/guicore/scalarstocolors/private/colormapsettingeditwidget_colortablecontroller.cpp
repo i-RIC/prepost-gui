@@ -29,7 +29,7 @@ void applyTableRelativeContinuous(const ColorMapSettingContainer& setting, QStan
 	const auto& colors = setting.colors;
 
 	model->setColumnCount(2);
-	model->setRowCount(setting.colors.size());
+	model->setRowCount(static_cast<int> (setting.colors.size()));
 
 	model->setHeaderData(0, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Value"));
 	model->setHeaderData(1, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Color"));
@@ -39,11 +39,11 @@ void applyTableRelativeContinuous(const ColorMapSettingContainer& setting, QStan
 		const auto& c = colors.at(i);
 		auto itemV = new QStandardItem();
 		itemV->setData(min + (max - min) * c.value.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 0, itemV);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 0, itemV);
 
 		auto itemC = new QStandardItem();
 		itemC->setData(c.color.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 1, itemC);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 1, itemC);
 	}
 }
 
@@ -55,7 +55,7 @@ void applyTableRelativeDiscrete(const ColorMapSettingContainer& setting, QStanda
 	const auto& colors = setting.colors;
 
 	model->setColumnCount(4);
-	model->setRowCount(setting.colors.size());
+	model->setRowCount(static_cast<int> (setting.colors.size()));
 
 	model->setHeaderData(0, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Min value"));
 	model->setHeaderData(1, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Max value"));
@@ -74,21 +74,21 @@ void applyTableRelativeDiscrete(const ColorMapSettingContainer& setting, QStanda
 			itemMin->setEditable(false);
 			itemMin->setData(min + (max - min) * colors.at(i - 1).value.value(), Qt::EditRole);
 		}
-		model->setItem(colors.size() - 1 - i, 0, itemMin);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 0, itemMin);
 
 		auto itemMax = new QStandardItem();
 		itemMax->setData(min + (max - min) * colors.at(i).value.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 1, itemMax);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 1, itemMax);
 
 		auto itemC = new QStandardItem();
 		itemC->setData(colors.at(i).color.value(), Qt::EditRole);
 		itemC->setEditable(false);
-		model->setItem(colors.size() - 1 - i, 2, itemC);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 2, itemC);
 
 		auto itemT = new QStandardItem();
 		itemT->setData(colors.at(i).transparent.value(), Qt::EditRole);
 		itemT->setEditable(false);
-		model->setItem(colors.size() - 1 - i, 3, itemT);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 3, itemT);
 	}
 }
 
@@ -97,7 +97,7 @@ void applyTableAbsoluteContinuous(const ColorMapSettingContainer& setting, QStan
 	const auto& colors = setting.colors;
 
 	model->setColumnCount(2);
-	model->setRowCount(setting.colors.size());
+	model->setRowCount(static_cast<int> (setting.colors.size()));
 
 	model->setHeaderData(0, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Value"));
 	model->setHeaderData(1, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Color"));
@@ -108,11 +108,11 @@ void applyTableAbsoluteContinuous(const ColorMapSettingContainer& setting, QStan
 		const auto& c = colors.at(i);
 		auto itemV = new QStandardItem();
 		itemV->setData(c.value.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 0, itemV);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 0, itemV);
 
 		auto itemC = new QStandardItem();
 		itemC->setData(c.color.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 1, itemC);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 1, itemC);
 	}
 }
 
@@ -121,7 +121,7 @@ void applyTableAbsoluteDiscrete(const ColorMapSettingContainer& setting, QStanda
 	const auto& colors = setting.colors;
 
 	model->setColumnCount(4);
-	model->setRowCount(setting.colors.size());
+	model->setRowCount(static_cast<int> (setting.colors.size()));
 
 	model->setHeaderData(0, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Min value"));
 	model->setHeaderData(1, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Max value"));
@@ -140,20 +140,20 @@ void applyTableAbsoluteDiscrete(const ColorMapSettingContainer& setting, QStanda
 			itemMin->setData(colors.at(i - 1).value.value(), Qt::EditRole);
 			itemMin->setEditable(false);
 		}
-		model->setItem(colors.size() - 1 - i, 0, itemMin);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 0, itemMin);
 
 		auto itemMax = new QStandardItem();
 		itemMax->setData(colors.at(i).value.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 1, itemMax);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 1, itemMax);
 
 		auto itemC = new QStandardItem();
 		itemC->setData(colors.at(i).color.value(), Qt::EditRole);
-		model->setItem(colors.size() - 1 - i, 2, itemC);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 2, itemC);
 
 		auto itemT = new QStandardItem();
 		itemT->setData(colors.at(i).transparent.value(), Qt::EditRole);
 		itemT->setEditable(false);
-		model->setItem(colors.size() - 1 - i, 3, itemT);
+		model->setItem(static_cast<int> (colors.size()) - 1 - i, 3, itemT);
 	}
 }
 
@@ -203,8 +203,6 @@ void ColorMapSettingEditWidget::ColorTableController::applyToTable()
 void ColorMapSettingEditWidget::ColorTableController::handleItemClick(const QModelIndex& index)
 {
 	auto& s = m_widget->m_concreteSetting;
-	if (s.valueMode == ColorMapSettingContainer::ValueMode::Relative) {return;}
-
 	auto& c = s.colors.at(s.colors.size() - 1 - index.row());
 
 	if (s.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
@@ -223,7 +221,6 @@ void ColorMapSettingEditWidget::ColorTableController::handleItemClick(const QMod
 void ColorMapSettingEditWidget::ColorTableController::handleTableSelectionChange(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/)
 {
 	const auto& s = m_widget->m_concreteSetting;
-	if (s.valueMode == ColorMapSettingContainer::ValueMode::Relative) {return;}
 
 	auto rows = m_widget->colorTable()->selectionModel()->selectedRows();
 	bool removeOk = (rows.size() > 0 && s.colors.size() - rows.size() >= 2);

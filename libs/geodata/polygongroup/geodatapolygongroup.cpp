@@ -8,6 +8,7 @@
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
+#include <geodata/polygon/private/geodatapolygon_impl.h>
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/modifycommandandrenderdialog.h>
@@ -303,7 +304,6 @@ QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
 {
 	auto dialog = gridTypeDataItem()->createApplyColorMapSettingDialog(geoDataGroupDataItem()->condition()->name(), parent);
 	auto widget = new DisplaySettingWidget(dialog);
-	widget->setSetting(&impl->m_displaySetting);
 
 	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
 		widget->setIsReferenceInformation(true);
@@ -315,6 +315,7 @@ QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
 
 		widget->setColorMapWidget(colorMapWidget2);
 	}
+	widget->setSetting(&impl->m_displaySetting);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Polygons Display Setting"));
 	dialog->resize(900, 700);
@@ -353,6 +354,7 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 {
 	auto polygon = new GeoDataPolygon(parent(), creator(), gridAttribute());
 	polygon->setVariantValue(gridAttribute()->variantDefaultValue());
+	polygon->informSelection(dataModel()->graphicsView());
 
 	polygon->assignActorZValues(depthRange());
 	connect(polygon, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
@@ -365,12 +367,10 @@ void GeoDataPolygonGroup::updateActorSetting()
 	auto ds = impl->m_displaySetting;
 
 	// color
-	QColor c = ds.color;
-
-	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+	impl->m_edgesActor->GetProperty()->SetColor(ds.color);
 	impl->m_paintActor->GetProperty()->SetColor(ds.color);
-	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-	impl->m_selectedPolygonsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetColor(ds.color);
+	impl->m_selectedPolygonsPointsActor->GetProperty()->SetColor(ds.color);
 
 	// opacity
 	impl->m_paintActor->GetProperty()->SetOpacity(ds.opacity);
@@ -557,12 +557,16 @@ void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
 	auto targetData = dynamic_cast<GeoDataPolygon*> (t);
 
 	const auto& ds = impl->m_displaySetting;
-	targetData->setColor(ds.color);
-	targetData->setOpacity(ds.opacity);
+	auto& p_ds = targetData->impl->m_displaySetting;
+
+	p_ds.color = ds.color;
+	p_ds.opacity = ds.opacity;
 	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+		p_ds.mapping = GeoDataPolygon::DisplaySetting::Mapping::Arbitrary;
 	} else {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+		p_ds.mapping = GeoDataPolygon::DisplaySetting::Mapping::Value;
 	}
-	targetData->setLineWidth(ds.lineWidth);
+	p_ds.lineWidth = ds.lineWidth;
+
+	targetData->updateActorSetting();
 }

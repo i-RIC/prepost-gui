@@ -9,6 +9,7 @@ class ColorMapLegendSettingEditWidget;
 
 class ColorMapSettingContainer;
 class ColorMapLegendSettingContainer;
+class ImageSettingContainer;
 
 class ColorMapLegendSettingEditWidget : public QWidget
 {
@@ -20,16 +21,18 @@ public:
 
 	ColorMapLegendSettingContainer setting() const;
 	void setSetting(const ColorMapLegendSettingContainer& setting);
+	void setImageSetting(const ImageSettingContainer& setting);
 
 	void updateAutoNumberOfLabels();
 	void updateNumberOfLabelsIfNeeded();
-	void setDisableOtherThanImageSetting(bool disabled);
+	void setDisableOtherThanVisible(bool disabled);
 
 private slots:
 	void handleAutoNumberOfLabels(bool checked);
 
 private:
 	ColorMapSettingContainer* m_colorMapSetting;
+	bool m_delegateMode;
 	Ui::ColorMapLegendSettingEditWidget *ui;
 };
 

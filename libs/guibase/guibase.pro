@@ -109,10 +109,6 @@ HEADERS += colortool.h \
            vtktextpropertysettingdialog.h \
            vtktextpropertysettingwidget.h \
            xyaxisdisplaysettingdialog.h \
-           colormap/colormapcustomsetting.h \
-           colormap/colormapcustomsettingcolor.h \
-           colormap/colormapcustomsettingdialog.h \
-           colormap/colormapsettingwidget.h \
            coordinates/coordinatesedit.h \
            coordinates/coordinateseditdialog.h \
            executer/executeri.h \
@@ -214,8 +210,6 @@ FORMS += scalarbardialog.ui \
          vtktextpropertysettingdialog.ui \
          vtktextpropertysettingwidget.ui \
          xyaxisdisplaysettingdialog.ui \
-         colormap/colormapcustomsettingdialog.ui \
-         colormap/colormapsettingwidget.ui \
          coordinates/coordinateseditdialog.ui \
          gridshape/gridshapesettingeditwidget.ui \
          timeformat/timeformateditwidget.ui \
@@ -262,10 +256,6 @@ SOURCES += colortool.cpp \
            vtktextpropertysettingdialog.cpp \
            vtktextpropertysettingwidget.cpp \
            xyaxisdisplaysettingdialog.cpp \
-           colormap/colormapcustomsetting.cpp \
-           colormap/colormapcustomsettingcolor.cpp \
-           colormap/colormapcustomsettingdialog.cpp \
-           colormap/colormapsettingwidget.cpp \
            coordinates/coordinatesedit.cpp \
            coordinates/coordinateseditdialog.cpp \
            executer/executerwatcher.cpp \

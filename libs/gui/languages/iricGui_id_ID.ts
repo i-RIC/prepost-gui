@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Diskriminasi rasial</translation>
+        <translation type="vanished">Diskriminasi rasial</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation type="vanished">Judul</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Label</translation>
+        <translation type="vanished">Label</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Legenda Panjang Panah</translation>
+        <translation type="vanished">Legenda Panjang Panah</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Peta Warna</translation>
+        <translation type="vanished">Peta Warna</translation>
     </message>
     <message>
         <source>Background Image</source>

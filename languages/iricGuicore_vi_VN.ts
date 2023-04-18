@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Hiển thị</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Khi được chọn</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Luôn luôn</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Không bao giờ</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Kích thước và Vị trí</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dễ thấy</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Phương hướng:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Nằm ngang</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Thẳng đứng</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>chiều rộng thanh</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Tự động</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>căn chỉnh</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Bên trái</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Trung tâm</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Phải</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Chọn tệp để nhập</translation>
+        <translation type="vanished">Chọn tệp để nhập</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Cài đặt bản đồ màu (*.cmsetting)</translation>
+        <translation type="vanished">Cài đặt bản đồ màu (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Trong suốt</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Liệt kê cài đặt bản đồ màu (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Liệt kê cài đặt bản đồ màu (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Lỗi</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Đã xảy ra lỗi khi nhập cài đặt từ %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Công cộng (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Riêng tư (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Nhập cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Cách thức</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Chọn từ các tiêu chuẩn</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Chọn tập tin</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Tiêu chuẩn</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tài liệu</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Thuộc tính để nhập</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Phương hướng</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tiêu đề</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Cài đặt phông chữ</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Hiển thị nhãn</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Nhãn</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Lý lịch</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Kích thước và Vị trí</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Chức vụ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích cỡ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>chiều rộng thanh</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>căn chỉnh</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Xem trước</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Thanh màu</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Nằm ngang</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Thẳng đứng</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Hiển thị</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Khi được chọn</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Luôn luôn</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Không bao giờ</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Tự động</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dễ thấy</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>chiều rộng thanh</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>căn chỉnh</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Bên trái</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Trung tâm</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Phải</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>cài đặt trước:</translation>
+        <translation type="vanished">cài đặt trước:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Bỏ qua cài đặt thanh Màu khi nhập</translation>
+        <translation type="vanished">Bỏ qua cài đặt thanh Màu khi nhập</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Chọn tệp để nhập</translation>
+        <translation type="vanished">Chọn tệp để nhập</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi tải %1 lỗi phân tích cú pháp %2 Tại %3, cột %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Vui lòng chọn mục để áp dụng)</translation>
+        <translation type="vanished">(Vui lòng chọn mục để áp dụng)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Khi chuyển sang Chế độ chuyển màu, các giá trị được đặt thành giá trị ở giữa của mỗi phần.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Đảo ngược màu sắc (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>chia đều (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Cài đặt bản đồ màu (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Lỗi</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Đã xảy ra lỗi khi nhập cài đặt từ %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Công cộng (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Riêng tư (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Xuất khẩu (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Nhập cài đặt bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Cách thức</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Chọn từ các tiêu chuẩn</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Chọn tập tin</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Tiêu chuẩn</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tài liệu</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Thuộc tính để nhập</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Phương hướng</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tiêu đề</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Cài đặt phông chữ</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Hiển thị nhãn</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Định dạng</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Số lượng nhãn</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Nhãn</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Lý lịch</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Kích thước và Vị trí</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Chức vụ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích cỡ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>chiều rộng thanh</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>căn chỉnh</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Xem trước</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Số màu:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Tùy chọn</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Giá trị chữ số thập phân:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Đăng nhập quy mô:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Đã bật</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Thanh màu</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Nằm ngang</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Thẳng đứng</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Màu sắc:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

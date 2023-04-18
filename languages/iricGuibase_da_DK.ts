@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Brugerdefineret farvekort</translation>
+        <translation type="vanished">Brugerdefineret farvekort</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Type:</translation>
+        <translation type="vanished">Type:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>To farver</translation>
+        <translation type="vanished">To farver</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tre farver</translation>
+        <translation type="vanished">Tre farver</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Vilkårlig</translation>
+        <translation type="vanished">Vilkårlig</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>To farver/ tre farver</translation>
+        <translation type="vanished">To farver/ tre farver</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimal værdi</translation>
+        <translation type="vanished">Maksimal værdi</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Middelværdi</translation>
+        <translation type="vanished">Middelværdi</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Værdi</translation>
+        <translation type="vanished">Værdi</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Mindste værdi</translation>
+        <translation type="vanished">Mindste værdi</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Tilføje (&amp;A)</translation>
+        <translation type="vanished">Tilføje (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjerne (&amp;R)</translation>
+        <translation type="vanished">Fjerne (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importere (&amp;I)</translation>
+        <translation type="vanished">Importere (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksport (&amp;E)</translation>
+        <translation type="vanished">Eksport (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Import Colormap Setting</translation>
+        <translation type="vanished">Import Colormap Setting</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -fil (*.csv)</translation>
+        <translation type="vanished">CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fil %1 findes ikke.</translation>
+        <translation type="vanished">Fil %1 findes ikke.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fil %1 ikke kunne åbnes.</translation>
+        <translation type="vanished">Fil %1 ikke kunne åbnes.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Eksporter Colormap -indstilling</translation>
+        <translation type="vanished">Eksporter Colormap -indstilling</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Brugerdefinerede</translation>
+        <translation type="vanished">Brugerdefinerede</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Indstilling...</translation>
+        <translation type="vanished">Indstilling...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimumsværdi er %1.</translation>
+        <translation type="vanished">Minimumsværdi er %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maksimal værdi er %1.</translation>
+        <translation type="vanished">Maksimal værdi er %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Værdi mindre end %1 ikke tilladt.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur større end %1 er ikke tilladt.</translation>
     </message>
 </context>
 <context>

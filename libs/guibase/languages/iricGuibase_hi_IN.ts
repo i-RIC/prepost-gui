@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>कस्टम रंग नक्शा</translation>
+        <translation type="vanished">कस्टम रंग नक्शा</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>प्रकार:</translation>
+        <translation type="vanished">प्रकार:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>दो रंग</translation>
+        <translation type="vanished">दो रंग</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>तीन रंग</translation>
+        <translation type="vanished">तीन रंग</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>मनमाना</translation>
+        <translation type="vanished">मनमाना</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>दो रंग/तीन रंग</translation>
+        <translation type="vanished">दो रंग/तीन रंग</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>अधिकतम मूल्य</translation>
+        <translation type="vanished">अधिकतम मूल्य</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>मध्यम मूल्य</translation>
+        <translation type="vanished">मध्यम मूल्य</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>मूल्य</translation>
+        <translation type="vanished">मूल्य</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>न्यूनतम मूल्य</translation>
+        <translation type="vanished">न्यूनतम मूल्य</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>आयात (&amp;I)</translation>
+        <translation type="vanished">आयात (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>निर्यात (&amp;E)</translation>
+        <translation type="vanished">निर्यात (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>आयात रंगमैप सेटिंग</translation>
+        <translation type="vanished">आयात रंगमैप सेटिंग</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>सीएसवी फ़ाइल (*.csv)</translation>
+        <translation type="vanished">सीएसवी फ़ाइल (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>फ़ाइल %1 मौजूद नहीं है।</translation>
+        <translation type="vanished">फ़ाइल %1 मौजूद नहीं है।</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>फ़ाइल %1 खोला नहीं जा सका।</translation>
+        <translation type="vanished">फ़ाइल %1 खोला नहीं जा सका।</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>निर्यात Colormap सेटिंग</translation>
+        <translation type="vanished">निर्यात Colormap सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>रीति</translation>
+        <translation type="vanished">रीति</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>स्थापना...</translation>
+        <translation type="vanished">स्थापना...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>न्यूनतम मूल्य है %1.</translation>
+        <translation type="vanished">न्यूनतम मूल्य है %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>अधिकतम मान है %1.</translation>
+        <translation type="vanished">अधिकतम मान है %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>मान इससे छोटा है %1 में अनुमति नहीं है।</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>वेलूर से बड़ा %1 अनुमति नहीं है।</translation>
     </message>
 </context>
 <context>

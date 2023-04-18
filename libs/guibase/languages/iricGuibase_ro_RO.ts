@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Harta color personalizată</translation>
+        <translation type="vanished">Harta color personalizată</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tip:</translation>
+        <translation type="vanished">Tip:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Două culori</translation>
+        <translation type="vanished">Două culori</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Trei culori</translation>
+        <translation type="vanished">Trei culori</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrar</translation>
+        <translation type="vanished">Arbitrar</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Două culori / trei culori</translation>
+        <translation type="vanished">Două culori / trei culori</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Valoare maximă</translation>
+        <translation type="vanished">Valoare maximă</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Valoare medie</translation>
+        <translation type="vanished">Valoare medie</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valoare</translation>
+        <translation type="vanished">Valoare</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Valoare minimă</translation>
+        <translation type="vanished">Valoare minimă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adăuga (&amp;A)</translation>
+        <translation type="vanished">Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Export (&amp;E)</translation>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importați setarea Colormap</translation>
+        <translation type="vanished">Importați setarea Colormap</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Fișier CSV (*.csv)</translation>
+        <translation type="vanished">Fișier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fişier %1 nu există.</translation>
+        <translation type="vanished">Fişier %1 nu există.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fişier %1 nu a putut fi deschis.</translation>
+        <translation type="vanished">Fişier %1 nu a putut fi deschis.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Exportați setarea Colormap</translation>
+        <translation type="vanished">Exportați setarea Colormap</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formă</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalizat</translation>
+        <translation type="vanished">Personalizat</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Setare...</translation>
+        <translation type="vanished">Setare...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Valoarea minimă este %1.</translation>
+        <translation type="vanished">Valoarea minimă este %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Valoarea maximă este %1.</translation>
+        <translation type="vanished">Valoarea maximă este %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Valoare mai mică decât %1 in nu este permis.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur mai mare decât %1 nu este permis.</translation>
     </message>
 </context>
 <context>

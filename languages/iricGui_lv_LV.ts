@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Krāsu josla</translation>
+        <translation type="vanished">Krāsu josla</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Nosaukums</translation>
+        <translation type="vanished">Nosaukums</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiķetes</translation>
+        <translation type="vanished">Etiķetes</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Bultas garuma leģenda</translation>
+        <translation type="vanished">Bultas garuma leģenda</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Krāsu karte</translation>
+        <translation type="vanished">Krāsu karte</translation>
     </message>
     <message>
         <source>Background Image</source>

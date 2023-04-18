@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>시계</translation>
+        <translation type="vanished">시계</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>선택 시</translation>
+        <translation type="vanished">선택 시</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>언제나</translation>
+        <translation type="vanished">언제나</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>절대</translation>
+        <translation type="vanished">절대</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>크기와 위치</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>방향:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>수평의</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>수직의</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>막대 너비</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>자동</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>픽셀</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>조정</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>왼쪽</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>센터</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>오른쪽</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>가져올 파일 선택</translation>
+        <translation type="vanished">가져올 파일 선택</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>컬러맵 설정 (*.cmsetting)</translation>
+        <translation type="vanished">컬러맵 설정 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
+        <translation type="vanished">로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>투명한</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>컬러맵 설정 열거 (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>컬러맵 설정 열거 (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>에서 설정을 가져오는 동안 오류가 발생했습니다. %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>공공의 (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>사적인 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>컬러맵 설정 가져오기</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>방법</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>표준에서 선택</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>파일 선택</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>표준</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>파일</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>가져올 속성</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>방향</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>글꼴 설정</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>라벨 표시</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>상표</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>배경</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>크기와 위치</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>막대 너비</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>조정</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>시사</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>컬러 바</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>수평의</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>수직의</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>시계</translation>
+        <translation type="vanished">시계</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>선택 시</translation>
+        <translation type="vanished">선택 시</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>언제나</translation>
+        <translation type="vanished">언제나</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>절대</translation>
+        <translation type="vanished">절대</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>막대 너비</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>픽셀</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>조정</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>왼쪽</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>센터</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>오른쪽</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>사전 설정:</translation>
+        <translation type="vanished">사전 설정:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>가져올 때 색상 막대 설정 무시</translation>
+        <translation type="vanished">가져올 때 색상 막대 설정 무시</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>가져올 파일 선택</translation>
+        <translation type="vanished">가져올 파일 선택</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
+        <translation type="vanished">로드하는 동안 오류가 발생했습니다. %1 구문 분석 오류 %2 ~에 %3, 열 %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(적용할 항목을 선택해주세요)</translation>
+        <translation type="vanished">(적용할 항목을 선택해주세요)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">그라데이션 모드로 전환 시 각 구간의 중간 값으로 값이 설정됩니다.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>색상 반전 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>균등분할 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>컬러맵 설정 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>오류</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>에서 설정을 가져오는 동안 오류가 발생했습니다. %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>공공의 (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>사적인 (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>내보내다 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>컬러맵 설정 가져오기</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>방법</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>표준에서 선택</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>파일 선택</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>표준</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>파일</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>가져올 속성</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>방향</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>글꼴 설정</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>라벨 표시</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>체재</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>레이블 수</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>상표</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>배경</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>크기와 위치</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>막대 너비</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>조정</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>시사</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>색상 수:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>옵션</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>값 소수 자릿수:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>로그 스케일:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>사용</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>컬러 바</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>수평의</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>수직의</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>색상:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

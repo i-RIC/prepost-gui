@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>能見度</translation>
+        <translation type="vanished">能見度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選擇時</translation>
+        <translation type="vanished">選擇時</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>總是</translation>
+        <translation type="vanished">總是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>絕不</translation>
+        <translation type="vanished">絕不</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>大小和位置</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>方向：</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>條寬</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽車</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>結盟</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左邊</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中心</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>正確的</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>選擇要導入的文件</translation>
+        <translation type="vanished">選擇要導入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>色圖設置 (*.cmsetting)</translation>
+        <translation type="vanished">色圖設置 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>加載時出錯 %1 解析錯誤 %2 在 %3 ， 柱子 %4</translation>
+        <translation type="vanished">加載時出錯 %1 解析錯誤 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>透明的</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>枚舉顏色圖設置 (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>枚舉顏色圖設置 (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>錯誤</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>從中導入設置時出錯 %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>民眾 （ %1 )</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>私人的 （ %1 )</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>導入顏色圖設置</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>模式</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>從標準中選擇</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>選擇文件</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>文件</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>要導入的屬性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>標題</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>字體設置</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>標籤展示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>大小和位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>尺寸</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>條寬</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>結盟</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>預覽</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>彩條</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>能見度</translation>
+        <translation type="vanished">能見度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選擇時</translation>
+        <translation type="vanished">選擇時</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>總是</translation>
+        <translation type="vanished">總是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>絕不</translation>
+        <translation type="vanished">絕不</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>汽車</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>條寬</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>結盟</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左邊</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中心</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>正確的</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>預設：</translation>
+        <translation type="vanished">預設：</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>導入時忽略顏色條設置</translation>
+        <translation type="vanished">導入時忽略顏色條設置</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>選擇要導入的文件</translation>
+        <translation type="vanished">選擇要導入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>加載時出錯 %1 解析錯誤 %2 在 %3 ， 柱子 %4</translation>
+        <translation type="vanished">加載時出錯 %1 解析錯誤 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(請選擇要申請的項目)</translation>
+        <translation type="vanished">(請選擇要申請的項目)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">切換到漸變模式時，值設置為每個部分的中間值。</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>反色 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>等分 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>色圖設置 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>錯誤</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>從中導入設置時出錯 %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>民眾 （ %1 )</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>私人的 （ %1 )</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>出口 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>導入顏色圖設置</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>模式</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>從標準中選擇</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>選擇文件</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>文件</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>要導入的屬性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>標題</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>字體設置</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>標籤展示</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>格式</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>標籤數量</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>大小和位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>尺寸</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>條寬</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>結盟</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>預覽</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>顏色數量：</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>選項</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>數值小數位：</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>日誌規模：</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>啟用</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>彩條</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：名稱只能使用 ASCII 字符。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt; /html&gt;</translation>
     </message>
 </context>
 <context>

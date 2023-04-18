@@ -22,7 +22,7 @@ public:
 	ColorMapSettingContainer concreteSetting() const;
 	void setConcreteSetting(const ColorMapSettingContainer& setting);
 
-	void setDisableOtherThanImageSetting(bool disabled) override;
+	void setDisableOtherThanLegendVisible(bool disabled) override;
 	QUndoCommand* createModifyCommand() const override;
 
 public slots:
@@ -30,10 +30,12 @@ public slots:
 	void exportSetting() override;
 
 private slots:
-	void selectColorMapSetting(int index);
 	void switchToAutoMode();
 	void switchToManualMode();
 	void switchTransitionMode();
+
+	void reverseColors();
+	void divideEqually();
 
 	void switchAutoValueRange(bool automatic);
 	void changeFillLower(bool fill);
@@ -48,8 +50,6 @@ private:
 	QTableView* colorTable() const;
 	QPushButton* removeButton() const;
 
-	void importSetting(const QString& fileName, bool ignoreLegendSetting);
-
 	void applySettingOtherThanLegend();
 	void updateLegendNumberOfLabels();
 	void fixData();
@@ -57,8 +57,10 @@ private:
 	void updateSwitchButtonText();
 	void switchTransitionModeToContinuous();
 	void switchTransitionModeToDiscrete();
+	void normalizeColors();
 
 	void setupWidget() override;
+	void updateImageSetting() override;
 
 	ColorMapSettingContainer m_concreteSetting;
 	bool m_applying;
@@ -70,6 +72,7 @@ private:
 
 	Ui::ColorMapSettingEditWidget *ui;
 
+	class ImportDialog;
 	class SwitchToDiscreteDialog;
 };
 

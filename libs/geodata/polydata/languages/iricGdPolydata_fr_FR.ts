@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Réglage de la couleur</translation>
+        <translation type="vanished">%1 Réglage de la couleur</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Modifier le paramètre de couleur</translation>
+        <translation type="vanished">Modifier le paramètre de couleur</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -50,19 +50,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Paramètre de couleur PolyData</translation>
+        <translation type="vanished">Paramètre de couleur PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Couleur par valeur</translation>
+        <translation type="vanished">Couleur par valeur</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Couleur personnalisée</translation>
+        <translation type="vanished">Couleur personnalisée</translation>
     </message>
 </context>
 </TS>

@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilité</translation>
+        <translation type="vanished">Visibilité</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Lorsque sélectionné</translation>
+        <translation type="vanished">Lorsque sélectionné</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Toujours</translation>
+        <translation type="vanished">Toujours</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Jamais</translation>
+        <translation type="vanished">Jamais</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Taille et position</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Direction:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Largeur de la barre</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>pixels</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Alignement</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Gauche</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centre</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Droite</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Sélectionnez le fichier à importer</translation>
+        <translation type="vanished">Sélectionnez le fichier à importer</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Réglage de la palette de couleurs (*.cmsetting)</translation>
+        <translation type="vanished">Réglage de la palette de couleurs (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Une erreur s'est produite lors du chargement %1 Erreur d'analyse %2 à %3, colonne %4</translation>
+        <translation type="vanished">Une erreur s'est produite lors du chargement %1 Erreur d'analyse %2 à %3, colonne %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Énumérer le paramètre de palette de couleurs (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Énumérer le paramètre de palette de couleurs (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Une erreur s'est produite lors de l'importation du paramètre depuis %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Public (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privé (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importer le paramètre de palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Choisissez parmi les normes</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Choisir le dossier</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normes</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Déposer</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Attributs à importer</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direction</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titre</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Paramètre de police</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Affichage des étiquettes</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Étiqueter</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Arrière-plan</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Taille et position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Taille</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Largeur de la barre</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Alignement</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aperçu</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barre de couleur</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilité</translation>
+        <translation type="vanished">Visibilité</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Lorsque sélectionné</translation>
+        <translation type="vanished">Lorsque sélectionné</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Toujours</translation>
+        <translation type="vanished">Toujours</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Jamais</translation>
+        <translation type="vanished">Jamais</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Largeur de la barre</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>pixels</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Alignement</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Gauche</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centre</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Droite</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Préconfigurations:</translation>
+        <translation type="vanished">Préconfigurations:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorer le paramètre de barre de couleur lors de l'importation</translation>
+        <translation type="vanished">Ignorer le paramètre de barre de couleur lors de l'importation</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Sélectionnez le fichier à importer</translation>
+        <translation type="vanished">Sélectionnez le fichier à importer</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Une erreur s'est produite lors du chargement %1 Erreur d'analyse %2 à %3, colonne %4</translation>
+        <translation type="vanished">Une erreur s'est produite lors du chargement %1 Erreur d'analyse %2 à %3, colonne %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Veuillez sélectionner l'élément à appliquer)</translation>
+        <translation type="vanished">(Veuillez sélectionner l'élément à appliquer)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Lors du passage au mode Gradation, les valeurs sont définies sur la valeur médiane de chaque section.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Couleurs inversées (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Partage égal (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Réglage de la palette de couleurs (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Une erreur s'est produite lors de l'importation du paramètre depuis %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Public (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privé (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exporter (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importer le paramètre de palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Choisissez parmi les normes</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Choisir le dossier</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normes</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Déposer</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Attributs à importer</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direction</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titre</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Paramètre de police</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Affichage des étiquettes</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Nombre d'étiquettes</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Étiqueter</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Arrière-plan</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Taille et position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Taille</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Largeur de la barre</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Alignement</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aperçu</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Nombre de couleurs :</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Choix</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Décimales de valeurs :</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Échelle logarithmique:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activé</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barre de couleur</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Couleur:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque : Vous ne pouvez utiliser que des caractères ASCII pour le nom.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

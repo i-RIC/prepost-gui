@@ -30,6 +30,7 @@ FilenameEditWidget::FilenameEditWidget(QWidget* parent) :
 {
 	ui->setupUi(this);
 	connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(openDialog()));
+	connect(ui->lineEdit, &QLineEdit::textChanged, this, &FilenameEditWidget::changed);
 }
 
 FilenameEditWidget::~FilenameEditWidget()

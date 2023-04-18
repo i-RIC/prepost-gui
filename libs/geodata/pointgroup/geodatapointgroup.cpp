@@ -4,9 +4,10 @@
 #include "geodatapointgrouppoint.h"
 #include "geodatapointgroupproxy.h"
 #include "private/geodatapointgroup_impl.h"
-#include "private/geodatapointgroup_displaysettingwidget.h"
+#include "public/geodatapointgroup_displaysettingwidget.h"
 
 #include <geodata/point/geodatapoint.h>
+#include <geodata/point/private/geodatapoint_impl.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -260,12 +261,12 @@ QDialog* GeoDataPointGroup::propertyDialog(QWidget* parent)
 {
 	auto dialog = new PropertyDialog(this, parent);
 	auto widget = new DisplaySettingWidget(dialog);
-	widget->setSetting(&impl->m_displaySetting);
 
 	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
 		widget->setIsReferenceInformation(true);
 	}
 
+	widget->setSetting(&impl->m_displaySetting);
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Points Display Setting"));
 
@@ -322,10 +323,8 @@ void GeoDataPointGroup::updateActorSetting()
 
 	if (ds.shape == DisplaySetting::Shape::Point || ds.image.isNull()) {
 		// color
-		QColor c = ds.color;
-
-		impl->m_pointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-		impl->m_selectedPointsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+		impl->m_pointsActor->GetProperty()->SetColor(ds.color);
+		impl->m_selectedPointsPointsActor->GetProperty()->SetColor(ds.color);
 
 		// mapping
 		bool scalarVisibility = true;
@@ -504,13 +503,15 @@ void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
 
 	auto targetData = dynamic_cast<GeoDataPoint*> (t);
 
-	const auto& s = impl->m_displaySetting;
-	targetData->setColor(s.color);
-	targetData->setOpacity(s.opacity);
-	if (s.mapping == DisplaySetting::Mapping::Arbitrary) {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
-	} else {
-		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+	const auto& ds = impl->m_displaySetting;
+	auto& p_ds = targetData->impl->m_displaySetting;
+
+	p_ds.color = ds.color;
+	p_ds.opacity = ds.opacity;
+	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
+		p_ds.mapping = GeoDataPoint::DisplaySetting::Mapping::Arbitrary;
+	} else if (ds.mapping == DisplaySetting::Mapping::Value) {
+		p_ds.mapping = GeoDataPoint::DisplaySetting::Mapping::Value;
 	}
-	targetData->setPointSize(s.pointSize * 2);
+	targetData->setPointSize(ds.pointSize * 2);
 }

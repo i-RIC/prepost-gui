@@ -74,12 +74,12 @@
         <translation>Издөө:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color: #0000ff; &quot;&gt; Жапон координаттар системасы жөнүндө кеңеш (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: #0000ff; "&gt; Жапон координаттар системасы жөнүндө кеңеш (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt; &lt;span style = &quot;text-decoration: астын сызуу; түс:#0000ff; &quot;&gt; UTM координат системалары жөнүндө кеңеш (EPSG: 32601 - 32760 ж.б.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: астын сызуу; түс:#0000ff; "&gt; UTM координат системалары жөнүндө кеңеш (EPSG: 32601 - 32760 ж.б.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertexти алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттарды түзөтүү (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Борбордук сызыктын тескери багыты (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Тор жаратуучулардын аныктоочу файлын папкага жүктөөдө ката кетти &quot;%1&quot;. Бул тордун жаратуучусу этибарга алынбайт. %2</translation>
+        <translation>Тор жаратуучулардын аныктоочу файлын папкага жүктөөдө ката кетти "%1". Бул тордун жаратуучусу этибарга алынбайт. %2</translation>
     </message>
 </context>
 <context>
@@ -1103,7 +1103,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line&apos;ди өзүңүз аныктаңыз.</translation>
+        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line'ди өзүңүз аныктаңыз.</translation>
     </message>
 </context>
 <context>
@@ -1387,7 +1387,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line&apos;ди өзүңүз аныктаңыз.</translation>
+        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line'ди өзүңүз аныктаңыз.</translation>
     </message>
 </context>
 <context>
@@ -1774,8 +1774,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Борбордон чекитке чейинки аралык</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Сол жээк&quot; - төмөн жагына бурулганда, сиз сол жакта көргөн банк.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Сол жээк" - төмөн жагына бурулганда, сиз сол жакта көргөн банк.</translation>
     </message>
 </context>
 <!-- iricGccRiversurvey_ky_KG.ts -->
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Тазалоо полигонунун ичиндеги клеткалар үчүн максималдуу аймакты киргизиңиз.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: супер; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: супер; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>Кичине баалуулуктарды көрсөтүү менен, сиз жакшы торчолорду түзө аласыз.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: супер; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: супер; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_ky_KG.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Чокусун жылдыруу</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>Чокусун коюу</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>Пункт %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_ky_KG.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Түс жөндөө</translation>
+        <translation type="vanished">%1 Түс жөндөө</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4780,26 +4857,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Түс жөндөөсүн түзөтүү</translation>
+        <translation type="vanished">Түс жөндөөсүн түзөтүү</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Color Setting</translation>
+        <translation type="vanished">PolyData Color Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Түсү наркы боюнча</translation>
+        <translation type="vanished">Түсү наркы боюнча</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_ky_KG.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Polygon Vertexти алып салуу</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Түсү наркы боюнча</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_ky_KG.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>PolyLine Vertexти алып салуу</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI Shape файлы (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_ky_KG.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Графикалык терезе орнотулбай калды. Эсептөө натыйжасы туура жүктөлгөн эмес.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Бул функцияны төмөнкү шарттар аткарылганда колдонсо болот: &lt;ul&gt; &lt;li&gt; Эки өлчөмдүү структураланган сетка натыйжасы үчүн график чийилет. &lt;/li&gt; &lt;li&gt; X огу сеткадагы I-багыт. &lt;/Li &gt; &lt;li&gt; Тор &quot;кесилиш маалыматынан тор түзүү&quot; &lt;/li&gt; &lt;/ul&gt; алгоритмин колдонуу менен түзүлгөн</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Бул функцияны төмөнкү шарттар аткарылганда колдонсо болот: &lt;ul&gt; &lt;li&gt; Эки өлчөмдүү структураланган сетка натыйжасы үчүн график чийилет. &lt;/li&gt; &lt;li&gt; X огу сеткадагы I-багыт. &lt;/Li &gt; &lt;li&gt; Тор "кесилиш маалыматынан тор түзүү" &lt;/li&gt; &lt;/ul&gt; алгоритмин колдонуу менен түзүлгөн</translation>
     </message>
 </context>
 <context>
@@ -7858,8 +8033,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ката</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Биринчи тилкенин аталышы &quot;X&quot; болушу керек</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Биринчи тилкенин аталышы "X" болушу керек</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7938,8 +8113,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ката</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Биринчи тилкенин аталышы &quot;X&quot; болушу керек</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Биринчи тилкенин аталышы "X" болушу керек</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Ыңгайлаштырылган түс картасы</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс картасы</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Түрү:</translation>
+        <translation type="vanished">Түрү:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Эки Түстөр</translation>
+        <translation type="vanished">Эки Түстөр</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Үч Түстөр</translation>
+        <translation type="vanished">Үч Түстөр</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Ээнбаштык</translation>
+        <translation type="vanished">Ээнбаштык</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Эки түстүү/ үч түстүү</translation>
+        <translation type="vanished">Эки түстүү/ үч түстүү</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максималдуу мааниси</translation>
+        <translation type="vanished">Максималдуу мааниси</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Орто баалуулук</translation>
+        <translation type="vanished">Орто баалуулук</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Мааниси</translation>
+        <translation type="vanished">Мааниси</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Минималдуу мааниси</translation>
+        <translation type="vanished">Минималдуу мааниси</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Импорттоо (&amp;I)</translation>
+        <translation type="vanished">Импорттоо (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Экспорт (&amp;E)</translation>
+        <translation type="vanished">Экспорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Түстөр картасын орнотууну импорттоо</translation>
+        <translation type="vanished">Түстөр картасын орнотууну импорттоо</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файлы (*.csv)</translation>
+        <translation type="vanished">CSV файлы (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 жок.</translation>
+        <translation type="vanished">Файл %1 жок.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 ача алган жок.</translation>
+        <translation type="vanished">Файл %1 ача алган жок.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Түстөр картасынын жөндөөсүн экспорттоо</translation>
+        <translation type="vanished">Түстөр картасынын жөндөөсүн экспорттоо</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Ыңгайлаштырылган</translation>
+        <translation type="vanished">Ыңгайлаштырылган</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Жөндөө...</translation>
+        <translation type="vanished">Жөндөө...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Минималдуу мааниси %1.</translation>
+        <translation type="vanished">Минималдуу мааниси %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максималдуу мааниси %1.</translation>
+        <translation type="vanished">Максималдуу мааниси %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Көрүнүү</translation>
+        <translation type="vanished">Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Тандалганда</translation>
+        <translation type="vanished">Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Ар дайым</translation>
+        <translation type="vanished">Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Эч качан</translation>
+        <translation type="vanished">Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Өлчөмү жана абалы</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Багыты:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикалдуу</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Авто</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+        <translation type="vanished">Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Түс картасынын жөндөөсү (*.cmsetting)</translation>
+        <translation type="vanished">Түс картасынын жөндөөсү (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+        <translation type="vanished">Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Ачык</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Title</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Түс</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Өлчөмү жана абалы</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикалдуу</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Көрүнүү</translation>
+        <translation type="vanished">Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Тандалганда</translation>
+        <translation type="vanished">Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Ар дайым</translation>
+        <translation type="vanished">Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Эч качан</translation>
+        <translation type="vanished">Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Авто</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Алдын ала орнотуулар:</translation>
+        <translation type="vanished">Алдын ала орнотуулар:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
+        <translation type="vanished">Импорттоодо Түс тилкесинин жөндөөсүнө көңүл бурбаңыз</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Импорттоо үчүн файлды тандаңыз</translation>
+        <translation type="vanished">Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
+        <translation type="vanished">Жүктөө учурунда ката кетти %1 Талдоо катасы %2 саат %3, тилке %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Колдонуу үчүн нерсени тандаңыз)</translation>
+        <translation type="vanished">(Колдонуу үчүн нерсени тандаңыз)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Градация режимине өткөндө, маанилер ар бир бөлүмдүн орто маанисине коюлат.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Түс картасынын жөндөөсү (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Экспорт (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Title</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Түс</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Өлчөмү жана абалы</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиция</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Түстөрдүн саны:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Иштетилди</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикалдуу</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Түс тилкеси</translation>
+        <translation type="vanished">Түс тилкеси</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation type="vanished">Title</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Энбелгилер</translation>
+        <translation type="vanished">Энбелгилер</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Жебе узундугу Легенда</translation>
+        <translation type="vanished">Жебе узундугу Легенда</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Түс картасы</translation>
+        <translation type="vanished">Түс картасы</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14800,8 +15345,8 @@ Option -&gt; Preferences</source>
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Үстүндө %1, мааниси &quot;%2&quot;кесилиш үчүн&quot;%3&quot;жараксыз. Мааниге көңүл бурулбайт.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Үстүндө %1, мааниси "%2"кесилиш үчүн"%3"жараксыз. Мааниге көңүл бурулбайт.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Диалог</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Түзөтүү...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Кесилиш терезесин ачуу үчүн, бир гана тор түйүнүн тандаңыз.</translation>
+        <translation type="vanished">Кесилиш терезесин ачуу үчүн, бир гана тор түйүнүн тандаңыз.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Узунунан кесилиш терезесин ачуу үчүн, бир гана тор түйүнүн тандаңыз.</translation>
+        <translation type="vanished">Узунунан кесилиш терезесин ачуу үчүн, бир гана тор түйүнүн тандаңыз.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Тор кесилиши (%1): I = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Тордун кесилишинин терезеси</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Орнотуу куралдар панелин көрүү</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Орнотуу куралдар панелин көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Орнотуу</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Автоматтык масштабды өзгөртүү</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Аспект катышы (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Аспект катышын оңдоо</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Аймакты оңдоо</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Тор</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Масштаб</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Сол/оң жээк маркерлери</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Аспект катышы</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Display Setting</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controller</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Сол жээк жагы</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Оң жээк жагы</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Аспект катышы (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ката</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Жасап жатканда ката кетти %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Индекс</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Аралык(м)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Жогорку агым</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Төмөнкү тарап</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Оң жак</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Сол тарап</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>CSV файлдарын экспорттоо</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>аты</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Орнотуу</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Тор атрибутун көрсөтүү жөндөөлөрү (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Сүрөттөрдү сактоо</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Багыт</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>И</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Ж</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Клетка баалуулуктары</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Жогорку агым жагы</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Төмөнкү тарап</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Снапшот (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV экспорту (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Тор кесилишинин терезе дисплей жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Фондук тор</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Түр</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Саптар</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>чекиттер</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонталдуу</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Масштаб</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Чакан шкала</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикалдуу</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Таразалар</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Арип:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Сол/оң жээк маркерлери</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Аспект катышы</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Экспорт жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Папка &amp; Префикс (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Папка:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Префикс:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Кайчылаш бөлүм</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Учурдагы гана</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Баары</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Ыңгайлаштырылган</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Мен Мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Мен Макс:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Өткөрүп жиберүү баасы:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Тор атрибутун көрсөтүү жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Негизги</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Бийиктик диаграммасы</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Көз карандысыз диаграмма</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Бийиктик диаграммасын орнотуу</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Сызыктын түсү:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Упайларды көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Point Size</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Индекстерди көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Арип түсү:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Арип:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Өткөрүп жиберүү баасы:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Көз карандысыз диаграмма орнотуу</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Диаграмманын бийиктиги:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[пиксел]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Аталышынын шрифти:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Октун түсү:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Axis шрифти:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Түс картасынын жөндөөсү</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Эскертүү:&lt;/span&gt; Түс жөндөөлөрүн түзөтүү үчүн Түс картасы өтмөгүн колдонуңуз&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Аталышын көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Аталышынын түсү</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">Чыккан күнү: 2021/4/28</translation>
+        <translation>Чыккан датасы: 28.04.2021</translation>
     </message>
 </context>
 <context>
@@ -20916,8 +21868,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Азырынча кесилиш аныктала элек.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Кыймылдын аталышы жараксыз. Аты &quot;X1&quot;, &quot;X2&quot;,... же &quot;XS1&quot;, &quot;XS2&quot;,... болушу керек</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Кыймылдын аталышы жараксыз. Аты "X1", "X2",... же "XS1", "XS2",... болушу керек</translation>
     </message>
 </context>
 <context>

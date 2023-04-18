@@ -15,9 +15,7 @@ Post2dWindowCellScalarGroupDataItem::Setting::Setting() :
 	colorMapSetting {},
 	regionSetting {},
 	opacity {"opacity", 50}
-{
-	colorMapSetting.legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
-}
+{}
 
 Post2dWindowCellScalarGroupDataItem::Setting::Setting(const Setting& setting) :
 	Setting {}
@@ -92,7 +90,7 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 
 	m_actor2DCollection->RemoveAllItems();
-	if (m_setting.colorMapSetting.legend.visibilityMode != ColorMapLegendSettingContainer::VisibilityMode::Never) {
+	if (m_setting.colorMapSetting.legend.visible) {
 		m_actor2DCollection->AddItem(m_legendActor);
 	}
 

@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Viditelnost</translation>
+        <translation type="vanished">Viditelnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Při výběru</translation>
+        <translation type="vanished">Při výběru</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Vždy</translation>
+        <translation type="vanished">Vždy</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikdy</translation>
+        <translation type="vanished">Nikdy</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Velikost a poloha</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viditelné</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Směr:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontální</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikální</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Šířka pruhu</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Zarovnání</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vlevo, odjet</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrum</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Že jo</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Vyberte soubor k importu</translation>
+        <translation type="vanished">Vyberte soubor k importu</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Nastavení barevné mapy (*.cmsetting)</translation>
+        <translation type="vanished">Nastavení barevné mapy (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
+        <translation type="vanished">Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Průhledný</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Výčet nastavení barevné mapy (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Výčet nastavení barevné mapy (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Při importu nastavení z webu došlo k chybě %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Veřejné (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Soukromé (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Import nastavení mapy barev</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režim</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Vyberte si ze standardů</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Zvolte soubor</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normy</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Soubor</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atributy k importu</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Směr</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavení písma</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Zobrazení štítků</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Označení</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Pozadí</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost a poloha</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozice</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Šířka pruhu</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Zarovnání</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Náhled</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barevný pruh</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontální</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikální</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Viditelnost</translation>
+        <translation type="vanished">Viditelnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Při výběru</translation>
+        <translation type="vanished">Při výběru</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Vždy</translation>
+        <translation type="vanished">Vždy</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikdy</translation>
+        <translation type="vanished">Nikdy</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viditelné</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Šířka pruhu</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Zarovnání</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vlevo, odjet</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrum</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Že jo</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Předvolby:</translation>
+        <translation type="vanished">Předvolby:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Při importu ignorujte nastavení barevného pruhu</translation>
+        <translation type="vanished">Při importu ignorujte nastavení barevného pruhu</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Vyberte soubor k importu</translation>
+        <translation type="vanished">Vyberte soubor k importu</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
+        <translation type="vanished">Při načítání došlo k chybě %1 Chyba analýzy %2 na %3, sloupec %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Vyberte položku, kterou chcete použít)</translation>
+        <translation type="vanished">(Vyberte položku, kterou chcete použít)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Při přepnutí do režimu gradace jsou hodnoty nastaveny na střední hodnotu každé sekce.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Obrácené barvy (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Rovné dělení (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavení barevné mapy (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Při importu nastavení z webu došlo k chybě %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Veřejné (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Soukromé (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Vývozní (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Import nastavení mapy barev</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režim</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Vyberte si ze standardů</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Zvolte soubor</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normy</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Soubor</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atributy k importu</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Směr</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavení písma</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Zobrazení štítků</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formát</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Počet štítků</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Označení</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Pozadí</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost a pozice</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozice</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Šířka pruhu</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Zarovnání</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Náhled</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Počet barev:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Možnosti</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Hodnota desetinných míst:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Měřítko protokolu:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Povoleno</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barevný pruh</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontální</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikální</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka: Pro jméno můžete použít pouze znaky ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

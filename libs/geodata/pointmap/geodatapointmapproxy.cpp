@@ -68,8 +68,15 @@ void GeoDataPointmapProxy::updateActorSetting()
 		ds = pointmap->impl->m_displaySetting;
 	}
 
-	auto cs = colorMapSettingContainer();
-	auto mapper = cs->buildPointDataMapper(pointmap->impl->m_tinManager.tin());
+	auto cm = colorMapSettingContainer();
+	vtkMapper* mapper = nullptr;
+	if (cm != nullptr) {
+		mapper = cm->buildPointDataMapper(pointmap->impl->m_tinManager.tin());
+	} else {
+		auto polyDataMapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		polyDataMapper->SetInputData(pointmap->impl->m_tinManager.tin());
+		mapper = polyDataMapper;
+	}
 	auto actor = impl->m_tinActor;
 	actor->SetMapper(mapper);
 	mapper->Delete();

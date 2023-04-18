@@ -1,10 +1,12 @@
 #include "geodatapoint.h"
+#include "geodatapointproxy.h"
 
 #include "private/geodatapoint_coordinateseditor.h"
 #include "private/geodatapoint_finishpointdefinitioncommand.h"
 #include "private/geodatapoint_movevertexcommand.h"
 #include "private/geodatapoint_setvertexcommand.h"
 #include "private/geodatapoint_impl.h"
+#include "public/geodatapoint_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -13,6 +15,7 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/pre/geodata/private/geodata_propertydialog.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/informationdialog.h>
 #include <misc/mathsupport.h>
@@ -27,12 +30,18 @@
 #include <QToolBar>
 
 #include <vtkActor.h>
+#include <vtkActor2D.h>
+#include <vtkActor2DCollection.h>
 #include <vtkCellData.h>
 #include <vtkDoubleArray.h>
+#include <vtkImageChangeInformation.h>
+#include <vtkImageMapper.h>
 #include <vtkMapper.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
+#include <vtkProperty2D.h>
+#include <vtkQImageToImageSource.h>
 #include <vtkRenderer.h>
 
 #include <vector>
@@ -46,6 +55,7 @@ const std::string SCALARNAME = "pointvalue";
 GeoDataPoint::Impl::Impl(GeoDataPoint* parent) :
 	m_parent {parent},
 	m_actor {vtkActor::New()},
+	m_imageActor {vtkActor2D::New()},
 	m_scalarValues {vtkDoubleArray::New()},
 	m_pointController {},
 	m_mouseEventMode {meBeforeDefining},
@@ -57,14 +67,25 @@ GeoDataPoint::Impl::Impl(GeoDataPoint* parent) :
 	connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
 
 	setupScalarValues();
-
 }
 
 GeoDataPoint::Impl::~Impl()
 {
 	m_actor->Delete();
+	m_imageActor->Delete();
 	m_scalarValues->Delete();
 	delete m_rightClickingMenu;
+}
+
+QPixmap GeoDataPoint::Impl::shrinkPixmap(const QPixmap pixmap, int maxSize)
+{
+	if (pixmap.width() <= maxSize && pixmap.height() <= maxSize) {return pixmap;}
+
+	if (pixmap.width() > pixmap.height()) {
+		return pixmap.scaledToWidth(maxSize);
+	} else {
+		return pixmap.scaledToHeight(maxSize);
+	}
 }
 
 void GeoDataPoint::Impl::setupScalarValues()
@@ -79,21 +100,19 @@ GeoDataPoint::GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDe
 	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
-	setColor(Qt::black);
-	setOpacity(100);
-
 	renderer()->AddActor(impl->m_actor);
-	actorCollection()->AddItem(impl->m_actor);
 
-	updateActorSettings();
-	updateVisibilityWithoutRendering();
+	auto att = gridAttribute();
+	if (att && att->isReferenceInformation()) {
+		impl->m_displaySetting.mapping = DisplaySetting::Mapping::Arbitrary;
+	}
+
+	updateActorSetting();
 }
 
 GeoDataPoint::~GeoDataPoint()
 {
 	renderer()->RemoveActor(impl->m_actor);
-	actorCollection()->RemoveItem(impl->m_actor);
 
 	delete impl;
 }
@@ -258,6 +277,32 @@ void GeoDataPoint::setPoint(const QPointF& point)
 	impl->m_pointController.setPoint(point);
 }
 
+QDialog* GeoDataPoint::propertyDialog(QWidget* parent)
+{
+	auto dialog = new PropertyDialog(this, parent);
+	auto widget = new DisplaySettingWidget(dialog);
+
+	if (geoDataGroupDataItem()->condition()->isReferenceInformation()) {
+		widget->setIsReferenceInformation(true);
+	}
+
+	widget->setSetting(&impl->m_displaySetting);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Point Display Setting"));
+
+	return dialog;
+}
+
+void GeoDataPoint::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
+GeoDataProxy* GeoDataPoint::getProxy()
+{
+	return new GeoDataPointProxy(this);
+}
+
 void GeoDataPoint::restoreMouseEventMode()
 {
 	impl->m_mouseEventMode = meNormal;
@@ -313,30 +358,76 @@ void GeoDataPoint::updateScalarValues()
 	impl->m_scalarValues->Modified();
 }
 
-void GeoDataPoint::updateActorSettings()
+void GeoDataPoint::updateActorSetting()
 {
-	auto cs = colorSetting();
-	// color
-	impl->m_actor->GetProperty()->SetColor(cs.color);
+	auto r = renderer();
+	impl->m_actor->VisibilityOff();
+	impl->m_imageActor->VisibilityOff();
 
-	// opacity
-	impl->m_actor->GetProperty()->SetOpacity(cs.opacity);
+	actorCollection()->RemoveAllItems();
+	actor2DCollection()->RemoveAllItems();
 
-	// mapping
-	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
-		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		mapper->SetInputData(impl->m_pointController.polyData());
-		impl->m_actor->SetMapper(mapper);
-		mapper->Delete();
+	auto& ds = impl->m_displaySetting;
+
+	if (ds.shape == DisplaySetting::Shape::Point || ds.image.isNull()) {
+		// color
+		impl->m_actor->GetProperty()->SetColor(ds.color);
+
+		auto cm = colorMapSettingContainer();
+		if (cm == nullptr) {
+			ds.mapping = DisplaySetting::Mapping::Arbitrary;
+		}
+
+		// mapping
+		if (ds.mapping == DisplaySetting::Mapping::Value) {
+			vtkMapper* mapper = nullptr;
+
+			mapper = cm->buildCellDataMapper(impl->m_pointController.polyData(), true);
+			impl->m_actor->SetMapper(mapper);
+			mapper->Delete();
+		} else {
+			vtkPolyDataMapper* mapper = nullptr;
+
+			mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+			mapper->SetInputData(impl->m_pointController.polyData());
+			impl->m_actor->SetMapper(mapper);
+			mapper->Delete();
+		}
+
+		// opacity
+		impl->m_actor->GetProperty()->SetOpacity(ds.opacity);
+
+		// pointSize
+		impl->m_actor->GetProperty()->SetPointSize(ds.pointSize);
+
+		actorCollection()->AddItem(impl->m_actor);
 	} else {
-		auto cs = colorMapSettingContainer();
-		auto mapper = cs->buildCellDataMapper(impl->m_pointController.polyData(), true);
-		impl->m_actor->SetMapper(mapper);
-		mapper->Delete();
-	}
+		auto pixmap = QPixmap::fromImage(impl->m_displaySetting.image);
+		impl->m_shrinkedImage = Impl::shrinkPixmap(pixmap, impl->m_displaySetting.imageMaxSize).toImage();
+		auto imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
+		imgToImg->SetQImage(&impl->m_shrinkedImage);
+		auto imageInfo = vtkSmartPointer<vtkImageChangeInformation>::New();
+		imageInfo->SetInputConnection(imgToImg->GetOutputPort());
+		imageInfo->CenterImageOn();
 
-	impl->m_pointController.actor()->GetProperty()->SetColor(cs.color);
-	impl->m_pointController.actor()->GetProperty()->SetOpacity(cs.opacity);
+		auto mapper = vtkSmartPointer<vtkImageMapper>::New();
+		mapper->SetColorWindow(255);
+		mapper->SetColorLevel(127.5);
+		mapper->SetInputConnection(imageInfo->GetOutputPort());
+
+		impl->m_imageActor->SetMapper(mapper);
+		impl->m_imageActor->GetProperty()->SetOpacity(impl->m_displaySetting.opacity);
+
+		auto coord = impl->m_imageActor->GetPositionCoordinate();
+		coord->SetCoordinateSystemToWorld();
+		auto p = impl->m_pointController.point();
+		coord->SetValue(p.x(), p.y(), 0);
+
+		actor2DCollection()->AddItem(impl->m_imageActor);
+	}
+	updateVisibilityWithoutRendering();
+
+	emit updateActorSettingExecuted();
 }
 
 void GeoDataPoint::updateMouseEventMode()

@@ -8,11 +8,13 @@
 #include "preprocessorrootdataitem.h"
 #include "private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h"
 #include "private/preprocessorgridtypedataitem_applycolormapsettingdialog.h"
+#include "private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h"
 
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
@@ -337,6 +339,7 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 	auto atts = m_gridType->gridAttributes();
 	for (auto att : atts) {
 		auto c = att->createColorMapSettingContainer();
+		c->legendSetting()->setVisible(false);
 		c->legendSetting()->setTitle(att->caption());
 		c->legendSetting()->imgSetting()->controller()->setItem(this);
 		m_colorMapSettingContainers.insert({att->name(), c});
@@ -347,10 +350,10 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 		m_colorMapLegendActors.insert({att->name(), actor});
 	}
 
-	// TODO complex type test needed!
 	auto complexAtts = m_gridType->gridComplexAttributes();
 	for (auto att : complexAtts) {
 		auto c = att->createColorMapSettingContainer();
+		c->legendSetting()->setVisible(false);
 		c->legendSetting()->setTitle(att->caption());
 		c->legendSetting()->imgSetting()->controller()->setItem(this);
 		m_colorMapSettingContainers.insert({att->name(), c});
@@ -498,4 +501,18 @@ void PreProcessorGridTypeDataItem::handleResize(VTKGraphicsView* v)
 	for (const auto& pair : m_colorMapSettingContainers) {
 		pair.second->legendSetting()->imgSetting()->controller()->handleResize(v);
 	}
+}
+
+ColorMapSettingToolBarWidgetController* PreProcessorGridTypeDataItem::createToolBarWidgetController(const std::string& name, QWidget* parent)
+{
+	auto att = m_gridType->gridAttribute(name);
+	if (att == nullptr) {
+		att = m_gridType->gridComplexAttribute(name);
+		if (att == nullptr) {return nullptr;}
+	}
+
+	auto widget = att->createColorMapSettingToolbarWidget(parent);
+	widget->hide();
+	widget->setSetting(m_colorMapSettingContainers.at(name));
+	return new ToolBarWidgetController(name, widget, this);
 }

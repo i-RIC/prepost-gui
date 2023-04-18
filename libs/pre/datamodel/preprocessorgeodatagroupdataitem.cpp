@@ -31,6 +31,8 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -118,6 +120,9 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
 
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent->parent());
+	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), preProcessorWindow());
+
 	// add background data item.
 	addBackground();
 
@@ -127,6 +132,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 
 PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 {
+	delete m_toolBarWidgetController;
 	delete m_dimensions;
 }
 
@@ -805,7 +811,7 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 	if (dimensions()->containers().size() > 0) {
 		dimCount = dimensions()->maxIndex() + 1;
 	}
-	int geodataCount = m_childItems.size();
+	int geodataCount = static_cast<int> (m_childItems.size());
 	return dimCount * geodataCount;
 }
 
@@ -1010,7 +1016,7 @@ void PreProcessorGeoDataGroupDataItem::editScalarsToColors()
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
-
+	dialog->resize(850, 650);
 	dialog->show();
 
 	iricMainWindow()->enterModelessDialogMode();
@@ -1160,47 +1166,6 @@ GeoDataCreator* PreProcessorGeoDataGroupDataItem::getPointMapCreator()
 	return nullptr;
 }
 
-void PreProcessorGeoDataGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	/*
-	PreProcessorGeoDataTopDataItem* tItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
-	tItem->informSelection(v);
-	*/
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
-	auto setting = typedi->colorMapSetting(condition()->name());
-	if (setting == nullptr) {return;}
-
-	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
-}
-
-void PreProcessorGeoDataGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	/*
-	PreProcessorGeoDataTopDataItem* tItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
-	tItem->informDeselection(v);
-	*/
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
-	auto setting = typedi->colorMapSetting(condition()->name());
-	if (setting == nullptr) {return;}
-
-	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-}
-
-void PreProcessorGeoDataGroupDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
-{
-	v->standardKeyPressEvent(event);
-}
-
-void PreProcessorGeoDataGroupDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
-{
-	v->standardKeyReleaseEvent(event);
-}
-
-void PreProcessorGeoDataGroupDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
-{
-	v->standardMouseDoubleClickEvent(event);
-}
-
 void PreProcessorGeoDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
@@ -1208,8 +1173,6 @@ void PreProcessorGeoDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGra
 	if (setting == nullptr) {return;}
 
 	setting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
-
-	v->standardMouseMoveEvent(event);
 }
 
 void PreProcessorGeoDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -1219,8 +1182,6 @@ void PreProcessorGeoDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGr
 	if (setting == nullptr) {return;}
 
 	setting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
-
-	v->standardMousePressEvent(event);
 }
 
 void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -1230,8 +1191,6 @@ void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 	if (setting == nullptr) {return;}
 
 	setting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
-
-	v->standardMouseReleaseEvent(event);
 }
 
 void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
@@ -1269,7 +1228,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 		codec = QTextCodec::codecForName("UTF-8");
 	}
 
-	for (int i = m_childItems.size() - 1; i >= 0; --i) {
+	for (int i = static_cast<int> (m_childItems.size()) - 1; i >= 0; --i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		GeoDataPolygon* rdp = dynamic_cast<GeoDataPolygon*>(rd);
@@ -1332,7 +1291,7 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 	if (QMessageBox::No == QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all items in %1 group?").arg(standardItem()->text()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
 		return;
 	}
-	for (int i = m_childItems.size() - 1; i >= 0; --i) {
+	for (int i = static_cast<int> (m_childItems.size()) - 1; i >= 0; --i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataBackground*>(rd) != nullptr) {continue;}
@@ -1433,15 +1392,32 @@ void PreProcessorGeoDataGroupDataItem::requestCrosssectionWindowDelete(GeoDataRi
 	}
 }
 
-bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* parent)
+bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	if (m_dimensions->selectWidgets().size() == 0) {return false;}
+	bool added = false;
+
+	if (! m_condition->isReferenceInformation()) {
+		toolBar->addAction(m_editColorMapAction);
+		toolBar->addSeparator();
+		added = true;
+	}
+
+	if (m_toolBarWidgetController != nullptr) {
+		auto widget = m_toolBarWidgetController->widget();
+		widget->setParent(toolBar);
+		widget->show();
+		toolBar->addWidget(widget);
+		added = true;
+	}
+
 	for (int i = 0; i < m_dimensions->selectWidgets().size(); ++i) {
 		GridAttributeDimensionSelectWidget* w = m_dimensions->selectWidgets().at(i);
-		QAction* action = parent->addWidget(w);
+		QAction* action = toolBar->addWidget(w);
 		action->setVisible(true);
+		added = true;
 	}
-	return true;
+
+	return added;
 }
 
 void PreProcessorGeoDataGroupDataItem::loadExternalData(const QString& /*filename*/)

@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Sérsniðið litakort</translation>
+        <translation type="vanished">Sérsniðið litakort</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Gerð:</translation>
+        <translation type="vanished">Gerð:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Tveir litir</translation>
+        <translation type="vanished">Tveir litir</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Þrír litir</translation>
+        <translation type="vanished">Þrír litir</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Handahófskennt</translation>
+        <translation type="vanished">Handahófskennt</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Tveir litir/ þrír litir</translation>
+        <translation type="vanished">Tveir litir/ þrír litir</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Hámarksgildi</translation>
+        <translation type="vanished">Hámarksgildi</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Meðalverðmæti</translation>
+        <translation type="vanished">Meðalverðmæti</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Verðmæti</translation>
+        <translation type="vanished">Verðmæti</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Lágmarksgildi</translation>
+        <translation type="vanished">Lágmarksgildi</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Bæta við (&amp;A)</translation>
+        <translation type="vanished">Bæta við (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjarlægðu (&amp;R)</translation>
+        <translation type="vanished">Fjarlægðu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Flytja inn (&amp;I)</translation>
+        <translation type="vanished">Flytja inn (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Útflutningur (&amp;E)</translation>
+        <translation type="vanished">Útflutningur (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Flytja inn litamyndastillingu</translation>
+        <translation type="vanished">Flytja inn litamyndastillingu</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV skrá (*.csv)</translation>
+        <translation type="vanished">CSV skrá (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Skrá %1 er ekki til.</translation>
+        <translation type="vanished">Skrá %1 er ekki til.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Skrá %1 var ekki hægt að opna.</translation>
+        <translation type="vanished">Skrá %1 var ekki hægt að opna.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Flytja út litmyndaskipulag</translation>
+        <translation type="vanished">Flytja út litmyndaskipulag</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Sérsniðin</translation>
+        <translation type="vanished">Sérsniðin</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Setur...</translation>
+        <translation type="vanished">Setur...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Lágmarksgildi er %1.</translation>
+        <translation type="vanished">Lágmarksgildi er %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Hámarksgildi er %1.</translation>
+        <translation type="vanished">Hámarksgildi er %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Verðmæti minna en %1 í ekki leyfilegt.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur stærri en %1 er ekki leyfilegt.</translation>
     </message>
 </context>
 <context>

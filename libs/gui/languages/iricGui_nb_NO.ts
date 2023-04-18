@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Fargelinje</translation>
+        <translation type="vanished">Fargelinje</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Tittel</translation>
+        <translation type="vanished">Tittel</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketter</translation>
+        <translation type="vanished">Etiketter</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Pillengdeforklaring</translation>
+        <translation type="vanished">Pillengdeforklaring</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Fargekart</translation>
+        <translation type="vanished">Fargekart</translation>
     </message>
     <message>
         <source>Background Image</source>

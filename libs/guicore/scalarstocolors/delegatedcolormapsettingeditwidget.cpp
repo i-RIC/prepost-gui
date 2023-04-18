@@ -37,7 +37,9 @@ void DelegatedColorMapSettingEditWidget::setSetting(DelegatedColorMapSettingCont
 {
 	m_setting = setting;
 
+	ui->useOriginalCheckBox->blockSignals(true);
 	ui->useOriginalCheckBox->setChecked(setting->usePreSetting);
+	ui->useOriginalCheckBox->blockSignals(false);
 	setUseOriginalSetting(setting->usePreSetting);
 }
 
@@ -54,13 +56,12 @@ QUndoCommand* DelegatedColorMapSettingEditWidget::createModifyCommand(bool apply
 
 void DelegatedColorMapSettingEditWidget::setUseOriginalSetting(bool use)
 {
-	m_widget->setDisableOtherThanImageSetting(use);
+	m_widget->setDisableOtherThanLegendVisible(use);
 	if (use) {
 		m_widget->setLegendSetting(m_setting->preSetting);
-	} else {
 		m_setting->customSetting->copy(*m_setting->preSetting->setting());
-		m_setting->customSetting->legendSetting()->copy(*m_setting->preSetting);
-
+		m_setting->customSetting->legendSetting()->copy(*m_setting->preSetting->setting()->legendSetting());
+	} else {
 		m_widget->setSetting(m_setting->customSetting);
 	}
 }

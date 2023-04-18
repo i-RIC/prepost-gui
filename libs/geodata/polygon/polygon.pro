@@ -68,6 +68,8 @@ LIBS += -liricGuicore
 LIBS += \
 	-lvtkCommonCore-$${VTK_MAJ_MIN} \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkRenderingCore-$${VTK_MAJ_MIN}
 
 # iriclib
@@ -120,6 +122,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_addholepolygoncommand.h \
            private/geodatapolygon_addvertexcommand.h \
            private/geodatapolygon_coordinateseditor.h \
+           private/geodatapolygon_displaysetting.h \
            private/geodatapolygon_editcoordinatescommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
@@ -132,9 +135,15 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygonabstractpolygon_impl.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
-           private/geodatapolygonnodemappert_detail.h
+           private/geodatapolygonnodemappert_detail.h \
+           private/geodatapolygonproxy_displaysetting.h \
+           private/geodatapolygonproxy_displaysettingwidget.h \
+           private/geodatapolygonproxy_impl.h \
+           public/geodatapolygon_displaysettingwidget.h
 FORMS += geodatapolygoncolorsettingdialog.ui \
-         geodatapolygonimportersettingdialog.ui
+         geodatapolygonimportersettingdialog.ui \
+         private/geodatapolygonproxy_displaysettingwidget.ui \
+         public/geodatapolygon_displaysettingwidget.ui
 SOURCES += geodatapolygon.cpp \
            geodatapolygonabstractpolygon.cpp \
            geodatapolygoncellmappersetting.cpp \
@@ -151,6 +160,7 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_addholepolygoncommand.cpp \
            private/geodatapolygon_addvertexcommand.cpp \
            private/geodatapolygon_coordinateseditor.cpp \
+           private/geodatapolygon_displaysetting.cpp \
            private/geodatapolygon_editcoordinatescommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp \
@@ -158,7 +168,11 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_movepolygoncommand.cpp \
            private/geodatapolygon_movevertexcommand.cpp \
            private/geodatapolygon_pushnewpointcommand.cpp \
-           private/geodatapolygon_removevertexcommand.cpp
+           private/geodatapolygon_removevertexcommand.cpp \
+           private/geodatapolygonproxy_displaysetting.cpp \
+           private/geodatapolygonproxy_displaysettingwidget.cpp \
+           private/geodatapolygonproxy_impl.cpp \
+           public/geodatapolygon_displaysettingwidget.cpp
 TRANSLATIONS += languages/iricGdPolygon_ar_EG.ts \
                 languages/iricGdPolygon_bg_BG.ts \
                 languages/iricGdPolygon_bs_BA.ts \

@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Koloreen ezarpena</translation>
+        <translation type="vanished">%1 Koloreen ezarpena</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Editatu kolore ezarpena</translation>
+        <translation type="vanished">Editatu kolore ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData kolore ezarpena</translation>
+        <translation type="vanished">PolyData kolore ezarpena</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Kolorea balioaren arabera</translation>
+        <translation type="vanished">Kolorea balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
 </context>
 </TS>

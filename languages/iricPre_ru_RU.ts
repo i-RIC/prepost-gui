@@ -1262,11 +1262,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Чтобы открыть окно сечения, выберите только один узел сетки.</translation>
+        <translation type="vanished">Чтобы открыть окно сечения, выберите только один узел сетки.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Чтобы открыть окно продольного сечения, выберите только один узел сетки.</translation>
+        <translation type="vanished">Чтобы открыть окно продольного сечения, выберите только один узел сетки.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1509,6 +1509,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Поперечное сечение сетки (%1): I = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Окно сечения сетки</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Панель инструментов настройки просмотра</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Панель инструментов настройки отображения</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Параметр</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Автоматическое изменение масштаба</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Соотношение сторон (В/Г): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Исправить соотношение сторон</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Исправить регион</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Сетка</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Шкала</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Маркеры левого/правого берега</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Соотношение сторон</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Настройка экрана</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Контроллер</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Левый берег</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Правый берег</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Соотношение сторон (В/Г): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Произошла ошибка при создании %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Индекс</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Расстояние (м)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation>Расстояние (м) от %1</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Сторона вверх по течению</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Нижняя сторона</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Правая сторона</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Левая сторона</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Экспорт файлов CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Видимый</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Имя</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Параметр</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Настройка отображения атрибутов сетки (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Сохранить снимки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Направление</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>я</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Дж</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиция</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Значения ячеек</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Сторона вверх по течению</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Нижняя сторона</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Снимок (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>Экспорт CSV (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Настройка отображения окна поперечного сечения сетки</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Фоновая сетка</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Линии</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Точки</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальный</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Шкала</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Подшкала</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальный</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Цвет:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Весы</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Шрифт:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Маркеры левого/правого берега</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Соотношение сторон</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Настройка экспорта</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Папка и префикс (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Папка:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Префикс:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Поперечное сечение</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Только текущий</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Все</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Обычай</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>я мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Я Макс:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Скорость пропуска:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Настройка отображения атрибутов сетки</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видимый</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Базовый</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Диаграмма высот</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Независимый график</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Настройка диаграммы высот</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Цвет линии:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина линии:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Показать очки</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Размер пункта</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Показать индексы</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Цвет шрифта:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Шрифт:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Скорость пропуска:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Независимая настройка диаграммы</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Высота диаграммы:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[пикселей]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Шрифт заголовка:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Цвет оси:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Шрифт оси:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Настройка цветовой карты</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; Используйте вкладку "Карта цветов" для редактирования настроек цвета&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Использовать настройку окна предварительной обработки</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Показать заголовок</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Цвет заголовка</translation>
     </message>
 </context>
 <context>

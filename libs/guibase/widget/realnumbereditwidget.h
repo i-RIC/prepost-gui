@@ -36,6 +36,7 @@ public:
 	void clearMaximum();
 
 	void setAcceptEvents(bool accept);
+	void setInformChangeOnFocusOutOnly(bool onFocusOutOnly);
 
 signals:
 	void valueChanged(double value);

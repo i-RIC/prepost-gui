@@ -44,7 +44,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 
 	m_polygon = new GeoDataPolygon(this, 0, 0);
 	m_polygon->setupMenu();
-	m_polygon->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+	m_polygon->setMapping(GeoDataPolygon::Mapping::Arbitrary);
 
 	m_rightClickingMenu = new QMenu(nullptr);
 	m_rightClickingMenu->setTitle(PreProcessorBCSettingDataItem::tr("Polygon"));

@@ -24,7 +24,7 @@ public:
 	ColorMapEnumerateSettingContainer concreteSetting() const;
 	void setConcreteSetting(const ColorMapEnumerateSettingContainer& setting);
 
-	void setDisableOtherThanImageSetting(bool disabled) override;
+	void setDisableOtherThanLegendVisible(bool disabled) override;
 	QUndoCommand* createModifyCommand() const override;
 
 private slots:
@@ -37,6 +37,7 @@ private:
 	void applySetting();
 
 	void setupWidget() override;
+	void updateImageSetting() override;
 
 	ColorMapEnumerateSettingContainer m_concreteSetting;
 
@@ -44,6 +45,8 @@ private:
 	ColorTableController* m_colorTableController;
 
 	Ui::ColorMapEnumerateSettingEditWidget *ui;
+
+	class ImportDialog;
 };
 
 #endif // COLORMAPENUMERATESETTINGEDITWIDGET_H

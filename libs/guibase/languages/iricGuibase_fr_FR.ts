@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Carte de couleurs personnalisée</translation>
+        <translation type="vanished">Carte de couleurs personnalisée</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Taper:</translation>
+        <translation type="vanished">Taper:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Deux couleurs</translation>
+        <translation type="vanished">Deux couleurs</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Trois couleurs</translation>
+        <translation type="vanished">Trois couleurs</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitraire</translation>
+        <translation type="vanished">Arbitraire</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Deux couleurs/trois couleurs</translation>
+        <translation type="vanished">Deux couleurs/trois couleurs</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Valeur maximum</translation>
+        <translation type="vanished">Valeur maximum</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Valeur moyenne</translation>
+        <translation type="vanished">Valeur moyenne</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valeur</translation>
+        <translation type="vanished">Valeur</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Valeur minimum</translation>
+        <translation type="vanished">Valeur minimum</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation type="vanished">Couleur</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ajouter (&amp;A)</translation>
+        <translation type="vanished">Ajouter (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Supprimer (&amp;R)</translation>
+        <translation type="vanished">Supprimer (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importer (&amp;I)</translation>
+        <translation type="vanished">Importer (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exportation (&amp;E)</translation>
+        <translation type="vanished">Exportation (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importer le paramètre de palette de couleurs</translation>
+        <translation type="vanished">Importer le paramètre de palette de couleurs</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>fichier CSV (*.csv)</translation>
+        <translation type="vanished">fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertissement</translation>
+        <translation type="vanished">Avertissement</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Déposer %1 N'existe pas.</translation>
+        <translation type="vanished">Déposer %1 N'existe pas.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Déposer %1 ne peut pas être ouvert.</translation>
+        <translation type="vanished">Déposer %1 ne peut pas être ouvert.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Exporter le paramètre de palette de couleurs</translation>
+        <translation type="vanished">Exporter le paramètre de palette de couleurs</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Former</translation>
+        <translation type="vanished">Former</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personnalisé</translation>
+        <translation type="vanished">Personnalisé</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Réglage...</translation>
+        <translation type="vanished">Réglage...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>La valeur minimale est %1.</translation>
+        <translation type="vanished">La valeur minimale est %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>La valeur maximale est %1.</translation>
+        <translation type="vanished">La valeur maximale est %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Valeur inférieure à %1 n'est pas autorisé.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valeur supérieure à %1 n'est pas autorisé.</translation>
     </message>
 </context>
 <context>

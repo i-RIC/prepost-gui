@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Krāsu iestatīšana</translation>
+        <translation type="vanished">%1 Krāsu iestatīšana</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Rediģējiet krāsu iestatījumu</translation>
+        <translation type="vanished">Rediģējiet krāsu iestatījumu</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData krāsu iestatījums</translation>
+        <translation type="vanished">PolyData krāsu iestatījums</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Krāsojiet pēc vērtības</translation>
+        <translation type="vanished">Krāsojiet pēc vērtības</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
 </context>
 </TS>

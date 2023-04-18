@@ -3,6 +3,8 @@
 
 #include "../guicore_global.h"
 
+#include <QObject>
+
 class ColorMapLegendSettingContainerI;
 class ValueRangeContainer;
 
@@ -13,8 +15,10 @@ class QDomNode;
 class QPainter;
 class QXmlStreamWriter;
 
-class GUICOREDLL_EXPORT ColorMapSettingContainerI
+class GUICOREDLL_EXPORT ColorMapSettingContainerI : public QObject
 {
+	Q_OBJECT
+
 public:
 	ColorMapSettingContainerI();
 	virtual ~ColorMapSettingContainerI();
@@ -25,6 +29,7 @@ public:
 	virtual void load(const QDomNode& node) = 0;
 	virtual void save(QXmlStreamWriter& writer) const = 0;
 	virtual void copy(const ColorMapSettingContainerI& c) = 0;
+	virtual ColorMapSettingContainerI* copy() = 0;
 
 	virtual vtkMapper* buildCellDataMapper(vtkDataSet* data, bool ignoreTransparent) = 0;
 	virtual vtkMapper* buildPointDataMapper(vtkDataSet* data) = 0;
@@ -38,6 +43,9 @@ public:
 
 	double autoMinValue;
 	double autoMaxValue;
+
+signals:
+	void updated();
 };
 
 #endif // COLORMAPSETTINGCONTAINERI_H

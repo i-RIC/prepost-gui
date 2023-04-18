@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Aangepaste kleurenkaart</translation>
+        <translation type="vanished">Aangepaste kleurenkaart</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Type:</translation>
+        <translation type="vanished">Type:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Twee kleuren</translation>
+        <translation type="vanished">Twee kleuren</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Drie kleuren</translation>
+        <translation type="vanished">Drie kleuren</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Willekeurig</translation>
+        <translation type="vanished">Willekeurig</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Twee kleuren / drie kleuren</translation>
+        <translation type="vanished">Twee kleuren / drie kleuren</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maximale waarde</translation>
+        <translation type="vanished">Maximale waarde</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Gemiddelde waarde</translation>
+        <translation type="vanished">Gemiddelde waarde</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Waarde</translation>
+        <translation type="vanished">Waarde</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimale waarde</translation>
+        <translation type="vanished">Minimale waarde</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importeren (&amp;I)</translation>
+        <translation type="vanished">Importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exporteren (&amp;E)</translation>
+        <translation type="vanished">Exporteren (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Instelling kleurenkaart importeren</translation>
+        <translation type="vanished">Instelling kleurenkaart importeren</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV-bestand (*.csv)</translation>
+        <translation type="vanished">CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Bestand %1 bestaat niet.</translation>
+        <translation type="vanished">Bestand %1 bestaat niet.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Bestand %1 kon niet worden geopend.</translation>
+        <translation type="vanished">Bestand %1 kon niet worden geopend.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Instelling kleurenkaart exporteren</translation>
+        <translation type="vanished">Instelling kleurenkaart exporteren</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Aangepast</translation>
+        <translation type="vanished">Aangepast</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Instelling...</translation>
+        <translation type="vanished">Instelling...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimale waarde is %1.</translation>
+        <translation type="vanished">Minimale waarde is %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maximale waarde is %1.</translation>
+        <translation type="vanished">Maximale waarde is %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Waarde kleiner dan %1 niet toegestaan.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Waarde groter dan %1 is niet toegestaan.</translation>
     </message>
 </context>
 <context>

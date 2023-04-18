@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Özel Renk Haritası</translation>
+        <translation type="vanished">Özel Renk Haritası</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tip:</translation>
+        <translation type="vanished">Tip:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>İki renk</translation>
+        <translation type="vanished">İki renk</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Üç Renk</translation>
+        <translation type="vanished">Üç Renk</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Keyfi</translation>
+        <translation type="vanished">Keyfi</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>İki Renk / Üç Renk</translation>
+        <translation type="vanished">İki Renk / Üç Renk</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimum değer</translation>
+        <translation type="vanished">Maksimum değer</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Orta Değer</translation>
+        <translation type="vanished">Orta Değer</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Değer</translation>
+        <translation type="vanished">Değer</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>En az değer</translation>
+        <translation type="vanished">En az değer</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ekle (&amp;A)</translation>
+        <translation type="vanished">Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kaldırmak (&amp;R)</translation>
+        <translation type="vanished">Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>İçe aktarmak (&amp;I)</translation>
+        <translation type="vanished">İçe aktarmak (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>İhracat (&amp;E)</translation>
+        <translation type="vanished">İhracat (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Renk Haritası Ayarını İçe Aktar</translation>
+        <translation type="vanished">Renk Haritası Ayarını İçe Aktar</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV dosyası (*.csv)</translation>
+        <translation type="vanished">CSV dosyası (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Dosya %1 Yok.</translation>
+        <translation type="vanished">Dosya %1 Yok.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Dosya %1 açılamadı.</translation>
+        <translation type="vanished">Dosya %1 açılamadı.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Renk Haritası Ayarını Dışa Aktar</translation>
+        <translation type="vanished">Renk Haritası Ayarını Dışa Aktar</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation type="vanished">Biçim</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Gelenek</translation>
+        <translation type="vanished">Gelenek</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Ayar...</translation>
+        <translation type="vanished">Ayar...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimum değer %1.</translation>
+        <translation type="vanished">Minimum değer %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maksimum değer: %1.</translation>
+        <translation type="vanished">Maksimum değer: %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>değer daha küçük %1 izin verilmez.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>değer daha büyük %1 Müsade edilmez.</translation>
     </message>
 </context>
 <context>

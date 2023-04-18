@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Színsáv</translation>
+        <translation type="vanished">Színsáv</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Cím</translation>
+        <translation type="vanished">Cím</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Címkék</translation>
+        <translation type="vanished">Címkék</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Nyíl hossza jelmagyarázat</translation>
+        <translation type="vanished">Nyíl hossza jelmagyarázat</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Színes térkép</translation>
+        <translation type="vanished">Színes térkép</translation>
     </message>
     <message>
         <source>Background Image</source>

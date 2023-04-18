@@ -1262,11 +1262,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Bir Kesit Penceresi açmak için lütfen yalnızca bir ızgara düğümü seçin.</translation>
+        <translation type="vanished">Bir Kesit Penceresi açmak için lütfen yalnızca bir ızgara düğümü seçin.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Bir Boyuna Kesit Penceresi açmak için, Lütfen yalnızca bir ızgara düğümü seçin.</translation>
+        <translation type="vanished">Bir Boyuna Kesit Penceresi açmak için, Lütfen yalnızca bir ızgara düğümü seçin.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1509,6 +1509,409 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Izgara Kesiti (%1): ben = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Izgara Kesit Penceresi</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Ayar Araç Çubuğunu Görüntüle</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Ekran Ayarı Araç Çubuğu</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>yapılırken hata oluştu %1.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ayar</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>dizin</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation>Uzaklık(m) %1</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>otomatik yeniden ölçeklendirme</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>En-boy oranı (D/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>En boy oranını düzelt</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Bölgeyi düzelt</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Kafes</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Ölçek</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Sol/sağ sıra işaretleri</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>en boy oranı</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekran ayarı</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Denetleyici</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Sol Banka Tarafı</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Sağ Banka Tarafı</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>En-boy oranı (D/H): 1 / %1</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Yukarı Taraf</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Mansap Tarafı</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Sağ Taraf</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Sol Taraf</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>CSV Dosyalarını Dışa Aktar</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ayar</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Izgara Niteliği Görüntüleme Ayarı (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Anlık Görüntüleri Kaydet</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Yön</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>BEN</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Hücre Değerleri</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>yukarı taraf</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>mansap tarafı</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Enstantane fotoğraf (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV Dışa Aktarma (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Izgara Kesiti Pencere Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Arka plan ızgarası</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>çizgiler</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>noktalar</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Yatay</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Oto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Ölçek</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>alt ölçek</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Dikey</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Renk:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Terazi</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Yazı tipi:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Sol/sağ sıra işaretleri</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>en boy oranı</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Ayarı Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Klasör ve Önek (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Dosya:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Önek:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Enine kesit</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Yalnızca Geçerli</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tüm</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Gelenek</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Varım:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Maks:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Atlama Oranı:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Izgara Niteliği Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Temel</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>mod</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Yükseklik tablosu</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Bağımsız grafik</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>renk haritası</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Yükseklik Tablosu Ayarı</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Çizgi rengi:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Puanları Göster</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Nokta Büyüklüğü</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Endeksleri Göster</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Yazı rengi:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Yazı tipi:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Atlama Oranı:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Bağımsız Grafik Ayarı</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Grafik Yüksekliği:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[piksel]</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Başlığı göster</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Başlık Yazı Tipi:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Eksen Rengi:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Eksen Yazı Tipi:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Renk Haritası Ayarı</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Başlık Rengi</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Ön işleme penceresinin ayarını kullanın</translation>
     </message>
 </context>
 <context>

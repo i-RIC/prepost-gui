@@ -81,5 +81,7 @@ void GeoDataPolygonGroup::DisplaySettingWidget::setIsReferenceInformation(bool i
 
 void GeoDataPolygonGroup::DisplaySettingWidget::handleColorByValueToggle(bool toggled)
 {
+	if (m_colorMapWidget == nullptr) {return;}
+
 	m_colorMapWidget->setEnabled(toggled);
 }

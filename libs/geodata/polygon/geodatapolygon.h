@@ -37,11 +37,12 @@ class GD_POLYGON_EXPORT GeoDataPolygon : public GeoDataPolyData
 {
 	Q_OBJECT
 
-private:
-	const static int normalEdgeWidth = 1;
-	const static int selectedEdgeWidth = 2;
-
 public:
+	enum class Mapping {
+		Value,
+		Arbitrary
+	};
+
 	enum SelectMode {
 		smNone,
 		smPolygon
@@ -92,6 +93,9 @@ public:
 
 	void setShape(geos::geom::Polygon* polygon);
 	void setShape(geos::geom::Polygon* polygon, const std::vector<unsigned int>& triangleCells);
+	void setColor(const QColor& color);
+	void setOpacity(int opacity);
+	void setMapping(Mapping mapping);
 
 	void clear();
 
@@ -108,6 +112,11 @@ public:
 	SelectMode selectMode() const;
 
 	void setBCSettingMode(bool mode);
+
+	QDialog* propertyDialog(QWidget* parent) override;
+	void showPropertyDialog() override;
+
+	class DisplaySettingWidget;
 
 public slots:
 	void restoreMouseEventMode();
@@ -135,7 +144,7 @@ private:
 	bool checkCondition();
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateScalarValues() override;
-	void updateActorSettings() override;
+	void updateActorSetting() override;
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();
@@ -187,6 +196,7 @@ private:
 	class RemoveVertexCommand;
 
 	class CoordinatesEditor;
+	class DisplaySetting;
 
 	class Impl;
 	Impl* impl;

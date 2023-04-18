@@ -1,4 +1,5 @@
 #include "geodatapolylinegroup_displaysettingwidget.h"
+#include "../private/geodatapolylinegroup_displaysetting.h"
 #include "ui_geodatapolylinegroup_displaysettingwidget.h"
 
 #include <misc/mergesupportedlistcommand.h>
@@ -81,5 +82,7 @@ void GeoDataPolyLineGroup::DisplaySettingWidget::setIsReferenceInformation(bool 
 
 void GeoDataPolyLineGroup::DisplaySettingWidget::handleColorByValueToggle(bool toggled)
 {
+	if (m_colorMapWidget == nullptr) {return;}
+
 	m_colorMapWidget->setEnabled(toggled);
 }

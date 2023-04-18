@@ -49,6 +49,7 @@ PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
 	m_geoData = nullptr;
 	PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
 	if (gItem != nullptr && ! m_deleteSilently) {
+		gItem->informDataChange();
 		gItem->informValueRangeChange();
 	}
 }

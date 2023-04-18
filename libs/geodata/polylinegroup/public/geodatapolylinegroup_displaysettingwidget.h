@@ -1,7 +1,6 @@
 #ifndef GEODATAPOLYLINEGROUP_DISPLAYSETTINGWIDGET_H
 #define GEODATAPOLYLINEGROUP_DISPLAYSETTINGWIDGET_H
 
-#include "../private/geodatapolylinegroup_displaysetting.h"
 #include "../geodatapolylinegroup.h"
 
 #include <misc/modifycommandwidget.h>

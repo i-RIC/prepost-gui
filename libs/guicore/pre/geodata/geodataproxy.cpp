@@ -11,7 +11,7 @@
 #include <QStandardItem>
 
 GeoDataProxy::GeoDataProxy(GeoData* geodata) :
-	ProjectDataItem(nullptr),
+	ProjectDataItem(geodata),
 	m_geoData {geodata}
 {}
 
@@ -170,6 +170,8 @@ void GeoDataProxy::applyColorMapSetting()
 ColorMapSettingContainerI* GeoDataProxy::colorMapSettingContainer() const
 {
 	auto setting = geoDataDataItem()->colorMapSetting();
+	if (setting == nullptr) {return nullptr;}
+
 	if (setting->usePreSetting) {
 		return setting->preSetting->setting();
 	} else {

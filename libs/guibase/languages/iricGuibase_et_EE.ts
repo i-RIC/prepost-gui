@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Kohandatud värvikaart</translation>
+        <translation type="vanished">Kohandatud värvikaart</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tüüp:</translation>
+        <translation type="vanished">Tüüp:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Kaks värvi</translation>
+        <translation type="vanished">Kaks värvi</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Kolm värvi</translation>
+        <translation type="vanished">Kolm värvi</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Meelevaldne</translation>
+        <translation type="vanished">Meelevaldne</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Kaks värvi/ kolm värvi</translation>
+        <translation type="vanished">Kaks värvi/ kolm värvi</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimaalne väärtus</translation>
+        <translation type="vanished">Maksimaalne väärtus</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Keskmine väärtus</translation>
+        <translation type="vanished">Keskmine väärtus</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Väärtus</translation>
+        <translation type="vanished">Väärtus</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimaalne väärtus</translation>
+        <translation type="vanished">Minimaalne väärtus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisama (&amp;A)</translation>
+        <translation type="vanished">Lisama (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eemalda (&amp;R)</translation>
+        <translation type="vanished">Eemalda (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksport (&amp;E)</translation>
+        <translation type="vanished">Eksport (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Värvikaardi seadete importimine</translation>
+        <translation type="vanished">Värvikaardi seadete importimine</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -fail (*.csv)</translation>
+        <translation type="vanished">CSV -fail (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fail %1 ei eksisteeri.</translation>
+        <translation type="vanished">Fail %1 ei eksisteeri.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fail %1 ei saanud avada.</translation>
+        <translation type="vanished">Fail %1 ei saanud avada.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Värvikaardi sätte eksportimine</translation>
+        <translation type="vanished">Värvikaardi sätte eksportimine</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation type="vanished">Vorm</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Kohandatud</translation>
+        <translation type="vanished">Kohandatud</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Seadistamine...</translation>
+        <translation type="vanished">Seadistamine...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimaalne väärtus on %1.</translation>
+        <translation type="vanished">Minimaalne väärtus on %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maksimaalne väärtus on %1.</translation>
+        <translation type="vanished">Maksimaalne väärtus on %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Väärtus väiksem kui %1 sisse pole lubatud.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur suurem kui %1 ei ole lubatud.</translation>
     </message>
 </context>
 <context>

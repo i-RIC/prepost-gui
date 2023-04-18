@@ -53,6 +53,8 @@ public:
 	void setupZoneDataItems();
 	void update();
 
+	void handleResize(VTKGraphicsView* v) override;
+
 public slots:
 	void applyColorMapSetting(const std::string& name);
 	void handlePreColorMapSettingUpdated(const std::string& name);
@@ -87,6 +89,7 @@ private:
 
 	class ApplyColorMapSettingCommand;
 	class ApplyColorMapSettingDialog;
+	class PreColorMapSettingUpdateHandler;
 };
 
 #endif // POST2DWINDOWGRIDTYPEDATAITEM_H

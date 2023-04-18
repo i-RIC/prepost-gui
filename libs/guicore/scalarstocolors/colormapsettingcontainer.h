@@ -16,7 +16,7 @@
 
 class vtkScalarsToColors;
 
-class GUICOREDLL_EXPORT ColorMapSettingContainer : public CompositeContainer, public ColorMapSettingContainerI
+class GUICOREDLL_EXPORT ColorMapSettingContainer : public ColorMapSettingContainerI, public CompositeContainer
 {
 public:
 	enum class TransitionMode {
@@ -49,8 +49,12 @@ public:
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;
 	void copy(const ColorMapSettingContainerI& c) override;
+	ColorMapSettingContainerI* copy() override;
 
 	void copyValue(const XmlAttributeContainer& c) override;
+
+	bool importData(const QString& fileName);
+	bool exportData(const QString& fileName);
 
 	EnumContainerT<TransitionMode> transitionMode;
 	EnumContainerT<ValueMode> valueMode;
@@ -72,6 +76,8 @@ public:
 	std::vector<ColorMapSettingValueColorPairContainer> getColors() const;
 
 private:
+	void importDefault();
+
 	vtkMapper* buildCellDataMapperContinuous(vtkDataSet* data);
 	vtkMapper* buildCellDataMapperDiscrete(vtkDataSet* data, bool ignoreTransparent);
 	vtkMapper* buildPointDataMapperContinuous(vtkDataSet* data);
