@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Elimina o vértice do polígono</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Configuración de visualización de polígonos</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Use a configuración da xanela de preprocesamento</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>Ficheiro ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Cor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Cor por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Cor personalizada</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de cores</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ancho de liña:</translation>
     </message>
 </context>
 </TS>

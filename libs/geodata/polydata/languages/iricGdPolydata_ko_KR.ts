@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 색상 설정</translation>
+        <translation type="vanished">%1 색상 설정</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>색상 설정 수정</translation>
+        <translation type="vanished">색상 설정 수정</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -50,19 +50,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData 색상 설정</translation>
+        <translation type="vanished">PolyData 색상 설정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>값에 따라 색상 지정</translation>
+        <translation type="vanished">값에 따라 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
 </context>
 </TS>

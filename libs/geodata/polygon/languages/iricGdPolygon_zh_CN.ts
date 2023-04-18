@@ -133,6 +133,10 @@
         <source>Polygon Coordinates</source>
         <translation>多边形坐标</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>多边形显示设置</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -262,6 +266,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>多边形显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>预处理窗口的使用设置</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shape file</source>
@@ -278,6 +300,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI 形状文件 (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值着色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行宽：</translation>
     </message>
 </context>
 </TS>

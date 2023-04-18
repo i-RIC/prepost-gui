@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vizibilitate</translation>
+        <translation type="vanished">Vizibilitate</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Când este selectat</translation>
+        <translation type="vanished">Când este selectat</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Mereu</translation>
+        <translation type="vanished">Mereu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nu</translation>
+        <translation type="vanished">Nu</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Mărime și poziție</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vizibil</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Direcţie:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Orizontală</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lățimea barei</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Aliniere</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Stânga</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centru</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Dreapta</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Selectați fișierul de importat</translation>
+        <translation type="vanished">Selectați fișierul de importat</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Setare hartă de culori (*.cmsetting)</translation>
+        <translation type="vanished">Setare hartă de culori (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
+        <translation type="vanished">A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Enumerați setarea hărții de culori (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Enumerați setarea hărții de culori (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>A apărut o eroare la importarea setării din %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Public (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privat (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Import Colormap Setare</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Selectați dintre standarde</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Selectați fișierul</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarde</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fişier</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atribute pentru import</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direcţie</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titlu</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Setarea fontului</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Afișare etichetă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Eticheta</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>fundal</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Mărime și poziție</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Poziţie</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>mărimea</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lățimea barei</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Aliniere</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>previzualizare</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Bara de culori</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Orizontală</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vizibilitate</translation>
+        <translation type="vanished">Vizibilitate</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Când este selectat</translation>
+        <translation type="vanished">Când este selectat</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Mereu</translation>
+        <translation type="vanished">Mereu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nu</translation>
+        <translation type="vanished">Nu</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vizibil</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lățimea barei</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Aliniere</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Stânga</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centru</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Dreapta</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Presetari:</translation>
+        <translation type="vanished">Presetari:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorați setarea barei de culoare la import</translation>
+        <translation type="vanished">Ignorați setarea barei de culoare la import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Selectați fișierul de importat</translation>
+        <translation type="vanished">Selectați fișierul de importat</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
+        <translation type="vanished">A apărut o eroare la încărcare %1 Eroare de analiză %2 la %3, coloana %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Vă rugăm să selectați articolul de aplicat)</translation>
+        <translation type="vanished">(Vă rugăm să selectați articolul de aplicat)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Când treceți la modul de gradare, valorile sunt setate la valoarea de mijloc a fiecărei secțiuni.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Culori inversate (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Împărțire egală (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Setare hartă de culori (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>A apărut o eroare la importarea setării din %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Public (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privat (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Export (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Import Colormap Setare</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Selectați dintre standarde</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Selectați fișierul</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarde</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fişier</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atribute pentru import</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direcţie</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titlu</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Setarea fontului</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Afișare etichetă</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Format</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Numărul de etichete</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Eticheta</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>fundal</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Mărime și poziție</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Poziţie</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>mărimea</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Lățimea barei</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Aliniere</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>previzualizare</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Numar de culori:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Valoare zecimale:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Scala logartică:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Activat</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Bara de culori</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Orizontală</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

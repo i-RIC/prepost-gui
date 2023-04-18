@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Vlastní barevná mapa</translation>
+        <translation type="vanished">Vlastní barevná mapa</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="vanished">Typ:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dvě barvy</translation>
+        <translation type="vanished">Dvě barvy</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tři barvy</translation>
+        <translation type="vanished">Tři barvy</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Libovolný</translation>
+        <translation type="vanished">Libovolný</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dvě barvy/ tři barvy</translation>
+        <translation type="vanished">Dvě barvy/ tři barvy</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maximální hodnota</translation>
+        <translation type="vanished">Maximální hodnota</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Střední hodnota</translation>
+        <translation type="vanished">Střední hodnota</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Hodnota</translation>
+        <translation type="vanished">Hodnota</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimální hodnota</translation>
+        <translation type="vanished">Minimální hodnota</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Import (&amp;I)</translation>
+        <translation type="vanished">Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Vývozní (&amp;E)</translation>
+        <translation type="vanished">Vývozní (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importovat nastavení mapy barev</translation>
+        <translation type="vanished">Importovat nastavení mapy barev</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Soubor CSV (*.csv)</translation>
+        <translation type="vanished">Soubor CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Soubor %1 neexistuje.</translation>
+        <translation type="vanished">Soubor %1 neexistuje.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Soubor %1 nemůže být otevřen.</translation>
+        <translation type="vanished">Soubor %1 nemůže být otevřen.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Export nastavení barevné mapy</translation>
+        <translation type="vanished">Export nastavení barevné mapy</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Zvyk</translation>
+        <translation type="vanished">Zvyk</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Nastavení...</translation>
+        <translation type="vanished">Nastavení...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimální hodnota je %1.</translation>
+        <translation type="vanished">Minimální hodnota je %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maximální hodnota je %1.</translation>
+        <translation type="vanished">Maximální hodnota je %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Hodnota menší než %1 v není povoleno.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Hodnota větší než %1 není povoleno.</translation>
     </message>
 </context>
 <context>

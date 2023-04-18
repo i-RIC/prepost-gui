@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Näkyvyys</translation>
+        <translation type="vanished">Näkyvyys</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kun valittu</translation>
+        <translation type="vanished">Kun valittu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Aina</translation>
+        <translation type="vanished">Aina</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ei koskaan</translation>
+        <translation type="vanished">Ei koskaan</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Koko ja sijainti</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Suunta:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Pystysuora</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Palkin leveys</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Tasaus</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vasen</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Keskusta</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Oikein</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valitse tuotava tiedosto</translation>
+        <translation type="vanished">Valitse tuotava tiedosto</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Värikartan asetus (*.cmsetting)</translation>
+        <translation type="vanished">Värikartan asetus (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+        <translation type="vanished">Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Läpinäkyvä</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Luettele värikartan asetukset (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Luettele värikartan asetukset (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Virhe tuotaessa asetusta kohteesta %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Julkinen (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Yksityinen (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Tuo värikartta-asetus</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>tila</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Valitse standardeista</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Valitse tiedosto</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardit</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Tuonnin attribuutit</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suunta</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonttiasetus</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Tausta</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>asema</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Koko</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Palkin leveys</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Tasaus</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Esikatselu</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Väripalkki</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Pystysuora</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Näkyvyys</translation>
+        <translation type="vanished">Näkyvyys</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kun valittu</translation>
+        <translation type="vanished">Kun valittu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Aina</translation>
+        <translation type="vanished">Aina</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ei koskaan</translation>
+        <translation type="vanished">Ei koskaan</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Palkin leveys</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Tasaus</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vasen</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Keskusta</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Oikein</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Esiasetukset:</translation>
+        <translation type="vanished">Esiasetukset:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+        <translation type="vanished">Ohita väripalkin asetus tuonnin aikana</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valitse tuotava tiedosto</translation>
+        <translation type="vanished">Valitse tuotava tiedosto</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+        <translation type="vanished">Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Valitse käytettävä kohde)</translation>
+        <translation type="vanished">(Valitse käytettävä kohde)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Käänteiset värit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Tasainen jako (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Värikartan asetus (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Virhe tuotaessa asetusta kohteesta %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Julkinen (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Yksityinen (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Viedä (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Tuo värikartta-asetus</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>tila</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Valitse standardeista</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Valitse tiedosto</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardit</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Tuonnin attribuutit</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suunta</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Otsikko</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonttiasetus</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Muoto</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Tarrojen määrä</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Väri</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Tausta</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>asema</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Koko</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Palkin leveys</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Tasaus</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Esikatselu</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Värien määrä:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Vaihtoehdot</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Arvo desimaalit:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Tukkimittakaava:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Käytössä</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Väripalkki</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Pystysuora</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa: Voit käyttää nimessä vain ASCII-merkkejä.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

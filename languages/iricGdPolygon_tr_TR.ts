@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Poligon Köşesini Kaldır</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Poligon Görüntüleme Ayarı</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Poligon Görüntüleme Ayarı</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Ön İşleme Penceresinin Ayarını Kullanın</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Şekil Dosyası (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>değere göre renk</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>renk haritası</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Hat genişliği:</translation>
     </message>
 </context>
 </TS>

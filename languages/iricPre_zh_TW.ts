@@ -1262,11 +1262,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>要打開橫截面窗口，請僅選擇一個網格節點。</translation>
+        <translation type="vanished">要打開橫截面窗口，請僅選擇一個網格節點。</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>要打開縱向橫截面窗口，請僅選擇一個網格節點。</translation>
+        <translation type="vanished">要打開縱向橫截面窗口，請僅選擇一個網格節點。</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1509,6 +1509,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>網格橫截面 (%1): 我 = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>網格橫截面窗口</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>查看設置工具欄</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>顯示設置工具欄</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>環境</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>自動調整</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縱橫比（V/H）：1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>固定縱橫比</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>修復區域</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>網格</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>規模</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左/右岸標記</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縱橫比</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>顯示設定</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>控制器</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>左岸邊</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>右岸邊</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縱橫比（V/H）：1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>錯誤</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>製作時出錯 %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>指數</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">距離（米）</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation>距離（米）從 %1</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>上游側</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>下游側</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>右邊</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>左邊</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>導出 CSV 文件</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>環境</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>網格屬性顯示設置（ %1 )</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>保存快照</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>我</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>傑</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>單元格值</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>上游側</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>下游側</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>快照 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV 導出 (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>網格截面窗口顯示設置</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>背景網格</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>線條</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>點</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽車</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>規模</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>分量表</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>顏色：</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>秤</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>字體：</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左/右岸標記</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>縱橫比</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>導出設置</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>文件夾和前綴 (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>文件夾：</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>字首：</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>橫截面</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>僅限當前</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>風俗</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>算我一個：</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>我最大：</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>跳過率：</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>網格屬性顯示設置</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>模式</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>海拔圖</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>獨立圖表</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色圖</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>海拔圖設置</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>線條顏色：</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>顯示點數</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>磅值</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>顯示指數</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>字體顏色：</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>字體：</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>跳過率：</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>獨立圖表設置</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>圖表高度：</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[像素]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>標題字體：</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>軸顏色：</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>軸字體：</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>顏色映射設置</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;使用Colormap選項卡編輯顏色設置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>預處理窗口的使用設置</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>顯示標題</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>標題顏色</translation>
     </message>
 </context>
 <context>

@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Pengaturan Warna</translation>
+        <translation type="vanished">%1 Pengaturan Warna</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Edit pengaturan warna</translation>
+        <translation type="vanished">Edit pengaturan warna</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -50,19 +50,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Pengaturan Warna PolyData</translation>
+        <translation type="vanished">Pengaturan Warna PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Warnai berdasarkan nilai</translation>
+        <translation type="vanished">Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
     </message>
 </context>
 </TS>

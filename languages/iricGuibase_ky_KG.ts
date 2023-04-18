@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Ыңгайлаштырылган түс картасы</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс картасы</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Түрү:</translation>
+        <translation type="vanished">Түрү:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Эки Түстөр</translation>
+        <translation type="vanished">Эки Түстөр</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Үч Түстөр</translation>
+        <translation type="vanished">Үч Түстөр</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Ээнбаштык</translation>
+        <translation type="vanished">Ээнбаштык</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Эки түстүү/ үч түстүү</translation>
+        <translation type="vanished">Эки түстүү/ үч түстүү</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максималдуу мааниси</translation>
+        <translation type="vanished">Максималдуу мааниси</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Орто баалуулук</translation>
+        <translation type="vanished">Орто баалуулук</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Мааниси</translation>
+        <translation type="vanished">Мааниси</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Минималдуу мааниси</translation>
+        <translation type="vanished">Минималдуу мааниси</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Импорттоо (&amp;I)</translation>
+        <translation type="vanished">Импорттоо (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Экспорт (&amp;E)</translation>
+        <translation type="vanished">Экспорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Түстөр картасын орнотууну импорттоо</translation>
+        <translation type="vanished">Түстөр картасын орнотууну импорттоо</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файлы (*.csv)</translation>
+        <translation type="vanished">CSV файлы (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 жок.</translation>
+        <translation type="vanished">Файл %1 жок.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 ача алган жок.</translation>
+        <translation type="vanished">Файл %1 ача алган жок.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Түстөр картасынын жөндөөсүн экспорттоо</translation>
+        <translation type="vanished">Түстөр картасынын жөндөөсүн экспорттоо</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Ыңгайлаштырылган</translation>
+        <translation type="vanished">Ыңгайлаштырылган</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Жөндөө...</translation>
+        <translation type="vanished">Жөндөө...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Минималдуу мааниси %1.</translation>
+        <translation type="vanished">Минималдуу мааниси %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максималдуу мааниси %1.</translation>
+        <translation type="vanished">Максималдуу мааниси %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Мааниси андан кичине %1 жол берилбейт.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>караганда чоңураак %1 жол берилбейт.</translation>
     </message>
 </context>
 <context>

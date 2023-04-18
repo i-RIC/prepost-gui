@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Nähtavus</translation>
+        <translation type="vanished">Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kui valitud</translation>
+        <translation type="vanished">Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alati</translation>
+        <translation type="vanished">Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mitte kunagi</translation>
+        <translation type="vanished">Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Suurus ja asend</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nähtav</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Suund:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontaalne</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikaalne</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Riba laius</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automaatne</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Joondamine</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vasakule</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Keskus</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Õige</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valige imporditav fail</translation>
+        <translation type="vanished">Valige imporditav fail</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Värvikaardi seadistus (*.cmsetting)</translation>
+        <translation type="vanished">Värvikaardi seadistus (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
+        <translation type="vanished">Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Läbipaistev</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Loetlege värvikaardi sätted (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Loetlege värvikaardi sätted (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Viga</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Seadete importimisel asukohast ilmnes viga %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Avalik (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privaatne (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importige värvikaardi sätted</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režiim</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Valige standardite hulgast</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Valige fail</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardid</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Impordi atribuudid</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suund</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pealkiri</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fondi seadistus</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Sildi kuvamine</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Silt</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Taust</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Suurus ja asend</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>positsioon</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Riba laius</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Joondamine</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Eelvaade</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Värviriba</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontaalne</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikaalne</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Nähtavus</translation>
+        <translation type="vanished">Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kui valitud</translation>
+        <translation type="vanished">Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alati</translation>
+        <translation type="vanished">Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mitte kunagi</translation>
+        <translation type="vanished">Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Automaatne</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nähtav</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Riba laius</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Joondamine</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vasakule</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Keskus</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Õige</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Eelseaded:</translation>
+        <translation type="vanished">Eelseaded:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignoreeri importimisel värviriba sätteid</translation>
+        <translation type="vanished">Ignoreeri importimisel värviriba sätteid</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valige imporditav fail</translation>
+        <translation type="vanished">Valige imporditav fail</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
+        <translation type="vanished">Laadimisel ilmnes viga %1 Parsimise viga %2 juures %3, veerg %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Palun valige rakendatav üksus)</translation>
+        <translation type="vanished">(Palun valige rakendatav üksus)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Gradatsioonirežiimile lülitumisel seatakse väärtused iga sektsiooni keskmisele väärtusele.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Tagurpidi värvid (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Võrdne jaotus (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Värvikaardi seadistus (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Viga</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Seadete importimisel asukohast ilmnes viga %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Avalik (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privaatne (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Ekspordi (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importige värvikaardi sätted</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režiim</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Valige standardite hulgast</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Valige fail</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardid</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Impordi atribuudid</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suund</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pealkiri</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fondi seadistus</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Sildi kuvamine</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Vorming</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Siltide arv</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Silt</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Taust</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Suurus ja asend</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>positsioon</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Riba laius</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Joondamine</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Eelvaade</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Värvide arv:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Valikud</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Väärtus kümnendkohad:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Logi skaala:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Lubatud</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Värviriba</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontaalne</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikaalne</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Värv:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus. Nime jaoks saate kasutada ainult ASCII-märke.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

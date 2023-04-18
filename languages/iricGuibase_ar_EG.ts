@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>خريطة ألوان مخصصة</translation>
+        <translation type="vanished">خريطة ألوان مخصصة</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>نوع:</translation>
+        <translation type="vanished">نوع:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>لونان</translation>
+        <translation type="vanished">لونان</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>ثلاثة ألوان</translation>
+        <translation type="vanished">ثلاثة ألوان</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>افتراضى</translation>
+        <translation type="vanished">افتراضى</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>لونان / ثلاثة ألوان</translation>
+        <translation type="vanished">لونان / ثلاثة ألوان</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>القيمة القصوى</translation>
+        <translation type="vanished">القيمة القصوى</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>قيمة متوسطة</translation>
+        <translation type="vanished">قيمة متوسطة</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>قيمة</translation>
+        <translation type="vanished">قيمة</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>الحد الأدنى للقيمة</translation>
+        <translation type="vanished">الحد الأدنى للقيمة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>يضيف (&amp;A)</translation>
+        <translation type="vanished">يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>يزيل (&amp;R)</translation>
+        <translation type="vanished">يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>يستورد (&amp;I)</translation>
+        <translation type="vanished">يستورد (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>يصدر (&amp;E)</translation>
+        <translation type="vanished">يصدر (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>استيراد إعداد خريطة الألوان</translation>
+        <translation type="vanished">استيراد إعداد خريطة الألوان</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>ملف CSV (*.csv)</translation>
+        <translation type="vanished">ملف CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>ملف %1 ليس موجود.</translation>
+        <translation type="vanished">ملف %1 ليس موجود.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>ملف %1 لا يمكن فتحه.</translation>
+        <translation type="vanished">ملف %1 لا يمكن فتحه.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>تصدير إعداد خريطة الألوان</translation>
+        <translation type="vanished">تصدير إعداد خريطة الألوان</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>مخصص</translation>
+        <translation type="vanished">مخصص</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>ضبط...</translation>
+        <translation type="vanished">ضبط...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>القيمة الدنيا هي %1.</translation>
+        <translation type="vanished">القيمة الدنيا هي %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>القيمة القصوى هي %1.</translation>
+        <translation type="vanished">القيمة القصوى هي %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>قيمة أصغر من %1 في غير مسموح به.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>فالور أكبر من %1 غير مسموح.</translation>
     </message>
 </context>
 <context>

@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1の表示色の設定</translation>
+        <translation type="vanished">%1の表示色の設定</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -47,7 +47,7 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>表示色設定の編集</translation>
+        <translation type="vanished">表示色設定の編集</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -58,19 +58,19 @@
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>表示色の設定</translation>
+        <translation type="vanished">表示色の設定</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>値により自動設定</translation>
+        <translation type="vanished">値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
 </context>
 </TS>

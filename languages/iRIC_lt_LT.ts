@@ -74,12 +74,12 @@
         <translation>Paieška:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color: #0000ff; &quot;&gt; Užuomina apie japonų koordinačių sistemas (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: #0000ff; "&gt; Užuomina apie japonų koordinačių sistemas (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color:#0000ff; &quot;&gt; Patarimas apie UTM koordinačių sistemas (EPSG: 32601 - 32760 ir kt.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: underline; color:#0000ff; "&gt; Patarimas apie UTM koordinačių sistemas (EPSG: 32601 - 32760 ir kt.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridėti viršūnę (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Pašalinkite viršūnę (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti koordinates (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvirkštinė centrinės linijos kryptis (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Įkeliant tinklelio kūrėjo apibrėžimo failą į aplanką įvyko klaida &quot;%1&quot;. Šis tinklelio kūrėjas ignoruojamas. %2</translation>
+        <translation>Įkeliant tinklelio kūrėjo apibrėžimo failą į aplanką įvyko klaida "%1". Šis tinklelio kūrėjas ignoruojamas. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1774,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Atstumas nuo centro taško</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>„Kairysis krantas“ yra krantas, kurį matote kairėje pusėje, kai pasukate pasroviui.</translation>
     </message>
 </context>
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Įveskite maksimalų langelių plotą patobulinimų daugiakampyje.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>Nurodydami mažas vertes, galite sukurti smulkius tinklelius.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_lt_LT.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Perkelti viršūnę</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>Nustatyti viršūnę</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>Taškas %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_lt_LT.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Spalvų nustatymas</translation>
+        <translation type="vanished">%1 Spalvų nustatymas</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4780,26 +4857,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Redaguokite spalvų nustatymą</translation>
+        <translation type="vanished">Redaguokite spalvų nustatymą</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>„PolyData“ spalvų nustatymas</translation>
+        <translation type="vanished">„PolyData“ spalvų nustatymas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Spalva pagal vertę</translation>
+        <translation type="vanished">Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_lt_LT.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Pašalinkite daugiakampio viršūnę</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI formos failas (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_lt_LT.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>Pašalinkite „PolyLine Vertex“</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI formos failas (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_lt_LT.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Nepavyko nustatyti grafiko lango. Skaičiavimo rezultatas netinkamai įkeliamas.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Šią funkciją galima naudoti, kai įvykdomos šios sąlygos: &lt;ul&gt; &lt;li&gt; nubrėžta dviejų matmenų struktūrinio tinklelio rezultato diagrama. &lt;/li&gt; &lt;li&gt; X ašis yra I kryptis tinklelyje. &lt;/Li &gt; &lt;li&gt; Tinklelis kuriamas naudojant algoritmą &quot;Sukurti tinklelį iš skerspjūvio duomenų&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Šią funkciją galima naudoti, kai įvykdomos šios sąlygos: &lt;ul&gt; &lt;li&gt; nubrėžta dviejų matmenų struktūrinio tinklelio rezultato diagrama. &lt;/li&gt; &lt;li&gt; X ašis yra I kryptis tinklelyje. &lt;/Li &gt; &lt;li&gt; Tinklelis kuriamas naudojant algoritmą "Sukurti tinklelį iš skerspjūvio duomenų" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7858,7 +8033,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Klaida</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Pirmojo stulpelio pavadinimas turi būti „X“</translation>
     </message>
     <message>
@@ -7938,7 +8113,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Klaida</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Pirmojo stulpelio pavadinimas turi būti „X“</translation>
     </message>
     <message>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Individualizuotas spalvų žemėlapis</translation>
+        <translation type="vanished">Individualizuotas spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipas:</translation>
+        <translation type="vanished">Tipas:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dvi spalvos</translation>
+        <translation type="vanished">Dvi spalvos</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Trys Spalvos</translation>
+        <translation type="vanished">Trys Spalvos</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Savavališkas</translation>
+        <translation type="vanished">Savavališkas</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dvi spalvos/ trys spalvos</translation>
+        <translation type="vanished">Dvi spalvos/ trys spalvos</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimali vertė</translation>
+        <translation type="vanished">Maksimali vertė</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Vidutinė vertė</translation>
+        <translation type="vanished">Vidutinė vertė</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vertė</translation>
+        <translation type="vanished">Vertė</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimali vertė</translation>
+        <translation type="vanished">Minimali vertė</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importuoti (&amp;I)</translation>
+        <translation type="vanished">Importuoti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksportuoti (&amp;E)</translation>
+        <translation type="vanished">Eksportuoti (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importuoti spalvų schemos nustatymą</translation>
+        <translation type="vanished">Importuoti spalvų schemos nustatymą</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV failas (*.csv)</translation>
+        <translation type="vanished">CSV failas (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Failas %1 neegzistuoja.</translation>
+        <translation type="vanished">Failas %1 neegzistuoja.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Failas %1 nepavyko atidaryti.</translation>
+        <translation type="vanished">Failas %1 nepavyko atidaryti.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Eksportuoti spalvų schemos nustatymą</translation>
+        <translation type="vanished">Eksportuoti spalvų schemos nustatymą</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation type="vanished">Pasirinktinis</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Nustatoma...</translation>
+        <translation type="vanished">Nustatoma...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimali vertė yra %1.</translation>
+        <translation type="vanished">Minimali vertė yra %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Didžiausia vertė yra %1.</translation>
+        <translation type="vanished">Didžiausia vertė yra %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Matomumas</translation>
+        <translation type="vanished">Matomumas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kai pasirenkamas</translation>
+        <translation type="vanished">Kai pasirenkamas</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Visada</translation>
+        <translation type="vanished">Visada</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niekada</translation>
+        <translation type="vanished">Niekada</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Dydis ir padėtis</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Kryptis:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikalus</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automatinis</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+        <translation type="vanished">Pasirinkite failą, kurį norite importuoti</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Colormap nustatymas (*.cmsetting)</translation>
+        <translation type="vanished">Colormap nustatymas (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+        <translation type="vanished">Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Skaidrus</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Spalva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Fonas</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikalus</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Matomumas</translation>
+        <translation type="vanished">Matomumas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kai pasirenkamas</translation>
+        <translation type="vanished">Kai pasirenkamas</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Visada</translation>
+        <translation type="vanished">Visada</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niekada</translation>
+        <translation type="vanished">Niekada</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Automatinis</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Išankstiniai nustatymai:</translation>
+        <translation type="vanished">Išankstiniai nustatymai:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+        <translation type="vanished">Importuojant nepaisyti spalvų juostos nustatymo</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+        <translation type="vanished">Pasirinkite failą, kurį norite importuoti</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+        <translation type="vanished">Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Pasirinkite taikytiną elementą)</translation>
+        <translation type="vanished">(Pasirinkite taikytiną elementą)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Colormap nustatymas (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Eksportuoti (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Spalva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Fonas</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Spalvų skaičius:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Įjungtas</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikalus</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Spalvų juosta</translation>
+        <translation type="vanished">Spalvų juosta</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Pavadinimas</translation>
+        <translation type="vanished">Pavadinimas</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketės</translation>
+        <translation type="vanished">Etiketės</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Rodyklės ilgio legenda</translation>
+        <translation type="vanished">Rodyklės ilgio legenda</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Spalvų žemėlapis</translation>
+        <translation type="vanished">Spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14800,8 +15345,8 @@ Option -&gt; Preferences</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Stulpelyje už %1, vertė &quot;%2&quot;skerspjūviui&quot;%3&quot;yra neteisingas. Vertė nepaisoma.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Stulpelyje už %1, vertė "%2"skerspjūviui"%3"yra neteisingas. Vertė nepaisoma.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogas</translation>
+        <translation>Dialogas</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Norėdami atidaryti skerspjūvio langą, pasirinkite tik vieną tinklelio mazgą.</translation>
+        <translation type="vanished">Norėdami atidaryti skerspjūvio langą, pasirinkite tik vieną tinklelio mazgą.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Norėdami atidaryti išilginio skerspjūvio langą, pasirinkite tik vieną tinklelio mazgą.</translation>
+        <translation type="vanished">Norėdami atidaryti išilginio skerspjūvio langą, pasirinkite tik vieną tinklelio mazgą.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Tinklelio skerspjūvis (%1): Aš = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Tinklelio skerspjūvio langas</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Peržiūrėti nustatymų įrankių juostą</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Ekrano nustatymo įrankių juosta</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nustatymas</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Automatinis skalės keitimas</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Kraštinių santykis (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Pataisykite kraštinių santykį</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Pataisyti regioną</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Tinklelis</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skalė</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Kairiojo / dešiniojo kranto žymekliai</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Kraštinių santykis</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Valdiklis</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Kairiojo kranto pusė</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Dešinysis krantas</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Kraštinių santykis (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Kuriant įvyko klaida %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Indeksas</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Atstumas (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Prieš srovę</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Pasroviui</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Dešinioji pusė</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Kairė pusė</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Eksportuoti CSV failus</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>vardas</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nustatymas</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Tinklelio atributo rodymo nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Išsaugoti momentines nuotraukas</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Kryptis</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>aš</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Padėtis</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Ląstelių reikšmės</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Prieš srovę</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Pasroviui pusė</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Momentinė nuotrauka (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV eksportavimas (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Tinklelio skerspjūvio lango rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Fono tinklelis</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipas</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linijos</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Taškai</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontalus</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automatinis</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skalė</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Sub skalė</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikalus</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Svarstyklės</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Šriftas:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Kairiojo / dešiniojo kranto žymekliai</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Kraštinių santykis</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Eksportavimo nustatymas</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Aplankas ir priešdėlis (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Aplankas:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Priešdėlis:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Skerspjūvis</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Tik dabartinis</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Pasirinktinis</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Aš už:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Aš Max:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Praleisti rodiklis:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Tinklelio atributo rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Pagrindinis</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režimas</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Aukščio diagrama</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Nepriklausoma diagrama</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Spalvų žemėlapis</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Aukščio diagramos nustatymas</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Linijos spalva:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linijos plotis:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Rodyti taškus</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Taško dydis</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Rodyti indeksus</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Šrifto spalva:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Šriftas:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Praleisti rodiklis:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Nepriklausomas diagramos nustatymas</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Diagramos aukštis:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[pikselių]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Pavadinimo šriftas:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Ašies spalva:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Ašies šriftas:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Spalvų žemėlapio nustatymas</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Naudokite išankstinio apdorojimo lango nustatymą</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Rodyti pavadinimą</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Pavadinimo spalva</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">Išleidimo data: 2021/4/28</translation>
+        <translation>Išleidimo data: 2021-04-28</translation>
     </message>
 </context>
 <context>
@@ -20916,7 +21868,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skerspjūvis dar nėra apibrėžtas.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
         <translation>Netinkamas skerspjūvio pavadinimas. Pavadinimas turėtų būti „X1“, „X2“,... arba „XS1“, „XS2“,...</translation>
     </message>
 </context>

@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Rimuovi vertice poligono</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Impostazione della visualizzazione del poligono</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Impostazione della visualizzazione del poligono</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>File di forma ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Colore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Colore per valore</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Colore personalizzato</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mappa dei colori</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Larghezza della linea:</translation>
     </message>
 </context>
 </TS>

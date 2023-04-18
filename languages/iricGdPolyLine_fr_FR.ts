@@ -77,6 +77,10 @@
         <source>PolyLine Coordinates</source>
         <translation>Coordonnées de la polyligne</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Paramètre d'affichage de ligne</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Paramètre d'affichage de ligne</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Utiliser le paramètre de la fenêtre de prétraitement</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Fichier de forme ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Largeur de ligne:</translation>
     </message>
 </context>
 </TS>

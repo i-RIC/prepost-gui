@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>Kendu PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Lerro bistaratzeko ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Lerro bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI Forma fitxategia (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 </TS>

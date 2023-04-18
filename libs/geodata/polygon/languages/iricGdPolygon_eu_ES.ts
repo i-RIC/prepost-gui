@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Kendu poligonoaren erpina</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Poligonoa bistaratzeko ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Poligonoa bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 </TS>

@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Skyggni</translation>
+        <translation type="vanished">Skyggni</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Þegar valið er</translation>
+        <translation type="vanished">Þegar valið er</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltaf</translation>
+        <translation type="vanished">Alltaf</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrei</translation>
+        <translation type="vanished">Aldrei</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Stærð og staðsetning</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sýnilegt</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Stefna:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Lárétt</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Lóðrétt</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbreidd</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Sjálfvirk</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Jöfnun</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vinstri</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Miðja</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Rétt</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Veldu skrá til að flytja inn</translation>
+        <translation type="vanished">Veldu skrá til að flytja inn</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Litakort stilling (*.cmsetting)</translation>
+        <translation type="vanished">Litakort stilling (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
+        <translation type="vanished">Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Gegnsætt</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Telja upp litakortastillingu (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Telja upp litakortastillingu (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Villa kom upp við innflutning stillinga frá %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Opinber (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Einkamál (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Flytja inn litakortsstillingu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Veldu úr stöðlum</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Veldu skrá</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Staðlar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skrá</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Eiginleikar til innflutnings</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Stefna</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Leturstilling</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Merkiskjár</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Bakgrunnur</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Stærð og staðsetning</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Stærð</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbreidd</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Jöfnun</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Forskoðun</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Litaslá</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Lárétt</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Lóðrétt</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Skyggni</translation>
+        <translation type="vanished">Skyggni</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Þegar valið er</translation>
+        <translation type="vanished">Þegar valið er</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltaf</translation>
+        <translation type="vanished">Alltaf</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrei</translation>
+        <translation type="vanished">Aldrei</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Sjálfvirk</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sýnilegt</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbreidd</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Jöfnun</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vinstri</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Miðja</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Rétt</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Forstillingar:</translation>
+        <translation type="vanished">Forstillingar:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Hunsa stillingu litastikunnar við innflutning</translation>
+        <translation type="vanished">Hunsa stillingu litastikunnar við innflutning</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Veldu skrá til að flytja inn</translation>
+        <translation type="vanished">Veldu skrá til að flytja inn</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
+        <translation type="vanished">Villa kom upp við hleðslu %1 Þáttunarvilla %2 kl %3, dálkur %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Vinsamlegast veldu hlut til að sækja um)</translation>
+        <translation type="vanished">(Vinsamlegast veldu hlut til að sækja um)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Þegar skipt er yfir í stigunarham eru gildin stillt á miðgildi hvers hluta.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Öfugir litir (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Jöfn skipting (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Litakort stilling (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Villa kom upp við innflutning stillinga frá %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Opinber (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Einkamál (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Útflutningur (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Flytja inn litakortsstillingu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Veldu úr stöðlum</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Veldu skrá</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Staðlar</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skrá</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Eiginleikar til innflutnings</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Stefna</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Leturstilling</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Merkiskjár</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Snið</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Fjöldi merkimiða</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Bakgrunnur</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Stærð og staðsetning</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Stærð</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbreidd</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Jöfnun</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Forskoðun</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Fjöldi lita:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Valmöguleikar</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Gildi aukastafa:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Log mælikvarði:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Virkt</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Litaslá</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Lárétt</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Lóðrétt</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Litur:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Athugið: Þú getur aðeins notað ASCII stafi fyrir nafn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

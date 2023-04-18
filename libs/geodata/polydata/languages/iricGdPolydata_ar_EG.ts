@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 إعداد اللون</translation>
+        <translation type="vanished">%1 إعداد اللون</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>تحرير إعداد اللون</translation>
+        <translation type="vanished">تحرير إعداد اللون</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>إعداد لون PolyData</translation>
+        <translation type="vanished">إعداد لون PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
+        <translation type="vanished">لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
 </context>
 </TS>

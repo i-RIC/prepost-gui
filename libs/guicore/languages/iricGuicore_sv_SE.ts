@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Synlighet</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>När valt</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltid</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Storlek och position</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Riktning:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbredd</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Bil</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Inriktning</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vänster</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrum</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Höger</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Välj fil att importera</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Färgkarta inställning (*.cmsetting)</translation>
+        <translation type="vanished">Färgkarta inställning (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Räkna upp färgkartainställningar (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Räkna upp färgkartainställningar (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Ett fel uppstod vid import av inställning från %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Offentlig (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>privat (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importera färgkarta-inställning</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Läge</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Välj bland standarder</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Välj fil</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarder</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Attribut för import</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Riktning</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Teckensnittsinställning</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etikettdisplay</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Märka</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Bakgrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Storlek och position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Placera</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbredd</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Inriktning</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Förhandsvisning</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Färgfält</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Synlighet</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>När valt</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltid</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Bil</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbredd</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Inriktning</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Vänster</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrum</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Höger</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Förinställningar:</translation>
+        <translation type="vanished">Förinställningar:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorera färgfältsinställningen vid import</translation>
+        <translation type="vanished">Ignorera färgfältsinställningen vid import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Välj fil att importera</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Välj objekt att ansöka om)</translation>
+        <translation type="vanished">(Välj objekt att ansöka om)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">När du byter till graderingsläge ställs värdena till mittvärdet för varje sektion.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Omvända färger (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Lika delning (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Färgkarta inställning (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Ett fel uppstod vid import av inställning från %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Offentlig (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>privat (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exportera (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importera färgkarta-inställning</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Läge</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Välj bland standarder</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Välj fil</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarder</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Attribut för import</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Riktning</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Teckensnittsinställning</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etikettdisplay</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatera</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Antal etiketter</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Märka</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Bakgrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Storlek och position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Placera</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barbredd</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Inriktning</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Förhandsvisning</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Antal färger:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>alternativ</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Värde decimaler:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Loggskala:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Aktiverad</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Färgfält</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs! Du kan endast använda ASCII-tecken för Namn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

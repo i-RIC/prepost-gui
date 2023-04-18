@@ -74,12 +74,12 @@
         <translation>Sök:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color: #0000ff; &quot;&gt; Tips om japanska koordinatsystem (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: #0000ff; "&gt; Tips om japanska koordinatsystem (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt; &lt;span style = &quot;text-decoration: understrykning; färg:#0000ff; &quot;&gt; Tips om UTM -koordinatsystem (EPSG: 32601 - 32760 etc.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: understrykning; färg:#0000ff; "&gt; Tips om UTM -koordinatsystem (EPSG: 32601 - 32760 etc.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera koordinater (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Omvänd mittlinjeriktning (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Varning</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Ett fel uppstod vid laddning av definieringsfilen för nätverksskaparen i mappen &quot;%1&quot;. Denna rutnätskapare ignoreras. %2</translation>
+        <translation>Ett fel uppstod vid laddning av definieringsfilen för nätverksskaparen i mappen "%1". Denna rutnätskapare ignoreras. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,8 +1774,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Avstånd från mittpunkten</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Vänster strand&quot; är den bank du ser på vänster sida när du vänder dig nedströms.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Vänster strand" är den bank du ser på vänster sida när du vänder dig nedströms.</translation>
     </message>
 </context>
 <!-- iricGccRiversurvey_sv_SE.ts -->
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Ange maximalt område för celler inuti förfining polygon.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>Genom att ange små värden kan du generera fina rutnät.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_sv_SE.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta vertex</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>Ställ in vertex</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>Punkt %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_sv_SE.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Färginställning</translation>
+        <translation type="vanished">%1 Färginställning</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4780,26 +4857,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Redigera färginställning</translation>
+        <translation type="vanished">Redigera färginställning</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData -färginställning</translation>
+        <translation type="vanished">PolyData -färginställning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Färg efter värde</translation>
+        <translation type="vanished">Färg efter värde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_sv_SE.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Ta bort Polygon Vertex</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Anpassad färg</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_sv_SE.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>Ta bort PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI Shape -fil (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_sv_SE.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Installation av graffönster misslyckades. Beräkningsresultatet laddades inte korrekt.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Denna funktion kan användas när följande villkor är uppfyllda: &lt;ul&gt; &lt;li&gt; Diagram för tvådimensionellt strukturerat rutnätresultat ritas. &lt;/li&gt; &lt;li&gt; X-axeln är I-riktning i rutnätet. &lt;/Li &gt; &lt;li&gt; Rutnätet skapas med algoritmen &quot;Skapa rutnät från data från tvärsnitt&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Denna funktion kan användas när följande villkor är uppfyllda: &lt;ul&gt; &lt;li&gt; Diagram för tvådimensionellt strukturerat rutnätresultat ritas. &lt;/li&gt; &lt;li&gt; X-axeln är I-riktning i rutnätet. &lt;/Li &gt; &lt;li&gt; Rutnätet skapas med algoritmen "Skapa rutnät från data från tvärsnitt" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7858,8 +8033,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fel</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Titeln på den första kolumnen måste vara &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Titeln på den första kolumnen måste vara "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7938,8 +8113,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fel</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Titeln på den första kolumnen måste vara &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Titeln på den första kolumnen måste vara "X"</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Anpassad färgkarta</translation>
+        <translation type="vanished">Anpassad färgkarta</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="vanished">Typ:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Två färger</translation>
+        <translation type="vanished">Två färger</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tre färger</translation>
+        <translation type="vanished">Tre färger</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Slumpmässig</translation>
+        <translation type="vanished">Slumpmässig</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Två färger/ tre färger</translation>
+        <translation type="vanished">Två färger/ tre färger</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maximalt värde</translation>
+        <translation type="vanished">Maximalt värde</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Medelvärde</translation>
+        <translation type="vanished">Medelvärde</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Värde</translation>
+        <translation type="vanished">Värde</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minsta värde</translation>
+        <translation type="vanished">Minsta värde</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importera (&amp;I)</translation>
+        <translation type="vanished">Importera (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exportera (&amp;E)</translation>
+        <translation type="vanished">Exportera (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importera Colormap Setting</translation>
+        <translation type="vanished">Importera Colormap Setting</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -fil (*.csv)</translation>
+        <translation type="vanished">CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fil %1 existerar inte.</translation>
+        <translation type="vanished">Fil %1 existerar inte.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fil %1 kunde inte öppnas.</translation>
+        <translation type="vanished">Fil %1 kunde inte öppnas.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Exportera Colormap Setting</translation>
+        <translation type="vanished">Exportera Colormap Setting</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Beställnings</translation>
+        <translation type="vanished">Beställnings</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Miljö...</translation>
+        <translation type="vanished">Miljö...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minsta värde är %1.</translation>
+        <translation type="vanished">Minsta värde är %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Högsta värde är %1.</translation>
+        <translation type="vanished">Högsta värde är %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Synlighet</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>När valt</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltid</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Storlek och position</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Riktning:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Bil</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Välj fil att importera</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Färgkarta inställning (*.cmsetting)</translation>
+        <translation type="vanished">Färgkarta inställning (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fel</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etikettdisplay</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Färg</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Bakgrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Storlek och position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Placera</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Synlighet</translation>
+        <translation type="vanished">Synlighet</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>När valt</translation>
+        <translation type="vanished">När valt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alltid</translation>
+        <translation type="vanished">Alltid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Bil</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Förinställningar:</translation>
+        <translation type="vanished">Förinställningar:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorera färgfältsinställningen vid import</translation>
+        <translation type="vanished">Ignorera färgfältsinställningen vid import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Välj fil att importera</translation>
+        <translation type="vanished">Välj fil att importera</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
+        <translation type="vanished">Ett fel uppstod vid laddning %1 Analysfel %2 på %3, kolumn %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Välj objekt att ansöka om)</translation>
+        <translation type="vanished">(Välj objekt att ansöka om)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">När du byter till graderingsläge ställs värdena till mittvärdet för varje sektion.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Färgkarta inställning (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fel</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exportera (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etikettdisplay</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Färg</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Bakgrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Storlek och position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Placera</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Antal färger:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Aktiverad</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horisontell</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Färgfält</translation>
+        <translation type="vanished">Färgfält</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketter</translation>
+        <translation type="vanished">Etiketter</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Pillängdsförklaring</translation>
+        <translation type="vanished">Pillängdsförklaring</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Färgkarta</translation>
+        <translation type="vanished">Färgkarta</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14800,8 +15345,8 @@ Option -&gt; Preferences</source>
         <translation>Varning</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>I kolumnen för %1, värdet &quot;%2&quot;för tvärsnitt&quot;%3&quot;är ogiltigt. Värdet ignoreras.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>I kolumnen för %1, värdet "%2"för tvärsnitt"%3"är ogiltigt. Värdet ignoreras.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Dialog</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>För att öppna ett tvärsnittsfönster, välj bara en rutnod.</translation>
+        <translation type="vanished">För att öppna ett tvärsnittsfönster, välj bara en rutnod.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>För att öppna ett längsgående tvärsnittsfönster, välj bara en rutnod.</translation>
+        <translation type="vanished">För att öppna ett längsgående tvärsnittsfönster, välj bara en rutnod.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Grid Crosssection (%1): Jag = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Rutnät tvärsnittsfönster</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Visa inställningsverktygsfältet</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Verktygsfält för displayinställning</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Miljö</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Skala om automatiskt</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Bildförhållande (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Fixa bildförhållande</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Fixa region</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Rutnät</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Vänster/höger strandmarkörer</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Bildförhållande</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Skärminställning</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Kontroller</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Vänster Bank Side</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Höger Bank Side</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Bildförhållande (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Ett fel uppstod när du gjorde %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Index</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Avstånd (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Uppströms sida</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Nedströms sida</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Höger sida</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Vänster sida</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Exportera CSV-filer</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>namn</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Miljö</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Visningsinställning för rutnätsattribut (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Spara ögonblicksbilder</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Riktning</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>jag</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Placera</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Cellvärden</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Uppströms sida</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Nedströms sida</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Ögonblicksbild (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV-export (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Rutnät Tvärsnitt Fönster Visningsinställning</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Bakgrundsrutnät</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Rader</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Prickar</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horisontell</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Bil</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Underskala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Vågar</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Font:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Vänster/höger strandmarkörer</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Bildförhållande</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Exportinställning</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Mapp och prefix (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Mapp:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Prefix:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Tvärsnitt</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Endast aktuell</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Beställnings</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Jag är i:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Jag Max:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Överhoppningsfrekvens:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Visningsinställning för rutnätsattribut</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Grundläggande</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Läge</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Höjddiagram</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Oberoende diagram</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Färgkarta</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Inställning av höjddiagram</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Linjefärg:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linjebredd:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Visa poäng</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Punktstorlek</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Visa index</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Fontfärg:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Font:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Överhoppningsfrekvens:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Oberoende sjökortsinställning</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Diagramhöjd:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[pixlar]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Titelteckensnitt:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Axelfärg:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Axis Font:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Inställning för färgkarta</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs!&lt;/span&gt; Använd Colormap-fliken för att redigera färginställning&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Använd inställningen för förbehandlingsfönstret</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Visa titel</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Titel färg</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">Utgivningsdatum: 2021/4/28</translation>
+        <translation>Releasedatum: 2021/4/28</translation>
     </message>
 </context>
 <context>
@@ -20916,8 +21868,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Tvärsnittet är inte definierat än.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Ogiltigt namn för tvärsnitt. Namnet ska vara &quot;X1&quot;, &quot;X2&quot;,... eller &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Ogiltigt namn för tvärsnitt. Namnet ska vara "X1", "X2",... eller "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

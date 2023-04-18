@@ -74,12 +74,12 @@
         <translation>Iskanje:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color: #0000ff; &quot;&gt; Namig o japonskih koordinatnih sistemih (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: #0000ff; "&gt; Namig o japonskih koordinatnih sistemih (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt; &lt;span style = &quot;text-decoration: podčrtaj; color:#0000ff; &quot;&gt; Namig o koordinatnih sistemih UTM (EPSG: 32601 - 32760 itd.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: podčrtaj; color:#0000ff; "&gt; Namig o koordinatnih sistemih UTM (EPSG: 32601 - 32760 itd.) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrani Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi koordinate (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Obratna smer sredinske črte (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Pri nalaganju datoteke z definicijo ustvarjalca mreže v mapo je prišlo do napake &quot;%1&quot;. Ta ustvarjalec mreže je prezrt. %2</translation>
+        <translation>Pri nalaganju datoteke z definicijo ustvarjalca mreže v mapo je prišlo do napake "%1". Ta ustvarjalec mreže je prezrt. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,8 +1774,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Oddaljenost od središča</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Levi breg&quot; je breg, ki ga vidite na levi strani, ko zavijete navzdol.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Levi breg" je breg, ki ga vidite na levi strani, ko zavijete navzdol.</translation>
     </message>
 </context>
 <!-- iricGccRiversurvey_sl_SI.ts -->
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Vnesite največjo površino celic znotraj poligona za natančnejše določanje.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>Če določite majhne vrednosti, lahko ustvarite fine mreže.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_sl_SI.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni točko</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>Nastavite točko</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>Točka %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_sl_SI.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Nastavitev barve</translation>
+        <translation type="vanished">%1 Nastavitev barve</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4780,26 +4857,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Uredite barvno nastavitev</translation>
+        <translation type="vanished">Uredite barvno nastavitev</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Nastavitev barve PolyData</translation>
+        <translation type="vanished">Nastavitev barve PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva po vrednosti</translation>
+        <translation type="vanished">Barva po vrednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Barva po meri</translation>
+        <translation type="vanished">Barva po meri</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_sl_SI.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Odstranite poligon Vertex</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Barva po meri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_sl_SI.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>Odstranite PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Datoteka oblike ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_sl_SI.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Namestitev okna grafikona ni uspela. Rezultat izračuna ni pravilno naložen.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>To funkcijo je mogoče uporabiti, če so izpolnjeni naslednji pogoji: &lt;ul&gt; &lt;li&gt; Nariše se graf za rezultat dvodimenzionalne strukturirane mreže. &lt;/li&gt; &lt;li&gt; Os X je v smeri I v mreži. &lt;/Li &gt; &lt;li&gt; Mreža je ustvarjena z algoritmom &quot;Ustvari mrežo iz podatkov o prerezu&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>To funkcijo je mogoče uporabiti, če so izpolnjeni naslednji pogoji: &lt;ul&gt; &lt;li&gt; Nariše se graf za rezultat dvodimenzionalne strukturirane mreže. &lt;/li&gt; &lt;li&gt; Os X je v smeri I v mreži. &lt;/Li &gt; &lt;li&gt; Mreža je ustvarjena z algoritmom "Ustvari mrežo iz podatkov o prerezu" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7858,8 +8033,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Napaka</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Naslov prvega stolpca mora biti &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Naslov prvega stolpca mora biti "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7938,8 +8113,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Napaka</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Naslov prvega stolpca mora biti &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Naslov prvega stolpca mora biti "X"</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Barvni zemljevid po meri</translation>
+        <translation type="vanished">Barvni zemljevid po meri</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Vrsta:</translation>
+        <translation type="vanished">Vrsta:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dve barvi</translation>
+        <translation type="vanished">Dve barvi</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tri barve</translation>
+        <translation type="vanished">Tri barve</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrarna</translation>
+        <translation type="vanished">Arbitrarna</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dve barvi/ tri barve</translation>
+        <translation type="vanished">Dve barvi/ tri barve</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Največja vrednost</translation>
+        <translation type="vanished">Največja vrednost</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Srednja vrednost</translation>
+        <translation type="vanished">Srednja vrednost</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vrednost</translation>
+        <translation type="vanished">Vrednost</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Najmanjša vrednost</translation>
+        <translation type="vanished">Najmanjša vrednost</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Uvoz (&amp;I)</translation>
+        <translation type="vanished">Uvoz (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Izvoz (&amp;E)</translation>
+        <translation type="vanished">Izvoz (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Uvozi nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Uvozi nastavitev barvnega zemljevida</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV datoteko (*.csv)</translation>
+        <translation type="vanished">CSV datoteko (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>mapa %1 ne obstaja.</translation>
+        <translation type="vanished">mapa %1 ne obstaja.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>mapa %1 ni bilo mogoče odpreti.</translation>
+        <translation type="vanished">mapa %1 ni bilo mogoče odpreti.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Izvozi nastavitev barvnega zemljevida</translation>
+        <translation type="vanished">Izvozi nastavitev barvnega zemljevida</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Po meri</translation>
+        <translation type="vanished">Po meri</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Nastavitev...</translation>
+        <translation type="vanished">Nastavitev...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Najmanjša vrednost je %1.</translation>
+        <translation type="vanished">Najmanjša vrednost je %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Največja vrednost je %1.</translation>
+        <translation type="vanished">Največja vrednost je %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidnost</translation>
+        <translation type="vanished">Vidnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Ko je izbrano</translation>
+        <translation type="vanished">Ko je izbrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Nenehno</translation>
+        <translation type="vanished">Nenehno</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikoli</translation>
+        <translation type="vanished">Nikoli</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Velikost in položaj</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">smer:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Navpično</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Avto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Izberite datoteko za uvoz</translation>
+        <translation type="vanished">Izberite datoteko za uvoz</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Nastavitev barvne karte (*.cmsetting)</translation>
+        <translation type="vanished">Nastavitev barvne karte (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+        <translation type="vanished">Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Pregleden</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Naslov</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Ozadje</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Položaj</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Oblika</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Navpično</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidnost</translation>
+        <translation type="vanished">Vidnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Ko je izbrano</translation>
+        <translation type="vanished">Ko je izbrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Nenehno</translation>
+        <translation type="vanished">Nenehno</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikoli</translation>
+        <translation type="vanished">Nikoli</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Avto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Prednastavitve:</translation>
+        <translation type="vanished">Prednastavitve:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+        <translation type="vanished">Pri uvozu prezrite nastavitev barvne vrstice</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Izberite datoteko za uvoz</translation>
+        <translation type="vanished">Izberite datoteko za uvoz</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+        <translation type="vanished">Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Prosimo, izberite element za uporabo)</translation>
+        <translation type="vanished">(Prosimo, izberite element za uporabo)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Nastavitev barvne karte (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Izvozi (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Naslov</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Ozadje</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Položaj</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Število barv:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Omogočeno</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Oblika</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Navpično</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barvna vrstica</translation>
+        <translation type="vanished">Barvna vrstica</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Naslov</translation>
+        <translation type="vanished">Naslov</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etikete</translation>
+        <translation type="vanished">Etikete</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Legenda o dolžini puščice</translation>
+        <translation type="vanished">Legenda o dolžini puščice</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14800,8 +15345,8 @@ Option -&gt; Preferences</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>V stolpcu za %1, vrednost &quot;%2&quot;za prerez&quot;%3&quot;ni veljavna. Vrednost se prezre.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>V stolpcu za %1, vrednost "%2"za prerez"%3"ni veljavna. Vrednost se prezre.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Dialog</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Če želite odpreti okno preseka, izberite samo eno vozlišče mreže.</translation>
+        <translation type="vanished">Če želite odpreti okno preseka, izberite samo eno vozlišče mreže.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Če želite odpreti okno vzdolžnega prereza, izberite samo eno vozlišče mreže.</translation>
+        <translation type="vanished">Če želite odpreti okno vzdolžnega prereza, izberite samo eno vozlišče mreže.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Mrežni presek (%1): Jaz = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Okno mrežnega prereza</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Ogled orodne vrstice za nastavitve</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Orodna vrstica za nastavitev zaslona</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastavitev</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Samodejno spreminjanje velikosti</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Razmerje stranic (V/V): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Popravite razmerje stranic</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Popravi regijo</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Mreža</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Lestvica</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Oznake za levi/desni breg</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Razmerje</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Nastavitev zaslona</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Krmilnik</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Leva stran brega</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Desna stran brega</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Razmerje stranic (V/V): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Med izdelavo je prišlo do napake %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Kazalo</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Razdalja (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Gorvodna stran</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Dolvodna stran</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Desna stran</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Leva stran</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Izvozi datoteke CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ime</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastavitev</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Nastavitev prikaza atributa mreže (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Shrani posnetke</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Smer</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>jaz</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Položaj</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Vrednosti celice</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Gorvodna stran</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Dolvodna stran</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Posnetek (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>Izvoz CSV (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Nastavitev prikaza okna prečnega prereza mreže</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Mreža ozadja</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Črte</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Pike</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vodoravno</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Avto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Lestvica</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Podlestvica</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Navpično</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>barva:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Luske</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Pisava:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Oznake za levi/desni breg</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Razmerje</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Nastavitev izvoza</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Mapa in predpona (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Mapa:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Predpona:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Prečni prerez</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Samo trenutno</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vse</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Po meri</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>jaz min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Jaz Max:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Stopnja preskakovanja:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Nastavitev prikaza atributa mreže</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Osnovno</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Način</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Nadmorska tabela</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Neodvisni grafikon</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barvni zemljevid</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Nastavitev višinske karte</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Barva črte:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Prikaži točke</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Velikost točke</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Pokaži indekse</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Barva pisave:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Pisava:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Stopnja preskakovanja:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Neodvisna nastavitev grafikona</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Višina grafikona:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[pikslov]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Pisava naslova:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Barva osi:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Pisava osi:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Nastavitev barvne karte</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Za urejanje barvnih nastavitev uporabite zavihek Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Uporabite nastavitev okna Predobdelava</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Prikaži naslov</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Barva naslova</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">Datum izida: 2021/4/28</translation>
+        <translation>Datum izdaje: 28.4.2021</translation>
     </message>
 </context>
 <context>
@@ -20916,8 +21868,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Prerez še ni določen.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Neveljavno ime za prerez. Ime mora biti &quot;X1&quot;, &quot;X2&quot;,... ali &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Neveljavno ime za prerez. Ime mora biti "X1", "X2",... ali "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

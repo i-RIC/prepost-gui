@@ -1262,11 +1262,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Pour ouvrir une fenêtre de coupe transversale, veuillez sélectionner un seul nœud de grille.</translation>
+        <translation type="vanished">Pour ouvrir une fenêtre de coupe transversale, veuillez sélectionner un seul nœud de grille.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Pour ouvrir une fenêtre de coupe longitudinale, veuillez sélectionner un seul nœud de grille.</translation>
+        <translation type="vanished">Pour ouvrir une fenêtre de coupe longitudinale, veuillez sélectionner un seul nœud de grille.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1509,6 +1509,409 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Section de grille (%1): je = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Fenêtre de section de grille</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Afficher la barre d'outils des paramètres</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Barre d'outils des paramètres d'affichage</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Une erreur s'est produite lors de la création %1.</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Paramètre</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Indice</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation>Distance(m) de %1</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Remise à l'échelle automatique</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Format d'image (V/H) : 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Corriger le format d'image</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Région fixe</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Grille</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Escalader</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Marqueurs rive gauche/droite</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Ratio d'aspect</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Paramètre d'affichage</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Manette</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Côté Rive Gauche</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Côté Rive Droite</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Format d'image (V/H) : 1 / %1</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Côté amont</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Côté aval</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Côté droit</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Côté gauche</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Exporter des fichiers CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Paramètre</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Paramètre d'affichage des attributs de grille (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Enregistrer les instantanés</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Former</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Direction</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>je</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Valeurs des cellules</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Côté amont</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Côté aval</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Instantané (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>Exportation CSV (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Paramètre d'affichage de la fenêtre de section de grille</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Grille de fond</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Taper</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Lignes</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Points</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Escalader</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Sous-échelle</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertical</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Couleur:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Balance</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Police de caractère:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Marqueurs rive gauche/droite</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Ratio d'aspect</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Paramètres d'exportation</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Dossier et préfixe (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Dossier:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Préfixe:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>La Coupe transversale</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Actuel uniquement</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tous</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Coutume</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>J'en suis:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Moi Max :</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Taux de saut :</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Paramètre d'affichage des attributs de grille</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basique</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Tableau d'élévation</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Graphique indépendant</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Réglage du graphique d'élévation</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Couleur de la ligne:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Largeur de ligne:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Afficher les points</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Taille des points</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Afficher les indices</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Couleur de la police:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Police de caractère:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Taux de saut :</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Paramètre graphique indépendant</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Hauteur du graphique :</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[pixels]</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Montrer le titre</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Police de titre:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Couleur de l'axe :</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Police de l'axe :</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Réglage de la palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Couleur du titre</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque :&lt;/span&gt; Utilisez l'onglet Colormap pour modifier le paramètre de couleur&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Utiliser le paramètre de la fenêtre de prétraitement</translation>
     </message>
 </context>
 <context>

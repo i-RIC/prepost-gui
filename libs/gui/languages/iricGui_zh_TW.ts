@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>彩條</translation>
+        <translation type="vanished">彩條</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>標題</translation>
+        <translation type="vanished">標題</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>標籤</translation>
+        <translation type="vanished">標籤</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>箭頭長度圖例</translation>
+        <translation type="vanished">箭頭長度圖例</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>顏色圖</translation>
+        <translation type="vanished">顏色圖</translation>
     </message>
     <message>
         <source>Background Image</source>

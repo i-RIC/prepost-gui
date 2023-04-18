@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Μπάρα χρώματος</translation>
+        <translation type="vanished">Μπάρα χρώματος</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Τίτλος</translation>
+        <translation type="vanished">Τίτλος</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Ετικέτες</translation>
+        <translation type="vanished">Ετικέτες</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Θρύλος μήκους βέλους</translation>
+        <translation type="vanished">Θρύλος μήκους βέλους</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Χάρτης χρωμάτων</translation>
+        <translation type="vanished">Χάρτης χρωμάτων</translation>
     </message>
     <message>
         <source>Background Image</source>

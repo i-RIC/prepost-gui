@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
-
+<!-- gridlandxmlexporter_de_DE.ts -->
 <context>
     <name>GridLandXmlExporter</name>
     <message>
@@ -22,7 +24,7 @@
         <translation>LandXml-Dateien (*.xml)</translation>
     </message>
 </context>
-
+<!-- iricAxis2d_de_DE.ts -->
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -30,7 +32,7 @@
         <translation>Achsen</translation>
     </message>
 </context>
-
+<!-- iricAxis3d_de_DE.ts -->
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -38,7 +40,7 @@
         <translation>Achsen</translation>
     </message>
 </context>
-
+<!-- iricCs_de_DE.ts -->
 <context>
     <name>CoordinateSystemConvertDialog</name>
     <message>
@@ -84,7 +86,7 @@
         <translation>(Keine Angabe)</translation>
     </message>
 </context>
-
+<!-- iricDistancemeasure_de_DE.ts -->
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
@@ -238,7 +240,7 @@
         <translation>Farbe:</translation>
     </message>
 </context>
-
+<!-- iricGccCenterandwidth_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -360,7 +362,7 @@
         <translation>Definieren Sie zuerst eine polygonale Linie, indem Sie mit der Maus klicken. Die polygonale Linie wird als Mittellinie des Rasters verwendet. Dann definieren Sie die Breite, Teilungsnummer des Rasters in I-Richtung und J-Richtung.</translation>
     </message>
 </context>
-
+<!-- iricGccCompoundchannel_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -550,7 +552,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Definieren Sie bitte ein Polygon als Region zum Erstellen des Rasters und ein weiteres Polygon als Niedrigwasserkanalregion. Dann fügen Sie bitte eine polygonale Linie als Flussmittelpunkt hinzu. Die Niedrigwasserkanalregion sollte in der Gittererzeugungsregion enthalten sein, und die Flussmittellinie sollte in der Niedrigwasserkanalregion enthalten sein.</translation>
     </message>
 </context>
-
+<!-- iricGccExternalprogram_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -613,7 +615,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Unbekannter Fehler (Fehlercode: %1 )</translation>
     </message>
 </context>
-
+<!-- iricGccGridcombine_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -735,7 +737,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Höhe der Hinderniszellen:</translation>
     </message>
 </context>
-
+<!-- iricGccGridgenerator_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -957,7 +959,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Breitenvariation [m] :</translation>
     </message>
 </context>
-
+<!-- iricGccLaplace_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
@@ -1261,7 +1263,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Raster erstellen (&amp;G)</translation>
     </message>
 </context>
-
+<!-- iricGccPoisson_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -1452,7 +1454,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Maximale Anzahl der Iterationen:</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregionlonlat_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1502,7 +1504,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>--</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregion_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1552,7 +1554,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>--</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey15d_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -1776,7 +1778,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>"Linkes Ufer" ist das Ufer, das Sie auf der linken Seite sehen, wenn Sie flussabwärts abbiegen.</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -1976,7 +1978,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Enddurchquerungslinie:</translation>
     </message>
 </context>
-
+<!-- iricGccTriangle_de_DE.ts -->
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2287,7 +2289,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdNetcdf_de_DE.ts -->
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -2395,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Ergebnis erkennen:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bitte verwenden Sie die folgenden Buchstaben, um das Muster zu definieren:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;Jahr: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;Monat: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;Tag: TT&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Stunde: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bitte verwenden Sie die folgenden Buchstaben, um das Muster zu definieren:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;Jahr: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;Monat: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tag: TT&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stunde: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2422,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Diese Daten können nicht exportiert werden. Es scheint, dass es nicht aus *.tif oder *.asc importiert wurde.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Diese Daten können nicht exportiert werden. Daten mit der Dimension "Zeit" können nicht in *.tif oder *.asc exportiert werden.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Diese Daten können nicht exportiert werden. Daten mit der Dimension &quot;Zeit&quot; können nicht in *.tif oder *.asc exportiert werden.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2496,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Diese Daten können nicht exportiert werden. Es scheint, dass es nicht aus *.png importiert wurde.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Diese Daten können nicht exportiert werden. Daten mit der Dimension "Zeit" können nicht nach *.png exportiert werden</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Diese Daten können nicht exportiert werden. Daten mit der Dimension &quot;Zeit&quot; können nicht nach *.png exportiert werden</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2707,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X-Band MP-Raderdaten können für Netzbedingungen mit der Dimension "Zeit" importiert werden.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X-Band MP-Raderdaten können für Netzbedingungen mit der Dimension &quot;Zeit&quot; importiert werden.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2762,7 +2764,7 @@ p, li { white-space: pre-wrap; }
         <translation>Farbkarte</translation>
     </message>
 </context>
-
+<!-- iricGdPointGroup_de_DE.ts -->
 <context>
     <name>GeoDataPointGroup</name>
     <message>
@@ -2904,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Die Kopfzeile sollte mindestens 4 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein "%2", aber " %3 “ ist gegeben.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein &quot;%2&quot;, aber &quot; %3 “ ist gegeben.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2920,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. Daten sollten mindestens 4 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "x"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "x" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;x&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;x&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "y"-Wertes in Zeile ist ein Fehler aufgetreten %1. "y" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;y&quot;-Wertes in Zeile ist ein Fehler aufgetreten %1. &quot;y&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des Werts "Wert" in der Zeile ist ein Fehler aufgetreten %1. "Wert" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des Werts &quot;Wert&quot; in der Zeile ist ein Fehler aufgetreten %1. &quot;Wert&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
 </context>
 <context>
@@ -3078,7 +3080,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Wenn die Breite oder Höhe des importierten Bildes größer als die maximale Größe ist, wird das Bild automatisch so verkleinert, dass die Breite oder Höhe gleich der maximalen Größe wird.</translation>
     </message>
 </context>
-
+<!-- iricGdPointmap_de_DE.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -3309,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Verschmelzen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden "%1"Gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden &quot;%1&quot;Gruppe.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3689,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Kein Trennzeichen angegeben</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Nicht genügend Werte zum Lesen "%1"."%1"Spalte ist %2 aber %3 Werte eingegeben.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Nicht genügend Werte zum Lesen &quot;%1&quot;.&quot;%1&quot;Spalte ist %2 aber %3 Werte eingegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Beim Lesen ist ein Fehler aufgetreten "%1" Wert. "%1" Wert sollte eine reelle Zahl sein, aber "%2" spezifiziert.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Beim Lesen ist ein Fehler aufgetreten &quot;%1&quot; Wert. &quot;%1&quot; Wert sollte eine reelle Zahl sein, aber &quot;%2&quot; spezifiziert.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3764,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Zitat Charakter:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4078,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Oberfläche</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4296,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Gewichtungsexponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; wird als Gewichtung verwendet, wenn der gewichtete Durchschnitt der Werte berechnet wird. r ist der Abstand vom Punkt zum Knoten oder Zellmittelpunkt, dem der Wert zugeordnet wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; wird als Gewichtung verwendet, wenn der gewichtete Durchschnitt der Werte berechnet wird. r ist der Abstand vom Punkt zum Knoten oder Zellmittelpunkt, dem der Wert zugeordnet wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4347,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Oberfläche</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4390,11 +4392,11 @@ p, li { white-space: pre-wrap; }
         <translation>Kantenlänge begrenzen:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis&lt;/span&gt;: Wenn Sie auf die Schaltfläche "Anwenden" klicken, werden die zu entfernenden Dreiecke dunkel gemalt grau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis&lt;/span&gt;: Wenn Sie auf die Schaltfläche &quot;Anwenden&quot; klicken, werden die zu entfernenden Dreiecke dunkel gemalt grau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdPoint_de_DE.ts -->
 <context>
     <name>GeoDataPoint</name>
     <message>
@@ -4441,6 +4443,21 @@ p, li { white-space: pre-wrap; }
         <source>Set vertex</source>
         <translation>Scheitelpunkt setzen</translation>
     </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
@@ -4464,7 +4481,69 @@ p, li { white-space: pre-wrap; }
         <translation>Punkt %1</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_de_DE.ts -->
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
@@ -4496,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Möchten Sie die Auswahl wirklich löschen? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden "%1"Gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden &quot;%1&quot;Gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -4733,7 +4812,7 @@ p, li { white-space: pre-wrap; }
         <translation>Koordinatensystem:</translation>
     </message>
 </context>
-
+<!-- iricGdPolydata_de_DE.ts -->
 <context>
     <name>GeoDataPolyData</name>
     <message>
@@ -4754,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Farbeinstellung</translation>
+        <translation type="vanished">%1 Farbeinstellung</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4778,29 +4857,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Farbeinstellung bearbeiten</translation>
+        <translation type="vanished">Farbeinstellung bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData-Farbeinstellung</translation>
+        <translation type="vanished">PolyData-Farbeinstellung</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farbe nach Wert</translation>
+        <translation type="vanished">Farbe nach Wert</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Freiwählbare Farbe</translation>
+        <translation type="vanished">Freiwählbare Farbe</translation>
     </message>
 </context>
-
+<!-- iricGdPolygonGroup_de_DE.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4928,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Die Kopfzeile sollte mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein "%2", aber " %3 “ ist gegeben.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein &quot;%2&quot;, aber &quot; %3 “ ist gegeben.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -4952,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. Die Daten sollten mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "pid"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "pid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;pid&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;pid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "vid" -Werts in der Zeile ist ein Fehler aufgetreten %1. "vid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;vid&quot; -Werts in der Zeile ist ein Fehler aufgetreten %1. &quot;vid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "x"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "x" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;x&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;x&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "y"-Wertes in Zeile ist ein Fehler aufgetreten %1. "y" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;y&quot;-Wertes in Zeile ist ein Fehler aufgetreten %1. &quot;y&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des Werts "Wert" in der Zeile ist ein Fehler aufgetreten %1. "Wert" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des Werts &quot;Wert&quot; in der Zeile ist ein Fehler aufgetreten %1. &quot;Wert&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "name" sollte für Zeilen mit gleichen "pid"-Werten gleich sein.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;name&quot; sollte für Zeilen mit gleichen &quot;pid&quot;-Werten gleich sein.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "value" sollte für Zeilen gleich sein, in denen "pid"-Werte gleich sind.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;value&quot; sollte für Zeilen gleich sein, in denen &quot;pid&quot;-Werte gleich sind.</translation>
     </message>
 </context>
 <context>
@@ -5068,7 +5147,7 @@ p, li { white-space: pre-wrap; }
         <translation>Linienbreite:</translation>
     </message>
 </context>
-
+<!-- iricGdPolygon_de_DE.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -5178,6 +5257,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove Polygon Vertex</source>
         <translation>Polygon-Scheitelpunkt entfernen</translation>
+    </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5290,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,7 +5401,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farbe</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Farbe nach Wert</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Freiwählbare Farbe</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolyLineGroup_de_DE.ts -->
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
@@ -5420,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Die Kopfzeile sollte mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein "%2", aber " %3 “ ist gegeben.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein &quot;%2&quot;, aber &quot; %3 “ ist gegeben.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5444,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. Die Daten sollten mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "Deckel"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "lid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;Deckel&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;lid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "vid" -Werts in der Zeile ist ein Fehler aufgetreten %1. "vid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;vid&quot; -Werts in der Zeile ist ein Fehler aufgetreten %1. &quot;vid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "x"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "x" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;x&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;x&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "y"-Wertes in Zeile ist ein Fehler aufgetreten %1. "y" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;y&quot;-Wertes in Zeile ist ein Fehler aufgetreten %1. &quot;y&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des Werts "Wert" in der Zeile ist ein Fehler aufgetreten %1. "Wert" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des Werts &quot;Wert&quot; in der Zeile ist ein Fehler aufgetreten %1. &quot;Wert&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "name" sollte für Zeilen mit gleichen "lid"-Werten gleich sein.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;name&quot; sollte für Zeilen mit gleichen &quot;lid&quot;-Werten gleich sein.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "value" sollte für Zeilen gleich sein, in denen "lid"-Werte gleich sind.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;value&quot; sollte für Zeilen gleich sein, in denen &quot;lid&quot;-Werte gleich sind.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5551,7 +5679,7 @@ p, li { white-space: pre-wrap; }
         <translation>Linienbreite:</translation>
     </message>
 </context>
-
+<!-- iricGdPolyLine_de_DE.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -5629,6 +5757,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove PolyLine Vertex</source>
         <translation>PolyLine-Scheitelpunkt entfernen</translation>
+    </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5709,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,7 +5869,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI Shape-Datei (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdRiversurvey_de_DE.ts -->
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
@@ -6100,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Querschnittsdaten werden unter Verwendung von Punktwolkendaten erzeugt. Wenn Sie die Querschnittsposition und die Kartenpunktwolkendaten erneut anpassen möchten, können Sie "Punktwolkendaten anzeigen" verwenden.</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Querschnittsdaten werden unter Verwendung von Punktwolkendaten erzeugt. Wenn Sie die Querschnittsposition und die Kartenpunktwolkendaten erneut anpassen möchten, können Sie &quot;Punktwolkendaten anzeigen&quot; verwenden.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6113,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie "Punktwolkendaten zuordnen" verwenden.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie &quot;Punktwolkendaten zuordnen&quot; verwenden.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. In einigen Regionen waren in Punktwolkendaten keine Daten vorhanden, und für diese Punkte wurde der Wert 0 zugeordnet. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie "Punktwolkendaten zuordnen" verwenden.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Querschnittsdaten werden aus Punktwolkendaten generiert. In einigen Regionen waren in Punktwolkendaten keine Daten vorhanden, und für diese Punkte wurde der Wert 0 zugeordnet. Wenn Sie die Querschnittsposition anpassen und Punktwolkendaten erneut zuordnen möchten, können Sie &quot;Punktwolkendaten zuordnen&quot; verwenden.</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6132,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6342,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Die Einstellungen für Höhe und Neigung sind ungültig.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Wenn Sie die Höhe des Endpunkts angeben, darf dieser nicht mit dem Startpunkt übereinstimmen. Wenn Sie eine horizontale Linie zeichnen möchten, wählen Sie bitte "Horizontalen Abstand angeben".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Wenn Sie die Höhe des Endpunkts angeben, darf dieser nicht mit dem Startpunkt übereinstimmen. Wenn Sie eine horizontale Linie zeichnen möchten, wählen Sie bitte &quot;Horizontalen Abstand angeben&quot;.</translation>
     </message>
 </context>
 <context>
@@ -6573,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Bearbeiten Sie den Querschnitt per Mausklick. Beenden Sie die Bearbeitung durch Doppelklick oder Drücken der Eingabetaste. Sie können den Querschnitt präzise bearbeiten, indem Sie Werte aus dem Dialog eingeben. Bitte rufen Sie den Dialog-Bearbeitungsmodus über "Edit from Dialog" im Rechtsklick-Menü auf.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Bearbeiten Sie den Querschnitt per Mausklick. Beenden Sie die Bearbeitung durch Doppelklick oder Drücken der Eingabetaste. Sie können den Querschnitt präzise bearbeiten, indem Sie Werte aus dem Dialog eingeben. Bitte rufen Sie den Dialog-Bearbeitungsmodus über &quot;Edit from Dialog&quot; im Rechtsklick-Menü auf.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6766,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 Leitung %2 "%3": LX-Wert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: LX-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 Leitung %2 "%3": LY-Wert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: LY-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 Leitung %2 "%3": RX-Wert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: RX-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 Leitung %2 "%3": RY-Wert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: RY-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 Leitung %2 "%3": Punktzahl ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: Punktzahl ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 Leitung %2 "%3": Ungültiger Indexwert</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: Ungültiger Indexwert</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 Leitung %2 : Querschnittsdaten für %3 nicht genug</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 Leitung %2 "%3": Entfernungswert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: Entfernungswert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 Leitung %2 "%3": Höhenwert ist ungültig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: Höhenwert ist ungültig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -6838,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Leitung %2 : Lese fehler. Benötigt mindestens zwei Werte.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Leitung %2 : Lese fehler. Kein reeller Zahlenwert "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Leitung %2 : Lese fehler. Kein reeller Zahlenwert &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -6965,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Leitung %2 : KP wird nicht eingegeben</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Leitung %2 "%3": LX-Wert ist ungültig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: LX-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Leitung %2 "%3": LY-Wert ist ungültig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: LY-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Leitung %2 "%3": RX-Wert ist ungültig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: RX-Wert ist ungültig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Leitung %2 "%3": RY-Wert ist ungültig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Leitung %2 &quot;%3&quot;: RY-Wert ist ungültig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Entfernungsmarkierungsdaten wurden nicht gefunden. Wird ignoriert.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 Leitung %2 : "%3": Flag-Daten sind ungültig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 Leitung %2 : &quot;%3&quot;: Flag-Daten sind ungültig.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 Leitung %2 : "%3": Entfernungsdaten sind ungültig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 Leitung %2 : &quot;%3&quot;: Entfernungsdaten sind ungültig.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 Leitung %2 : "%3": Höhendaten sind ungültig.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 Leitung %2 : &quot;%3&quot;: Höhendaten sind ungültig.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7104,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Sichtbar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Sie können die Farbe mithilfe der Registerkarte „Colormap“ anpassen.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Sie können die Farbe mithilfe der Registerkarte „Colormap“ anpassen.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -7135,7 +7312,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Kontrollpunkte verschieben</translation>
     </message>
 </context>
-
+<!-- iricGeoIO_de_DE.ts -->
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -7274,7 +7451,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Datei zum Exportieren auswählen</translation>
     </message>
 </context>
-
+<!-- iricGraph2dhybrid_de_DE.ts -->
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -8176,7 +8353,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>KanteJ</translation>
     </message>
 </context>
-
+<!-- iricGraph2dscattered_de_DE.ts -->
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -8525,7 +8702,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Farbe:</translation>
     </message>
 </context>
-
+<!-- iricGraph2dverification_de_DE.ts -->
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
@@ -8763,7 +8940,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Messwerte vs. Restfehler</translation>
     </message>
 </context>
-
+<!-- iricGraph2d_de_DE.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -8931,7 +9108,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Objektbrowser-Elementänderung</translation>
     </message>
 </context>
-
+<!-- iricGuibase_de_DE.ts -->
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -8969,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Benutzerdefinierte Farbkarte</translation>
+        <translation type="vanished">Benutzerdefinierte Farbkarte</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="vanished">Typ:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Zwei Farben</translation>
+        <translation type="vanished">Zwei Farben</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Drei Farben</translation>
+        <translation type="vanished">Drei Farben</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Willkürlich</translation>
+        <translation type="vanished">Willkürlich</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Zwei Farben/Drei Farben</translation>
+        <translation type="vanished">Zwei Farben/Drei Farben</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Höchster Wert</translation>
+        <translation type="vanished">Höchster Wert</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Mittlerer Wert</translation>
+        <translation type="vanished">Mittlerer Wert</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wert</translation>
+        <translation type="vanished">Wert</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Mindestwert</translation>
+        <translation type="vanished">Mindestwert</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farbe</translation>
+        <translation type="vanished">Farbe</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Hinzufügen (&amp;A)</translation>
+        <translation type="vanished">Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Entfernen (&amp;R)</translation>
+        <translation type="vanished">Entfernen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importieren (&amp;I)</translation>
+        <translation type="vanished">Importieren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Export (&amp;E)</translation>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Colormap-Einstellung importieren</translation>
+        <translation type="vanished">Colormap-Einstellung importieren</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV-Datei (*.csv)</translation>
+        <translation type="vanished">CSV-Datei (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warnung</translation>
+        <translation type="vanished">Warnung</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Datei %1 Existiert nicht.</translation>
+        <translation type="vanished">Datei %1 Existiert nicht.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Datei %1 konnte nicht geöffnet werden.</translation>
+        <translation type="vanished">Datei %1 konnte nicht geöffnet werden.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Colormap-Einstellung exportieren</translation>
+        <translation type="vanished">Colormap-Einstellung exportieren</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Benutzerdefiniert</translation>
+        <translation type="vanished">Benutzerdefiniert</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Einstellung...</translation>
+        <translation type="vanished">Einstellung...</translation>
     </message>
 </context>
 <context>
@@ -9393,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Mindestwert ist %1.</translation>
+        <translation type="vanished">Mindestwert ist %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maximalwert ist %1.</translation>
+        <translation type="vanished">Maximalwert ist %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9447,9 +9632,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: " %5.2f" für 3.141592 --&gt; 3.14" %4.2e" für 12300 --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: &quot; %5.2f&quot; für 3.141592 --&gt; 3.14&quot; %4.2e&quot; für 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -9786,7 +9971,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Größe:</translation>
     </message>
 </context>
-
+<!-- iricGuicore_de_DE.ts -->
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
@@ -10100,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Sichtweite</translation>
+        <translation type="vanished">Sichtweite</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Wenn ausgewählt</translation>
+        <translation type="vanished">Wenn ausgewählt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Stets</translation>
+        <translation type="vanished">Stets</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niemals</translation>
+        <translation type="vanished">Niemals</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10150,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Größe und Position</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Richtung:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10171,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Datei zum Importieren auswählen</translation>
+        <translation type="vanished">Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Colormap-Einstellung (*.cmsetting)</translation>
+        <translation type="vanished">Colormap-Einstellung (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Beim Laden ist ein Fehler aufgetreten %1 Parse-Fehler %2 bei %3, Spalte %4</translation>
+        <translation type="vanished">Beim Laden ist ein Fehler aufgetreten %1 Parse-Fehler %2 bei %3, Spalte %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10206,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Transparent</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etikettenanzeige</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farbe</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Hintergrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Größe und Position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10215,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Sichtweite</translation>
+        <translation type="vanished">Sichtweite</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Wenn ausgewählt</translation>
+        <translation type="vanished">Wenn ausgewählt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Stets</translation>
+        <translation type="vanished">Stets</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niemals</translation>
+        <translation type="vanished">Niemals</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10289,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10317,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Voreinstellungen:</translation>
+        <translation type="vanished">Voreinstellungen:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorieren Sie die Farbbalkeneinstellung beim Importieren</translation>
+        <translation type="vanished">Ignorieren Sie die Farbbalkeneinstellung beim Importieren</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10381,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Datei zum Importieren auswählen</translation>
+        <translation type="vanished">Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10402,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Beim Laden ist ein Fehler aufgetreten %1 Parse-Fehler %2 bei %3, Spalte %4</translation>
+        <translation type="vanished">Beim Laden ist ein Fehler aufgetreten %1 Parse-Fehler %2 bei %3, Spalte %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Bitte wählen Sie den gewünschten Artikel aus)</translation>
+        <translation type="vanished">(Bitte wählen Sie den gewünschten Artikel aus)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10444,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Beim Umschalten in den Gradationsmodus werden die Werte auf den mittleren Wert jedes Abschnitts gesetzt.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Colormap-Einstellung (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10458,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Export (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etikettenanzeige</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farbe</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Hintergrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Größe und Position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10485,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Anzahl Farben:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Ermöglicht</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertikal</translation>
     </message>
 </context>
 <context>
@@ -10639,7 +11182,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation>Wählen Sie einen Punkt im Dialogfeld "Georeferenz" aus.</translation>
+        <translation>Wählen Sie einen Punkt im Dialogfeld &quot;Georeferenz&quot; aus.</translation>
     </message>
     <message>
         <source>Delete Points</source>
@@ -10839,6 +11382,10 @@ Parse error %2 at %3, column %4</source>
         <source>Color:</source>
         <translation>Farbe:</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
@@ -10935,12 +11482,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitionsknoten wird nicht gespeichert</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Falscher Werttyp "%1" ist eingestellt.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Falscher Werttyp &quot;%1&quot; ist eingestellt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Falscher Bedingungstyp "%1"ist eingestellt.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Falscher Bedingungstyp &quot;%1&quot;ist eingestellt.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -11211,8 +11758,8 @@ Do you really want to import this file?</source>
         <translation>Datei %1 wird nach dem Import in die Berechnungsbedingung aktualisiert %2. Möchten Sie die aktualisierte Datei importieren?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Sie können die Werte kopieren und einfügen, mit den Tastenkombinationen "Strg + C" und "Strg + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Sie können die Werte kopieren und einfügen, mit den Tastenkombinationen &quot;Strg + C&quot; und &quot;Strg + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -11341,8 +11888,8 @@ Do you really want to import this file?</source>
         <translation>Beim Öffnen der Datei ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Die ersten beiden Spalten müssen "X" und "Y" sein.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Die ersten beiden Spalten müssen &quot;X&quot; und &quot;Y&quot; sein.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -11503,8 +12050,8 @@ Do you really want to import this file?</source>
         <translation>Definition von Variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -Dekoration: unterstreichen; color:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -Dekoration: unterstreichen; color:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -11512,7 +12059,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Definition testen, indem Sie darauf klicken. Wenn beim Parsen der Definition ein Fehler auftritt, wird die Fehlermeldung angezeigt. Wenn die Definition erfolgreich geparst wurde, wird der Wert, der unter Verwendung des "Werts zum Testen" berechnet wurde, berechnet. für jede Eingabe wird angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Definition testen, indem Sie darauf klicken. Wenn beim Parsen der Definition ein Fehler auftritt, wird die Fehlermeldung angezeigt. Wenn die Definition erfolgreich geparst wurde, wird der Wert, der unter Verwendung des &quot;Werts zum Testen&quot; berechnet wurde, berechnet. für jede Eingabe wird angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -11582,8 +12129,8 @@ Do you really want to import this file?</source>
         <translation>Runter (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Rechenoperationen als Variable verwenden, die weiter oben in der Liste erscheint.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis&lt;/span&gt;: Die Reihenfolge in der Liste ist wichtig. In der Definition können Sie den Wert einfacher Rechenoperationen als Variable verwenden, die weiter oben in der Liste erscheint.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -11936,8 +12483,8 @@ Do you really want to import this file?</source>
         <translation>Definition der Ausgabe</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -Dekoration: unterstreichen; color:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die Variable mit JavaScript-Sprache definieren. Siehe &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -Dekoration: unterstreichen; color:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; für Details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -12191,8 +12738,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbeitsbereich "%1" hat %2 Projektordner, die anscheinend nicht mehr verwendet werden. Möchten Sie sie entfernen?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbeitsbereich &quot;%1&quot; hat %2 Projektordner, die anscheinend nicht mehr verwendet werden. Möchten Sie sie entfernen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -12532,7 +13079,7 @@ Do you really want to import this file?</source>
         <translation>Build-Nummer der Versionsnummer ist nicht angegeben.</translation>
     </message>
 </context>
-
+<!-- iricGui_de_DE.ts -->
 <context>
     <name>AnimationController</name>
     <message>
@@ -12983,8 +13530,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Löser auswählen</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Wenn Sie ein neues Projekt erstellen, müssen Sie den für die Berechnung zu verwendenden Solver auswählen. Bitte wählen Sie einen Solver aus und drücken Sie die Schaltfläche "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Wenn Sie ein neues Projekt erstellen, müssen Sie den für die Berechnung zu verwendenden Solver auswählen. Bitte wählen Sie einen Solver aus und drücken Sie die Schaltfläche &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -13085,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Farbbalken</translation>
+        <translation type="vanished">Farbbalken</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketten</translation>
+        <translation type="vanished">Etiketten</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Pfeillängenlegende</translation>
+        <translation type="vanished">Pfeillängenlegende</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13259,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Farbkarte</translation>
+        <translation type="vanished">Farbkarte</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -13854,9 +14401,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Fehler beim Laden der Solver-Definitionsdatei im Ordner "%1". Dieser Solver wird ignoriert. %2</translation>
+        <translation>Fehler beim Laden der Solver-Definitionsdatei im Ordner &quot;%1&quot;. Dieser Solver wird ignoriert. %2</translation>
     </message>
 </context>
 <context>
@@ -13975,7 +14522,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dieses Projekt scheint von einem anderen iRIC-GUI-Fenster geöffnet zu werden. Sie können einen Projektordner nicht von mehreren GUI-Fenstern aus öffnen.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Das geöffnete Projekt wird nicht in das Arbeitsverzeichnis kopiert und Sie müssen die Änderungen, die Sie an diesem Projekt vornehmen, speichern. Wenn Sie das aktuelle Projekt behalten möchten, speichern Sie es bitte zuerst in einem anderen Projekt.</translation>
     </message>
     <message>
@@ -14135,8 +14682,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Das derzeit aktive Unterfenster unterstützt das Exportieren von Konturfiguren nicht.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14276,7 +14823,7 @@ Option -&gt; Preferences</source>
         <translation>Einstellungsdatei (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation>Um die Shape-Datei zu exportieren, schalten Sie den Farbmodus auf „Discrete Mode“ um.</translation>
     </message>
 </context>
@@ -14624,7 +15171,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -14651,8 +15198,8 @@ Option -&gt; Preferences</source>
         <translation>Neues 2D-Nachbearbeitungsfenster öffnen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Neues 2D Bird's-Eye Nachbearbeitungsfenster öffnen</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Neues 2D Bird&apos;s-Eye Nachbearbeitungsfenster öffnen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -14767,7 +15314,7 @@ Option -&gt; Preferences</source>
         <translation>Geografische Daten (Höhe vom Internet)</translation>
     </message>
 </context>
-
+<!-- iricHdRiversurveywaterelevation_de_DE.ts -->
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -14814,7 +15361,7 @@ Option -&gt; Preferences</source>
         <translation>Die Anzahl der Elemente muss in jeder Zeile gleich sein.</translation>
     </message>
 </context>
-
+<!-- iricMeasureddata_de_DE.ts -->
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -15008,7 +15555,7 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Farbbalkeneinstellung (&amp;C)</translation>
     </message>
 </context>
-
+<!-- iricMisc_de_DE.ts -->
 <context>
     <name>InformationDialog</name>
     <message>
@@ -15067,7 +15614,7 @@ Option -&gt; Preferences</source>
         <translation>Datei öffnen %1 gescheitert.</translation>
     </message>
 </context>
-
+<!-- iricPost2dbirdeye_de_DE.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -15078,7 +15625,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Nachbearbeitung aus der Vogelperspektive (2D): %1</translation>
     </message>
     <message>
@@ -15318,7 +15865,7 @@ Option -&gt; Preferences</source>
         <translation>Hintergrundfarbe bearbeiten</translation>
     </message>
 </context>
-
+<!-- iricPost2d_de_DE.ts -->
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -15758,8 +16305,8 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Fehler</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16076,8 +16623,8 @@ Option -&gt; Preferences</source>
         <translation>Skalare Einstellung (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation>Um KML für Street View zu exportieren, muss der Farbmodus "Discrete Mode" sein.</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>Um KML für Street View zu exportieren, muss der Farbmodus &quot;Discrete Mode&quot; sein.</translation>
     </message>
 </context>
 <context>
@@ -16114,15 +16661,15 @@ Option -&gt; Preferences</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>Um die Shape-Datei zu exportieren, schalten Sie die Farbeinstellung auf „Discrete Mode“ um.</translation>
     </message>
 </context>
@@ -16260,17 +16807,17 @@ Option -&gt; Preferences</source>
         <translation>Generierungszeitintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16337,16 +16884,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -16357,12 +16904,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Größe:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16400,17 +16947,17 @@ p, li { white-space: pre-wrap; }
         <translation>Generierungsintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16481,12 +17028,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Größe:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16702,14 +17249,14 @@ p, li { white-space: pre-wrap; }
         <translation>Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -16740,12 +17287,12 @@ p, li { white-space: pre-wrap; }
         <translation>Breite:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16811,12 +17358,12 @@ p, li { white-space: pre-wrap; }
         <translation>Breite:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16865,7 +17412,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Aktualisieren Sie die Polygonskalareinstellung</translation>
     </message>
 </context>
-
+<!-- iricPost3d_de_DE.ts -->
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -17701,17 +18248,17 @@ p, li { white-space: pre-wrap; }
         <translation>Generierungszeitintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -17786,16 +18333,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17806,12 +18353,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Größe:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17963,14 +18510,14 @@ p, li { white-space: pre-wrap; }
         <translation>Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -18001,12 +18548,12 @@ p, li { white-space: pre-wrap; }
         <translation>Breite:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18048,7 +18595,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Partikelskalareinstellung aktualisieren</translation>
     </message>
 </context>
-
+<!-- iricPostbase_de_DE.ts -->
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
@@ -18415,7 +18962,7 @@ p, li { white-space: pre-wrap; }
         <translation>Hinweis: Für den Titel können nur englische Zeichen verwendet werden.</translation>
     </message>
 </context>
-
+<!-- iricPre_de_DE.ts -->
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -18529,7 +19076,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Gitter aus der Vogelperspektive</translation>
     </message>
 </context>
@@ -19078,8 +19625,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 werden nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie das Mapping jetzt ausführen?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Einstellung der Randbedingung "%1" wird nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie die Zuordnung jetzt ausführen?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Einstellung der Randbedingung &quot;%1&quot; wird nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie die Zuordnung jetzt ausführen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19328,14 +19875,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Hinweis: Wenn die Variante aktiviert ist, wird die Variante mit dem Namen „Standard“ erstellt und alle geografischen Daten dorthin verschoben. Sie können Variationen aus dem "Objektbrowser" hinzufügen, umbenennen und entfernen. Sie können geografische Daten zwischen Variationen verschieben und kopieren. Die Gitterattributdaten, die aus der Variation erstellt wurden, die Sie mit "Variation zur Übergabe an Solver" auswählen, werden an Solver übergeben. Sie können mehrere Variationen vorbereiten, wechseln, welche an den Solver übergeben werden, und den Effekt der Differenz sicherstellen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Hinweis: Wenn die Variante aktiviert ist, wird die Variante mit dem Namen „Standard“ erstellt und alle geografischen Daten dorthin verschoben. Sie können Variationen aus dem &quot;Objektbrowser&quot; hinzufügen, umbenennen und entfernen. Sie können geografische Daten zwischen Variationen verschieben und kopieren. Die Gitterattributdaten, die aus der Variation erstellt wurden, die Sie mit &quot;Variation zur Übergabe an Solver&quot; auswählen, werden an Solver übergeben. Sie können mehrere Variationen vorbereiten, wechseln, welche an den Solver übergeben werden, und den Effekt der Differenz sicherstellen.</translation>
     </message>
 </context>
 <context>
@@ -19550,9 +20097,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Ausführen (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Die folgenden Attribute wurden nicht zugeordnet, weil sie die Ausgabewerte des Gittergenerators haben. Wenn Sie für diese geografische Daten zwangsweise kartieren möchten, kartieren Sie bitte manuell mit dem Menü "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
+        <translation>Die folgenden Attribute wurden nicht zugeordnet, weil sie die Ausgabewerte des Gittergenerators haben. Wenn Sie für diese geografische Daten zwangsweise kartieren möchten, kartieren Sie bitte manuell mit dem Menü &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19571,12 +20118,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kartierung der geografischen Daten abgeschlossen</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Das Rasterattribut "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Das Rasterattribut &quot;%1&quot; wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Die Randbedingung "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Die Randbedingung &quot;%1&quot; wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
 </context>
 <context>
@@ -19594,20 +20141,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Beim Erstellen des Rasters werden Sie gefragt, ob um die Attributzuordnung jedes Mal auszuführen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Beim Erstellen des Rasters werden Sie gefragt, ob um die Attributzuordnung jedes Mal auszuführen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handbuch</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Die Attributzuordnung wird nur ausgeführt, wenn Sie das Menü "Ausführen" manuell auswählen.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Die Attributzuordnung wird nur ausgeführt, wenn Sie das Menü &quot;Ausführen&quot; manuell auswählen.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -19679,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Um ein Querschnittsfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
+        <translation type="vanished">Um ein Querschnittsfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Um ein Längsschnittfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
+        <translation type="vanished">Um ein Längsschnittfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19929,6 +20476,413 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Gitterquerschnittsfenster</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Ansichtseinstellungssymbolleiste</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Anzeigeeinstellungs-Symbolleiste</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Automatische Neuskalierung</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Seitenverhältnis (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Seitenverhältnis korrigieren</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Bereich fixieren</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Netz</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Linke/rechte Ufermarkierungen</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Seitenverhältnis</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Bildschirmeinstellung</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Regler</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Linke Uferseite</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Rechte Uferseite</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Seitenverhältnis (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Beim Erstellen ist ein Fehler aufgetreten %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Index</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Abstand (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Stromaufwärts gelegene Seite</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Stromabwärtsseite</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Rechte Seite</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Linke Seite</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>CSV-Dateien exportieren</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Anzeigeeinstellung für Rasterattribute (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Schnappschüsse speichern</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Richtung</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>ICH</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Position</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Zellenwerte</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Stromaufwärts gelegene Seite</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Stromabwärts gelegene Seite</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Schnappschuss (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV-Export (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Anzeigeeinstellung für das Gitterquerschnittsfenster</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Hintergrundgitter</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linien</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Punkte</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontal</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Unterskala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikal</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Farbe:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Waage</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Schriftart:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Linke/rechte Ufermarkierungen</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Seitenverhältnis</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Exporteinstellung</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Ordner &amp; Präfix (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Ordner:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Präfix:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Querschnitt</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Nur aktuell</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Brauch</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Ich bin dabei:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Ich Max:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Sprungrate:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Anzeigeeinstellung für Rasterattribute</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Basic</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Höhendiagramm</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Unabhängiges Diagramm</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farbkarte</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Höhendiagramm-Einstellung</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Linienfarbe:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linienbreite:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Punkte anzeigen</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Punktgröße</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Indizes anzeigen</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Schriftfarbe:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Schriftart:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Sprungrate:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Unabhängige Diagrammeinstellung</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Diagrammhöhe:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[Pixel]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Überschrift:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Achsenfarbe:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Achsenschrift:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Colormap-Einstellung</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Verwenden Sie die Registerkarte &quot;Colormap&quot;, um die Farbeinstellung zu bearbeiten&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Verwenden Sie die Einstellung des Vorverarbeitungsfensters</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Titel anzeigen</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Titelfarbe</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
@@ -20026,7 +20980,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skalarleiste einrichten (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Vogelperspektive-Fenster öffnen (&amp;B)</translation>
     </message>
     <message>
@@ -20601,7 +21555,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Bewegung (&amp;M)</translation>
     </message>
 </context>
-
+<!-- iricSolverconsole_de_DE.ts -->
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -20728,7 +21682,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fehler beim Exportieren des Solver-Konsolenprotokolls.</translation>
     </message>
 </context>
-
+<!-- rivmaker_de_DE.ts -->
 <context>
     <name>AboutDialog</name>
     <message>
@@ -22106,7 +23060,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Wasserstandspunkte</translation>
     </message>
 </context>
-
+<!-- structured15dgridwithcrosssectionhecrasexporter_de_DE.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22121,7 +23075,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>HEC-RAS</translation>
     </message>
 </context>
-
+<!-- structured2dgridgdalimporter_de_DE.ts -->
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
@@ -22137,7 +23091,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>ArcInfo ASCII-Dateien (*.asc)</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvexporter_de_DE.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22152,7 +23106,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays CSV</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvimporter_de_DE.ts -->
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -22173,7 +23127,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Die folgenden Spalten wurden ignoriert. %1</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridexporter_de_DE.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22188,7 +23142,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays Rasterdatei</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridimporter_de_DE.ts -->
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -22208,7 +23162,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Zellen-Flag-Werte werden nicht geladen.</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkexporter_de_DE.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22223,7 +23177,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK-Datei</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkimporter_de_DE.ts -->
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
@@ -22243,7 +23197,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Kopieren %1 Zu %2 fehlgeschlagen.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridtriangleimporter_de_DE.ts -->
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -22263,7 +23217,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>%1 Existiert nicht.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkexporter_de_DE.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22278,7 +23232,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK-Datei</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkimporter_de_DE.ts -->
 <context>
     <name>Unstructured2dGridVtkImporter</name>
     <message>

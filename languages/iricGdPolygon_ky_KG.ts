@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Polygon Vertexти алып салуу</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Көп бурчтуу дисплей жөндөөсү</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Көп бурчтуу дисплей жөндөөсү</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Алдын ала иштетүү терезесинин жөндөөлөрүн колдонуңуз</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Сызыктын туурасы:</translation>
     </message>
 </context>
 </TS>

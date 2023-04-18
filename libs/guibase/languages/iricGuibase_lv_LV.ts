@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Pielāgota krāsu karte</translation>
+        <translation type="vanished">Pielāgota krāsu karte</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tips:</translation>
+        <translation type="vanished">Tips:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Divas krāsas</translation>
+        <translation type="vanished">Divas krāsas</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Trīs krāsas</translation>
+        <translation type="vanished">Trīs krāsas</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Patvaļīgs</translation>
+        <translation type="vanished">Patvaļīgs</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Divas krāsas/ trīs krāsas</translation>
+        <translation type="vanished">Divas krāsas/ trīs krāsas</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimālā vērtība</translation>
+        <translation type="vanished">Maksimālā vērtība</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Vidēja vērtība</translation>
+        <translation type="vanished">Vidēja vērtība</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vērtība</translation>
+        <translation type="vanished">Vērtība</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimālā vērtība</translation>
+        <translation type="vanished">Minimālā vērtība</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Pievienot (&amp;A)</translation>
+        <translation type="vanished">Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Noņemt (&amp;R)</translation>
+        <translation type="vanished">Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importēt (&amp;I)</translation>
+        <translation type="vanished">Importēt (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksportēt (&amp;E)</translation>
+        <translation type="vanished">Eksportēt (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importēt krāsu kartes iestatījumu</translation>
+        <translation type="vanished">Importēt krāsu kartes iestatījumu</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV fails (*.csv)</translation>
+        <translation type="vanished">CSV fails (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fails %1 nepastāv.</translation>
+        <translation type="vanished">Fails %1 nepastāv.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fails %1 nevarēja atvērt.</translation>
+        <translation type="vanished">Fails %1 nevarēja atvērt.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Eksportēt krāsu kartes iestatījumu</translation>
+        <translation type="vanished">Eksportēt krāsu kartes iestatījumu</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pielāgots</translation>
+        <translation type="vanished">Pielāgots</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Notiek iestatīšana...</translation>
+        <translation type="vanished">Notiek iestatīšana...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimālā vērtība ir %1.</translation>
+        <translation type="vanished">Minimālā vērtība ir %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maksimālā vērtība ir %1.</translation>
+        <translation type="vanished">Maksimālā vērtība ir %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Vērtība ir mazāka par %1 nav atļauts.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur lielāks nekā %1 nav atļauts.</translation>
     </message>
 </context>
 <context>

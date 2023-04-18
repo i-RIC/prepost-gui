@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>แถบสี</translation>
+        <translation type="vanished">แถบสี</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>ชื่อ</translation>
+        <translation type="vanished">ชื่อ</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>ป้ายกำกับ</translation>
+        <translation type="vanished">ป้ายกำกับ</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>ตำนานความยาวลูกศร</translation>
+        <translation type="vanished">ตำนานความยาวลูกศร</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
     </message>
     <message>
         <source>Background Image</source>

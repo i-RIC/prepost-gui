@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Renk Ayarı</translation>
+        <translation type="vanished">%1 Renk Ayarı</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Renk ayarını düzenle</translation>
+        <translation type="vanished">Renk ayarını düzenle</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Renk Ayarı</translation>
+        <translation type="vanished">PolyData Renk Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Değere göre renk</translation>
+        <translation type="vanished">Değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
 </context>
 </TS>

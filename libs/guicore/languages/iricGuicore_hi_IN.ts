@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>दृश्यता</translation>
+        <translation type="vanished">दृश्यता</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>जब चुना गया</translation>
+        <translation type="vanished">जब चुना गया</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>हमेशा</translation>
+        <translation type="vanished">हमेशा</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>कभी नहीँ</translation>
+        <translation type="vanished">कभी नहीँ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>आकार और स्थिति</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>दिशा:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>खड़ा</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>बार की चौड़ाई</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>ऑटो</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>संरेखण</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>बाएं</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>केंद्र</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>सही</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>आयात करने के लिए फ़ाइल का चयन करें</translation>
+        <translation type="vanished">आयात करने के लिए फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>कलरमैप सेटिंग (*.cmsetting)</translation>
+        <translation type="vanished">कलरमैप सेटिंग (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
+        <translation type="vanished">लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>पारदर्शी</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>कॉलोरमैप सेटिंग की गणना करें (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>कॉलोरमैप सेटिंग की गणना करें (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>से सेटिंग आयात करते समय गड़बड़ी हुई %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>जनता (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>निजी (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Colormap सेटिंग आयात करें</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>तरीका</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>मानकों में से चुनें</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>फ़ाइल का चयन करें</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>मानकों</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फ़ाइल</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>आयात के गुण</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>दिशा</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>फ़ॉन्ट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>लेबल प्रदर्शन</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>पृष्ठभूमि</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>आकार और स्थिति</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>पद</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>बार की चौड़ाई</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>संरेखण</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्व दर्शन</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>रंग रेखा</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>खड़ा</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>दृश्यता</translation>
+        <translation type="vanished">दृश्यता</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>जब चुना गया</translation>
+        <translation type="vanished">जब चुना गया</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>हमेशा</translation>
+        <translation type="vanished">हमेशा</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>कभी नहीँ</translation>
+        <translation type="vanished">कभी नहीँ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>ऑटो</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>बार की चौड़ाई</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>संरेखण</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>बाएं</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>केंद्र</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>सही</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>प्रीसेट:</translation>
+        <translation type="vanished">प्रीसेट:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
+        <translation type="vanished">आयात करते समय कलर बार सेटिंग पर ध्यान न दें</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>आयात करने के लिए फ़ाइल का चयन करें</translation>
+        <translation type="vanished">आयात करने के लिए फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
+        <translation type="vanished">लोड करते समय गड़बड़ी हुई %1 पार्स त्रुटि %2 पर %3, कॉलम %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(कृपया लागू करने के लिए आइटम का चयन करें)</translation>
+        <translation type="vanished">(कृपया लागू करने के लिए आइटम का चयन करें)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">ग्रेडेशन मोड में स्विच करते समय, मान प्रत्येक अनुभाग के मध्य मान पर सेट होते हैं।</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>उल्टे रंग (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>समान विभाजन (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>कलरमैप सेटिंग (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>गलती</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>से सेटिंग आयात करते समय गड़बड़ी हुई %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>जनता (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>निजी (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>निर्यात (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Colormap सेटिंग आयात करें</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>तरीका</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>मानकों में से चुनें</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>फ़ाइल का चयन करें</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>मानकों</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फ़ाइल</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>आयात के गुण</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>दिशा</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>फ़ॉन्ट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>लेबल प्रदर्शन</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>प्रारूप</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>लेबल की संख्या</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>पृष्ठभूमि</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>आकार और स्थिति</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>पद</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>बार की चौड़ाई</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>संरेखण</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्व दर्शन</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>रंगों की संख्या:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>विकल्प</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>मान दशमलव स्थान:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>लॉग स्केल:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>सक्रिय</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>रंग रेखा</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>खड़ा</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
 </context>
 <context>

@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Redzamība</translation>
+        <translation type="vanished">Redzamība</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kad atlasīts</translation>
+        <translation type="vanished">Kad atlasīts</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Vienmēr</translation>
+        <translation type="vanished">Vienmēr</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nekad</translation>
+        <translation type="vanished">Nekad</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Izmērs un pozīcija</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Redzams</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Virziens:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontāli</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikāli</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Stieņa platums</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Izlīdzināšana</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Pa kreisi</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrs</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Pa labi</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Atlasiet importējamo failu</translation>
+        <translation type="vanished">Atlasiet importējamo failu</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Krāsu kartes iestatījums (*.cmsetting)</translation>
+        <translation type="vanished">Krāsu kartes iestatījums (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
+        <translation type="vanished">Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Caurspīdīgs</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Uzskaitiet krāsu kartes iestatījumu (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Uzskaitiet krāsu kartes iestatījumu (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Importējot iestatījumu no, radās kļūda %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publisks (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privāts (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importēt krāsu kartes iestatījumu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režīms</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Izvēlieties no standartiem</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Izvēlieties failu</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarti</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Importēšanas atribūti</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Virziens</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonta iestatījums</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiķetes displejs</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiķete</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Fons</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Izmērs un pozīcija</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozīcija</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Izmērs</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Stieņa platums</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Izlīdzināšana</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Priekšskatījums</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Krāsu josla</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontāli</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikāli</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Redzamība</translation>
+        <translation type="vanished">Redzamība</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kad atlasīts</translation>
+        <translation type="vanished">Kad atlasīts</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Vienmēr</translation>
+        <translation type="vanished">Vienmēr</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nekad</translation>
+        <translation type="vanished">Nekad</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Redzams</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Stieņa platums</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Izlīdzināšana</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Pa kreisi</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Centrs</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Pa labi</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Iepriekšējie iestatījumi:</translation>
+        <translation type="vanished">Iepriekšējie iestatījumi:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importējot, ignorējiet krāsu joslas iestatījumu</translation>
+        <translation type="vanished">Importējot, ignorējiet krāsu joslas iestatījumu</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Atlasiet importējamo failu</translation>
+        <translation type="vanished">Atlasiet importējamo failu</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
+        <translation type="vanished">Ielādes laikā radās kļūda %1 Parsēšanas kļūda %2 plkst %3, kolonna %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Lūdzu, atlasiet vienumu, ko piemērot)</translation>
+        <translation type="vanished">(Lūdzu, atlasiet vienumu, ko piemērot)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Pārslēdzoties uz gradācijas režīmu, vērtības tiek iestatītas uz katras sadaļas vidējo vērtību.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Reversās krāsas (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Vienlīdzīgs sadalījums (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Krāsu kartes iestatījums (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kļūda</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Importējot iestatījumu no, radās kļūda %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publisks (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Privāts (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Eksportēt (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importēt krāsu kartes iestatījumu</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režīms</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Izvēlieties no standartiem</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Izvēlieties failu</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarti</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Importēšanas atribūti</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Virziens</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonta iestatījums</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiķetes displejs</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formāts</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Etiķešu skaits</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiķete</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Fons</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Izmērs un pozīcija</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Pozīcija</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Izmērs</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Stieņa platums</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Izlīdzināšana</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Priekšskatījums</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Krāsu skaits:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Iespējas</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Vērtības decimālzīmes:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Baļķu mērogs:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Iespējots</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Krāsu josla</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontāli</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikāli</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Krāsa:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme. Nosaukumam varat izmantot tikai ASCII rakstzīmes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

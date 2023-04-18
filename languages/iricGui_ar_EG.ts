@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>شريط الألوان</translation>
+        <translation type="vanished">شريط الألوان</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>عنوان</translation>
+        <translation type="vanished">عنوان</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>ملصقات</translation>
+        <translation type="vanished">ملصقات</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>طول السهم وسيلة إيضاح</translation>
+        <translation type="vanished">طول السهم وسيلة إيضاح</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>خريطة اللون</translation>
+        <translation type="vanished">خريطة اللون</translation>
     </message>
     <message>
         <source>Background Image</source>

@@ -74,12 +74,12 @@
         <translation>Пошук:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; color: #0000ff; &quot;&gt; Підказка про японські системи координат (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt; &lt;span style = "text-decoration: underline; color: #0000ff; "&gt; Підказка про японські системи координат (EPSG: 2443 - 2461) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt; &lt;span style = &quot;text-decoration: підкреслити; колір:#0000ff; &quot;&gt; Підказка щодо систем координат UTM (EPSG: 32601 - 32760 тощо) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt; &lt;span style = "text-decoration: підкреслити; колір:#0000ff; "&gt; Підказка щодо систем координат UTM (EPSG: 32601 - 32760 тощо) &lt;/span&gt; &lt;/a&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -169,7 +169,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Start Point:</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Зворотний напрямок центральної лінії (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Увага</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Сталася помилка під час завантаження файлу визначення творця сітки у папку &quot; %1 Цей творець сітки ігнорується. %2</translation>
+        <translation>Сталася помилка під час завантаження файлу визначення творця сітки у папку " %1 Цей творець сітки ігнорується. %2</translation>
     </message>
 </context>
 <context>
@@ -620,7 +620,7 @@ The low water channel region should be included in grid creation region, andRive
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation>Створіть сітку, об&apos;єднавши дві сітки</translation>
+        <translation>Створіть сітку, об'єднавши дві сітки</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
@@ -650,7 +650,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation>Зв&apos;язати разом (ліворуч: притока, праворуч: мейнстрім)</translation>
+        <translation>Зв'язати разом (ліворуч: притока, праворуч: мейнстрім)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
@@ -876,7 +876,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Simple compound</source>
-        <translation>Просте з&apos;єднання</translation>
+        <translation>Просте з'єднання</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
@@ -892,7 +892,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Complex compound</source>
-        <translation>Складне з&apos;єднання</translation>
+        <translation>Складне з'єднання</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
@@ -1774,8 +1774,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Відстань від центральної точки</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Лівий берег&quot; - це берег, який ви бачите ліворуч, коли повертаєте у напрямку вниз за течією.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Лівий берег" - це берег, який ви бачите ліворуч, коли повертаєте у напрямку вниз за течією.</translation>
     </message>
 </context>
 <!-- iricGccRiversurvey_uk_UA.ts -->
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Введіть максимальну площу клітинок всередині полігону уточнення.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>Вказавши невеликі значення, ви можете створити тонкі сітки.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; m &lt;span style =&quot; vertical-align: super; &quot;&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_uk_UA.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити вершину</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>Встановити вершину</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>Точка %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_uk_UA.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Налаштування кольору</translation>
+        <translation type="vanished">%1 Налаштування кольору</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4780,26 +4857,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Змінити налаштування кольору</translation>
+        <translation type="vanished">Змінити налаштування кольору</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Налаштування кольору PolyData</translation>
+        <translation type="vanished">Налаштування кольору PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Колір за значенням</translation>
+        <translation type="vanished">Колір за значенням</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Користувацький колір</translation>
+        <translation type="vanished">Користувацький колір</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_uk_UA.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove Polygon Vertex</source>
         <translation>Видалити вершину багатокутника</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>Файл формату ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Колір за значенням</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Користувацький колір</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_uk_UA.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>Remove PolyLine Vertex</source>
         <translation>Видаліть вершину PolyLine</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Файл форми ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_uk_UA.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Помилка налаштування вікна графіка. Результат розрахунку завантажено неправильно.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Цю функцію можна використовувати, якщо виконуються такі умови: &lt;ul&gt; &lt;li&gt; Намалюється графік результату двовимірної структурованої сітки. &lt;/li&gt; &lt;li&gt; Вісь X-це напрямок I у сітці. &lt;/Li &gt; &lt;li&gt; Сітка створюється за алгоритмом &quot;Створити сітку з даних перерізу&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Цю функцію можна використовувати, якщо виконуються такі умови: &lt;ul&gt; &lt;li&gt; Намалюється графік результату двовимірної структурованої сітки. &lt;/li&gt; &lt;li&gt; Вісь X-це напрямок I у сітці. &lt;/Li &gt; &lt;li&gt; Сітка створюється за алгоритмом "Створити сітку з даних перерізу" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7858,8 +8033,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Помилка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Назва першого стовпця має бути &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Назва першого стовпця має бути "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7938,8 +8113,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Помилка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Назва першого стовпця має бути &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Назва першого стовпця має бути "X"</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Користувацька кольорова карта</translation>
+        <translation type="vanished">Користувацька кольорова карта</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="vanished">Тип:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Два кольори</translation>
+        <translation type="vanished">Два кольори</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Три кольори</translation>
+        <translation type="vanished">Три кольори</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Довільно</translation>
+        <translation type="vanished">Довільно</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Два кольори/ три кольори</translation>
+        <translation type="vanished">Два кольори/ три кольори</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максимальне значення</translation>
+        <translation type="vanished">Максимальне значення</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Середня вартість</translation>
+        <translation type="vanished">Середня вартість</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Цінність</translation>
+        <translation type="vanished">Цінність</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Мінімальне значення</translation>
+        <translation type="vanished">Мінімальне значення</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Додати (&amp;A)</translation>
+        <translation type="vanished">Додати (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Видалити (&amp;R)</translation>
+        <translation type="vanished">Видалити (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Імпорт (&amp;I)</translation>
+        <translation type="vanished">Імпорт (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Експорт (&amp;E)</translation>
+        <translation type="vanished">Експорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Імпортувати налаштування кольорової карти</translation>
+        <translation type="vanished">Імпортувати налаштування кольорової карти</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файл (*.csv)</translation>
+        <translation type="vanished">CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 не існує.</translation>
+        <translation type="vanished">Файл %1 не існує.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 не вдалося відкрити.</translation>
+        <translation type="vanished">Файл %1 не вдалося відкрити.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Експортувати налаштування кольорової карти</translation>
+        <translation type="vanished">Експортувати налаштування кольорової карти</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>На замовлення</translation>
+        <translation type="vanished">На замовлення</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Налаштування...</translation>
+        <translation type="vanished">Налаштування...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Мінімальне значення - це %1.</translation>
+        <translation type="vanished">Мінімальне значення - це %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максимальне значення становить %1.</translation>
+        <translation type="vanished">Максимальне значення становить %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимість</translation>
+        <translation type="vanished">Видимість</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>При виборі</translation>
+        <translation type="vanished">При виборі</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Завжди</translation>
+        <translation type="vanished">Завжди</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ніколи</translation>
+        <translation type="vanished">Ніколи</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Розмір і положення</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">напрямок:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикальний</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Авто</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Виберіть файл для імпорту</translation>
+        <translation type="vanished">Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Налаштування кольорової карти (*.cmsetting)</translation>
+        <translation type="vanished">Налаштування кольорової карти (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
+        <translation type="vanished">Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Прозорий</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Помилка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Назва</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Дисплей етикетки</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Колір</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Довідка</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Розмір і положення</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиція</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикальний</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимість</translation>
+        <translation type="vanished">Видимість</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>При виборі</translation>
+        <translation type="vanished">При виборі</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Завжди</translation>
+        <translation type="vanished">Завжди</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ніколи</translation>
+        <translation type="vanished">Ніколи</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Авто</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Попередні налаштування:</translation>
+        <translation type="vanished">Попередні налаштування:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ігнорувати налаштування кольорової панелі під час імпорту</translation>
+        <translation type="vanished">Ігнорувати налаштування кольорової панелі під час імпорту</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Виберіть файл для імпорту</translation>
+        <translation type="vanished">Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
+        <translation type="vanished">Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Будь ласка, виберіть елемент для застосування)</translation>
+        <translation type="vanished">(Будь ласка, виберіть елемент для застосування)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Під час переходу в режим градації значення встановлюються на середнє значення кожного розділу.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Налаштування кольорової карти (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Помилка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Експорт (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Назва</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Дисплей етикетки</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Колір</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Довідка</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Розмір і положення</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Позиція</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Кількість кольорів:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Увімкнено</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Вертикальний</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Колір:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Кольорова панель</translation>
+        <translation type="vanished">Кольорова панель</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Назва</translation>
+        <translation type="vanished">Назва</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>етикетки</translation>
+        <translation type="vanished">етикетки</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Легенда довжини стрілки</translation>
+        <translation type="vanished">Легенда довжини стрілки</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Кольорова карта</translation>
+        <translation type="vanished">Кольорова карта</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14800,8 +15345,8 @@ Option -&gt; Preferences</source>
         <translation>Увага</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>У графі за %1, значення &quot;%2&quot;для перерізу&quot;%3&quot;є недійсним. Значення ігнорується.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>У графі за %1, значення "%2"для перерізу"%3"є недійсним. Значення ігнорується.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Діалог</translation>
+        <translation>Діалог</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Щоб відкрити вікно перетину, виберіть лише один вузол сітки.</translation>
+        <translation type="vanished">Щоб відкрити вікно перетину, виберіть лише один вузол сітки.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Щоб відкрити вікно поздовжнього перерізу, будь ласка, виберіть лише один вузол сітки.</translation>
+        <translation type="vanished">Щоб відкрити вікно поздовжнього перерізу, будь ласка, виберіть лише один вузол сітки.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>Перетин сітки (%1): Я = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Вікно перетину сітки</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Перегляд панелі налаштувань</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Панель інструментів налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Автоматичне масштабування</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Співвідношення сторін (В/Г): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Виправте співвідношення сторін</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Виправити регіон</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Сітка</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>масштаб</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Маркери лівого/правого берега</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Співвідношення сторін</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Контролер</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Лівобережна сторона</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Правобережна сторона</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Співвідношення сторін (В/Г): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Під час створення сталася помилка %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Індекс</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Відстань (м)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Верхня сторона</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Нижня сторона</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Права сторона</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Ліва сторона</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Експорт файлів CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Видно</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Налаштування відображення атрибутів сітки (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Зберегти знімки</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Напрямок</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>я</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>Дж</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиція</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Значення клітинок</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Верхня сторона</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Нижня сторона</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Знімок (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>Експорт CSV (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Налаштування відображення вікна поперечного перерізу сітки</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Фонова сітка</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Лінії</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Крапки</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>масштаб</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Підшкала</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальний</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>колір:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Ваги</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Шрифт:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Маркери лівого/правого берега</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Співвідношення сторін</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Налаштування експорту</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Папка та префікс (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Папка:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Префікс:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Поперечний переріз</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Лише поточний</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>все</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Custom</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Я в:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Я Макс:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Швидкість пропуску:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Налаштування відображення атрибутів сітки</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видно</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Базовий</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Діаграма висот</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Незалежна діаграма</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Кольорова карта</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Налаштування діаграми висот</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Колір лінії:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Показати бали</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Розмір точки</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Показати індекси</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Колір шрифту:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Шрифт:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Швидкість пропуску:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Незалежне налаштування діаграми</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Висота діаграми:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[пікселі]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Шрифт заголовка:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Колір осі:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Шрифт Axis:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Налаштування кольорової карти</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Показати назву</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Колір заголовка</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">Дата виходу: 2021/4/28</translation>
+        <translation>Дата випуску: 28.04.2021</translation>
     </message>
 </context>
 <context>
@@ -20916,8 +21868,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Поперечний переріз ще не визначений.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Недійсна назва перетину. Назва має бути &quot;X1&quot;, &quot;X2&quot;,... або &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Недійсна назва перетину. Назва має бути "X1", "X2",... або "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
@@ -21121,7 +22073,7 @@ This algorithm can be used only for structured grids.</source>
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation>Введіть ім&apos;я файлу для експорту</translation>
+        <translation>Введіть ім'я файлу для експорту</translation>
     </message>
 </context>
 <context>
@@ -21388,7 +22340,7 @@ This algorithm can be used only for structured grids.</source>
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation>Введіть ім&apos;я файлу для експорту</translation>
+        <translation>Введіть ім'я файлу для експорту</translation>
     </message>
 </context>
 <context>
@@ -21484,7 +22436,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation>Ім&apos;я файлу CSV для експорту</translation>
+        <translation>Ім'я файлу CSV для експорту</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
@@ -21751,7 +22703,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation>Панель інструментів &quot;Список вікон&quot;</translation>
+        <translation>Панель інструментів "Список вікон"</translation>
     </message>
     <message>
         <source>Open project file</source>

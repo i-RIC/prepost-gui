@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
-
+<!-- gridlandxmlexporter_fi_FI.ts -->
 <context>
     <name>GridLandXmlExporter</name>
     <message>
@@ -22,7 +24,7 @@
         <translation>LandXml -tiedostoja (*.xml)</translation>
     </message>
 </context>
-
+<!-- iricAxis2d_fi_FI.ts -->
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -30,7 +32,7 @@
         <translation>Kirveet</translation>
     </message>
 </context>
-
+<!-- iricAxis3d_fi_FI.ts -->
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -38,7 +40,7 @@
         <translation>Kirveet</translation>
     </message>
 </context>
-
+<!-- iricCs_fi_FI.ts -->
 <context>
     <name>CoordinateSystemConvertDialog</name>
     <message>
@@ -84,7 +86,7 @@
         <translation>(Ei määritelty)</translation>
     </message>
 </context>
-
+<!-- iricDistancemeasure_fi_FI.ts -->
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
@@ -238,7 +240,7 @@
         <translation>Väri:</translation>
     </message>
 </context>
-
+<!-- iricGccCenterandwidth_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -360,7 +362,7 @@
         <translation>Määrittele ensin monikulmainen viiva hiirellä napsauttamalla. Monikulmion viivaa käytetään ruudukon keskilinjana. Määritä sitten ruudukon leveys, jako numero I -suunnassa ja J -suunnassa.</translation>
     </message>
 </context>
-
+<!-- iricGccCompoundchannel_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -550,7 +552,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Määritä monikulmio alueeksi ruudukon luomiseksi ja toinen monikulmio matalan vesikanavan alueeksi. Lisää sitten monikulmainen viiva joen keskipisteeksi. Alhaisen vesikanavan alue tulisi sisällyttää verkoston luomiseen ja joen keskilinja tulisi sisällyttää matalan veden kanavan alueeseen.</translation>
     </message>
 </context>
-
+<!-- iricGccExternalprogram_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -613,7 +615,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Tuntematon virhe (virhekoodi: %1 )</translation>
     </message>
 </context>
-
+<!-- iricGccGridcombine_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -735,7 +737,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Estekennojen korkeus:</translation>
     </message>
 </context>
-
+<!-- iricGccGridgenerator_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -957,7 +959,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Leveysvaihtelu [m]:</translation>
     </message>
 </context>
-
+<!-- iricGccLaplace_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
@@ -1261,7 +1263,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Luo ruudukko (&amp;G)</translation>
     </message>
 </context>
-
+<!-- iricGccPoisson_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -1452,7 +1454,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Toistojen enimmäismäärä:</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregionlonlat_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1502,7 +1504,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregion_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1552,7 +1554,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey15d_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -1776,7 +1778,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>"Vasen pankki" on pankki, jonka näet vasemmalla puolella kääntyessäsi alavirtaan.</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -1976,7 +1978,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Päättymisviiva:</translation>
     </message>
 </context>
-
+<!-- iricGccTriangle_fi_FI.ts -->
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2287,7 +2289,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdNetcdf_fi_FI.ts -->
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -2395,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Tunnista tulos:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Määrittele kuvio seuraavilla kirjaimilla: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -oikea: 0px; -qt-list-sisennys: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sisennys: 0; text-indent: 0px; "&gt; Vuosi: VVVV &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -lohko-sisennys: 0; text-indent: 0px; "&gt; Kuukausi: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Päivä: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- oikea: 0px; -qt-block-sisennys: 0; text-indent: 0px; "&gt; Tunti: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-sisennys: 0; text-indent: 0px; "&gt; Minuutti: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Toinen: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Määrittele kuvio seuraavilla kirjaimilla: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -oikea: 0px; -qt-list-sisennys: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sisennys: 0; text-indent: 0px; &quot;&gt; Vuosi: VVVV &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -lohko-sisennys: 0; text-indent: 0px; &quot;&gt; Kuukausi: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Päivä: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- oikea: 0px; -qt-block-sisennys: 0; text-indent: 0px; &quot;&gt; Tunti: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-sisennys: 0; text-indent: 0px; &quot;&gt; Minuutti: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Toinen: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2422,7 +2424,7 @@ p, li { white-space: pre-wrap; }
         <translation>Näitä tietoja ei voi viedä. Näyttää siltä, että sitä ei ole tuotu tiedostosta *.tif tai *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Näitä tietoja ei voi viedä. Aika -ulottuvuuden tietoja ei voi viedä *.tif- tai *.asc -tiedostoihin.</translation>
     </message>
     <message>
@@ -2496,7 +2498,7 @@ p, li { white-space: pre-wrap; }
         <translation>Näitä tietoja ei voi viedä. Näyttää siltä, että sitä ei ole tuotu tiedostosta *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Näitä tietoja ei voi viedä. Aika -ulottuvuuden tietoja ei voi viedä *.png -tiedostoon</translation>
     </message>
     <message>
@@ -2707,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X -kaistan MP -rader -tiedot voidaan tuoda ruudukko -olosuhteille, joiden ulottuvuus on "Time".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X -kaistan MP -rader -tiedot voidaan tuoda ruudukko -olosuhteille, joiden ulottuvuus on &quot;Time&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2762,7 +2764,7 @@ p, li { white-space: pre-wrap; }
         <translation>Värikartta</translation>
     </message>
 </context>
-
+<!-- iricGdPointGroup_fi_FI.ts -->
 <context>
     <name>GeoDataPointGroup</name>
     <message>
@@ -2904,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe otsikkorivin lukemisen aikana. Otsikossa tulee olla vähintään 4 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla "%2", mutta "%3" on annettu.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla &quot;%2&quot;, mutta &quot;%3&quot; on annettu.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2920,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe riviä luettaessa %1. Datassa tulee olla vähintään 4 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa x -arvoa riviltä %1. "x" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa x -arvoa riviltä %1. &quot;x&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa y -arvoa riviltä %1. "y" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa y -arvoa riviltä %1. &quot;y&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa arvon "arvo" riviä %1. "arvon" pitäisi olla todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa arvon &quot;arvo&quot; riviä %1. &quot;arvon&quot; pitäisi olla todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
 </context>
 <context>
@@ -3078,7 +3080,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Kun tuodun kuvan leveys tai korkeus on suurempi kuin enimmäiskoko, kuvaa pienennetään automaattisesti niin, että leveys tai korkeus on yhtä suuri kuin enimmäiskoko.</translation>
     </message>
 </context>
-
+<!-- iricGdPointmap_fi_FI.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -3309,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Yhdistää...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Muita tietoja ei voi yhdistää &quot;%1&quot; ryhmä.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3689,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Erotinta ei ole määritetty</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Arvot eivät riitä lukemiseen "%1"". %1 "sarake on %2 mutta %3 syötetyt arvot.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Arvot eivät riitä lukemiseen &quot;%1&quot;&quot;. %1 &quot;sarake on %2 mutta %3 syötetyt arvot.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Virhe luettaessa "%1"arvo". %1 "arvon pitäisi olla reaaliluku, mutta"%2"määritelty.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Virhe luettaessa &quot;%1&quot;arvo&quot;. %1 &quot;arvon pitäisi olla reaaliluku, mutta&quot;%2&quot;määritelty.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3764,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Lainaushahmo:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4078,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Pinta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4296,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Painoeksponentti k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; käytetään painona laskettaessa arvojen painotettua keskiarvoa. r on etäisyys pisteestä solmun tai solun keskustaan, johon arvo on kartoitettu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; käytetään painona laskettaessa arvojen painotettua keskiarvoa. r on etäisyys pisteestä solmun tai solun keskustaan, johon arvo on kartoitettu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4347,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Pinta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4390,11 +4392,11 @@ p, li { white-space: pre-wrap; }
         <translation>Rajan reunan pituus:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdPoint_fi_FI.ts -->
 <context>
     <name>GeoDataPoint</name>
     <message>
@@ -4441,6 +4443,21 @@ p, li { white-space: pre-wrap; }
         <source>Set vertex</source>
         <translation>Aseta kärkipiste</translation>
     </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
@@ -4464,7 +4481,69 @@ p, li { white-space: pre-wrap; }
         <translation>Kohta %1</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_fi_FI.ts -->
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
@@ -4496,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Haluatko varmasti poistaa valitut %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Muita tietoja ei voi yhdistää &quot;%1&quot; ryhmä.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -4733,7 +4812,7 @@ p, li { white-space: pre-wrap; }
         <translation>Koordinaattijärjestelmä:</translation>
     </message>
 </context>
-
+<!-- iricGdPolydata_fi_FI.ts -->
 <context>
     <name>GeoDataPolyData</name>
     <message>
@@ -4754,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Väriasetus</translation>
+        <translation type="vanished">%1 Väriasetus</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4778,29 +4857,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Muokkaa väriasetusta</translation>
+        <translation type="vanished">Muokkaa väriasetusta</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData -väriasetus</translation>
+        <translation type="vanished">PolyData -väriasetus</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Väritä arvon mukaan</translation>
+        <translation type="vanished">Väritä arvon mukaan</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
 </context>
-
+<!-- iricGdPolygonGroup_fi_FI.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4928,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe otsikkorivin lukemisen aikana. Otsikossa tulee olla vähintään 6 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla "%2", mutta "%3" on annettu.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla &quot;%2&quot;, mutta &quot;%3&quot; on annettu.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -4952,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe riviä luettaessa %1. Datassa tulee olla vähintään 6 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Virhe "pid" -arvon lukemisessa rivillä %1. "pid" pitäisi olla kokonaisluku, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe &quot;pid&quot; -arvon lukemisessa rivillä %1. &quot;pid&quot; pitäisi olla kokonaisluku, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Virhe luettaessa "vid" -arvoa rivillä %1. "vid" pitäisi olla kokonaisluku, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa &quot;vid&quot; -arvoa rivillä %1. &quot;vid&quot; pitäisi olla kokonaisluku, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa x -arvoa riviltä %1. "x" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa x -arvoa riviltä %1. &quot;x&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa y -arvoa riviltä %1. "y" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa y -arvoa riviltä %1. &quot;y&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa arvon "arvo" riviä %1. "arvon" pitäisi olla todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa arvon &quot;arvo&quot; riviä %1. &quot;arvon&quot; pitäisi olla todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Virhe riviä luettaessa %1. "nimen" pitäisi olla sama riveillä, joissa "pid" -arvot ovat samat.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Virhe riviä luettaessa %1. &quot;nimen&quot; pitäisi olla sama riveillä, joissa &quot;pid&quot; -arvot ovat samat.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Virhe riviä luettaessa %1. "arvon" pitäisi olla sama riveillä, joissa "pid" -arvot ovat samat.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Virhe riviä luettaessa %1. &quot;arvon&quot; pitäisi olla sama riveillä, joissa &quot;pid&quot; -arvot ovat samat.</translation>
     </message>
 </context>
 <context>
@@ -5068,7 +5147,7 @@ p, li { white-space: pre-wrap; }
         <translation>Viivan leveys:</translation>
     </message>
 </context>
-
+<!-- iricGdPolygon_fi_FI.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -5178,6 +5257,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove Polygon Vertex</source>
         <translation>Poista Polygon Vertex</translation>
+    </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5290,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,7 +5401,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI -muotoinen tiedosto (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Väritä arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolyLineGroup_fi_FI.ts -->
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
@@ -5420,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe otsikkorivin lukemisen aikana. Otsikossa tulee olla vähintään 6 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla "%2", mutta "%3" on annettu.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Virhe otsikkorivin lukemisen aikana. Sarake %1 pitäisi olla &quot;%2&quot;, mutta &quot;%3&quot; on annettu.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5444,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Virhe riviä luettaessa %1. Datassa tulee olla vähintään 6 saraketta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Virhe luettaessa kannen arvoa riviltä %1. "kansi" on oltava kokonaisluku, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa kannen arvoa riviltä %1. &quot;kansi&quot; on oltava kokonaisluku, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Virhe luettaessa "vid" -arvoa rivillä %1. "vid" pitäisi olla kokonaisluku, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa &quot;vid&quot; -arvoa rivillä %1. &quot;vid&quot; pitäisi olla kokonaisluku, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa x -arvoa riviltä %1. "x" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa x -arvoa riviltä %1. &quot;x&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa y -arvoa riviltä %1. "y" on todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa y -arvoa riviltä %1. &quot;y&quot; on todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Virhe luettaessa arvon "arvo" riviä %1. "arvon" pitäisi olla todellinen arvo, mutta "%2"on määritetty.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Virhe luettaessa arvon &quot;arvo&quot; riviä %1. &quot;arvon&quot; pitäisi olla todellinen arvo, mutta &quot;%2&quot;on määritetty.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Virhe riviä luettaessa %1. "nimen" pitäisi olla sama riveille, joissa "kansi" -arvot ovat samat.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Virhe riviä luettaessa %1. &quot;nimen&quot; pitäisi olla sama riveille, joissa &quot;kansi&quot; -arvot ovat samat.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Virhe riviä luettaessa %1. "arvon" pitäisi olla sama riveillä, joissa "kansi" -arvot ovat samat.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Virhe riviä luettaessa %1. &quot;arvon&quot; pitäisi olla sama riveillä, joissa &quot;kansi&quot; -arvot ovat samat.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5551,7 +5679,7 @@ p, li { white-space: pre-wrap; }
         <translation>Viivan leveys:</translation>
     </message>
 </context>
-
+<!-- iricGdPolyLine_fi_FI.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -5629,6 +5757,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove PolyLine Vertex</source>
         <translation>Poista PolyLine Vertex</translation>
+    </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5709,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,7 +5869,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI -muotoinen tiedosto (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdRiversurvey_fi_FI.ts -->
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
@@ -6100,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Poikkileikkaustiedot generoidaan pistepilvidatan avulla. Jos haluat säätää poikkileikkauksen sijaintia ja karttapisteen peittämistietoja uudelleen, voit käyttää "Karttapistetiedot"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Poikkileikkaustiedot generoidaan pistepilvidatan avulla. Jos haluat säätää poikkileikkauksen sijaintia ja karttapisteen peittämistietoja uudelleen, voit käyttää &quot;Karttapistetiedot&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6113,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää "Karttapistepilvitietoja"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää &quot;Karttapistepilvitietoja&quot;</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Joillakin alueilla tietoja ei ollut pistepilvidatassa, ja arvo 0 määritettiin näille pisteille. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää "Karttapistepilvitietoja"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Poikkileikkaustiedot luodaan käyttämällä pistepilvitietoja. Joillakin alueilla tietoja ei ollut pistepilvidatassa, ja arvo 0 määritettiin näille pisteille. Jos haluat muuttaa poikkileikkauksen sijaintia ja karttapistepilvitietoja uudelleen, voit käyttää &quot;Karttapistepilvitietoja&quot;</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6132,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6224,7 +6401,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Scales</source>
-        <translation>Vaa'at</translation>
+        <translation>Vaa&apos;at</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -6342,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Korkeus- ja kaltevuusasetukset ovat virheellisiä.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Kun määrität päätepisteen korkeuden, se ei voi olla sama kuin aloituspiste. Jos haluat piirtää vaakasuoran viivan, valitse "Määritä vaakasuora etäisyys".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Kun määrität päätepisteen korkeuden, se ei voi olla sama kuin aloituspiste. Jos haluat piirtää vaakasuoran viivan, valitse &quot;Määritä vaakasuora etäisyys&quot;.</translation>
     </message>
 </context>
 <context>
@@ -6573,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Muokkaa poikkileikkausta hiirellä napsauttamalla. Lopeta muokkaaminen kaksoisnapsauttamalla tai painamalla Return -näppäintä. Voit muokata poikkileikkausta tarkasti syöttämällä arvot valintaikkunasta. Siirry valintaikkunan muokkaustilaan "Muokkaa dialogista" -valikosta hiiren kakkospainikkeella.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Muokkaa poikkileikkausta hiirellä napsauttamalla. Lopeta muokkaaminen kaksoisnapsauttamalla tai painamalla Return -näppäintä. Voit muokata poikkileikkausta tarkasti syöttämällä arvot valintaikkunasta. Siirry valintaikkunan muokkaustilaan &quot;Muokkaa dialogista&quot; -valikosta hiiren kakkospainikkeella.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6766,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Virhe</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 linja %2 "%3": LX -arvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: LX -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 linja %2 "%3": LY -arvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: LY -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 linja %2 "%3": RX -arvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: RX -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 linja %2 "%3": RY -arvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: RY -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 linja %2 "%3": Pisteiden lukumäärä on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: Pisteiden lukumäärä on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 linja %2 "%3": Virheellinen indeksin arvo</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 linja %2 &quot;%3&quot;: Virheellinen indeksin arvo</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linja %2 : poikkileikkaustiedot kohteelle %3 ei tarpeeksi</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 linja %2 "%3": Etäisyyden arvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: Etäisyyden arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 linja %2 "%3": Korkeusarvo on virheellinen</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 linja %2 &quot;%3&quot;: Korkeusarvo on virheellinen</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -6838,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linja %2 : Lukuvirhe. Vaatii vähintään kaksi arvoa.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Linja %2 : Lukuvirhe. Ei reaalilukuarvo "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Linja %2 : Lukuvirhe. Ei reaalilukuarvo &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -6965,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linja %2 : KP ei ole syötetty</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Linja %2 "%3": LX -arvo on virheellinen</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Linja %2 &quot;%3&quot;: LX -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Linja %2 "%3": LY -arvo on virheellinen</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Linja %2 &quot;%3&quot;: LY -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Linja %2 "%3": RX -arvo on virheellinen</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Linja %2 &quot;%3&quot;: RX -arvo on virheellinen</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Linja %2 "%3": RY -arvo on virheellinen</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Linja %2 &quot;%3&quot;: RY -arvo on virheellinen</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Etäisyysmerkkitietoja ei löydy. Ohitetaan.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 linja %2 : "%3": Lipputiedot ovat virheellisiä.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 linja %2 : &quot;%3&quot;: Lipputiedot ovat virheellisiä.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 linja %2 : "%3": Etäisyystiedot ovat virheellisiä.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 linja %2 : &quot;%3&quot;: Etäisyystiedot ovat virheellisiä.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 linja %2 : "%3": Korkeustiedot ovat virheellisiä.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 linja %2 : &quot;%3&quot;: Korkeustiedot ovat virheellisiä.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7104,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Näkyy</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Voit mukauttaa väriä Colormap-välilehden avulla.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Voit mukauttaa väriä Colormap-välilehden avulla.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -7135,7 +7312,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Siirrä ohjauspisteitä</translation>
     </message>
 </context>
-
+<!-- iricGeoIO_fi_FI.ts -->
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -7274,7 +7451,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Valitse vietävä tiedosto</translation>
     </message>
 </context>
-
+<!-- iricGraph2dhybrid_fi_FI.ts -->
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -8176,7 +8353,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>EdgeJ</translation>
     </message>
 </context>
-
+<!-- iricGraph2dscattered_fi_FI.ts -->
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -8525,7 +8702,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Väri:</translation>
     </message>
 </context>
-
+<!-- iricGraph2dverification_fi_FI.ts -->
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
@@ -8763,7 +8940,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Mitatut arvot vs. jäännösvirheet</translation>
     </message>
 </context>
-
+<!-- iricGraph2d_fi_FI.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -8931,7 +9108,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Objektiselaimen kohteen muutos</translation>
     </message>
 </context>
-
+<!-- iricGuibase_fi_FI.ts -->
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -8969,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Mukautettu värikartta</translation>
+        <translation type="vanished">Mukautettu värikartta</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tyyppi:</translation>
+        <translation type="vanished">Tyyppi:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Kaksi väriä</translation>
+        <translation type="vanished">Kaksi väriä</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Kolme väriä</translation>
+        <translation type="vanished">Kolme väriä</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Mielivaltainen</translation>
+        <translation type="vanished">Mielivaltainen</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Kaksi väriä/ kolme väriä</translation>
+        <translation type="vanished">Kaksi väriä/ kolme väriä</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Suurin arvo</translation>
+        <translation type="vanished">Suurin arvo</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Keskiarvo</translation>
+        <translation type="vanished">Keskiarvo</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Arvo</translation>
+        <translation type="vanished">Arvo</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Vähimmäisarvo</translation>
+        <translation type="vanished">Vähimmäisarvo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisätä (&amp;A)</translation>
+        <translation type="vanished">Lisätä (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Poista (&amp;R)</translation>
+        <translation type="vanished">Poista (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Tuonti (&amp;I)</translation>
+        <translation type="vanished">Tuonti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Viedä (&amp;E)</translation>
+        <translation type="vanished">Viedä (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Tuo värikartta -asetus</translation>
+        <translation type="vanished">Tuo värikartta -asetus</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -tiedosto (*.csv)</translation>
+        <translation type="vanished">CSV -tiedosto (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Tiedosto %1 ei ole olemassa.</translation>
+        <translation type="vanished">Tiedosto %1 ei ole olemassa.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Tiedosto %1 ei pystytty avaamaan.</translation>
+        <translation type="vanished">Tiedosto %1 ei pystytty avaamaan.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Vie värimuodon asetus</translation>
+        <translation type="vanished">Vie värimuodon asetus</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Mukautettu</translation>
+        <translation type="vanished">Mukautettu</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Asetukset...</translation>
+        <translation type="vanished">Asetukset...</translation>
     </message>
 </context>
 <context>
@@ -9393,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Vähimmäisarvo on %1.</translation>
+        <translation type="vanished">Vähimmäisarvo on %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Suurin arvo on %1.</translation>
+        <translation type="vanished">Suurin arvo on %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9447,9 +9632,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Määritä numeroformaatti printf -muodossa. Esimerkiksi: " %5.2f "3.141592 -&gt; 3.14" %4.2e "12300 -&gt; 1,23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Määritä numeroformaatti printf -muodossa. Esimerkiksi: &quot; %5.2f &quot;3.141592 -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -9786,7 +9971,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Koko:</translation>
     </message>
 </context>
-
+<!-- iricGuicore_fi_FI.ts -->
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
@@ -10100,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Näkyvyys</translation>
+        <translation type="vanished">Näkyvyys</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kun valittu</translation>
+        <translation type="vanished">Kun valittu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Aina</translation>
+        <translation type="vanished">Aina</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ei koskaan</translation>
+        <translation type="vanished">Ei koskaan</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10150,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Koko ja sijainti</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Suunta:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Pystysuora</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10171,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valitse tuotava tiedosto</translation>
+        <translation type="vanished">Valitse tuotava tiedosto</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Värikartan asetus (*.cmsetting)</translation>
+        <translation type="vanished">Värikartan asetus (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+        <translation type="vanished">Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10206,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Läpinäkyvä</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Otsikko</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Väri</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Tausta</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Pystysuora</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10215,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Näkyvyys</translation>
+        <translation type="vanished">Näkyvyys</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kun valittu</translation>
+        <translation type="vanished">Kun valittu</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Aina</translation>
+        <translation type="vanished">Aina</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ei koskaan</translation>
+        <translation type="vanished">Ei koskaan</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10289,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10317,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Esiasetukset:</translation>
+        <translation type="vanished">Esiasetukset:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ohita väripalkin asetus tuonnin aikana</translation>
+        <translation type="vanished">Ohita väripalkin asetus tuonnin aikana</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10381,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Valitse tuotava tiedosto</translation>
+        <translation type="vanished">Valitse tuotava tiedosto</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10402,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
+        <translation type="vanished">Ladattaessa tapahtui virhe %1 Jäsennysvirhe %2 klo %3, sarake %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Valitse käytettävä kohde)</translation>
+        <translation type="vanished">(Valitse käytettävä kohde)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10444,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Kun vaihdat sävytystilaan, arvot asetetaan kunkin osion keskiarvoon.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Värikartan asetus (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10458,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Viedä (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Otsikko</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiketin näyttö</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Väri</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Tausta</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Koko ja sijainti</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10485,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Värien määrä:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Käytössä</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Pystysuora</translation>
     </message>
 </context>
 <context>
@@ -10839,6 +11382,10 @@ Parse error %2 at %3, column %4</source>
         <source>Color:</source>
         <translation>Väri:</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
@@ -10935,12 +11482,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Määrityssolmu ei ole tallennettu</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Väärä valueType "%1"on asetettu.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Väärä valueType &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Väärä kuntoTyyppi "%1"on asetettu.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Väärä kuntoTyyppi &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -11211,8 +11758,8 @@ Do you really want to import this file?</source>
         <translation>Tiedosto %1 päivitetään laskutoimintoon tuonnin jälkeen %2. Haluatko tuoda päivitetyn tiedoston?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Voit kopioida ja liittää arvot pikanäppäimillä "Ctrl + C" ja "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Voit kopioida ja liittää arvot pikanäppäimillä &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -11341,8 +11888,8 @@ Do you really want to import this file?</source>
         <translation>Virhe avattaessa tiedostoa.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Kahden ensimmäisen sarakkeen on oltava "X" ja "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Kahden ensimmäisen sarakkeen on oltava &quot;X&quot; ja &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -11503,8 +12050,8 @@ Do you really want to import this file?</source>
         <translation>Määritelmä muuttuja</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -11582,8 +12129,8 @@ Do you really want to import this file?</source>
         <translation>Alas (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -11936,8 +12483,8 @@ Do you really want to import this file?</source>
         <translation>Tuloksen määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -12191,8 +12738,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Työtila "%1"on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Työtila &quot;%1&quot;on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -12532,7 +13079,7 @@ Do you really want to import this file?</source>
         <translation>Versionumeron koontinumeroa ei ole määritetty.</translation>
     </message>
 </context>
-
+<!-- iricGui_fi_FI.ts -->
 <context>
     <name>AnimationController</name>
     <message>
@@ -12983,8 +13530,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valitse Ratkaisija</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina "OK" -painiketta.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina &quot;OK&quot; -painiketta.</translation>
     </message>
 </context>
 <context>
@@ -13085,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Väripalkki</translation>
+        <translation type="vanished">Väripalkki</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Otsikko</translation>
+        <translation type="vanished">Otsikko</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Tarrat</translation>
+        <translation type="vanished">Tarrat</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Nuolen pituus Selite</translation>
+        <translation type="vanished">Nuolen pituus Selite</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13259,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Värikartta</translation>
+        <translation type="vanished">Värikartta</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -13854,9 +14401,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon "%1". Tämä ratkaisija jätetään huomiotta. %2</translation>
+        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon &quot;%1&quot;. Tämä ratkaisija jätetään huomiotta. %2</translation>
     </message>
 </context>
 <context>
@@ -13975,7 +14522,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tämä projekti näyttää avautuvan toisella iRIC GUI -ikkunalla. Et voi avata projektikansiota useista graafisista käyttöliittymistä.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avattua projektia ei kopioida työhakemistoon, ja sinun on tallennettava tähän projektiin tekemäsi muutokset. Jos haluat säilyttää nykyisen projektin, tallenna se ensin toiseen projektiin.</translation>
     </message>
     <message>
@@ -14135,8 +14682,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tällä hetkellä aktiivinen alaikkuna ei tue ääriviivan vientiä.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14276,8 +14823,8 @@ Option -&gt; Preferences</source>
         <translation>Asetustiedosto (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Voit viedä muototiedoston vaihtamalla väritilaksi "Diskreetti tila".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Voit viedä muototiedoston vaihtamalla väritilaksi &quot;Diskreetti tila&quot;.</translation>
     </message>
 </context>
 <context>
@@ -14624,7 +15171,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -14651,7 +15198,7 @@ Option -&gt; Preferences</source>
         <translation>Avaa uusi 2D-jälkikäsittelyikkuna</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Avaa uusi 2D-lintuperspektiivin jälkikäsittelyikkuna</translation>
     </message>
     <message>
@@ -14767,7 +15314,7 @@ Option -&gt; Preferences</source>
         <translation>Maantieteelliset tiedot (korkeus verkosta)</translation>
     </message>
 </context>
-
+<!-- iricHdRiversurveywaterelevation_fi_FI.ts -->
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -14814,7 +15361,7 @@ Option -&gt; Preferences</source>
         <translation>Kohteiden määrän on oltava sama jokaisella rivillä.</translation>
     </message>
 </context>
-
+<!-- iricMeasureddata_fi_FI.ts -->
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -15008,7 +15555,7 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
 </context>
-
+<!-- iricMisc_fi_FI.ts -->
 <context>
     <name>InformationDialog</name>
     <message>
@@ -15067,7 +15614,7 @@ Option -&gt; Preferences</source>
         <translation>Tiedosto avataan %1 epäonnistui.</translation>
     </message>
 </context>
-
+<!-- iricPost2dbirdeye_fi_FI.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -15078,7 +15625,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Lintuperspektiivi (2D): %1</translation>
     </message>
     <message>
@@ -15318,7 +15865,7 @@ Option -&gt; Preferences</source>
         <translation>Muokkaa taustaväriä</translation>
     </message>
 </context>
-
+<!-- iricPost2d_fi_FI.ts -->
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -15758,8 +16305,8 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Virhe</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16076,8 +16623,8 @@ Option -&gt; Preferences</source>
         <translation>Skalaariasetus (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation>KML-tiedoston vieminen katunäkymää varten Colormoden on oltava "Discrete Mode"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>KML-tiedoston vieminen katunäkymää varten Colormoden on oltava &quot;Discrete Mode&quot;</translation>
     </message>
 </context>
 <context>
@@ -16114,16 +16661,16 @@ Option -&gt; Preferences</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalaari</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation>Voit viedä muototiedoston vaihtamalla väriasetukseksi "Discrete Mode".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation>Voit viedä muototiedoston vaihtamalla väriasetukseksi &quot;Discrete Mode&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16260,17 +16807,17 @@ Option -&gt; Preferences</source>
         <translation>Sukupolven aikaväli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16337,16 +16884,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Sukupolven väli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Jos määrität 1, hiukkasia luodaan ruudukon solmuissa. &lt;/p&gt; &lt;p&gt; Jos määrität 2, hiukkasia luodaan ruudukon solmuissa ja ruudukkosolmujen keskipisteissä. &lt;/p&gt; &lt;p&gt; Jos Määritä 1/2, hiukkasia luodaan kaikille muille ruudukkosolmuille. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Jos määrität 1, hiukkasia luodaan ruudukon solmuissa. &lt;/p&gt; &lt;p&gt; Jos määrität 2, hiukkasia luodaan ruudukon solmuissa ja ruudukkosolmujen keskipisteissä. &lt;/p&gt; &lt;p&gt; Jos Määritä 1/2, hiukkasia luodaan kaikille muille ruudukkosolmuille. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -16357,12 +16904,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Koko:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16400,17 +16947,17 @@ p, li { white-space: pre-wrap; }
         <translation>Generaatioväli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16481,12 +17028,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Koko:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16702,14 +17249,14 @@ p, li { white-space: pre-wrap; }
         <translation>Sukupolven väli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jos määrität 1, virtaviivaistaminen alkaa ruudukon solmuista &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-sisennys: 0px;" &gt; Jos määrität 2, virtaviivaistaminen alkaa ruudukon solmuista ja ruudukon solmujen keskipisteistä. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jos määrität 1/2, virtaviivaistukset alkavat kaikista muista ruudukkosolmuista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jos määrität 1, virtaviivaistaminen alkaa ruudukon solmuista &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-sisennys: 0px;&quot; &gt; Jos määrität 2, virtaviivaistaminen alkaa ruudukon solmuista ja ruudukon solmujen keskipisteistä. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jos määrität 1/2, virtaviivaistukset alkavat kaikista muista ruudukkosolmuista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -16740,12 +17287,12 @@ p, li { white-space: pre-wrap; }
         <translation>Leveys:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16811,12 +17358,12 @@ p, li { white-space: pre-wrap; }
         <translation>Leveys:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16865,7 +17412,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Päivitä Polygon Scalar -asetus</translation>
     </message>
 </context>
-
+<!-- iricPost3d_fi_FI.ts -->
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -17701,17 +18248,17 @@ p, li { white-space: pre-wrap; }
         <translation>Sukupolven aikaväli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -17786,16 +18333,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Sukupolven väli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Jos määrität 1, hiukkasia luodaan ruudukon solmuissa. &lt;/p&gt; &lt;p&gt; Jos määrität 2, hiukkasia luodaan ruudukon solmuissa ja ruudukkosolmujen keskipisteissä. &lt;/p&gt; &lt;p&gt; Jos Määritä 1/2, hiukkasia luodaan kaikille muille ruudukkosolmuille. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Jos määrität 1, hiukkasia luodaan ruudukon solmuissa. &lt;/p&gt; &lt;p&gt; Jos määrität 2, hiukkasia luodaan ruudukon solmuissa ja ruudukkosolmujen keskipisteissä. &lt;/p&gt; &lt;p&gt; Jos Määritä 1/2, hiukkasia luodaan kaikille muille ruudukkosolmuille. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17806,12 +18353,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Koko:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17963,14 +18510,14 @@ p, li { white-space: pre-wrap; }
         <translation>Sukupolven väli</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jos määrität 1, virtaviivaistaminen alkaa ruudukon solmuista. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-sisennys: 0px;" &gt; Jos määrität 2, virtaviivaistaminen alkaa ruudukon solmuista ja ruudukon solmujen keskipisteistä. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jos määrität 1/2, virtaviivaistukset alkavat kaikista muista ruudukkosolmuista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jos määrität 1, virtaviivaistaminen alkaa ruudukon solmuista. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-sisennys: 0px;&quot; &gt; Jos määrität 2, virtaviivaistaminen alkaa ruudukon solmuista ja ruudukon solmujen keskipisteistä. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Jos määrität 1/2, virtaviivaistukset alkavat kaikista muista ruudukkosolmuista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -18001,12 +18548,12 @@ p, li { white-space: pre-wrap; }
         <translation>Leveys:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Määritä näytettävien pikselien määrä. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18048,7 +18595,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Päivitä hiukkasten skalaari -asetus</translation>
     </message>
 </context>
-
+<!-- iricPostbase_fi_FI.ts -->
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
@@ -18415,7 +18962,7 @@ p, li { white-space: pre-wrap; }
         <translation>Huomautus: Otsikossa voidaan käyttää vain englanninkielisiä merkkejä.</translation>
     </message>
 </context>
-
+<!-- iricPre_fi_FI.ts -->
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -18529,7 +19076,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Ruudukko Lintuperspektiivi-ikkuna</translation>
     </message>
 </context>
@@ -19078,8 +19625,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 ei kartoiteta edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Rajaolosuhteiden asetus "%1"ei ole kartoitettu edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Rajaolosuhteiden asetus &quot;%1&quot;ei ole kartoitettu edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19328,14 +19875,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Huomautus: Kun muunnelma on käytössä, "Oletus"-niminen muunnelma luodaan ja kaikki maantieteelliset tiedot siirretään siihen. Voit lisätä, nimetä uudelleen ja poistaa muunnelmia "Objektiselaimesta". Voit siirtää, kopioida maantieteellisiä tietoja muunnelmien välillä. "Ratkaisijalle välitettävä muunnelma" -vaihtoehdolla valitusta muunnelmasta luodut ruudukon attribuuttitiedot välitetään ratkaisijalle. Voit valmistella useita muunnelmia, vaihtaa ne välitettäväksi ratkaisijalle ja varmistaa eron vaikutuksen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Huomautus: Kun muunnelma on käytössä, &quot;Oletus&quot;-niminen muunnelma luodaan ja kaikki maantieteelliset tiedot siirretään siihen. Voit lisätä, nimetä uudelleen ja poistaa muunnelmia &quot;Objektiselaimesta&quot;. Voit siirtää, kopioida maantieteellisiä tietoja muunnelmien välillä. &quot;Ratkaisijalle välitettävä muunnelma&quot; -vaihtoehdolla valitusta muunnelmasta luodut ruudukon attribuuttitiedot välitetään ratkaisijalle. Voit valmistella useita muunnelmia, vaihtaa ne välitettäväksi ratkaisijalle ja varmistaa eron vaikutuksen.</translation>
     </message>
 </context>
 <context>
@@ -19550,9 +20097,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Suorittaa (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Seuraavia määritteitä ei kartoitettu, koska niiden ruudukkogeneraattorin lähtöarvot. Jos haluat kartoittaa niiden maantieteelliset tiedot väkisin, kartoita manuaalisesti valikosta "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
+        <translation>Seuraavia määritteitä ei kartoitettu, koska niiden ruudukkogeneraattorin lähtöarvot. Jos haluat kartoittaa niiden maantieteelliset tiedot väkisin, kartoita manuaalisesti valikosta &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19571,12 +20118,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Maantieteellisten tietojen kartoitus on valmis</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Ruudukon määrite "%1"muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Ruudukon määrite &quot;%1&quot;muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Rajaehto "%1"muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Rajaehto &quot;%1&quot;muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
     </message>
 </context>
 <context>
@@ -19594,20 +20141,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kun ruudukko luodaan, sinulta kysytään, onko suorittaa attribuuttien kartoitus aina. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kun ruudukko luodaan, sinulta kysytään, onko suorittaa attribuuttien kartoitus aina. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuaalinen</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Määritteiden kartoitus suoritetaan vain, kun valitset manuaalisesti "Suorita" -valikon.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Määritteiden kartoitus suoritetaan vain, kun valitset manuaalisesti &quot;Suorita&quot; -valikon.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -19679,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>Avaa poikkileikkausikkuna valitsemalla vain yksi ruudukkosolmu.</translation>
+        <translation type="vanished">Avaa poikkileikkausikkuna valitsemalla vain yksi ruudukkosolmu.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>Avaa pitkittäispoikkileikkausikkuna valitsemalla vain yksi ruudukkosolmu.</translation>
+        <translation type="vanished">Avaa pitkittäispoikkileikkausikkuna valitsemalla vain yksi ruudukkosolmu.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19929,6 +20476,413 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>Ruudukon poikkileikkausikkuna</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>Näytä asetustyökalupalkki</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>Näytön asetustyökalupalkki</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Asetus</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>Automaattinen skaalaaminen</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Kuvasuhde (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>Korjaa kuvasuhde</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>Korjaa alue</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Ruudukko</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Mittakaava</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Vasen/oikea rantamerkit</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Kuvasuhde</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Ohjain</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>Vasen rantapuoli</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>Oikean rannan puoli</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Kuvasuhde (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>Tehtäessä tapahtui virhe %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>Indeksi</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">Etäisyys (m)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>Ylävirran puoli</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>Alavirran puoli</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>Oikea puoli</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>Vasen puoli</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>Vie CSV-tiedostoja</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Asetus</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>Ruudukon attribuutin näyttöasetus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>Tallenna tilannekuvat</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Suunta</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>minä</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>asema</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>Solujen arvot</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>Ylävirran puoli</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>Alavirran puoli</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>Tilannekuva (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV-vienti (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>Ruudukon poikkileikkausikkunan näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>Taustaruudukko</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tyyppi</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>Linjat</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>Pisteitä</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Auto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Mittakaava</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>Aliasteikko</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Pystysuora</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>Vaa&apos;at</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Fontti:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>Vasen/oikea rantamerkit</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>Kuvasuhde</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>Vientiasetus</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>Kansio ja etuliite (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>Kansio:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>Etuliite:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>Poikkileikkaus</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>Vain nykyinen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Mukautettu</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>Olen mukana:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>Minä Max:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Ohita hinta:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>Ruudukon attribuuttien näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyy</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>Perus</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>tila</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>Korkeuskaavio</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>Riippumaton kaavio</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värikartta</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>Korkeuskartan asetus</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>Viivan väri:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Viivan leveys:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>Näytä pisteet</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Pistekoko</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>Näytä indeksit</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>Fontin väri:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>Fontti:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>Ohita hinta:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>Itsenäinen kaavioasetus</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>Kaavion korkeus:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[pikseliä]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>Otsikon fontti:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>Akselin väri:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>Axis Font:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>Värikartan asetus</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Käytä Colormap-välilehteä väriasetusten muokkaamiseen.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>Käytä Esikäsittely-ikkunan asetusta</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>Näytä otsikko</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>Otsikon väri</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
@@ -20026,7 +20980,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Määritä Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Avaa lintuperspektiivi-ikkuna (&amp;B)</translation>
     </message>
     <message>
@@ -20601,7 +21555,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Liikkua (&amp;M)</translation>
     </message>
 </context>
-
+<!-- iricSolverconsole_fi_FI.ts -->
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -20728,7 +21682,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Ratkaisukonsolilokin vieminen epäonnistui.</translation>
     </message>
 </context>
-
+<!-- rivmaker_fi_FI.ts -->
 <context>
     <name>AboutDialog</name>
     <message>
@@ -22106,7 +23060,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Veden korkeuspisteet</translation>
     </message>
 </context>
-
+<!-- structured15dgridwithcrosssectionhecrasexporter_fi_FI.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22121,7 +23075,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>HEC-RAS</translation>
     </message>
 </context>
-
+<!-- structured2dgridgdalimporter_fi_FI.ts -->
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
@@ -22137,7 +23091,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>ArcInfo ASCII -tiedostot (*.asc)</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvexporter_fi_FI.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22152,7 +23106,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays CSV</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvimporter_fi_FI.ts -->
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -22173,7 +23127,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Seuraavat sarakkeet jätettiin huomiotta. %1</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridexporter_fi_FI.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22188,7 +23142,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays Grid-tiedosto</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridimporter_fi_FI.ts -->
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -22208,7 +23162,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Solulipun arvoja ei ladata.</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkexporter_fi_FI.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22223,7 +23177,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK -tiedosto</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkimporter_fi_FI.ts -->
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
@@ -22243,7 +23197,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Kopioidaan %1 to %2 epäonnistunut.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridtriangleimporter_fi_FI.ts -->
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -22263,7 +23217,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>%1 ei ole olemassa.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkexporter_fi_FI.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22278,7 +23232,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK -tiedosto</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkimporter_fi_FI.ts -->
 <context>
     <name>Unstructured2dGridVtkImporter</name>
     <message>

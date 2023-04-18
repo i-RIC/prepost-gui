@@ -77,6 +77,10 @@
         <source>PolyLine Coordinates</source>
         <translation>พิกัด PolyLine</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>การตั้งค่าการแสดงเส้น</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>การตั้งค่าการแสดงเส้น</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ไฟล์รูปร่าง ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
     </message>
 </context>
 </TS>

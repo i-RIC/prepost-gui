@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Bản đồ màu tùy chỉnh</translation>
+        <translation type="vanished">Bản đồ màu tùy chỉnh</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Kiểu:</translation>
+        <translation type="vanished">Kiểu:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Hai màu</translation>
+        <translation type="vanished">Hai màu</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Ba màu</translation>
+        <translation type="vanished">Ba màu</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Bất kỳ</translation>
+        <translation type="vanished">Bất kỳ</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Hai màu / Ba màu</translation>
+        <translation type="vanished">Hai màu / Ba màu</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Gia trị lơn nhât</translation>
+        <translation type="vanished">Gia trị lơn nhât</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Giá trị trung bình</translation>
+        <translation type="vanished">Giá trị trung bình</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Giá trị</translation>
+        <translation type="vanished">Giá trị</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Giá trị tối thiểu</translation>
+        <translation type="vanished">Giá trị tối thiểu</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Thêm vào (&amp;A)</translation>
+        <translation type="vanished">Thêm vào (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Di dời (&amp;R)</translation>
+        <translation type="vanished">Di dời (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Nhập khẩu (&amp;I)</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Xuất khẩu (&amp;E)</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Nhập cài đặt bản đồ màu</translation>
+        <translation type="vanished">Nhập cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Tệp CSV (*.csv)</translation>
+        <translation type="vanished">Tệp CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Tập tin %1 Không tồn tại.</translation>
+        <translation type="vanished">Tập tin %1 Không tồn tại.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Tập tin %1 không thể mở được.</translation>
+        <translation type="vanished">Tập tin %1 không thể mở được.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Xuất cài đặt bản đồ màu</translation>
+        <translation type="vanished">Xuất cài đặt bản đồ màu</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Mẫu đơn</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Tập quán</translation>
+        <translation type="vanished">Tập quán</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Thiết lập...</translation>
+        <translation type="vanished">Thiết lập...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Giá trị tối thiểu là %1.</translation>
+        <translation type="vanished">Giá trị tối thiểu là %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Giá trị tối đa là %1.</translation>
+        <translation type="vanished">Giá trị tối đa là %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Giá trị nhỏ hơn %1 trong không được phép.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Giá trị lớn hơn %1 không được phép.</translation>
     </message>
 </context>
 <context>

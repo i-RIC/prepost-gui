@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>Премахнете PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Настройка на дисплея на линията</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Настройка на дисплея на линията</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Използвайте настройката на прозореца за предварителна обработка</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI Shape файл (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Оцветете по стойност</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветна карта</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина на линията:</translation>
     </message>
 </context>
 </TS>

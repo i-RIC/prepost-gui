@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>自定义颜色地图</translation>
+        <translation type="vanished">自定义颜色地图</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>类型：</translation>
+        <translation type="vanished">类型：</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>双色</translation>
+        <translation type="vanished">双色</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>三色</translation>
+        <translation type="vanished">三色</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>任意</translation>
+        <translation type="vanished">任意</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>二/三色</translation>
+        <translation type="vanished">二/三色</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>最大值</translation>
+        <translation type="vanished">最大值</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>中间值</translation>
+        <translation type="vanished">中间值</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>值</translation>
+        <translation type="vanished">值</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>最小值</translation>
+        <translation type="vanished">最小值</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;删除</translation>
+        <translation type="vanished">&amp;删除</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>&amp;导入</translation>
+        <translation type="vanished">&amp;导入</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;导出</translation>
+        <translation type="vanished">&amp;导出</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>导入彩色地图设置</translation>
+        <translation type="vanished">导入彩色地图设置</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV 文件 (*.csv)</translation>
+        <translation type="vanished">CSV 文件 (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>文件%1不存在</translation>
+        <translation type="vanished">文件%1不存在</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>无法打开文件%1</translation>
+        <translation type="vanished">无法打开文件%1</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>导出颜色地图设置</translation>
+        <translation type="vanished">导出颜色地图设置</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>自定义</translation>
+        <translation type="vanished">自定义</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>设置...</translation>
+        <translation type="vanished">设置...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>最小值是%1</translation>
+        <translation type="vanished">最小值是%1</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>最大值是%1</translation>
+        <translation type="vanished">最大值是%1</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>值小于 %1 在不允许。</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur 大于 %1 不允许。</translation>
     </message>
 </context>
 <context>

@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Värvi seadistus</translation>
+        <translation type="vanished">%1 Värvi seadistus</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Muutke värvisätet</translation>
+        <translation type="vanished">Muutke värvisätet</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData värviseade</translation>
+        <translation type="vanished">PolyData värviseade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Värvi väärtuse järgi</translation>
+        <translation type="vanished">Värvi väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
 </context>
 </TS>

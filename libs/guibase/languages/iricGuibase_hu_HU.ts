@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Egyedi színtérkép</translation>
+        <translation type="vanished">Egyedi színtérkép</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Típus:</translation>
+        <translation type="vanished">Típus:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Két szín</translation>
+        <translation type="vanished">Két szín</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Három szín</translation>
+        <translation type="vanished">Három szín</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Tetszőleges</translation>
+        <translation type="vanished">Tetszőleges</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Két szín/ három szín</translation>
+        <translation type="vanished">Két szín/ három szín</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maximális érték</translation>
+        <translation type="vanished">Maximális érték</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Közepes érték</translation>
+        <translation type="vanished">Közepes érték</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Érték</translation>
+        <translation type="vanished">Érték</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimális érték</translation>
+        <translation type="vanished">Minimális érték</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Hozzáadás (&amp;A)</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Eltávolítás (&amp;R)</translation>
+        <translation type="vanished">Eltávolítás (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importálás (&amp;I)</translation>
+        <translation type="vanished">Importálás (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Export (&amp;E)</translation>
+        <translation type="vanished">Export (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Színtérkép -beállítás importálása</translation>
+        <translation type="vanished">Színtérkép -beállítás importálása</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV fájl (*.csv)</translation>
+        <translation type="vanished">CSV fájl (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fájl %1 nem létezik.</translation>
+        <translation type="vanished">Fájl %1 nem létezik.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fájl %1 nem lehetett kinyitni.</translation>
+        <translation type="vanished">Fájl %1 nem lehetett kinyitni.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Színtérkép -beállítás exportálása</translation>
+        <translation type="vanished">Színtérkép -beállítás exportálása</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Egyedi</translation>
+        <translation type="vanished">Egyedi</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Beállítás...</translation>
+        <translation type="vanished">Beállítás...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>A minimális érték az %1.</translation>
+        <translation type="vanished">A minimális érték az %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>A maximális érték az %1.</translation>
+        <translation type="vanished">A maximális érték az %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Az érték kisebb, mint %1 nem engedélyezett.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur nagyobb, mint %1 nem engedélyezett.</translation>
     </message>
 </context>
 <context>

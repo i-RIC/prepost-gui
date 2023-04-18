@@ -77,6 +77,10 @@
         <source>PolyLine Coordinates</source>
         <translation>폴리라인 좌표</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>라인 표시 설정</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>라인 표시 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>전처리 창 설정 사용</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI 모양 파일 (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>선의 폭:</translation>
     </message>
 </context>
 </TS>

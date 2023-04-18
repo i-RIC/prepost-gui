@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Odstranite poligon Vertex</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Nastavitev prikaza poligona</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Nastavitev prikaza poligona</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Uporabite nastavitev okna predhodne obdelave</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Barva po vrednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Barva po meri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barvni zemljevid</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina črte:</translation>
     </message>
 </context>
 </TS>

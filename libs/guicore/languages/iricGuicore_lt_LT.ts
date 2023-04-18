@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Matomumas</translation>
+        <translation type="vanished">Matomumas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kai pasirenkamas</translation>
+        <translation type="vanished">Kai pasirenkamas</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Visada</translation>
+        <translation type="vanished">Visada</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niekada</translation>
+        <translation type="vanished">Niekada</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Dydis ir padėtis</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Kryptis:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikalus</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Juostos plotis</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Automatinis</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lygiavimas</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Kairė</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>centras</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Teisingai</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+        <translation type="vanished">Pasirinkite failą, kurį norite importuoti</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Colormap nustatymas (*.cmsetting)</translation>
+        <translation type="vanished">Colormap nustatymas (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+        <translation type="vanished">Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Skaidrus</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Išvardykite spalvų schemos nustatymus (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Išvardykite spalvų schemos nustatymus (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Importuojant nustatymą iš įvyko klaida %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Viešas (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>privatus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importuoti spalvų schemos nustatymą</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režimas</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Pasirinkite iš standartų</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Pasirinkite failą</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standartai</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Importavimo atributai</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Kryptis</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Šrifto nustatymas</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketė</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Fonas</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Padėtis</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dydis</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Juostos plotis</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lygiavimas</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Peržiūra</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Spalvų juosta</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikalus</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Matomumas</translation>
+        <translation type="vanished">Matomumas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kai pasirenkamas</translation>
+        <translation type="vanished">Kai pasirenkamas</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Visada</translation>
+        <translation type="vanished">Visada</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niekada</translation>
+        <translation type="vanished">Niekada</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Automatinis</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Juostos plotis</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lygiavimas</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Kairė</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>centras</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Teisingai</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Išankstiniai nustatymai:</translation>
+        <translation type="vanished">Išankstiniai nustatymai:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Importuojant nepaisyti spalvų juostos nustatymo</translation>
+        <translation type="vanished">Importuojant nepaisyti spalvų juostos nustatymo</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Pasirinkite failą, kurį norite importuoti</translation>
+        <translation type="vanished">Pasirinkite failą, kurį norite importuoti</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
+        <translation type="vanished">Įkeliant įvyko klaida %1 Analizavimo klaida %2 adresu %3, stulpelis %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Pasirinkite taikytiną elementą)</translation>
+        <translation type="vanished">(Pasirinkite taikytiną elementą)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Perjungiant į gradacijos režimą, vertės nustatomos į vidutinę kiekvienos sekcijos reikšmę.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Atvirkštinės spalvos (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Lygus padalijimas (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Colormap nustatymas (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Importuojant nustatymą iš įvyko klaida %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Viešas (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>privatus (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Eksportuoti (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Importuoti spalvų schemos nustatymą</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Režimas</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Pasirinkite iš standartų</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Pasirinkite failą</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standartai</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Importavimo atributai</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Kryptis</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Šrifto nustatymas</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketės ekranas</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatas</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Etikečių skaičius</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketė</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Fonas</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Dydis ir padėtis</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Padėtis</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dydis</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Juostos plotis</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lygiavimas</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Peržiūra</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Spalvų skaičius:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Galimybės</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Vertės po kablelio:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Rąsto skalė:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Įjungtas</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Spalvų juosta</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontalus</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Vertikalus</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

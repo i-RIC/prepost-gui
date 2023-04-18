@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>قم بإزالة Polygon Vertex</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>إعداد عرض المضلع</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>إعداد عرض المضلع</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>استخدم إعداد نافذة المعالجة المسبقة</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI بحلقات (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>عرض الخط:</translation>
     </message>
 </context>
 </TS>

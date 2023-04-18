@@ -109,6 +109,10 @@
         <source>Polygon Coordinates</source>
         <translation>พิกัดรูปหลายเหลี่ยม</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>การตั้งค่าการแสดงรูปหลายเหลี่ยม</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>การตั้งค่าการแสดงรูปหลายเหลี่ยม</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>สีตามมูลค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
     </message>
 </context>
 </TS>

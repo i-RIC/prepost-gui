@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidnost</translation>
+        <translation type="vanished">Vidnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Ko je izbrano</translation>
+        <translation type="vanished">Ko je izbrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Nenehno</translation>
+        <translation type="vanished">Nenehno</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikoli</translation>
+        <translation type="vanished">Nikoli</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Velikost in položaj</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>smer:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Navpično</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Širina palice</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Avto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Poravnava</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>levo</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Center</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Prav</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Izberite datoteko za uvoz</translation>
+        <translation type="vanished">Izberite datoteko za uvoz</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Nastavitev barvne karte (*.cmsetting)</translation>
+        <translation type="vanished">Nastavitev barvne karte (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+        <translation type="vanished">Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Pregleden</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Naštej nastavitev barvne karte (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Naštej nastavitev barvne karte (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Pri uvozu nastavitve iz %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Javno (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Zasebno (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Uvozi nastavitev barvnega zemljevida</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Način</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Izberite med standardi</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Izberite datoteko</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>mapa</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atributi za uvoz</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Smer</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavitev pisave</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Ozadje</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Položaj</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Širina palice</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Poravnava</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Predogled</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barvna vrstica</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Navpično</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidnost</translation>
+        <translation type="vanished">Vidnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Ko je izbrano</translation>
+        <translation type="vanished">Ko je izbrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Nenehno</translation>
+        <translation type="vanished">Nenehno</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikoli</translation>
+        <translation type="vanished">Nikoli</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Avto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Širina palice</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Poravnava</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>levo</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Center</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Prav</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Prednastavitve:</translation>
+        <translation type="vanished">Prednastavitve:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Pri uvozu prezrite nastavitev barvne vrstice</translation>
+        <translation type="vanished">Pri uvozu prezrite nastavitev barvne vrstice</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Izberite datoteko za uvoz</translation>
+        <translation type="vanished">Izberite datoteko za uvoz</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
+        <translation type="vanished">Med nalaganjem je prišlo do napake %1 Napaka pri razčlenjevanju %2 pri %3, stolpec %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Prosimo, izberite element za uporabo)</translation>
+        <translation type="vanished">(Prosimo, izberite element za uporabo)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Pri preklopu v gradacijski način se vrednosti nastavijo na srednjo vrednost vsakega odseka.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Obratne barve (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Enakomerna delitev (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Nastavitev barvne karte (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Pri uvozu nastavitve iz %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Javno (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Zasebno (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Izvozi (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Uvozi nastavitev barvnega zemljevida</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Način</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Izberite med standardi</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Izberite datoteko</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>mapa</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Atributi za uvoz</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Smer</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Nastavitev pisave</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Prikaz nalepk</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Število nalepk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Ozadje</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Položaj</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Širina palice</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Poravnava</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Predogled</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Število barv:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opcije</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Decimalna mesta vrednosti:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Log lestvica:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Omogočeno</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barvna vrstica</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Navpično</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba: za ime lahko uporabite samo znake ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

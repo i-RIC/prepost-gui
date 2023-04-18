@@ -74,12 +74,12 @@
         <translation>ค้นหา:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color: #0000ff;&quot;&gt;คำแนะนำเกี่ยวกับระบบพิกัดภาษาญี่ปุ่น (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color: #0000ff;"&gt;คำแนะนำเกี่ยวกับระบบพิกัดภาษาญี่ปุ่น (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;คำแนะนำเกี่ยวกับระบบพิกัด UTM (EPSG:32601 - 32760 เป็นต้น)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;คำแนะนำเกี่ยวกับระบบพิกัด UTM (EPSG:32601 - 32760 เป็นต้น)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -487,19 +487,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่ม Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>ลบ Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>แก้ไขพิกัด (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>ทิศทางเส้นกึ่งกลางย้อนกลับ (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -560,9 +560,9 @@ The low water channel region should be included in grid creation region, andRive
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความผู้สร้างกริดในโฟลเดอร์ &quot;%1&quot; ผู้สร้างกริดรายนี้จะถูกละเว้น %2</translation>
+        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความผู้สร้างกริดในโฟลเดอร์ "%1" ผู้สร้างกริดรายนี้จะถูกละเว้น %2</translation>
     </message>
 </context>
 <context>
@@ -1774,8 +1774,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>ระยะทางจากจุดศูนย์กลาง</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;ฝั่งซ้าย&quot; คือฝั่งที่คุณเห็นทางด้านซ้าย เมื่อเลี้ยวไปทางปลายน้ำ</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"ฝั่งซ้าย" คือฝั่งที่คุณเห็นทางด้านซ้าย เมื่อเลี้ยวไปทางปลายน้ำ</translation>
     </message>
 </context>
 <!-- iricGccRiversurvey_th_TH.ts -->
@@ -2227,12 +2227,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>ป้อนพื้นที่สูงสุดสำหรับเซลล์ภายในรูปหลายเหลี่ยมการปรับแต่ง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: สุดยอด;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: สุดยอด;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2281,12 +2281,12 @@ p, li { white-space: pre-wrap; }
         <translation>โดยการระบุค่าเล็กน้อย คุณสามารถสร้างกริดแบบละเอียดได้</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: สุดยอด;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: สุดยอด;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_th_TH.ts -->
@@ -4437,10 +4437,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>ย้ายจุดสุดยอด</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>ตั้งจุดสุดยอด</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4464,6 +4479,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>จุด %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_th_TH.ts -->
@@ -4756,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 การตั้งค่าสี</translation>
+        <translation type="vanished">%1 การตั้งค่าสี</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4776,7 +4853,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>แก้ไขการตั้งค่าสี</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าสี</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -4787,19 +4864,19 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>การตั้งค่าสี PolyData</translation>
+        <translation type="vanished">การตั้งค่าสี PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>สีตามค่า</translation>
+        <translation type="vanished">สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_th_TH.ts -->
@@ -5181,6 +5258,10 @@ p, li { white-space: pre-wrap; }
         <source>Polygon Coordinates</source>
         <translation>พิกัดรูปหลายเหลี่ยม</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5292,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,6 +5399,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">สีตามค่า</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_th_TH.ts -->
@@ -5632,6 +5758,10 @@ p, li { white-space: pre-wrap; }
         <source>PolyLine Coordinates</source>
         <translation>พิกัด PolyLine</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -5711,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,6 +5867,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ไฟล์รูปร่าง ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_th_TH.ts -->
@@ -7763,8 +7938,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>การตั้งค่าหน้าต่างกราฟล้มเหลว โหลดผลการคำนวณไม่ถูกต้อง</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>สามารถใช้ฟังก์ชันนี้เมื่อตรงตามเงื่อนไขต่อไปนี้: &lt;ul&gt;&lt;li&gt;วาดกราฟสำหรับผลลัพธ์กริดที่มีโครงสร้างสองมิติ&lt;/li&gt;&lt;li&gt;แกน X คือทิศทาง I ในกริด&lt;/li &gt;&lt;li&gt;กริดถูกสร้างขึ้นโดยใช้อัลกอริธึม &quot;สร้างกริดจากข้อมูลข้ามส่วน&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>สามารถใช้ฟังก์ชันนี้เมื่อตรงตามเงื่อนไขต่อไปนี้: &lt;ul&gt;&lt;li&gt;วาดกราฟสำหรับผลลัพธ์กริดที่มีโครงสร้างสองมิติ&lt;/li&gt;&lt;li&gt;แกน X คือทิศทาง I ในกริด&lt;/li &gt;&lt;li&gt;กริดถูกสร้างขึ้นโดยใช้อัลกอริธึม "สร้างกริดจากข้อมูลข้ามส่วน"&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -7858,8 +8033,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>ชื่อคอลัมน์แรกต้องเป็น &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>ชื่อคอลัมน์แรกต้องเป็น "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -7938,8 +8113,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>ชื่อคอลัมน์แรกต้องเป็น &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>ชื่อคอลัมน์แรกต้องเป็น "X"</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8971,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>แผนที่สีที่กำหนดเอง</translation>
+        <translation type="vanished">แผนที่สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>พิมพ์:</translation>
+        <translation type="vanished">พิมพ์:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>สองสี</translation>
+        <translation type="vanished">สองสี</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>สามสี</translation>
+        <translation type="vanished">สามสี</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>โดยพลการ</translation>
+        <translation type="vanished">โดยพลการ</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>สองสี / สามสี</translation>
+        <translation type="vanished">สองสี / สามสี</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>มูลค่าสูงสุด</translation>
+        <translation type="vanished">มูลค่าสูงสุด</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>ค่ากลาง</translation>
+        <translation type="vanished">ค่ากลาง</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>ค่า</translation>
+        <translation type="vanished">ค่า</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>มูลค่าขั้นต่ำ</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำ</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>เพิ่ม (&amp;A)</translation>
+        <translation type="vanished">เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>ลบ (&amp;R)</translation>
+        <translation type="vanished">ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>นำเข้า (&amp;I)</translation>
+        <translation type="vanished">นำเข้า (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>ส่งออก (&amp;E)</translation>
+        <translation type="vanished">ส่งออก (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>นำเข้าการตั้งค่า Colormap</translation>
+        <translation type="vanished">นำเข้าการตั้งค่า Colormap</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>ไฟล์ CSV (*.csv)</translation>
+        <translation type="vanished">ไฟล์ CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>ไฟล์ %1 ไม่มีอยู่</translation>
+        <translation type="vanished">ไฟล์ %1 ไม่มีอยู่</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>ไฟล์ %1 เปิดไม่ได้.</translation>
+        <translation type="vanished">ไฟล์ %1 เปิดไม่ได้.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>ส่งออกการตั้งค่าแผนที่สี</translation>
+        <translation type="vanished">ส่งออกการตั้งค่าแผนที่สี</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>กำหนดเอง</translation>
+        <translation type="vanished">กำหนดเอง</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>กำลังตั้งค่า...</translation>
+        <translation type="vanished">กำลังตั้งค่า...</translation>
     </message>
 </context>
 <context>
@@ -9395,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>ค่าต่ำสุดคือ %1.</translation>
+        <translation type="vanished">ค่าต่ำสุดคือ %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>ค่าสูงสุดคือ %1.</translation>
+        <translation type="vanished">ค่าสูงสุดคือ %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10102,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>ทัศนวิสัย</translation>
+        <translation type="vanished">ทัศนวิสัย</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>เมื่อเลือกแล้ว</translation>
+        <translation type="vanished">เมื่อเลือกแล้ว</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>เสมอ</translation>
+        <translation type="vanished">เสมอ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>ไม่เคย</translation>
+        <translation type="vanished">ไม่เคย</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10152,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>ขนาดและตำแหน่ง</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">ทิศทาง:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10173,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+        <translation type="vanished">เลือกไฟล์ที่จะนำเข้า</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+        <translation type="vanished">การตั้งค่าแผนที่สี (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10208,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>โปร่งใส</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">ชื่อ</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">พื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">แนวตั้ง</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10217,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>ทัศนวิสัย</translation>
+        <translation type="vanished">ทัศนวิสัย</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>เมื่อเลือกแล้ว</translation>
+        <translation type="vanished">เมื่อเลือกแล้ว</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>เสมอ</translation>
+        <translation type="vanished">เสมอ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>ไม่เคย</translation>
+        <translation type="vanished">ไม่เคย</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10291,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>อัตโนมัติ</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10319,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>ที่ตั้งไว้ล่วงหน้า:</translation>
+        <translation type="vanished">ที่ตั้งไว้ล่วงหน้า:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+        <translation type="vanished">ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10383,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+        <translation type="vanished">เลือกไฟล์ที่จะนำเข้า</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10404,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(กรุณาเลือกรายการที่ต้องการสมัคร)</translation>
+        <translation type="vanished">(กรุณาเลือกรายการที่ต้องการสมัคร)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10446,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10460,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>ส่งออก (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">ชื่อ</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">พื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10487,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>จำนวนสี:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">เปิดใช้งาน</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">แนวตั้ง</translation>
     </message>
 </context>
 <context>
@@ -10840,6 +11381,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>สี:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13087,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>แถบสี</translation>
+        <translation type="vanished">แถบสี</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>ชื่อ</translation>
+        <translation type="vanished">ชื่อ</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>ป้ายกำกับ</translation>
+        <translation type="vanished">ป้ายกำกับ</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>ตำนานความยาวลูกศร</translation>
+        <translation type="vanished">ตำนานความยาวลูกศร</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13261,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -14792,8 +15337,8 @@ Option -&gt; Preferences</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>ในคอลัมน์สำหรับ %1, มูลค่า &quot;%2&quot; สำหรับภาคตัดขวาง &quot;%3&quot; ไม่ถูกต้อง ค่าจะถูกละเว้น</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>ในคอลัมน์สำหรับ %1, มูลค่า "%2" สำหรับภาคตัดขวาง "%3" ไม่ถูกต้อง ค่าจะถูกละเว้น</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15026,22 +15571,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">ไดอะล็อก</translation>
+        <translation>ไดอะล็อก</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>แก้ไข...</translation>
     </message>
 </context>
 <context>
@@ -19681,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>หากต้องการเปิดหน้าต่างตัดขวาง โปรดเลือกโหนดกริดเพียงโหนดเดียว</translation>
+        <translation type="vanished">หากต้องการเปิดหน้าต่างตัดขวาง โปรดเลือกโหนดกริดเพียงโหนดเดียว</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>หากต้องการเปิดหน้าต่างตัดขวางตามยาว โปรดเลือกโหนดกริดเพียงโหนดเดียว</translation>
+        <translation type="vanished">หากต้องการเปิดหน้าต่างตัดขวางตามยาว โปรดเลือกโหนดกริดเพียงโหนดเดียว</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19928,6 +20473,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>หน้าตัดกริด (%1): ฉัน = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>หน้าต่างตัดขวางของกริด</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>ดูแถบเครื่องมือการตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>แสดงแถบเครื่องมือการตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>ปรับขนาดอัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>อัตราส่วนภาพ (V/H): 1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>แก้ไขอัตราส่วนภาพ</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>แก้ไขภูมิภาค</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>ตาราง</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>มาตราส่วน</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>เครื่องหมายฝั่งซ้าย/ขวา</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>อัตราส่วนภาพ</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>การตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>ผู้ควบคุม</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>ฝั่งซ้าย</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>ฝั่งขวา</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>อัตราส่วนภาพ (V/H): 1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>เกิดข้อผิดพลาดขณะทำ %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>ดัชนี</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">ระยะทาง (ม.)</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>ฝั่งต้นน้ำ</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>ด้านท้ายน้ำ</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>ด้านขวา</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>ด้านซ้าย</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>ส่งออกไฟล์ CSV</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์ตาราง (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>บันทึกภาพรวม</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>ทิศทาง</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>ฉัน</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>เจ</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>ค่าของเซลล์</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>ด้านต้นน้ำ</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>ด้านท้ายน้ำ</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>ภาพรวม (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV ส่งออก (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>การตั้งค่าการแสดงหน้าต่างตัดขวางของตาราง</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>ตารางพื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>พิมพ์</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>เส้น</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>จุด</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>แนวนอน</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>มาตราส่วน</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>มาตราส่วนย่อย</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>สี:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>เครื่องชั่ง</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>แบบอักษร:</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>เครื่องหมายฝั่งซ้าย/ขวา</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>อัตราส่วนภาพ</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>การตั้งค่าการส่งออก</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>โฟลเดอร์ &amp; คำนำหน้า (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>โฟลเดอร์:</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>คำนำหน้า:</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>ส่วนข้าม</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>ปัจจุบันเท่านั้น</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>ไอมิน:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>ฉันแม็กซ์:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>อัตราการข้าม:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์กริด</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>ขั้นพื้นฐาน</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>โหมด</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>แผนภูมิระดับความสูง</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>แผนภูมิอิสระ</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>การตั้งค่าแผนภูมิระดับความสูง</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>สีเส้น:</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>แสดงคะแนน</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>ขนาดจุด</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>แสดงดัชนี</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>สีตัวอักษร:</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>แบบอักษร:</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>อัตราการข้าม:</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>การตั้งค่าแผนภูมิอิสระ</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>ความสูงของแผนภูมิ:</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[พิกเซล]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>แบบอักษรของชื่อเรื่อง:</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>สีแกน:</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>อักษรแกน:</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>การตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>ใช้การตั้งค่าของหน้าต่างการประมวลผลล่วงหน้า</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>แสดงชื่อเรื่อง</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>สีชื่อเรื่อง</translation>
     </message>
 </context>
 <context>
@@ -20751,11 +21703,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">วันที่วางจำหน่าย: 2021/4/28</translation>
+        <translation>วันที่วางจำหน่าย: 2021/4/28</translation>
     </message>
 </context>
 <context>
@@ -20916,8 +21868,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>ยังไม่ได้กำหนดส่วนตัดขวาง</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>ชื่อหน้าตัดไม่ถูกต้อง ชื่อควรเป็น &quot;X1&quot;, &quot;X2&quot;,... หรือ &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>ชื่อหน้าตัดไม่ถูกต้อง ชื่อควรเป็น "X1", "X2",... หรือ "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

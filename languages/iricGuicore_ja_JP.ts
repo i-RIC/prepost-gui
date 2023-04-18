@@ -580,19 +580,19 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選択されている時のみ</translation>
+        <translation type="vanished">選択されている時のみ</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>常に</translation>
+        <translation type="vanished">常に</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>表示しない</translation>
+        <translation type="vanished">表示しない</translation>
     </message>
     <message>
         <source>Title</source>
@@ -630,6 +630,50 @@ Do you really want to import this file?</source>
         <source>Size and Position</source>
         <translation>サイズと位置</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示する</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>向き:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左寄せ</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中央寄せ</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>右寄せ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -651,16 +695,16 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>インポートするファイルの選択</translation>
+        <translation type="vanished">インポートするファイルの選択</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>カラーマップ設定 (*.cmsetting)</translation>
+        <translation type="vanished">カラーマップ設定 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>%1 の読み込み中にエラーが発生しました。
+        <translation type="vanished">%1 の読み込み中にエラーが発生しました。
 パースエラー %2: at %3, column %4</translation>
     </message>
     <message>
@@ -687,6 +731,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>透明</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>列挙型カラーマップ設定 (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>列挙型カラーマップ設定 (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>%1 から設定の読み込み中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>パブリック (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>プライベート (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>カラーマップ設定のインポート</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>標準設定から選択</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>ファイルを選択</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準設定</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>インポートする属性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>向き</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>フォント設定</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -696,19 +869,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選択されている時のみ</translation>
+        <translation type="vanished">選択されている時のみ</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>常に</translation>
+        <translation type="vanished">常に</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>表示しない</translation>
+        <translation type="vanished">表示しない</translation>
     </message>
     <message>
         <source>Title</source>
@@ -774,6 +947,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示する</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左寄せ</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中央寄せ</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>右寄せ</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -802,11 +1003,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>プリセット:</translation>
+        <translation type="vanished">プリセット:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>インポート時に凡例の設定を反映しない</translation>
+        <translation type="vanished">インポート時に凡例の設定を反映しない</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -866,7 +1067,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>インポートするファイルの選択</translation>
+        <translation type="vanished">インポートするファイルの選択</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -887,12 +1088,12 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>%1 の読み込み中にエラーが発生しました。
+        <translation type="vanished">%1 の読み込み中にエラーが発生しました。
 パースエラー %2: at %3, column %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(読み込む項目を選択してください)</translation>
+        <translation type="vanished">(読み込む項目を選択してください)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -930,6 +1131,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>色の反転 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>均等割 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>カラーマップ設定 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>%1 から設定の読み込み中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>パブリック (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>プライベート (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -944,6 +1176,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>エクスポート(&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>カラーマップ設定のインポート</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>標準設定から選択</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>ファイルを選択</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>標準設定</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>インポートする属性</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>向き</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>フォント設定</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>ラベルの数</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>プレビュー</translation>
     </message>
 </context>
 <context>
@@ -971,6 +1294,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>色の数:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>オプション</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>小数点以下の桁数:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>ログスケール:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>有効</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
     </message>
 </context>
 <context>
@@ -1443,6 +1801,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>色:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考: 名前には ASCII 文字のみ使用できます。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

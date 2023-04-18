@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Προσαρμοσμένος χάρτης χρωμάτων</translation>
+        <translation type="vanished">Προσαρμοσμένος χάρτης χρωμάτων</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Τύπος:</translation>
+        <translation type="vanished">Τύπος:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Δύο Χρώματα</translation>
+        <translation type="vanished">Δύο Χρώματα</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Τρία χρώματα</translation>
+        <translation type="vanished">Τρία χρώματα</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Αυθαίρετος</translation>
+        <translation type="vanished">Αυθαίρετος</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Δύο χρώματα/ Τρία χρώματα</translation>
+        <translation type="vanished">Δύο χρώματα/ Τρία χρώματα</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Μέγιστη αξία</translation>
+        <translation type="vanished">Μέγιστη αξία</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Μεσαίας Αξίας</translation>
+        <translation type="vanished">Μεσαίας Αξίας</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>αξία</translation>
+        <translation type="vanished">αξία</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Ελάχιστη Τιμή</translation>
+        <translation type="vanished">Ελάχιστη Τιμή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Προσθήκη (&amp;A)</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Αφαιρώ (&amp;R)</translation>
+        <translation type="vanished">Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Εισαγωγή (&amp;I)</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Εξαγωγή (&amp;E)</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Εισαγωγή ρύθμισης χάρτη χάρτη</translation>
+        <translation type="vanished">Εισαγωγή ρύθμισης χάρτη χάρτη</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Αρχείο CSV (*.csv)</translation>
+        <translation type="vanished">Αρχείο CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Αρχείο %1 δεν υπάρχει</translation>
+        <translation type="vanished">Αρχείο %1 δεν υπάρχει</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Αρχείο %1 δεν μπορεί να ανοίξει.</translation>
+        <translation type="vanished">Αρχείο %1 δεν μπορεί να ανοίξει.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Εξαγωγή ρύθμισης χάρτη χάρτη</translation>
+        <translation type="vanished">Εξαγωγή ρύθμισης χάρτη χάρτη</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation type="vanished">Μορφή</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Εθιμο</translation>
+        <translation type="vanished">Εθιμο</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Σύνθεση...</translation>
+        <translation type="vanished">Σύνθεση...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Η ελάχιστη τιμή είναι %1 Το</translation>
+        <translation type="vanished">Η ελάχιστη τιμή είναι %1 Το</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Η μέγιστη τιμή είναι %1 Το</translation>
+        <translation type="vanished">Η μέγιστη τιμή είναι %1 Το</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Τιμή μικρότερη από %1 σε δεν επιτρέπεται.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Αξία μεγαλύτερη από %1 δεν επιτρέπεται.</translation>
     </message>
 </context>
 <context>

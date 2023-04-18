@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Mukautettu värikartta</translation>
+        <translation type="vanished">Mukautettu värikartta</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tyyppi:</translation>
+        <translation type="vanished">Tyyppi:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Kaksi väriä</translation>
+        <translation type="vanished">Kaksi väriä</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Kolme väriä</translation>
+        <translation type="vanished">Kolme väriä</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Mielivaltainen</translation>
+        <translation type="vanished">Mielivaltainen</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Kaksi väriä/ kolme väriä</translation>
+        <translation type="vanished">Kaksi väriä/ kolme väriä</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Suurin arvo</translation>
+        <translation type="vanished">Suurin arvo</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Keskiarvo</translation>
+        <translation type="vanished">Keskiarvo</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Arvo</translation>
+        <translation type="vanished">Arvo</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Vähimmäisarvo</translation>
+        <translation type="vanished">Vähimmäisarvo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lisätä (&amp;A)</translation>
+        <translation type="vanished">Lisätä (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Poista (&amp;R)</translation>
+        <translation type="vanished">Poista (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Tuonti (&amp;I)</translation>
+        <translation type="vanished">Tuonti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Viedä (&amp;E)</translation>
+        <translation type="vanished">Viedä (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Tuo värikartta -asetus</translation>
+        <translation type="vanished">Tuo värikartta -asetus</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -tiedosto (*.csv)</translation>
+        <translation type="vanished">CSV -tiedosto (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Tiedosto %1 ei ole olemassa.</translation>
+        <translation type="vanished">Tiedosto %1 ei ole olemassa.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Tiedosto %1 ei pystytty avaamaan.</translation>
+        <translation type="vanished">Tiedosto %1 ei pystytty avaamaan.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Vie värimuodon asetus</translation>
+        <translation type="vanished">Vie värimuodon asetus</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Mukautettu</translation>
+        <translation type="vanished">Mukautettu</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Asetukset...</translation>
+        <translation type="vanished">Asetukset...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Vähimmäisarvo on %1.</translation>
+        <translation type="vanished">Vähimmäisarvo on %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Suurin arvo on %1.</translation>
+        <translation type="vanished">Suurin arvo on %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Arvo pienempi kuin %1 ei sallittu.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur suurempi kuin %1 ei ole sallittu.</translation>
     </message>
 </context>
 <context>

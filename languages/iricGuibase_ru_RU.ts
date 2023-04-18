@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Пользовательская цветовая карта</translation>
+        <translation type="vanished">Пользовательская цветовая карта</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="vanished">Тип:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Два цвета</translation>
+        <translation type="vanished">Два цвета</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Три цвета</translation>
+        <translation type="vanished">Три цвета</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Произвольный</translation>
+        <translation type="vanished">Произвольный</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Два цвета / три цвета</translation>
+        <translation type="vanished">Два цвета / три цвета</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максимальное значение</translation>
+        <translation type="vanished">Максимальное значение</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Средняя ценность</translation>
+        <translation type="vanished">Средняя ценность</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Ценить</translation>
+        <translation type="vanished">Ценить</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Минимальное значение</translation>
+        <translation type="vanished">Минимальное значение</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Импортировать (&amp;I)</translation>
+        <translation type="vanished">Импортировать (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Экспорт (&amp;E)</translation>
+        <translation type="vanished">Экспорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Импортировать настройки цветовой карты</translation>
+        <translation type="vanished">Импортировать настройки цветовой карты</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файл (*.csv)</translation>
+        <translation type="vanished">CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 не существует.</translation>
+        <translation type="vanished">Файл %1 не существует.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 не мог быть открыт.</translation>
+        <translation type="vanished">Файл %1 не мог быть открыт.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Экспорт настроек цветовой карты</translation>
+        <translation type="vanished">Экспорт настроек цветовой карты</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Обычай</translation>
+        <translation type="vanished">Обычай</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Параметр...</translation>
+        <translation type="vanished">Параметр...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Минимальное значение %1.</translation>
+        <translation type="vanished">Минимальное значение %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максимальное значение %1.</translation>
+        <translation type="vanished">Максимальное значение %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Значение меньше, чем %1 в не допускается.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Валур больше, чем %1 не допускается.</translation>
     </message>
 </context>
 <context>

@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Mapa de colors personalitzat</translation>
+        <translation type="vanished">Mapa de colors personalitzat</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipus:</translation>
+        <translation type="vanished">Tipus:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dos colors</translation>
+        <translation type="vanished">Dos colors</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tres colors</translation>
+        <translation type="vanished">Tres colors</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Arbitrari</translation>
+        <translation type="vanished">Arbitrari</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dos colors / Tres colors</translation>
+        <translation type="vanished">Dos colors / Tres colors</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Valor màxim</translation>
+        <translation type="vanished">Valor màxim</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Valor mitjà</translation>
+        <translation type="vanished">Valor mitjà</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valor</translation>
+        <translation type="vanished">Valor</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Valor mínim</translation>
+        <translation type="vanished">Valor mínim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Color</translation>
+        <translation type="vanished">Color</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Afegeix (&amp;A)</translation>
+        <translation type="vanished">Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importar (&amp;I)</translation>
+        <translation type="vanished">Importar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Exporta (&amp;E)</translation>
+        <translation type="vanished">Exporta (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importa la configuració del mapa de colors</translation>
+        <translation type="vanished">Importa la configuració del mapa de colors</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>Fitxer CSV (*.csv)</translation>
+        <translation type="vanished">Fitxer CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advertiment</translation>
+        <translation type="vanished">Advertiment</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Dossier %1 no existeix.</translation>
+        <translation type="vanished">Dossier %1 no existeix.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Dossier %1 no s'ha pogut obrir.</translation>
+        <translation type="vanished">Dossier %1 no s'ha pogut obrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Exporta la configuració del mapa de colors</translation>
+        <translation type="vanished">Exporta la configuració del mapa de colors</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalitzat</translation>
+        <translation type="vanished">Personalitzat</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>S'està configurant...</translation>
+        <translation type="vanished">S'està configurant...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>El valor mínim és %1.</translation>
+        <translation type="vanished">El valor mínim és %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>El valor màxim és %1.</translation>
+        <translation type="vanished">El valor màxim és %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Valor menor que %1 en no permès.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur més gran que %1 no està permès.</translation>
     </message>
 </context>
 <context>

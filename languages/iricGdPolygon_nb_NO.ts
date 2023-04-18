@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Fjern Polygon Vertex</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Polygon-visningsinnstilling</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Polygon-visningsinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Bruk innstilling av forhåndsbehandlingsvinduet</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI Shapefile (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farge</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Farge etter verdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Egendefinert farge</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Fargekart</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Linje bredde:</translation>
     </message>
 </context>
 </TS>

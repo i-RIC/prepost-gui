@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -122,7 +120,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Grade para vista panoramica de passaro</translation>
     </message>
 </context>
@@ -691,8 +689,8 @@ Do you really want to import grid from this file?</source>
         <translation>O mapeamento nao foi realizado apos a edicao de %1 pela ultima vez. Deseja realizar o mapeamento ?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuracao de condicao do limite  Apos editado ultima vez &quot;, nao foi executado o mapeamento. Deseja executar o mapeamento ? </translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuracao de condicao do limite  Apos editado ultima vez ", nao foi executado o mapeamento. Deseja executar o mapeamento ? </translation>
     </message>
     <message>
         <source>Information</source>
@@ -949,14 +947,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Observação: quando a variação está habilitada, a variação denominada &quot;Padrão&quot; é criada e todos os dados geográficos são movidos para ela. Você pode adicionar, renomear, remover variações do &quot;Navegador de objetos&quot;. Você pode mover, copiar dados geográficos entre as variações. Os dados de atributo de grade criados a partir da variação que você seleciona com &quot;Variação para passar para o solucionador&quot; são passados para o solucionador. Você pode preparar várias variações, alternar qual passar para o solucionador e garantir o efeito da diferença.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Observação: quando a variação está habilitada, a variação denominada "Padrão" é criada e todos os dados geográficos são movidos para ela. Você pode adicionar, renomear, remover variações do "Navegador de objetos". Você pode mover, copiar dados geográficos entre as variações. Os dados de atributo de grade criados a partir da variação que você seleciona com "Variação para passar para o solucionador" são passados para o solucionador. Você pode preparar várias variações, alternar qual passar para o solucionador e garantir o efeito da diferença.</translation>
     </message>
 </context>
 <context>
@@ -1183,21 +1181,21 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Os seguintes atributos não foram mapeados, pois os valores de saída do gerador de grade para eles. Se você deseja mapear dados geográficos para eles à força, mapeie manualmente com o menu &quot;Grade&quot; -&gt; &quot;Mapeamento de atributos&quot; -&gt; &quot;Executar&quot;.</translation>
+        <translation>Os seguintes atributos não foram mapeados, pois os valores de saída do gerador de grade para eles. Se você deseja mapear dados geográficos para eles à força, mapeie manualmente com o menu "Grade" -&gt; "Mapeamento de atributos" -&gt; "Executar".</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">Os atributos da grade  &quot;%1&quot; foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">Os atributos da grade  "%1" foram editados manualmente. Quando voce executar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">As condicoes do limite &quot;%1&quot; foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">As condicoes do limite "%1" foram editadas manualmente. Quando voce realizar o mapeamento, todas as edicoes efetuadas manualmente serao descartadas. Deseja realmente realizar o mapeamento?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1212,12 +1210,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Concluido o mapeamento dos dados geograficos</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>O atributo de grade &quot;%1&quot;é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>O atributo de grade "%1"é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A condição de limite &quot;%1&quot;é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A condição de limite "%1"é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
 </context>
 <context>
@@ -1235,20 +1233,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automatico</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margem -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quando a grade é criada, é perguntado se para executar o Mapeamento de Atributos todas as vezes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Quando a grade é criada, é perguntado se para executar o Mapeamento de Atributos todas as vezes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Especificar  </translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>O mapeamento de atributo sera executado somente quando voce seleciona manualmente o menu &quot; executar &quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>O mapeamento de atributo sera executado somente quando voce seleciona manualmente o menu " executar ".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1673,7 +1671,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Distância (m) de %1</translation>
     </message>
 </context>
 <context>
@@ -1976,8 +1974,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configuração do mapa de cores</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação:&lt;/span&gt; Use a guia Colormap para editar a configuração de cores&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação:&lt;/span&gt; Use a guia Colormap para editar a configuração de cores&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2094,7 +2092,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurar a legenda (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Abrir a janela de mapa panoramico pela vista de passaro (&amp;B)</translation>
     </message>
     <message>

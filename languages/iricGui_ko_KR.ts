@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>컬러 바</translation>
+        <translation type="vanished">컬러 바</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>제목</translation>
+        <translation type="vanished">제목</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>레이블</translation>
+        <translation type="vanished">레이블</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>화살표 길이 범례</translation>
+        <translation type="vanished">화살표 길이 범례</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>컬러 맵</translation>
+        <translation type="vanished">컬러 맵</translation>
     </message>
     <message>
         <source>Background Image</source>

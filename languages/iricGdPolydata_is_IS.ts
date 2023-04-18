@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Litastilling</translation>
+        <translation type="vanished">%1 Litastilling</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Breyta litastillingu</translation>
+        <translation type="vanished">Breyta litastillingu</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData litastilling</translation>
+        <translation type="vanished">PolyData litastilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
+        <translation type="vanished">Litur eftir gildi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
 </context>
 </TS>

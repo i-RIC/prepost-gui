@@ -109,6 +109,10 @@
         <source>Remove Polygon Vertex</source>
         <translation>Видалити вершину багатокутника</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Налаштування відображення багатокутників</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Налаштування відображення багатокутників</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>Файл формату ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Розфарбуй за значенням</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Спеціальний колір</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Кольорова карта</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Ширина лінії:</translation>
     </message>
 </context>
 </TS>

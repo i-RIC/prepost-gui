@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
-
+<!-- gridlandxmlexporter_da_DK.ts -->
 <context>
     <name>GridLandXmlExporter</name>
     <message>
@@ -22,7 +24,7 @@
         <translation>LandXml -filer (*.xml)</translation>
     </message>
 </context>
-
+<!-- iricAxis2d_da_DK.ts -->
 <context>
     <name>Axis2dDataItem</name>
     <message>
@@ -30,7 +32,7 @@
         <translation>Økser</translation>
     </message>
 </context>
-
+<!-- iricAxis3d_da_DK.ts -->
 <context>
     <name>Axis3dDataItem</name>
     <message>
@@ -38,7 +40,7 @@
         <translation>Økser</translation>
     </message>
 </context>
-
+<!-- iricCs_da_DK.ts -->
 <context>
     <name>CoordinateSystemConvertDialog</name>
     <message>
@@ -84,7 +86,7 @@
         <translation>(Ikke specificeret)</translation>
     </message>
 </context>
-
+<!-- iricDistancemeasure_da_DK.ts -->
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
@@ -238,7 +240,7 @@
         <translation>Farve:</translation>
     </message>
 </context>
-
+<!-- iricGccCenterandwidth_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
@@ -360,7 +362,7 @@
         <translation>Først skal du definere en polygonal linje ved at klikke med musen. Den polygonale linje bruges som gitterets midterlinje. Derefter definerer du bredden, divisionens antal gitter i I -retning og J -retning.</translation>
     </message>
 </context>
-
+<!-- iricGccCompoundchannel_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
@@ -550,7 +552,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Definer en polygon som regionen for at oprette gitter, og en anden polygon som lavvandskanalregionen. Tilføj derefter en polygonal linje som flodens centrum. Lavvandskanalregionen bør inkluderes i netværksoprettelsesområdet, og flodens midterlinje bør inkluderes i lavvandskanalområdet.</translation>
     </message>
 </context>
-
+<!-- iricGccExternalprogram_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
@@ -613,7 +615,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Ukendt fejl (fejlkode: %1 )</translation>
     </message>
 </context>
-
+<!-- iricGccGridcombine_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
@@ -735,7 +737,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Højde af forhindringsceller:</translation>
     </message>
 </context>
-
+<!-- iricGccGridgenerator_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
@@ -957,7 +959,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Breddevariation [m]:</translation>
     </message>
 </context>
-
+<!-- iricGccLaplace_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
@@ -1261,7 +1263,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Opret gitter (&amp;G)</translation>
     </message>
 </context>
-
+<!-- iricGccPoisson_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
@@ -1452,7 +1454,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>Maks. Antal iterationer:</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregionlonlat_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
     <message>
@@ -1502,7 +1504,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRectangularregion_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
@@ -1552,7 +1554,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>-</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey15d_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
@@ -1776,7 +1778,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>"Venstre bred" er den bank, du ser på venstre side, når du drejer nedstrøms.</translation>
     </message>
 </context>
-
+<!-- iricGccRiversurvey_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
@@ -1976,7 +1978,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Afslut Traversal Line:</translation>
     </message>
 </context>
-
+<!-- iricGccTriangle_da_DK.ts -->
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
@@ -2287,7 +2289,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdNetcdf_da_DK.ts -->
 <context>
     <name>GeoDataNetcdf</name>
     <message>
@@ -2395,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Genkend resultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Brug følgende bogstaver til at definere mønster: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indrykning: 0; tekst-indrykning: 0px; "&gt; År: ÅÅÅÅ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Måned: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- højre: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Time: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- venstre: 0px; margin-højre: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Andet: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Brug følgende bogstaver til at definere mønster: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indrykning: 0; tekst-indrykning: 0px; &quot;&gt; År: ÅÅÅÅ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Måned: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Day: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- højre: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Time: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- venstre: 0px; margin-højre: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Andet: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2422,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Disse data kan ikke eksporteres. Det ser ud til, at det ikke blev importeret fra *.tif eller *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Disse data kan ikke eksporteres. Data med dimensionen "Tid" kan ikke eksporteres til *.tif eller *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Disse data kan ikke eksporteres. Data med dimensionen &quot;Tid&quot; kan ikke eksporteres til *.tif eller *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2496,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Disse data kan ikke eksporteres. Det ser ud til, at den ikke blev importeret fra *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Disse data kan ikke eksporteres. Data med dimensionen "Tid" kan ikke eksporteres til *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Disse data kan ikke eksporteres. Data med dimensionen &quot;Tid&quot; kan ikke eksporteres til *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2707,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>X -bånd MP -rader -data kan importeres til netforhold med dimensionen "Tid".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>X -bånd MP -rader -data kan importeres til netforhold med dimensionen &quot;Tid&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2762,7 +2764,7 @@ p, li { white-space: pre-wrap; }
         <translation>Farvekort</translation>
     </message>
 </context>
-
+<!-- iricGdPointGroup_da_DK.ts -->
 <context>
     <name>GeoDataPointGroup</name>
     <message>
@@ -2904,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af overskriftslinje. Header skal mindst have 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være "%2", men "%3" er givet.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være &quot;%2&quot;, men &quot;%3&quot; er givet.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2920,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af linjen %1. Data skal mindst have 4 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "x" -værdien på linjen %1. "x" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;x&quot; -værdien på linjen %1. &quot;x&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "y" -værdien på linjen %1. "y" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;y&quot; -værdien på linjen %1. &quot;y&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af værdien "værdi" på linjen %1. "værdi" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af værdien &quot;værdi&quot; på linjen %1. &quot;værdi&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
 </context>
 <context>
@@ -3078,7 +3080,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Når bredden eller højden af det importerede billede er større end Max størrelse, formindskes billedet automatisk, så bredden eller højden bliver lig med den maksimale størrelse.</translation>
     </message>
 </context>
-
+<!-- iricGdPointmap_da_DK.ts -->
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -3118,7 +3120,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>Opfriskning af TIN'er...</translation>
+        <translation>Opfriskning af TIN&apos;er...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3126,7 +3128,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">Når du skifter til denne tilstand, skal du opgradere TIN'er. Vil du opfriske nu?</translation>
+        <translation type="vanished">Når du skifter til denne tilstand, skal du opgradere TIN&apos;er. Vil du opfriske nu?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -3170,7 +3172,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>Remesh TIN'er (&amp;T)</translation>
+        <translation>Remesh TIN&apos;er (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -3198,7 +3200,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Remeshing TIN'er færdige.</translation>
+        <translation>Remeshing TIN&apos;er færdige.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -3309,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Fusionere...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Der er ingen andre data at flette ind "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Der er ingen andre data at flette ind &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3689,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Ingen afgrænsning angivet</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Ikke nok værdier til at læse "%1"."%1"kolonne er %2 men %3 værdier input.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Ikke nok værdier til at læse &quot;%1&quot;.&quot;%1&quot;kolonne er %2 men %3 værdier input.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Der opstod en fejl under læsning "%1"værdi."%1"Værdien skal være det reelle tal, men"%2"specificeret.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Der opstod en fejl under læsning &quot;%1&quot;værdi.&quot;%1&quot;Værdien skal være det reelle tal, men&quot;%2&quot;specificeret.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3764,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Citat karakter:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4078,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Overflade</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Når du er i &amp;quot;Point Edit Modequot;, ignoreres denne indstilling, og TIN-data er altid vist som punkter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk:&lt;/span&gt; Når du er i &amp;quot;Point Edit Modequot;, ignoreres denne indstilling, og TIN-data er altid vist som punkter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4296,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Vægtningseksponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; bruges som vægt ved beregning af vægtet gennemsnit af værdierne. r er afstanden fra punktet til knudepunktet eller cellecenteret, som værdien er knyttet til.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; bruges som vægt ved beregning af vægtet gennemsnit af værdierne. r er afstanden fra punktet til knudepunktet eller cellecenteret, som værdien er knyttet til.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4347,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Overflade</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Når du er i &amp;quot;Point Edit Modequot;, ignoreres denne indstilling, og TIN-data er altid vist som punkter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk:&lt;/span&gt; Når du er i &amp;quot;Point Edit Modequot;, ignoreres denne indstilling, og TIN-data er altid vist som punkter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4390,11 +4392,11 @@ p, li { white-space: pre-wrap; }
         <translation>Begræns kantlængde:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Når du klikker på anvend knappen, bliver de trekanter, der fjernes, malet med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Bemærk &lt;/span&gt;: Når du klikker på anvend knappen, bliver de trekanter, der fjernes, malet med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
-
+<!-- iricGdPoint_da_DK.ts -->
 <context>
     <name>GeoDataPoint</name>
     <message>
@@ -4441,6 +4443,21 @@ p, li { white-space: pre-wrap; }
         <source>Set vertex</source>
         <translation>Indstil toppunkt</translation>
     </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
@@ -4464,7 +4481,69 @@ p, li { white-space: pre-wrap; }
         <translation>Punkt %1</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolydataGroup_da_DK.ts -->
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
@@ -4496,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Er du sikker på, at du vil slette markerede %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Der er ingen andre data at flette ind "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Der er ingen andre data at flette ind &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -4733,7 +4812,7 @@ p, li { white-space: pre-wrap; }
         <translation>Koordinatsystem:</translation>
     </message>
 </context>
-
+<!-- iricGdPolydata_da_DK.ts -->
 <context>
     <name>GeoDataPolyData</name>
     <message>
@@ -4754,7 +4833,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Farveindstilling</translation>
+        <translation type="vanished">%1 Farveindstilling</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4778,29 +4857,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Rediger farveindstilling</translation>
+        <translation type="vanished">Rediger farveindstilling</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData farveindstilling</translation>
+        <translation type="vanished">PolyData farveindstilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farve efter værdi</translation>
+        <translation type="vanished">Farve efter værdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Brugerdefineret farve</translation>
+        <translation type="vanished">Brugerdefineret farve</translation>
     </message>
 </context>
-
+<!-- iricGdPolygonGroup_da_DK.ts -->
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
@@ -4928,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af overskriftslinje. Header skal mindst have 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være "%2", men "%3" er givet.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være &quot;%2&quot;, men &quot;%3&quot; er givet.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -4952,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af linjen %1. Data skal have mindst 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "pid" -værdien på linjen %1. "pid" skal være heltal, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;pid&quot; -værdien på linjen %1. &quot;pid&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "vid" -værdien på linjen %1. "vid" skal være heltal, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;vid&quot; -værdien på linjen %1. &quot;vid&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "x" -værdien på linjen %1. "x" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;x&quot; -værdien på linjen %1. &quot;x&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "y" -værdien på linjen %1. "y" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;y&quot; -værdien på linjen %1. &quot;y&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af værdien "værdi" på linjen %1. "værdi" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af værdien &quot;værdi&quot; på linjen %1. &quot;værdi&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. "navn" skal være det samme for linjer, hvor "pid" -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. &quot;navn&quot; skal være det samme for linjer, hvor &quot;pid&quot; -værdier er de samme.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. "værdi" skal være den samme for linjer, hvor "pid" -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. &quot;værdi&quot; skal være den samme for linjer, hvor &quot;pid&quot; -værdier er de samme.</translation>
     </message>
 </context>
 <context>
@@ -5068,7 +5147,7 @@ p, li { white-space: pre-wrap; }
         <translation>Linjebredde:</translation>
     </message>
 </context>
-
+<!-- iricGdPolygon_da_DK.ts -->
 <context>
     <name>GeoDataPolygon</name>
     <message>
@@ -5178,6 +5257,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove Polygon Vertex</source>
         <translation>Fjern Polygon Vertex</translation>
+    </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5290,6 +5373,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5300,7 +5401,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdPolyLineGroup_da_DK.ts -->
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
@@ -5420,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af overskriftslinje. Header skal mindst have 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være "%2", men "%3" er givet.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være &quot;%2&quot;, men &quot;%3&quot; er givet.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5444,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Der opstod en fejl under læsning af linjen %1. Data skal have mindst 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af "låg" -værdien på linjen %1. "låg" skal være heltal, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af &quot;låg&quot; -værdien på linjen %1. &quot;låg&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "vid" -værdien på linjen %1. "vid" skal være heltal, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;vid&quot; -værdien på linjen %1. &quot;vid&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "x" -værdien på linjen %1. "x" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;x&quot; -værdien på linjen %1. &quot;x&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under læsning af "y" -værdien på linjen %1. "y" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under læsning af &quot;y&quot; -værdien på linjen %1. &quot;y&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af værdien "værdi" på linjen %1. "værdi" skal være reel værdi, men "%2"er angivet.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af værdien &quot;værdi&quot; på linjen %1. &quot;værdi&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. "navn" skal være det samme for linjer, hvor "låg" -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. &quot;navn&quot; skal være det samme for linjer, hvor &quot;låg&quot; -værdier er de samme.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. "værdi" skal være den samme for linjer, hvor "låg" -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. &quot;værdi&quot; skal være den samme for linjer, hvor &quot;låg&quot; -værdier er de samme.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5551,7 +5679,7 @@ p, li { white-space: pre-wrap; }
         <translation>Linjebredde:</translation>
     </message>
 </context>
-
+<!-- iricGdPolyLine_da_DK.ts -->
 <context>
     <name>GeoDataPolyLine</name>
     <message>
@@ -5629,6 +5757,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Remove PolyLine Vertex</source>
         <translation>Fjern PolyLine Vertex</translation>
+    </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5709,6 +5841,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -5719,7 +5869,34 @@ p, li { white-space: pre-wrap; }
         <translation>ESRI -formfil (*.shp)</translation>
     </message>
 </context>
-
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- iricGdRiversurvey_da_DK.ts -->
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
@@ -6100,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge "Map point cloud data"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge &quot;Map point cloud data&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6113,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge "Kortpunktskydata"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge &quot;Kortpunktskydata&quot;</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. I nogle regioner fandtes data ikke i punktskydata, og værdien 0 blev kortlagt for disse punkter. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge "Kortpunktskydata"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Tværsnitsdata genereres ved hjælp af punktskydata. I nogle regioner fandtes data ikke i punktskydata, og værdien 0 blev kortlagt for disse punkter. Hvis du vil justere tværsnitsposition og kortlægge punktskydata igen, kan du bruge &quot;Kortpunktskydata&quot;</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6132,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6342,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Indstillingerne for højde og gradient er ugyldige.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Når du angiver højde for slutpunkt, kan det ikke være det samme som startpunktet. Hvis du vil tegne vandret linje, skal du vælge "Angiv vandret afstand".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Når du angiver højde for slutpunkt, kan det ikke være det samme som startpunktet. Hvis du vil tegne vandret linje, skal du vælge &quot;Angiv vandret afstand&quot;.</translation>
     </message>
 </context>
 <context>
@@ -6573,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Rediger tværsnittet ved at klikke med musen. Afslut redigeringen ved at dobbeltklikke eller trykke på retur -tasten. Du kan præcist redigere tværsnittet ved at indtaste værdier fra dialogboksen. Indtast venligst dialogboksen til redigering fra "Rediger fra dialog" i højreklikmenuen.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Rediger tværsnittet ved at klikke med musen. Afslut redigeringen ved at dobbeltklikke eller trykke på retur -tasten. Du kan præcist redigere tværsnittet ved at indtaste værdier fra dialogboksen. Indtast venligst dialogboksen til redigering fra &quot;Rediger fra dialog&quot; i højreklikmenuen.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6766,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fejl</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 linje %2 "%3": LX -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: LX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 linje %2 "%3": LY -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: LY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 linje %2 "%3": RX -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: RX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 linje %2 "%3": RY -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: RY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 linje %2 "%3": Punkterne er ugyldige</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Punkterne er ugyldige</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 linje %2 "%3": Ugyldig indeksværdi</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Ugyldig indeksværdi</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linje %2 : tværsnitsdata for %3 ikke nok</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 linje %2 "%3": Afstandsværdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Afstandsværdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 linje %2 "%3": Højdeværdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Højdeværdien er ugyldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -6838,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Line %2 : Læsefejl. Kræver mindst to værdier.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Line %2 : Læsefejl. Ikke reel talværdi "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Line %2 : Læsefejl. Ikke reel talværdi &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -6965,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Line %2 : KP er ikke input</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Line %2 "%3": LX -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: LX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Line %2 "%3": LY -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: LY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Line %2 "%3": RX -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: RX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Line %2 "%3": RY -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: RY -værdien er ugyldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Afstandsmarkørdata blev ikke fundet. Bliver ignoreret.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 linje %2 : "%3": Flagdata er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 linje %2 : &quot;%3&quot;: Flagdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Afstandsdata er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 linje %2 : &quot;%3&quot;: Afstandsdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Højde data er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 linje %2 : &quot;%3&quot;: Højde data er ugyldige.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7104,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Synlig</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Du kan tilpasse farven ved at bruge fanen Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk:&lt;/span&gt; Du kan tilpasse farven ved at bruge fanen Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -7135,7 +7312,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Flyt kontrolpunkter</translation>
     </message>
 </context>
-
+<!-- iricGeoIO_da_DK.ts -->
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
@@ -7274,7 +7451,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Vælg den fil, der skal eksporteres</translation>
     </message>
 </context>
-
+<!-- iricGraph2dhybrid_da_DK.ts -->
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
@@ -8176,7 +8353,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>EdgeJ</translation>
     </message>
 </context>
-
+<!-- iricGraph2dscattered_da_DK.ts -->
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
@@ -8525,7 +8702,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Farve:</translation>
     </message>
 </context>
-
+<!-- iricGraph2dverification_da_DK.ts -->
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
@@ -8763,7 +8940,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Målte værdier kontra restfejl</translation>
     </message>
 </context>
-
+<!-- iricGraph2d_da_DK.ts -->
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
@@ -8931,7 +9108,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ændring af objektbrowser</translation>
     </message>
 </context>
-
+<!-- iricGuibase_da_DK.ts -->
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -8969,102 +9146,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Brugerdefineret farvekort</translation>
+        <translation type="vanished">Brugerdefineret farvekort</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Type:</translation>
+        <translation type="vanished">Type:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>To farver</translation>
+        <translation type="vanished">To farver</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tre farver</translation>
+        <translation type="vanished">Tre farver</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Vilkårlig</translation>
+        <translation type="vanished">Vilkårlig</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>To farver/ tre farver</translation>
+        <translation type="vanished">To farver/ tre farver</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimal værdi</translation>
+        <translation type="vanished">Maksimal værdi</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Middelværdi</translation>
+        <translation type="vanished">Middelværdi</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Værdi</translation>
+        <translation type="vanished">Værdi</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Mindste værdi</translation>
+        <translation type="vanished">Mindste værdi</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Tilføje (&amp;A)</translation>
+        <translation type="vanished">Tilføje (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Fjerne (&amp;R)</translation>
+        <translation type="vanished">Fjerne (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importere (&amp;I)</translation>
+        <translation type="vanished">Importere (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksport (&amp;E)</translation>
+        <translation type="vanished">Eksport (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Import Colormap Setting</translation>
+        <translation type="vanished">Import Colormap Setting</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV -fil (*.csv)</translation>
+        <translation type="vanished">CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Fil %1 findes ikke.</translation>
+        <translation type="vanished">Fil %1 findes ikke.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Fil %1 ikke kunne åbnes.</translation>
+        <translation type="vanished">Fil %1 ikke kunne åbnes.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Eksporter Colormap -indstilling</translation>
+        <translation type="vanished">Eksporter Colormap -indstilling</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Brugerdefinerede</translation>
+        <translation type="vanished">Brugerdefinerede</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Indstilling...</translation>
+        <translation type="vanished">Indstilling...</translation>
     </message>
 </context>
 <context>
@@ -9393,11 +9570,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimumsværdi er %1.</translation>
+        <translation type="vanished">Minimumsværdi er %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Maksimal værdi er %1.</translation>
+        <translation type="vanished">Maksimal værdi er %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9447,9 +9632,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Angiv nummerformatet i printf -format. For eksempel: " %5.2f "til 3.141592 -&gt; 3.14" %4.2e "for 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Angiv nummerformatet i printf -format. For eksempel: &quot; %5.2f &quot;til 3.141592 -&gt; 3.14&quot; %4.2e &quot;for 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -9786,7 +9971,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Størrelse:</translation>
     </message>
 </context>
-
+<!-- iricGuicore_da_DK.ts -->
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
     <message>
@@ -10100,19 +10285,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Sigtbarhed</translation>
+        <translation type="vanished">Sigtbarhed</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Når valgt</translation>
+        <translation type="vanished">Når valgt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Altid</translation>
+        <translation type="vanished">Altid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10150,6 +10335,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>Størrelse og position</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Retning:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vandret</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Lodret</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10171,16 +10400,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Vælg fil, der skal importeres</translation>
+        <translation type="vanished">Vælg fil, der skal importeres</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Indstilling af farvekort (*.cmsetting)</translation>
+        <translation type="vanished">Indstilling af farvekort (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Der opstod en fejl under indlæsning %1 Parse fejl %2 på %3, kolonne %4</translation>
+        <translation type="vanished">Der opstod en fejl under indlæsning %1 Parse fejl %2 på %3, kolonne %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10206,6 +10435,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Gennemsigtig</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiket display</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farve</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Baggrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Størrelse og position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vandret</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Lodret</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10215,19 +10573,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Sigtbarhed</translation>
+        <translation type="vanished">Sigtbarhed</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Når valgt</translation>
+        <translation type="vanished">Når valgt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Altid</translation>
+        <translation type="vanished">Altid</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Aldrig</translation>
+        <translation type="vanished">Aldrig</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10289,6 +10647,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Auto</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10317,11 +10703,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Forudindstillinger:</translation>
+        <translation type="vanished">Forudindstillinger:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ignorer indstillingen for farvelinjen ved import</translation>
+        <translation type="vanished">Ignorer indstillingen for farvelinjen ved import</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10381,7 +10767,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Vælg fil, der skal importeres</translation>
+        <translation type="vanished">Vælg fil, der skal importeres</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10402,11 +10788,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Der opstod en fejl under indlæsning %1 Parse fejl %2 på %3, kolonne %4</translation>
+        <translation type="vanished">Der opstod en fejl under indlæsning %1 Parse fejl %2 på %3, kolonne %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Vælg venligst varen du vil anvende)</translation>
+        <translation type="vanished">(Vælg venligst varen du vil anvende)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10444,6 +10830,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Når du skifter til gradationstilstand, indstilles værdierne til den midterste værdi af hver sektion.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">Indstilling af farvekort (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10458,6 +10875,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Eksport (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Titel</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">Etiket display</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farve</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Baggrund</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">Størrelse og position</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10485,6 +10993,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Antal farver:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Aktiveret</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vandret</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Lodret</translation>
     </message>
 </context>
 <context>
@@ -10839,6 +11382,10 @@ Parse error %2 at %3, column %4</source>
         <source>Color:</source>
         <translation>Farve:</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
@@ -10935,12 +11482,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitionsnode gemmes ikke</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Forkert valueType "%1"er indstillet.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Forkert valueType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Forkert tilstandType "%1"er indstillet.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Forkert tilstandType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -11211,8 +11758,8 @@ Do you really want to import this file?</source>
         <translation>Fil %1 opdateres efter import til beregningstilstand %2. Vil du importere den opdaterede fil?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Du kan kopiere og indsætte værdierne med genvejen "Ctrl + C" og "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Du kan kopiere og indsætte værdierne med genvejen &quot;Ctrl + C&quot; og &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -11341,8 +11888,8 @@ Do you really want to import this file?</source>
         <translation>Der opstod en fejl under åbning af filen.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De to første kolonner skal være "X" og "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De to første kolonner skal være &quot;X&quot; og &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -11503,8 +12050,8 @@ Do you really want to import this file?</source>
         <translation>Definition af variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -11582,8 +12129,8 @@ Do you really want to import this file?</source>
         <translation>ned (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -11936,8 +12483,8 @@ Do you really want to import this file?</source>
         <translation>Definition af output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -12191,8 +12738,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbejdsområde "%1"har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbejdsområde &quot;%1&quot;har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -12532,7 +13079,7 @@ Do you really want to import this file?</source>
         <translation>Versionsnummerets buildnummer er ikke angivet.</translation>
     </message>
 </context>
-
+<!-- iricGui_da_DK.ts -->
 <context>
     <name>AnimationController</name>
     <message>
@@ -12983,8 +13530,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Vælg Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Når du opretter et nyt projekt, skal du vælge den solver, der skal bruges til beregning. Vælg en løsning, og tryk på "OK" -knappen.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Når du opretter et nyt projekt, skal du vælge den solver, der skal bruges til beregning. Vælg en løsning, og tryk på &quot;OK&quot; -knappen.</translation>
     </message>
 </context>
 <context>
@@ -13085,19 +13632,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Farvebjælke</translation>
+        <translation type="vanished">Farvebjælke</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titel</translation>
+        <translation type="vanished">Titel</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiketter</translation>
+        <translation type="vanished">Etiketter</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Pillængdeforklaring</translation>
+        <translation type="vanished">Pillængdeforklaring</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13259,7 +13806,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Farvekort</translation>
+        <translation type="vanished">Farvekort</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -13854,9 +14401,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Der opstod en fejl under indlæsning af løsningsdefinitionsfil i mappe "%1". Denne opløser ignoreres. %2</translation>
+        <translation>Der opstod en fejl under indlæsning af løsningsdefinitionsfil i mappe &quot;%1&quot;. Denne opløser ignoreres. %2</translation>
     </message>
 </context>
 <context>
@@ -13975,7 +14522,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dette projekt ser ud til at blive åbnet af et andet iRIC GUI -vindue. Du kan ikke åbne en projektmappe fra flere GUI -vinduer.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Det åbnede projekt kopieres ikke til arbejdskataloget, og du bliver tvunget til at gemme de ændringer, du foretager i dette projekt. Hvis du vil beholde det aktuelle projekt, skal du først gemme det i et andet projekt.</translation>
     </message>
     <message>
@@ -14135,8 +14682,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuelt sub-vindue understøtter ikke eksport af konturfigur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte "Displayindstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte &quot;Displayindstilling&quot; til &quot;Konturfigur&quot;, ikke &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14276,8 +14823,8 @@ Option -&gt; Preferences</source>
         <translation>Indstillingsfil (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>For at eksportere formfil skal du skifte farvetilstand til "Diskret tilstand".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>For at eksportere formfil skal du skifte farvetilstand til &quot;Diskret tilstand&quot;.</translation>
     </message>
 </context>
 <context>
@@ -14624,7 +15171,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -14651,7 +15198,7 @@ Option -&gt; Preferences</source>
         <translation>Åbn nyt 2D-efterbehandlingsvindue</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Åbn det nye 2D fugleperspektiv efterbehandlingsvindue</translation>
     </message>
     <message>
@@ -14767,7 +15314,7 @@ Option -&gt; Preferences</source>
         <translation>Geografiske data (højde fra nettet)</translation>
     </message>
 </context>
-
+<!-- iricHdRiversurveywaterelevation_da_DK.ts -->
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
@@ -14814,7 +15361,7 @@ Option -&gt; Preferences</source>
         <translation>Antallet af varer skal være det samme i hver linje.</translation>
     </message>
 </context>
-
+<!-- iricMeasureddata_da_DK.ts -->
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
@@ -15008,7 +15555,7 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Indstilling af farvebjælke (&amp;C)</translation>
     </message>
 </context>
-
+<!-- iricMisc_da_DK.ts -->
 <context>
     <name>InformationDialog</name>
     <message>
@@ -15067,7 +15614,7 @@ Option -&gt; Preferences</source>
         <translation>Åbning af fil %1 mislykkedes.</translation>
     </message>
 </context>
-
+<!-- iricPost2dbirdeye_da_DK.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -15078,7 +15625,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Fugleperspektiv Efterbehandling (2D): %1</translation>
     </message>
     <message>
@@ -15318,7 +15865,7 @@ Option -&gt; Preferences</source>
         <translation>Rediger baggrundsfarve</translation>
     </message>
 </context>
-
+<!-- iricPost2d_da_DK.ts -->
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -15758,8 +16305,8 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Fejl</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte "Displayindstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte &quot;Displayindstilling&quot; til &quot;Konturfigur&quot;, ikke &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16076,8 +16623,8 @@ Option -&gt; Preferences</source>
         <translation>Skalær indstilling (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
-        <translation>For at eksportere KML til gadevisning skal Colormode være "Diskret tilstand"</translation>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation>For at eksportere KML til gadevisning skal Colormode være &quot;Diskret tilstand&quot;</translation>
     </message>
 </context>
 <context>
@@ -16114,16 +16661,16 @@ Option -&gt; Preferences</source>
         <translation>Fejl</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte "Displayindstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Hvis du vil eksportere formfil, skal du skifte &quot;Displayindstilling&quot; til &quot;Konturfigur&quot;, ikke &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to "Discrete Mode".</source>
-        <translation>For at eksportere formfil skal du skifte farveindstilling til "Diskret tilstand".</translation>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation>For at eksportere formfil skal du skifte farveindstilling til &quot;Diskret tilstand&quot;.</translation>
     </message>
 </context>
 <context>
@@ -16260,17 +16807,17 @@ Option -&gt; Preferences</source>
         <translation>Generations tidsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16337,16 +16884,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Generationsrumsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Hvis du angiver 1, genereres partikler ved gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiver 2, genereres partikler ved gitternoder og midterpunkter i gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiv 1/2, genereres partikler for hver anden gitterknude. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Hvis du angiver 1, genereres partikler ved gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiver 2, genereres partikler ved gitternoder og midterpunkter i gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiv 1/2, genereres partikler for hver anden gitterknude. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -16357,12 +16904,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Størrelse:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16400,17 +16947,17 @@ p, li { white-space: pre-wrap; }
         <translation>Generationsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -16481,12 +17028,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Størrelse:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16702,14 +17249,14 @@ p, li { white-space: pre-wrap; }
         <translation>Generationsrumsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hvis du angiver 1, starter strømlinjerne ved netnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Hvis du angiver 2, starter strømlinjerne ved gitterknudepunkter og midtpunkter i gitternoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hvis du angiver 1/2, starter strømlinjerne ved alle andre gitternoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hvis du angiver 1, starter strømlinjerne ved netnoder. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Hvis du angiver 2, starter strømlinjerne ved gitterknudepunkter og midtpunkter i gitternoder. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hvis du angiver 1/2, starter strømlinjerne ved alle andre gitternoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -16740,12 +17287,12 @@ p, li { white-space: pre-wrap; }
         <translation>Bredde:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16811,12 +17358,12 @@ p, li { white-space: pre-wrap; }
         <translation>Bredde:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -16865,7 +17412,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Opdater Polygon Scalar Setting</translation>
     </message>
 </context>
-
+<!-- iricPost3d_da_DK.ts -->
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -17701,17 +18248,17 @@ p, li { white-space: pre-wrap; }
         <translation>Generations tidsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -17786,16 +18333,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Generationsrumsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Hvis du angiver 1, genereres partikler ved gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiver 2, genereres partikler ved gitternoder og midterpunkter i gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiv 1/2, genereres partikler for hver anden gitterknude. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Hvis du angiver 1, genereres partikler ved gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiver 2, genereres partikler ved gitternoder og midterpunkter i gitternoder. &lt;/p&gt; &lt;p&gt; Hvis du angiv 1/2, genereres partikler for hver anden gitterknude. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17806,12 +18353,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Størrelse:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17963,14 +18510,14 @@ p, li { white-space: pre-wrap; }
         <translation>Generationsrumsinterval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hvis du angiver 1, starter strømlinjerne ved netnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Hvis du angiver 2, starter strømlinjerne ved gitterknudepunkter og midtpunkter i gitternoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hvis du angiver 1/2, starter strømlinjerne ved alle andre gitternoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hvis du angiver 1, starter strømlinjerne ved netnoder. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Hvis du angiver 2, starter strømlinjerne ved gitterknudepunkter og midtpunkter i gitternoder. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hvis du angiver 1/2, starter strømlinjerne ved alle andre gitternoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -18001,12 +18548,12 @@ p, li { white-space: pre-wrap; }
         <translation>Bredde:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Angiv et antal pixels på displayet. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18048,7 +18595,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Opdater partikler skalarindstilling</translation>
     </message>
 </context>
-
+<!-- iricPostbase_da_DK.ts -->
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
@@ -18415,7 +18962,7 @@ p, li { white-space: pre-wrap; }
         <translation>Bemærk: Kun engelske tegn kan bruges til titel.</translation>
     </message>
 </context>
-
+<!-- iricPre_da_DK.ts -->
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
@@ -18529,7 +19076,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Gitteret Fugleperspektiv</translation>
     </message>
 </context>
@@ -19078,8 +19625,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 kortlægges ikke, efter at de blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Indstilling af grænsetilstand "%1"er ikke kortlagt, efter at det blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Indstilling af grænsetilstand &quot;%1&quot;er ikke kortlagt, efter at det blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19328,14 +19875,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Bemærk: Når variation er aktiveret, oprettes variant med navnet "Standard", og alle geografiske data flyttes til den. Du kan tilføje, omdøbe, fjerne variationer fra "Objektbrowser". Du kan flytte, kopiere geografiske data mellem variationer. De gitterattributdata, der er oprettet fra den variant, som du vælger med "Variation, der skal overføres til solver", videregives til solver. Du kan forberede flere variationer, skifte, hvilken der skal overføres til løseren, og sikre dig effekten af forskellen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Bemærk: Når variation er aktiveret, oprettes variant med navnet &quot;Standard&quot;, og alle geografiske data flyttes til den. Du kan tilføje, omdøbe, fjerne variationer fra &quot;Objektbrowser&quot;. Du kan flytte, kopiere geografiske data mellem variationer. De gitterattributdata, der er oprettet fra den variant, som du vælger med &quot;Variation, der skal overføres til solver&quot;, videregives til solver. Du kan forberede flere variationer, skifte, hvilken der skal overføres til løseren, og sikre dig effekten af forskellen.</translation>
     </message>
 </context>
 <context>
@@ -19550,9 +20097,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Udfør (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Følgende attributter blev ikke kortlagt, fordi netværksgeneratorens outputværdier for dem. Hvis du vil kortlægge geografiske data for dem med magt, bedes du kortlægge manuelt med menuen "Gitter" -&gt; "Attributtilknytning" -&gt; "Udfør".</translation>
+        <translation>Følgende attributter blev ikke kortlagt, fordi netværksgeneratorens outputværdier for dem. Hvis du vil kortlægge geografiske data for dem med magt, bedes du kortlægge manuelt med menuen &quot;Gitter&quot; -&gt; &quot;Attributtilknytning&quot; -&gt; &quot;Udfør&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -19571,12 +20118,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kortlægning af geografiske data færdig</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Gitterattributten "%1"redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Gitterattributten &quot;%1&quot;redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Grænsetilstanden "%1"redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Grænsetilstanden &quot;%1&quot;redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
     </message>
 </context>
 <context>
@@ -19594,20 +20141,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Når gitteret oprettes, bliver du spurgt, om at udføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Når gitteret oprettes, bliver du spurgt, om at udføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>brugervejledning</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attributmapping udføres kun, når du manuelt vælger menuen "Execute".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attributmapping udføres kun, når du manuelt vælger menuen &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -19615,11 +20162,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">Kortlægning med TIN'er</translation>
+        <translation type="vanished">Kortlægning med TIN&apos;er</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">TIN'er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
+        <translation type="vanished">TIN&apos;er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -19679,11 +20226,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>For at åbne et tværsnitsvindue skal du kun vælge en gitterknude.</translation>
+        <translation type="vanished">For at åbne et tværsnitsvindue skal du kun vælge en gitterknude.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>For at åbne et vindue i længderetningen skal du kun vælge en gitterknude.</translation>
+        <translation type="vanished">For at åbne et vindue i længderetningen skal du kun vælge en gitterknude.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -19929,6 +20476,409 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished">Indstilling</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished">Gitter</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Displayindstilling</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">Venstre bred side</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Højre bred</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Synlig</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished">Indstilling</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Position</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vandret</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Lodret</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Farve:</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Synlig</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Linjebredde:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished">Indstilling af farvekort</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
@@ -20026,7 +20976,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Konfigurer skalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Åbn vinduet med fugleperspektiv (&amp;B)</translation>
     </message>
     <message>
@@ -20601,7 +21551,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Bevæge sig (&amp;M)</translation>
     </message>
 </context>
-
+<!-- iricSolverconsole_da_DK.ts -->
 <context>
     <name>SolverConsoleWindow</name>
     <message>
@@ -20728,7 +21678,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Eksport af logkonsol til løsningskonsol mislykkedes.</translation>
     </message>
 </context>
-
+<!-- rivmaker_da_DK.ts -->
 <context>
     <name>AboutDialog</name>
     <message>
@@ -22106,7 +23056,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Vandhøjdepunkter</translation>
     </message>
 </context>
-
+<!-- structured15dgridwithcrosssectionhecrasexporter_da_DK.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22121,7 +23071,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>HEC-RAS</translation>
     </message>
 </context>
-
+<!-- structured2dgridgdalimporter_da_DK.ts -->
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
@@ -22137,7 +23087,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>ArcInfo ASCII -filer (*.asc)</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvexporter_da_DK.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22152,7 +23102,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays CSV</translation>
     </message>
 </context>
-
+<!-- structured2dgridnayscsvimporter_da_DK.ts -->
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
     <message>
@@ -22173,7 +23123,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Følgende kolonner blev ignoreret. %1</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridexporter_da_DK.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22188,7 +23138,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>RIC-Nays Grid-fil</translation>
     </message>
 </context>
-
+<!-- structured2dgridnaysgridimporter_da_DK.ts -->
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
@@ -22208,7 +23158,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Værdier for celleflag indlæses ikke.</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkexporter_da_DK.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22223,7 +23173,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK -fil</translation>
     </message>
 </context>
-
+<!-- structured2dgridvtkimporter_da_DK.ts -->
 <context>
     <name>Structured2dGridVtkImporter</name>
     <message>
@@ -22243,7 +23193,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Kopiering %1 til %2 mislykkedes.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridtriangleimporter_da_DK.ts -->
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
@@ -22263,7 +23213,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>%1 findes ikke.</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkexporter_da_DK.ts -->
 <context>
     <name>QObject</name>
     <message>
@@ -22278,7 +23228,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>VTK -fil</translation>
     </message>
 </context>
-
+<!-- unstructured2dgridvtkimporter_da_DK.ts -->
 <context>
     <name>Unstructured2dGridVtkImporter</name>
     <message>

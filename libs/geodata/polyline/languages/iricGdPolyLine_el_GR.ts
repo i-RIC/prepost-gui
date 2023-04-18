@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>Αφαιρέστε το PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης γραμμής</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Ρύθμιση εμφάνισης γραμμής</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Χρησιμοποιήστε τη ρύθμιση του παραθύρου προεπεξεργασίας</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Αρχείο σχήματος ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χάρτης χρώματος</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Πλάτος γραμμής:</translation>
     </message>
 </context>
 </TS>

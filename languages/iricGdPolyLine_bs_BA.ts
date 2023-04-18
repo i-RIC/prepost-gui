@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>Uklonite PolyLine Vertex</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Postavka prikaza linije</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Postavka prikaza linije</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Koristite podešavanje prozora za prethodnu obradu</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Datoteka oblika ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Custom Color</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Colormap</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Širina linije:</translation>
     </message>
 </context>
 </TS>

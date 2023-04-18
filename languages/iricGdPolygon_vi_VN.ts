@@ -109,6 +109,10 @@
         <source>Polygon Coordinates</source>
         <translation>Tọa độ đa giác</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Cài đặt hiển thị đa giác</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -220,6 +224,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation>Cài đặt hiển thị đa giác</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Sử dụng Cài đặt của Cửa sổ Tiền xử lý</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -228,6 +250,33 @@
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>Tệp hình dạng ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Chiều rộng dòng:</translation>
     </message>
 </context>
 </TS>

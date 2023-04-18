@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>사용자 정의 색상 맵</translation>
+        <translation type="vanished">사용자 정의 색상 맵</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>유형:</translation>
+        <translation type="vanished">유형:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>두 가지 색상</translation>
+        <translation type="vanished">두 가지 색상</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>세 가지 색상</translation>
+        <translation type="vanished">세 가지 색상</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>임의</translation>
+        <translation type="vanished">임의</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>두 가지 색상/세 가지 색상</translation>
+        <translation type="vanished">두 가지 색상/세 가지 색상</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>최대값</translation>
+        <translation type="vanished">최대값</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>중간 가치</translation>
+        <translation type="vanished">중간 가치</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>값</translation>
+        <translation type="vanished">값</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>최소값</translation>
+        <translation type="vanished">최소값</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>수입 (&amp;I)</translation>
+        <translation type="vanished">수입 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>내 보내다 (&amp;E)</translation>
+        <translation type="vanished">내 보내다 (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>컬러맵 설정 가져오기</translation>
+        <translation type="vanished">컬러맵 설정 가져오기</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV 파일 (*.csv)</translation>
+        <translation type="vanished">CSV 파일 (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>파일 %1 존재하지 않습니다.</translation>
+        <translation type="vanished">파일 %1 존재하지 않습니다.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>파일 %1 열 수 없습니다.</translation>
+        <translation type="vanished">파일 %1 열 수 없습니다.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>컬러맵 설정 내보내기</translation>
+        <translation type="vanished">컬러맵 설정 내보내기</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>관습</translation>
+        <translation type="vanished">관습</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>환경...</translation>
+        <translation type="vanished">환경...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>최소값은 %1.</translation>
+        <translation type="vanished">최소값은 %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>최대값: %1.</translation>
+        <translation type="vanished">최대값: %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>보다 작은 값 %1 허용되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>보다 큰 Valur %1 허용되지 않습니다.</translation>
     </message>
 </context>
 <context>

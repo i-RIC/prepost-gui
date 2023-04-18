@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>ทัศนวิสัย</translation>
+        <translation type="vanished">ทัศนวิสัย</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>เมื่อเลือกแล้ว</translation>
+        <translation type="vanished">เมื่อเลือกแล้ว</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>เสมอ</translation>
+        <translation type="vanished">เสมอ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>ไม่เคย</translation>
+        <translation type="vanished">ไม่เคย</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>ขนาดและตำแหน่ง</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>ทิศทาง:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>ความกว้างของแถบ</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>พิกเซล</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>การจัดตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>ซ้าย</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>ศูนย์</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>ขวา</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+        <translation type="vanished">เลือกไฟล์ที่จะนำเข้า</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+        <translation type="vanished">การตั้งค่าแผนที่สี (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>โปร่งใส</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>ระบุการตั้งค่าแผนที่สี (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>ระบุการตั้งค่าแผนที่สี (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>เกิดข้อผิดพลาดขณะนำเข้าการตั้งค่าจาก %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>สาธารณะ (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>ส่วนตัว (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>นำเข้าการตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>โหมด</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>เลือกจากมาตรฐาน</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>เลือกไฟล์</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>มาตรฐาน</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>คุณสมบัติในการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>ทิศทาง</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>การตั้งค่าแบบอักษร</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ฉลาก</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>พื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ขนาด</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>ความกว้างของแถบ</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>การจัดตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ดูตัวอย่าง</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>แถบสี</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>แนวตั้ง</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>ทัศนวิสัย</translation>
+        <translation type="vanished">ทัศนวิสัย</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>เมื่อเลือกแล้ว</translation>
+        <translation type="vanished">เมื่อเลือกแล้ว</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>เสมอ</translation>
+        <translation type="vanished">เสมอ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>ไม่เคย</translation>
+        <translation type="vanished">ไม่เคย</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>อัตโนมัติ</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>ความกว้างของแถบ</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>พิกเซล</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>การจัดตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>ซ้าย</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>ศูนย์</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>ขวา</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>ที่ตั้งไว้ล่วงหน้า:</translation>
+        <translation type="vanished">ที่ตั้งไว้ล่วงหน้า:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
+        <translation type="vanished">ละเว้นการตั้งค่าแถบสีเมื่อนำเข้า</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>เลือกไฟล์ที่จะนำเข้า</translation>
+        <translation type="vanished">เลือกไฟล์ที่จะนำเข้า</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
+        <translation type="vanished">เกิดข้อผิดพลาดขณะโหลด %1 ข้อผิดพลาดในการแยกวิเคราะห์ %2 ที่ %3, คอลัมน์ %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(กรุณาเลือกรายการที่ต้องการสมัคร)</translation>
+        <translation type="vanished">(กรุณาเลือกรายการที่ต้องการสมัคร)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">เมื่อเปลี่ยนเป็นโหมดการไล่สี ค่าต่างๆ จะถูกตั้งค่าเป็นค่ากลางของแต่ละส่วน</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>สลับสี (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>หารเท่ากัน (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>การตั้งค่าแผนที่สี (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>เกิดข้อผิดพลาดขณะนำเข้าการตั้งค่าจาก %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>สาธารณะ (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>ส่วนตัว (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>ส่งออก (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>นำเข้าการตั้งค่าแผนที่สี</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>โหมด</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>เลือกจากมาตรฐาน</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>เลือกไฟล์</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>มาตรฐาน</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>คุณสมบัติในการนำเข้า</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>ทิศทาง</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>การตั้งค่าแบบอักษร</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>การแสดงฉลาก</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>รูปแบบ</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>จำนวนป้ายกำกับ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ฉลาก</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>พื้นหลัง</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ขนาด</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>ความกว้างของแถบ</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>การจัดตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ดูตัวอย่าง</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>จำนวนสี:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>ตัวเลือก</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>ตำแหน่งทศนิยม:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>ขนาดบันทึก:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>เปิดใช้งาน</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>แถบสี</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>แนวตั้ง</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>สี:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ: คุณสามารถใช้ได้เฉพาะอักขระ ASCII สำหรับชื่อเท่านั้น&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

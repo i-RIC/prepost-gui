@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>रंग रेखा</translation>
+        <translation type="vanished">रंग रेखा</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>शीर्षक</translation>
+        <translation type="vanished">शीर्षक</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>लेबल</translation>
+        <translation type="vanished">लेबल</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>तीर की लंबाई किंवदंती</translation>
+        <translation type="vanished">तीर की लंबाई किंवदंती</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>रंग नक्शा</translation>
+        <translation type="vanished">रंग नक्शा</translation>
     </message>
     <message>
         <source>Background Image</source>

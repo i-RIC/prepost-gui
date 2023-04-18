@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Персонализирана цветна карта</translation>
+        <translation type="vanished">Персонализирана цветна карта</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="vanished">Тип:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Два цвята</translation>
+        <translation type="vanished">Два цвята</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Три цвята</translation>
+        <translation type="vanished">Три цвята</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Произволно</translation>
+        <translation type="vanished">Произволно</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Два цвята/ три цвята</translation>
+        <translation type="vanished">Два цвята/ три цвята</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Максимална стойност</translation>
+        <translation type="vanished">Максимална стойност</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Средна стойност</translation>
+        <translation type="vanished">Средна стойност</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Стойност</translation>
+        <translation type="vanished">Стойност</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Минимална стойност</translation>
+        <translation type="vanished">Минимална стойност</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавяне (&amp;A)</translation>
+        <translation type="vanished">Добавяне (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Премахване (&amp;R)</translation>
+        <translation type="vanished">Премахване (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Внос (&amp;I)</translation>
+        <translation type="vanished">Внос (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Експорт (&amp;E)</translation>
+        <translation type="vanished">Експорт (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Импортиране на настройка на цветовата карта</translation>
+        <translation type="vanished">Импортиране на настройка на цветовата карта</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV файл (*.csv)</translation>
+        <translation type="vanished">CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Файл %1 не съществува.</translation>
+        <translation type="vanished">Файл %1 не съществува.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Файл %1 Не може да се отвори.</translation>
+        <translation type="vanished">Файл %1 Не може да се отвори.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Експортиране на настройката на цветовата карта</translation>
+        <translation type="vanished">Експортиране на настройката на цветовата карта</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Формуляр</translation>
+        <translation type="vanished">Формуляр</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Персонализиран</translation>
+        <translation type="vanished">Персонализиран</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Настройване...</translation>
+        <translation type="vanished">Настройване...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Минималната стойност е %1.</translation>
+        <translation type="vanished">Минималната стойност е %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Максималната стойност е %1.</translation>
+        <translation type="vanished">Максималната стойност е %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Стойност по-малка от %1 в не е позволено.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Стойност по-голяма от %1 не е позволено.</translation>
     </message>
 </context>
 <context>

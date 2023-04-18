@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>Usuń wierzchołek polilinii</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Ustawienie wyświetlania linii</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>Ustawienie wyświetlania linii</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>Użyj ustawienia okna przetwarzania wstępnego</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>Plik kształtu ESRI (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa kolorów</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>Szerokość linii:</translation>
     </message>
 </context>
 </TS>

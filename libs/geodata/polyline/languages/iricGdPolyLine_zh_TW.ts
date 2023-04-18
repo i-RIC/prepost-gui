@@ -77,6 +77,10 @@
         <source>Remove PolyLine Vertex</source>
         <translation>移除折線頂點</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>線路顯示設置</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
@@ -156,6 +160,24 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation>線路顯示設置</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation>預處理窗口的使用設置</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
@@ -164,6 +186,33 @@
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI 形狀文件 (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>按值著色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色圖</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行寬：</translation>
     </message>
 </context>
 </TS>

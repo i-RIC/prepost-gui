@@ -74,12 +74,12 @@
         <translation>检索：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://www.gsi.go.jp/sokuchikijun/jpc.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://www.gsi.go.jp/sokuchikijun/jpc.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about Japanese coordinate systems (EPSG:2443 - 2461)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation />
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="http://earth-info.nga.mil/GandG/coordsys/grids/universal_grid_system.html"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;Hint about UTM coordinate systems (EPSG:32601 - 32760 etc.)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation />
     </message>
     <message>
         <source>(Not Specified)</source>
@@ -562,19 +562,19 @@
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>添加顶点 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>删除顶点 (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑坐标 (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>反转中心线方向 (&amp;E)</translation>
     </message>
 </context>
 <context>
@@ -636,7 +636,7 @@ The low water channel region should be included in grid creation region, andRive
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
         <translation>加载文件夹%1中的网格创建者定义文件时出错；忽略此网格创建者。</translation>
     </message>
@@ -1877,7 +1877,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>距中心点的距离</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>“左岸”是当您转向下游方向时，您在左侧看到的岸。</translation>
     </message>
 </context>
@@ -2349,12 +2349,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>输入细化多边形内单元的最大面积。</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2403,12 +2403,12 @@ p, li { white-space: pre-wrap; }
         <translation>通过指定较小的值，可以生成精细的网格</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdNetcdf_zh_CN.ts -->
@@ -4633,10 +4633,25 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移动顶点</translation>
     </message>
     <message>
         <source>Set vertex</source>
+        <translation>设置顶点</translation>
+    </message>
+    <message>
+        <source>Point Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint::DisplaySettingWidget</name>
+    <message>
+        <source>Select image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4660,6 +4675,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point%1</source>
         <translation>观点 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPoint_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_zh_CN.ts -->
@@ -4952,7 +5029,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 颜色设置</translation>
+        <translation type="vanished">%1 颜色设置</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -4972,7 +5049,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>编辑颜色设置</translation>
+        <translation type="vanished">编辑颜色设置</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
@@ -4983,19 +5060,19 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData 颜色设置</translation>
+        <translation type="vanished">PolyData 颜色设置</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>按值着色</translation>
+        <translation type="vanished">按值着色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
 </context>
 <!-- iricGdPolygonGroup_zh_CN.ts -->
@@ -5555,6 +5632,10 @@ p, li { white-space: pre-wrap; }
         <source>Polygon Coordinates</source>
         <translation>多边形坐标</translation>
     </message>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
@@ -5684,6 +5765,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonProxy</name>
+    <message>
+        <source>Polygon Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shape file</source>
@@ -5700,6 +5799,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shapefile (*.shp)</source>
         <translation>ESRI 形状文件 (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygon_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">根据数值上色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_zh_CN.ts -->
@@ -6060,6 +6186,10 @@ p, li { white-space: pre-wrap; }
         <source>PolyLine Coordinates</source>
         <translation>折线坐标</translation>
     </message>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineColorSettingDialog</name>
@@ -6177,6 +6307,24 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataPolyLineProxy</name>
+    <message>
+        <source>Line Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Setting of Pre-Processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shape file</source>
@@ -6189,6 +6337,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI Shape file (*.shp)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLine_DisplaySettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">根据数值显示颜色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_zh_CN.ts -->
@@ -8285,11 +8460,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>图形窗口设置失败。 计算结果未正确加载。</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="vanished">满足以下条件时可以使用此功能:绘制二维结构化网格结果的图形； X轴为网格中的I方向。使用根据河流测量数据创建网格的算法创建网格</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>当满足以下条件时可以使用该函数：&lt;ul&gt;&lt;li&gt;绘制二维结构化网格结果图。&lt;/li&gt;&lt;li&gt;X轴为网格中的I方向。&lt;/li &gt;&lt;li&gt;使用“从横截面数据创建网格”算法创建网格&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -8384,7 +8559,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>错误</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>第一列的标题必须为“X”</translation>
     </message>
     <message>
@@ -8464,7 +8639,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>错误</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>第一列的标题必须为“X”</translation>
     </message>
     <message>
@@ -9497,102 +9672,102 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>自定义颜色地图</translation>
+        <translation type="vanished">自定义颜色地图</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>类型：</translation>
+        <translation type="vanished">类型：</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>双色</translation>
+        <translation type="vanished">双色</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>三色</translation>
+        <translation type="vanished">三色</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>任意</translation>
+        <translation type="vanished">任意</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>二/三色</translation>
+        <translation type="vanished">二/三色</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>最大值</translation>
+        <translation type="vanished">最大值</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>中间值</translation>
+        <translation type="vanished">中间值</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>值</translation>
+        <translation type="vanished">值</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>最小值</translation>
+        <translation type="vanished">最小值</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;删除</translation>
+        <translation type="vanished">&amp;删除</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>&amp;导入</translation>
+        <translation type="vanished">&amp;导入</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;导出</translation>
+        <translation type="vanished">&amp;导出</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>导入彩色地图设置</translation>
+        <translation type="vanished">导入彩色地图设置</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV 文件 (*.csv)</translation>
+        <translation type="vanished">CSV 文件 (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>文件%1不存在</translation>
+        <translation type="vanished">文件%1不存在</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>无法打开文件%1</translation>
+        <translation type="vanished">无法打开文件%1</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>导出颜色地图设置</translation>
+        <translation type="vanished">导出颜色地图设置</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>自定义</translation>
+        <translation type="vanished">自定义</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>设置...</translation>
+        <translation type="vanished">设置...</translation>
     </message>
 </context>
 <context>
@@ -9921,11 +10096,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>最小值是%1</translation>
+        <translation type="vanished">最小值是%1</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>最大值是%1</translation>
+        <translation type="vanished">最大值是%1</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10630,19 +10813,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>能见度</translation>
+        <translation type="vanished">能见度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>选择时</translation>
+        <translation type="vanished">选择时</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>总是</translation>
+        <translation type="vanished">总是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>绝不</translation>
+        <translation type="vanished">绝不</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10680,6 +10863,50 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Size and Position</source>
         <translation>大小和位置</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">方向：</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">垂直的</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">汽车</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10701,16 +10928,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>选择要导入的文件</translation>
+        <translation type="vanished">选择要导入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>色图设置 (*.cmsetting)</translation>
+        <translation type="vanished">色图设置 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
+        <translation type="vanished">加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -10736,6 +10963,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>透明的</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">标题</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">标签展示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">大小和位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">垂直的</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -10745,19 +11101,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>能见度</translation>
+        <translation type="vanished">能见度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>选择时</translation>
+        <translation type="vanished">选择时</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>总是</translation>
+        <translation type="vanished">总是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>绝不</translation>
+        <translation type="vanished">绝不</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10819,6 +11175,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>汽车</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -10843,11 +11227,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>预设：</translation>
+        <translation type="vanished">预设：</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>导入时忽略颜色条设置</translation>
+        <translation type="vanished">导入时忽略颜色条设置</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -10907,7 +11291,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>选择要导入的文件</translation>
+        <translation type="vanished">选择要导入的文件</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -10928,11 +11312,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
+        <translation type="vanished">加载时出错 %1 解析错误 %2 在 %3 ， 柱子 %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(请选择要申请的项目)</translation>
+        <translation type="vanished">(请选择要申请的项目)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -10970,6 +11354,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">切换到渐变模式时，值设置为每个部分的中间值。</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished">色图设置 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -10984,6 +11399,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>出口 (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">标题</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished">标签展示</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">背景</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished">大小和位置</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">位置</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11011,6 +11517,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>颜色数量：</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">启用</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">垂直的</translation>
     </message>
 </context>
 <context>
@@ -11364,6 +11905,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>颜色:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13658,19 +14203,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>彩条</translation>
+        <translation type="vanished">彩条</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>标题</translation>
+        <translation type="vanished">标题</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>标签</translation>
+        <translation type="vanished">标签</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>箭头长度图例</translation>
+        <translation type="vanished">箭头长度图例</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -13832,7 +14377,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>色图:</translation>
+        <translation type="vanished">色图:</translation>
     </message>
     <message>
         <source>Background Image</source>
@@ -15536,8 +16081,8 @@ Option -&gt; Preferences</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>在%1的列中，横截面&quot;%3&quot;的值&quot;%2&quot;无效。 该值将被忽略。</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>在%1的列中，横截面"%3"的值"%2"无效。 该值将被忽略。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -15770,22 +16315,22 @@ Option -&gt; Preferences</source>
     <name>ModifyCommandDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">对话</translation>
+        <translation>对话</translation>
     </message>
 </context>
 <context>
     <name>QFontEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑...</translation>
     </message>
 </context>
 <context>
@@ -20687,11 +21232,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>要打开“横截面”窗口，请仅选择一个网格节点。</translation>
+        <translation type="vanished">要打开“横截面”窗口，请仅选择一个网格节点。</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>要打开纵向横截面窗口，请仅选择一个网格节点。</translation>
+        <translation type="vanished">要打开纵向横截面窗口，请仅选择一个网格节点。</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -20934,6 +21479,413 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation>网格横截面 (%1): I = %2</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation>网格横截面窗口</translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation>查看设置工具栏</translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation>显示设置工具栏</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>环境</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation>自动调整</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>纵横比（V/H）：1 /</translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation>固定纵横比</translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation>修复区域</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>网格</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>规模</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左/右岸标记</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>纵横比</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>显示设定</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>控制器</translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>左岸边</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>右岸边</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>纵横比（V/H）：1 / %1</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation>制作时出错 %1.</translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation>指数</translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="vanished">距离（米）</translation>
+    </message>
+    <message>
+        <source>Distance(m) from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation>上游侧</translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation>下游侧</translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation>右边</translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation>左边</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation>导出 CSV 文件</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation>可见的</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>环境</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation>网格属性显示设置（ %1 )</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation>保存快照</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation>我</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation>杰</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation>单元格值</translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation>上游侧</translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation>下游侧</translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation>快照 (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation>CSV 导出 (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation>网格横截面窗口显示设置</translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation>背景网格</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>类型</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>线条</translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation>点</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>水平的</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>汽车</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>规模</translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation>分量表</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>垂直的</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation>秤</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>字体：</translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation>左/右岸标记</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation>纵横比</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation>导出设置</translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation>文件夹和前缀 (&amp; )</translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation>文件夹：</translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation>字首：</translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation>横截面</translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation>仅限当前</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>风俗</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>算我一个：</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>我最大：</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>跳过率：</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation>网格属性显示设置</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可见的</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本的</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>模式</translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation>海拔图</translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation>独立图表</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation>海拔图设置</translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation>线条颜色：</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>行宽：</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation>显示点数</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>磅值</translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation>显示指数</translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation>字体颜色：</translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation>字体：</translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation>跳过率：</translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation>独立图表设置</translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation>图表高度：</translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation>[像素]</translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation>标题字体：</translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation>轴颜色：</translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation>轴字体：</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>颜色映射设置</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;使用Colormap选项卡编辑颜色设置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation>预处理窗口的使用设置</translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation>显示标题</translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation>标题颜色</translation>
     </message>
 </context>
 <context>
@@ -21766,11 +22718,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation type="unfinished">rivmaker 2.0.3</translation>
+        <translation>rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="unfinished">发布日期：2021/4/28</translation>
+        <translation>发布日期：2021/4/28</translation>
     </message>
 </context>
 <context>
@@ -21927,15 +22879,15 @@ This algorithm can be used only for structured grids.</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation type="vanished">无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...</source>
+        <translation type="vanished">无效的横截面名称。 名称应该为 "X1", "X2", ...</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>横截面未定义</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
         <translation>横截面名称无效。名称应为“X1”、“X2”、...或“XS1”、“XS2”、...</translation>
     </message>
 </context>

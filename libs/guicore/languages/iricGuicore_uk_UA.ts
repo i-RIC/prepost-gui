@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимість</translation>
+        <translation type="vanished">Видимість</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>При виборі</translation>
+        <translation type="vanished">При виборі</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Завжди</translation>
+        <translation type="vanished">Завжди</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ніколи</translation>
+        <translation type="vanished">Ніколи</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Розмір і положення</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видно</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>напрямок:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальний</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина смуги</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Авто</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Вирівнювання</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Ліворуч</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>центр</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>правильно</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Виберіть файл для імпорту</translation>
+        <translation type="vanished">Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Налаштування кольорової карти (*.cmsetting)</translation>
+        <translation type="vanished">Налаштування кольорової карти (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
+        <translation type="vanished">Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Прозорий</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Перелічіть налаштування кольорової карти (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Перелічіть налаштування кольорової карти (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Сталася помилка під час імпорту налаштування з %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Громадський (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Приватний (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Імпорт налаштувань кольорової карти</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Виберіть зі стандартів</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Виберіть файл</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Атрибути для імпорту</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Напрямок</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Налаштування шрифту</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Дисплей етикетки</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Мітка</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Розмір і положення</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиція</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина смуги</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Вирівнювання</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Попередній перегляд</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Кольорова панель</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальний</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимість</translation>
+        <translation type="vanished">Видимість</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>При виборі</translation>
+        <translation type="vanished">При виборі</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Завжди</translation>
+        <translation type="vanished">Завжди</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ніколи</translation>
+        <translation type="vanished">Ніколи</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Авто</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видно</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина смуги</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Вирівнювання</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Ліворуч</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>центр</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>правильно</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Попередні налаштування:</translation>
+        <translation type="vanished">Попередні налаштування:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ігнорувати налаштування кольорової панелі під час імпорту</translation>
+        <translation type="vanished">Ігнорувати налаштування кольорової панелі під час імпорту</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Виберіть файл для імпорту</translation>
+        <translation type="vanished">Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
+        <translation type="vanished">Під час завантаження сталася помилка %1 Помилка аналізу %2 в %3, колонка %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Будь ласка, виберіть елемент для застосування)</translation>
+        <translation type="vanished">(Будь ласка, виберіть елемент для застосування)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Під час переходу в режим градації значення встановлюються на середнє значення кожного розділу.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Зворотні кольори (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Рівний поділ (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Налаштування кольорової карти (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Сталася помилка під час імпорту налаштування з %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Громадський (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Приватний (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Експорт (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Імпорт налаштувань кольорової карти</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Режим</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Виберіть зі стандартів</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Виберіть файл</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Атрибути для імпорту</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Напрямок</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Налаштування шрифту</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Дисплей етикетки</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Формат</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Кількість етикеток</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>колір</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Мітка</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Фон</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Розмір і положення</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиція</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Ширина смуги</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Вирівнювання</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Попередній перегляд</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Кількість кольорів:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Опції</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Значення десяткових знаків:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Шкала журналу:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Увімкнено</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Кольорова панель</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Горизонтальний</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Вертикальний</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Колір:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка. Для імені можна використовувати лише символи ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

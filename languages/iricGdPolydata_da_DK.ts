@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Farveindstilling</translation>
+        <translation type="vanished">%1 Farveindstilling</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Rediger farveindstilling</translation>
+        <translation type="vanished">Rediger farveindstilling</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData farveindstilling</translation>
+        <translation type="vanished">PolyData farveindstilling</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farve efter værdi</translation>
+        <translation type="vanished">Farve efter værdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Brugerdefineret farve</translation>
+        <translation type="vanished">Brugerdefineret farve</translation>
     </message>
 </context>
 </TS>

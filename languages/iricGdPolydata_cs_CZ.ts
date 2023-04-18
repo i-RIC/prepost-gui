@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Nastavení barev</translation>
+        <translation type="vanished">%1 Nastavení barev</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Upravit nastavení barev</translation>
+        <translation type="vanished">Upravit nastavení barev</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>Nastavení barev PolyData</translation>
+        <translation type="vanished">Nastavení barev PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva podle hodnoty</translation>
+        <translation type="vanished">Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
 </context>
 </TS>

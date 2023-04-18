@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Bara de culori</translation>
+        <translation type="vanished">Bara de culori</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titlu</translation>
+        <translation type="vanished">Titlu</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etichete</translation>
+        <translation type="vanished">Etichete</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Legenda lungimii săgeții</translation>
+        <translation type="vanished">Legenda lungimii săgeții</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Harta culorilor</translation>
+        <translation type="vanished">Harta culorilor</translation>
     </message>
     <message>
         <source>Background Image</source>

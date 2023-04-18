@@ -551,19 +551,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barevný pruh</translation>
+        <translation type="vanished">Barevný pruh</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titul</translation>
+        <translation type="vanished">Titul</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Štítky</translation>
+        <translation type="vanished">Štítky</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation>Legenda délky šipky</translation>
+        <translation type="vanished">Legenda délky šipky</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
@@ -725,7 +725,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color Map</source>
-        <translation>Barevná mapa</translation>
+        <translation type="vanished">Barevná mapa</translation>
     </message>
     <message>
         <source>Background Image</source>

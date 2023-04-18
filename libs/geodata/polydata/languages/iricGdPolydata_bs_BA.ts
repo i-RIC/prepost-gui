@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation>%1 Podešavanje boje</translation>
+        <translation type="vanished">%1 Podešavanje boje</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -43,26 +43,26 @@
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation>Uredite postavku boje</translation>
+        <translation type="vanished">Uredite postavku boje</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation>PolyData Color Setting</translation>
+        <translation type="vanished">PolyData Color Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Boja prema vrijednosti</translation>
+        <translation type="vanished">Boja prema vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Prilagođena boja</translation>
+        <translation type="vanished">Prilagođena boja</translation>
     </message>
 </context>
 </TS>

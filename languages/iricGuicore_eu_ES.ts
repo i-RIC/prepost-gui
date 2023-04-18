@@ -312,19 +312,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Ikusgarritasuna</translation>
+        <translation type="vanished">Ikusgarritasuna</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Hautatzen denean</translation>
+        <translation type="vanished">Hautatzen denean</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Beti</translation>
+        <translation type="vanished">Beti</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Inoiz ez</translation>
+        <translation type="vanished">Inoiz ez</translation>
     </message>
     <message>
         <source>Title</source>
@@ -362,6 +362,50 @@
         <source>Size and Position</source>
         <translation>Tamaina eta posizioa</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>Norabidea:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Bertikala</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barraren zabalera</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>Autoa</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lerrokatzea</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Ezkerra</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Zentroa</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Eskuin</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -383,16 +427,16 @@
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Hautatu inportatzeko fitxategia</translation>
+        <translation type="vanished">Hautatu inportatzeko fitxategia</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation>Kolore maparen ezarpena (*.cmsetting)</translation>
+        <translation type="vanished">Kolore maparen ezarpena (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
+        <translation type="vanished">Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -418,6 +462,135 @@ Parse error %2 at %3, column %4</source>
         <source>Transparent</source>
         <translation>Gardena</translation>
     </message>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Zenbaki kolore-maparen ezarpena (*.ecmsetting)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Enumerate colormap setting (*.ecmsetting)</source>
+        <translation>Zenbaki kolore-maparen ezarpena (*.ecmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errorea</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Errore bat gertatu da hemen ezarpena inportatzean %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publiko (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Pribatua (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Inportatu kolore-mapa ezarpena</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Era</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Aukeratu estandarren artean</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Hautatu fitxategia</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Arauak</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Inportatzeko atributuak</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Norabidea</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Letra-tipoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketa bistaratzea</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Aurrekariak</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaina eta posizioa</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posizioa</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaina</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barraren zabalera</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lerrokatzea</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aurrebista</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Kolore Barra</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Bertikala</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapLegendSettingEditWidget</name>
@@ -427,19 +600,19 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Ikusgarritasuna</translation>
+        <translation type="vanished">Ikusgarritasuna</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Hautatzen denean</translation>
+        <translation type="vanished">Hautatzen denean</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Beti</translation>
+        <translation type="vanished">Beti</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Inoiz ez</translation>
+        <translation type="vanished">Inoiz ez</translation>
     </message>
     <message>
         <source>Title</source>
@@ -501,6 +674,34 @@ Parse error %2 at %3, column %4</source>
         <source>Auto</source>
         <translation>Autoa</translation>
     </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barraren zabalera</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lerrokatzea</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>Ezkerra</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Zentroa</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>Eskuin</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>
@@ -529,11 +730,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Presets:</source>
-        <translation>Aurrez aurreko ezarpenak:</translation>
+        <translation type="vanished">Aurrez aurreko ezarpenak:</translation>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation>Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
+        <translation type="vanished">Ez ikusi kolore-barraren ezarpena inportatzerakoan</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -593,7 +794,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation>Hautatu inportatzeko fitxategia</translation>
+        <translation type="vanished">Hautatu inportatzeko fitxategia</translation>
     </message>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
@@ -614,11 +815,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation>Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
+        <translation type="vanished">Errore bat gertatu da kargatzean %1 Analisi-errorea %2 etan %3, zutabea %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation>(Mesedez, hautatu aplikatu beharreko elementua)</translation>
+        <translation type="vanished">(Mesedez, hautatu aplikatu beharreko elementua)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -656,6 +857,37 @@ Parse error %2 at %3, column %4</source>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
         <translation type="vanished">Graduazio modura aldatzean, balioak atal bakoitzaren erdiko balioan ezartzen dira.</translation>
     </message>
+    <message>
+        <source>&amp;Reverse colors</source>
+        <translation>Alderantzizko koloreak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Equal division</source>
+        <translation>Zatiketa berdina (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget::ImportDialog</name>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>Kolore maparen ezarpena (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errorea</translation>
+    </message>
+    <message>
+        <source>Error occured while importing setting from %1.</source>
+        <translation>Errore bat gertatu da hemen ezarpena inportatzean %1.</translation>
+    </message>
+    <message>
+        <source>Public (%1)</source>
+        <translation>Publiko (%1)</translation>
+    </message>
+    <message>
+        <source>Private (%1)</source>
+        <translation>Pribatua (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidgetWithImportExportButton</name>
@@ -670,6 +902,97 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Esportatu (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ImportDialog</name>
+    <message>
+        <source>Import Colormap Setting</source>
+        <translation>Inportatu kolore-mapa ezarpena</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Era</translation>
+    </message>
+    <message>
+        <source>Select from standards</source>
+        <translation>Aukeratu estandarren artean</translation>
+    </message>
+    <message>
+        <source>Select file</source>
+        <translation>Hautatu fitxategia</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Arauak</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>Attributes to Import</source>
+        <translation>Inportatzeko atributuak</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Norabidea</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Font Setting</source>
+        <translation>Letra-tipoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>Etiketa bistaratzea</translation>
+    </message>
+    <message>
+        <source>Format</source>
+        <translation>Formatua</translation>
+    </message>
+    <message>
+        <source>Number of labels</source>
+        <translation>Etiketa kopurua</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation>Aurrekariak</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>Tamaina eta posizioa</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Posizioa</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaina</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>Barraren zabalera</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>Lerrokatzea</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aurrebista</translation>
     </message>
 </context>
 <context>
@@ -697,6 +1020,41 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Number of colors:</source>
         <translation>Kolore kopurua:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Aukerak</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation>Balio hamartarrak:</translation>
+    </message>
+    <message>
+        <source>Log scale:</source>
+        <translation>Erregistro-eskala:</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>Gaituta</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Kolore Barra</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>Horizontala</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>Bertikala</translation>
     </message>
 </context>
 <context>
@@ -1050,6 +1408,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color:</source>
         <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>

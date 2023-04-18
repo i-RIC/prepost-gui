@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Individualizuotas spalvų žemėlapis</translation>
+        <translation type="vanished">Individualizuotas spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipas:</translation>
+        <translation type="vanished">Tipas:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dvi spalvos</translation>
+        <translation type="vanished">Dvi spalvos</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Trys Spalvos</translation>
+        <translation type="vanished">Trys Spalvos</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>Savavališkas</translation>
+        <translation type="vanished">Savavališkas</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dvi spalvos/ trys spalvos</translation>
+        <translation type="vanished">Dvi spalvos/ trys spalvos</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Maksimali vertė</translation>
+        <translation type="vanished">Maksimali vertė</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Vidutinė vertė</translation>
+        <translation type="vanished">Vidutinė vertė</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Vertė</translation>
+        <translation type="vanished">Vertė</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Minimali vertė</translation>
+        <translation type="vanished">Minimali vertė</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Importuoti (&amp;I)</translation>
+        <translation type="vanished">Importuoti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Eksportuoti (&amp;E)</translation>
+        <translation type="vanished">Eksportuoti (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Importuoti spalvų schemos nustatymą</translation>
+        <translation type="vanished">Importuoti spalvų schemos nustatymą</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>CSV failas (*.csv)</translation>
+        <translation type="vanished">CSV failas (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Failas %1 neegzistuoja.</translation>
+        <translation type="vanished">Failas %1 neegzistuoja.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Failas %1 nepavyko atidaryti.</translation>
+        <translation type="vanished">Failas %1 nepavyko atidaryti.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Eksportuoti spalvų schemos nustatymą</translation>
+        <translation type="vanished">Eksportuoti spalvų schemos nustatymą</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation type="vanished">Pasirinktinis</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Nustatoma...</translation>
+        <translation type="vanished">Nustatoma...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Minimali vertė yra %1.</translation>
+        <translation type="vanished">Minimali vertė yra %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Didžiausia vertė yra %1.</translation>
+        <translation type="vanished">Didžiausia vertė yra %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Vertė mažesnė nei %1 neleidžiama.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Valur didesnis nei %1 tai yra neleistina.</translation>
     </message>
 </context>
 <context>

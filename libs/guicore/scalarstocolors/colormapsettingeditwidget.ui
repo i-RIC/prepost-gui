@@ -186,7 +186,7 @@
               <item>
                <widget class="QPushButton" name="reverseButton">
                 <property name="text">
-                 <string>&amp;Reverse</string>
+                 <string>&amp;Reverse colors</string>
                 </property>
                </widget>
               </item>

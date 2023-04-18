@@ -36,102 +36,102 @@
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation>Peta Warna Kustom</translation>
+        <translation type="vanished">Peta Warna Kustom</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Jenis:</translation>
+        <translation type="vanished">Jenis:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation>Dua Warna</translation>
+        <translation type="vanished">Dua Warna</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation>Tiga Warna</translation>
+        <translation type="vanished">Tiga Warna</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation>sewenang-wenang</translation>
+        <translation type="vanished">sewenang-wenang</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation>Dua Warna/Tiga Warna</translation>
+        <translation type="vanished">Dua Warna/Tiga Warna</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation>Nilai maksimum</translation>
+        <translation type="vanished">Nilai maksimum</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation>Nilai Sedang</translation>
+        <translation type="vanished">Nilai Sedang</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation type="vanished">Nilai</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation>Nilai Minimum</translation>
+        <translation type="vanished">Nilai Minimum</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation>Impor (&amp;I)</translation>
+        <translation type="vanished">Impor (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>Ekspor (&amp;E)</translation>
+        <translation type="vanished">Ekspor (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation>Impor Pengaturan Peta Warna</translation>
+        <translation type="vanished">Impor Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation>berkas CSV (*.csv)</translation>
+        <translation type="vanished">berkas CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation>Mengajukan %1 tidak ada.</translation>
+        <translation type="vanished">Mengajukan %1 tidak ada.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Mengajukan %1 tidak bisa dibuka.</translation>
+        <translation type="vanished">Mengajukan %1 tidak bisa dibuka.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation>Ekspor Pengaturan Peta Warna</translation>
+        <translation type="vanished">Ekspor Pengaturan Peta Warna</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Kebiasaan</translation>
+        <translation type="vanished">Kebiasaan</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation>Menyetel...</translation>
+        <translation type="vanished">Menyetel...</translation>
     </message>
 </context>
 <context>
@@ -460,11 +460,19 @@
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation>Nilai minimalnya adalah %1.</translation>
+        <translation type="vanished">Nilai minimalnya adalah %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation>Nilai maksimum adalah %1.</translation>
+        <translation type="vanished">Nilai maksimum adalah %1.</translation>
+    </message>
+    <message>
+        <source>Value smaller than %1 in not allowed.</source>
+        <translation>Nilai lebih kecil dari %1 di tidak diperbolehkan.</translation>
+    </message>
+    <message>
+        <source>Valur larger than %1 is not allowed.</source>
+        <translation>Nilai lebih besar dari %1 tidak diizinkan.</translation>
     </message>
 </context>
 <context>
