@@ -42,6 +42,16 @@ ColorMapSettingContainer& Post2dWindowParticlesBaseScalarDataItem::colorMapSetti
 	return m_colorMapSetting;
 }
 
+void Post2dWindowParticlesBaseScalarDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post2dWindowParticlesBaseScalarDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
 void Post2dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
@@ -71,6 +81,11 @@ void Post2dWindowParticlesBaseScalarDataItem::addCustomMenuItems(QMenu* menu)
 {
 	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent()->parent());
 	menu->addAction(topItem->showAttributeBrowserAction());
+}
+
+bool Post2dWindowParticlesBaseScalarDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
 }
 
 Post2dWindowParticlesBaseScalarGroupDataItem* Post2dWindowParticlesBaseScalarDataItem::groupDataItem() const

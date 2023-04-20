@@ -58,7 +58,7 @@ PreProcessorGridDataItem* GridBirdEyeWindowDataModel::gridDataItem() const
 	return dynamic_cast<PreProcessorGridDataItem*> (parent());
 }
 
-void GridBirdEyeWindowDataModel::handleResize()
+void GridBirdEyeWindowDataModel::handleResize(QResizeEvent* event)
 {
-	m_gridDataItem->handleResize(m_graphicsView);
+	m_gridDataItem->handleResize(event, m_graphicsView);
 }

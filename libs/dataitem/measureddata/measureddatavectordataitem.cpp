@@ -39,17 +39,17 @@ void MeasuredDataVectorDataItem::informDeselection(VTKGraphicsView* v)
 	s->legend.imageSetting.controller()->handleDeselection(v);
 }
 
-void MeasuredDataVectorDataItem::handleResize(VTKGraphicsView* v)
+void MeasuredDataVectorDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = setting().arrowsSetting;
-	as.legend.imageSetting.controller()->handleResize(v);
+	as.legend.imageSetting.controller()->handleResize(event, v);
 
 	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
 
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(v);
+	s->legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void MeasuredDataVectorDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

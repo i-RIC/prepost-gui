@@ -247,9 +247,8 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* PreProcessorWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& PreProcessorWindow::getAdditionalToolBar() const
 {
-	if (m_dataModel == nullptr) {return nullptr;}
 	return m_dataModel->operationToolBar();
 }
 

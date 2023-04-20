@@ -67,6 +67,11 @@ void Post3dWindowParticlesBaseScalarDataItem::mouseReleaseEvent(QMouseEvent* eve
 	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
 }
 
+bool Post3dWindowParticlesBaseScalarDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
 Post3dWindowParticlesBaseScalarGroupDataItem* Post3dWindowParticlesBaseScalarDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post3dWindowParticlesBaseScalarGroupDataItem*> (parent());

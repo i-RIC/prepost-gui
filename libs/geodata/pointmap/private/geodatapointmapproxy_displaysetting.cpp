@@ -2,7 +2,7 @@
 
 GeoDataPointmapProxy::DisplaySetting::DisplaySetting() :
 	CompositeContainer {&usePreSetting, &displaySetting},
-	usePreSetting {"usePreSetting", true},
+	usePreSetting {"usePreSetting", false},
 	displaySetting {}
 {}
 

@@ -30,8 +30,8 @@ public:
 	//@{
 	const V& value() const;
 	void setValue(const V& val);
-    const V& defaultValue() const;
-    void setDefaultValue(const V& val);
+	const V& defaultValue() const;
+	void setDefaultValue(const V& val);
 	//@}
 
 protected:

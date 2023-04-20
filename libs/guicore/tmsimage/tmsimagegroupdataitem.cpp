@@ -333,7 +333,7 @@ void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)
 	impl->m_actor->SetPosition(pos);
 }
 
-void TmsImageGroupDataItem::doHandleResize(VTKGraphicsView*)
+void TmsImageGroupDataItem::doHandleResize(QResizeEvent*, VTKGraphicsView*)
 {
 	requestImage();
 }

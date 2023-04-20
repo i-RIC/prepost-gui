@@ -9,6 +9,8 @@ namespace Ui {
 class Post2dWindowNodeScalarGroupDataItem_PropertyDialog;
 }
 
+class ModifyCommandWidget;
+
 class Post2dWindowNodeScalarGroupDataItem::PropertyDialog : public QDialog
 {
 	Q_OBJECT
@@ -30,6 +32,7 @@ private:
 
 	bool m_applied;
 
+	ModifyCommandWidget* m_colorMapWidget;
 	Post2dWindowNodeScalarGroupDataItem* m_item;
 
 	Ui::Post2dWindowNodeScalarGroupDataItem_PropertyDialog *ui;

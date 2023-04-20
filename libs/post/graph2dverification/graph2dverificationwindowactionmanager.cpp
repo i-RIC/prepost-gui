@@ -2,16 +2,14 @@
 #include "graph2dverificationwindowactionmanager.h"
 #include "graph2dverificationwindowdatamodel.h"
 
-#include <guibase/irictoolbar.h>
-
 #include <QAction>
 #include <QIcon>
 #include <QMenu>
 
-Graph2dVerificationWindowActionManager::Graph2dVerificationWindowActionManager(Graph2dVerificationWindow* parent)
-	: QObject(parent)
+Graph2dVerificationWindowActionManager::Graph2dVerificationWindowActionManager(Graph2dVerificationWindow* parent) :
+	QObject(parent),
+	m_graphWindow {parent}
 {
-	m_graphWindow = parent;
 	init();
 }
 

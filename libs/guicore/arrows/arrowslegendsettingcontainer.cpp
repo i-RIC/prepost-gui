@@ -2,12 +2,12 @@
 #include "private/arrowslegendsettingcontainer_imagebuilder.h"
 
 ArrowsLegendSettingContainer::ArrowsLegendSettingContainer():
-	CompositeContainer({&visibilityMode,
+	CompositeContainer({&visible,
 										 &title, &titleFont,
 										 &lengthFormat, &lengthFont,
 										 &titleColor, &lengthColor, &backgroundColor, &backgroundOpacity,
 										 &imageSetting}),
-	visibilityMode {"visibilityMode", VisibilityMode::WhenSelected},
+	visible {"visible", true},
 	title {"title"},
 	titleFont {"titleFont", QFont("MS UI Gothic", 11)},
 	lengthFormat {"lengthFormat", "%5.2f"},
@@ -24,8 +24,8 @@ ArrowsLegendSettingContainer::ArrowsLegendSettingContainer():
 	is.setImageBuilder(m_imageBuilder);
 
 	is.position = ImageSettingContainer::Position::BottomRight;
-	is.horizontalMargin = 150;
-	is.verticalMargin = 10;
+	is.horizontalMargin = 0.25;
+	is.verticalMargin = 0.05;
 	is.width = 160;
 	is.height = 100;
 }

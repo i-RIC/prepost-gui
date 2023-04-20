@@ -49,8 +49,6 @@ public:
 	ModifyCommandDialog* createApplyColorMapSettingDialog(const std::string& name, QWidget *parent) override;
 	QUndoCommand* createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply = false);
 
-	void handleResize(VTKGraphicsView* v) override;
-
 	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
 
 public slots:
@@ -58,13 +56,13 @@ public slots:
 	void changeValueRange(const std::string& name);
 	void applyColorMapSetting(const std::string& name);
 
-protected:
+private:
 	void unregisterChild(GraphicsWindowDataItem* child) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
-private:
 	void updateNewGridActionStatus();
 	void setupColorMapSettingContainers();
 

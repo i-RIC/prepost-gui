@@ -43,8 +43,8 @@ ImageSettingContainer ImageSettingWidget::setting() const
 		ret.position = ImageSettingContainer::Position::BottomRight;
 	}
 
-	ret.horizontalMargin = ui->horizontalMarginSpinBox->value();
-	ret.verticalMargin = ui->verticalMarginSpinBox->value();
+	ret.horizontalMargin = ui->horizontalMarginSpinBox->value() / 100;
+	ret.verticalMargin = ui->verticalMarginSpinBox->value() / 100;
 	ret.width = ui->widthSpinBox->value();
 	ret.height = ui->heightSpinBox->value();
 
@@ -72,8 +72,8 @@ void ImageSettingWidget::setSetting(const ImageSettingContainer& setting)
 		ui->bottomRightRadioButton->setChecked(true);
 	}
 
-	ui->horizontalMarginSpinBox->setValue(setting.horizontalMargin);
-	ui->verticalMarginSpinBox->setValue(setting.verticalMargin);
+	ui->horizontalMarginSpinBox->setValue(setting.horizontalMargin * 100);
+	ui->verticalMarginSpinBox->setValue(setting.verticalMargin * 100);
 	ui->widthSpinBox->setValue(setting.width);
 	ui->heightSpinBox->setValue(setting.height);
 
@@ -82,11 +82,6 @@ void ImageSettingWidget::setSetting(const ImageSettingContainer& setting)
 
 void ImageSettingWidget::handlePositionChange()
 {
-	bool horizontalCenter =
-			ui->topRadioButton->isChecked() || ui->bottomRadioButton->isChecked();
-	bool verticalCenter =
-			ui->leftRadioButton->isChecked() || ui->rightRadioButton->isChecked();
-
 	bool left =
 			ui->topLeftRadioButton->isChecked() || ui->leftRadioButton->isChecked() || ui->bottomLeftRadioButton->isChecked();
 	bool right =

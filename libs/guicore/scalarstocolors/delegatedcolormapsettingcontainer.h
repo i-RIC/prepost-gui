@@ -8,6 +8,7 @@
 
 class ColorMapLegendSettingContainerI;
 class ColorMapSettingContainerI;
+class ImageSettingContainer;
 class VTKGraphicsView;
 
 class GUICOREDLL_EXPORT DelegatedColorMapSettingContainer : public CompositeContainer
@@ -23,7 +24,7 @@ public:
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;
 
-	void applyLegendImageSetting(VTKGraphicsView* view);
+	ImageSettingContainer* activeImageSetting() const;
 
 	BoolContainer usePreSetting;
 	ColorMapLegendSettingContainerI* preSetting;

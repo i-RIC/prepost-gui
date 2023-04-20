@@ -5,6 +5,8 @@
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.h"
+#include "private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.h"
+#include "private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -12,6 +14,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
@@ -19,7 +22,10 @@
 Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
 	m_actor {vtkActor::New()},
-	m_setting {}
+	m_setting {},
+	m_toolBarWidget {new ToolBarWidget(this, mainWindow())},
+	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())},
+	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -31,6 +37,8 @@ Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGro
 		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
 	}
+	m_toolBarWidget->hide();
+	m_colorMapToolBarWidget->hide();
 
 	setupActors();
 	updateCheckState();
@@ -42,6 +50,8 @@ Post2dWindowParticlesBaseScalarGroupDataItem::~Post2dWindowParticlesBaseScalarGr
 	r->RemoveActor(m_actor);
 
 	m_actor->Delete();
+
+	delete m_toolBarWidgetController;
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::update()
@@ -51,7 +61,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::update()
 		item->update();
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::showPropertyDialog()
@@ -88,7 +98,8 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& 
 	} else {
 		m_setting.mapping = ParticleDataSetting::Mapping::Value;
 	}
-	updateActorSettings();
+	updateActorSetting();
+	emit m_setting.updated();
 }
 
 ColorMapSettingContainer* Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
@@ -131,11 +142,11 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphics
 	zoneDataItem()->clearParticleResultAttributeBrowser();
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post2dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(v);
+		s->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 
@@ -173,6 +184,20 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::addCustomMenuItems(QMenu* men
 	menu->addAction(topItem->showAttributeBrowserAction());
 }
 
+bool Post2dWindowParticlesBaseScalarGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_toolBarWidget->setParent(toolBar);
+	m_toolBarWidget->show();
+	toolBar->addWidget(m_toolBarWidget);
+	toolBar->addSeparator();
+
+	m_colorMapToolBarWidget->setParent(toolBar);
+	m_colorMapToolBarWidget->show();
+	toolBar->addWidget(m_colorMapToolBarWidget);
+
+	return true;
+}
+
 void Post2dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
@@ -189,8 +214,9 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::setupActors()
 	update();
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
+void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 {
+	m_colorMapToolBarWidget->setDisabled(true);
 	m_actor->VisibilityOff();
 
 	m_actorCollection->RemoveAllItems();
@@ -216,6 +242,8 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
 			mapper->Delete();
 
 			cs->legend.imageSetting.apply(v);
+			m_colorMapToolBarWidget->setEnabled(true);
+			m_colorMapToolBarWidget->setSetting(cs);
 		}
 	}
 	m_actor->GetProperty()->SetPointSize(m_setting.particleSize * v->devicePixelRatioF());
@@ -249,7 +277,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 	}
 
 	updateCheckState();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

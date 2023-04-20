@@ -1,7 +1,7 @@
 #include "../post3dwindowcellcontourgroupdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem_setrangescommand.h"
 #include "post3dwindowcellcontourgroupdataitem_propertydialog.h"
-#include "post3dwindowcellcontourgroupdataitem_updateactorsettingscommand.h"
+#include "post3dwindowcellcontourgroupdataitem_updateactorsettingcommand.h"
 #include "ui_post3dwindowcellcontourgroupdataitem_propertydialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -38,7 +38,7 @@ QUndoCommand* Post3dWindowCellContourGroupDataItem::PropertyDialog::createModify
 	auto colorMapCommand = ui->colorMapWidget->createModifyCommand();
 	auto rangeCommand = new SetRangesCommand(ui->rangeListWidget->ranges(), m_item);
 
-	return new UpdateActorSettingsCommand(apply, colorMapCommand, rangeCommand, m_item);
+	return new UpdateActorSettingCommand(apply, colorMapCommand, rangeCommand, m_item);
 }
 
 void Post3dWindowCellContourGroupDataItem::PropertyDialog::accept()

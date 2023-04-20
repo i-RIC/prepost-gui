@@ -71,7 +71,7 @@ public:
 	const QIcon& icon() const;
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
 	void setSelectedRow(int row);

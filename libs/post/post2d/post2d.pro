@@ -132,10 +132,6 @@ win32 {
 
 # Input
 HEADERS += post2d_global.h \
-           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h \
-           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h \
            post2dgridregionselectdialog.h \
            post2dobjectbrowser.h \
            post2dobjectbrowserview.h \
@@ -201,17 +197,20 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowzonedataitem.h \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.h \
-           datamodel/private/post2dwindowcellscalargroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h \
            datamodel/private/post2dwindowgraphgroupdataitem_impl.h \
            datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.h \
            datamodel/private/post2dwindowgraphsettingdialog_impl.h \
            datamodel/private/post2dwindowgridshapedataitem_propertydialog.h \
            datamodel/private/post2dwindowgridshapedataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h \
+           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h \
+           datamodel/private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.h \
            datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.h \
            datamodel/private/post2dwindownodescalargroupdataitem_shapeexporter.h \
-           datamodel/private/post2dwindownodescalargroupdataitem_updateactorsettingscommand.h \
-           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.h \
@@ -219,7 +218,9 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.h \
-           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.h \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingcommand.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h \
            datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.h \
@@ -241,13 +242,10 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.ui \
          datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog_additionalwidgets.ui \
          datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.ui \
          datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.ui
 SOURCES += post2dgridregionselectdialog.cpp \
-           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.cpp \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.cpp \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.cpp \
-           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
            post2dpropertybrowser.cpp \
@@ -310,15 +308,18 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowzonedataitem.cpp \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.cpp \
-           datamodel/private/post2dwindowcellscalargroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.cpp \
            datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_propertydialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.cpp \
            datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.cpp \
            datamodel/private/post2dwindownodescalargroupdataitem_shapeexporter.cpp \
-           datamodel/private/post2dwindownodescalargroupdataitem_updateactorsettingscommand.cpp \
-           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.cpp \
@@ -326,7 +327,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.cpp \
-           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.cpp \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.cpp \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.cpp \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.cpp \
            datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.cpp \

@@ -339,7 +339,7 @@ void PostStringResultDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 	pushRenderCommand(new SetSettingCommand(dialog->stringResult(), dialog->displaySetting(), this), this);
 }
 
-void PostStringResultDataItem::doHandleResize(VTKGraphicsView*)
+void PostStringResultDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView*)
 {
 	update();
 }

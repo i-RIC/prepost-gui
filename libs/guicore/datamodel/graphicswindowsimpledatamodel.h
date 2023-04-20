@@ -6,6 +6,7 @@
 #include "../project/projectdataitem.h"
 
 class QMainWindow;
+class QResizeEvent;
 class VTKGraphicsView;
 
 class GUICOREDLL_EXPORT GraphicsWindowSimpleDataModel : public ProjectDataItem
@@ -20,7 +21,7 @@ public:
 	QMainWindow* mainWindow() const;
 
 	virtual void viewOperationEndedGlobal();
-	virtual void handleResize();
+	virtual void handleResize(QResizeEvent* event);
 
 protected:
 	VTKGraphicsView* m_graphicsView;

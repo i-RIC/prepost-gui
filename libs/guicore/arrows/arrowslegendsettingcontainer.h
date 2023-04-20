@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 #include "../image/imagesettingcontainer.h"
 
+#include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/doublecontainer.h>
@@ -17,12 +18,6 @@ class ArrowsSettingContainer;
 class GUICOREDLL_EXPORT ArrowsLegendSettingContainer : public CompositeContainer
 {
 public:
-	enum class VisibilityMode {
-		Always,
-		WhenSelected,
-		Never,
-	};
-
 	ArrowsLegendSettingContainer();
 	ArrowsLegendSettingContainer(const ArrowsLegendSettingContainer& c);
 	~ArrowsLegendSettingContainer();
@@ -32,7 +27,7 @@ public:
 	ArrowsLegendSettingContainer& operator=(const ArrowsLegendSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	EnumContainerT<VisibilityMode> visibilityMode;
+	BoolContainer visible;
 
 	StringContainer title;
 	QFontContainer titleFont;

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -19,6 +21,17 @@
     <message>
         <source>Warning</source>
         <translation>Peringatan</translation>
+    </message>
+</context>
+<context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -522,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Tentukan format angka dalam format printf. Sebagai contoh: " %5.2f" untuk 3,141592 --&gt; 3,14" %4.2e" untuk 12300 --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Tentukan format angka dalam format printf. Sebagai contoh: &quot; %5.2f&quot; untuk 3,141592 --&gt; 3,14&quot; %4.2e&quot; untuk 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -697,6 +710,10 @@
     <message>
         <source>Transparent</source>
         <translation>Transparan</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

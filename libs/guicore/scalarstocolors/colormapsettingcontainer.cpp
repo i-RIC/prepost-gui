@@ -87,7 +87,7 @@ ColorMapSettingContainer::ColorMapSettingContainer() :
 	legend {}
 {
 	legend.setColorMapSetting(this);
-	connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapSettingContainer::updated);
+	QObject::connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapSettingContainerI::updated);
 
 	transitionMode = TransitionMode::Continuous;
 	valueMode = ValueMode::Relative;
@@ -137,7 +137,7 @@ void ColorMapSettingContainer::load(const QDomNode& node)
 		pair.load(itemNode);
 		colors.push_back(pair);
 	}
-	emit updated();
+	emit ColorMapSettingContainerI::updated();
 }
 
 void ColorMapSettingContainer::save(QXmlStreamWriter& writer) const
@@ -174,7 +174,7 @@ void ColorMapSettingContainer::copyValue(const XmlAttributeContainer& c)
 	autoMaxValue = c2.autoMaxValue;
 	valueCaption = c2.valueCaption;
 
-	emit updated();
+	emit ColorMapSettingContainerI::updated();
 }
 
 bool ColorMapSettingContainer::importData(const QString& fileName)
@@ -704,6 +704,7 @@ std::vector<ColorMapSettingValueColorPairContainer> ColorMapSettingContainer::ge
 		ColorMapSettingValueColorPairContainer pair;
 		pair.value = min + scale * origPair.value;
 		pair.color = origPair.color;
+		pair.transparent = origPair.transparent;
 		ret.push_back(pair);
 	}
 

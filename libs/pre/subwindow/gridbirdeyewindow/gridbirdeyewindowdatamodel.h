@@ -29,7 +29,7 @@ public:
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 	PreProcessorGridDataItem* gridDataItem() const;
 
-	void handleResize() override;
+	void handleResize(QResizeEvent* event) override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode&) override;

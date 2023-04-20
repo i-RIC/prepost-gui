@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>707</width>
-    <height>523</height>
+    <width>850</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="basicTab">
       <attribute name="title">
@@ -25,7 +25,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QSplitter" name="splitter">
+        <widget class="QSplitter" name="basicSplitter">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -49,44 +49,13 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="layoutWidget_2">
-          <layout class="QVBoxLayout" name="verticalLayout_7">
+         <widget class="QGroupBox" name="legendTextGroupBox">
+          <property name="title">
+           <string>Length Legend</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="QGroupBox" name="legendTextGroupBox">
-             <property name="title">
-              <string>Length Legend</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="ArrowsLegendSettingEditWidget" name="legendWidget" native="true"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
+            <widget class="ArrowsLegendSettingEditWidget" name="legendWidget" native="true"/>
            </item>
           </layout>
          </widget>
@@ -100,7 +69,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,0">
        <item>
-        <widget class="QSplitter" name="splitter_2">
+        <widget class="QSplitter" name="facesSplitter">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -112,7 +81,7 @@
            </sizepolicy>
           </property>
          </widget>
-         <widget class="QWidget" name="layoutWidget">
+         <widget class="QWidget" name="layoutWidget2">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -258,8 +227,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>257</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -274,8 +243,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>325</x>
+     <y>513</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

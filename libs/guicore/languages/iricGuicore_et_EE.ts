@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -42,11 +44,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspordi (&amp;E)...</translation>
+        <translation type="vanished">Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Värvikaart</translation>
     </message>
 </context>
 <context>
@@ -64,19 +74,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Nähtavus</translation>
+        <translation type="vanished">Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kui valitud</translation>
+        <translation type="vanished">Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alati</translation>
+        <translation type="vanished">Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mitte kunagi</translation>
+        <translation type="vanished">Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +127,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Suurus ja asend</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Nähtav</translation>
     </message>
 </context>
 <context>
@@ -166,7 +180,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +192,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Värvikaart</translation>
+        <translation type="vanished">Värvikaart</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Vorm</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1410,8 +1439,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Värv:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus. Nime jaoks saate kasutada ainult ASCII-märke.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus. Nime jaoks saate kasutada ainult ASCII-märke.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1474,6 +1503,14 @@ Parse error %2 at %3, column %4</source>
         <source>Distance from bottom</source>
         <translation>Kaugus põhjast</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">px</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -1509,12 +1546,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitsioonisõlme ei salvestata</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Vale väärtustüüp "%1"on seatud.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Vale väärtustüüp &quot;%1&quot;on seatud.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Vale seisunditüüp "%1"on seatud.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Vale seisunditüüp &quot;%1&quot;on seatud.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1785,8 +1822,8 @@ Do you really want to import this file?</source>
         <translation>Fail %1 värskendatakse pärast arvutusseisundisse importimist %2. Kas soovite värskendatud faili importida?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega "Ctrl + C" ja "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1915,8 +1952,8 @@ Do you really want to import this file?</source>
         <translation>Faili avamisel ilmnes viga.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Esimesed kaks veergu peavad olema "X" ja "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Esimesed kaks veergu peavad olema &quot;X&quot; ja &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2077,8 +2114,8 @@ Do you really want to import this file?</source>
         <translation>Muutuja määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2156,8 +2193,8 @@ Do you really want to import this file?</source>
         <translation>Alla (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2510,8 +2547,8 @@ Do you really want to import this file?</source>
         <translation>Väljundi määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2765,8 +2802,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Tööruum "%1"on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Tööruum &quot;%1&quot;on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3060,19 +3097,19 @@ Do you really want to import this file?</source>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation>Google'i kaart (maantee)</translation>
+        <translation>Google&apos;i kaart (maantee)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation>Google'i kaart (satelliit)</translation>
+        <translation>Google&apos;i kaart (satelliit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation>Google'i kaart (hübriid)</translation>
+        <translation>Google&apos;i kaart (hübriid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation>Google'i kaart (maastik)</translation>
+        <translation>Google&apos;i kaart (maastik)</translation>
     </message>
     <message>
         <source>Open Street Map</source>

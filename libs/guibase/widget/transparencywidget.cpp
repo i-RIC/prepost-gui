@@ -8,6 +8,7 @@ TransparencyWidget::TransparencyWidget(QWidget* parent) :
 {
 	ui->setupUi(this);
 	connect(ui->checkBox, SIGNAL(toggled(bool)), this, SLOT(handleCheck(bool)));
+	connect(ui->horizontalSlider, &SliderWithValue::valueChanged, this, &TransparencyWidget::updated);
 }
 
 TransparencyWidget::~TransparencyWidget()

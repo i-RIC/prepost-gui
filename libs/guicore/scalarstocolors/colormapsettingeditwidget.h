@@ -53,7 +53,6 @@ private:
 	void applySettingOtherThanLegend();
 	void updateLegendNumberOfLabels();
 	void fixData();
-	void setupColorPatternSelectComboBox();
 	void updateSwitchButtonText();
 	void switchTransitionModeToContinuous();
 	void switchTransitionModeToDiscrete();

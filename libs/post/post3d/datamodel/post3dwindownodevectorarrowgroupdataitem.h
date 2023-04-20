@@ -10,6 +10,7 @@
 #include <set>
 #include <unordered_map>
 
+class BoolContainerWidget;
 class ColorMapSettingContainer;
 class Post3dWindowNodeVectorArrowTopDataItem;
 class PostZoneDataContainer;
@@ -37,7 +38,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void doHandleResize(VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 public slots:
 	void showPropertyDialog() override;
@@ -45,9 +46,10 @@ public slots:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	QDialog* propertyDialog(QWidget* p) override;
 
-	void updateActorSettings();
+	void updateActorSetting() override;
 	Post3dWindowNodeVectorArrowTopDataItem* topDataItem() const;
 	std::set<ColorMapSettingContainer*> activeColorMaps() const;
 
@@ -58,9 +60,11 @@ private:
 	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
 	std::vector<vtkActor2D*> m_colorMapActors;
 
+	BoolContainerWidget* m_lengthLegendVisibilityWidget;
+
 	class PropertyDialog;
 	class SetFaceSettingsCommand;
-	class UpdateActorSettingsCommand;
+	class UpdateActorSettingCommand;
 
 	friend class Post3dWindowNodeVectorArrowDataItem;
 };

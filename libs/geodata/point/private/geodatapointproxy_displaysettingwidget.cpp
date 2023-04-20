@@ -17,6 +17,7 @@ GeoDataPointProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPointProxy*
 	ui(new Ui::GeoDataPointProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
 
 	if (proxy->geoData()->gridAttribute()->isReferenceInformation()) {
 		ui->displaySettingWidget->setIsReferenceInformation(true);

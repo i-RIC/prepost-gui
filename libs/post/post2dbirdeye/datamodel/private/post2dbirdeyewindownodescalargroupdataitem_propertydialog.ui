@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>673</width>
-    <height>527</height>
+    <width>950</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -217,12 +217,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ColorEditWidget</class>
-   <extends>QLabel</extends>
-   <header>guibase/widget/coloreditwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>TransparencyWidget</class>
    <extends>QWidget</extends>
    <header>guibase/widget/transparencywidget.h</header>
@@ -238,6 +232,12 @@
    <class>Region2dSettingEditWidget</class>
    <extends>QWidget</extends>
    <header>guicore/region/region2dsettingeditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ColorEditWidget</class>
+   <extends>QLabel</extends>
+   <header>guibase/widget/coloreditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

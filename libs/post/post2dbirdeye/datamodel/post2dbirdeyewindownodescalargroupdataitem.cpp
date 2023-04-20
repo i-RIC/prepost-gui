@@ -230,11 +230,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* 
 	}
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(VTKGraphicsView* v)
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleResize(v);
+		cs->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 

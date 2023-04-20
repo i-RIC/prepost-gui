@@ -20,6 +20,7 @@ class QKeyEvent;
 class QMainWindow;
 class QMenu;
 class QMouseEvent;
+class QResizeEvent;
 class QStandardItem;
 class QToolBar;
 class QTreeView;
@@ -48,6 +49,8 @@ public:
 
 	bool isEnabled() const;
 	void setEnabled(bool enabled);
+
+	bool isChecked() const;
 	virtual bool isAncientChecked() const;
 
 	QMainWindow* mainWindow() const;
@@ -75,7 +78,7 @@ public:
 	virtual void informDeselection(VTKGraphicsView* v);
 	virtual void viewOperationEnded(VTKGraphicsView* v);
 	virtual void viewOperationEndedGlobal(VTKGraphicsView* v);
-	virtual void handleResize(VTKGraphicsView* v);
+	virtual void handleResize(QResizeEvent* event, VTKGraphicsView* v);
 	virtual void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	virtual void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
 	virtual void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -121,6 +124,7 @@ public:
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
+	void pushUpdateActorSettingCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem = false);
 
 public slots:
 	virtual void showPropertyDialog();
@@ -137,13 +141,14 @@ protected:
 	virtual void unregisterChild(GraphicsWindowDataItem* child);
 	/// Initialize itself
 	virtual void init();
+	virtual void updateActorSetting();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
 	virtual void innerUpdate2Ds();
 	virtual void innerUpdateZScale(double scale);
 	virtual bool myHasTransparentPart() const;
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
-	virtual void doHandleResize(VTKGraphicsView* v);
+	virtual void doHandleResize(QResizeEvent* event, VTKGraphicsView* v);
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);
@@ -182,6 +187,7 @@ private:
 	class RenderCommand;
 	class RenderRedoOnlyCommand;
 	class StandardItemModifyCommand;
+	class UpdateActorSettingCommand;
 };
 
 #endif // GRAPHICSWINDOWDATAITEM_H

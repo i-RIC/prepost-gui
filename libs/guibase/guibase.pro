@@ -161,6 +161,7 @@ HEADERS += colortool.h \
            vtktool/vtkstreamtracerutil.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
+           widget/boolcontainerwidget.h \
            widget/centeredcheckbox.h \
            widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
@@ -175,6 +176,7 @@ HEADERS += colortool.h \
            widget/itemmultiselectingdialog.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
+           widget/opacitycontainerwidget.h \
            widget/qdoublespinboxwithfocusout.h \
            widget/realnumberdisplaylabel.h \
            widget/realnumbereditwidget.h \
@@ -213,6 +215,7 @@ FORMS += scalarbardialog.ui \
          coordinates/coordinateseditdialog.ui \
          gridshape/gridshapesettingeditwidget.ui \
          timeformat/timeformateditwidget.ui \
+         widget/boolcontainerwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
          widget/dirnameeditwidget.ui \
@@ -306,6 +309,7 @@ SOURCES += colortool.cpp \
            vtktool/vtkstreamtracerutil.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
+           widget/boolcontainerwidget.cpp \
            widget/centeredcheckbox.cpp \
            widget/cgnszoneselectdialog.cpp \
            widget/coloreditwidget.cpp \
@@ -320,6 +324,7 @@ SOURCES += colortool.cpp \
            widget/itemmultiselectingdialog.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/opacitycontainerwidget.cpp \
            widget/qdoublespinboxwithfocusout.cpp \
            widget/realnumberdisplaylabel.cpp \
            widget/realnumbereditwidget.cpp \

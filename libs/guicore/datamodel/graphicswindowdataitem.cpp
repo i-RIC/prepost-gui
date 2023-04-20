@@ -10,6 +10,7 @@
 #include "private/graphicswindowdataitem_rendercommand.h"
 #include "private/graphicswindowdataitem_renderredoonlycommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
+#include "private/graphicswindowdataitem_updateactorsettingcommand.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/iricundostack.h>
@@ -298,6 +299,9 @@ void GraphicsWindowDataItem::updateItemMap()
 	dynamic_cast<GraphicsWindowDataItem*>(parent())->updateItemMap();
 }
 
+void GraphicsWindowDataItem::updateActorSetting()
+{}
+
 void GraphicsWindowDataItem::updateVisibility()
 {
 	bool ancientVisible = isAncientChecked();
@@ -374,15 +378,20 @@ QMainWindow* GraphicsWindowDataItem::mainWindow() const
 	return dataModel()->mainWindow();
 }
 
+bool GraphicsWindowDataItem::isChecked() const
+{
+	if (m_standardItem == nullptr) {return true;}
+
+	return (m_standardItem->isCheckable() && m_standardItem->checkState() == Qt::Checked);
+}
+
 bool GraphicsWindowDataItem::isAncientChecked() const
 {
 	auto parent2 = dynamic_cast<GraphicsWindowDataItem*>(parent());
 	if (parent2 == nullptr) {return true;}
-	auto i = parent2->m_standardItem;
-	if (i == nullptr) {return true;}
-	if (i->isCheckable() && i->checkState() == Qt::Unchecked) {
-		return false;
-	}
+
+	if (! parent2->isChecked()) {return false;}
+
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->isAncientChecked();
 }
 
@@ -610,11 +619,11 @@ void GraphicsWindowDataItem::viewOperationEndedGlobal(VTKGraphicsView* v)
 	}
 }
 
-void GraphicsWindowDataItem::handleResize(VTKGraphicsView* v)
+void GraphicsWindowDataItem::handleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	doHandleResize(v);
+	doHandleResize(event, v);
 	for (auto child : m_childItems) {
-		child->handleResize(v);
+		child->handleResize(event, v);
 	}
 }
 
@@ -681,7 +690,7 @@ bool GraphicsWindowDataItem::myHasTransparentPart() const
 void GraphicsWindowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* )
 {}
 
-void GraphicsWindowDataItem::doHandleResize(VTKGraphicsView*)
+void GraphicsWindowDataItem::doHandleResize(QResizeEvent*, VTKGraphicsView*)
 {}
 
 void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)
@@ -711,6 +720,12 @@ void GraphicsWindowDataItem::pushRenderRedoOnlyCommand(QUndoCommand* com, Graphi
 	} else {
 		pushCommand(com2);
 	}
+}
+
+void GraphicsWindowDataItem::pushUpdateActorSettingCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem)
+{
+	QUndoCommand* com2 = new UpdateActorSettingCommand(com, this);
+	pushRenderCommand(com2, item, editItem);
 }
 
 void GraphicsWindowDataItem::showPropertyDialogModal()

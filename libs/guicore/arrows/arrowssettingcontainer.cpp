@@ -65,6 +65,13 @@ XmlAttributeContainer& ArrowsSettingContainer::operator=(const XmlAttributeConta
 	return operator=(dynamic_cast<const ArrowsSettingContainer&> (c));
 }
 
+void ArrowsSettingContainer::copyValue(const XmlAttributeContainer& c)
+{
+	CompositeContainer::copyValue(c);
+
+	emit updated();
+}
+
 double ArrowsSettingContainer::scaleFactor(double stdDistance) const
 {
 	double a = 1.0 / stdDistance;

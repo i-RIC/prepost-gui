@@ -5,6 +5,8 @@
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 #include "private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.h"
+#include "private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidget.h"
+#include "private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -12,13 +14,17 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
 Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
 	m_actor {vtkActor::New()},
-	m_setting {}
+	m_setting {},
+	m_toolBarWidget {new ToolBarWidget(this, mainWindow())},
+	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())},
+	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -30,6 +36,8 @@ Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGro
 		auto item = new Post3dWindowParticlesBaseScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
 	}
+	m_toolBarWidget->hide();
+	m_colorMapToolBarWidget->hide();
 
 	setupActors();
 	updateCheckState();
@@ -50,7 +58,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::update()
 		item->update();
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::showPropertyDialog()
@@ -77,7 +85,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& 
 	} else {
 		m_setting.mapping = ParticleDataSetting::Mapping::Value;
 	}
-	updateActorSettings();
+	updateActorSetting();
 }
 
 ColorMapSettingContainer* Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
@@ -116,11 +124,11 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphics
 	}
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post3dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(v);
+		s->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 
@@ -149,6 +157,20 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent
 	}
 }
 
+bool Post3dWindowParticlesBaseScalarGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_toolBarWidget->setParent(toolBar);
+	m_toolBarWidget->show();
+	toolBar->addWidget(m_toolBarWidget);
+	toolBar->addSeparator();
+
+	m_colorMapToolBarWidget->setParent(toolBar);
+	m_colorMapToolBarWidget->show();
+	toolBar->addWidget(m_colorMapToolBarWidget);
+
+	return true;
+}
+
 void Post3dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
@@ -165,8 +187,9 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::setupActors()
 	update();
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
+void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 {
+	m_colorMapToolBarWidget->setDisabled(true);
 	m_actor->VisibilityOff();
 
 	m_actorCollection->RemoveAllItems();
@@ -192,12 +215,15 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
 			mapper->Delete();
 
 			cs->legend.imageSetting.apply(v);
+			m_colorMapToolBarWidget->setEnabled(true);
+			m_colorMapToolBarWidget->setSetting(cs);
 		}
 	}
 	m_actor->GetProperty()->SetPointSize(m_setting.particleSize * v->devicePixelRatioF());
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
 
+	updateCheckState();
 	updateVisibilityWithoutRendering();
 }
 
@@ -229,7 +255,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 	}
 
 	updateCheckState();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -294,5 +320,9 @@ vtkPolyData* Post3dWindowParticlesBaseScalarGroupDataItem::particleData() const
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::updateCheckState()
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
+	if (m_setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_childItems, true);
+	} else if (m_setting.mapping == ParticleDataSetting::Mapping::Value) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
+	}
 }

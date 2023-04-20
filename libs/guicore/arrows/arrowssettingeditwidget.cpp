@@ -92,6 +92,8 @@ void ArrowsSettingEditWidget::setSetting(ArrowsSettingContainer* setting)
 	if (targetStr == "") {
 		ui->legendWidget->setTitle(ui->valueComboBox->currentText());
 	}
+
+	connect(&m_setting->legend.imageSetting, &ImageSettingContainer::updated, this, &ArrowsSettingEditWidget::updateImageSetting);
 }
 
 QUndoCommand* ArrowsSettingEditWidget::createModifyCommand() const
@@ -105,4 +107,9 @@ QUndoCommand* ArrowsSettingEditWidget::createModifyCommand() const
 void ArrowsSettingEditWidget::handleTargetChange(const QString& value)
 {
 	ui->legendWidget->setTitle(value);
+}
+
+void ArrowsSettingEditWidget::updateImageSetting()
+{
+	ui->legendWidget->setImageSetting(m_setting->legend.imageSetting);
 }

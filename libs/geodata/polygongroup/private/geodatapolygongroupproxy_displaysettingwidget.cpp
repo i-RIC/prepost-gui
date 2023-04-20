@@ -20,6 +20,7 @@ GeoDataPolygonGroupProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPoly
 	ui(new Ui::GeoDataPolygonGroupProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
 
 	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	if (proxy->geoData()->gridAttribute()->isReferenceInformation()) {

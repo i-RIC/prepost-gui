@@ -8,6 +8,7 @@
 #include "private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -15,7 +16,10 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <misc/iricundostack.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 
 #include <vtkTransform.h>
 #include <vtkTransformFilter.h>
@@ -25,14 +29,14 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},
 	m_transformFilter {vtkTransformFilter::New()},
-	m_zScale {1}
+	m_zScale {1},
+	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	auto cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 
-	auto gtItem = gridTypeDataItem();
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->GetPointData())) {
 		auto item = new Post3dWindowParticlesBaseVectorDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
@@ -40,7 +44,6 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
-	m_setting.arrowsSetting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
 
 	bool first = true;
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
@@ -49,6 +52,23 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 		}
 		first = false;
 	}
+
+	m_arrowsToolBarWidget->hide();
+	m_arrowsToolBarWidget->setColorMapSettings(topDataItem()->scalarGroupDataItem()->colorMapSettings());
+	m_arrowsToolBarWidget->setSetting(&m_setting.arrowsSetting);
+
+	connect(m_arrowsToolBarWidget, &ArrowsSettingToolBarWidget::updated, [=]() {
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = m_arrowsToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &m_setting.arrowsSetting));
+
+		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+
+			auto cm = topDataItem()->scalarGroupDataItem()->colorMapSettings().at(iRIC::toStr(newSetting.colorTarget));
+			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		pushUpdateActorSettingCommand(com, this);
+	});
 
 	setupActors();
 	updateCheckState();
@@ -76,12 +96,14 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::setTarget(const std::string& 
 	m_setting.arrowsSetting.target = target.c_str();
 	m_setting.arrowsSetting.legend.title = target.c_str();
 
-	updateActorSettings();
+	updateActorSetting();
+
+	emit m_setting.arrowsSetting.updated();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -106,7 +128,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(con
 {
 	m_setting.load(node);
 	updateCheckState();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -116,7 +138,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlS
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::innerUpdate2Ds()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::innerUpdateZScale(double zscale)
@@ -127,7 +149,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::innerUpdateZScale(double zsca
 	t->Scale(1, 1, zscale);
 	m_transformFilter->SetTransform(t);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsView* v)
@@ -152,14 +174,14 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphics
 	}
 }
 
-void Post3dWindowParticlesBaseVectorGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post3dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleResize(v);
+	as.legend.imageSetting.controller()->handleResize(event, v);
 
 	auto cs = activeSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleResize(v);
+		cs->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 
@@ -214,6 +236,16 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
+bool Post3dWindowParticlesBaseVectorGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_arrowsToolBarWidget->setParent(toolBar);
+	m_arrowsToolBarWidget->show();
+
+	toolBar->addWidget(m_arrowsToolBarWidget);
+
+	return true;
+}
+
 void Post3dWindowParticlesBaseVectorGroupDataItem::setupActors()
 {
 	auto r = renderer();
@@ -229,7 +261,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::updateCheckState()
 	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.arrowsSetting.target, m_childItems, true);
 }
 
-void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSettings()
+void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_legendActor->VisibilityOff();

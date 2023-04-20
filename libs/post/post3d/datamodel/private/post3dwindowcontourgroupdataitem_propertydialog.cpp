@@ -1,7 +1,7 @@
 #include "../post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowcontourgroupdataitem_setfacescommand.h"
 #include "post3dwindowcontourgroupdataitem_propertydialog.h"
-#include "post3dwindowcontourgroupdataitem_updateactorsettingscommand.h"
+#include "post3dwindowcontourgroupdataitem_updateactorsettingcommand.h"
 #include "ui_post3dwindowcontourgroupdataitem_propertydialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -38,7 +38,7 @@ QUndoCommand* Post3dWindowContourGroupDataItem::PropertyDialog::createModifyComm
 	auto colorMapCommand = ui->colorMapWidget->createModifyCommand();
 	auto faceCommand = new SetFacesCommand(ui->faceListWidget->faces(), m_item);
 
-	return new UpdateActorSettingsCommand(apply, colorMapCommand, faceCommand, m_item);
+	return new UpdateActorSettingCommand(apply, colorMapCommand, faceCommand, m_item);
 }
 
 void Post3dWindowContourGroupDataItem::PropertyDialog::accept()

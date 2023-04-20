@@ -1,9 +1,9 @@
 #ifndef PREPROCESSORGRIDTYPEDATAITEM_TOOLBARWIDGETCONTROLLER_H
 #define PREPROCESSORGRIDTYPEDATAITEM_TOOLBARWIDGETCONTROLLER_H
 
-#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
-
 #include "../preprocessorgridtypedataitem.h"
+
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 
 class PreProcessorGridTypeDataItem::ToolBarWidgetController : public ColorMapSettingToolBarWidgetController
 {
@@ -13,7 +13,7 @@ public:
 	ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidgetI* widget, PreProcessorGridTypeDataItem* item);
 
 private slots:
-	void handleWidgetUpdate();
+	void handleWidgetUpdate() override;
 
 private:
 	std::string m_name;

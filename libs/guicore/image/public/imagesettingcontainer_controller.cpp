@@ -90,21 +90,21 @@ void ImageSettingContainer::Controller::handleMouseReleaseEvent(QMouseEvent* eve
 	}
 }
 
-void ImageSettingContainer::Controller::handleResize(VTKGraphicsView* v)
+void ImageSettingContainer::Controller::handleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_setting->apply(v);
+	m_setting->apply(event->size(), v);
 }
 
 void ImageSettingContainer::Controller::handleSelection(VTKGraphicsView* v)
 {
 	m_selected = true;
-	m_setting->apply(v);
+	m_setting->apply(v->size(), v);
 }
 
 void ImageSettingContainer::Controller::handleDeselection(VTKGraphicsView* v)
 {
 	m_selected = false;
-	m_setting->apply(v);
+	m_setting->apply(v->size(), v);
 }
 
 void ImageSettingContainer::Controller::updateMouseCursor(VTKGraphicsView* v, const std::vector<ImageSettingContainer::Controller*>& controllers)
@@ -130,7 +130,10 @@ void ImageSettingContainer::Controller::updateMouseEventMode(QMouseEvent* event,
 {
 	m_mouseEventMode = MouseEventMode::Normal;
 
-	auto r = m_setting->rect(v);
+	if (! m_item->isAncientChecked()) {return;}
+	if (! m_item->isChecked()) {return;}
+
+	auto r = m_setting->rect(v->size(), v);
 
 	int radius = iRIC::nearRadius();
 	bool nearLeft = std::abs(r.left() - event->x()) < radius;

@@ -4,10 +4,14 @@
 #include "post3dwindownodevectorarrowgroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 
 #include <vtkActor.h>
 #include <vtkTransformFilter.h>
@@ -38,10 +42,29 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const Q
 	m_actor {vtkActor::New()},
 	m_transformFilter {vtkTransformFilter::New()},
 	m_setting {},
-	m_zScale {1}
+	m_zScale {1},
+	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 	m_standardItem->setText(label);
+
+	m_arrowsToolBarWidget->hideLegendCheckbox();
+	m_arrowsToolBarWidget->hide();
+	m_arrowsToolBarWidget->setColorMapSettings(groupDataItem()->m_colorMapSettings);
+	m_arrowsToolBarWidget->setSetting(&m_setting.arrow);
+
+	connect(m_arrowsToolBarWidget, &ArrowsSettingToolBarWidget::updated, [=]() {
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = m_arrowsToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &m_setting.arrow));
+
+		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+			auto cm = groupDataItem()->m_colorMapSettings.at(iRIC::toStr(newSetting.colorTarget));
+			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		auto gItem = groupDataItem();
+		gItem->pushUpdateActorSettingCommand(com, gItem);
+	});
 
 	setupActors();
 }
@@ -75,14 +98,53 @@ void Post3dWindowNodeVectorArrowDataItem::setSetting(const Setting& setting)
 
 void Post3dWindowNodeVectorArrowDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
+}
+
+void Post3dWindowNodeVectorArrowDataItem::informSelection(VTKGraphicsView* v)
+{
+	groupDataItem()->informSelection(v);
+}
+
+void Post3dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView* v)
+{
+	groupDataItem()->informDeselection(v);
+}
+
+void Post3dWindowNodeVectorArrowDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mouseMoveEvent(event, v);
+}
+
+void Post3dWindowNodeVectorArrowDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mousePressEvent(event, v);
+}
+
+void Post3dWindowNodeVectorArrowDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mouseReleaseEvent(event, v);
+}
+
+bool Post3dWindowNodeVectorArrowDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	groupDataItem()->addToolBarButtons(toolBar);
+
+	toolBar->addSeparator();
+
+	m_arrowsToolBarWidget->setParent(toolBar);
+	m_arrowsToolBarWidget->show();
+
+	toolBar->addWidget(m_arrowsToolBarWidget);
+
+	return true;
 }
 
 void Post3dWindowNodeVectorArrowDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -98,12 +160,12 @@ void Post3dWindowNodeVectorArrowDataItem::innerUpdateZScale(double zscale)
 	t->Scale(1, 1, zscale);
 	m_transformFilter->SetTransform(t);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::innerUpdate2Ds()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::setupActors()
@@ -115,7 +177,7 @@ void Post3dWindowNodeVectorArrowDataItem::setupActors()
 	m_transformFilter->SetTransform(t);
 }
 
-void Post3dWindowNodeVectorArrowDataItem::updateActorSettings()
+void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();

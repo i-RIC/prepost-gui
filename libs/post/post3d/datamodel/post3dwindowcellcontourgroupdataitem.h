@@ -8,6 +8,7 @@
 
 #include <string>
 
+class ColorMapSettingToolBarWidgetI;
 class Post3dWindowZoneDataItem;
 class PostZoneDataContainer;
 class ValueRangeContainer;
@@ -33,7 +34,7 @@ private:
 
 	QDialog* propertyDialog(QWidget* p) override;
 
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	const ValueRangeContainer& valueRange() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;
@@ -47,16 +48,19 @@ private:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void doHandleResize(VTKGraphicsView* v) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 	std::string m_target;
 
 	ColorMapSettingContainer m_colorMapSetting;
 	vtkActor2D* m_legendActor;
 
+	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
+
 	class PropertyDialog;
 	class SetRangesCommand;
-	class UpdateActorSettingsCommand;
+	class UpdateActorSettingCommand;
 
 public:
 	friend class Post3dWindowCellContourDataItem;

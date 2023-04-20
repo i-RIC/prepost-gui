@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../../guibase/guibase.qrc">
+    <normaloff>:/libs/guibase/images/iconColor.svg</normaloff>:/libs/guibase/images/iconColor.svg</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="DelegatedColorMapSettingEditWidget" name="widget" native="true"/>
@@ -37,7 +41,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../../../guibase/guibase.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

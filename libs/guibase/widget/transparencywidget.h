@@ -22,6 +22,9 @@ public:
 	int opacityPercent() const;
 	void setOpacityPercent(int opacityPercent);
 
+signals:
+	void updated(int opacityPercent);
+
 private slots:
 	void handleCheck(bool checked);
 

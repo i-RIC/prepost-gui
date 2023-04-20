@@ -90,12 +90,12 @@ void GridBirdEyeWindowGridDataItem::updateGrid()
 	updateActorSettings();
 }
 
-void GridBirdEyeWindowGridDataItem::handleResize(VTKGraphicsView* v)
+void GridBirdEyeWindowGridDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeLegendSetting();
 	if (s == nullptr) {return;}
 
-	s->imgSetting()->controller()->handleResize(v);
+	s->imgSetting()->controller()->handleResize(event, v);
 }
 
 void GridBirdEyeWindowGridDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

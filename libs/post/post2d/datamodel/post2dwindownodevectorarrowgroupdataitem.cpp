@@ -3,15 +3,20 @@
 #include "post2dwindownodevectorarrowdataitem.h"
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h"
+#include "private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guibase/widget/boolcontainerwidget.h>
+#include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
 
@@ -22,11 +27,10 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_actor {vtkActor::New()},
 	m_arrowLegendActor {vtkActor2D::New()},
-	m_colorLegendActor {vtkActor2D::New()}
+	m_colorLegendActor {vtkActor2D::New()},
+	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-
-	m_setting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
 
 	PostZoneDataContainer* cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
@@ -43,6 +47,22 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 		cs->setAutoValueRange(pair.second);
 		m_colorMapSettings.insert({pair.first, cs});
 	}
+
+	m_arrowsToolBarWidget->hide();
+	m_arrowsToolBarWidget->setColorMapSettings(m_colorMapSettings);
+	m_arrowsToolBarWidget->setSetting(&m_setting);
+
+	connect(m_arrowsToolBarWidget, &ArrowsSettingToolBarWidget::updated, [=]() {
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = m_arrowsToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &m_setting));
+
+		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+			auto cm = m_colorMapSettings.at(iRIC::toStr(newSetting.colorTarget));
+			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		pushUpdateActorSettingCommand(com, this);
+	});
 
 	setupActors();
 }
@@ -75,7 +95,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphi
 		newSetting.target = "";
 	}
 	auto modifyCommand = new ValueModifyCommmand<ArrowsSettingContainer> ("Change target", newSetting, &m_setting);
-	auto updateCommand = new UpdateActorSettingsCommand(false, modifyCommand, this);
+	auto updateCommand = new UpdateActorSettingCommand(false, modifyCommand, this);
 	pushRenderCommand(updateCommand, this, true);
 }
 
@@ -118,7 +138,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStrea
 	}
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
+void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_arrowLegendActor->VisibilityOff();
@@ -199,7 +219,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 		pair.second->setAutoValueRange(range);
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
@@ -212,12 +232,12 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& targ
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_setting.target = target.c_str();
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
@@ -246,20 +266,22 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView
 	s->legend.imageSetting.controller()->handleDeselection(v);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_setting.legend.imageSetting.controller()->handleResize(v);
+	m_setting.legend.imageSetting.controller()->handleResize(event, v);
 
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(v);
+	s->legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
+	if (m_setting.target == "") {return;}
+
 	std::vector<ImageSettingContainer::Controller*> controllers;
 
 	m_setting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
@@ -278,6 +300,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	if (m_setting.target == "") {return;}
+
 	std::vector<ImageSettingContainer::Controller*> controllers;
 
 	m_setting.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
@@ -297,6 +321,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* even
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
+	if (m_setting.target == "") {return;}
+
 	std::vector<ImageSettingContainer::Controller*> controllers;
 
 	m_setting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
@@ -317,4 +343,14 @@ void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = zoneDataItem()->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
+}
+
+bool Post2dWindowNodeVectorArrowGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_arrowsToolBarWidget->setParent(toolBar);
+	m_arrowsToolBarWidget->show();
+
+	toolBar->addWidget(m_arrowsToolBarWidget);
+
+	return true;
 }

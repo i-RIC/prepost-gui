@@ -23,7 +23,7 @@ public:
 	~Graph2dVerificationWindow();
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	Graph2dVerificationWindowControlWidget* controlWidget() const;
 	Graph2dVerificationWindowTopWidget* topWidget() const;
@@ -43,6 +43,7 @@ private:
 	Graph2dVerificationWindowDataModel* m_dataModel;
 	Graph2dVerificationWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+	std::shared_ptr<QToolBar> m_toolBar;
 
 public:
 	friend class Graph2dVerificationWindowProjectDataItem;

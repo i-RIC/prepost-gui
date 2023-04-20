@@ -116,3 +116,8 @@ void Post3dWindowContourDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraph
 {
 	groupDataItem()->mouseReleaseEvent(event, v);
 }
+
+bool Post3dWindowContourDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
+}

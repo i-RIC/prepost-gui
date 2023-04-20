@@ -20,6 +20,7 @@ GeoDataNetcdfProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataNetcdfProx
 	ui(new Ui::GeoDataNetcdfProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
 
 	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	if (proxy->geoData()->gridAttribute()->isReferenceInformation()) {

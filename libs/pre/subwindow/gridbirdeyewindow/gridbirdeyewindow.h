@@ -32,7 +32,7 @@ public:
 	vtkRenderWindow* getVtkRenderWindow() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
-	virtual QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	void updateGrid();
 	const QIcon& icon() const;
@@ -64,6 +64,7 @@ private:
 	GridBirdEyeWindowActionManager* m_actionManager;
 	GridBirdEyeWindowDataModel* m_dataModel;
 	QIcon m_icon;
+	std::shared_ptr<QToolBar> m_toolBar;
 
 public:
 	friend class GridBirdEyeWindowActionManager;

@@ -6,6 +6,7 @@
 #include "private/post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/boolcontainerwidget.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -20,7 +21,8 @@
 Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {"test", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_target {target},
-	m_legendActor {vtkActor2D::New()}
+	m_legendActor {vtkActor2D::New()},
+	m_lengthLegendVisibilityWidget {new BoolContainerWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
@@ -32,7 +34,6 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_setting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.legend.imageSetting.controller()->setItem(this);
 	m_setting.legend.title = gt->output(target)->caption();
-	m_setting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
 
 	for (const auto& pair : data()->data()->valueRangeSet().pointDataValueRanges()) {
 		auto cs = new ColorMapSettingContainer();
@@ -50,6 +51,13 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 		m_colorMapSettings.insert({pair.first, cs});
 		m_colorMapActors.push_back(actor);
 	}
+
+	m_lengthLegendVisibilityWidget->setText(tr("Legend of Length"));
+	m_lengthLegendVisibilityWidget->hide();
+	m_lengthLegendVisibilityWidget->setContainer(&m_setting.legend.visible);
+	connect(m_lengthLegendVisibilityWidget, &BoolContainerWidget::toggled, [=](){
+		pushUpdateActorSettingCommand(m_lengthLegendVisibilityWidget->createModifyCommand(), this);
+	});
 }
 
 Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataItem()
@@ -69,7 +77,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataI
 
 void Post3dWindowNodeVectorArrowGroupDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 const std::string& Post3dWindowNodeVectorArrowGroupDataItem::target() const
@@ -98,7 +106,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 			++ idx;
 		}
 	}
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -205,11 +213,22 @@ void Post3dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::doHandleResize(VTKGraphicsView* v)
+bool Post3dWindowNodeVectorArrowGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	m_setting.legend.imageSetting.controller()->handleResize(v);
+	m_lengthLegendVisibilityWidget->setParent(toolBar);
+	m_lengthLegendVisibilityWidget->show();
+
+	toolBar->addWidget(m_lengthLegendVisibilityWidget);
+	return true;
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
+{
+	if (m_childItems.size() == 0) {return;}
+
+	m_setting.legend.imageSetting.controller()->handleResize(event, v);
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleResize(v);
+		cm->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 
@@ -223,7 +242,7 @@ QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 	return new PropertyDialog(this, p);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
+void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 {
 	m_legendActor->VisibilityOff();
 	for (auto actor : m_colorMapActors) {

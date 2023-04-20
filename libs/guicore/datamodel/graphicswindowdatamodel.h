@@ -6,6 +6,8 @@
 #include "../project/projectdataitem.h"
 #include "graphicswindowsimpledatamodel.h"
 
+#include <memory>
+
 class GraphicsWindowDataItem;
 class GraphicsWindowRootDataItem;
 class ObjectBrowserView;
@@ -29,7 +31,7 @@ public:
 	GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem* parent);
 	~GraphicsWindowDataModel();
 
-	QToolBar* operationToolBar() const;
+	const std::shared_ptr<QToolBar>& operationToolBar() const;
 	QStandardItemModel* itemModel() const;
 
 	int loadFromCgnsFile() override;
@@ -45,7 +47,7 @@ public:
 
 	void fitOnDataLoad();
 	void viewOperationEndedGlobal() override;
-	void handleResize() override;
+	void handleResize(QResizeEvent* event) override;
 
 public slots:
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);
@@ -82,7 +84,7 @@ protected:
 	QMenu* m_rightClickMenu;
 
 private:
-	QToolBar* m_operationToolBar;
+	std::shared_ptr<QToolBar> m_operationToolBar;
 
 	bool m_dataLoaded;
 };

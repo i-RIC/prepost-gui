@@ -7,6 +7,7 @@
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/particle/particledatavectorsetting.h>
 
+class ArrowsSettingToolBarWidget;
 class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
 class Post2dWindowGridTypeDataItem;
@@ -28,10 +29,10 @@ public:
 	void update();
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -41,11 +42,12 @@ private:
 	QDialog* propertyDialog(QWidget* p) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	void innerUpdate2Ds() override;
 
 	void setupActors();
 	void updateCheckState();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	ColorMapSettingContainer* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
@@ -57,6 +59,8 @@ private:
 	vtkActor2D* m_legendActor;
 
 	ParticleDataVectorSetting m_setting;
+
+	ArrowsSettingToolBarWidget* m_arrowsToolBarWidget;
 
 	class PropertyDialog;
 	class UpdateSettingCommand;

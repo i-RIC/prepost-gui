@@ -51,6 +51,13 @@ void Post2dWindowGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	m_geoDataProxy->saveToProjectMainFile(writer);
 }
 
+bool Post2dWindowGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(parent());
+
+	return gItem->addToolBarButtons(toolBar);
+}
+
 DelegatedColorMapSettingContainer* Post2dWindowGeoDataDataItem::colorMapSetting() const
 {
 	auto i = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(parent());

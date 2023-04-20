@@ -10,6 +10,7 @@
 #include <guicore/filter/structured3dfilteringsettingcontainer.h>
 #include <misc/compositecontainer.h>
 
+class ArrowsSettingToolBarWidget;
 class Post3dWindowNodeVectorArrowGroupDataItem;
 
 class vtkTransformFilter;
@@ -42,6 +43,13 @@ public:
 
 	void update();
 
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -50,7 +58,7 @@ private:
 	void innerUpdate2Ds() override;
 
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 	Post3dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;
 
 	vtkActor* m_actor;
@@ -58,6 +66,8 @@ private:
 
 	Setting m_setting;
 	double m_zScale;
+
+	ArrowsSettingToolBarWidget* m_arrowsToolBarWidget;
 };
 
 #endif // POST3DWINDOWNODEVECTORARROWDATAITEM_H

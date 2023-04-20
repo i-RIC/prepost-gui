@@ -11,8 +11,8 @@
 #include <QDockWidget>
 #include <QPainter>
 
-Graph2dHybridWindow::Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi)
-	: PostProcessorWindow(parent, index, pdi)
+Graph2dHybridWindow::Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi) :
+	PostProcessorWindow(parent, index, pdi)
 {
 	init();
 }
@@ -81,9 +81,9 @@ QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* Graph2dHybridWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& Graph2dHybridWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_toolBar;
 }
 
 Graph2dHybridWindowControlWidget* Graph2dHybridWindow::controlWidget() const

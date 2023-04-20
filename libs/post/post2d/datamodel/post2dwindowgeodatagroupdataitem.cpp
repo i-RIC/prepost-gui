@@ -13,6 +13,8 @@
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -33,6 +35,14 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	applyColorMapSetting();
 
 	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
+
+	auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent->parent());
+	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), mainWindow());
+}
+
+Post2dWindowGeoDataGroupDataItem::~Post2dWindowGeoDataGroupDataItem()
+{
+	delete m_toolBarWidgetController;
 }
 
 SolverDefinitionGridAttribute* Post2dWindowGeoDataGroupDataItem::condition() const
@@ -112,7 +122,7 @@ void Post2dWindowGeoDataGroupDataItem::applyColorMapSetting()
 	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting != nullptr) {
-		setting->applyLegendImageSetting(dataModel()->graphicsView());
+		setting->activeImageSetting()->apply(dataModel()->graphicsView());
 	}
 }
 
@@ -141,6 +151,27 @@ void Post2dWindowGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 	if (setting->usePreSetting) {return;}
 
 	setting->customSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+}
+
+bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	bool added = false;
+
+	if (! m_condition->isReferenceInformation()) {
+		toolBar->addAction(m_editColorMapAction);
+		toolBar->addSeparator();
+		added = true;
+	}
+
+	if (m_toolBarWidgetController != nullptr) {
+		auto widget = m_toolBarWidgetController->widget();
+		widget->setParent(toolBar);
+		widget->show();
+		toolBar->addWidget(widget);
+		added = true;
+	}
+
+	return added;
 }
 
 void Post2dWindowGeoDataGroupDataItem::editScalarsToColors()

@@ -2,7 +2,7 @@
 #include "../post2dwindowzonedataitem.h"
 #include "post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.h"
 #include "post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog_additionalwidgets.h"
-#include "post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h"
+#include "post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
 #include "ui_post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.h"
 
 #include <guibase/vtkdatasetattributestool.h>
@@ -60,7 +60,7 @@ QUndoCommand* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::PropertyDial
 	command->addCommand(m_additionalWidgets->samplingWidget()->createModifyCommand());
 	command->addCommand(m_additionalWidgets->regionWidget()->createModifyCommand());
 
-	return new UpdateActorSettingsCommand(apply, command, m_item);
+	return new UpdateActorSettingCommand(apply, command, m_item);
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::PropertyDialog::accept()

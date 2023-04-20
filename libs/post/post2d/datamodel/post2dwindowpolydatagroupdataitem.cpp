@@ -187,11 +187,11 @@ void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* v)
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
 }
 
-void Post2dWindowPolyDataGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post2dWindowPolyDataGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(v);
+		s->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 

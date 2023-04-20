@@ -24,6 +24,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 private:
 	Post3dWindowParticlesBaseScalarGroupDataItem* groupDataItem() const;
