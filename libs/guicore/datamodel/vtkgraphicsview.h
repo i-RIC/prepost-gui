@@ -52,7 +52,6 @@ public:
 
 	vtkRenderer* mainRenderer() const;
 	vtkCamera* camera() const;
-	void render();
 	void restoreUpdateRate();
 	void setInteractive(bool interactive);
 
@@ -62,6 +61,8 @@ public:
 	QMouseEvent createReverseScaledEvent(const QMouseEvent& event);
 
 public slots:
+	void render();
+
 	void cameraFit();
 	void cameraZoomIn();
 	void cameraZoomOut();

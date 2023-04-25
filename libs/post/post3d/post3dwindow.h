@@ -29,21 +29,16 @@ class Post3dWindow :
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi);
-	/// Destructor
 	~Post3dWindow();
 
-	/// switch to the new index.
-	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
-	int index() {return m_index;}
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename) override;
 	QList<QString> particleDrawingZones() override;
 	bool isAutoParticleOutput() const override;

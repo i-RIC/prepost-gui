@@ -65,7 +65,7 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::setOriginalColors(const 
 	for (auto& c : m_originalColors) {
 		c.value = (c.value - min) / range_width;
 	}
-	ui->colorsSpinBox->setValue(colors.size());
+	ui->colorsSpinBox->setValue(static_cast<int> (colors.size()));
 }
 
 void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
@@ -120,7 +120,7 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
 		}
 	}
 	m_model.setColumnCount(3);
-	m_model.setRowCount(m_newColors.size());
+	m_model.setRowCount(static_cast<int> (m_newColors.size()));
 
 	m_model.setHeaderData(0, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Min value"));
 	m_model.setHeaderData(1, Qt::Orientation::Horizontal, ColorMapSettingEditWidget::tr("Max value"));
@@ -135,14 +135,14 @@ void ColorMapSettingEditWidget::SwitchToDiscreteDialog::updateTable()
 		} else {
 			itemMin->setData(min + (max - min) * m_newColors.at(i - 1).value.value(), Qt::EditRole);
 		}
-		m_model.setItem(m_newColors.size() - 1 - i, 0, itemMin);
+		m_model.setItem(static_cast<int> (m_newColors.size()) - 1 - i, 0, itemMin);
 
 		auto itemMax = new QStandardItem();
 		itemMax->setData(min + (max - min) * m_newColors.at(i).value.value(), Qt::EditRole);
-		m_model.setItem(m_newColors.size() - 1 - i, 1, itemMax);
+		m_model.setItem(static_cast<int> (m_newColors.size()) - 1 - i, 1, itemMax);
 
 		auto itemC = new QStandardItem();
 		itemC->setData(m_newColors.at(i).color.value(), Qt::EditRole);
-		m_model.setItem(m_newColors.size() - 1 - i, 2, itemC);
+		m_model.setItem(static_cast<int> (m_newColors.size()) - 1 - i, 2, itemC);
 	}
 }

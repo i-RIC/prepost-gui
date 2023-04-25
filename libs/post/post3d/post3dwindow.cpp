@@ -88,9 +88,9 @@ QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* Post3dWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& Post3dWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_dataModel->operationToolBar();
 }
 
 void Post3dWindow::cameraFit()
@@ -218,7 +218,7 @@ bool Post3dWindow::isAutoParticleOutput() const
 
 bool Post3dWindow::hasTransparentPart()
 {
-	Post3dWindowRootDataItem* rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	return rItem->hasTransparentPart();
 }
 

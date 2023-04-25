@@ -24,10 +24,10 @@
 #include <QSignalMapper>
 #include <QStatusBar>
 
-iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
+iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent) :
+	m_additionalToolBar {},
+	m_parent {parent}
 {
-	m_parent = parent;
-	m_additionalToolBar = nullptr;
 	init();
 }
 
@@ -41,7 +41,7 @@ QToolBar* iRICMainWindowActionManager::mainToolBar() const
 	return m_mainToolBar;
 }
 
-QToolBar* iRICMainWindowActionManager::additionalToolBar() const
+const std::weak_ptr<QToolBar>& iRICMainWindowActionManager::additionalToolBar() const
 {
 	return m_additionalToolBar;
 }
@@ -927,7 +927,7 @@ void iRICMainWindowActionManager::setAdditionalMenus(const QList<QMenu*>& menus)
 
 void iRICMainWindowActionManager::unregisterAdditionalToolBar()
 {
-	m_additionalToolBar = nullptr;
+	m_additionalToolBar.reset();
 }
 
 QMenu* iRICMainWindowActionManager::recentProjectsMenu() const
@@ -959,27 +959,26 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 	// handle additional menus.
 	AdditionalMenuWindowI* menuWindow = dynamic_cast<AdditionalMenuWindowI*>(subwindow);
 	QList<QMenu*> additionalMenus;
-	QToolBar* toolBar = nullptr;
+	std::shared_ptr<QToolBar> toolBar;
 	if (menuWindow != nullptr) {
-		QWidget* widget = dynamic_cast<QWidget*>(subwindow);
-		connect(widget, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), this, SLOT(updateAdditionalMenus(QList<QMenu*>)));
+		connect(subwindow, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), this, SLOT(updateAdditionalMenus(QList<QMenu*>)));
 		additionalMenus = menuWindow->getAdditionalMenus();
 		toolBar = menuWindow->getAdditionalToolBar();
 	}
 	setAdditionalMenus(additionalMenus);
 	if (subwindow != nullptr) {
 		// update Additional tool bar
-		if (m_additionalToolBar != nullptr) {
-			m_parent->removeToolBar(m_additionalToolBar);
+		if (! m_additionalToolBar.expired()) {
+			m_parent->removeToolBar(m_additionalToolBar.lock().get());
 		}
-		if (toolBar != nullptr) {
-			m_parent->addToolBar(toolBar);
+		if (toolBar.get() != nullptr) {
+			m_parent->addToolBar(toolBar.get());
 			toolBar->show();
 		}
 		m_additionalToolBar = toolBar;
 	} else {
-		if (m_additionalToolBar != nullptr) {
-			m_parent->removeToolBar(m_additionalToolBar);
+		if (! m_additionalToolBar.expired()) {
+			m_parent->removeToolBar(m_additionalToolBar.lock().get());
 		}
 		m_additionalToolBar = toolBar;
 	}

@@ -44,13 +44,11 @@ public:
 	Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi);
 	~Post2dWindow();
 
-	/// switch to the new index.
-	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
 	int index() const {return m_index;}

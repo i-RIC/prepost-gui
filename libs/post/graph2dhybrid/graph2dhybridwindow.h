@@ -22,7 +22,7 @@ public:
 	~Graph2dHybridWindow();
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	Graph2dHybridWindowControlWidget* controlWidget() const;
 
@@ -38,6 +38,7 @@ private:
 	Graph2dHybridWindowDataModel* m_dataModel;
 	Graph2dHybridWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+	std::shared_ptr<QToolBar> m_toolBar;
 
 public:
 	friend class Graph2dHybridWindowProjectDataItem;

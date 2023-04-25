@@ -14,15 +14,16 @@ SliderWithValue::SliderWithValue(QWidget* parent) :
 	m_label->setFrameShadow(QFrame::Sunken);
 	m_spinBox = new QSpinBoxWithFocusSignals(this);
 
-	connect(m_slider, SIGNAL(actionTriggered(int)), this, SIGNAL(actionTriggered(int)));
-	connect(m_slider, SIGNAL(rangeChanged(int, int)), this, SIGNAL(rangeChanged(int, int)));
-	connect(m_slider, SIGNAL(sliderMoved(int)), this, SLOT(handleSliderMove(int)));
-	connect(m_slider, SIGNAL(sliderPressed()), this, SIGNAL(sliderPressed()));
-	connect(m_slider, SIGNAL(sliderReleased()), this, SIGNAL(sliderReleased()));
-	connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(handleValueChange(int)));
+	connect(m_slider, &QSlider::actionTriggered, this, &SliderWithValue::actionTriggered);
+	connect(m_slider, &QSlider::rangeChanged, this, &SliderWithValue::rangeChanged);
+	connect(m_slider, &QSlider::sliderMoved, this, &SliderWithValue::handleSliderMove);
+	connect(m_slider, &QSlider::sliderPressed, this, &SliderWithValue::sliderPressed);
+	connect(m_slider, &QSlider::sliderReleased, this, &SliderWithValue::sliderReleased);
+	connect(m_slider, &QSlider::valueChanged, this, &SliderWithValue::handleValueChange);
 
-	connect(m_spinBox, SIGNAL(focusOutOccured()), this, SLOT(applySpinBoxValue()));
-	connect(m_spinBox, SIGNAL(stepChanged(int)), this, SLOT(applySpinBoxValue()));
+	connect(m_spinBox, &QSpinBoxWithFocusSignals::focusOutOccured, this, &SliderWithValue::applySpinBoxValue);
+	connect(m_spinBox, &QSpinBoxWithFocusSignals::stepChanged, this, &SliderWithValue::applySpinBoxValue);
+	connect(m_spinBox, &QSpinBoxWithFocusSignals::enterPressed, this, &SliderWithValue::applySpinBoxValue);
 
 	QHBoxLayout* l = new QHBoxLayout(this);
 	l->setMargin(0);

@@ -67,6 +67,7 @@ public:
 	GeoDataRiverSurveyCrosssectionWindowProjectDataItem* m_projectDataItem;
 	QIcon m_icon;
 	ColorSource* m_colorSource;
+	std::shared_ptr<QToolBar> m_toolBar;
 
 	bool m_settingUp;
 };

@@ -36,6 +36,11 @@ void Post3dWindowParticlesBaseVectorDataItem::mouseReleaseEvent(QMouseEvent* eve
 	groupDataItem()->mouseReleaseEvent(event, v);
 }
 
+bool Post3dWindowParticlesBaseVectorDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
 Post3dWindowParticlesBaseVectorGroupDataItem* Post3dWindowParticlesBaseVectorDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post3dWindowParticlesBaseVectorGroupDataItem*> (parent());

@@ -89,9 +89,9 @@ QList<QMenu*> Graph2dVerificationWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* Graph2dVerificationWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& Graph2dVerificationWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_toolBar;
 }
 
 Graph2dVerificationWindowControlWidget* Graph2dVerificationWindow::controlWidget() const

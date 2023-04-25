@@ -26,8 +26,8 @@ ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer
 	imageSetting.setImageBuilder(m_imageBuilder);
 
 	imageSetting.position = ImageSettingContainer::Position::BottomRight;
-	imageSetting.horizontalMargin = 10;
-	imageSetting.verticalMargin = 100;
+	imageSetting.horizontalMargin = 0.05;
+	imageSetting.verticalMargin = 0.15;
 	imageSetting.width = 150;
 	imageSetting.height = 200;
 }

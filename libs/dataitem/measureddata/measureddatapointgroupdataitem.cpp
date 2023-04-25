@@ -294,12 +294,12 @@ void MeasuredDataPointGroupDataItem::informDeselection(VTKGraphicsView* v)
 	s->legend.imageSetting.controller()->handleDeselection(v);
 }
 
-void MeasuredDataPointGroupDataItem::handleResize(VTKGraphicsView* v)
+void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(v);
+	s->legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

@@ -71,7 +71,7 @@ private:
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void doHandleResize(VTKGraphicsView* v) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

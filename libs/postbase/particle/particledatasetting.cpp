@@ -26,3 +26,8 @@ XmlAttributeContainer& ParticleDataSetting::operator=(const XmlAttributeContaine
 	return operator=(dynamic_cast<const ParticleDataSetting&> (c));
 }
 
+void ParticleDataSetting::copyValue(const XmlAttributeContainer& c)
+{
+	CompositeContainer::copyValue(c);
+	emit updated();
+}

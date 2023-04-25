@@ -2,16 +2,14 @@
 #include "graph2dhybridwindowactionmanager.h"
 #include "graph2dhybridwindowdatamodel.h"
 
-#include <guibase/irictoolbar.h>
-
 #include <QAction>
 #include <QIcon>
 #include <QMenu>
 
-Graph2dHybridWindowActionManager::Graph2dHybridWindowActionManager(Graph2dHybridWindow* parent)
-	: QObject(parent)
+Graph2dHybridWindowActionManager::Graph2dHybridWindowActionManager(Graph2dHybridWindow* parent) :
+	QObject(parent),
+	m_graphWindow {parent}
 {
-	m_graphWindow = parent;
 	init();
 }
 

@@ -19,8 +19,8 @@
 ImageSettingContainer::ImageSettingContainer() :
 	CompositeContainer({&position, &horizontalMargin, &verticalMargin, &width, &height}),
 	position {"position", Position::TopLeft},
-	horizontalMargin {"horizontalMargin", 0},
-	verticalMargin {"verticalMargin", 0},
+	horizontalMargin {"horizontalMarginRatio", 0},
+	verticalMargin {"verticalMarginRatio", 0},
 	width {"width", 100},
 	height {"height", 100},
 	m_actor {nullptr},
@@ -72,7 +72,71 @@ void ImageSettingContainer::setImageBuilder(ImageBuilder* builder)
 	m_imageBuilder = builder;
 }
 
-void ImageSettingContainer::apply(VTKGraphicsView* v) const
+void ImageSettingContainer::optimizePosition(VTKGraphicsView* view)
+{
+	double topMargin = 0, bottomMargin = 0, leftMargin = 0, rightMargin = 0;
+
+	if (position == Position::TopLeft || position == Position::Left || position == Position::BottomLeft) {
+		leftMargin = horizontalMargin;
+		rightMargin = 1 - leftMargin - width / static_cast<double> (view->width());
+	} else if (position == Position::TopRight || position == Position::Right || position == Position::BottomRight) {
+		rightMargin = horizontalMargin;
+		leftMargin = 1 - horizontalMargin - width / static_cast<double> (view->width());
+	}
+
+	if (position == Position::TopLeft || position == Position::Top || position == Position::TopRight) {
+		topMargin = verticalMargin;
+		bottomMargin = 1 - verticalMargin - height / static_cast<double> (view->height());
+	} else if (position == Position::BottomLeft || position == Position::Bottom || position == Position::BottomRight) {
+		bottomMargin = verticalMargin;
+		topMargin = 1 - verticalMargin - height / static_cast<double> (view->height());
+	}
+
+	if (position == Position::TopLeft || position == Position::TopRight || position == Position::BottomLeft || position == Position::BottomRight) {
+		if (leftMargin < rightMargin) {
+			horizontalMargin = leftMargin;
+			if (topMargin < bottomMargin) {
+				verticalMargin = topMargin;
+				position = Position::TopLeft;
+			} else {
+				verticalMargin = bottomMargin;
+				position = Position::BottomLeft;
+			}
+		} else {
+			horizontalMargin = rightMargin;
+			if (topMargin < bottomMargin) {
+				verticalMargin = topMargin;
+				position = Position::TopRight;
+			} else {
+				verticalMargin = bottomMargin;
+				position = Position::BottomRight;
+			}
+		}
+	} else if (position == Position::Left || position == Position::Right) {
+		if (leftMargin < rightMargin) {
+			position = Position::Left;
+			horizontalMargin = leftMargin;
+		} else {
+			position = Position::Right;
+			horizontalMargin = rightMargin;
+		}
+	} else if (position == Position::Top || position == Position::Bottom) {
+		if (topMargin < bottomMargin) {
+			position = Position::Top;
+			verticalMargin = topMargin;
+		} else {
+			position = Position::Bottom;
+			verticalMargin = bottomMargin;
+		}
+	}
+}
+
+void ImageSettingContainer::apply(VTKGraphicsView* view) const
+{
+	apply(view->size(), view);
+}
+
+void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 {
 	if (m_actor == nullptr) {return;}
 	auto item = m_controller->item();
@@ -99,9 +163,9 @@ void ImageSettingContainer::apply(VTKGraphicsView* v) const
 	mapper->SetInputData(imgToImg->GetOutput());
 	m_actor->SetMapper(mapper);
 
-	auto r = m_setting->rect(v);
+	auto r = m_setting->rect(size, v);
 
-	m_actor->SetPosition(r.left(), v->height() * v->devicePixelRatioF() - r.bottom());
+	m_actor->SetPosition(r.left(), size.height() * v->devicePixelRatioF() - r.bottom());
 
 	item->actor2DCollection()->AddItem(m_actor);
 	item->updateVisibilityWithoutRendering();
@@ -123,25 +187,25 @@ ImageSettingContainer::Controller* ImageSettingContainer::controller()
 	return m_controller;
 }
 
-QRect ImageSettingContainer::rect(VTKGraphicsView* view) const
+QRect ImageSettingContainer::rect(const QSize& size, VTKGraphicsView* view) const
 {
 	QRect ret;
 
 	Position pos = position.value();
 
 	if (pos == Position::Top || pos == Position::TopLeft || pos == Position::TopRight) {
-		ret.setTop(verticalMargin * view->devicePixelRatioF());
+		ret.setTop(verticalMargin * size.height() * view->devicePixelRatioF());
 	} else if (pos == Position::Bottom || pos == Position::BottomLeft || pos == Position::BottomRight) {
-		ret.setTop((view->height() - verticalMargin - height) * view->devicePixelRatioF());
+		ret.setTop((size.height() - verticalMargin * size.height() - height) * view->devicePixelRatioF());
 	} else {
-		ret.setTop((view->height() / 2 - height / 2) * view->devicePixelRatioF());
+		ret.setTop((size.height() / 2 - height / 2) * view->devicePixelRatioF());
 	}
 	if (pos == Position::Left || pos == Position::TopLeft || pos == Position::BottomLeft) {
-		ret.setLeft(horizontalMargin * view->devicePixelRatioF());
+		ret.setLeft(horizontalMargin * size.width() * view->devicePixelRatioF());
 	} else if (pos == Position::Right || pos == Position::TopRight || pos == Position::BottomRight) {
-		ret.setLeft((view->width() - horizontalMargin - width) * view->devicePixelRatioF());
+		ret.setLeft((size.width() - horizontalMargin * size.width() - width) * view->devicePixelRatioF());
 	} else {
-		ret.setLeft((view->width() / 2 - width / 2) * view->devicePixelRatioF());
+		ret.setLeft((size.width() / 2 - width / 2) * view->devicePixelRatioF());
 	}
 
 	ret.setWidth(width * view->devicePixelRatioF());

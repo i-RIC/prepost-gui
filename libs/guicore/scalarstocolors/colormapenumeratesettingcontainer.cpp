@@ -30,7 +30,7 @@ ColorMapEnumerateSettingContainer::ColorMapEnumerateSettingContainer() :
 	legend {}
 {
 	legend.setColorMapSetting(this);
-	connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapEnumerateSettingContainer::updated);
+	QObject::connect(&legend.imageSetting, &ImageSettingContainer::updated, this, &ColorMapSettingContainerI::updated);
 }
 
 ColorMapEnumerateSettingContainer::ColorMapEnumerateSettingContainer(const ColorMapEnumerateSettingContainer& c) :
@@ -64,7 +64,7 @@ void ColorMapEnumerateSettingContainer::load(const QDomNode& node)
 		pair.load(itemNode);
 		colors.push_back(pair);
 	}
-	emit updated();
+	emit ColorMapSettingContainerI::updated();
 }
 
 void ColorMapEnumerateSettingContainer::save(QXmlStreamWriter& writer) const
@@ -100,7 +100,7 @@ void ColorMapEnumerateSettingContainer::copyValue(const XmlAttributeContainer& c
 	valueCaption = c2.valueCaption;
 	valueCaptions = c2.valueCaptions;
 
-	emit updated();
+	emit ColorMapSettingContainerI::updated();
 }
 
 bool ColorMapEnumerateSettingContainer::importData(const QString& fileName)

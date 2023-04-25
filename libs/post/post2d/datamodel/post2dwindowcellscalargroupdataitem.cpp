@@ -6,8 +6,11 @@
 #include "private/post2dwindowcellscalargroupdataitem_propertydialog.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainerutil.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 Post2dWindowCellScalarGroupDataItem::Setting::Setting() :
@@ -39,12 +42,28 @@ Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(const s
 	m_target {target},
 	m_setting {},
 	m_actor {vtkActor::New()},
-	m_legendActor {vtkActor2D::New()}
+	m_legendActor {vtkActor2D::New()},
+	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())},
+	m_opacityToolBarWidget {new OpacityContainerWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	standardItem()->setText(gType->solutionCaption(target));
+
+	m_colorMapToolBarWidget->hide();
+	m_colorMapToolBarWidget->setSetting(&m_setting.colorMapSetting);
+	connect(m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
+		auto com = new ColorMapSettingModifyCommand(m_colorMapToolBarWidget->modifiedSetting(), &m_setting.colorMapSetting);
+		pushUpdateActorSettingCommand(com, this);
+	});
+
+	m_opacityToolBarWidget->hide();
+	m_opacityToolBarWidget->setContainer(&m_setting.opacity);
+	connect(m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
+		auto com = m_opacityToolBarWidget->createModifyCommand();
+		pushUpdateActorSettingCommand(com, this, false);
+	});
 
 	setupActors();
 }
@@ -64,7 +83,7 @@ const std::string& Post2dWindowCellScalarGroupDataItem::target() const
 	return m_target;
 }
 
-void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
+void Post2dWindowCellScalarGroupDataItem::updateActorSetting()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {
@@ -100,7 +119,7 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSettings()
 void Post2dWindowCellScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowCellScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -120,7 +139,7 @@ void Post2dWindowCellScalarGroupDataItem::setupActors()
 	m_setting.colorMapSetting.legend.imageSetting.controller()->setItem(this);
 	m_setting.colorMapSetting.legend.title = topDataItem()->zoneDataItem()->dataContainer()->gridType()->solutionCaption(target());
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowCellScalarGroupDataItem::updateZDepthRangeItemCount()
@@ -135,7 +154,7 @@ void Post2dWindowCellScalarGroupDataItem::assignActorZValues(const ZDepthRange& 
 
 void Post2dWindowCellScalarGroupDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowCellScalarGroupDataItem::innerUpdateZScale(double scale)
@@ -199,9 +218,9 @@ void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 	}
 }
 
-void Post2dWindowCellScalarGroupDataItem::doHandleResize(VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(v);
+	m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
@@ -209,3 +228,20 @@ void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = topDataItem()->zoneDataItem()->showAttributeBrowserActionForCellResult();
 	menu->addAction(abAction);
 }
+
+bool Post2dWindowCellScalarGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_colorMapToolBarWidget->setParent(toolBar);
+	m_colorMapToolBarWidget->show();
+
+	toolBar->addWidget(m_colorMapToolBarWidget);
+	toolBar->addSeparator();
+
+	m_opacityToolBarWidget->setParent(toolBar);
+	m_opacityToolBarWidget->show();
+
+	toolBar->addWidget(m_opacityToolBarWidget);
+
+	return true;
+}
+

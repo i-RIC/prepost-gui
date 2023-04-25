@@ -24,6 +24,8 @@ public:
 	ParticleDataSetting& operator=(const ParticleDataSetting& setting);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	EnumContainerT<Mapping> mapping;
 	ColorContainer color;
 	StringContainer value;

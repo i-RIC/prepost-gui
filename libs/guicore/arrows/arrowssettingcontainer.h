@@ -54,6 +54,8 @@ public:
 	ArrowsSettingContainer& operator=(const ArrowsSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	double scaleFactor(double stdDistance) const;
 	vtkPolyData* buildFilteredData(vtkPointSet* data) const;
 	vtkPolyData* buildArrowsPolygonData(vtkPointSet* data, VTKGraphicsView* view, double zscale = 1.0) const;

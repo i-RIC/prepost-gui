@@ -808,9 +808,10 @@ QList<QMenu*> GeoDataRiverSurveyCrosssectionWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* GeoDataRiverSurveyCrosssectionWindow::getAdditionalToolBar() const
+
+const std::shared_ptr<QToolBar>& GeoDataRiverSurveyCrosssectionWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return impl->m_toolBar;
 }
 
 PreProcessorGeoDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const

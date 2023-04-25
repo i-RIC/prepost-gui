@@ -46,6 +46,21 @@ void Post2dWindowNodeVectorArrowDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(abAction);
 }
 
+bool Post2dWindowNodeVectorArrowDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
+void Post2dWindowNodeVectorArrowDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post2dWindowNodeVectorArrowDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
 Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowNodeVectorArrowDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (parent());

@@ -58,7 +58,6 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void doHandleResize(VTKGraphicsView* v) override;
 
 private:
 	void innerUpdateZScale(double scale) override;
@@ -69,6 +68,7 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topDataItem() const;
 	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;

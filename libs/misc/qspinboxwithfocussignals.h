@@ -13,7 +13,10 @@ public:
 	QSpinBoxWithFocusSignals(QWidget* parent = nullptr);
 	void stepBy(int steps) override;
 
+	void keyPressEvent(QKeyEvent *event) override;
+
 signals:
+	void enterPressed();
 	void focusInOccured();
 	void focusOutOccured();
 	void stepChanged(int steps);

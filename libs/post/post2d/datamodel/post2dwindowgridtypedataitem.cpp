@@ -5,6 +5,7 @@
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h"
 #include "private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h"
+#include "private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.h"
 #include "../post2dwindowgraphicsview.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
@@ -16,8 +17,10 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -264,13 +267,25 @@ void Post2dWindowGridTypeDataItem::update()
 	}
 }
 
-void Post2dWindowGridTypeDataItem::handleResize(VTKGraphicsView* v)
+void Post2dWindowGridTypeDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	for (const auto& pair : m_colorMapSettingContainers) {
-		pair.second->applyLegendImageSetting(v);
+		pair.second->activeImageSetting()->controller()->handleResize(event, v);
+	}
+}
+
+ColorMapSettingToolBarWidgetController* Post2dWindowGridTypeDataItem::createToolBarWidgetController(const std::string& name, QWidget* parent)
+{
+	auto att = m_gridType->gridAttribute(name);
+	if (att == nullptr) {
+		att = m_gridType->gridComplexAttribute(name);
+		if (att == nullptr) {return nullptr;}
 	}
 
-	GraphicsWindowDataItem::handleResize(v);
+	auto widget = att->createColorMapSettingToolbarWidget(parent);
+	widget->hide();
+	widget->setSetting(m_colorMapSettingContainers.at(name)->customSetting);
+	return new ToolBarWidgetController(name, widget, this);
 }
 
 void Post2dWindowGridTypeDataItem::applyColorMapSetting(const std::string& name)
@@ -287,32 +302,42 @@ void Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated(const std::st
 
 void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGridTypeDataItemInterface* item)
 {
+	for (auto att : item->gridType()->gridAttributes()) {
+		setupColorMapSettingContainer(att, item);
+	}
+
+	for (auto att : item->gridType()->gridComplexAttributes()) {
+		setupColorMapSettingContainer(att, item);
+	}
+}
+
+void Post2dWindowGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemInterface* item)
+{
 	auto r = renderer();
 	auto v = dataModel()->graphicsView();
-	auto atts = item->gridType()->gridAttributes();
-	for (auto att : atts) {
-		auto c = new DelegatedColorMapSettingContainer();
 
-		c->preSetting = att->createColorMapLegendSettingContainer();
-		auto preColorMapSetting = item->colorMapSetting(att->name());
-		c->preSetting->setSetting(preColorMapSetting);
-		c->preSetting->copy(*c->preSetting->setting()->legendSetting());
-		c->preSetting->setDelegateMode(true);
-		c->preSetting->imgSetting()->controller()->setItem(this);
-		auto handler = new PreColorMapSettingUpdateHandler(c, v, this);
-		connect(preColorMapSetting, &ColorMapSettingContainerI::updated, handler, &PreColorMapSettingUpdateHandler::handle);
+	auto c = new DelegatedColorMapSettingContainer();
 
-		c->customSetting = att->createColorMapSettingContainer();
-		c->customSetting->copy(*c->preSetting->setting());
-		c->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
-		m_colorMapSettingContainers.insert({att->name(), c});
+	c->preSetting = att->createColorMapLegendSettingContainer();
+	auto preColorMapSetting = item->colorMapSetting(att->name());
+	c->preSetting->setSetting(preColorMapSetting);
+	c->preSetting->copy(*c->preSetting->setting()->legendSetting());
+	c->preSetting->setDelegateMode(true);
+	c->preSetting->imgSetting()->controller()->setItem(this);
+	auto handler = new PreColorMapSettingUpdateHandler(c, v, this);
+	connect(preColorMapSetting, &ColorMapSettingContainerI::updated, handler, &PreColorMapSettingUpdateHandler::handle);
 
-		auto actor = vtkActor2D::New();
-		r->AddActor2D(actor);
-		c->preSetting->imgSetting()->setActor(actor);
-		c->customSetting->legendSetting()->imgSetting()->setActor(actor);
-		m_colorMapLegendActors.insert({att->name(), actor});
-	}}
+	c->customSetting = att->createColorMapSettingContainer();
+	c->customSetting->copy(*c->preSetting->setting());
+	c->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
+	m_colorMapSettingContainers.insert({att->name(), c});
+
+	auto actor = vtkActor2D::New();
+	r->AddActor2D(actor);
+	c->preSetting->imgSetting()->setActor(actor);
+	c->customSetting->legendSetting()->imgSetting()->setActor(actor);
+	m_colorMapLegendActors.insert({att->name(), actor});
+}
 
 void Post2dWindowGridTypeDataItem::updateNodeValueRanges()
 {

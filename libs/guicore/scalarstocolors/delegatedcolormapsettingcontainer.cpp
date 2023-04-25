@@ -6,7 +6,7 @@
 
 DelegatedColorMapSettingContainer::DelegatedColorMapSettingContainer() :
 	CompositeContainer ({&usePreSetting}),
-	usePreSetting {"usePreSetting", true},
+	usePreSetting {"usePreSetting", false},
 	preSetting {nullptr},
 	customSetting {nullptr}
 {}
@@ -48,11 +48,11 @@ void DelegatedColorMapSettingContainer::save(QXmlStreamWriter& writer) const
 	customSetting->save(writer);
 }
 
-void DelegatedColorMapSettingContainer::applyLegendImageSetting(VTKGraphicsView* view)
+ImageSettingContainer* DelegatedColorMapSettingContainer::activeImageSetting() const
 {
 	if (usePreSetting) {
-		preSetting->imgSetting()->apply(view);
+		return preSetting->imgSetting();
 	} else {
-		customSetting->legendSetting()->imgSetting()->apply(view);
+		return customSetting->legendSetting()->imgSetting();
 	}
 }

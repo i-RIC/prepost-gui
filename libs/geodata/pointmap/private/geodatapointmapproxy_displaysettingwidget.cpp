@@ -20,6 +20,7 @@ GeoDataPointmapProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPointmap
 	ui(new Ui::GeoDataPointmapProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
 
 	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	if (! proxy->geoData()->gridAttribute()->isReferenceInformation()) {

@@ -116,7 +116,7 @@ void ColorMapLegendSettingEditWidget::updateNumberOfLabelsIfNeeded()
 	if (! ui->numLabelsAutoCheckBox->isChecked()) {return;}
 	if (m_colorMapSetting == nullptr) {return;}
 
-	int numCols = m_colorMapSetting->colors.size();
+	int numCols = static_cast<int> (m_colorMapSetting->colors.size());
 	if (m_colorMapSetting->transitionMode == ColorMapSettingContainer::TransitionMode::Discrete) {
 		++ numCols;
 	}
@@ -139,7 +139,7 @@ void ColorMapLegendSettingEditWidget::setImageSetting(const ImageSettingContaine
 	ui->imageSettingWidget->setSetting(setting);
 }
 
-void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool checked)
+void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool /*checked*/)
 {
 	updateNumberOfLabelsIfNeeded();
 }

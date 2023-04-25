@@ -173,6 +173,7 @@ HEADERS += guicore_global.h \
            arrows/arrowslengthsettingeditwidget.h \
            arrows/arrowssettingcontainer.h \
            arrows/arrowssettingeditwidget.h \
+           arrows/arrowssettingtoolbarwidget.h \
            arrows/arrowsshapesettingeditwidget.h \
            base/additionalmenuwindowi.h \
            base/animationcontrollerinterface.h \
@@ -298,7 +299,6 @@ HEADERS += guicore_global.h \
            scalarstocolors/delegatedcolormapsettingcontainer.h \
            scalarstocolors/delegatedcolormapsettingeditwidget.h \
            scalarstocolors/discretevaluesutil.h \
-           scalarstocolors/ui_geodatabackgroundeditdialog.h \
            solverdef/enumloader.h \
            solverdef/enumloadert.h \
            solverdef/integerenumloader.h \
@@ -340,6 +340,7 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
+           datamodel/private/graphicswindowdataitem_updateactorsettingcommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtkgraphicsview_impl.h \
@@ -636,6 +637,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          arrows/arrowslegendsettingeditwidget.ui \
          arrows/arrowslengthsettingeditwidget.ui \
          arrows/arrowssettingeditwidget.ui \
+         arrows/arrowssettingtoolbarwidget.ui \
          arrows/arrowsshapesettingeditwidget.ui \
          datamodel/propertybrowserview.ui \
          filter/generalfilteringsettingeditwidget.ui \
@@ -689,6 +691,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            arrows/arrowslengthsettingeditwidget.cpp \
            arrows/arrowssettingcontainer.cpp \
            arrows/arrowssettingeditwidget.cpp \
+           arrows/arrowssettingtoolbarwidget.cpp \
            arrows/arrowsshapesettingeditwidget.cpp \
            base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
@@ -841,6 +844,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
+           datamodel/private/graphicswindowdataitem_updateactorsettingcommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
            image/private/imagesettingcontainer_movecommand.cpp \

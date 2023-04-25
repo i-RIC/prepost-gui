@@ -91,7 +91,7 @@ public:
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs) override;
 	void informCtrlPointUpdateToCrosssectionWindows() override;
 	void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;
-	bool addToolBarButtons(QToolBar* parent) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 	QStringList containedFiles() const override;
 	void setDimensionsToFirst();
 

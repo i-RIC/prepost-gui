@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
-    <height>126</height>
+    <width>288</width>
+    <height>131</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -117,12 +117,16 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QSpinBox" name="horizontalMarginSpinBox">
+        <widget class="QDoubleSpinBox" name="horizontalMarginSpinBox">
          <property name="minimum">
-          <number>-9999</number>
+          <double>-99.989999999999995</double>
          </property>
-         <property name="maximum">
-          <number>9999</number>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="horizontalMarginUnitLabel">
+         <property name="text">
+          <string>%</string>
          </property>
         </widget>
        </item>
@@ -134,12 +138,16 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QSpinBox" name="verticalMarginSpinBox">
+        <widget class="QDoubleSpinBox" name="verticalMarginSpinBox">
          <property name="minimum">
-          <number>-9999</number>
+          <double>-99.989999999999995</double>
          </property>
-         <property name="maximum">
-          <number>9999</number>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="verticalMarginUnitLabel">
+         <property name="text">
+          <string>%</string>
          </property>
         </widget>
        </item>
@@ -157,6 +165,13 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="widthUnitLabel">
+         <property name="text">
+          <string>px</string>
+         </property>
+        </widget>
+       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="heightLabel">
          <property name="text">
@@ -168,6 +183,13 @@
         <widget class="QSpinBox" name="heightSpinBox">
          <property name="maximum">
           <number>9999</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="heightUnitLabel">
+         <property name="text">
+          <string>px</string>
          </property>
         </widget>
        </item>
@@ -184,7 +206,7 @@
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>0</height>
+         <height>5</height>
         </size>
        </property>
       </spacer>

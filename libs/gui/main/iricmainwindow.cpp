@@ -1492,8 +1492,9 @@ void iRICMainWindow::enterModelessDialogMode()
 	m_actionManager->mainToolBar()->setDisabled(true);
 	QToolBar* t = m_actionManager->animationToolbar();
 	if (t != nullptr) {t->setDisabled(true);}
-	t = m_actionManager->additionalToolBar();
-	if (t != nullptr) {t->setDisabled(true);}
+
+	const auto& t2 = m_actionManager->additionalToolBar();
+	if (! t2.expired()) {t2.lock()->setDisabled(true);}
 }
 
 void iRICMainWindow::exitModelessDialogMode()
@@ -1502,8 +1503,8 @@ void iRICMainWindow::exitModelessDialogMode()
 	m_actionManager->mainToolBar()->setDisabled(false);
 	QToolBar* t = m_actionManager->animationToolbar();
 	if (t != nullptr) {t->setDisabled(false);}
-	t = m_actionManager->additionalToolBar();
-	if (t != nullptr) {t->setDisabled(false);}
+	const auto& t2 = m_actionManager->additionalToolBar();
+	if (! t2.expired()) {t2.lock()->setDisabled(false);}
 }
 
 void iRICMainWindow::updateWindowList()

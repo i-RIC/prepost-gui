@@ -9,6 +9,7 @@
 #include <unordered_map>
 
 class ColorMapSettingContainer;
+class ColorMapSettingToolBarWidgetI;
 class NamedGraphicWindowDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowParticlesBaseScalarDataItem;
@@ -44,21 +45,22 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private:
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	ColorMapSettingContainer* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
@@ -74,7 +76,14 @@ private:
 
 	ParticleDataSetting m_setting;
 
-	class UpdateActorSettingsCommand;
+	class ToolBarWidget;
+	ToolBarWidget* m_toolBarWidget;
+	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
+
+	class ToolBarWidgetController;
+	ToolBarWidgetController* m_toolBarWidgetController;
+
+	class UpdateActorSettingCommand;
 	class PropertyDialog;
 
 public:

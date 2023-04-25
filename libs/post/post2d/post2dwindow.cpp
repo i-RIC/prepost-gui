@@ -99,9 +99,9 @@ QList<QMenu*> Post2dWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* Post2dWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& Post2dWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_dataModel->operationToolBar();
 }
 
 void Post2dWindow::cameraFit()

@@ -1,6 +1,6 @@
 #include "post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
 #include "post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.h"
-#include "post3dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h"
+#include "post3dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
 #include "ui_post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -26,6 +26,8 @@ Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::PropertyDialog(Post3dW
 	connect(ui->faceRemoveButton, &QPushButton::clicked, [=](bool) {removeFace();});
 	connect(ui->faceListWidget, &QListWidget::currentRowChanged, this, &PropertyDialog::setCurrentFace);
 
+	connect(&item->m_setting.legend.imageSetting, &ImageSettingContainer::updated, this, &PropertyDialog::updateImageSetting);
+
 	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
 	grid->GetDimensions(m_gridDimensions);
 	ui->faceSettingWidget->setDimensions(grid->GetDimensions());
@@ -48,6 +50,10 @@ Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::PropertyDialog(Post3dW
 	} else {
 		ui->faceListWidget->setCurrentRow(0);
 	}
+
+	QList<int> sizes;
+	sizes << 1 << 4 << 5;
+	ui->facesSplitter->setSizes(sizes);
 }
 
 Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::~PropertyDialog()
@@ -69,7 +75,7 @@ QUndoCommand* Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::createMo
 		updateColormapsCommand->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateColormap"),
 																																												 true, m_colorMapSettings.at(pair.first), pair.second));
 	}
-	return new UpdateActorSettingsCommand(apply, updateArrowsCommand, updateSettingsCommand, updateColormapsCommand, m_item);
+	return new UpdateActorSettingCommand(apply, updateArrowsCommand, updateSettingsCommand, updateColormapsCommand, m_item);
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::accept()
@@ -159,6 +165,11 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::setCurrentFace(in
 	m_currentRow = row;
 }
 
+void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::updateImageSetting()
+{
+	m_setting.legend.imageSetting = m_item->m_setting.legend.imageSetting;
+	ui->legendWidget->setImageSetting(m_setting.legend.imageSetting);
+}
 
 void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::handleButtonClick(QAbstractButton* button)
 {
@@ -189,6 +200,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::saveCurrentFace()
 	m_settings[m_currentRow].filtering = ui->filteringWidget->setting();
 
 	ArrowsSettingContainer arrowSetting;
+	arrowSetting.target = m_item->m_target.c_str();
 	ui->shapeWidget->updateSetting(&arrowSetting);
 	ui->colorSettingWidget->updateSetting(&arrowSetting);
 	m_settings[m_currentRow].arrow = arrowSetting;

@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QList>
 
+#include <memory>
+
 class iRICMainWindow;
 class ProjectData;
 class SolverDefinitionList;
@@ -30,7 +32,7 @@ public:
 	QMenuBar* menuBar() const;
 	/// Return the main toolbar.
 	QToolBar* mainToolBar() const;
-	QToolBar* additionalToolBar() const;
+	const std::weak_ptr<QToolBar>& additionalToolBar() const;
 	QToolBar* animationToolbar() const;
 	/// Return the toolbar of window list
 	QToolBar* windowsToolBar() const;
@@ -374,7 +376,8 @@ private:
 
 	QToolBar* m_windowsToolBar;
 
-	QToolBar* m_additionalToolBar;
+	std::weak_ptr<QToolBar> m_additionalToolBar;
+
 	/**
 	 * Note that animation toolbar is not created in this
 	 * class, but in AnimationController.

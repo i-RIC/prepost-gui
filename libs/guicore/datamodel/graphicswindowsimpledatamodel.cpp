@@ -25,5 +25,5 @@ QMainWindow* GraphicsWindowSimpleDataModel::mainWindow() const
 void GraphicsWindowSimpleDataModel::viewOperationEndedGlobal()
 {}
 
-void GraphicsWindowSimpleDataModel::handleResize()
+void GraphicsWindowSimpleDataModel::handleResize(QResizeEvent*)
 {}

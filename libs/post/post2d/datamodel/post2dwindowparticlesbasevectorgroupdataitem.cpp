@@ -8,19 +8,24 @@
 #include "private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <misc/iricundostack.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 
 Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
 	m_actor {vtkActor::New()},
-	m_legendActor {vtkActor2D::New()}
+	m_legendActor {vtkActor2D::New()},
+	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -34,7 +39,6 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
-	m_setting.arrowsSetting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
 
 	bool first = true;
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
@@ -43,6 +47,23 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 		}
 		first = false;
 	}
+
+	m_arrowsToolBarWidget->hide();
+	m_arrowsToolBarWidget->setColorMapSettings(topDataItem()->scalarGroupDataItem()->colorMapSettings());
+	m_arrowsToolBarWidget->setSetting(&m_setting.arrowsSetting);
+
+	connect(m_arrowsToolBarWidget, &ArrowsSettingToolBarWidget::updated, [=]() {
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = m_arrowsToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &m_setting.arrowsSetting));
+
+		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+
+			auto cm = topDataItem()->scalarGroupDataItem()->colorMapSettings().at(iRIC::toStr(newSetting.colorTarget));
+			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		pushUpdateActorSettingCommand(com, this);
+	});
 
 	setupActors();
 	updateCheckState();
@@ -69,7 +90,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::setTarget(const std::string& 
 	m_setting.arrowsSetting.target = target.c_str();
 	m_setting.arrowsSetting.legend.title = target.c_str();
 
-	updateActorSettings();
+	updateActorSetting();
+
+	emit m_setting.arrowsSetting.updated();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::updateZDepthRangeItemCount()
@@ -84,7 +107,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::assignActorZValues(const ZDep
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -109,7 +132,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(con
 {
 	m_setting.load(node);
 	updateCheckState();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -119,7 +142,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doSaveToProjectMainFile(QXmlS
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::innerUpdate2Ds()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsView* v)
@@ -148,14 +171,14 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphics
 	zoneDataItem()->clearParticleResultAttributeBrowser();
 }
 
-void Post2dWindowParticlesBaseVectorGroupDataItem::handleResize(VTKGraphicsView* v)
+void Post2dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleResize(v);
+	as.legend.imageSetting.controller()->handleResize(event, v);
 
 	auto cs = activeSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleResize(v);
+		cs->legend.imageSetting.controller()->handleResize(event, v);
 	}
 }
 
@@ -212,6 +235,16 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
+bool Post2dWindowParticlesBaseVectorGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_arrowsToolBarWidget->setParent(toolBar);
+	m_arrowsToolBarWidget->show();
+
+	toolBar->addWidget(m_arrowsToolBarWidget);
+
+	return true;
+}
+
 void Post2dWindowParticlesBaseVectorGroupDataItem::setupActors()
 {
 	m_actor->GetProperty()->SetLighting(false);
@@ -226,7 +259,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateCheckState()
 	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.arrowsSetting.target, m_childItems, true);
 }
 
-void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSettings()
+void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_legendActor->VisibilityOff();
@@ -263,6 +296,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSettings()
 		auto mapper = cs->buildPointDataMapper(arrowsData);
 		m_actor->SetMapper(mapper);
 		mapper->Delete();
+
+		auto img = cs->legend.imgSetting();
+		img->apply(view);
 	}
 	arrowsData->Delete();
 

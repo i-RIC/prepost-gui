@@ -72,8 +72,6 @@ ColorMapSettingEditWidget::ColorMapSettingEditWidget(QWidget *parent) :
 	ui->maxValueEdit->setInformChangeOnFocusOutOnly(true);
 
 	m_colorTableController = new ColorTableController(this);
-
-	setupColorPatternSelectComboBox();
 }
 
 ColorMapSettingEditWidget::~ColorMapSettingEditWidget()
@@ -470,24 +468,6 @@ void ColorMapSettingEditWidget::fixData()
 		}
 		s.colors.at(s.colors.size() - 1).value = 1;
 	}
-}
-
-void ColorMapSettingEditWidget::setupColorPatternSelectComboBox()
-{
-	/*
-	QDir iricDir(iRICRootPath::get());
-	iricDir.cdUp();
-	iricDir.cdUp();
-
-	ui->colorPatternSelectComboBox->blockSignals(true);
-
-	ui->colorPatternSelectComboBox->addItem(tr("(Please select item to apply)"));
-
-	addSettingFileNames(iricDir.absoluteFilePath("colormaps"), ui->colorPatternSelectComboBox, &m_importTargetFileNames);
-	addSettingFileNames(iricDir.absoluteFilePath("private/colormaps"), ui->colorPatternSelectComboBox, &m_importTargetFileNames);
-
-	ui->colorPatternSelectComboBox->blockSignals(false);
-	*/
 }
 
 void ColorMapSettingEditWidget::updateSwitchButtonText()

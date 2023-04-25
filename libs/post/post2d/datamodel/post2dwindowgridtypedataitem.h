@@ -10,9 +10,10 @@
 #include <unordered_map>
 #include <vector>
 
-class ColorMapSettingContainer;
+class ColorMapSettingToolBarWidgetController;
 class DelegatedColorMapSettingContainer;
 class ModifyCommandDialog;
+class SolverDefinitionGridAttribute;
 class SolverDefinitionGridType;
 class Post2dWindowGeoDataTopDataItem;
 class Post2dWindowZoneDataItem;
@@ -53,7 +54,7 @@ public:
 	void setupZoneDataItems();
 	void update();
 
-	void handleResize(VTKGraphicsView* v) override;
+	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
 
 public slots:
 	void applyColorMapSetting(const std::string& name);
@@ -61,6 +62,7 @@ public slots:
 
 private:
 	void setupColorMapSettingContainers(PreProcessorGridTypeDataItemInterface* item);
+	void setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemInterface* item);
 
 	void updateNodeValueRanges();
 	void updateCellValueRanges();
@@ -69,6 +71,7 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	SolverDefinitionGridType* m_gridType;
 	std::unordered_map<std::string, ValueRangeContainer> m_nodeValueRanges;
@@ -90,6 +93,7 @@ private:
 	class ApplyColorMapSettingCommand;
 	class ApplyColorMapSettingDialog;
 	class PreColorMapSettingUpdateHandler;
+	class ToolBarWidgetController;
 };
 
 #endif // POST2DWINDOWGRIDTYPEDATAITEM_H

@@ -26,7 +26,6 @@ public:
 
 	void updateGrid();
 
-	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -41,6 +40,7 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 	PreProcessorGridDataItem* gridDataItem() const;

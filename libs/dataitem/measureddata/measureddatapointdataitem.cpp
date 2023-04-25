@@ -23,12 +23,12 @@ void MeasuredDataPointDataItem::informDeselection(VTKGraphicsView* v)
 	s->legend.imageSetting.controller()->handleDeselection(v);
 }
 
-void MeasuredDataPointDataItem::handleResize(VTKGraphicsView* v)
+void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(v);
+	s->legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void MeasuredDataPointDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

@@ -8,7 +8,8 @@
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
 
-
+class ColorMapSettingToolBarWidgetI;
+class OpacityContainerWidget;
 class Post2dWindowCellScalarGroupTopDataItem;
 
 class vtkActor;
@@ -52,16 +53,17 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void doHandleResize(VTKGraphicsView* v) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void innerUpdateZScale(double scale) override;
 
@@ -72,9 +74,10 @@ private:
 
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;
+	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
+	OpacityContainerWidget* m_opacityToolBarWidget;
 
 	class PropertyDialog;
-	class UpdateActorSettingsCommand;
 
 public:
 	friend class Post2dWindowCellScalarGroupTopDataItem;

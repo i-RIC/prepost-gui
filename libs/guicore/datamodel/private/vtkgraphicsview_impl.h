@@ -3,6 +3,8 @@
 
 #include "../vtkgraphicsview.h"
 
+#include <QTimer>
+
 class vtkActor2D;
 class vtkCamera;
 class vtkGenericOpenGLRenderWindow;
@@ -34,6 +36,8 @@ public:
 	QCursor m_rotateCursor;
 	QCursor m_moveCursor;
 	QCursor m_rubberBandCursor;
+
+	QTimer m_resizeTimer;
 
 	bool m_interactive;
 	bool m_isViewChanging;

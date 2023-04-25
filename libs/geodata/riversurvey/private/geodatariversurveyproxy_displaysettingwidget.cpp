@@ -20,6 +20,8 @@ GeoDataRiverSurveyProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataRiver
 	ui(new Ui::GeoDataRiverSurveyProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
+
 	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	m_colorMapEditWidget = new DelegatedColorMapSettingEditWidget(this);
 	m_colorMapEditWidget->setEditWidget(colorMapWidget);

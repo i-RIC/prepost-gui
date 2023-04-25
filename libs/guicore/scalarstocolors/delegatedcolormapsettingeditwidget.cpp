@@ -16,6 +16,7 @@ DelegatedColorMapSettingEditWidget::DelegatedColorMapSettingEditWidget(QWidget *
 	ui(new Ui::DelegatedColorMapSettingEditWidget)
 {
 	ui->setupUi(this);
+	ui->useOriginalCheckBox->hide();
 	connect(ui->useOriginalCheckBox, &QCheckBox::toggled, this, &DelegatedColorMapSettingEditWidget::setUseOriginalSetting);
 }
 

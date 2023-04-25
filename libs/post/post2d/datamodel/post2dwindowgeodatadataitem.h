@@ -17,6 +17,7 @@ public:
 	GeoDataProxy* geoDataProxy() const;
 	void setGeoDataProxy(GeoDataProxy* proxy);
 
+	bool addToolBarButtons(QToolBar* toolBar) override;
 	DelegatedColorMapSettingContainer* colorMapSetting() const override;
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;

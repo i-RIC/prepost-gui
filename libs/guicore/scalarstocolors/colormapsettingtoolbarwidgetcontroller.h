@@ -15,6 +15,9 @@ public:
 
 	ColorMapSettingToolBarWidgetI* widget() const;
 
+private slots:
+	virtual void handleWidgetUpdate() = 0;
+
 protected:
 	ColorMapSettingToolBarWidgetI* m_widget;
 };

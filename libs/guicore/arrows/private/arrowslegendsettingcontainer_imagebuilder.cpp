@@ -16,10 +16,7 @@ ArrowsLegendSettingContainer::ImageBuilder::ImageBuilder(ArrowsLegendSettingCont
 
 bool ArrowsLegendSettingContainer::ImageBuilder::build(QImage* image)
 {
-	auto vmode = m_setting->visibilityMode.value();
-
-	if (vmode == VisibilityMode::Never) {return false;}
-	if (vmode == VisibilityMode::WhenSelected && ! m_setting->imageSetting.controller()->selected()) {return false;}
+	if (! m_setting->visible) {return false;}
 
 	const auto& s = m_setting;
 	const auto& as = s->m_arrowsSetting;

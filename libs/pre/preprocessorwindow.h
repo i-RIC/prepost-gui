@@ -75,7 +75,7 @@ public:
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 	ObjectBrowser* objectBrowser() const override;
 	QMenu* calcCondMenu() const override;
 	void addGridCreatingConditionImportMenu(QMenu* menu);

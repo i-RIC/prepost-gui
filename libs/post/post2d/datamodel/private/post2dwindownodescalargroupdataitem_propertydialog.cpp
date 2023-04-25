@@ -1,10 +1,11 @@
 #include "../post2dwindownodescalargrouptopdataitem.h"
 #include "../post2dwindowzonedataitem.h"
 #include "post2dwindownodescalargroupdataitem_propertydialog.h"
-#include "post2dwindownodescalargroupdataitem_updateactorsettingscommand.h"
 #include "ui_post2dwindownodescalargroupdataitem_propertydialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidget.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -21,8 +22,6 @@ Post2dWindowNodeScalarGroupDataItem::PropertyDialog::PropertyDialog(Post2dWindow
 	ui->setupUi(this);
 
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PropertyDialog::handleButtonClick);
-	connect(ui->importButton, &QPushButton::clicked, [=](bool) {ui->colorMapWidget->importSetting();});
-	connect(ui->exportButton, &QPushButton::clicked, [=](bool) {ui->colorMapWidget->exportSetting();});
 
 	auto container = item->topDataItem()->zoneDataItem()->dataContainer();
 	if (! container->IBCExists()) {
@@ -39,7 +38,11 @@ Post2dWindowNodeScalarGroupDataItem::PropertyDialog::PropertyDialog(Post2dWindow
 		ui->rangeWidget->setDimensions(dims[0], dims[1]);
 	}
 
-	ui->colorMapWidget->setSetting(&item->m_setting.colorMapSetting);
+	auto cmw = new ColorMapSettingEditWidget(this);
+	cmw->setSetting(&item->m_setting.colorMapSetting);
+	m_colorMapWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+
+	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	ui->rangeWidget->setSetting(&item->m_setting.regionSetting);
 	ui->opacityWidget->setOpacityPercent(item->m_setting.opacity);
 }
@@ -52,19 +55,19 @@ Post2dWindowNodeScalarGroupDataItem::PropertyDialog::~PropertyDialog()
 QUndoCommand* Post2dWindowNodeScalarGroupDataItem::PropertyDialog::createModifyCommand(bool apply)
 {
 	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowNodeScalarGroupDataItem::SetProperty"), apply);
-	command->addCommand(ui->colorMapWidget->createModifyCommand());
+	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(ui->rangeWidget->createModifyCommand());
 
 	OpacityContainer o;
 	o.setValue(ui->opacityWidget->opacityPercent());
 	command->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, o, &m_item->m_setting.opacity));
 
-	return new UpdateActorSettingsCommand(apply, command, m_item);
+	return command;
 }
 
 void Post2dWindowNodeScalarGroupDataItem::PropertyDialog::accept()
 {
-	m_item->pushRenderCommand(createModifyCommand(false), m_item, true);
+	m_item->pushUpdateActorSettingCommand(createModifyCommand(false), m_item, true);
 
 	QDialog::accept();
 }
@@ -88,5 +91,5 @@ void Post2dWindowNodeScalarGroupDataItem::PropertyDialog::handleButtonClick(QAbs
 void Post2dWindowNodeScalarGroupDataItem::PropertyDialog::apply()
 {
 	m_applied = true;
-	m_item->pushRenderCommand(createModifyCommand(true), m_item, true);
+	m_item->pushUpdateActorSettingCommand(createModifyCommand(true), m_item, true);
 }

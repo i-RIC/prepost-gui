@@ -496,10 +496,10 @@ QUndoCommand* PreProcessorGridTypeDataItem::createApplyColorMapSettingCommand(co
 	return new ApplyColorMapSettingAndRenderCommand(command, name, apply, this);
 }
 
-void PreProcessorGridTypeDataItem::handleResize(VTKGraphicsView* v)
+void PreProcessorGridTypeDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	for (const auto& pair : m_colorMapSettingContainers) {
-		pair.second->legendSetting()->imgSetting()->controller()->handleResize(v);
+		pair.second->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 

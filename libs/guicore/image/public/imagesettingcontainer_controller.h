@@ -10,6 +10,7 @@ class GraphicsWindowDataItem;
 class VTKGraphicsView;
 
 class QMouseEvent;
+class QResizeEvent;
 
 class GUICOREDLL_EXPORT ImageSettingContainer::Controller
 {
@@ -35,7 +36,7 @@ public:
 	void handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleMousePressEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
-	void handleResize(VTKGraphicsView* v);
+	void handleResize(QResizeEvent* event, VTKGraphicsView* v);
 
 	void handleSelection(VTKGraphicsView* v);
 	void handleDeselection(VTKGraphicsView* v);

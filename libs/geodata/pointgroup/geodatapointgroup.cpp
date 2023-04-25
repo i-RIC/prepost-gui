@@ -513,5 +513,7 @@ void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
 	} else if (ds.mapping == DisplaySetting::Mapping::Value) {
 		p_ds.mapping = GeoDataPoint::DisplaySetting::Mapping::Value;
 	}
-	targetData->setPointSize(ds.pointSize * 2);
+	p_ds.pointSize = ds.pointSize * 2;
+
+	targetData->updateActorSetting();
 }

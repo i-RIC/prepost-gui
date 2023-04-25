@@ -2,6 +2,9 @@
 #define ADDITIONALMENUWINDOWI_H
 
 #include <QList>
+
+#include <memory>
+
 class QMenu;
 class QToolBar;
 
@@ -11,7 +14,7 @@ public:
 	virtual ~AdditionalMenuWindowI() {}
 
 	virtual QList<QMenu*> getAdditionalMenus() const = 0;
-	virtual QToolBar* getAdditionalToolBar() const = 0;
+	virtual const std::shared_ptr<QToolBar>& getAdditionalToolBar() const = 0;
 };
 
 #endif // ADDITIONALMENUWINDOWI_H

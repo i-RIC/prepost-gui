@@ -25,24 +25,19 @@
 #include <QDialog>
 
 GraphicsWindowDataModel::GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem* parent) :
-	GraphicsWindowSimpleDataModel(w, parent)
-{
-//	graphicsView() = dynamic_cast<VTKGraphicsView*>(w->centralWidget());
-	m_rootDataItem = nullptr;
-	m_rightClickMenu = nullptr;
-	m_operationToolBar = new iRICToolBar(tr("Operation ToolBar"), iricMainWindow());
-	m_selectedItem = nullptr;
-	m_dataLoaded = false;
-
-	m_itemModel = new QStandardItemModel(this);
-}
+	GraphicsWindowSimpleDataModel(w, parent),
+	m_rootDataItem {nullptr},
+	m_itemModel {new QStandardItemModel(this)},
+	m_selectedItem {nullptr},
+	m_rightClickMenu {nullptr},
+	m_operationToolBar {new iRICToolBar(tr("Operation ToolBar"), iricMainWindow())},
+	m_dataLoaded {false}
+{}
 
 GraphicsWindowDataModel::~GraphicsWindowDataModel()
-{
-	delete m_operationToolBar;
-}
+{}
 
-QToolBar* GraphicsWindowDataModel::operationToolBar() const
+const std::shared_ptr<QToolBar>& GraphicsWindowDataModel::operationToolBar() const
 {
 	return m_operationToolBar;
 }
@@ -111,9 +106,9 @@ void GraphicsWindowDataModel::viewOperationEndedGlobal()
 	m_rootDataItem->viewOperationEndedGlobal(graphicsView());
 }
 
-void GraphicsWindowDataModel::handleResize()
+void GraphicsWindowDataModel::handleResize(QResizeEvent* event)
 {
-	m_rootDataItem->handleResize(graphicsView());
+	m_rootDataItem->handleResize(event, graphicsView());
 }
 
 void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
@@ -241,7 +236,7 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 
 	QAction* sep = m_operationToolBar->addSeparator();
 	// add additinal buttons related to currently selected item.
-	bool added = dataItem->addToolBarButtons(m_operationToolBar);
+	bool added = dataItem->addToolBarButtons(m_operationToolBar.get());
 	if (! added) {
 		m_operationToolBar->removeAction(sep);
 	}

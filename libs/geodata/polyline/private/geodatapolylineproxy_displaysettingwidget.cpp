@@ -20,6 +20,7 @@ GeoDataPolyLineProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPolyLine
 	ui(new Ui::GeoDataPolyLineProxy_DisplaySettingWidget)
 {
 	ui->setupUi(this);
+	ui->usePreCheckBox->hide();
 
 	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	if (proxy->geoData()->gridAttribute()->isReferenceInformation()) {

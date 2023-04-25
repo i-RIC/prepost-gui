@@ -40,6 +40,7 @@ public:
 
 private slots:
 	void handleTargetChange(const QString& value);
+	void updateImageSetting();
 
 private:
 	std::vector<std::string> m_valueNames;

@@ -81,9 +81,9 @@ QList<QMenu*> Graph2dScatteredWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* Graph2dScatteredWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& Graph2dScatteredWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_toolBar;
 }
 
 Graph2dScatteredWindowControlWidget* Graph2dScatteredWindow::controlWidget() const

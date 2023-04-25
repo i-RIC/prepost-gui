@@ -23,7 +23,7 @@ public:
 
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	QToolBar* getAdditionalToolBar() const override;
+	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	Graph2dScatteredWindowControlWidget* controlWidget() const;
 
@@ -39,6 +39,7 @@ private:
 	Graph2dScatteredWindowDataModel* m_dataModel;
 	Graph2dScatteredWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+	std::shared_ptr<QToolBar> m_toolBar;
 
 public:
 	friend class Graph2dScatteredWindowProjectDataItem;

@@ -9,9 +9,7 @@ PreProcessorGridTypeDataItem::ToolBarWidgetController::ToolBarWidgetController(c
 	ColorMapSettingToolBarWidgetController {widget},
 	m_name {name},
 	m_item {item}
-{
-	connect(m_widget, &ColorMapSettingToolBarWidgetI::updated, this, &ToolBarWidgetController::handleWidgetUpdate);
-}
+{}
 
 void PreProcessorGridTypeDataItem::ToolBarWidgetController::handleWidgetUpdate()
 {

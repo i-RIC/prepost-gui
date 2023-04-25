@@ -2,7 +2,7 @@
 #include "../post3dwindowparticlesbasescalardataitem.h"
 #include "../post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasescalargroupdataitem_propertydialog.h"
-#include "post3dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.h"
+#include "post3dwindowparticlesbasescalargroupdataitem_updateactorsettingcommand.h"
 #include "ui_post3dwindowparticlesbasescalargroupdataitem_propertydialog.h"
 
 #include <guibase/vtkdatasetattributestool.h>
@@ -40,7 +40,7 @@ QUndoCommand* Post3dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::crea
 	if (ui->valueRadioButton->isChecked()) {
 		colorMapCommand = ui->colorMapWidget->createModifyCommand();
 	}
-	return new UpdateActorSettingsCommand(apply, settingCommand, colorMapCommand, m_item);
+	return new UpdateActorSettingCommand(apply, settingCommand, colorMapCommand, m_item);
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::accept()

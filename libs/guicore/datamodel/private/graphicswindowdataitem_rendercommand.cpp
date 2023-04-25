@@ -27,5 +27,6 @@ bool GraphicsWindowDataItem::RenderCommand::mergeWith(const QUndoCommand *other)
 {
 	const RenderCommand* modc = dynamic_cast<const RenderCommand*> (other);
 	if (modc == nullptr) {return false;}
+
 	return m_command.get()->mergeWith(modc->m_command.get());
 }

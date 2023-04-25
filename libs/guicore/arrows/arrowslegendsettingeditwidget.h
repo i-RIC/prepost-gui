@@ -10,6 +10,7 @@ class ArrowsLegendSettingEditWidget;
 }
 
 class ArrowsLegendSettingContainer;
+class ImageSettingContainer;
 
 class GUICOREDLL_EXPORT ArrowsLegendSettingEditWidget : public QWidget
 {
@@ -21,6 +22,7 @@ public:
 
 	ArrowsLegendSettingContainer setting() const;
 	void setSetting(const ArrowsLegendSettingContainer& setting);
+	void setImageSetting(const ImageSettingContainer& setting);
 
 	void setTitle(const QString& title);
 

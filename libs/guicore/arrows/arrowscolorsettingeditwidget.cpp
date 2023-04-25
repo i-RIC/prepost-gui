@@ -2,6 +2,9 @@
 #include "arrowscolorsettingeditwidget.h"
 #include "ui_arrowscolorsettingeditwidget.h"
 
+#include <guicore/scalarstocolors/colormapsettingeditwidget.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+
 #include <misc/stringtool.h>
 
 ArrowsColorSettingEditWidget::ArrowsColorSettingEditWidget(QWidget *parent) :
@@ -9,9 +12,12 @@ ArrowsColorSettingEditWidget::ArrowsColorSettingEditWidget(QWidget *parent) :
 	ui(new Ui::ArrowsColorSettingEditWidget)
 {
 	ui->setupUi(this);
+
+	m_colorMapWidget = new ColorMapSettingEditWidget(this);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	ui->colorMapWidget->setWidget(widget);
+
 	connect<void(QComboBox::*)(int)>(ui->scalarComboBox, &QComboBox::currentIndexChanged, this, &ArrowsColorSettingEditWidget::handleColorScalarChange);
-	connect(ui->importButton, &QPushButton::clicked, [=](bool){ui->colorMapWidget->importSetting();});
-	connect(ui->exportButton, &QPushButton::clicked, [=](bool){ui->colorMapWidget->exportSetting();});
 }
 
 ArrowsColorSettingEditWidget::~ArrowsColorSettingEditWidget()
@@ -36,7 +42,7 @@ void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<
 	}
 	ui->scalarComboBox->blockSignals(false);
 	if (m_colorMapNames.size() > 0) {
-		ui->colorMapWidget->setSetting(m_colorMapSettings.at(m_colorMapNames.at(0)));
+		m_colorMapWidget->setSetting(m_colorMapSettings.at(m_colorMapNames.at(0)));
 	} else {
 		ui->customRadioButton->setChecked(true);
 		ui->customRadioButton->setDisabled(true);
@@ -90,7 +96,7 @@ QUndoCommand* ArrowsColorSettingEditWidget::colorMapModifyCommand() const
 		return nullptr;
 	}
 
-	return ui->colorMapWidget->createModifyCommand();
+	return m_colorMapWidget->createModifyCommand();
 }
 
 void ArrowsColorSettingEditWidget::handleColorScalarChange(int index)
@@ -98,5 +104,5 @@ void ArrowsColorSettingEditWidget::handleColorScalarChange(int index)
 	auto name = m_colorMapNames.at(index);
 	auto colorSetting = m_colorMapSettings.find(name)->second;
 
-	ui->colorMapWidget->setSetting(colorSetting);
+	m_colorMapWidget->setSetting(colorSetting);
 }

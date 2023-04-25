@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -42,11 +44,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Uvoz (&amp;I)...</translation>
+        <translation type="vanished">Uvoz (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Izvoz (&amp;E)...</translation>
+        <translation type="vanished">Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Boja</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Colormap</translation>
     </message>
 </context>
 <context>
@@ -64,19 +74,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidljivost</translation>
+        <translation type="vanished">Vidljivost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kada je odabrano</translation>
+        <translation type="vanished">Kada je odabrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Uvijek</translation>
+        <translation type="vanished">Uvijek</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikad</translation>
+        <translation type="vanished">Nikad</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +127,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Veličina i pozicija</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Vidljivo</translation>
     </message>
 </context>
 <context>
@@ -166,7 +180,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Boja</translation>
+        <translation>Boja</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +192,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1410,8 +1439,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Boja:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena: Za Ime možete koristiti samo ASCII znakove.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Napomena: Za Ime možete koristiti samo ASCII znakove.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1474,6 +1503,14 @@ Parse error %2 at %3, column %4</source>
         <source>Distance from bottom</source>
         <translation>Udaljenost od dna</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">px</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -1509,12 +1546,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Čvor definicije nije pohranjen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Pogrešan valueType "%1"je postavljeno.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Pogrešan valueType &quot;%1&quot;je postavljeno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Pogrešan uslovTip "%1"je postavljeno.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Pogrešan uslovTip &quot;%1&quot;je postavljeno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1785,8 +1822,8 @@ Do you really want to import this file?</source>
         <translation>Datoteka %1 se ažurira nakon uvoza u stanje izračuna %2. Želite li uvesti ažuriranu datoteku?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Vrijednosti možete kopirati i zalijepiti prečicom "Ctrl + C" i "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Vrijednosti možete kopirati i zalijepiti prečicom &quot;Ctrl + C&quot; i &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1915,8 +1952,8 @@ Do you really want to import this file?</source>
         <translation>Došlo je do greške pri otvaranju datoteke.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Prve dvije kolone moraju biti "X" i "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Prve dvije kolone moraju biti &quot;X&quot; i &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2077,8 +2114,8 @@ Do you really want to import this file?</source>
         <translation>Definicija varijable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2156,8 +2193,8 @@ Do you really want to import this file?</source>
         <translation>Dolje (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Napomena &lt;/span&gt;: Redoslijed na listi je važan. U definiciji možete koristiti vrijednost izračuna jednostavnih operacija kao varijablu, koja se pojavljuje ranije na listi. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Napomena &lt;/span&gt;: Redoslijed na listi je važan. U definiciji možete koristiti vrijednost izračuna jednostavnih operacija kao varijablu, koja se pojavljuje ranije na listi. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2510,8 +2547,8 @@ Do you really want to import this file?</source>
         <translation>Definicija izlaza</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2765,8 +2802,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Radni prostor "%1" ima %2 fascikle projekta za koje se čini da se više ne koriste. Želite li ih ukloniti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Radni prostor &quot;%1&quot; ima %2 fascikle projekta za koje se čini da se više ne koriste. Želite li ih ukloniti?</translation>
     </message>
     <message>
         <source>Information</source>

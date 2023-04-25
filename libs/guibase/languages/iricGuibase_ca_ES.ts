@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -19,6 +21,17 @@
     <message>
         <source>Warning</source>
         <translation>Advertiment</translation>
+    </message>
+</context>
+<context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -112,7 +125,7 @@
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="vanished">Dossier %1 no s'ha pogut obrir.</translation>
+        <translation type="vanished">Dossier %1 no s&apos;ha pogut obrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
@@ -131,7 +144,7 @@
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="vanished">S'està configurant...</translation>
+        <translation type="vanished">S&apos;està configurant...</translation>
     </message>
 </context>
 <context>
@@ -368,7 +381,7 @@
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation>Punt d'ajust</translation>
+        <translation>Punt d&apos;ajust</translation>
     </message>
 </context>
 <context>
@@ -510,11 +523,11 @@
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -522,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Especifiqueu el format numèric en format printf. Per exemple: " %5.2f "per a 3.141592 -&gt; 3,14" %4.2e "per a 12300 -&gt; 1,23e + 004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifiqueu el format numèric en format printf. Per exemple: &quot; %5.2f &quot;per a 3.141592 -&gt; 3,14&quot; %4.2e &quot;per a 12300 -&gt; 1,23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -552,7 +565,7 @@
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -560,7 +573,7 @@
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -595,7 +608,7 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -626,7 +639,7 @@
     </message>
     <message>
         <source>Show actual time</source>
-        <translation>Mostra l'hora real</translation>
+        <translation>Mostra l&apos;hora real</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
@@ -650,7 +663,7 @@
     </message>
     <message>
         <source>Actual time format</source>
-        <translation>Format d'hora real</translation>
+        <translation>Format d&apos;hora real</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
@@ -678,7 +691,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d'hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d&apos;hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show Time Zone</source>
@@ -697,6 +710,10 @@
     <message>
         <source>Transparent</source>
         <translation>Transparent</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -721,7 +738,7 @@
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation>Configuració de la pantalla de l'eix</translation>
+        <translation>Configuració de la pantalla de l&apos;eix</translation>
     </message>
     <message>
         <source>X-Axis</source>
@@ -741,7 +758,7 @@
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>min</source>

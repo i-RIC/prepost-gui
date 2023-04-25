@@ -27,6 +27,7 @@ private slots:
 	void addFace();
 	void removeFace();
 	void setCurrentFace(int row);
+	void updateImageSetting();
 
 	void handleButtonClick(QAbstractButton* button);
 

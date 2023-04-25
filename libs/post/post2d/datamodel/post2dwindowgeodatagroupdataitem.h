@@ -5,6 +5,7 @@
 #include <QString>
 #include <QMap>
 
+class ColorMapSettingToolBarWidgetController;
 class DelegatedColorMapSettingContainer;
 class SolverDefinitionGridAttribute;
 class Post2dWindowGeoDataDataItem;
@@ -15,6 +16,7 @@ class Post2dWindowGeoDataGroupDataItem : public Post2dWindowDataItem
 
 public:
 	Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent);
+	~Post2dWindowGeoDataGroupDataItem();
 	SolverDefinitionGridAttribute* condition() const;
 
 	DelegatedColorMapSettingContainer* colorMapSetting() const;
@@ -26,6 +28,8 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
 private slots:
 	void editScalarsToColors();
 
@@ -34,6 +38,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QMap<QString, Post2dWindowGeoDataDataItem*> m_itemNameMap;
+	ColorMapSettingToolBarWidgetController* m_toolBarWidgetController;
 	SolverDefinitionGridAttribute* m_condition;
 
 	QAction* m_editColorMapAction;

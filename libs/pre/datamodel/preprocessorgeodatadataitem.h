@@ -24,7 +24,7 @@ public:
 	void setGeoData(GeoData* geodata) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 	void updateMoveUpDownActions(ObjectBrowserView* view) override;
 	void handleStandardItemChange() override;
 	void handleStandardItemDoubleClicked() override;

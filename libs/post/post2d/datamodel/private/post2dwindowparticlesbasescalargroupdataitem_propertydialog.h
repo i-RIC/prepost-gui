@@ -11,6 +11,8 @@ namespace Ui {
 class Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog;
 }
 
+class ColorMapSettingEditWidget;
+
 class Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog : public QDialog
 {
 	Q_OBJECT
@@ -40,6 +42,7 @@ private:
 
 	std::vector<std::string> m_colorTargets;
 
+	ColorMapSettingEditWidget* m_colorMapWidget;
 	Post2dWindowParticlesBaseScalarGroupDataItem* m_item;
 
 	Ui::Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog *ui;

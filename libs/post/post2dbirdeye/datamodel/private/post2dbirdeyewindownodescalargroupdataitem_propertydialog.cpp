@@ -16,6 +16,7 @@
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::PropertyDialog::PropertyDialog(Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QWidget *parent) :
 	QDialog(parent),
+	m_applied {false},
 	m_item {item},
 	ui(new Ui::Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog)
 {

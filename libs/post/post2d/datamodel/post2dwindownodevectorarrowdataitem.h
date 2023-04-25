@@ -19,6 +19,10 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
 
 private:
 	Post2dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;

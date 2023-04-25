@@ -46,6 +46,11 @@ void Post2dWindowParticlesBaseVectorDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(topItem->showAttributeBrowserAction());
 }
 
+bool Post2dWindowParticlesBaseVectorDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
 Post2dWindowParticlesBaseVectorGroupDataItem* Post2dWindowParticlesBaseVectorDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post2dWindowParticlesBaseVectorGroupDataItem*> (parent());

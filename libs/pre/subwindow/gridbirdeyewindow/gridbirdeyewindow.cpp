@@ -74,9 +74,9 @@ QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
 	return menus;
 }
 
-QToolBar* GridBirdEyeWindow::getAdditionalToolBar() const
+const std::shared_ptr<QToolBar>& GridBirdEyeWindow::getAdditionalToolBar() const
 {
-	return nullptr;
+	return m_toolBar;
 }
 
 void GridBirdEyeWindow::cameraFit()

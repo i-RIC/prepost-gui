@@ -112,19 +112,18 @@ void PreProcessorGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	m_geoData->saveToProjectMainFile(writer);
 }
 
-bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* tb)
+bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	PreProcessorGeoDataGroupDataItem* gItem =
-		dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
 
-	bool added = gItem->addToolBarButtons(tb);
+	bool added = gItem->addToolBarButtons(toolBar);
 	QAction* sep = nullptr;
 	if (added) {
-		sep = tb->addSeparator();
+		sep = toolBar->addSeparator();
 	}
-	bool added2 = m_geoData->addToolBarButtons(tb);
+	bool added2 = m_geoData->addToolBarButtons(toolBar);
 	if (! added2 && sep) {
-		tb->removeAction(sep);
+		toolBar->removeAction(sep);
 	}
 	return added || added2;
 }

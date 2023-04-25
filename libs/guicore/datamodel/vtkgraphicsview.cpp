@@ -32,6 +32,12 @@
 #include <QVector3D>
 #include <vtkQImageToImageSource.h>
 
+namespace {
+
+const int RESIZE_RENDER_DELAY_MSEC = 10;
+
+}
+
 VTKGraphicsView::Impl::Impl() :
 	m_renderWindow {vtkGenericOpenGLRenderWindow::New()},
 	m_activeDataItem {nullptr},
@@ -73,6 +79,8 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
 	impl {new Impl()}
 {
 	setEnableHiDPI(true);
+
+	connect(&impl->m_resizeTimer, &QTimer::timeout, this, &VTKGraphicsView::render);
 
 	auto rw = impl->m_renderWindow;
 	SetRenderWindow(rw);
@@ -520,9 +528,9 @@ void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 	int* vtk_size = GetRenderWindow()->GetSize();
 	impl->m_logoActor->SetPosition(*(vtk_size) - impl->m_logoImage.width() - 10, 5);
 	impl->m_logoActor->Modified();
-	impl->m_model->handleResize();
+	impl->m_model->handleResize(event);
 
-	render();
+	impl->m_resizeTimer.start(RESIZE_RENDER_DELAY_MSEC);
 }
 
 void VTKGraphicsView::cameraFit()
@@ -541,7 +549,7 @@ void VTKGraphicsView::cameraZoomIn()
 
 void VTKGraphicsView::cameraZoomOut()
 {
-	scale (1 / 1.2);
+	scale(1 / 1.2);
 	impl->m_model->viewOperationEndedGlobal();
 	render();
 }

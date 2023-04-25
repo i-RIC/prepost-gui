@@ -165,16 +165,18 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 		if (m_gridTypeDataItems.begin() != m_gridTypeDataItems.end()) {
 			// Current solver support only one grid type, and it does not allow multiple grids to input.
 			// So, construct a simplified object tree, in the object browser.
-			PreProcessorGridTypeDataItem* item = *(m_gridTypeDataItems.begin());
+			auto item = *(m_gridTypeDataItems.begin());
 			// take Raw Data item. and put them to the model.
-			PreProcessorGeoDataTopDataItemInterface* rtitem = item->geoDataTop();
+			auto rtitem = item->geoDataTop();
 			item->standardItem()->takeChild(rtitem->standardItem()->row());
 			model->appendRow(rtitem->standardItem());
+
 			// GridCreatingCondition, Grid are added as top item.
 			PreProcessorGridAndGridCreatingConditionDataItem* citem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*(item->conditions().begin()));
 			PreProcessorGridCreatingConditionDataItemInterface* gccitem = citem->creatingConditionDataItem();
 			citem->standardItem()->takeChild(gccitem->standardItem()->row());
 			model->appendRow(gccitem->standardItem());
+
 			// Boundary condition setting node here if needed.
 			PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(citem->gridDataItem());
 			if (gitem->bcGroupDataItem() != nullptr) {

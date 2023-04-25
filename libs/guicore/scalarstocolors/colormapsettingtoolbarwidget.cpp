@@ -34,6 +34,22 @@ ColorMapSettingContainerI* ColorMapSettingToolBarWidget::modifiedSetting()
 	return setting;
 }
 
+bool ColorMapSettingToolBarWidget::visible() const
+{
+	return ui->visibleCheckBox->isChecked();
+}
+
+ColorMapLegendSettingContainer::Direction ColorMapSettingToolBarWidget::direction() const
+{
+	if (ui->horizontalRadioButton->isChecked()) {
+		return ColorMapLegendSettingContainer::Direction::Horizontal;
+	} else if (ui->verticalRadioButton->isChecked()) {
+		return ColorMapLegendSettingContainer::Direction::Vertical;
+	}
+
+	return ColorMapLegendSettingContainer::Direction::Horizontal;
+}
+
 void ColorMapSettingToolBarWidget::applySetting()
 {
 	if (m_setting == nullptr) {return;}

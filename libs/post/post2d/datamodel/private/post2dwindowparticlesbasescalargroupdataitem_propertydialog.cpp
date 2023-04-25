@@ -2,10 +2,12 @@
 #include "../post2dwindowparticlesbasescalardataitem.h"
 #include "../post2dwindowparticlesbasescalargroupdataitem.h"
 #include "post2dwindowparticlesbasescalargroupdataitem_propertydialog.h"
-#include "post2dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.h"
+#include "post2dwindowparticlesbasescalargroupdataitem_updateactorsettingcommand.h"
 #include "ui_post2dwindowparticlesbasescalargroupdataitem_propertydialog.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidget.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
@@ -20,8 +22,10 @@ Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::PropertyDialog(Pos
 
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PropertyDialog::handleButtonClick);
 	connect<void(QComboBox::*)(int)>(ui->valueComboBox, &QComboBox::currentIndexChanged, this, &PropertyDialog::colorTargetChanged);
-	connect(ui->importButton, &QPushButton::clicked, [=](bool) {ui->colorMapWidget->importSetting();});
-	connect(ui->exportButton, &QPushButton::clicked, [=](bool) {ui->colorMapWidget->exportSetting();});
+
+	m_colorMapWidget = new ColorMapSettingEditWidget(this);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 
 	setupColorTargets();
 
@@ -38,9 +42,9 @@ QUndoCommand* Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::crea
 	auto settingCommand = new ValueModifyCommmand<ParticleDataSetting>("Edit setting", setting(), &m_item->m_setting);
 	QUndoCommand* colorMapCommand = nullptr;
 	if (ui->valueRadioButton->isChecked()) {
-		colorMapCommand = ui->colorMapWidget->createModifyCommand();
+		colorMapCommand = m_colorMapWidget->createModifyCommand();
 	}
-	return new UpdateActorSettingsCommand(apply, settingCommand, colorMapCommand, m_item);
+	return new UpdateActorSettingCommand(apply, settingCommand, colorMapCommand, m_item);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::accept()
@@ -63,7 +67,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::colorTargetCh
 	auto child = m_item->childDataItem(colorTarget);
 	auto& cs = child->colorMapSetting();
 
-	ui->colorMapWidget->setSetting(&cs);
+	m_colorMapWidget->setSetting(&cs);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::handleButtonClick(QAbstractButton* button)

@@ -1,5 +1,6 @@
 #include "imagesettingcontainer_movecommand.h"
 
+#include <guicore/datamodel/vtkgraphicsview.h>
 #include <misc/qundocommandhelper.h>
 
 #include <QPoint>
@@ -14,15 +15,17 @@ ImageSettingContainer::MoveCommand::MoveCommand(bool keyDown, const QPoint& from
 	auto pos = m_setting->position.value();
 
 	if (pos == Position::Top || pos == Position::TopLeft || pos == Position::TopRight) {
-		m_newSetting.verticalMargin += dy;
+		m_newSetting.verticalMargin += dy / static_cast<double> (v->height());
 	} else if (pos == Position::Bottom || pos == Position::BottomLeft || pos == Position::BottomRight) {
-		m_newSetting.verticalMargin -= dy;
+		m_newSetting.verticalMargin -= dy / static_cast<double> (v->height());
 	}
 	if (pos == Position::Left || pos == Position::TopLeft || pos == Position::BottomLeft) {
-		m_newSetting.horizontalMargin += dx;
+		m_newSetting.horizontalMargin += dx / static_cast<double> (v->width());
 	} else if (pos == Position::Right || pos == Position::TopRight || pos == Position::BottomRight) {
-		m_newSetting.horizontalMargin -= dx;
+		m_newSetting.horizontalMargin -= dx / static_cast<double> (v->width());
 	}
+
+	m_newSetting.optimizePosition(v);
 }
 
 int ImageSettingContainer::MoveCommand::id() const

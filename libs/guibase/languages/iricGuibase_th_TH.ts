@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -19,6 +21,17 @@
     <message>
         <source>Warning</source>
         <translation>คำเตือน</translation>
+    </message>
+</context>
+<context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -522,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: " %5.2f" สำหรับ 3.141592 --&gt; 3.14" %4.2e" สำหรับ 12300 --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: &quot; %5.2f&quot; สำหรับ 3.141592 --&gt; 3.14&quot; %4.2e&quot; สำหรับ 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -697,6 +710,10 @@
     <message>
         <source>Transparent</source>
         <translation>โปร่งใส</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -11,6 +11,7 @@ class ArrowsColorSettingEditWidget;
 
 class ArrowsSettingContainer;
 class ColorMapSettingContainer;
+class ColorMapSettingEditWidget;
 
 class ArrowsColorSettingEditWidget : public QWidget
 {
@@ -35,6 +36,7 @@ private:
 	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
 	std::vector<std::string> m_colorMapNames;
 
+	ColorMapSettingEditWidget* m_colorMapWidget;
 	Ui::ArrowsColorSettingEditWidget *ui;
 };
 

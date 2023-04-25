@@ -8,6 +8,7 @@
 
 #include <unordered_map>
 
+class ArrowsSettingToolBarWidget;
 class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
 class Post2dWindowZoneDataItem;
@@ -22,13 +23,13 @@ public:
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 	void update();
 
@@ -39,7 +40,7 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	void updateActorSettings();
+	void updateActorSetting() override;
 	void updateCheckState();
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 
@@ -47,11 +48,12 @@ protected:
 
 	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
 
-	class UpdateActorSettingsCommand;
+	class UpdateActorSettingCommand;
 
 private:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	void innerUpdate2Ds() override;
 
@@ -64,6 +66,8 @@ private:
 	vtkActor* m_actor;
 	vtkActor2D* m_arrowLegendActor;
 	vtkActor2D* m_colorLegendActor;
+
+	ArrowsSettingToolBarWidget* m_arrowsToolBarWidget;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPDATAITEM_H

@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 
 #include <misc/compositecontainer.h>
+#include <misc/doublecontainer.h>
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
 
@@ -15,7 +16,7 @@ class QRect;
 
 class vtkActor2D;
 
-class GUICOREDLL_EXPORT ImageSettingContainer : public QObject, public CompositeContainer
+class GUICOREDLL_EXPORT ImageSettingContainer : public CompositeContainer
 {
 	Q_OBJECT
 
@@ -47,14 +48,16 @@ public:
 	void setActor(vtkActor2D* actor);
 	void setImageBuilder(ImageBuilder* builder);
 
+	void optimizePosition(VTKGraphicsView* view);
 	void apply(VTKGraphicsView* view) const;
+	void apply(const QSize& size, VTKGraphicsView* view) const;
 	QImage buildImage(QWidget* w) const;
 	Controller* controller();
-	QRect rect(VTKGraphicsView* view) const;
+	QRect rect(const QSize& size, VTKGraphicsView* view) const;
 
 	EnumContainerT<Position> position;
-	IntContainer horizontalMargin;
-	IntContainer verticalMargin;
+	DoubleContainer horizontalMargin;
+	DoubleContainer verticalMargin;
 	IntContainer width;
 	IntContainer height;
 

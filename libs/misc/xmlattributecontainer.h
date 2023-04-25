@@ -3,12 +3,15 @@
 
 #include "misc_global.h"
 
+#include <QObject>
+
 class QDomNode;
 class QXmlStreamWriter;
 
 /// Container class that has I/O function to store data as XML attributes.
-class MISCDLL_EXPORT XmlAttributeContainer
+class MISCDLL_EXPORT XmlAttributeContainer : public QObject
 {
+	Q_OBJECT
 
 public:
 	/// @name Constructor and Destructor
@@ -35,6 +38,9 @@ public:
 	virtual void addPrefix(const QString& prefix);
 	virtual QString attName(const QString& name) const;
 	//@}
+
+signals:
+	void updated();
 
 private:
 	virtual void copyValue(const XmlAttributeContainer& c);
