@@ -1367,10 +1367,6 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 
 void GeoDataPolygon::updateActorSetting()
 {
-	auto col = actorCollection();
-	col->RemoveAllItems();
-	col->AddItem(impl->m_actor);
-
 	auto& ds = impl->m_displaySetting;
 
 	// color

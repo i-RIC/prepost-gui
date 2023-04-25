@@ -74,12 +74,6 @@ GeoDataPolygonAbstractPolygon::GeoDataPolygonAbstractPolygon(GeoDataPolygon* par
 	r->AddActor(impl->m_polygonController.paintActor());
 	r->AddActor(impl->m_linesActor);
 	r->AddActor(impl->m_pointsActor);
-
-	auto col = parent->actorCollection();
-	col->AddItem(impl->m_polygonController.paintActor());
-	col->AddItem(impl->m_linesActor);
-
-	parent->updateVisibilityWithoutRendering();
 }
 
 GeoDataPolygonAbstractPolygon::~GeoDataPolygonAbstractPolygon()
@@ -215,6 +209,10 @@ void GeoDataPolygonAbstractPolygon::finishDefinition()
 void GeoDataPolygonAbstractPolygon::updateActorSetting()
 {
 	const auto& ds = impl->m_parent->impl->m_displaySetting;
+	auto col = impl->m_parent->actorCollection();
+
+	col->RemoveItem(impl->m_linesActor);
+	col->RemoveItem(impl->m_pointsActor);
 
 	// color
 	impl->m_linesActor->GetProperty()->SetColor(ds.color);
@@ -246,7 +244,6 @@ void GeoDataPolygonAbstractPolygon::updateActorSetting()
 		mapper->Delete();
 	}
 
-	auto col = impl->m_parent->actorCollection();
 	col->AddItem(impl->m_linesActor);
 
 	// line width and point size
