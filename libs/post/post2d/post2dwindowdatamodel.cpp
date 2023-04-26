@@ -1,4 +1,5 @@
 #include "datamodel/post2dwindowcellflaggroupdataitem.h"
+#include "datamodel/post2dwindowgeodatatopdataitem.h"
 #include "datamodel/post2dwindowgraphgroupdataitem.h"
 #include "datamodel/post2dwindowgridshapedataitem.h"
 #include "datamodel/post2dwindowgridtypedataitem.h"
@@ -335,6 +336,8 @@ void Post2dWindowDataModel::initCollapseState()
 {
 	auto v = objectBrowserView();
 	for (auto gtItem : rootDataItem()->gridTypeDataItems()) {
+		v->collapse(gtItem->geoDataItem()->standardItem()->index());
+
 		for (auto zitem : gtItem->zoneDatas()) {
 			auto graphDataItem = zitem->graphGroupDataItem();
 			if (graphDataItem == nullptr) {continue;}

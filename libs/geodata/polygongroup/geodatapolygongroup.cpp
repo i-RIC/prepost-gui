@@ -376,11 +376,7 @@ void GeoDataPolygonGroup::updateActorSetting()
 	impl->m_paintActor->GetProperty()->SetOpacity(ds.opacity);
 
 	// mapping
-	bool scalarVisibility = true;
-	if (ds.mapping == DisplaySetting::Mapping::Arbitrary) {
-		scalarVisibility = false;
-	}
-	if (scalarVisibility) {
+	if (ds.mapping == DisplaySetting::Mapping::Value) {
 		vtkMapper* mapper = nullptr;
 		auto cs = colorMapSettingContainer();
 
@@ -428,6 +424,7 @@ void GeoDataPolygonGroup::updateActorSetting()
 	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(ds.lineWidth * 2);
 	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(ds.lineWidth * 5);
 
+	updateVisibilityWithoutRendering();
 	updateActorSettingForEditTargetPolyData();
 
 	emit updateActorSettingExecuted();
@@ -547,7 +544,6 @@ void GeoDataPolygonGroup::updateMenu(QMenu* menu)
 	menu->addSeparator();
 	menu->addAction(deleteAction());
 }
-
 
 void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
 {

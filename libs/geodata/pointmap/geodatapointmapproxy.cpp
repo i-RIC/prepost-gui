@@ -84,7 +84,6 @@ void GeoDataPointmapProxy::updateActorSetting()
 	actor->GetProperty()->SetPointSize(ds.tinPointSize * v->devicePixelRatioF());
 	actor->GetProperty()->SetLineWidth(ds.tinLineWidth * v->devicePixelRatioF());
 	actor->GetProperty()->SetOpacity(ds.tinOpacity);
-	actorCollection()->AddItem(actor);
 
 	switch (ds.tinRepresentation.value()) {
 	case GeoDataPointmap::DisplaySetting::TinRepresentation::Points:
@@ -97,6 +96,7 @@ void GeoDataPointmapProxy::updateActorSetting()
 		actor->GetProperty()->SetRepresentationToSurface();
 		break;
 	}
+	updateVisibilityWithoutRendering();
 }
 
 void GeoDataPointmapProxy::assignActorZValues(const ZDepthRange& range)

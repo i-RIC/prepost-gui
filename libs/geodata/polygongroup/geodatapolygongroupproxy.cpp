@@ -105,6 +105,8 @@ void GeoDataPolygonGroupProxy::updateActorSetting()
 
 	// line width
 	impl->m_edgesActor->GetProperty()->SetLineWidth(ds.lineWidth);
+
+	updateVisibilityWithoutRendering();
 }
 
 void GeoDataPolygonGroupProxy::assignActorZValues(const ZDepthRange& range)
