@@ -23,6 +23,9 @@ public:
 	void setImageSetting(const ImageSettingContainer& setting);
 	void setDisableOtherThanImageVisible(bool disabled);
 
+private slots:
+	void reverseHeightAndWidthIfNeeded();
+
 private:
 	bool m_delegateMode;
 	Ui::ColorMapEnumerateLegendSettingEditWidget *ui;
