@@ -11,6 +11,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.h"
 
+#include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
@@ -26,6 +27,8 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptionnode.h>
@@ -33,6 +36,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/qwidgetcontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -64,7 +68,9 @@
 
 PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p) :
 	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
-	m_actor {vtkActor::New()}
+	m_actor {vtkActor::New()},
+	m_opacityWidget {new OpacityContainerWidget(mainWindow())},
+	m_colorMapWidgetContainer {new QWidgetContainer(mainWindow())}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
@@ -100,6 +106,15 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 
 	m_actor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_actor);
+
+	m_opacityWidget->setContainer(&m_opacity);
+	m_opacityWidget->hide();
+
+	connect(m_opacityWidget, &OpacityContainerWidget::updated, [=]() {
+		pushUpdateActorSettingCommand(m_opacityWidget->createModifyCommand(), this);
+	});
+
+	m_colorMapWidgetContainer->hide();
 }
 
 PreProcessorGridAttributeNodeGroupDataItem::~PreProcessorGridAttributeNodeGroupDataItem()
@@ -126,11 +141,13 @@ void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_target = target;
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
+void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 {
+	m_opacityWidget->setDisabled(true);
+	m_colorMapWidgetContainer->setWidget(nullptr);
 	m_actor->VisibilityOff();
 
 	// make all the items invisible
@@ -143,6 +160,8 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 	if (m_target == "") {
 		return;
 	}
+	m_opacityWidget->setEnabled(true);
+
 	// update current active scalar
 	vtkPointData* data = g->vtkGrid()->GetPointData();
 	data->SetActiveScalars(m_target.c_str());
@@ -156,6 +175,10 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 	mapper->Delete();
 
 	cs->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+
+	auto colorMapWidget = activeChildItem()->colorMapSettingToolBarWidgetController()->widget();
+	colorMapWidget->setParent(m_colorMapWidgetContainer);
+	m_colorMapWidgetContainer->setWidget(colorMapWidget);
 
 	m_actor->GetProperty()->SetOpacity(m_opacity);
 
@@ -211,6 +234,22 @@ void PreProcessorGridAttributeNodeGroupDataItem::informDeselection(VTKGraphicsVi
 	clearAttributeBrowser();
 }
 
+QDialog* PreProcessorGridAttributeNodeGroupDataItem::propertyDialog(QWidget* parent)
+{
+	auto child = activeChildItem();
+	if (child == nullptr) {return nullptr;}
+
+	return child->propertyDialog(parent);
+}
+
+void PreProcessorGridAttributeNodeGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	auto child = activeChildItem();
+	if (child == nullptr) {return;}
+
+	child->handlePropertyDialogAccepted(propDialog);
+}
+
 void PreProcessorGridAttributeNodeGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	updateAttributeBrowser(QPoint(event->x(), event->y()), v);
@@ -228,7 +267,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::assignActorZValues(const ZDepth
 
 void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::activeChildItem()
@@ -459,20 +498,35 @@ vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p
 	return vid;
 }
 
-bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* toolbar)
+bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
+	m_opacityWidget->setParent(toolBar);
+	m_opacityWidget->show();
+	toolBar->addWidget(m_opacityWidget);
+
+	toolBar->addSeparator();
+
+	m_colorMapWidgetContainer->setParent(toolBar);
+	m_colorMapWidgetContainer->show();
+	toolBar->addWidget(m_colorMapWidgetContainer);
+
 	PreProcessorGridAttributeNodeDataItem* activeItem = activeChildItem();
-	if (activeItem == 0) {return false;}
+	if (activeItem == 0) {return true;}
+
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
 	const auto& selectWidgets = cont->dimensions()->selectWidgets();
-	if (selectWidgets.size() == 0) {return false;}
-	for (int i = 0; i < selectWidgets.size(); ++i) {
-		GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
-		QAction* action = toolbar->addWidget(w);
-		action->setVisible(true);
+	if (selectWidgets.size() > 0) {
+		toolBar->addSeparator();
+
+		for (int i = 0; i < selectWidgets.size(); ++i) {
+			GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
+			QAction* action = toolBar->addWidget(w);
+			action->setVisible(true);
+		}
 	}
+
 	return true;
 }
 
@@ -480,5 +534,5 @@ void PreProcessorGridAttributeNodeGroupDataItem::applyColorMapSetting(const std:
 {
 	if (m_target != name) {return;}
 
-	updateActorSettings();
+	updateActorSetting();
 }

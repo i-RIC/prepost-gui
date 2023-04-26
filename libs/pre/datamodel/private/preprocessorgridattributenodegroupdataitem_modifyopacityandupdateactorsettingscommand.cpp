@@ -12,12 +12,12 @@ void PreProcessorGridAttributeNodeGroupDataItem::ModifyOpacityAndUpdateActorSett
 {
 	m_command.get()->redo();
 	m_item->m_opacity = m_newOpacityPercent;
-	m_item->updateActorSettings();
+	m_item->updateActorSetting();
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::ModifyOpacityAndUpdateActorSettingsCommand::undo()
 {
 	m_command.get()->undo();
 	m_item->m_opacity = m_oldOpacityPercent;
-	m_item->updateActorSettings();
+	m_item->updateActorSetting();
 }

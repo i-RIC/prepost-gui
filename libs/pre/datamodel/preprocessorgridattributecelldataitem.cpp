@@ -79,11 +79,13 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 	m_editRatioAction->setDisabled(true);
 	connect(m_editRatioAction, SIGNAL(triggered()), this, SLOT(editRatio()));
 
-	auto gItem = geoDataGroup();
+	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {
 		m_generatePointMapAction->setDisabled(true);
 	}
+
+	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
 PreProcessorGridAttributeCellDataItem::~PreProcessorGridAttributeCellDataItem()
@@ -101,6 +103,7 @@ QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 
 	auto gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
 	auto dialog = new PropertyDialog(gitem, p);
+	dialog->setWindowTitle(tr("Grid Cell Attribute Display Setting (%1)").arg(condition()->caption()));
 	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
@@ -363,7 +366,7 @@ void PreProcessorGridAttributeCellDataItem::exportToFile()
 
 void PreProcessorGridAttributeCellDataItem::generatePointMap()
 {
-	auto gItem = geoDataGroup();
+	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {return;}
 
@@ -434,10 +437,19 @@ void PreProcessorGridAttributeCellDataItem::informDataChange()
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->informDataChange(m_condition->name());
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGridAttributeCellDataItem::geoDataGroup() const
+PreProcessorGridTypeDataItem* PreProcessorGridAttributeCellDataItem::gridTypeDataItem() const
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	return typedi->geoDataTop()->groupDataItem(m_condition->name());
+	return dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+}
+
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGridAttributeCellDataItem::geoDataGroupDataItem() const
+{
+	return gridTypeDataItem()->geoDataTop()->groupDataItem(m_condition->name());
+}
+
+PreProcessorGridAttributeCellGroupDataItem* PreProcessorGridAttributeCellDataItem::groupDataItem() const
+{
+	return dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*> (parent());
 }
 
 void PreProcessorGridAttributeCellDataItem::editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName)
@@ -482,4 +494,9 @@ ColorMapSettingContainerI* PreProcessorGridAttributeCellDataItem::colorMapSettin
 {
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
 	return typedi->colorMapSetting(m_condition->name());
+}
+
+ColorMapSettingToolBarWidgetController* PreProcessorGridAttributeCellDataItem::colorMapSettingToolBarWidgetController() const
+{
+	return m_colorMapToolBarWidgetController;
 }

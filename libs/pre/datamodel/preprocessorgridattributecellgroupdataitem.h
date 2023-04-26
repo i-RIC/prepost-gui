@@ -6,11 +6,13 @@
 #include <misc/opacitycontainer.h>
 #include <QMap>
 
-class QAction;
 class NamedGraphicWindowDataItem;
+class OpacityContainerWidget;
 class PreProcessorGridAttributeCellDataItem;
+class QWidgetContainer;
 
 class vtkActor;
+class QAction;
 
 class PreProcessorGridAttributeCellGroupDataItem : public PreProcessorDataItem, public TargetedItemI
 {
@@ -23,12 +25,16 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	void updateActorSettings();
+	void updateActorSetting() override;
 	void informDataChange(const std::string& name);
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
+
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void informGridUpdate();
@@ -68,6 +74,9 @@ private:
 	bool m_attributeBrowserFixed;
 
 	class ModifyOpacityAndUpdateActorSettingsCommand;
+
+	OpacityContainerWidget* m_opacityWidget;
+	QWidgetContainer* m_colorMapWidgetContainer;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTECELLGROUPDATAITEM_H

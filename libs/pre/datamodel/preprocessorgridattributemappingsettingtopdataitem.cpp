@@ -127,8 +127,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 
 	grid->setModified();
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
-	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSettings();
+	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSetting();
+	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSetting();
 
 	if (skippedAtts.size() > 0) {
 		QString msg = tr("The following attributes were not mapped, because grid generator output values for them. "
@@ -281,8 +281,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 
 	grid->setModified();
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
-	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSettings();
+	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSetting();
+	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSetting();
 	renderGraphicsView();
 	if (! nomessage) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Mapping geographic data finished successfully."));

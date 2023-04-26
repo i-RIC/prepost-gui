@@ -1389,8 +1389,8 @@ PreProcessorBCGroupDataItem* PreProcessorGridDataItem::bcGroupDataItem() const
 
 void PreProcessorGridDataItem::updateAttributeActorSettings()
 {
-	m_nodeGroupDataItem->updateActorSettings();
-	m_cellGroupDataItem->updateActorSettings();
+	m_nodeGroupDataItem->updateActorSetting();
+	m_cellGroupDataItem->updateActorSetting();
 }
 
 void PreProcessorGridDataItem::setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem)
