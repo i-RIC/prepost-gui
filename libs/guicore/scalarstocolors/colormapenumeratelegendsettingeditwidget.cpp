@@ -102,3 +102,21 @@ void ColorMapEnumerateLegendSettingEditWidget::setDisableOtherThanImageVisible(b
 	ui->barWidthGroupBox->setDisabled(disabled);
 	ui->alignmentGroupBox->setDisabled(disabled);
 }
+
+void ColorMapEnumerateLegendSettingEditWidget::reverseHeightAndWidthIfNeeded()
+{
+	int height = ui->imageSettingWidget->height();
+	int width = ui->imageSettingWidget->width();
+
+	if (ui->horizontalRadioButton->isChecked()) {
+		if (height > width) {
+			ui->imageSettingWidget->setWidth(height);
+			ui->imageSettingWidget->setHeight(width);
+		}
+	} else if (ui->verticalRadioButton->isChecked()) {
+		if (width > height) {
+			ui->imageSettingWidget->setWidth(height);
+			ui->imageSettingWidget->setHeight(width);
+		}
+	}
+}

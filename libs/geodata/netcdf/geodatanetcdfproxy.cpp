@@ -92,6 +92,7 @@ void GeoDataNetcdfProxy::updateActorSetting()
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 	}
+	updateVisibilityWithoutRendering();
 }
 
 void GeoDataNetcdfProxy::assignActorZValues(const ZDepthRange& range)

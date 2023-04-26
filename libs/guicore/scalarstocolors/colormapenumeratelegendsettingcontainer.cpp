@@ -26,10 +26,10 @@ ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer
 	imageSetting.setImageBuilder(m_imageBuilder);
 
 	imageSetting.position = ImageSettingContainer::Position::BottomRight;
-	imageSetting.horizontalMargin = 0.05;
+	imageSetting.horizontalMargin = 0.01;
 	imageSetting.verticalMargin = 0.15;
-	imageSetting.width = 150;
-	imageSetting.height = 200;
+	imageSetting.width = 300;
+	imageSetting.height = 320;
 }
 
 ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer(const ColorMapEnumerateLegendSettingContainer& c) :

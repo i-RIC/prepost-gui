@@ -160,7 +160,7 @@ QUndoCommand* ColorMapSettingEditWidget::createModifyCommand() const
 void ColorMapSettingEditWidget::importSetting()
 {
 	ImportDialog dialog(this);
-	dialog.setOriginalSetting(m_concreteSetting);
+	dialog.setOriginalSetting(concreteSetting());
 
 	auto ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}

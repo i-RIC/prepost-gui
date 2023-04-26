@@ -80,6 +80,26 @@ void ImageSettingWidget::setSetting(const ImageSettingContainer& setting)
 	handlePositionChange();
 }
 
+int ImageSettingWidget::width() const
+{
+	return ui->widthSpinBox->value();
+}
+
+void ImageSettingWidget::setWidth(int width)
+{
+	ui->widthSpinBox->setValue(width);
+}
+
+int ImageSettingWidget::height() const
+{
+	return ui->heightSpinBox->value();
+}
+
+void ImageSettingWidget::setHeight(int height)
+{
+	ui->heightSpinBox->setValue(height);
+}
+
 void ImageSettingWidget::handlePositionChange()
 {
 	bool left =

@@ -11,6 +11,8 @@ ColorMapLegendSettingEditWidget::ColorMapLegendSettingEditWidget(QWidget *parent
 {
 	ui->setupUi(this);
 	connect(ui->numLabelsAutoCheckBox, &QCheckBox::toggled, this, &ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels);
+	connect(ui->horizontalRadioButton, &QRadioButton::toggled, this, &ColorMapLegendSettingEditWidget::reverseHeightAndWidthIfNeeded);
+	connect(ui->verticalRadioButton, &QRadioButton::toggled, this, &ColorMapLegendSettingEditWidget::reverseHeightAndWidthIfNeeded);
 }
 
 ColorMapLegendSettingEditWidget::~ColorMapLegendSettingEditWidget()
@@ -142,4 +144,22 @@ void ColorMapLegendSettingEditWidget::setImageSetting(const ImageSettingContaine
 void ColorMapLegendSettingEditWidget::handleAutoNumberOfLabels(bool /*checked*/)
 {
 	updateNumberOfLabelsIfNeeded();
+}
+
+void ColorMapLegendSettingEditWidget::reverseHeightAndWidthIfNeeded()
+{
+	int height = ui->imageSettingWidget->height();
+	int width = ui->imageSettingWidget->width();
+
+	if (ui->horizontalRadioButton->isChecked()) {
+		if (height > width) {
+			ui->imageSettingWidget->setWidth(height);
+			ui->imageSettingWidget->setHeight(width);
+		}
+	} else if (ui->verticalRadioButton->isChecked()) {
+		if (width > height) {
+			ui->imageSettingWidget->setWidth(height);
+			ui->imageSettingWidget->setHeight(width);
+		}
+	}
 }

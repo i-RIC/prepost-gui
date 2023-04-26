@@ -25,10 +25,20 @@ ColorMapSettingContainerI* ColorMapEnumerateSettingToolBarWidget::modifiedSettin
 
 	setting->legend.visible = ui->visibleCheckBox->isChecked();
 
+	int width = setting->legend.imageSetting.width;
+	int height = setting->legend.imageSetting.height;
 	if (ui->horizontalRadioButton->isChecked()) {
 		setting->legend.direction = ColorMapEnumerateLegendSettingContainer::Direction::Horizontal;
+		if (height > width) {
+			setting->legend.imageSetting.width = height;
+			setting->legend.imageSetting.height = width;
+		}
 	} else if (ui->verticalRadioButton->isChecked()) {
 		setting->legend.direction = ColorMapEnumerateLegendSettingContainer::Direction::Vertical;
+		if (width > height) {
+			setting->legend.imageSetting.width = height;
+			setting->legend.imageSetting.height = width;
+		}
 	}
 
 	return setting;

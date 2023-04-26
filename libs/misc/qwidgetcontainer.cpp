@@ -21,11 +21,15 @@ void QWidgetContainer::setWidget(QWidget* w)
 	auto l = layout();
 
 	if (m_widget != nullptr){
+		m_widget->hide();
 		l->removeWidget(m_widget);
 	}
 
 	m_widget = w;
-	l->addWidget(w);
+	if (w != nullptr) {
+		w->show();
+		l->addWidget(w);
+	}
 }
 
 QSize QWidgetContainer::sizeHint() const

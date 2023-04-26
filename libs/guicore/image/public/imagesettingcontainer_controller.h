@@ -6,6 +6,8 @@
 
 #include <QPoint>
 
+#include <unordered_set>
+
 class GraphicsWindowDataItem;
 class VTKGraphicsView;
 
@@ -31,6 +33,10 @@ public:
 	GraphicsWindowDataItem* item() const;
 	void setItem(GraphicsWindowDataItem* item);
 
+	const std::unordered_set<GraphicsWindowDataItem*>& items() const;
+	void addItem(GraphicsWindowDataItem* item);
+	void removeItem(GraphicsWindowDataItem* item);
+
 	Position resizePosition() const;
 
 	void handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
@@ -46,6 +52,7 @@ public:
 private:
 	void updateMouseEventMode(QMouseEvent* event, VTKGraphicsView* v);
 	void updateMouseCursor(VTKGraphicsView* v);
+	GraphicsWindowDataItem* firstItem() const;
 
 	MouseEventMode m_mouseEventMode;
 	Position m_resizePosition;
@@ -53,6 +60,7 @@ private:
 	QPoint m_previousPosition;
 
 	GraphicsWindowDataItem* m_item;
+	std::unordered_set<GraphicsWindowDataItem*> m_items;
 	bool m_selected;
 	ImageSettingContainer* m_setting;
 };

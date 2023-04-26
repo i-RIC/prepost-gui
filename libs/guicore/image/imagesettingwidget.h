@@ -20,6 +20,11 @@ public:
 	ImageSettingContainer setting() const;
 	void setSetting(const ImageSettingContainer& setting);
 
+	int width() const;
+	void setWidth(int width);
+	int height() const;
+	void setHeight(int height);
+
 private slots:
 	void handlePositionChange();
 

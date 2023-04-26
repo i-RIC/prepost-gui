@@ -6,7 +6,10 @@
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
 class ColorMapSettingContainerI;
+class ColorMapSettingToolBarWidgetController;
 class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGridAttributeCellGroupDataItem;
+class PreProcessorGridTypeDataItem;
 class SolverDefinitionGridAttribute;
 
 class QAction;
@@ -36,6 +39,7 @@ public:
 	void informDataChange();
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
+	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
 
 private slots:
 	void editValue();
@@ -46,12 +50,15 @@ private slots:
 	void generatePointMap();
 
 private:
-	PreProcessorGeoDataGroupDataItemInterface* geoDataGroup() const;
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
+	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
+	PreProcessorGridAttributeCellGroupDataItem* groupDataItem() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	int loadFromCgnsFile() override;
+	void updateVisibility(bool visible) override;
 
 	SolverDefinitionGridAttribute* m_condition;
 
@@ -63,6 +70,8 @@ private:
 	QAction* m_generatePointMapAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
+
+	ColorMapSettingToolBarWidgetController* m_colorMapToolBarWidgetController;
 
 	class PropertyDialog;
 };

@@ -99,15 +99,25 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_groupEditDialog = new GridComplexConditionGroupEditDialog(mainWindow());
 	m_groupEditDialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 
-	auto gItem = geoDataGroup();
+	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {
 		m_generatePointMapAction->setDisabled(true);
 	}
+	auto imgSetting = gridTypeDataItem()->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+	imgSetting->controller()->addItem(this);
+
+	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
 PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
 {
+	auto gtItem = gridTypeDataItem();
+	if (gtItem != nullptr) {
+		auto imgSetting = gtItem->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+		imgSetting->controller()->removeItem(this);
+	}
+
 	delete m_groupEditDialog;
 }
 
@@ -123,6 +133,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 
 	auto gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
 	auto dialog = new PropertyDialog(gitem, p);
+	dialog->setWindowTitle(tr("Grid Node Attribute Display Setting (%1)").arg(condition()->caption()));
 	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
@@ -356,23 +367,13 @@ void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* v)
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->initAttributeBrowser();
 
-	updateVisibility();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
+	GraphicsWindowDataItem::updateVisibility();
 }
 
 void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
@@ -389,6 +390,11 @@ ColorMapSettingContainerI* PreProcessorGridAttributeNodeDataItem::colorMapSettin
 {
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
 	return typedi->colorMapSetting(m_condition->name());
+}
+
+ColorMapSettingToolBarWidgetController* PreProcessorGridAttributeNodeDataItem::colorMapSettingToolBarWidgetController() const
+{
+	return m_colorMapToolBarWidgetController;
 }
 
 void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
@@ -500,7 +506,7 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 
 void PreProcessorGridAttributeNodeDataItem::generatePointMap()
 {
-	auto gItem = geoDataGroup();
+	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {return;}
 
@@ -533,14 +539,31 @@ void PreProcessorGridAttributeNodeDataItem::generatePointMap()
 void PreProcessorGridAttributeNodeDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
 	if (PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(this->parent())) {
-		gitem->updateActorSettings();
+		gitem->updateActorSetting();
 	}
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGridAttributeNodeDataItem::geoDataGroup() const
+void PreProcessorGridAttributeNodeDataItem::updateVisibility(bool visible)
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	return typedi->geoDataTop()->groupDataItem(m_condition->name());
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = dataModel()->graphicsView();
+	colorMapSettingContainer()->legendSetting()->imgSetting()->apply(v);
+}
+
+PreProcessorGridTypeDataItem* PreProcessorGridAttributeNodeDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+}
+
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGridAttributeNodeDataItem::geoDataGroupDataItem() const
+{
+	return gridTypeDataItem()->geoDataTop()->groupDataItem(m_condition->name());
+}
+
+PreProcessorGridAttributeNodeGroupDataItem* PreProcessorGridAttributeNodeDataItem::groupDataItem() const
+{
+	return dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*> (parent());
 }
 
 void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName)
@@ -574,9 +597,7 @@ void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariation
 	delete dialog;
 }
 
-bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolbar)
+bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	PreProcessorDataItem* item =
-		dynamic_cast<PreProcessorDataItem*>(parent());
-	return item->addToolBarButtons(toolbar);
+	return groupDataItem()->addToolBarButtons(toolBar);
 }

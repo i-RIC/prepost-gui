@@ -11,6 +11,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.h"
 
+#include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
@@ -26,12 +27,15 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/qwidgetcontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -52,7 +56,9 @@
 
 PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p) :
 	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
-	m_actor {vtkActor::New()}
+	m_actor {vtkActor::New()},
+	m_opacityWidget {new OpacityContainerWidget(mainWindow())},
+	m_colorMapWidgetContainer {new QWidgetContainer(mainWindow())}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
@@ -86,7 +92,17 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 
 	m_actor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_actor);
+
+	m_opacityWidget->setContainer(&m_opacity);
+	m_opacityWidget->hide();
+
+	connect(m_opacityWidget, &OpacityContainerWidget::updated, [=]() {
+			pushUpdateActorSettingCommand(m_opacityWidget->createModifyCommand(), this);
+	});
+
+	m_colorMapWidgetContainer->hide();
 }
+
 PreProcessorGridAttributeCellGroupDataItem::~PreProcessorGridAttributeCellGroupDataItem()
 {
 	renderer()->RemoveActor(m_actor);
@@ -103,7 +119,7 @@ void PreProcessorGridAttributeCellGroupDataItem::setTarget(const std::string& ta
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_target = target;
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -114,8 +130,11 @@ void PreProcessorGridAttributeCellGroupDataItem::handleNamedItemChange(NamedGrap
 	pushRenderCommand(cmd, this, true);
 }
 
-void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
+void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 {
+	m_opacityWidget->setDisabled(true);
+	m_colorMapWidgetContainer->setWidget(nullptr);
+
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
@@ -124,8 +143,11 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 		return;
 	}
 	if (m_target == "") {
+		updateVisibilityWithoutRendering();
 		return;
 	}
+	m_opacityWidget->setEnabled(true);
+
 	// update current active scalar
 	vtkCellData* data = g->vtkGrid()->GetCellData();
 	data->SetActiveScalars(m_target.c_str());
@@ -138,7 +160,9 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 
-	cs->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+	auto colorMapWidget = activeChildItem()->colorMapSettingToolBarWidgetController()->widget();
+	colorMapWidget->setParent(m_colorMapWidgetContainer);
+	m_colorMapWidgetContainer->setWidget(colorMapWidget);
 
 	m_actor->GetProperty()->SetOpacity(m_opacity);
 
@@ -166,6 +190,22 @@ void PreProcessorGridAttributeCellGroupDataItem::informDeselection(VTKGraphicsVi
 	clearAttributeBrowser();
 }
 
+QDialog* PreProcessorGridAttributeCellGroupDataItem::propertyDialog(QWidget* parent)
+{
+	auto child = activeChildItem();
+	if (child == nullptr) {return nullptr;}
+
+	return child->propertyDialog(parent);
+}
+
+void PreProcessorGridAttributeCellGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	auto child = activeChildItem();
+	if (child == nullptr) {return;}
+
+	child->handlePropertyDialogAccepted(propDialog);
+}
+
 void PreProcessorGridAttributeCellGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	updateAttributeBrowser(QPoint(event->x(), event->y()), v);
@@ -183,7 +223,7 @@ void PreProcessorGridAttributeCellGroupDataItem::assignActorZValues(const ZDepth
 
 void PreProcessorGridAttributeCellGroupDataItem::informGridUpdate()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
 PreProcessorGridAttributeCellDataItem* PreProcessorGridAttributeCellGroupDataItem::activeChildItem()
@@ -398,20 +438,35 @@ vtkIdType PreProcessorGridAttributeCellGroupDataItem::findCell(const QPoint& p, 
 	return cellid;
 }
 
-bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* toolbar)
+bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
+	m_opacityWidget->setParent(toolBar);
+	m_opacityWidget->show();
+	toolBar->addWidget(m_opacityWidget);
+
+	toolBar->addSeparator();
+
+	m_colorMapWidgetContainer->setParent(toolBar);
+	m_colorMapWidgetContainer->show();
+	toolBar->addWidget(m_colorMapWidgetContainer);
+
 	PreProcessorGridAttributeCellDataItem* activeItem = activeChildItem();
-	if (activeItem == nullptr) {return false;}
+	if (activeItem == nullptr) {return true;}
+
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
 	const auto& selectWidgets = cont->dimensions()->selectWidgets();
-	if (selectWidgets.size() == 0) {return false;}
-	for (int i = 0; i < selectWidgets.size(); ++i) {
-		GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
-		QAction* action = toolbar->addWidget(w);
-		action->setVisible(true);
+	if (selectWidgets.size() >= 0) {
+		toolBar->addSeparator();
+
+		for (int i = 0; i < selectWidgets.size(); ++i) {
+			GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
+			QAction* action = toolBar->addWidget(w);
+			action->setVisible(true);
+		}
 	}
+
 	return true;
 }
 
@@ -419,7 +474,7 @@ void PreProcessorGridAttributeCellGroupDataItem::applyColorMapSetting(const std:
 {
 	if (m_target != name) {return;}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

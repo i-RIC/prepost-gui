@@ -10,9 +10,12 @@
 #include <QList>
 
 class ColorMapSettingContainerI;
+class ColorMapSettingToolBarWidgetController;
 class GridComplexConditionGroupEditDialog;
 class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGridAttributeNodeGroupDataItem;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
+class PreProcessorGridTypeDataItem;
 class SolverDefinitionGridAttribute;
 class Structured2DGridCrosssectionEditCommand;
 
@@ -42,6 +45,7 @@ public:
 	SolverDefinitionGridAttribute* condition() const;
 	void informDataChange();
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
+	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
 
 	void updateCrossectionWindows();
 	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);
@@ -62,13 +66,16 @@ private slots:
 	void generatePointMap();
 
 private:
-	PreProcessorGeoDataGroupDataItemInterface* geoDataGroup() const;
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
+	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
+	PreProcessorGridAttributeNodeGroupDataItem* groupDataItem() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	int loadFromCgnsFile() override;
 	void doApplyOffset(double x, double y) override;
+	void updateVisibility(bool visible) override;
 
 	SolverDefinitionGridAttribute* m_condition;
 
@@ -89,6 +96,8 @@ private:
 	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	GridComplexConditionGroupEditDialog* m_groupEditDialog;
+
+	ColorMapSettingToolBarWidgetController* m_colorMapToolBarWidgetController;
 
 	class PropertyDialog;
 

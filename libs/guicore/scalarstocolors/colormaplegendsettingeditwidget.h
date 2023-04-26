@@ -29,6 +29,7 @@ public:
 
 private slots:
 	void handleAutoNumberOfLabels(bool checked);
+	void reverseHeightAndWidthIfNeeded();
 
 private:
 	ColorMapSettingContainer* m_colorMapSetting;

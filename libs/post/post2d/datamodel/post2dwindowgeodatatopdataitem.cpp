@@ -126,7 +126,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	Post2dWindowDataItem {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_preGeoDataTopDataItem {ditem}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 	buildReferenceInformationAttribute();
 
 	auto gType = ditem->gridType();
