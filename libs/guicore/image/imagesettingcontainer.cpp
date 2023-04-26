@@ -139,10 +139,24 @@ void ImageSettingContainer::apply(VTKGraphicsView* view) const
 void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 {
 	if (m_actor == nullptr) {return;}
-	auto item = m_controller->item();
-	if (item == nullptr) {return;}
 
-	item->actor2DCollection()->RemoveItem(m_actor);
+	bool visible = false;
+	auto item = m_controller->item();
+    if (item != nullptr && item->isAncientChecked() && item->isChecked()) {
+    	visible = true;
+    }
+	for (auto item : m_controller->items()) {
+		if (! item->isAncientChecked()) {continue;}
+		if (! item->isChecked()) {continue;}
+		visible = true;
+	}
+	if (! visible){
+		m_actor->VisibilityOff();
+	}
+
+	if (item != nullptr) {
+		item->actor2DCollection()->RemoveItem(m_actor);
+	}
 
 	QImage canvasImage(int(m_setting->width * v->devicePixelRatioF()), int(m_setting->height * v->devicePixelRatioF()), QImage::Format::Format_ARGB32);
 	canvasImage.setDevicePixelRatio(v->devicePixelRatioF());
@@ -166,9 +180,15 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 	auto r = m_setting->rect(size, v);
 
 	m_actor->SetPosition(r.left(), size.height() * v->devicePixelRatioF() - r.bottom());
-
-	item->actor2DCollection()->AddItem(m_actor);
-	item->updateVisibilityWithoutRendering();
+	
+	if (item != nullptr) {
+		item->actor2DCollection()->AddItem(m_actor);
+		item->updateVisibilityWithoutRendering();
+	} else {
+		if (visible) {
+			m_actor->VisibilityOn();
+		}
+	}
 }
 
 QImage ImageSettingContainer::buildImage(QWidget* w) const

@@ -121,6 +121,10 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
 
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent->parent());
+	auto cm = gtItem->colorMapSetting(cond->name());
+	if (cm != nullptr) {
+		cm->legendSetting()->imgSetting()->controller()->addItem(this);
+	}
 	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), preProcessorWindow());
 
 	// add background data item.
@@ -132,6 +136,14 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 
 PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 {
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	if (gtItem != nullptr) {
+		auto cm = gtItem->colorMapSetting(condition()->name());
+		if (cm != nullptr) {
+			cm->legendSetting()->imgSetting()->controller()->removeItem(this);
+		}
+	}
+
 	delete m_toolBarWidgetController;
 	delete m_dimensions;
 }
@@ -1469,4 +1481,16 @@ void PreProcessorGeoDataGroupDataItem::setupConnectionToGeoData(GeoData* geodata
 void PreProcessorGeoDataGroupDataItem::setDimensionsToFirst()
 {
 	m_dimensions->setCurrentIndex(0, true);
+}
+
+void PreProcessorGeoDataGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting != nullptr) {
+		auto v = dataModel()->graphicsView();
+		setting->legendSetting()->imgSetting()->apply(v);
+	}
 }

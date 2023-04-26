@@ -85,11 +85,20 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 		m_generatePointMapAction->setDisabled(true);
 	}
 
+	auto imgSetting = gridTypeDataItem()->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+	imgSetting->controller()->addItem(this);
+
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
 PreProcessorGridAttributeCellDataItem::~PreProcessorGridAttributeCellDataItem()
-{}
+{
+	auto gtItem = gridTypeDataItem();
+	if (gtItem != nullptr) {
+		auto imgSetting = gtItem->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+		imgSetting->controller()->removeItem(this);
+	}
+}
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 {
@@ -148,6 +157,14 @@ int PreProcessorGridAttributeCellDataItem::loadFromCgnsFile()
 	cont->setCustomModified(m_isCustomModified);
 
 	return IRIC_NO_ERROR;
+}
+
+void PreProcessorGridAttributeCellDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = dataModel()->graphicsView();
+	colorMapSettingContainer()->legendSetting()->imgSetting()->apply(v);
 }
 
 void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -413,23 +430,13 @@ void PreProcessorGridAttributeCellDataItem::informSelection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->initAttributeBrowser();
-	updateVisibility();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
+	GraphicsWindowDataItem::updateVisibility();
 }
 
 void PreProcessorGridAttributeCellDataItem::informDeselection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->clearAttributeBrowser();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void PreProcessorGridAttributeCellDataItem::informDataChange()

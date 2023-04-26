@@ -104,12 +104,20 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	if (creator == nullptr) {
 		m_generatePointMapAction->setDisabled(true);
 	}
+	auto imgSetting = gridTypeDataItem()->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+	imgSetting->controller()->addItem(this);
 
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
 PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
 {
+	auto gtItem = gridTypeDataItem();
+	if (gtItem != nullptr) {
+		auto imgSetting = gtItem->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
+		imgSetting->controller()->removeItem(this);
+	}
+
 	delete m_groupEditDialog;
 }
 
@@ -359,23 +367,13 @@ void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* v)
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->initAttributeBrowser();
 
-	updateVisibility();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
+	GraphicsWindowDataItem::updateVisibility();
 }
 
 void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
-
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto setting = typedi->colorMapSetting(m_condition->name());
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
@@ -543,6 +541,14 @@ void PreProcessorGridAttributeNodeDataItem::doApplyOffset(double /*x*/, double /
 	if (PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(this->parent())) {
 		gitem->updateActorSetting();
 	}
+}
+
+void PreProcessorGridAttributeNodeDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = dataModel()->graphicsView();
+	colorMapSettingContainer()->legendSetting()->imgSetting()->apply(v);
 }
 
 PreProcessorGridTypeDataItem* PreProcessorGridAttributeNodeDataItem::gridTypeDataItem() const

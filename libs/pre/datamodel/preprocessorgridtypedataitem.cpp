@@ -341,7 +341,6 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 		auto c = att->createColorMapSettingContainer();
 		c->legendSetting()->setVisible(false);
 		c->legendSetting()->setTitle(att->caption());
-		c->legendSetting()->imgSetting()->controller()->setItem(this);
 		m_colorMapSettingContainers.insert({att->name(), c});
 
 		auto actor = vtkActor2D::New();
@@ -355,7 +354,6 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 		auto c = att->createColorMapSettingContainer();
 		c->legendSetting()->setVisible(false);
 		c->legendSetting()->setTitle(att->caption());
-		c->legendSetting()->imgSetting()->controller()->setItem(this);
 		m_colorMapSettingContainers.insert({att->name(), c});
 
 		auto actor = vtkActor2D::New();

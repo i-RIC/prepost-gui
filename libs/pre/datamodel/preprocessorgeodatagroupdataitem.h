@@ -93,6 +93,7 @@ public:
 	void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	QStringList containedFiles() const override;
+	void updateVisibility(bool visible) override;
 	void setDimensionsToFirst();
 
 	std::vector<GeoDataImporter*> importers() const;

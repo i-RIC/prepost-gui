@@ -75,6 +75,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	int loadFromCgnsFile() override;
 	void doApplyOffset(double x, double y) override;
+	void updateVisibility(bool visible) override;
 
 	SolverDefinitionGridAttribute* m_condition;
 

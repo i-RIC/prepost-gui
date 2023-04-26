@@ -1542,11 +1542,13 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
+	m_nodeGroupDataItem->setTarget("");
 	sItem = m_nodeGroupDataItem->standardItem();
 	if (sItem->row() != - 1) {
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
+	m_cellGroupDataItem->setTarget("");
 	sItem = m_cellGroupDataItem->standardItem();
 	if (sItem->row() != - 1) {
 		// remove.

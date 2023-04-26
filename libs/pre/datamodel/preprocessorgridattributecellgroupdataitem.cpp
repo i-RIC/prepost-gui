@@ -143,6 +143,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 		return;
 	}
 	if (m_target == "") {
+		updateVisibilityWithoutRendering();
 		return;
 	}
 	m_opacityWidget->setEnabled(true);
@@ -158,8 +159,6 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 	auto mapper = cs->buildCellDataMapper(algo->GetOutput(), false);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
-
-	cs->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 
 	auto colorMapWidget = activeChildItem()->colorMapSettingToolBarWidgetController()->widget();
 	colorMapWidget->setParent(m_colorMapWidgetContainer);

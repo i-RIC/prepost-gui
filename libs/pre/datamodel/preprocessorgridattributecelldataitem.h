@@ -58,6 +58,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	int loadFromCgnsFile() override;
+	void updateVisibility(bool visible) override;
 
 	SolverDefinitionGridAttribute* m_condition;
 

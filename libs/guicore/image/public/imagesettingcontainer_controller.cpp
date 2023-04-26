@@ -11,6 +11,7 @@ ImageSettingContainer::Controller::Controller(ImageSettingContainer* setting) :
 	m_mouseEventMode {MouseEventMode::Normal},
 	m_previousPosition {},
 	m_item {nullptr},
+	m_items {},
 	m_selected {false},
 	m_setting {setting}
 {}
@@ -35,6 +36,21 @@ void ImageSettingContainer::Controller::setItem(GraphicsWindowDataItem* item)
 	m_item = item;
 }
 
+const std::unordered_set<GraphicsWindowDataItem*>& ImageSettingContainer::Controller::items() const
+{
+	return m_items;
+}
+
+void ImageSettingContainer::Controller::addItem(GraphicsWindowDataItem* item)
+{
+	m_items.insert(item);
+}
+
+void ImageSettingContainer::Controller::removeItem(GraphicsWindowDataItem* item)
+{
+	m_items.erase(item);
+}
+
 ImageSettingContainer::Position ImageSettingContainer::Controller::resizePosition() const
 {
 	return m_resizePosition;
@@ -42,14 +58,19 @@ ImageSettingContainer::Position ImageSettingContainer::Controller::resizePositio
 
 void ImageSettingContainer::Controller::handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
 {
+	auto item = m_item;
+	if (item == nullptr) {
+		item = firstItem();
+	}
+
 	auto event2 = v->createReverseScaledEvent(*event);
 
 	switch (m_mouseEventMode) {
 	case MouseEventMode::Move:
-		m_item->pushRenderCommand(new MoveCommand(false, m_previousPosition, event2.pos(), m_setting, v), m_item);
+		item->pushRenderCommand(new MoveCommand(false, m_previousPosition, event2.pos(), m_setting, v), item);
 		break;
 	case MouseEventMode::Resize:
-		m_item->pushRenderCommand(new ResizeCommand(false, m_previousPosition, event2.pos(), m_setting, v), m_item);
+		item->pushRenderCommand(new ResizeCommand(false, m_previousPosition, event2.pos(), m_setting, v), item);
 		break;
 	default:
 		updateMouseEventMode(event, v);
@@ -62,19 +83,26 @@ void ImageSettingContainer::Controller::handleMouseMoveEvent(QMouseEvent* event,
 
 void ImageSettingContainer::Controller::handleMousePressEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
 {
+	auto item = m_item;
+	if (item == nullptr) {
+		item = firstItem();
+	}
+
+	if (item == nullptr) {return;}
+
 	auto event2 = v->createReverseScaledEvent(*event);
 
 	switch (m_mouseEventMode) {
 	case MouseEventMode::MovePrepare:
 		m_mouseEventMode = MouseEventMode::Move;
-		m_item->pushRenderCommand(new MoveCommand(true, event2.pos(), event2.pos(), m_setting, v), m_item);
+		item->pushRenderCommand(new MoveCommand(true, event2.pos(), event2.pos(), m_setting, v), item);
 		if (! noCursorUpdate) {
 			updateMouseCursor(v);
 		}
 		break;
 	case MouseEventMode::ResizePrepare:
 		m_mouseEventMode = MouseEventMode::Resize;
-		m_item->pushRenderCommand(new ResizeCommand(true, event2.pos(), event2.pos(), m_setting, v), m_item);
+		item->pushRenderCommand(new ResizeCommand(true, event2.pos(), event2.pos(), m_setting, v), item);
 		break;
 	default:
 		break;
@@ -130,8 +158,18 @@ void ImageSettingContainer::Controller::updateMouseEventMode(QMouseEvent* event,
 {
 	m_mouseEventMode = MouseEventMode::Normal;
 
-	if (! m_item->isAncientChecked()) {return;}
-	if (! m_item->isChecked()) {return;}
+	if (m_item == nullptr && m_items.size() == 0) {return;}
+
+	bool checked = false;
+	if (m_item != nullptr && m_item->isAncientChecked() && m_item->isChecked()) {
+		checked = true;
+	}
+	for (auto item : m_items) {
+		if (! item->isAncientChecked()) {continue;}
+		if (! item->isChecked()) {continue;}
+		checked = true;
+	}
+	if (! checked) {return;}
 
 	auto r = m_setting->rect(v->size(), v);
 
@@ -208,4 +246,11 @@ void ImageSettingContainer::Controller::updateMouseCursor(VTKGraphicsView* v)
 	default:
 		v->setCursor(Qt::ArrowCursor);
 	}
+}
+
+GraphicsWindowDataItem* ImageSettingContainer::Controller::firstItem() const
+{
+	if (m_items.size() == 0) {return nullptr;}
+
+	return *m_items.begin();
 }
