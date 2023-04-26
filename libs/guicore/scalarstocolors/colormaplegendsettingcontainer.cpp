@@ -32,10 +32,10 @@ ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	is.setImageBuilder(m_imageBuilder);
 
 	is.position = ImageSettingContainer::Position::BottomRight;
-	is.horizontalMargin = 0.05;
+	is.horizontalMargin = 0.01;
 	is.verticalMargin = 0.15;
-	is.width = 150;
-	is.height = 200;
+	is.width = 300;
+	is.height = 320;
 }
 
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer(const ColorMapLegendSettingContainer& c) :
