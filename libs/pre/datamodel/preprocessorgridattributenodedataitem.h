@@ -90,9 +90,6 @@ private:
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
 
-	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
-	void loadContourFromProjectMainFile(const QDomNode& node);
-
 	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	GridComplexConditionGroupEditDialog* m_groupEditDialog;

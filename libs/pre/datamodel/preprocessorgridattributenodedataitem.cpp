@@ -155,10 +155,6 @@ void PreProcessorGridAttributeNodeDataItem::handlePropertyDialogAccepted(QDialog
 void PreProcessorGridAttributeNodeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_isCustomModified = static_cast<bool>(node.toElement().attribute("isCustomModified", "0").toInt());
-	QDomNode contourNode = iRIC::getChildNode(node, "Contour");
-	if (! contourNode.isNull()) {
-		loadContourFromProjectMainFile(contourNode);
-	}
 }
 
 void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -171,10 +167,6 @@ void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWr
 		mod.setNum(static_cast<int>(cont->isCustomModified()));
 		writer.writeAttribute("isCustomModified", mod);
 	}
-
-	writer.writeStartElement("Contour");
-	saveContourToProjectMainFile(writer);
-	writer.writeEndElement();
 }
 
 int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
@@ -188,12 +180,6 @@ int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 
 	return IRIC_NO_ERROR;
 }
-
-void PreProcessorGridAttributeNodeDataItem::loadContourFromProjectMainFile(const QDomNode& /*node*/)
-{}
-
-void PreProcessorGridAttributeNodeDataItem::saveContourToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{}
 
 void PreProcessorGridAttributeNodeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {

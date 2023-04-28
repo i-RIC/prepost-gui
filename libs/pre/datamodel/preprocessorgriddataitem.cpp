@@ -1542,13 +1542,11 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
-	m_nodeGroupDataItem->setTarget("");
 	sItem = m_nodeGroupDataItem->standardItem();
 	if (sItem->row() != - 1) {
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
-	m_cellGroupDataItem->setTarget("");
 	sItem = m_cellGroupDataItem->standardItem();
 	if (sItem->row() != - 1) {
 		// remove.
@@ -1567,6 +1565,8 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 		// do nothing.
 		cap.append(tr(" [No Data]"));
 		m_standardItem->setText(cap);
+		m_nodeGroupDataItem->setTarget("");
+		m_cellGroupDataItem->setTarget("");
 	} else {
 		vtkPointSet* ps = impl->m_grid->vtkGrid();
 		vtkStructuredGrid* sg = dynamic_cast<vtkStructuredGrid*>(ps);
