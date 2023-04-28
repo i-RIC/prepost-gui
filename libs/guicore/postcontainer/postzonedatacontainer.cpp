@@ -499,9 +499,13 @@ bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 		return true;
 	}
 
-	const QList<SolverDefinitionGridAttribute*>& conds = m_gridType->gridAttributes();
+	const auto& conds = m_gridType->gridAttributes();
 	std::set<std::string> valueNames;
-	int ier = zone->gridAttributes()->getValueNames(&valueNames);
+	int ier;
+	const auto atts = zone->gridAttributes();
+	if (atts != nullptr) {
+		ier = atts->getValueNames(&valueNames);
+	}
 
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;
