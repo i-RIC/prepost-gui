@@ -355,9 +355,7 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
            datamodel/private/preprocessorgridattributecelldataitem_propertydialog.h \
-           datamodel/private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.h \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.h \
-           datamodel/private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
@@ -503,9 +501,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \
            datamodel/private/preprocessorgridattributecelldataitem_propertydialog.cpp \
-           datamodel/private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
-           datamodel/private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp \

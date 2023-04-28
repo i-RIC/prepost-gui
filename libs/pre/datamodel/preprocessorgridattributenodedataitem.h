@@ -33,7 +33,6 @@ public:
 	~PreProcessorGridAttributeNodeDataItem();
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -56,6 +55,7 @@ public:
 public slots:
 	void openCrossSectionWindow();
 	void openVerticalCrossSectionWindow();
+	void showPropertyDialog() override;
 
 private slots:
 	void editValue();

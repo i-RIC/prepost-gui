@@ -9,7 +9,6 @@
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.h"
 
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/propertybrowser.h>
@@ -36,8 +35,11 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/qwidgetcontainer.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 #include <misc/xmlsupport.h>
 
 #include <QAction>
@@ -301,14 +303,15 @@ void PreProcessorGridAttributeNodeGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().endMacro();
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::setOpacityPercentAndUpdateActorSettings(int o, QUndoCommand* subcommand, bool renderOnRedoOnly)
+void PreProcessorGridAttributeNodeGroupDataItem::pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply)
 {
-	auto command = new ModifyOpacityAndUpdateActorSettingsCommand(o, subcommand, this);
-	if (renderOnRedoOnly) {
-		pushRenderRedoOnlyCommand(command, this);
-	} else {
-		pushRenderCommand(command, this);
-	}
+	OpacityContainer newOpacity;
+	newOpacity.setValue(opacity);
+
+	auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ModifyOpacityAndSubCommand"), apply);
+	com->addCommand(subcommand);
+	com->addCommand(new ValueModifyCommmand<OpacityContainer> (iRIC::generateCommandId("ModifyOpacity"), apply, newOpacity, &m_opacity));
+	pushUpdateActorSettingCommand(com, this);
 }
 
 int PreProcessorGridAttributeNodeGroupDataItem::opacityPercent() const

@@ -26,7 +26,6 @@ public:
 	~PreProcessorGridAttributeCellDataItem();
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -40,6 +39,9 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
+
+public slots:
+	void showPropertyDialog() override;
 
 private slots:
 	void editValue();

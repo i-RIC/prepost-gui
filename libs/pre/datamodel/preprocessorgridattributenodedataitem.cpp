@@ -143,15 +143,6 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-void PreProcessorGridAttributeNodeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<PropertyDialog*>(propDialog);
-	auto widget = dialog->widget();
-
-	auto gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	gitem->setOpacityPercentAndUpdateActorSettings(dialog->opacityPercent(), widget->createModifyCommand());
-}
-
 void PreProcessorGridAttributeNodeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_isCustomModified = static_cast<bool>(node.toElement().attribute("isCustomModified", "0").toInt());
@@ -409,6 +400,11 @@ void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 	grid->getIJIndex(index, &i, &j);
 
 	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
+}
+
+void PreProcessorGridAttributeNodeDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 void PreProcessorGridAttributeNodeDataItem::updateCrossectionWindows()
