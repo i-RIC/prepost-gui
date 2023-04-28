@@ -35,7 +35,7 @@ ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	is.horizontalMargin = 0.01;
 	is.verticalMargin = 0.15;
 	is.width = 300;
-	is.height = 320;
+	is.height = 200;
 }
 
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer(const ColorMapLegendSettingContainer& c) :
