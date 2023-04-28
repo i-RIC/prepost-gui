@@ -22,10 +22,10 @@ GeoDataPolyLineGroupProxy::DisplaySettingWidget::DisplaySettingWidget(GeoDataPol
 	ui->setupUi(this);
 	ui->usePreCheckBox->hide();
 
-	auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 	if (proxy->geoData()->gridAttribute()->isReferenceInformation()) {
 		ui->displaySettingWidget->setIsReferenceInformation(true);
 	} else {
+		auto colorMapWidget = proxy->geoData()->gridAttribute()->createColorMapSettingEditWidget(this);
 		m_colorMapEditWidget = new DelegatedColorMapSettingEditWidget(this);
 		m_colorMapEditWidget->setEditWidget(colorMapWidget);
 		auto setting = proxy->geoDataDataItem()->colorMapSetting();
