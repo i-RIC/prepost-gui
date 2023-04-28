@@ -334,33 +334,30 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 {
-	auto r = renderer();
-
 	auto atts = m_gridType->gridAttributes();
 	for (auto att : atts) {
-		auto c = att->createColorMapSettingContainer();
-		c->legendSetting()->setVisible(false);
-		c->legendSetting()->setTitle(att->caption());
-		m_colorMapSettingContainers.insert({att->name(), c});
-
-		auto actor = vtkActor2D::New();
-		r->AddActor2D(actor);
-		c->legendSetting()->imgSetting()->setActor(actor);
-		m_colorMapLegendActors.insert({att->name(), actor});
+		setupColorMapSettingContainer(att);
 	}
 
 	auto complexAtts = m_gridType->gridComplexAttributes();
 	for (auto att : complexAtts) {
-		auto c = att->createColorMapSettingContainer();
-		c->legendSetting()->setVisible(false);
-		c->legendSetting()->setTitle(att->caption());
-		m_colorMapSettingContainers.insert({att->name(), c});
-
-		auto actor = vtkActor2D::New();
-		r->AddActor2D(actor);
-		c->legendSetting()->imgSetting()->setActor(actor);
-		m_colorMapLegendActors.insert({att->name(), actor});
+		setupColorMapSettingContainer(att);
 	}
+}
+
+void PreProcessorGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att)
+{
+	auto r = renderer();
+
+	auto c = att->createColorMapSettingContainer();
+	c->legendSetting()->setVisible(false);
+	c->legendSetting()->setTitle(att->caption());
+	m_colorMapSettingContainers.insert({att->name(), c});
+
+	auto actor = vtkActor2D::New();
+	r->AddActor2D(actor);
+	c->legendSetting()->imgSetting()->setActor(actor);
+	m_colorMapLegendActors.insert({att->name(), actor});
 }
 
 void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)

@@ -323,13 +323,11 @@ void Post2dWindowGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitio
 	c->preSetting->setSetting(preColorMapSetting);
 	c->preSetting->copy(*c->preSetting->setting()->legendSetting());
 	c->preSetting->setDelegateMode(true);
-	c->preSetting->imgSetting()->controller()->setItem(this);
 	auto handler = new PreColorMapSettingUpdateHandler(c, v, this);
 	connect(preColorMapSetting, &ColorMapSettingContainerI::updated, handler, &PreColorMapSettingUpdateHandler::handle);
 
 	c->customSetting = att->createColorMapSettingContainer();
 	c->customSetting->copy(*c->preSetting->setting());
-	c->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
 	m_colorMapSettingContainers.insert({att->name(), c});
 
 	auto actor = vtkActor2D::New();

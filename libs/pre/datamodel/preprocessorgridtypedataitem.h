@@ -12,6 +12,7 @@
 #include <unordered_map>
 
 class ColorMapSettingToolBarWidgetController;
+class SolverDefinitionGridAttribute;
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
@@ -65,6 +66,7 @@ private:
 
 	void updateNewGridActionStatus();
 	void setupColorMapSettingContainers();
+	void setupColorMapSettingContainer(SolverDefinitionGridAttribute* att);
 
 	QString nextChildCaption();
 	std::string nextChildZonename();
