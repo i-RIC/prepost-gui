@@ -122,15 +122,6 @@ QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-void PreProcessorGridAttributeCellDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<PropertyDialog*>(propDialog);
-	auto widget = dialog->widget();
-
-	auto gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
-	gitem->setOpacityPercentAndUpdateActorSettings(dialog->opacityPercent(), widget->createModifyCommand());
-}
-
 void PreProcessorGridAttributeCellDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_isCustomModified.load(node);
@@ -424,6 +415,11 @@ void PreProcessorGridAttributeCellDataItem::generatePointMap()
 	gItem->addGeoData(item);
 
 	QMessageBox::information(mainWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
+}
+
+void PreProcessorGridAttributeCellDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 void PreProcessorGridAttributeCellDataItem::informSelection(VTKGraphicsView* v)

@@ -41,7 +41,7 @@ public:
 	const QList<PreProcessorGridAttributeCellDataItem*> conditions() const;
 	PreProcessorGridAttributeCellDataItem* cellDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	void setOpacityPercentAndUpdateActorSettings(int o, QUndoCommand* subcommand, bool renderOnRedoOnly = false);
+	void pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply = false);
 	int opacityPercent() const;
 	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;
@@ -72,8 +72,6 @@ private:
 	OpacityContainer m_opacity;
 	QAction* m_showAttributeBrowserAction;
 	bool m_attributeBrowserFixed;
-
-	class ModifyOpacityAndUpdateActorSettingsCommand;
 
 	OpacityContainerWidget* m_opacityWidget;
 	QWidgetContainer* m_colorMapWidgetContainer;

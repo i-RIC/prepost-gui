@@ -32,6 +32,11 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), Post2dWindowGeoDataGroupDataItem::tr("&Color Setting..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	auto cm = colorMapSetting();
+	if (cm != nullptr) {
+		cm->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
+	}
 	applyColorMapSetting();
 
 	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});

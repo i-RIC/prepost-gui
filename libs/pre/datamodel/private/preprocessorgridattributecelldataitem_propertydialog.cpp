@@ -44,10 +44,7 @@ void PreProcessorGridAttributeCellDataItem::PropertyDialog::setOpacityPercent(in
 
 void PreProcessorGridAttributeCellDataItem::PropertyDialog::accept()
 {
-	if (m_applied) {
-		iRICUndoStack::instance().undo();
-	}
-
+	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacityPercent(), widget()->createModifyCommand(), false);
 	QDialog::accept();
 }
 
@@ -55,7 +52,6 @@ void PreProcessorGridAttributeCellDataItem::PropertyDialog::reject()
 {
 	if (m_applied) {
 		iRICUndoStack::instance().undo();
-		m_item->renderGraphicsView();
 	}
 
 	QDialog::reject();
@@ -70,10 +66,6 @@ void PreProcessorGridAttributeCellDataItem::PropertyDialog::handleButtonClick(QA
 
 void PreProcessorGridAttributeCellDataItem::PropertyDialog::apply()
 {
-	if (m_applied) {
-		iRICUndoStack::instance().undo();
-	}
-
-	m_item->setOpacityPercentAndUpdateActorSettings(opacityPercent(), widget()->createModifyCommand(), true);
+	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacityPercent(), widget()->createModifyCommand(), true);
 	m_applied = true;
 }
