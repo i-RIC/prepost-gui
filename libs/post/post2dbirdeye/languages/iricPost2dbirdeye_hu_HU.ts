@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Scalar</translation>
+        <translation>Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Frissítse a kontúr beállítást</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaláris beállítás (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Szín</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Csomópont skalárértéke szerint</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>A cella skalárértéke szerint</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Hatótávolság</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalár (cella)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Válassza a Számítási eredmény lehetőséget</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Rács alakja</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Rács alakjának beállítása</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Rács alakzat megjelenítési beállítása</translation>
+        <translation type="vanished">Rács alakzat megjelenítési beállítása</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">A magasság skaláris értéke</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation type="vanished">Párbeszéd</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Szín</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Egyedi szín</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Skaláris érték szerint</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Hatótávolság</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Szín</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Csomópont skalárértéke szerint</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>A cella skalárértéke szerint</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Egyedi szín</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importálás (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Válassza a Számítási eredmény lehetőséget</translation>
     </message>
 </context>
 <context>

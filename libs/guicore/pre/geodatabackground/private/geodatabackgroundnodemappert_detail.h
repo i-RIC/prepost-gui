@@ -32,9 +32,8 @@ void GeoDataBackgroundNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettin
 	GeoDataBackground* background = dynamic_cast<GeoDataBackground* >(GeoDataMapper::geoData());
 	QVariant variantValue = background->variantValue();
 	V value = GeoDataMapperT<V>::fromVariant(variantValue);
-	const QList<IntegerRangeContainer::Range>& ranges = s2->ranges.ranges();
-	for (int i = 0; i < ranges.size(); ++i) {
-		const IntegerRangeContainer::Range& r = ranges.at(i);
+	const auto& ranges = s2->ranges.ranges();
+	for (const auto& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {
 			if (*(boolMap + j) == false) {
 				da->SetValue(static_cast<vtkIdType>(j), value);

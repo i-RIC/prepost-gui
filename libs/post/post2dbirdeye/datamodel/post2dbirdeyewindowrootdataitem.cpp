@@ -81,14 +81,10 @@ void Post2dBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* mod
 	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
 		model->appendRow(item->standardItem());
 	}
-	// add title item row.
-	model->appendRow(m_titleDataItem->standardItem());
-	// add time item row.
-	model->appendRow(m_timeDataItem->standardItem());
-	// add axes item row.
-	model->appendRow(m_axesDataItem->standardItem());
 
-	emit standardModelSetuped();
+	model->appendRow(m_titleDataItem->standardItem());
+	model->appendRow(m_timeDataItem->standardItem());
+	model->appendRow(m_axesDataItem->standardItem());
 }
 
 void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)

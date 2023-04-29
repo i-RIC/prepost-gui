@@ -3,19 +3,21 @@
 #include "gridbirdeyewindowdatamodel.h"
 #include "gridbirdeyewindowgraphicsview.h"
 #include "gridbirdeyewindowgriddataitem.h"
+#include "datamodel/gridbirdeyewindowrootdataitem.h"
+#include "datamodel/gridbirdeyewindowzonedataitem.h"
+
+#include <misc/xmlsupport.h>
 
 GridBirdEyeWindowDataModel::GridBirdEyeWindowDataModel(GridBirdEyeWindow* w, ProjectDataItem* parent) :
-	GraphicsWindowSimpleDataModel(w, parent),
-	m_gridDataItem {nullptr}
+	Graphics3DWindowDataModel(w, parent),
+	m_zScale {1}
 {
-	m_graphicsView->setModel(this);
-	m_gridDataItem = new GridBirdEyeWindowGridDataItem(this);
-	m_graphicsView->setActiveDataItem(m_gridDataItem);
+	init(w);
 }
 
 GridBirdEyeWindowDataModel::~GridBirdEyeWindowDataModel()
 {
-	delete m_gridDataItem;
+	delete m_rootDataItem;
 }
 
 GridBirdEyeWindowGraphicsView* GridBirdEyeWindowDataModel::graphicsView() const
@@ -25,27 +27,48 @@ GridBirdEyeWindowGraphicsView* GridBirdEyeWindowDataModel::graphicsView() const
 
 void GridBirdEyeWindowDataModel::editZScale()
 {
-	m_gridDataItem->editZScale();
+	bool ok;
+	double newZscale = QInputDialog::getDouble(mainWindow(), tr("Z-direction Scale"), tr("Input new Z-direction scale."), m_zScale, 1E-6, 1E6, 3, &ok);
+	if (! ok) {return;}
+	m_zScale = newZscale;
+	m_rootDataItem->updateZScale(newZscale);
+	m_graphicsView->cameraFit();
 }
 
 void GridBirdEyeWindowDataModel::editDisplaySetting()
 {
-	m_gridDataItem->editDisplaySetting();
+	// m_gridDataItem->editDisplaySetting();
 }
 
 void GridBirdEyeWindowDataModel::updateGrid()
 {
-	m_gridDataItem->updateGrid();
+	zoneDataItem()->update();
+}
+
+void GridBirdEyeWindowDataModel::init(GridBirdEyeWindow* w)
+{
+	m_graphicsView = new GridBirdEyeWindowGraphicsView(w);
+
+	auto root = new GridBirdEyeWindowRootDataItem(w, this);
+	m_rootDataItem = root;
+	root->setupStandardModel(m_itemModel);
+	connect(m_itemModel, &QStandardItemModel::itemChanged, this, &GridBirdEyeWindowDataModel::handleObjectBrowserChange);
+
+	m_graphicsView->setActiveDataItem(root);
+	m_graphicsView->setModel(this);
 }
 
 void GridBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_gridDataItem->loadFromProjectMainFile(node);
+	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
+	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
+	m_rootDataItem->updateZScale(m_zScale);
 }
 
 void GridBirdEyeWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_gridDataItem->saveToProjectMainFile(writer);
+	iRIC::setDoubleAttribute(writer, "ZScale", m_zScale);
+	m_rootDataItem->saveToProjectMainFile(writer);
 }
 
 PreProcessorGridTypeDataItem* GridBirdEyeWindowDataModel::gridTypeDataItem() const
@@ -55,10 +78,16 @@ PreProcessorGridTypeDataItem* GridBirdEyeWindowDataModel::gridTypeDataItem() con
 
 PreProcessorGridDataItem* GridBirdEyeWindowDataModel::gridDataItem() const
 {
-	return dynamic_cast<PreProcessorGridDataItem*> (parent());
+	return dynamic_cast<PreProcessorGridDataItem*> (parent()->parent());
+}
+
+GridBirdEyeWindowZoneDataItem* GridBirdEyeWindowDataModel::zoneDataItem() const
+{
+	auto r = dynamic_cast<GridBirdEyeWindowRootDataItem*>(m_rootDataItem);
+	return r->zoneDataItem();
 }
 
 void GridBirdEyeWindowDataModel::handleResize(QResizeEvent* event)
 {
-	m_gridDataItem->handleResize(event, m_graphicsView);
+	m_rootDataItem->handleResize(event, m_graphicsView);
 }

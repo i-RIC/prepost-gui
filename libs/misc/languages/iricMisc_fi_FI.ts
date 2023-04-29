@@ -57,4 +57,11 @@
         <translation>Tiedosto avataan %1 epäonnistui.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Valitse Arvo</translation>
+    </message>
+</context>
 </TS>

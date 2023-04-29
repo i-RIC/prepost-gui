@@ -385,7 +385,7 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Активирано</translation>
+        <translation type="vanished">Активирано</translation>
     </message>
 </context>
 <context>
@@ -662,6 +662,10 @@
         <source>Face%1</source>
         <translation>Лице %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Легенда за дължината</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -790,7 +794,65 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Актуализиране на настройката за частици</translation>
+        <translation type="vanished">Актуализиране на настройката за частици</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Настройка за показване на частици</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Начална позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Лице</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation>Посочете лицето, за да започнете частици</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation>Посочете лицето, за да започнете частици, чрез диапазона на индексите на мрежата (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Пространствен интервал на поколение</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>цвят:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>Размер на точката</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -805,6 +867,71 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Рационализиране на настройките на дисплея</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Физическа стойност:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Начална позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Добавете (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Премахване (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Лице</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation>Посочете лицето, за да започнете обтекаеми линии</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation>Посочете лицето, за да започнете обтекаеми линии, чрез диапазона на индексите на мрежата (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Пространствен интервал на поколение</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>цвят:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>ширина:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -815,108 +942,95 @@
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Настройка на частиците</translation>
+        <translation type="vanished">Настройка на частиците</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Общи настройки</translation>
+        <translation type="vanished">Общи настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Генерирайте периодично</translation>
+        <translation type="vanished">Генерирайте периодично</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Интервал на генериране на време</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Интервал на генериране на време</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>макс</translation>
+        <translation type="vanished">макс</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Генерирайте в произволно време</translation>
+        <translation type="vanished">Генерирайте в произволно време</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактиране...</translation>
+        <translation type="vanished">Редактиране...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начална позиция</translation>
+        <translation type="vanished">Начална позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Обхват</translation>
+        <translation type="vanished">Обхват</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Посочете областта за генериране на частици.</translation>
+        <translation type="vanished">Посочете областта за генериране на частици.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Посочете площта за генериране на частици, чрез обхвата на индексите на мрежата (I, J, K).</translation>
+        <translation type="vanished">Посочете площта за генериране на частици, чрез обхвата на индексите на мрежата (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Аз съм в</translation>
+        <translation type="vanished">Аз съм в</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Макс</translation>
+        <translation type="vanished">I Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Мин</translation>
+        <translation type="vanished">J Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Макс</translation>
+        <translation type="vanished">J Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Макс</translation>
+        <translation type="vanished">K Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Пространствен интервал на генериране</translation>
+        <translation type="vanished">Пространствен интервал на генериране</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -928,15 +1042,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Ако посочите 1, частиците се генерират в възли на мрежата. &lt;/p&gt; &lt;p&gt; Ако посочите 2, частиците се генерират в възли на мрежата и в средните точки на възли в мрежата. &lt;/p&gt; &lt;p&gt; Ако посочете 1/2, частиците се генерират за всеки друг възлов на мрежата. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Ако посочите 1, частиците се генерират в възли на мрежата. &lt;/p&gt; &lt;p&gt; Ако посочите 2, частиците се генерират в възли на мрежата и в средните точки на възли в мрежата. &lt;/p&gt; &lt;p&gt; Ако посочете 1/2, частиците се генерират за всеки друг възлов на мрежата. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
+        <translation type="vanished">Цвят:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -944,15 +1058,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Посочете броя на пикселите на дисплея. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Посочете броя на пикселите на дисплея. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавяне (&amp;A)</translation>
+        <translation type="vanished">Добавяне (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Премахване (&amp;R)</translation>
+        <translation type="vanished">Премахване (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1002,6 +1116,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>цвят:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер на точката:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -1045,55 +1174,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Рационализирана настройка</translation>
+        <translation type="vanished">Рационализирана настройка</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическа стойност:</translation>
+        <translation type="vanished">Физическа стойност:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начална позиция</translation>
+        <translation type="vanished">Начална позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Обхват</translation>
+        <translation type="vanished">Обхват</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Посочете областта за стартиране на рационализиране.</translation>
+        <translation type="vanished">Посочете областта за стартиране на рационализиране.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Посочете зоната за стартиране на поточните линии, според обхвата на индексите на мрежата (I, J, K).</translation>
+        <translation type="vanished">Посочете зоната за стартиране на поточните линии, според обхвата на индексите на мрежата (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Аз съм в</translation>
+        <translation type="vanished">Аз съм в</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Макс</translation>
+        <translation type="vanished">I Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Мин</translation>
+        <translation type="vanished">J Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Макс</translation>
+        <translation type="vanished">J Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Макс</translation>
+        <translation type="vanished">K Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Пространствен интервал на генериране</translation>
+        <translation type="vanished">Пространствен интервал на генериране</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1103,35 +1232,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ако посочите 1, поточните линии започват от мрежови възли. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Ако посочите 2, поточните линии започват от мрежови възли и средни точки на мрежови възли. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ако посочите 1/2, поточните линии започват от всички други възли на мрежата. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ако посочите 1, поточните линии започват от мрежови възли. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Ако посочите 2, поточните линии започват от мрежови възли и средни точки на мрежови възли. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ако посочите 1/2, поточните линии започват от всички други възли на мрежата. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>макс</translation>
+        <translation type="vanished">макс</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
+        <translation type="vanished">Цвят:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1139,15 +1268,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Посочете броя на пикселите на дисплея. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Посочете броя на пикселите на дисплея. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавяне (&amp;A)</translation>
+        <translation type="vanished">Добавяне (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Премахване (&amp;R)</translation>
+        <translation type="vanished">Премахване (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1174,7 +1303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Актуализирайте настройката за рационализиране</translation>
+        <translation type="vanished">Актуализирайте настройката за рационализиране</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

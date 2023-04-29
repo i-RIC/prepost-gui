@@ -57,4 +57,11 @@
         <translation>%1 を開くのに失敗しました。</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>値の選択</translation>
+    </message>
+</context>
 </TS>

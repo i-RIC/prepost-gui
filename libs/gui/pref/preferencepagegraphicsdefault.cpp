@@ -2,6 +2,7 @@
 
 #include "preferencepagegraphicsdefault.h"
 
+#include <guicore/arrows/arrowssettingcontainer.h>
 #include <guicore/project/backgroundimageinfo.h>
 
 PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget* parent) :
@@ -13,16 +14,17 @@ PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget* parent) :
 
 	ui->gridColorWidget->setColor(m_settings.value("gridcolor", QColor(Qt::black)).value<QColor>());
 
-	ui->vectorFactor->setValue(m_settings.value("vectorfactor", 1.0).value<double>());
-	ui->vectorColorWidget->setColor(m_settings.value("vectorcolor", QColor(Qt::black)).value<QColor>());
-	ui->vectorArrowSizeSpinBox->setValue(m_settings.value("vectorarrowsize", 3).value<int>());
+	ui->vectorColorWidget->setColor(m_settings.value("arrow_color", QColor(Qt::black)).value<QColor>());
+	ui->vectorArrowSizeSpinBox->setValue(m_settings.value("arrow_size", ArrowsSettingContainer::DEFAULT_ARROWSIZE).toInt());
+	ui->vectorArrowLineWidthSpinBox->setValue(m_settings.value("arrow_linewidth", ArrowsSettingContainer::DEFAULT_LINEWIDTH).toInt());
 
-	ui->streamLineColorWidget->setColor(m_settings.value("streamlinecolor", QColor(Qt::yellow)).value<QColor>());
+	ui->streamLineColorWidget->setColor(m_settings.value("streamline_color", QColor(Qt::black)).value<QColor>());
+	ui->streamlineWidthSpinBox->setValue(m_settings.value("streamline_width", 1).toInt());
 
-	ui->particleColorWidget->setColor(m_settings.value("particlecolor", QColor(Qt::black)).value<QColor>());
-	ui->particleSizeSpinBox->setValue(m_settings.value("particlesize", 3).value<int>());
+	ui->particleColorWidget->setColor(m_settings.value("particle_color", QColor(Qt::black)).value<QColor>());
+	ui->particleSizeSpinBox->setValue(m_settings.value("particle_size", 3).toInt());
 
-	ui->backgroundSizeSpinBox->setValue(m_settings.value("backgroundimagemaxsize", BackgroundImageInfo::MAXWIDTH).value<int>());
+	ui->backgroundSizeSpinBox->setValue(m_settings.value("backgroundimagemaxsize", BackgroundImageInfo::MAXWIDTH).toInt());
 }
 
 PreferencePageGraphicsDefault::~PreferencePageGraphicsDefault()
@@ -34,14 +36,15 @@ void PreferencePageGraphicsDefault::update()
 {
 	m_settings.setValue("gridcolor", ui->gridColorWidget->color());
 
-	m_settings.setValue("vectorfactor", ui->vectorFactor->value());
-	m_settings.setValue("vectorcolor", ui->vectorColorWidget->color());
-	m_settings.setValue("vectorarrowsize", ui->vectorArrowSizeSpinBox->value());
+	m_settings.setValue("arrow_color", ui->vectorColorWidget->color());
+	m_settings.setValue("arrow_size", ui->vectorArrowSizeSpinBox->value());
+	m_settings.setValue("arrow_linewidth", ui->vectorArrowLineWidthSpinBox->value());
 
-	m_settings.setValue("streamlinecolor", ui->streamLineColorWidget->color());
+	m_settings.setValue("streamline_color", ui->streamLineColorWidget->color());
+	m_settings.setValue("streamline_width", ui->streamlineWidthSpinBox->value());
 
-	m_settings.setValue("particlecolor", ui->particleColorWidget->color());
-	m_settings.setValue("particlesize", ui->particleSizeSpinBox->value());
+	m_settings.setValue("particle_color", ui->particleColorWidget->color());
+	m_settings.setValue("particle_size", ui->particleSizeSpinBox->value());
 
 	m_settings.setValue("backgroundimagemaxsize", ui->backgroundSizeSpinBox->value());
 }

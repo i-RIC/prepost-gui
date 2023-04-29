@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>يستورد (&amp;I)...</translation>
+        <translation type="vanished">يستورد (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>يصدّر (&amp;E)...</translation>
+        <translation type="vanished">يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>خريطة ملونة</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>الرؤية</translation>
+        <translation type="vanished">الرؤية</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>عند التحديد</translation>
+        <translation type="vanished">عند التحديد</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>دائماً</translation>
+        <translation type="vanished">دائماً</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>أبداً</translation>
+        <translation type="vanished">أبداً</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>الحجم والموقع</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">لون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>خريطة ملونة</translation>
+        <translation type="vanished">خريطة ملونة</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>أسطورة الطول</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(لون مخصص)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>شريط الألوان</translation>
+        <translation type="vanished">شريط الألوان</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>أفقي</translation>
+        <translation type="vanished">أفقي</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>رَأسِيّ</translation>
+        <translation type="vanished">رَأسِيّ</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>المسافة من القاع</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>٪</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">موافق:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">أنا ماكس:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J مين:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J ماكس:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>موافق:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K- الاتجاه</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>دقيقة</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>الأعلى</translation>
     </message>
 </context>
 <context>

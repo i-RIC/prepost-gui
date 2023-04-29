@@ -4,18 +4,23 @@
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
-#include "private/post2dbirdeyewindownodescalargroupdataitem_propertydialog.h"
+#include "private/post2dbirdeyewindownodescalargroupdataitem_impl.h"
+#include "private/post2dbirdeyewindownodescalargroupdataitem_settingeditwidget.h"
 
+#include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guibase/graphicsmisc.h>
-#include <guicore/datamodel/graphicswindowdrawcommands.h>
+#include <guibase/widget/opacitycontainerwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -29,43 +34,14 @@
 #include <vtkSmartPointer.h>
 #include <vtkWarpScalar.h>
 
-Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting::Setting() :
-	CompositeContainer {&regionSetting, &colorMode, &customColor, &colorTarget, &opacity},
-	regionSetting {},
-	colorMode {"colorMode", ColorMode::ByScalar},
-	customColor {"customColor", Qt::gray},
-	colorTarget {"colorTarget", ""},
-	opacity {"opacity", 100}
-{}
-
-Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting::Setting(const Setting& setting) :
-	Setting {}
-{
-	copyValue(setting);
-}
-
-Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting& Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting::operator=(const Setting& setting)
-{
-	copyValue(setting);
-	return *this;
-}
-
-XmlAttributeContainer& Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting::operator=(const XmlAttributeContainer& c)
-{
-	return operator=(dynamic_cast<const Setting&>(c));
-}
-
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(const std::string& elevationTarget, Post2dBirdEyeWindowDataItem* p) :
 	Post2dBirdEyeWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
-	m_elevationTarget {elevationTarget},
-	m_setting {},
-	m_actor {vtkActor::New()},
-	m_legendActor {vtkActor2D::New()}
+	impl {new Impl {elevationTarget, this}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	m_setting.colorMode = Setting::ColorMode::ByScalar;
-	m_setting.colorTarget = elevationTarget.c_str();
+	impl->m_setting.colorMode = Setting::ColorMode::ByNodeScalar;
+	impl->m_setting.colorTarget = elevationTarget.c_str();
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	standardItem()->setText(gType->solutionCaption(elevationTarget));
@@ -78,8 +54,31 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 		cs->valueCaption = caption;
 		cs->legend.title = caption;
 		cs->setAutoValueRange(pair.second);
-		m_colorMapSettings.insert({name, cs});
+		impl->m_colorMapSettings.insert({name, cs});
 	}
+	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
+		const auto& name = pair.first;
+		auto cs = new ColorMapSettingContainer();
+		auto caption = gType->output(name)->caption();
+		cs->valueCaption = caption;
+		cs->legend.title = caption;
+		cs->setAutoValueRange(pair.second);
+		impl->m_colorMapSettings.insert({name, cs});
+	}
+
+	impl->m_colorMapToolBarWidget->hide();
+	connect(impl->m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
+		auto cs = impl->m_colorMapSettings.at(iRIC::toStr(impl->m_setting.colorTarget));
+		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), cs);
+		pushUpdateActorSettingCommand(com, this);
+	});
+
+	impl->m_opacityToolBarWidget->hide();
+	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.opacity);
+	connect(impl->m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
+		auto com = impl->m_opacityToolBarWidget->createModifyCommand();
+		pushUpdateActorSettingCommand(com, this, false);
+	});
 
 	setupActors();
 }
@@ -87,32 +86,27 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupDataItem()
 {
 	auto r = renderer();
-	r->RemoveActor(m_actor);
-	r->RemoveActor2D(m_legendActor);
+	r->RemoveActor(impl->m_actor);
+	r->RemoveActor2D(impl->m_legendActor);
 
-	m_actor->Delete();
-	m_legendActor->Delete();
-
-	for (const auto& pair : m_colorMapSettings) {
-		delete pair.second;
-	}
+	delete impl;
 }
 
 const std::string& Post2dBirdEyeWindowNodeScalarGroupDataItem::elevationTarget() const
 {
-	return m_elevationTarget;
+	return impl->m_elevationTarget;
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 {
-	m_legendActor->VisibilityOff();
+	impl->m_legendActor->VisibilityOff();
 	m_actor2DCollection->RemoveAllItems();
 
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 
-	auto filtered = m_setting.regionSetting.buildNodeFilteredData(cont->data()->data());
-	filtered->GetPointData()->SetActiveScalars(m_elevationTarget.c_str());
+	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->data()->data());
+	filtered->GetPointData()->SetActiveScalars(impl->m_elevationTarget.c_str());
 
 	auto warp = vtkSmartPointer<vtkWarpScalar>::New();
 	warp->UseNormalOn();
@@ -127,67 +121,97 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	filtered->Delete();
 	auto data = filter->GetOutput();
 
-	if (m_setting.colorMode == Setting::ColorMode::Custom) {
+	impl->m_colorMapToolBarWidget->setEnabled(true);
+
+	if (impl->m_setting.colorMode == Setting::ColorMode::Custom) {
+		impl->m_colorMapToolBarWidget->setDisabled(true);
+
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		mapper->SetInputData(data);
-		m_actor->SetMapper(mapper);
+		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
-		m_actor->GetProperty()->SetColor(m_setting.customColor);
-	} else if (m_setting.colorMode == Setting::ColorMode::ByScalar) {
+		impl->m_actor->GetProperty()->SetColor(impl->m_setting.customColor);
+	} else if (impl->m_setting.colorMode == Setting::ColorMode::ByNodeScalar) {
 		auto cs = activeColorMapSetting();
 		if (cs != nullptr) {
-			data->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.colorTarget).c_str());
-			auto mapper = cs->buildPointDataMapper(data);
-			m_actor->SetMapper(mapper);
+			impl->m_colorMapToolBarWidget->setSetting(cs);
+			data->GetPointData()->SetActiveScalars(iRIC::toStr(impl->m_setting.colorTarget).c_str());
+			impl->m_setting.contourSetting.setColorMapSetting(cs);
+			auto data2 = impl->m_setting.contourSetting.buildFilteredData(data);
+			auto mapper = cs->buildPointDataMapper(data2);
+			data2->Delete();
+			impl->m_actor->SetMapper(mapper);
 			mapper->Delete();
-			cs->legend.imageSetting.setActor(m_legendActor);
+			cs->legend.imageSetting.setActor(impl->m_legendActor);
+			cs->legend.imageSetting.controller()->setItem(this);
+			auto v = dataModel()->graphicsView();
+			cs->legend.imageSetting.apply(v);
+		}
+	} else if (impl->m_setting.colorMode == Setting::ColorMode::ByCellScalar) {
+		auto cs = activeColorMapSetting();
+		if (cs != nullptr) {
+			impl->m_colorMapToolBarWidget->setSetting(cs);
+			data->GetCellData()->SetActiveScalars(iRIC::toStr(impl->m_setting.colorTarget).c_str());
+			auto mapper = cs->buildCellDataMapper(data, false);
+			impl->m_actor->SetMapper(mapper);
+			mapper->Delete();
+			cs->legend.imageSetting.setActor(impl->m_legendActor);
 			cs->legend.imageSetting.controller()->setItem(this);
 			auto v = dataModel()->graphicsView();
 			cs->legend.imageSetting.apply(v);
 		}
 	}
 
-	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+
+	auto v = dataModel()->graphicsView();
+	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth * v->devicePixelRatioF());
 	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 {
 	auto r = renderer();
-	r->AddActor(m_actor);
-	r->AddActor2D(m_legendActor);
+	r->AddActor(impl->m_actor);
+	r->AddActor2D(impl->m_legendActor);
 
-	m_actorCollection->AddItem(m_actor);
+	m_actorCollection->AddItem(impl->m_actor);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 {
-	auto gtItem = topDataItem()->zoneDataItem()->gridTypeDataItem();
-	for (const auto& pair : m_colorMapSettings) {
-		auto range = gtItem->nodeValueRange(pair.first);
-		pair.second->setAutoValueRange(range);
+	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+		impl->m_colorMapSettings.at(pair.first)->setAutoValueRange(pair.second);
+	}
+	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
+		impl->m_colorMapSettings.at(pair.first)->setAutoValueRange(pair.second);
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::showPropertyDialog()
 {
-	return showPropertyDialogModeless();
+	showPropertyDialogModeless();
 }
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	auto dialog = new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+
+	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Scalar Setting (%1)").arg(standardItem()->text()));
+	dialog->resize(900, 700);
 	return dialog;
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 {
-	m_actor->SetScale(1, 1, scale);
+	impl->m_actor->SetScale(1, 1, scale);
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* v)
@@ -230,6 +254,22 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* 
 	}
 }
 
+bool Post2dBirdEyeWindowNodeScalarGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	impl->m_colorMapToolBarWidget->setParent(toolBar);
+	impl->m_colorMapToolBarWidget->show();
+
+	toolBar->addWidget(impl->m_colorMapToolBarWidget);
+	toolBar->addSeparator();
+
+	impl->m_opacityToolBarWidget->setParent(toolBar);
+	impl->m_opacityToolBarWidget->show();
+
+	toolBar->addWidget(impl->m_opacityToolBarWidget);
+
+	return true;
+}
+
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();
@@ -240,7 +280,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* ev
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_setting.load(node);
+	impl->m_setting.load(node);
 
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
@@ -248,21 +288,21 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const
 		if (child.nodeName() == "ColorMapSetting") {
 			auto elem = child.toElement();
 			auto name = iRIC::toStr(elem.attribute("name"));
-			auto it = m_colorMapSettings.find(name);
-			if (it == m_colorMapSettings.end()) {continue;}
+			auto it = impl->m_colorMapSettings.find(name);
+			if (it == impl->m_colorMapSettings.end()) {continue;}
 
 			it->second->load(child);
 		}
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.save(writer);
+	impl->m_setting.save(writer);
 
-	for (const auto& pair : m_colorMapSettings) {
+	for (const auto& pair : impl->m_colorMapSettings) {
 		writer.writeStartElement("ColorMapSetting");
 		writer.writeAttribute("name", pair.first.c_str());
 		pair.second->save(writer);
@@ -277,15 +317,15 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem* Post2dBirdEyeWindowNodeScalarGrou
 
 ColorMapSettingContainer* Post2dBirdEyeWindowNodeScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
-	auto it = m_colorMapSettings.find(name);
-	if (it == m_colorMapSettings.end()) {return nullptr;}
+	auto it = impl->m_colorMapSettings.find(name);
+	if (it == impl->m_colorMapSettings.end()) {return nullptr;}
 
 	return it->second;
 }
 
 ColorMapSettingContainer* Post2dBirdEyeWindowNodeScalarGroupDataItem::activeColorMapSetting() const
 {
-	if (m_setting.colorMode == Setting::ColorMode::Custom) {return nullptr;}
+	if (impl->m_setting.colorMode == Setting::ColorMode::Custom) {return nullptr;}
 
-	return colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+	return colorMapSetting(iRIC::toStr(impl->m_setting.colorTarget));
 }

@@ -2,26 +2,17 @@
 #define POST2DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
-#include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/compositecontainer.h>
 #include <misc/stringcontainer.h>
-#include <misc/enumcontainert.h>
-
-#include <QMap>
-#include <QColor>
-
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkDataSetMapper.h>
-#include <vtkStreamTracer.h>
-#include <vtkClipPolyData.h>
-#include <vtkPolyData.h>
 
 #include <vector>
 
 class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorStreamlineDataItem;
+
+class vtkActor;
+class vtkStreamTracer;
 
 class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -36,14 +27,12 @@ public:
 		Setting& operator=(const Setting& s);
 
 		StringContainer target;
-		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	};
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* parent);
-	virtual ~Post2dWindowNodeVectorStreamlineGroupDataItem();
+	~Post2dWindowNodeVectorStreamlineGroupDataItem() override;
 
-	void updateActorSettings();
-	void setupClipper();
+	void updateActorSetting() override;
 	void updateZDepthRangeItemCount() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -58,13 +47,13 @@ public slots:
 
 protected:
 	std::string target() const override;
-	void setTarget(const std::string& target);
+	void setTarget(const std::string& target) override;
 
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
-	vtkPointSet* getRegion();
+	void clearActors();
 
-	void setupStreamTracer(vtkStreamTracer* tracer);
+	static void setupStreamTracer(vtkStreamTracer* tracer);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -73,13 +62,7 @@ protected:
 	Setting m_setting;
 	double m_zScale;
 
-	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
-
 	std::vector<vtkActor*> m_streamlineActors;
-	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-
-private:
-	void clearActors();
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H

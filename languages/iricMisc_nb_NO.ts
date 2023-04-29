@@ -57,4 +57,11 @@
         <translation>Åpner filen %1 mislyktes.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Velg Verdi</translation>
+    </message>
+</context>
 </TS>

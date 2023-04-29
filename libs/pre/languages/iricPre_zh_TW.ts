@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>對象瀏覽器</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">顏色：</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>標量</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>按節點標量值</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>按像元標量值</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>標量（細胞）</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>選擇網格屬性</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z 方向比例尺</translation>
+        <translation>Z 方向比例尺</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">輸入新的 Z 方向比例。</translation>
+        <translation>輸入新的 Z 方向比例。</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z方向刻度：</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>網格形狀</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>網格形狀設置</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>高程的標量值</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>標量</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>按節點標量值</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>按像元標量值</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>標量（節點）</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>選擇網格屬性</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>生成點雲數據</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>網格單元格屬性顯示設置（ %1 )</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>生成點雲數據</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>網格節點屬性顯示設置（ %1 )</translation>
     </message>
 </context>
 <context>

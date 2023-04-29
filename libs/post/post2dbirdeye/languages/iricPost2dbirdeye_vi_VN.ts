@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Vô hướng</translation>
+        <translation>Vô hướng</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Cập nhật cài đặt đường viền</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Cài đặt vô hướng (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Theo giá trị vô hướng nút</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Theo giá trị vô hướng ô</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Có thể xác định tối đa bốn đường bao.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Vô hướng (ô)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Chọn kết quả tính toán</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Hình dạng lưới</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Cài đặt hình dạng lưới</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Cài đặt hiển thị hình dạng lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị hình dạng lưới</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Giá trị vô hướng cho Độ cao</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>hộp thoại</translation>
+        <translation type="vanished">hộp thoại</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Tự phối màu</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Theo giá trị vô hướng</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Phạm vi</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Màu sắc</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Theo giá trị vô hướng nút</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Theo giá trị vô hướng ô</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Tự phối màu</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Theo giá trị vô hướng</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Nhập khẩu (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Có thể xác định tối đa bốn đường bao.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Chọn kết quả tính toán</translation>
     </message>
 </context>
 <context>

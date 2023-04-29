@@ -12,6 +12,8 @@
 #include <vtkTransformFilter.h>
 #include <vtkWarpVector.h>
 
+#include <QSettings>
+
 namespace {
 
 const int AUTO_AVERAGECOUNT = 20; // Use 20 points with the longest arrow lengths to calculate standard length
@@ -42,6 +44,12 @@ ArrowsSettingContainer::ArrowsSettingContainer() :
 	lineWidth {"arrowLineWidth", DEFAULT_LINEWIDTH},
 	legend {}
 {
+	QSettings settings;
+
+	customColor = settings.value("graphics/arrow_color", QColor(Qt::black)).value<QColor>();
+	arrowSize = settings.value("graphics/arrow_size", DEFAULT_ARROWSIZE).toInt();
+	lineWidth = settings.value("graphics/arrow_linewidth", DEFAULT_LINEWIDTH).toInt();
+
 	legend.setArrowsSetting(this);
 }
 
@@ -50,9 +58,6 @@ ArrowsSettingContainer::ArrowsSettingContainer(const ArrowsSettingContainer& c) 
 {
 	copyValue(c);
 }
-
-ArrowsSettingContainer::~ArrowsSettingContainer()
-{}
 
 ArrowsSettingContainer& ArrowsSettingContainer::operator=(const ArrowsSettingContainer& c)
 {
@@ -187,7 +192,7 @@ void ArrowsSettingContainer::updateStandardValueIfNeeded(vtkDataSetAttributes* a
 	std::sort(lens.begin(), lens.end());
 
 	int count = AUTO_AVERAGECOUNT;
-	if (count > lens.size()) {count = lens.size();}
+	if (count > lens.size()) {count = static_cast<int>(lens.size());}
 
 	double sum = 0;
 	for (int i = 0; i < count; ++i) {

@@ -11,7 +11,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <postbase/postsolutionselectdialog.h>
+#include <misc/valueselectdialog.h>
 
 #include <QDomNode>
 #include <QMenu>
@@ -104,8 +104,9 @@ QDialog* Post2dWindowEdgeJScalarGroupTopDataItem::addDialog(QWidget* p)
 		solutions.insert({sol, gType->solutionCaption(sol)});
 	}
 
-	auto dialog = new PostSolutionSelectDialog(p);
-	dialog->setSolutions(solutions);
+	auto dialog = new ValueSelectDialog(p);
+	dialog->setValues(solutions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
 }
@@ -119,8 +120,8 @@ void Post2dWindowEdgeJScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 
 	auto gType = zoneData->gridType();
 
-	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
-	auto sol = dialog->selectedSolution();
+	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowNodeScalarGroupDataItem(sol, iRICLib::H5CgnsZone::SolutionPosition::JFace, this);
 	newItem->standardItem()->setText(gType->solutionCaption(sol));

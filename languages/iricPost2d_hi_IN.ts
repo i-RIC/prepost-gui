@@ -400,19 +400,34 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>रंग</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -440,6 +455,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>
@@ -514,12 +533,20 @@
         <source>Scalar (edgeI)</source>
         <translation>अदिश (धार I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>स्केलर (एजजे)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>
@@ -764,19 +791,34 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">रंग</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>रंग</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -804,6 +846,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>आकार फ़ाइल निर्यात करने के लिए, रंग सेटिंग को "असतत मोड" पर स्विच करें।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>
@@ -882,251 +928,114 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>कण सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कण सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>कण प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
-        <source>Update Particle Setting</source>
-        <translation>कण सेटिंग अपडेट करें</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
-    <message>
-        <source>Streamlines</source>
-        <translation>सुव्यवस्थित</translation>
-    </message>
-    <message>
-        <source>Streamline Physical Value Change</source>
-        <translation>भौतिक मूल्य परिवर्तन को कारगर बनाना</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
-    <message>
-        <source>Update Streamline Setting</source>
-        <translation>स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleGroupRootDataItem</name>
-    <message>
-        <source>Particles</source>
-        <translation>कणों</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleStructuredSettingDialog</name>
-    <message>
-        <source>Particle Setting</source>
-        <translation>कण सेटिंग</translation>
-    </message>
-    <message>
-        <source>Common Settings</source>
-        <translation>सामान्य सेटिंग</translation>
-    </message>
-    <message>
-        <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
-    </message>
-    <message>
-        <source>Generate periodically</source>
-        <translation>समय-समय पर उत्पन्न करें</translation>
-    </message>
-    <message>
-        <source>Generation time interval</source>
-        <translation>पीढ़ी समय अंतराल</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation>मिनट</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <translation>मैक्स</translation>
-    </message>
-    <message>
-        <source>Generate at arbitrary time</source>
-        <translation>मनमाना समय पर उत्पन्न करें</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Start Position</source>
         <translation>शुरुआत की स्थिति</translation>
     </message>
     <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
         <source>Range</source>
         <translation>श्रेणी</translation>
     </message>
     <message>
-        <source>Specify the area to generate particles.</source>
-        <translation>कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <source>Specify the area to start particles</source>
+        <translation>कणों को शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
     </message>
     <message>
-        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>ग्रिड इंडेक्स रेंज (आई, जे) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
-    </message>
-    <message>
-        <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
-    </message>
-    <message>
-        <source>I Max</source>
-        <translation>मैं मैक्स</translation>
-    </message>
-    <message>
-        <source>J Min</source>
-        <translation>जे मिनो</translation>
-    </message>
-    <message>
-        <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>ग्रिड इंडेक्स रेंज (I, J) द्वारा कणों को शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Generation space interval</source>
         <translation>जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Color:</source>
         <translation>रंग:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation>आकार:</translation>
+        <source>Point Size</source>
+        <translation>बिंदु का आकार</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
-    </message>
-    <message>
-        <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <source>px</source>
+        <translation>पिक्सल</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
-        <source>Particle Setting</source>
-        <translation>कण सेटिंग</translation>
+        <source>Update Particle Setting</source>
+        <translation type="vanished">कण सेटिंग अपडेट करें</translation>
     </message>
     <message>
-        <source>Common Settings</source>
-        <translation>सामान्य सेटिंग</translation>
+        <source>Particles Display Setting</source>
+        <translation>कण प्रदर्शन सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
-        <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <source>Start Position</source>
+        <translation>शुरुआत की स्थिति</translation>
     </message>
     <message>
-        <source>Generate periodically</source>
-        <translation>समय-समय पर उत्पन्न करें</translation>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
     </message>
     <message>
-        <source>Generation interval</source>
-        <translation>पीढ़ी अंतराल</translation>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
     </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation>मिनट</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <translation>मैक्स</translation>
-    </message>
-    <message>
-        <source>Generate at arbitrary time</source>
-        <translation>मनमाना समय पर उत्पन्न करें</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation>संपादित करें...</translation>
-    </message>
-    <message>
-        <source>Start Points</source>
-        <translation>प्रारंभ बिंदु</translation>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+        <translation>दो बिंदु बताएं। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
@@ -1146,7 +1055,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>बिंदु 2:</translation>
+        <translation>प्वाइंट 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
@@ -1157,8 +1066,291 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>रंग:</translation>
     </message>
     <message>
+        <source>Point size</source>
+        <translation>बिंदु का आकार</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
+    <message>
+        <source>Streamlines</source>
+        <translation>सुव्यवस्थित</translation>
+    </message>
+    <message>
+        <source>Streamline Physical Value Change</source>
+        <translation>भौतिक मूल्य परिवर्तन को कारगर बनाना</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>स्ट्रीमलाइन डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Streamline Setting</source>
+        <translation type="vanished">स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>स्ट्रीमलाइन डिस्प्ले सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>जोड़ना (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>निकालना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>दो बिंदु बताएं। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>माउस ड्रैग</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>समन्वय मान</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>बिंदु 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>प्वाइंट 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <source>Particles</source>
+        <translation>कणों</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleStructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">कण सेटिंग</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">सामान्य सेटिंग</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">समय-समय पर उत्पन्न करें</translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="vanished">पीढ़ी समय अंतराल</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">मिनट</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">मैक्स</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">मनमाना समय पर उत्पन्न करें</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">संपादित करें...</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles.</source>
+        <translation type="vanished">कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (आई, जे) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="vanished">मैं भी शामिल</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="vanished">मैं मैक्स</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="vanished">जे मिनो</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="vanished">जे मैक्स</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">रंग:</translation>
+    </message>
+    <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1166,19 +1358,130 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">कण सेटिंग</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">सामान्य सेटिंग</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">समय-समय पर उत्पन्न करें</translation>
+    </message>
+    <message>
+        <source>Generation interval</source>
+        <translation type="vanished">पीढ़ी अंतराल</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">मिनट</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">मैक्स</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">मनमाना समय पर उत्पन्न करें</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">संपादित करें...</translation>
+    </message>
+    <message>
+        <source>Start Points</source>
+        <translation type="vanished">प्रारंभ बिंदु</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="vanished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="vanished">माउस ड्रैग</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="vanished">समन्वय मान</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="vanished">बिंदु 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="vanished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="vanished">बिंदु 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">रंग:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">आकार:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">हटाना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1208,15 +1511,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>कलरमैप सेटिंग</translation>
+        <translation type="vanished">कलरमैप सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -1225,6 +1528,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
     </message>
 </context>
 <context>
@@ -1339,47 +1661,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>सुव्यवस्थित सेटिंग</translation>
+        <translation type="vanished">सुव्यवस्थित सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>शुरुआत की स्थिति</translation>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>जनरेशन स्पेस अंतराल</translation>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1389,35 +1711,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;" &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;"&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;" &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=" मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;"&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>चौड़ाई:</translation>
+        <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1425,70 +1747,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>सुव्यवस्थित सेटिंग</translation>
+        <translation type="vanished">सुव्यवस्थित सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>प्रारंभ बिंदु</translation>
+        <translation type="vanished">प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+        <translation type="vanished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>माउस ड्रैग</translation>
+        <translation type="vanished">माउस ड्रैग</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>समन्वय मान</translation>
+        <translation type="vanished">समन्वय मान</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>बिंदु 1:</translation>
+        <translation type="vanished">बिंदु 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>बिंदु 2:</translation>
+        <translation type="vanished">बिंदु 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>चौड़ाई:</translation>
+        <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1496,19 +1818,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;"&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1530,7 +1852,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>

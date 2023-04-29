@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Scalar</translation>
+        <translation>Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Värskenda kontuuriseadet</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaari seadistus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Sõlme skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Lahtri skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Vahemik</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalaar (lahter)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Valige Arvutustulemus</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Võrgu kuju</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Võre kuju seadistus</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Ruudustiku kuju kuvaseade</translation>
+        <translation type="vanished">Ruudustiku kuju kuvaseade</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Kõrguse skalaarväärtus</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoog</translation>
+        <translation type="vanished">Dialoog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Värv</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Vahemik</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Värv</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Sõlme skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Lahtri skalaarväärtuse järgi</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Kohandatud värv</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Skalaarväärtuse järgi</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Ekspordi (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Valige Arvutustulemus</translation>
     </message>
 </context>
 <context>

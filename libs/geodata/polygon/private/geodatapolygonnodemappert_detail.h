@@ -69,8 +69,8 @@ void GeoDataPolygonNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI*
 	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V>::container()->dataArray());
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V>::geoData());
 	V value = GeoDataMapperT<V>::fromVariant(polygon->variantValue());
-	const QList<IntegerRangeContainer::Range>& ranges = setting->ranges.ranges();
-	for (const IntegerRangeContainer::Range& r : ranges) {
+	const auto& ranges = setting->ranges.ranges();
+	for (const auto& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {
 			if (*(boolMap + j) == false) {
 				da->SetValue(static_cast<vtkIdType>(j), value);

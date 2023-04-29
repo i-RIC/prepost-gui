@@ -404,19 +404,34 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="vanished">Diálogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Cor</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Faixa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Cor</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -444,6 +459,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecione o resultado do cálculo</translation>
     </message>
 </context>
 <context>
@@ -518,12 +537,20 @@
         <source>Scalar (edgeI)</source>
         <translation>Grandeza escalar (borda da direcao I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecione o resultado do cálculo</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Grandeza escalar (borda da direcao J)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecione o resultado do cálculo</translation>
     </message>
 </context>
 <context>
@@ -768,19 +795,34 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="vanished">Diálogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Cor</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Faixa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Cor</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -808,6 +850,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>Para exportar o arquivo de forma, mude a configuração de cor para "Modo discreto".</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecione o resultado do cálculo</translation>
     </message>
 </context>
 <context>
@@ -886,14 +932,150 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Configuracao de particula</translation>
+        <translation type="vanished">Configuracao de particula</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Configuração de Exibição de Partículas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posição inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Região</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Faixa</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation>Especifique a área para iniciar as partículas</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>Especifique a área para iniciar as partículas, por intervalo de índices de grade (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Intervalo de espaço de geração</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Cor:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>Tamanho do ponto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Configuracao de particula</translation>
+        <translation type="vanished">Configuracao de particula</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Configuração de Exibição de Partículas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posição inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Região</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>Especifique dois pontos. As partículas partem de pontos gerados igualmente separados entre esses dois pontos.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>Arrastar o mouse</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>Valores de Coordenadas</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>Ponto 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>Ponto 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Número de pontos:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Cor:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>tamanho do ponto</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -908,10 +1090,157 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Simplificar configuração de exibição</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Valor Físico:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posição inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Região</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Faixa</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>Especifique a área para iniciar aerodinâmicas</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>Especifique a área para iniciar as linhas de fluxo, por faixa de índices de grade (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Intervalo de espaço de geração</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Cor:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Largura:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Alterar a configuracao de linha do fluxo</translation>
+        <translation type="vanished">Alterar a configuracao de linha do fluxo</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Simplificar configuração de exibição</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Valor Físico:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posição inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Adicionar (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Remover (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Região</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>Especifique dois pontos. As partículas partem de pontos gerados igualmente separados entre esses dois pontos.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>Arrastar o mouse</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>Valores de Coordenadas</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>Ponto 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>Ponto 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Número de pontos:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Cor:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Largura:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -925,100 +1254,87 @@
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Configuracao de particulas</translation>
+        <translation type="vanished">Configuracao de particulas</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Configuracoes comuns</translation>
+        <translation type="vanished">Configuracoes comuns</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Criacao periodica</translation>
+        <translation type="vanished">Criacao periodica</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Intervalo do tempo de ocorrencia</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Intervalo do tempo de ocorrencia</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>reduzir</translation>
+        <translation type="vanished">reduzir</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>Aumentar</translation>
+        <translation type="vanished">Aumentar</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>Valor minimo :</translation>
+        <translation type="vanished">Valor minimo :</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Valor maximo :</translation>
+        <translation type="vanished">Valor maximo :</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Criacao no momento arbitrario</translation>
+        <translation type="vanished">Criacao no momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Edicao...</translation>
+        <translation type="vanished">Edicao...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posicao inicial</translation>
+        <translation type="vanished">Posicao inicial</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Alcance</translation>
+        <translation type="vanished">Alcance</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Especificar o local de procriacao das particulas. </translation>
+        <translation type="vanished">Especificar o local de procriacao das particulas. </translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Especifique o local de procriacao das particulas dentro do alcance de indice (I , J) da grade.</translation>
+        <translation type="vanished">Especifique o local de procriacao das particulas dentro do alcance de indice (I , J) da grade.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Minimo</translation>
+        <translation type="vanished">I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Maximo</translation>
+        <translation type="vanished">I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J minimo</translation>
+        <translation type="vanished">J minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J maximo</translation>
+        <translation type="vanished">J maximo</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Intervalo de procriacao  </translation>
+        <translation type="vanished">Intervalo de procriacao  </translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1030,15 +1346,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Se você especificar 1, as partículas serão geradas nos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 2, as partículas serão geradas nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 1/2, as partículas são geradas para todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Se você especificar 1, as partículas serão geradas nos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 2, as partículas serão geradas nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p&gt; Se você especificar 1/2, as partículas são geradas para todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Dimensao :</translation>
+        <translation type="vanished">Dimensao :</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1046,123 +1362,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar(&amp;A)</translation>
+        <translation type="vanished">Adicionar(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Remover (&amp;R)</translation>
+        <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuracao de regiao (&amp;R)</translation>
+        <translation type="vanished">Configuracao de regiao (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Configuracao de particulas</translation>
+        <translation type="vanished">Configuracao de particulas</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Configuracoes comuns</translation>
+        <translation type="vanished">Configuracoes comuns</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Criacao periodica</translation>
+        <translation type="vanished">Criacao periodica</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>Intervalo de ocorrencia</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Intervalo de ocorrencia</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>reduzir</translation>
+        <translation type="vanished">reduzir</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>Aumentar</translation>
+        <translation type="vanished">Aumentar</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>Valor minimo :</translation>
+        <translation type="vanished">Valor minimo :</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Valor maximo :</translation>
+        <translation type="vanished">Valor maximo :</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Criacao no momento arbitrario</translation>
+        <translation type="vanished">Criacao no momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Edicao...</translation>
+        <translation type="vanished">Edicao...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Posicoes iniciais</translation>
+        <translation type="vanished">Posicoes iniciais</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Especifique dois pontos. As particulas serao procriadas com intervalos iguais dentro dos dois pontos especificados.</translation>
+        <translation type="vanished">Especifique dois pontos. As particulas serao procriadas com intervalos iguais dentro dos dois pontos especificados.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Especificar com o arraste do mouse</translation>
+        <translation type="vanished">Especificar com o arraste do mouse</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Valores de coordenadas</translation>
+        <translation type="vanished">Valores de coordenadas</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Ponto 1 :</translation>
+        <translation type="vanished">Ponto 1 :</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Ponto 2 :</translation>
+        <translation type="vanished">Ponto 2 :</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Numero de pontos :</translation>
+        <translation type="vanished">Numero de pontos :</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Dimensao :</translation>
+        <translation type="vanished">Dimensao :</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1170,19 +1473,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar(&amp;A)</translation>
+        <translation type="vanished">Adicionar(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Remover (&amp;R)</translation>
+        <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuracao de regiao (&amp;R)</translation>
+        <translation type="vanished">Configuracao de regiao (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1212,15 +1515,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuração do mapa de cores</translation>
+        <translation type="vanished">Configuração do mapa de cores</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -1229,6 +1532,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>Cor customizada</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de cores</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Cor:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Tamanho do ponto:</translation>
     </message>
 </context>
 <context>
@@ -1343,47 +1665,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Configuracao de linha do fluxo</translation>
+        <translation type="vanished">Configuracao de linha do fluxo</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posicao inicial</translation>
+        <translation type="vanished">Posicao inicial</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Alcance</translation>
+        <translation type="vanished">Alcance</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Especificar o local inicial para a linha de fluxo.</translation>
+        <translation type="vanished">Especificar o local inicial para a linha de fluxo.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Especifique o local inicial para a linha de fluxo dentro do alcance de indice (I, J) da grade.</translation>
+        <translation type="vanished">Especifique o local inicial para a linha de fluxo dentro do alcance de indice (I, J) da grade.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Minimo</translation>
+        <translation type="vanished">I Minimo</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Maximo</translation>
+        <translation type="vanished">I Maximo</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J minimo</translation>
+        <translation type="vanished">J minimo</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J maximo</translation>
+        <translation type="vanished">J maximo</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Intervalo de procriacao  </translation>
+        <translation type="vanished">Intervalo de procriacao  </translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1393,35 +1715,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1, a simplificação começa nos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Se você especificar 2, as simplificações começam nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1/2, os streamlines começam em todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1, a simplificação começa nos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Se você especificar 2, as simplificações começam nos nós da grade e nos pontos intermediários dos nós da grade. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Se você especificar 1/2, os streamlines começam em todos os outros nós da grade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>reduzir</translation>
+        <translation type="vanished">reduzir</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>Aumentar</translation>
+        <translation type="vanished">Aumentar</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>Valor minimo :</translation>
+        <translation type="vanished">Valor minimo :</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Valor maximo :</translation>
+        <translation type="vanished">Valor maximo :</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Espessura da linha :</translation>
+        <translation type="vanished">Espessura da linha :</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1429,70 +1751,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar(&amp;A)</translation>
+        <translation type="vanished">Adicionar(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Remover (&amp;R)</translation>
+        <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuracao de regiao (&amp;R)</translation>
+        <translation type="vanished">Configuracao de regiao (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Configuracao de linha do fluxo</translation>
+        <translation type="vanished">Configuracao de linha do fluxo</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor fisico :</translation>
+        <translation type="vanished">Valor fisico :</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Posicoes iniciais</translation>
+        <translation type="vanished">Posicoes iniciais</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Especifique dois pontos. As particulas serao procriadas com intervalos iguais dentro dos dois pontos especificados.</translation>
+        <translation type="vanished">Especifique dois pontos. As particulas serao procriadas com intervalos iguais dentro dos dois pontos especificados.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Especificar com o arraste do mouse</translation>
+        <translation type="vanished">Especificar com o arraste do mouse</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Valores de coordenadas</translation>
+        <translation type="vanished">Valores de coordenadas</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Ponto 1 :</translation>
+        <translation type="vanished">Ponto 1 :</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Ponto 2 :</translation>
+        <translation type="vanished">Ponto 2 :</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Numero de pontos :</translation>
+        <translation type="vanished">Numero de pontos :</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor de exibicao:</translation>
+        <translation type="vanished">Cor de exibicao:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Espessura da linha :</translation>
+        <translation type="vanished">Espessura da linha :</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1500,19 +1822,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique um número de pixels na tela. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Adicionar(&amp;A)</translation>
+        <translation type="vanished">Adicionar(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Remover (&amp;R)</translation>
+        <translation type="vanished">Remover (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Configuracao de regiao (&amp;R)</translation>
+        <translation type="vanished">Configuracao de regiao (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1530,7 +1852,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Alterar a configuracao de linha do fluxo</translation>
+        <translation type="vanished">Alterar a configuracao de linha do fluxo</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

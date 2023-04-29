@@ -15,31 +15,48 @@ Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(c
 	NamedGraphicWindowDataItem(name, caption, parent)
 {}
 
-Post2dWindowNodeVectorParticleDataItem::~Post2dWindowNodeVectorParticleDataItem()
-{}
-
 void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeResultAttributeBrowser();
+	zoneDataItem()->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorParticleDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeResultAttributeBrowser();
+	zoneDataItem()->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeVectorParticleDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
+	QAction* abAction = zoneDataItem()->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
+}
+
+void Post2dWindowNodeVectorParticleDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post2dWindowNodeVectorParticleDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
+Post2dWindowZoneDataItem* Post2dWindowNodeVectorParticleDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post2dWindowZoneDataItem*> (parent()->parent());
+}
+
+Post2dWindowNodeVectorParticleGroupDataItem* Post2dWindowNodeVectorParticleDataItem::groupDataItem() const
+{
+	return dynamic_cast<Post2dWindowNodeVectorParticleGroupDataItem*> (parent());
 }

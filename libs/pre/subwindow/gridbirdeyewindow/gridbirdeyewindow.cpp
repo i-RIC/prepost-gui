@@ -1,7 +1,10 @@
+#include "gridbirdeyeobjectbrowser.h"
 #include "gridbirdeyewindow.h"
 #include "gridbirdeyewindowactionmanager.h"
 #include "gridbirdeyewindowdatamodel.h"
 #include "gridbirdeyewindowgraphicsview.h"
+#include "gridbirdeyewindowprojectdataitem.h"
+#include "datamodel/gridbirdeyewindowzonedataitem.h"
 
 #include <guibase/colortool.h>
 #include <guibase/graphicsmisc.h>
@@ -15,16 +18,18 @@
 #include <vtkRenderer.h>
 
 GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item) :
-	QMainWindow(parent)
+	QMainWindow(parent),
+	m_projectDataItem {nullptr}
 {
 	init(item);
 }
 
 GridBirdEyeWindow::~GridBirdEyeWindow()
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_dataModel->parent());
-	gItem->informBirdEyeWindowClose();
 	delete m_dataModel;
+	if (m_projectDataItem != nullptr) {
+		m_projectDataItem->informWindowClose();
+	}
 
 	// Closing the window is not undoable
 	iRICUndoStack::instance().clear();
@@ -36,30 +41,32 @@ void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
 
 	m_icon = QIcon(":/libs/pre/images/iconBirdEyeWindow.svg");
 	// set default central widget.
-	m_graphicsView = new GridBirdEyeWindowGraphicsView(this);
-	m_graphicsView->setInteractive(true);
-	setCentralWidget(m_graphicsView);
-	m_dataModel = new GridBirdEyeWindowDataModel(this, item);
+	QLabel* label = new QLabel(this);
+	setCentralWidget(label);
 
 	m_actionManager = new GridBirdEyeWindowActionManager(this);
+
+	m_objectBrowser = new GridBirdEyeObjectBrowser(this);
+	addDockWidget(Qt::LeftDockWidgetArea, m_objectBrowser);
 }
 
 QPixmap GridBirdEyeWindow::snapshot()
 {
-	QImage img = m_graphicsView->getImage();
+	QImage img = m_dataModel->graphicsView()->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
+	pixmap.setDevicePixelRatio(devicePixelRatioF());
 	return pixmap;
 }
 
 vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow() const
 {
-	vtkRenderer* r = const_cast<vtkRenderer*> (m_graphicsView->mainRenderer());
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_dataModel->graphicsView()->mainRenderer());
 	return r->GetRenderWindow();
 }
 
 void GridBirdEyeWindow::updateGrid()
 {
-	m_dataModel->updateGrid();
+	m_dataModel->zoneDataItem()->update();
 }
 
 const QIcon& GridBirdEyeWindow::icon() const
@@ -76,57 +83,57 @@ QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
 
 const std::shared_ptr<QToolBar>& GridBirdEyeWindow::getAdditionalToolBar() const
 {
-	return m_toolBar;
+	return m_dataModel->operationToolBar();
 }
 
 void GridBirdEyeWindow::cameraFit()
 {
-	m_graphicsView->cameraFit();
+	m_dataModel->graphicsView()->cameraFit();
 }
 
 void GridBirdEyeWindow::cameraZoomIn()
 {
-	m_graphicsView->cameraZoomIn();
+	m_dataModel->graphicsView()->cameraZoomIn();
 }
 
 void GridBirdEyeWindow::cameraZoomOut()
 {
-	m_graphicsView->cameraZoomOut();
+	m_dataModel->graphicsView()->cameraZoomOut();
 }
 
 void GridBirdEyeWindow::cameraMoveLeft()
 {
-	m_graphicsView->cameraMoveLeft();
+	m_dataModel->graphicsView()->cameraMoveLeft();
 }
 
 void GridBirdEyeWindow::cameraMoveRight()
 {
-	m_graphicsView->cameraMoveRight();
+	m_dataModel->graphicsView()->cameraMoveRight();
 }
 
 void GridBirdEyeWindow::cameraMoveUp()
 {
-	m_graphicsView->cameraMoveUp();
+	m_dataModel->graphicsView()->cameraMoveUp();
 }
 
 void GridBirdEyeWindow::cameraMoveDown()
 {
-	m_graphicsView->cameraMoveDown();
+	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
 void GridBirdEyeWindow::cameraXYPlane()
 {
-	m_graphicsView->cameraToXYPlane();
+	m_dataModel->graphicsView()->cameraToXYPlane();
 }
 
 void GridBirdEyeWindow::cameraYZPlane()
 {
-	m_graphicsView->cameraToYZPlane();
+	m_dataModel->graphicsView()->cameraToYZPlane();
 }
 
 void GridBirdEyeWindow::cameraZXPlane()
 {
-	m_graphicsView->cameraToZXPlane();
+	m_dataModel->graphicsView()->cameraToZXPlane();
 }
 
 void GridBirdEyeWindow::editBackgroundColor()

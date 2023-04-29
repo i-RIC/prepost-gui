@@ -57,4 +57,11 @@
         <translation>Houve falha ao abrir o arquivo de %1.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Selecione o valor</translation>
+    </message>
+</context>
 </TS>

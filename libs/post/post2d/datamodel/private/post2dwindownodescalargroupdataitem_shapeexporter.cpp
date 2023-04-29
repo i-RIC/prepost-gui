@@ -2,6 +2,7 @@
 #include "../post2dwindownodescalargroupdataitem.h"
 #include "../post2dwindownodescalargrouptopdataitem.h"
 #include "../post2dwindowzonedataitem.h"
+#include "post2dwindownodescalargroupdataitem_impl.h"
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
 
 #include <cs/coordinatesystem.h>
@@ -249,7 +250,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	const auto& cm = m_parent->colorMapSetting();
 
 	auto c = m_parent->topDataItem()->zoneDataItem()->dataContainer();
-	auto filtered = m_parent->m_setting.regionSetting.buildNodeFilteredData(c->data()->data());
+	auto filtered = m_parent->impl->m_setting.regionSetting.buildNodeFilteredData(c->data()->data());
 	auto geom = vtkSmartPointer<vtkGeometryFilter>::New();
 	geom->SetInputData(filtered);
 	geom->Update();
@@ -275,7 +276,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 		polyData = upperClip->GetOutput();
 	}
 
-	polyData->GetPointData()->SetActiveScalars(m_parent->m_target.c_str());
+	polyData->GetPointData()->SetActiveScalars(m_parent->impl->m_target.c_str());
 	int polygonId = 0;
 
 	auto colors = cm.getColors();

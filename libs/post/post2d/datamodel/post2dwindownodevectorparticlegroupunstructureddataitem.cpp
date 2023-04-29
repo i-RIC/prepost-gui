@@ -1,267 +1,200 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindownodevectorparticlegroupunstructureddataitem.h"
-#include "post2dwindowparticleunstructuredsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindownodevectorparticlegroupunstructureddataitem_impl.h"
+#include "private/post2dwindownodevectorparticlegroupunstructureddataitem_settingeditwidget.h"
 
-#include <guibase/objectbrowserview.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/projectdata.h>
-#include <misc/iricundostack.h>
-#include <misc/xmlsupport.h>
 
-#include <QDomNode>
 #include <QMouseEvent>
 #include <QSettings>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkVertex.h>
-
-Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting() :
-	CompositeContainer ({&point1, &point2, &pointsSet, &numberOfPoints, &color, &size}),
-	point1 {"point1"},
-	point2 {"point2"},
-	pointsSet {"pointsSet", false},
-	numberOfPoints {"numberOfPoints", 10},
-	color {"color"},
-	size {"size", DEFAULT_SIZE}
+Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent) :
+	Post2dWindowNodeVectorParticleGroupDataItem {parent},
+	impl {new Impl {}}
 {
-	QSettings settings;
-	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
-}
-
-Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting(const Setting& s) :
-	Setting()
-{
-	CompositeContainer::copyValue(s);
-}
-
-Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting& Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::operator=(const Setting& s)
-{
-	CompositeContainer::copyValue(s);
-	return *this;
+	setupDefaultValues();
+	setupPreviewActor();
 }
 
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem()
 {
-	renderer()->RemoveActor(m_previewActor);
-}
-
-QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog(QWidget* p)
-{
-	Post2dWindowParticleUnstructuredSettingDialog* dialog = new Post2dWindowParticleUnstructuredSettingDialog(p);
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {
-		delete dialog;
-		return nullptr;
-	}
-	dialog->setProjectMainFile(projectData()->mainfile());
-	dialog->setDataItem(this);
-	dialog->setZoneData(cont);
-	dialog->setActiveAvailable(cont->IBCExists());
-
-	dialog->setSettings(m_setting, m_unstSettings);
-	return dialog;
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setDefaultValues()
-{
-	m_unstSettings.clear();
-
-	Setting s;
-	m_unstSettings.append(s);
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
-{
-	auto v = dataModel()->graphicsView();
-	m_previewPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_previewMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_previewMapper ->SetInputData(m_previewPoints);
-	m_previewActor = vtkSmartPointer<vtkActor>::New();
-	m_previewActor->SetMapper(m_previewMapper);
-	vtkProperty* prop = m_previewActor->GetProperty();
-	prop->SetRepresentationToPoints();
-	prop->SetPointSize(3 * v->devicePixelRatioF());
-	prop->SetLighting(false);
-	prop->SetColor(0, 0, 0);
-	m_previewActor->SetScale(1, m_zScale, 1);
-
-	m_previewActor->VisibilityOff();
-	renderer()->AddActor(m_previewActor);
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
-{
-	auto v = dataModel()->graphicsView();
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
-		const Setting& s = m_unstSettings[i];
-		auto actor = vtkSmartPointer<vtkActor>::New();
-		auto prop = actor->GetProperty();
-		prop->SetLighting(false);
-		prop->SetColor(s.color);
-		prop->SetPointSize(s.size * v->devicePixelRatioF());
-		actor->SetScale(1, m_zScale, 1);
-
-		renderer()->AddActor(actor);
-		actorCollection()->AddItem(actor);
-
-		auto mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		actor->SetMapper(mapper);
-
-		m_particleActors.push_back(actor);
-		m_particleMappers.push_back(mapper);
-	}
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupParticleSources()
-{
-	for (int i = 0; i < m_sourcePoints.count(); ++i) {
-		m_sourcePoints[i]->Delete();
-	}
-	m_sourcePoints.clear();
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
-		const Setting& s = m_unstSettings[i];
-		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-		points->SetDataTypeToDouble();
-		QPointF diffVec = s.point2 - s.point1;
-		QPointF v;
-		for (int j = 0; j < s.numberOfPoints; ++j) {
-			double param = j / (double)(s.numberOfPoints - 1);
-			v = s.point1 + param * diffVec;
-			points->InsertNextPoint(v.x(), v.y(), 0);
-		}
-		vtkUnstructuredGrid* grid = vtkUnstructuredGrid::New();
-		grid->SetPoints(points);
-		for (int j = 0; j < s.numberOfPoints; ++j) {
-			vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
-			vertex->GetPointIds()->SetId(0, j);
-			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-		}
-		m_sourcePoints.append(grid);
-	}
-}
-
-vtkPointSet* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::newParticles(int i)
-{
-	return m_sourcePoints[i];
+	delete impl;
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::showPropertyDialog()
 {
-	dataModel()->objectBrowserView()->select(m_standardItem->index());
-	Post2dWindowParticleUnstructuredSettingDialog* propDialog = dynamic_cast<Post2dWindowParticleUnstructuredSettingDialog*>(propertyDialog(mainWindow()));
-	iricMainWindow()->enterModelessDialogMode();
-	connect(dataModel()->graphicsView(), SIGNAL(worldPositionChanged(QVector2D)), propDialog, SLOT(updateMousePosition(QVector2D)));
-	connect(propDialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	connect(propDialog, SIGNAL(destroyed()), this, SLOT(exitDialogMode()));
-	m_dialog = propDialog;
-	propDialog->show();
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const QPointF &v1, const QPointF &v2, int num, int pointSize)
-{
-	m_point1 = v1;
-	m_point2 = v2;
-	m_numberOfPoints = num;
-	m_previewActor->GetProperty()->SetPointSize(pointSize);
-
-	m_previewPoints->Reset();
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	QPointF diffVec = m_point2 - m_point1;
-	QPointF v;
-	for (int i = 0; i < m_numberOfPoints; ++i) {
-		double param = i / (double)(m_numberOfPoints - 1);
-		v = m_point1 + param * diffVec;
-		points->InsertNextPoint(v.x(), v.y(), 0);
-	}
-	m_previewPoints->SetPoints(points);
-	for (int i = 0; i < m_numberOfPoints; ++i) {
-		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
-		vertex->GetPointIds()->SetId(0, i);
-		m_previewPoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-	}
-	m_previewActor->VisibilityOn();
-	renderGraphicsView();
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::hidePreviewSetting()
-{
-	m_previewActor->VisibilityOff();
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::exitDialogMode()
-{
-	m_dialog = nullptr;
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
-{
-	double x = event->x();
-	double y = event->y();
-	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QPointF p(x, y);
-	if (m_dialog != nullptr) {
-		m_dialog->informButtonDown(p);
-	}
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
-{
-	double x = event->x();
-	double y = event->y();
-	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QPointF p(x, y);
-	if (m_dialog != nullptr) {
-		m_dialog->informButtonUp(p);
-	}
-}
-
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
-{
-	if (m_dialog != nullptr) {
-		dataModel()->graphicsView()->emitWorldPosition(event->x(), event->y());
-	}
+	showPropertyDialogModeless();
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_previewActor->SetPosition(0, 0, range.max());
+	impl->m_previewActor.pointsActor()->SetPosition(0, 0, range.max());
 	Post2dWindowNodeVectorParticleGroupDataItem::assignActorZValues(range);
+}
+
+int Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::numberOfActors()
+{
+	return static_cast<int> (impl->m_setting.startPositions.size());
+}
+
+vtkActor* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActor(int i)
+{
+	auto view = dataModel()->graphicsView();
+	const auto& pos = impl->m_setting.startPositions.at(i);
+
+	auto actor = vtkActor::New();
+	auto prop = actor->GetProperty();
+
+	prop->SetColor(pos.color);
+	prop->SetPointSize(pos.pointSize * view->devicePixelRatioF());
+
+	return actor;
+}
+
+vtkPolyData* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::newParticles(int i)
+{
+	const auto& pos = impl->m_setting.startPositions.at(i);
+
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+
+	auto plist = generatePoints(pos.point1, pos.point2, pos.numberOfPoints);
+	for (const auto& p : plist) {
+		points->InsertNextPoint(p.x(), p.y(), 0);
+	}
+
+	return setupPolyDataFromPoints(points);
+}
+
+vtkDataSet* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::getRegion()
+{
+	auto zoneContainer = zoneDataItem()->dataContainer();
+	auto grid = zoneContainer->data()->data();
+
+	return impl->m_setting.region.buildNodeFilteredData(grid);
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupPreviewActor()
+{
+	auto actor = impl->m_previewActor.pointsActor();
+	actor->VisibilityOff();
+	renderer()->AddActor(actor);
+
+	auto v = dataModel()->graphicsView();
+	auto prop = actor->GetProperty();
+	prop->SetPointSize(3 * v->devicePixelRatioF());
+	prop->LightingOff();
+	prop->SetColor(0, 0, 0);
+}
+
+QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, parent);
+	auto widget = new SettingEditWidget(this, dialog);
+
+	connect(this, &Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::point1Changed, widget, &SettingEditWidget::handleMousePoint1Change);
+	connect(this, &Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::point2Changed, widget, &SettingEditWidget::handleMousePoint2Change);
+
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Particles Display Setting"));
+
+	return dialog;
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	impl->m_setting.startPositions.clear();
+	impl->m_setting.load(node);
+
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);
-
-	m_unstSettings.clear();
-	QDomNode particlesNode = iRIC::getChildNode(node, "Particles");
-	if (! particlesNode.isNull()) {
-		QDomNodeList particles = particlesNode.childNodes();
-		for (int i = 0; i < particles.length(); ++i) {
-			Setting s;
-			s.load(particles.at(i));
-			m_unstSettings.append(s);
-		}
-	}
-	updateActorSettings();
 }
-
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(writer);
+	impl->m_setting.save(writer);
+}
 
-	writer.writeStartElement("Particles");
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
-		const Setting& s = m_unstSettings[i];
-		writer.writeStartElement("Particle");
-		s.save(writer);
-		writer.writeEndElement();
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	auto view = dynamic_cast<VTK2DGraphicsView*> (v);
+	QPointF pos = view->viewportToWorld(event->pos());
+
+	emit point1Changed(pos);
+	emit point2Changed(pos);
+
+	impl->m_dragging = true;
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	auto view = dynamic_cast<VTK2DGraphicsView*> (v);
+	QPointF pos = view->viewportToWorld(event->pos());
+
+	emit point2Changed(pos);
+
+	impl->m_dragging = false;
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	if (! impl->m_dragging) {return;}
+
+	auto view = dynamic_cast<VTK2DGraphicsView*> (v);
+	QPointF pos = view->viewportToWorld(event->pos());
+
+	emit point2Changed(pos);
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::hidePreviewSetting()
+{
+	actor2DCollection()->RemoveItem(impl->m_previewActor.pointsActor());
+	impl->m_previewActor.pointsActor()->VisibilityOff();
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupDefaultValues()
+{
+	QSettings settings;
+
+	impl->m_setting.startPositions.clear();
+
+	Setting::StartPosition pos;
+	pos.pointsSet = false;
+	pos.numberOfPoints = 10;
+	pos.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();
+	pos.pointSize = settings.value("graphics/particle_size", ParticleSettingContainer::DEFAULT_SIZE).toInt();
+
+	impl->m_setting.startPositions.push_back(pos);
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::updatePreview(const QPointF p1, const QPointF p2, int numPoints)
+{
+	auto col = actorCollection();
+
+	col->RemoveItem(impl->m_previewActor.pointsActor());
+	impl->m_previewActor.setLine(generatePoints(p1, p2, numPoints));
+	col->AddItem(impl->m_previewActor.pointsActor());
+
+	updateVisibilityWithoutRendering();
+}
+
+std::vector<QPointF> Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::generatePoints(const QPointF p1, const QPointF p2, int numPoints)
+{
+	QPointF diffVec = p2 - p1;
+
+	std::vector<QPointF> ret;
+	for (int i = 0; i < numPoints; ++i) {
+		double param = i / static_cast<double> (numPoints - 1);
+		QPointF v = p1 + param * diffVec;
+
+		ret.push_back(v);
 	}
-	writer.writeEndElement();
+	return ret;
+}
+
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::disablePreviewActor()
+{
+	impl->m_previewActor.pointsActor()->VisibilityOff();
 }

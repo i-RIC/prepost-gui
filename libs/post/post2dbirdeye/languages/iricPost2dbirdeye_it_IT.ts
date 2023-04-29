@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Scalare</translation>
+        <translation>Scalare</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Aggiorna impostazione contorno</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Impostazione scalare (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Colore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Per valore scalare del nodo</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valore scalare della cella</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Colore personalizzato</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Allineare</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">È possibile definire un massimo di quattro contorni.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Scalare (cella)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selezionare Risultato del calcolo</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Forma della griglia</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Impostazione della forma della griglia</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Impostazione della visualizzazione della forma della griglia</translation>
+        <translation type="vanished">Impostazione della visualizzazione della forma della griglia</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Valore scalare per Elevazione</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Colore</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Colore personalizzato</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Per valore scalare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importare (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Esportare (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Allineare</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Colore</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Per valore scalare del nodo</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valore scalare della cella</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Colore personalizzato</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Per valore scalare</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importare (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Esportare (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">È possibile definire un massimo di quattro contorni.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selezionare Risultato del calcolo</translation>
     </message>
 </context>
 <context>

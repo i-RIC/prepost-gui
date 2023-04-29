@@ -6,7 +6,7 @@
 class ColorMapLegendSettingContainerI;
 class ColorMapSettingContainerI;
 class ColorMapSettingEditWidgetI;
-class ColorMapSettingToolBarWidgetI;
+class ColorMapSettingToolBarWidget;
 
 class QWidget;
 
@@ -18,7 +18,7 @@ public:
 	virtual ColorMapSettingContainerI* createSettingContainer() = 0;
 	virtual ColorMapLegendSettingContainerI* createLegendSettingContainer() = 0;
 	virtual ColorMapSettingEditWidgetI* createSettingEditWidget(QWidget* parent) = 0;
-	virtual ColorMapSettingToolBarWidgetI* createToolbarWidget(QWidget* parent) = 0;
+	virtual ColorMapSettingToolBarWidget* createToolbarWidget(QWidget* parent) = 0;
 };
 
 #endif // COLORMAPFACTORYI_H

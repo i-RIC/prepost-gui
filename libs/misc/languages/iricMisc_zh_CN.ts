@@ -57,4 +57,11 @@
         <translation>打开 %1时错误</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>选择值</translation>
+    </message>
+</context>
 </TS>

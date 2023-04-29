@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>นำเข้า (&amp;I)...</translation>
+        <translation type="vanished">นำเข้า (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>ส่งออก (&amp;E)...</translation>
+        <translation type="vanished">ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>แผนที่สี</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>ทัศนวิสัย</translation>
+        <translation type="vanished">ทัศนวิสัย</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>เมื่อเลือกแล้ว</translation>
+        <translation type="vanished">เมื่อเลือกแล้ว</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>เสมอ</translation>
+        <translation type="vanished">เสมอ</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>ไม่เคย</translation>
+        <translation type="vanished">ไม่เคย</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>ขนาดและตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>ตำนานแห่งความยาว</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(สีที่กำหนดเอง)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>แถบสี</translation>
+        <translation type="vanished">แถบสี</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>แนวนอน</translation>
+        <translation type="vanished">แนวนอน</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>แนวตั้ง</translation>
+        <translation type="vanished">แนวตั้ง</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>ระยะห่างจากด้านล่าง</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">ไอมิน:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">ฉันแม็กซ์:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">จีมิน:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">เจ แม็กซ์:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>ไอมิน:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-ทิศทาง</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>นาที</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>สูงสุด</translation>
     </message>
 </context>
 <context>

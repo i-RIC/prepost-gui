@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalar</translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Opdater konturindstilling</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalær indstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farve</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Efter node skalar værdi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Efter celle skalar værdi</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rækkevidde</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Der kan maksimalt defineres fire konturer.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalar (celle)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vælg Beregningsresultat</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Gitterform</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Indstilling af gitterform</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Visningsindstilling for gitterform</translation>
+        <translation type="vanished">Visningsindstilling for gitterform</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalær værdi for Elevation</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Farve</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Efter skalarværdi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importere (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Eksport (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Rækkevidde</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Farve</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Efter node skalar værdi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Efter celleskalarværdi</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Brugerdefineret farve</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Efter skalarværdi</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importere (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Der kan maksimalt defineres fire konturer.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vælg Beregningsresultat</translation>
     </message>
 </context>
 <context>

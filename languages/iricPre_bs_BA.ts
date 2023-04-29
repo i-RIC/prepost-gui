@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>Pregledač objekata</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Boja:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Postavka skalara (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Po skalarnoj vrijednosti čvora</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Po skalarnoj vrijednosti ćelije</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Prilagođena boja</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Domet</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>skalar (ćelija)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Odaberite Grid Attribute</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z-smjer ljestvice</translation>
+        <translation>Z-smjer ljestvice</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Unesite novu skalu Z-smjera.</translation>
+        <translation>Unesite novu skalu Z-smjera.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Skala Z-smjera:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>Oblik mreže</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Podešavanje oblika mreže</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Skalarna vrijednost za elevaciju</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Scalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Postavka skalara (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Po skalarnoj vrijednosti čvora</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Po skalarnoj vrijednosti ćelije</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Prilagođena boja</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Domet</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>skalar (čvor)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Odaberite Grid Attribute</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>Generirajte podatke iz oblaka točaka</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>Postavka prikaza atributa ćelije mreže (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generirajte podatke iz oblaka točaka</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>Postavka prikaza atributa čvora mreže (%1)</translation>
     </message>
 </context>
 <context>

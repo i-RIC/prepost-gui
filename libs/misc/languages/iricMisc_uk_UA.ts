@@ -57,4 +57,11 @@
         <translation>Відкриття файлу %1 не вдалося.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Виберіть значення</translation>
+    </message>
+</context>
 </TS>

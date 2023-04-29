@@ -9,7 +9,7 @@
 #include <unordered_map>
 
 class ColorMapSettingContainer;
-class ColorMapSettingToolBarWidgetI;
+class ColorMapSettingToolBarWidget;
 class NamedGraphicWindowDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowParticlesBaseScalarDataItem;
@@ -78,7 +78,7 @@ private:
 
 	class ToolBarWidget;
 	ToolBarWidget* m_toolBarWidget;
-	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
+	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
 
 	class ToolBarWidgetController;
 	ToolBarWidgetController* m_toolBarWidgetController;

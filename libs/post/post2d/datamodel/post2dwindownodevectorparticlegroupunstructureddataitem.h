@@ -17,69 +17,43 @@ class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem : public Post2dWin
 	Q_OBJECT
 
 public:
-	struct Setting : public CompositeContainer
-	{
-		/// Constructor
-		Setting();
-		/// Copy constructor
-		Setting(const Setting& s);
-		/// Copy operator
-		Setting& operator=(const Setting& s);
-
-		QPointFContainer point1;
-		QPointFContainer point2;
-		BoolContainer pointsSet;
-		IntContainer numberOfPoints;
-		ColorContainer color;
-		IntContainer size;
-	};
-
-	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent) :
-		Post2dWindowNodeVectorParticleGroupDataItem {parent}
-	{
-		setDefaultValues();
-		setupTmpSource();
-	}
+	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem();
+
 	void showPropertyDialog() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
-protected:
-	void setupActors() override;
-	vtkPointSet* newParticles(int i) override;
-	void setupParticleSources() override;
-	QDialog* propertyDialog(QWidget* parent) override;
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
-	void setSetting(const QPointF& v1, const QPointF& v2, int num, int pointSize);
-	void hidePreviewSetting();
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	class SettingEditWidget;
 
-private slots:
-	void exitDialogMode();
+signals:
+	void point1Changed(const QPointF point);
+	void point2Changed(const QPointF point);
 
 private:
-	void setDefaultValues();
-	void setupTmpSource();
-	QList<vtkUnstructuredGrid*> m_sourcePoints;
-	vtkSmartPointer<vtkUnstructuredGrid> m_previewPoints;
-	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
-	vtkSmartPointer<vtkActor> m_previewActor;
+	int numberOfActors() override;
+	vtkActor* setupActor(int i) override;
+	vtkPolyData* newParticles(int i) override;
+	vtkDataSet* getRegion() override;
 
-	QList<Setting> m_unstSettings;
+	void setupPreviewActor();
 
-	Post2dWindowParticleUnstructuredSettingDialog* m_dialog;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void hidePreviewSetting();
 
-	QPointF m_point1;
-	QPointF m_point2;
-	int m_numberOfPoints;
+	void setupDefaultValues();
+	void updatePreview(const QPointF p1, const QPointF p2, int numPoints);
+	std::vector<QPointF> generatePoints(const QPointF p1, const QPointF p2, int numPoints);
+	void disablePreviewActor();
 
-	class SetSettingCommand;
+	class Impl;
+	Impl* impl;
 
-public:
-	friend class Post2dWindowParticleUnstructuredSettingDialog;
+	class Setting;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEGROUPUNSTRUCTUREDDATAITEM_H

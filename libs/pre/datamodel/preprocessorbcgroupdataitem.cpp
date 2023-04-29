@@ -314,10 +314,10 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	}
 	item->setProjectNumber(number);
 	item->setCgnsNumber(number);
-	item->setColor(m_colorSource->getColor(m_childItems.size()));
+	item->setColor(m_colorSource->getColor(static_cast<int> (m_childItems.size())));
 	// add it simply.
 	m_childItems.insert(it, item);
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	if (gItem->grid() != nullptr) {
 		gItem->grid()->setModified();
 	}
@@ -328,8 +328,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 		m_standardItem->takeRow(row);
 	}
 	for (int i = 0; i < m_childItems.size(); ++i) {
-		GraphicsWindowDataItem* item = m_childItems.at(i);
-		m_standardItem->appendRow(item->standardItem());
+		m_standardItem->appendRow(m_childItems.at(i)->standardItem());
 	}
 	updateItemMap();
 	assignActorZValues(m_zDepthRange);

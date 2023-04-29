@@ -9,9 +9,10 @@
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 
-class GridBirdEyeWindowGraphicsView;
+class GridBirdEyeObjectBrowser;
 class GridBirdEyeWindowActionManager;
 class GridBirdEyeWindowDataModel;
+class GridBirdEyeWindowProjectDataItem;
 
 class QAction;
 
@@ -60,14 +61,16 @@ private:
 	void init(PreProcessorGridDataItem* item);
 	VTKGraphicsView* viewForBackgroundColor() const override;
 
-	GridBirdEyeWindowGraphicsView* m_graphicsView;
-	GridBirdEyeWindowActionManager* m_actionManager;
+	GridBirdEyeObjectBrowser* m_objectBrowser;
 	GridBirdEyeWindowDataModel* m_dataModel;
+	GridBirdEyeWindowActionManager* m_actionManager;
+
+	GridBirdEyeWindowProjectDataItem* m_projectDataItem;
 	QIcon m_icon;
-	std::shared_ptr<QToolBar> m_toolBar;
 
 public:
 	friend class GridBirdEyeWindowActionManager;
+	friend class GridBirdEyeWindowProjectDataItem;
 };
 
 #endif // GRIDBIRDEYEWINDOW_H

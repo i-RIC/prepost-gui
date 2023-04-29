@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Scalar</translation>
+        <translation>Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Actualizați setarea conturului</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Setare scalară (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Culoare</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>După valoarea scalară a nodului</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>După valoarea scalară a celulei</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Gamă</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Se pot defini maximum patru contururi.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Scalar (celula)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selectați Rezultatul calculului</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Forma grilei</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Setarea formei grilei</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Setarea de afișare a formei grilei</translation>
+        <translation type="vanished">Setarea de afișare a formei grilei</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Valoare scalară pentru cotă</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Culoare</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">După valoarea scalară</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Gamă</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Culoare</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>După valoarea scalară a nodului</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>După valoarea scalară a celulei</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Culoare personalizată</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Se pot defini maximum patru contururi.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selectați Rezultatul calculului</translation>
     </message>
 </context>
 <context>

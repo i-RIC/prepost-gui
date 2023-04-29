@@ -57,4 +57,11 @@
         <translation>Se deschide fișierul %1 a eșuat.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Selectați Valoare</translation>
+    </message>
+</context>
 </TS>

@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">skaler</translation>
+        <translation>skaler</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Kontur Ayarını Güncelle</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaler Ayar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Renk</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Düğüm skaler değerine göre</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Hücre skaler değerine göre</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Özel renk</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>skaler (hücre)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>ızgara şekli</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Izgara Şekli Ayarı</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Izgara Şekli Görüntüleme Ayarı</translation>
+        <translation type="vanished">Izgara Şekli Görüntüleme Ayarı</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Yükseklik için skaler değer</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>diyalog</translation>
+        <translation type="vanished">diyalog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Renk</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Özel renk</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">skaler değere göre</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">İçe aktarmak (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">İhracat (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Menzil</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Renk</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Düğüm skaler değerine göre</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Hücre skaler değerine göre</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Özel renk</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>skaler değere göre</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>İçe aktarmak (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>

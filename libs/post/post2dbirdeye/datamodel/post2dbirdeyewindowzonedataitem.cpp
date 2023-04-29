@@ -1,7 +1,7 @@
+#include "post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
-// #include "post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -12,7 +12,7 @@
 Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_scalarGroupTopDataItem {nullptr},
-	// m_cellScalarGroupTopDataItem {nullptr},
+	m_cellScalarGroupTopDataItem {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber}
 {
@@ -25,21 +25,17 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 		m_scalarGroupTopDataItem = new Post2dBirdEyeWindowNodeScalarGroupTopDataItem(this);
 	}
 
-	/*
 	if (cont->cellScalarValueExists()) {
 		m_cellScalarGroupTopDataItem = new Post2dBirdEyeWindowCellScalarGroupTopDataItem(this);
 	}
-	*/
 
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->scalarValueExists()) {
 		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
-	/*
 	if (cont->cellScalarValueExists()) {
 		m_childItems.push_back(m_cellScalarGroupTopDataItem);
 	}
-	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -58,12 +54,10 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! contourGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
 		m_scalarGroupTopDataItem->loadFromProjectMainFile(contourGroupNode);
 	}
-	/*
 	QDomNode cellScalarNode = iRIC::getChildNode(node, "ScalarCellCenter");
 	if (!cellScalarNode.isNull() && m_cellScalarGroupTopDataItem != nullptr) {
 		m_cellScalarGroupTopDataItem->loadFromProjectMainFile(cellScalarNode);
 	}
-	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -78,13 +72,11 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 		m_scalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	/*
 	if (m_cellScalarGroupTopDataItem != nullptr) {
 		writer.writeStartElement("ScalarCellCenter");
 		m_cellScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
@@ -127,13 +119,11 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
-	/*
 	if (m_cellScalarGroupTopDataItem != nullptr) {
 		time.restart();
 		m_cellScalarGroupTopDataItem->update();
 		qDebug("Cell Contour shape: %d", time.elapsed());
 	}
-	*/
 }
 
 Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowZoneDataItem::gridTypeDataItem() const
@@ -151,43 +141,7 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem* Post2dBirdEyeWindowZoneDataItem::
 	return m_scalarGroupTopDataItem;
 }
 
-/*
 Post2dBirdEyeWindowCellScalarGroupTopDataItem* Post2dBirdEyeWindowZoneDataItem::cellScalarGroupTopDataItem() const
 {
 	return m_cellScalarGroupTopDataItem;
-}
-*/
-
-void Post2dBirdEyeWindowZoneDataItem::updateZDepthRangeItemCount()
-{
-	m_zDepthRange.setItemCount(m_childItems.size() + 1);
-}
-
-void Post2dBirdEyeWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	int itemCount = m_childItems.size();
-	int gapCount = itemCount - 1;
-	float gapRate = .1; // the rate of gap width againt data width.
-
-	double divWidth = range.width() / (itemCount + gapCount * gapRate);
-
-	ZDepthRange r;
-	double max, min;
-	PostZoneDataContainer* cont = dataContainer();
-
-	// the first is grid shape.
-	max = range.max();
-	min = max - divWidth;
-	r = m_shapeDataItem->zDepthRange();
-	r.setRange(min, max);
-	m_shapeDataItem->setZDepthRange(r);
-
-	// Contour
-	if (cont->scalarValueExists()) {
-		max = min - divWidth * gapRate;
-		min = max - divWidth;
-		r = m_scalarGroupTopDataItem->zDepthRange();
-		r.setRange(min, max);
-		m_scalarGroupTopDataItem->setZDepthRange(r);
-	}
 }

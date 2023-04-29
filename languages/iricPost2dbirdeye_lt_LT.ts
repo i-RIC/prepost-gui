@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalaras</translation>
+        <translation>Skalaras</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Atnaujinkite kontūro nustatymą</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skaliarinis nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Pagal mazgo skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Pagal ląstelės skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skaliarinis (ląstelė)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Tinklelio forma</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Tinklelio formos nustatymas</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Tinklelio formos ekrano nustatymas</translation>
+        <translation type="vanished">Tinklelio formos ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Aukščio skaliarinė vertė</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Spalva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">diapazonas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Spalva</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Pagal mazgo skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Pagal ląstelės skaliarinę vertę</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Individualizuota spalva</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importuoti (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
 </context>
 <context>

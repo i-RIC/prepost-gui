@@ -6,6 +6,7 @@
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
 #include "../subwindow/gridbirdeyewindow/gridbirdeyewindow.h"
+#include "../subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.h"
 #include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
@@ -149,6 +150,13 @@ void PreProcessorGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		m_bcGroupDataItem->loadFromProjectMainFile(bcNode);
 	}
 
+	QDomNode beNode = iRIC::getChildNode(node, "GridBirdEyeWindow");
+	if (! beNode.isNull()) {
+		openBirdEyeWindow();
+		if (impl->m_birdEyeWindow != nullptr) {
+			impl->m_birdEyeWindow->loadFromProjectMainFile(beNode);
+		}
+	}
 	QDomNode cwNode = iRIC::getChildNode(node, "CrossSectionWindows");
 	if (! cwNode.isNull()) {
 		const auto& clist = cwNode.childNodes();
@@ -182,6 +190,12 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_bcGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	if (impl->m_birdEyeWindow != nullptr) {
+		writer.writeStartElement("GridBirdEyeWindow");
+		impl->m_birdEyeWindow->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+
 	writer.writeStartElement("CrossSectionWindows");
 	for (auto w : impl->m_crosssectionWindows) {
 		writer.writeStartElement("CrossSectionWindow");
@@ -598,7 +612,7 @@ void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 		return;
 	}
 	impl->m_selectedVerticesPolyData->SetPoints(impl->m_grid->vtkGrid()->GetPoints());
-	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
+	auto cells = vtkSmartPointer<vtkCellArray>::New();
 	vtkIdType node;
 	for (int i = 0; i < impl->m_selectedVertices.count(); ++i) {
 		node = impl->m_selectedVertices.at(i);
@@ -627,7 +641,7 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 
 	vtkPoints* points = impl->m_grid->vtkGrid()->GetPoints();
 	double p[3];
-	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(impl->m_grid);
+	auto sgrid = dynamic_cast<Structured2DGrid*>(impl->m_grid);
 	if (sgrid != nullptr) {
 		for (int ii = sgrid->drawnIMin(); ii <= sgrid->drawnIMax(); ++ii) {
 			for (int jj = sgrid->drawnJMin(); jj <= sgrid->drawnJMax(); ++jj) {
@@ -1176,7 +1190,7 @@ void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name
 	}
 
 	if (impl->m_birdEyeWindow != nullptr) {
-		impl->m_birdEyeWindow->updateGrid();
+		impl->m_birdEyeWindow->window()->updateGrid();
 	}
 }
 
@@ -1414,28 +1428,29 @@ QCursor PreProcessorGridDataItem::normalCursor()
 
 void PreProcessorGridDataItem::openBirdEyeWindow()
 {
-	QWidget* w;
+	QWidget* w = nullptr;
 	if (impl->m_birdEyeWindow == nullptr) {
-		impl->m_birdEyeWindow = new GridBirdEyeWindow(iricMainWindow(), this);
+		impl->m_birdEyeWindow = new GridBirdEyeWindowProjectDataItem(this, iricMainWindow());
 		QMdiArea* cent = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
-		w = cent->addSubWindow(impl->m_birdEyeWindow);
+		w = cent->addSubWindow(impl->m_birdEyeWindow->window());
 		PreProcessorWindowInterface* pre = preProcessorWindow();
 		QPoint p = pre->pos() + QPoint(10, 10);
-		w->setWindowIcon(impl->m_birdEyeWindow->icon());
+		w->setWindowIcon(impl->m_birdEyeWindow->window()->icon());
 		w->move(p);
 		w->resize(640, 480);
 	} else {
-		w = dynamic_cast<QWidget*>(impl->m_birdEyeWindow->parent());
+		w = dynamic_cast<QWidget*>(impl->m_birdEyeWindow->window()->parent());
 	}
 	w->show();
 	w->setFocus();
-	impl->m_birdEyeWindow->cameraFit();
+	impl->m_birdEyeWindow->window()->cameraFit();
 }
 
 void PreProcessorGridDataItem::closeBirdEyeWindow()
 {
 	if (impl->m_birdEyeWindow == nullptr) {return;}
-	delete impl->m_birdEyeWindow->parent();
+	delete impl->m_birdEyeWindow;
+	impl->m_birdEyeWindow = nullptr;
 	
 	auto w = iricMainWindow();
 	if (w == nullptr) {return;}
@@ -1459,16 +1474,18 @@ void PreProcessorGridDataItem::closeCrosssectionWindows()
 void PreProcessorGridDataItem::informGridChange()
 {
 	if (impl->m_birdEyeWindow != nullptr) {
-		impl->m_birdEyeWindow->updateGrid();
+		impl->m_birdEyeWindow->window()->updateGrid();
 	}
 	clearSelection();
 }
 
 void PreProcessorGridDataItem::informBirdEyeWindowClose()
 {
+	if (impl->m_birdEyeWindow == nullptr) {return;}
+
+	delete impl->m_birdEyeWindow;
 	impl->m_birdEyeWindow = nullptr;
 }
-
 
 void PreProcessorGridDataItem::assignActorZValues(const ZDepthRange& range)
 {
@@ -1701,7 +1718,7 @@ void PreProcessorGridDataItem::applyColorMapSetting(const std::string& name)
 	m_cellGroupDataItem->applyColorMapSetting(name);
 
 	if (impl->m_birdEyeWindow != nullptr) {
-		impl->m_birdEyeWindow->updateGrid();
+		impl->m_birdEyeWindow->window()->updateGrid();
 	}
 	for (auto w : impl->m_crosssectionWindows) {
 		w->applyColorMapSetting(name);

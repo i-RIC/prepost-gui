@@ -149,7 +149,7 @@ void ColorMapEnumerateLegendSettingContainer::ImageBuilder::buildDiscreteVertica
 
 		int bottom = image->height() / image->devicePixelRatioF() - OUTER_MARGIN - barHeight * (i + 0.5);
 
-		QRectF textRect(labelLeft, bottom - rect.height() * 0.5, labelWidth, rect.height());
+		QRectF textRect(labelLeft, bottom - rect.height() * 0.5, labelWidth, rect.height() + 2);
 		painter->drawText(textRect, caption);
 	}
 }

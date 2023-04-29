@@ -30,8 +30,8 @@
 
 #include <vtkRenderer.h>
 
-Post2dWindow::Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi)
-	: PostProcessorWindow(parent, index, pdi)
+Post2dWindow::Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi) :
+	PostProcessorWindow(parent, index, pdi)
 {
 	init();
 }

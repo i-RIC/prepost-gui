@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Скалярна</translation>
+        <translation>Скалярна</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Оновити налаштування контуру</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярне налаштування (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Колір</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>За скалярним значенням вузла</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>За скалярним значенням комірки</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Індивідуальний колір</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Діапазон</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можуть бути визначені максимум чотири контури.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Скаляр (комірка)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Виберіть Результат обчислення</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Форма сітки</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Налаштування форми сітки</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Налаштування відображення форми сітки</translation>
+        <translation type="vanished">Налаштування відображення форми сітки</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Скалярне значення висоти</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Діалог</translation>
+        <translation type="vanished">Діалог</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Колір</translation>
+        <translation type="vanished">Колір</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Індивідуальний колір</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">За скалярним значенням</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Імпорт (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Діапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>колір</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>За скалярним значенням вузла</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>За скалярним значенням комірки</translation>
     </message>
     <message>
         <source>Custom color</source>
         <translation>Індивідуальний колір</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>За скалярним значенням</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Імпорт (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можуть бути визначені максимум чотири контури.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Виберіть Результат обчислення</translation>
     </message>
 </context>
 <context>

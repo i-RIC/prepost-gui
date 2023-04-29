@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">अदिश</translation>
+        <translation>अदिश</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">कंटूर सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>अदिश सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>नोड स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>सेल स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>अदिश (कोशिका)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>ग्रिड आकार</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>ग्रिड आकार सेटिंग</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>ग्रिड आकार प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">ग्रिड आकार प्रदर्शन सेटिंग</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">ऊंचाई के लिए अदिश मान</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">रंग</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">आयात (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>रंग</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>नोड स्केलर मान द्वारा</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>सेल स्केलर मान द्वारा</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>कस्टम रंग</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>स्केलर मान द्वारा</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>गणना परिणाम का चयन करें</translation>
     </message>
 </context>
 <context>

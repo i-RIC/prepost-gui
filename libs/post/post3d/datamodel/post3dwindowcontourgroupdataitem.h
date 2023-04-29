@@ -8,7 +8,7 @@
 
 #include <string>
 
-class ColorMapSettingToolBarWidgetI;
+class ColorMapSettingToolBarWidget;
 class Post3dWindowZoneDataItem;
 class PostZoneDataContainer;
 class ValueRangeContainer;
@@ -56,7 +56,7 @@ private:
 	ColorMapSettingContainer m_colorMapSetting;
 	vtkActor2D* m_legendActor;
 
-	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
+	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
 
 	class PropertyDialog;
 	class SetFacesCommand;

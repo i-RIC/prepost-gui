@@ -57,4 +57,11 @@
         <translation>Отваряне на файл %1 се провали.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Изберете Стойност</translation>
+    </message>
+</context>
 </TS>

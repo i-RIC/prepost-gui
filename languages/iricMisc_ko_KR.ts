@@ -57,4 +57,11 @@
         <translation>파일 열기 %1 실패한.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>값 선택</translation>
+    </message>
+</context>
 </TS>

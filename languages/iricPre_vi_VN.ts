@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>trình duyệt đối tượng</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Màu sắc:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Vô hướng</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Cài đặt vô hướng (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Theo giá trị vô hướng nút</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Theo giá trị vô hướng ô</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Vô hướng (ô)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Chọn thuộc tính lưới</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Thang đo hướng Z</translation>
+        <translation>Thang đo hướng Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Nhập thang hướng Z mới.</translation>
+        <translation>Nhập thang hướng Z mới.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Quy mô hướng Z:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>hình lưới</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Cài đặt hình dạng lưới</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Giá trị vô hướng cho Độ cao</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Vô hướng</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Cài đặt vô hướng (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Theo giá trị vô hướng nút</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Theo giá trị vô hướng ô</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Phạm vi</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>Vô hướng (nút)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Chọn thuộc tính lưới</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>Tạo dữ liệu đám mây điểm</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>Cài đặt hiển thị thuộc tính ô lưới (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Tạo dữ liệu đám mây điểm</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>Cài đặt hiển thị thuộc tính nút lưới (%1)</translation>
     </message>
 </context>
 <context>

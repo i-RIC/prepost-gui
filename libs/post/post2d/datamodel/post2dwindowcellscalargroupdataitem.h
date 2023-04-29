@@ -3,36 +3,13 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
-#include <guicore/region/region2dsettingcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/opacitycontainer.h>
-
-class ColorMapSettingToolBarWidgetI;
-class OpacityContainerWidget;
 class Post2dWindowCellScalarGroupTopDataItem;
-
-class vtkActor;
-class vtkActor2D;
 
 class Post2dWindowCellScalarGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	class Setting : public CompositeContainer {
-	public:
-		Setting();
-		Setting(const Setting& setting);
-
-		Setting& operator=(const Setting& setting);
-		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
-
-		ColorMapSettingContainer colorMapSetting;
-		Region2dSettingContainer regionSetting;
-		OpacityContainer opacity;
-	};
-
 	Post2dWindowCellScalarGroupDataItem(const std::string& target, Post2dWindowDataItem* parent);
 	~Post2dWindowCellScalarGroupDataItem();
 
@@ -56,6 +33,7 @@ public:
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void updateMoveUpDownActions(ObjectBrowserView* view) override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -69,15 +47,12 @@ private:
 
 	Post2dWindowCellScalarGroupTopDataItem* topDataItem() const;
 
-	std::string m_target;
-	Setting m_setting;
-
-	vtkActor* m_actor;
-	vtkActor2D* m_legendActor;
-	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
-	OpacityContainerWidget* m_opacityToolBarWidget;
+	class Impl;
+	Impl* impl;
 
 	class PropertyDialog;
+	class Setting;
+	class SettingEditWidget;
 
 public:
 	friend class Post2dWindowCellScalarGroupTopDataItem;

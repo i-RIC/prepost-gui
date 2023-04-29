@@ -3,15 +3,9 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
-#include <guicore/region/region2dsettingcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/opacitycontainer.h>
-
 #include <h5cgnszone.h>
 
-class ColorMapSettingToolBarWidgetI;
-class OpacityContainerWidget;
+class ColorMapSettingContainer;
 class Post2dWindowPointScalarGroupTopDataItemI;
 
 class vtkActor;
@@ -22,19 +16,6 @@ class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 	Q_OBJECT
 
 public:
-	class Setting : public CompositeContainer {
-	public:
-		Setting();
-		Setting(const Setting& setting);
-
-		Setting& operator=(const Setting& setting);
-		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
-
-		ColorMapSettingContainer colorMapSetting;
-		Region2dSettingContainer regionSetting;
-		OpacityContainer opacity;
-	};
-
 	Post2dWindowNodeScalarGroupDataItem(const std::string& target, iRICLib::H5CgnsZone::SolutionPosition position, Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
 
@@ -59,6 +40,7 @@ public:
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void updateMoveUpDownActions(ObjectBrowserView* view) override;
 
 	bool checkKmlExportCondition();
 	bool exportKMLHeader(QXmlStreamWriter& writer);
@@ -79,19 +61,12 @@ private:
 
 	Post2dWindowPointScalarGroupTopDataItemI* topDataItem() const;
 
-	std::string m_target;
-	iRICLib::H5CgnsZone::SolutionPosition m_solutionPosition;
-	Setting m_setting;
+	class Impl;
+	Impl* impl;
 
-	vtkActor* m_actor;
-	vtkActor2D* m_legendActor;
-	ColorMapSettingToolBarWidgetI* m_colorMapToolBarWidget;
-	OpacityContainerWidget* m_opacityToolBarWidget;
-
-	class PropertyDialog;
+	class Setting;
+	class SettingEditWidget;
 	class ShapeExporter;
-
-	ShapeExporter* m_shapeExporter;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPDATAITEM_H

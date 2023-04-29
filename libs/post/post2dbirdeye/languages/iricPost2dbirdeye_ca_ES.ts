@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Escalar</translation>
+        <translation>Escalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Actualitza la configuració del contorn</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuració escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Per valor escalar de node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valor escalar de cel·la</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es poden definir un màxim de quatre contorns.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Escalar (cel·la)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Forma de quadrícula</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Configuració de la forma de la quadrícula</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Configuració de visualització en forma de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització en forma de quadrícula</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Valor escalar per a l'elevació</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diàleg</translation>
+        <translation type="vanished">Diàleg</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Color</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Color personalitzat</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Per valor escalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Interval</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Color</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Per valor escalar de node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valor escalar de cel·la</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Color personalitzat</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Per valor escalar</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Exporta (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es poden definir un màxim de quatre contorns.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>

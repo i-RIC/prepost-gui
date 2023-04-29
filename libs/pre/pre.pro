@@ -26,6 +26,13 @@ unix {
 }
 LIBS += -liricAxis2d
 
+# iricAxis3d
+
+unix {
+	LIBS += -L"../../dataitem/axis3d"
+}
+LIBS += -liricAxis3d
+
 # iricDistancemeasure
 
 unix {
@@ -277,7 +284,6 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
-           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -360,11 +366,16 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.h \
+           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
+           subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowser.h \
+           subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowserview.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.h \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowdataitem.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgraphicsview.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.h \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.h \
@@ -372,35 +383,53 @@ HEADERS += pre_global.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowtableview.h \
            subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_csvexportcontroller.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingcontainer.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_colormapcontroller.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_drawregioninformation.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_elevationchartcontroller.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_independentchartcontroller.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_snapshotsavecontroller.h \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowdelegate.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowcellscalargroupdataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowcellscalargrouptopdataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowgridshapedataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindownodescalargroupdataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindownodescalargrouptopdataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowrootdataitem.h \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowzonedataitem.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.h \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_controller.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_csvexportcontroller.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingcontainer.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingtablecontroller.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingtablecontroller_delegate.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_edittablecontroller.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_edittablecontroller_delegate.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_colormapcontroller.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_drawregioninformation.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_elevationchartcontroller.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_independentchartcontroller.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingcontainer.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingeditdialog.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_impl.h \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_snapshotsavecontroller.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updatecommand.h \
-           subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.h
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.h \
+           subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_settingeditwidget.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_updatesettingcommand.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_impl.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_setting.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_settingeditwidget.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_impl.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_setting.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_settingeditwidget.h \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_updatesettingcommand.h
 FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorbcgroupsettingdialog.ui \
          datamodel/preprocessorgridattributecelldisplaysettingdialog.ui \
@@ -417,15 +446,17 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
          subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui \
          subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.ui \
-         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.ui \
-         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui \
          subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.ui \
          subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_controller.ui \
-         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingeditdialog.ui
+         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.ui \
+         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.ui \
+         subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingeditdialog.ui \
+         subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_settingeditwidget.ui \
+         subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_settingeditwidget.ui \
+         subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_settingeditwidget.ui
 SOURCES += preobjectbrowser.cpp \
-           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
@@ -504,11 +535,16 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
+           datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowser.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowserview.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowdataitem.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgraphicsview.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.cpp \
@@ -516,35 +552,53 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowtableview.cpp \
            subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_csvexportcontroller.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingcontainer.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_colormapcontroller.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_drawregioninformation.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_elevationchartcontroller.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_independentchartcontroller.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_snapshotsavecontroller.cpp \
-           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowdelegate.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowcellscalargroupdataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowcellscalargrouptopdataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowgridshapedataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindownodescalargroupdataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindownodescalargrouptopdataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowrootdataitem.cpp \
+           subwindow/gridbirdeyewindow/datamodel/gridbirdeyewindowzonedataitem.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.cpp \
            subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_controller.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_csvexportcontroller.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingcontainer.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingdialog.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingtablecontroller.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_displaysettingtablecontroller_delegate.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_edittablecontroller.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_edittablecontroller_delegate.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_exportsettingdialog.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_colormapcontroller.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_drawregioninformation.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_elevationchartcontroller.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_graphicsview_independentchartcontroller.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingcontainer.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingeditdialog.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_impl.cpp \
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_snapshotsavecontroller.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updatecommand.cpp \
-           subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.cpp
+           subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.cpp \
+           subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_settingeditwidget.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_updatesettingcommand.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_impl.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_setting.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowgridshapedataitem_settingeditwidget.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_impl.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_setting.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_settingeditwidget.cpp \
+           subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_updatesettingcommand.cpp
 RESOURCES += pre.qrc
 TRANSLATIONS += languages/iricPre_ar_EG.ts \
                 languages/iricPre_bg_BG.ts \

@@ -57,4 +57,11 @@
         <translation>File di apertura %1 fallito.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Seleziona Valore</translation>
+    </message>
+</context>
 </TS>

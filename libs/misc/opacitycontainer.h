@@ -12,7 +12,7 @@ public:
 	OpacityContainer(const QString& name, int defaultVal);
 	~OpacityContainer();
 
-	OpacityContainer& operator=(const OpacityContainer& c);
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 	OpacityContainer& operator=(int val);
 	/// Operator to convert to double
 	operator double() const;

@@ -1,10 +1,10 @@
 #include "colormapsettingtoolbarwidgetcontroller.h"
-#include "colormapsettingtoolbarwidgeti.h"
+#include "colormapsettingtoolbarwidget.h"
 
-ColorMapSettingToolBarWidgetController::ColorMapSettingToolBarWidgetController(ColorMapSettingToolBarWidgetI* widget) :
+ColorMapSettingToolBarWidgetController::ColorMapSettingToolBarWidgetController(ColorMapSettingToolBarWidget* widget) :
 	m_widget {widget}
 {
-	connect(m_widget, &ColorMapSettingToolBarWidgetI::updated, this, &ColorMapSettingToolBarWidgetController::handleWidgetUpdate);
+	connect(m_widget, &ColorMapSettingToolBarWidget::updated, this, &ColorMapSettingToolBarWidgetController::handleWidgetUpdate);
 }
 
 ColorMapSettingToolBarWidgetController::~ColorMapSettingToolBarWidgetController()
@@ -12,7 +12,7 @@ ColorMapSettingToolBarWidgetController::~ColorMapSettingToolBarWidgetController(
 	delete m_widget;
 }
 
-ColorMapSettingToolBarWidgetI* ColorMapSettingToolBarWidgetController::widget() const
+ColorMapSettingToolBarWidget* ColorMapSettingToolBarWidgetController::widget() const
 {
 	return m_widget;
 }

@@ -2,20 +2,6 @@
 #define POST3DWINDOWNODEVECTORPARTICLEGROUPSTRUCTUREDDATAITEM_H
 
 #include "post3dwindownodevectorparticlegroupdataitem.h"
-#include <QList>
-
-struct Post3dWindowStructuredParticleSetSetting {
-	enum SpaceMode {smNormal, smSubdivide, smSkip};
-	/// Range to generate grid
-	StructuredGridRegion::Range3d range;
-	SpaceMode spaceMode;
-	int spaceSamplingRate;
-	int spaceDivision;
-	/// Particle color.
-	QColor color;
-	/// Particle size on screen. Specify by pixels on screen.
-	int size;
-};
 
 class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindowNodeVectorParticleGroupDataItem
 {
@@ -23,25 +9,29 @@ class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindo
 
 public:
 	Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent);
+	~Post3dWindowNodeVectorParticleGroupStructuredDataItem();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	vtkPointSet* newParticles(int i) override;
-	void setupParticleSources() override;
-	void setupActors() override;
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	class SettingEditWidget;
+
+public slots:
+	void showPropertyDialog() override;
 
 private:
+	int numberOfActors() override;
+	vtkActor* setupActor(int i) override;
+	vtkPolyData* newParticles(int i) override;
+	vtkDataSet* getRegion() override;
+
+	QDialog* propertyDialog(QWidget* parent) override;
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setDefaultValues();
 
-	QList<vtkExtractGrid*> m_extractGrids;
-	QList<vtkSubdivideGrid*> m_subdivideGrids;
+	class Impl;
+	Impl* impl;
 
-	QList<Post3dWindowStructuredParticleSetSetting> m_settings;
-
-	class SetSettingCommand;
+	class Setting;
 };
 
 #endif // POST3DWINDOWNODEVECTORPARTICLEGROUPSTRUCTUREDDATAITEM_H

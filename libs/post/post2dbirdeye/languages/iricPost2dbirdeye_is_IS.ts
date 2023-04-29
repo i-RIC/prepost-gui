@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Scalar</translation>
+        <translation>Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Uppfæra útlínustillingu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalarstilling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Litur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Eftir hnútaskalagildi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Eftir stærðargildi frumna</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Sérsniðin litur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Svið</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Scalar (fruma)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Veldu Niðurstaða útreiknings</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Lögun rist</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Stilling ristforms</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Skjástillingar fyrir ristform</translation>
+        <translation type="vanished">Skjástillingar fyrir ristform</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalargildi fyrir hæð</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Valmynd</translation>
+        <translation type="vanished">Valmynd</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Litur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Sérsniðin litur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Eftir kvarðagildi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Svið</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Litur</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Eftir hnútaskalagildi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Eftir stærðargildi frumna</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Sérsniðin litur</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Eftir kvarðagildi</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Flytja inn (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Útflutningur (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Veldu Niðurstaða útreiknings</translation>
     </message>
 </context>
 <context>

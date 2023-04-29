@@ -57,4 +57,11 @@
         <translation>Tiek atvērts fails %1 neizdevās.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Atlasiet Vērtība</translation>
+    </message>
+</context>
 </TS>

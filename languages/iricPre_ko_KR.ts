@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>개체 브라우저</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">색상:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>스칼라</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>스칼라 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>노드 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>셀 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>스칼라(셀)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>그리드 속성 선택</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z 방향 스케일</translation>
+        <translation>Z 방향 스케일</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">새로운 Z 방향 스케일을 입력합니다.</translation>
+        <translation>새로운 Z 방향 스케일을 입력합니다.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z 방향 눈금:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>그리드 모양</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>그리드 모양 설정</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>표고에 대한 스칼라 값</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>스칼라</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>스칼라 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>노드 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>셀 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>스칼라(노드)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>그리드 속성 선택</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>그리드 셀 속성 표시 설정(%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>그리드 노드 속성 표시 설정(%1)</translation>
     </message>
 </context>
 <context>

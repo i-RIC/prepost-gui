@@ -11,7 +11,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <postbase/postsolutionselectdialog.h>
+#include <misc/valueselectdialog.h>
 
 #include <QDomNode>
 #include <QMenu>
@@ -71,14 +71,6 @@ void Post2dWindowCellScalarGroupTopDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount((unsigned int)m_childItems.size());
 }
 
-void Post2dWindowCellScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	for (auto item : m_childItems) {
-		Post2dWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowCellScalarGroupDataItem*>(item);
-		typedi->assignActorZValues(range);
-	}
-}
-
 void Post2dWindowCellScalarGroupTopDataItem::update()
 {
 	for (auto item : m_childItems) {
@@ -107,8 +99,9 @@ QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 		solutions.insert({sol, gType->solutionCaption(sol)});
 	}
 
-	auto dialog = new PostSolutionSelectDialog(p);
-	dialog->setSolutions(solutions);
+	auto dialog = new ValueSelectDialog(p);
+	dialog->setValues(solutions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
 }
@@ -122,8 +115,8 @@ void Post2dWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 
 	auto gType = zoneData->gridType();
 
-	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
-	auto sol = dialog->selectedSolution();
+	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowCellScalarGroupDataItem(sol, this);
 	newItem->standardItem()->setText(gType->solutionCaption(sol));

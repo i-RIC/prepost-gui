@@ -57,4 +57,11 @@
         <translation>Otevírací soubor %1 neuspěl.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Vyberte hodnotu</translation>
+    </message>
+</context>
 </TS>

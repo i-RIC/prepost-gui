@@ -2,10 +2,10 @@
 
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
-#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <misc/stringtool.h>
 
-Post2dWindowParticlesBaseScalarGroupDataItem::ToolBarWidgetController::ToolBarWidgetController(ColorMapSettingToolBarWidgetI* widget, Post2dWindowParticlesBaseScalarGroupDataItem* item) :
+Post2dWindowParticlesBaseScalarGroupDataItem::ToolBarWidgetController::ToolBarWidgetController(ColorMapSettingToolBarWidget* widget, Post2dWindowParticlesBaseScalarGroupDataItem* item) :
 	ColorMapSettingToolBarWidgetController(widget),
 	m_item {item}
 {}

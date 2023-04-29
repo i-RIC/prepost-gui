@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Εισαγωγή (&amp;I)...</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Εξαγωγή (&amp;E)...</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Χρωματικός χάρτης</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Ορατότητα</translation>
+        <translation type="vanished">Ορατότητα</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Όταν επιλεγεί</translation>
+        <translation type="vanished">Όταν επιλεγεί</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Πάντα</translation>
+        <translation type="vanished">Πάντα</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Ποτέ</translation>
+        <translation type="vanished">Ποτέ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Μέγεθος και Θέση</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ορατός</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Χρωματικός χάρτης</translation>
+        <translation type="vanished">Χρωματικός χάρτης</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legend of Length</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Προσαρμοσμένο χρώμα)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation type="vanished">Μορφή</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Μπάρα χρώματος</translation>
+        <translation type="vanished">Μπάρα χρώματος</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Οριζόντιος</translation>
+        <translation type="vanished">Οριζόντιος</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Κατακόρυφος</translation>
+        <translation type="vanished">Κατακόρυφος</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Απόσταση από κάτω</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">Είμαι μέσα:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J Max:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>Είμαι μέσα:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>Κ-κατεύθυνση</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>ελάχ</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>Μέγιστη</translation>
     </message>
 </context>
 <context>

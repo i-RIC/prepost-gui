@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalär</translation>
+        <translation>Skalär</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Uppdatera konturinställning</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalär inställning (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Färg</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Efter nodskalärt värde</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Efter cellskalärt värde</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Anpassad färg</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Räckvidd</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Högst fyra konturer kan definieras.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalär (cell)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Välj Beräkningsresultat</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Rutform</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Inställning av rutnätsform</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Visningsinställning för rutnätsform</translation>
+        <translation type="vanished">Visningsinställning för rutnätsform</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalärt värde för Höjd</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Färg</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Anpassad färg</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Efter skalärt värde</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importera (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Exportera (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Räckvidd</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Färg</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Efter nodskalärt värde</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Efter cellskalärt värde</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Anpassad färg</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Efter skalärt värde</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importera (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Exportera (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Högst fyra konturer kan definieras.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Välj Beräkningsresultat</translation>
     </message>
 </context>
 <context>

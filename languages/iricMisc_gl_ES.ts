@@ -57,4 +57,11 @@
         <translation>Arquivo de apertura %1 fallou.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Seleccione Valor</translation>
+    </message>
+</context>
 </TS>

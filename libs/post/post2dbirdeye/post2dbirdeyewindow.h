@@ -36,7 +36,6 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
-	int index() const {return m_index;}
 
 public slots:
 	void cameraFit();

@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>Браузър на обекти</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Цвят:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Скалар</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скаларна настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>По скаларна стойност на възел</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>По скаларна стойност на клетка</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Скалар (клетка)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Изберете атрибут на мрежата</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z-посока скала</translation>
+        <translation>Z-посока скала</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Въведете нова скала за Z-посока.</translation>
+        <translation>Въведете нова скала за Z-посока.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Скала на Z-посока:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>Форма на решетка</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Настройка на формата на мрежата</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Скаларна стойност за Кота</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Скалар</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скаларна настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвят</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>По скаларна стойност на възел</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>По скаларна стойност на клетка</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Обхват</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>Скалар (възел)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Изберете атрибут на мрежата</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>Генерирайте данни от облака от точки</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>Настройка на дисплея на атрибута на клетката на мрежата (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Генерирайте данни от облака от точки</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>Настройка за показване на атрибут на възел на мрежата (%1)</translation>
     </message>
 </context>
 <context>

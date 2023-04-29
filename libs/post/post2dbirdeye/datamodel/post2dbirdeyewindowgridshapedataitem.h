@@ -3,9 +3,6 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-#include <guibase/gridshape/gridshapesettingcontainer.h>
-#include <misc/stringcontainer.h>
-
 class Post2dBirdEyeWindowZoneDataItem;
 
 class vtkWarpScalar;
@@ -34,18 +31,18 @@ private:
 	void innerUpdateZScale(double scale) override;
 
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 	Post2dBirdEyeWindowZoneDataItem* zoneDataItem() const;
 
 	vtkWarpScalar* m_gridWarp;
 	vtkWarpScalar* m_labelWarp;
 
-	GridShapeSettingContainer m_setting;
-	StringContainer m_elevationTarget;
-
 private:
-	class PropertyDialog;
-	class UpdateActorSettingsCommand;
+	class Impl;
+	Impl* impl;
+
+	class Setting;
+	class SettingEditWidget;
 };
 
 #endif // POST2DBIRDEYEWINDOWGRIDSHAPEDATAITEM_H

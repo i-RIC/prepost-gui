@@ -5,21 +5,21 @@
 
 #include <QObject>
 
-class ColorMapSettingToolBarWidgetI;
+class ColorMapSettingToolBarWidget;
 
 class GUICOREDLL_EXPORT ColorMapSettingToolBarWidgetController : public QObject
 {
 public:
-	ColorMapSettingToolBarWidgetController(ColorMapSettingToolBarWidgetI* widget);
+	ColorMapSettingToolBarWidgetController(ColorMapSettingToolBarWidget* widget);
 	~ColorMapSettingToolBarWidgetController();
 
-	ColorMapSettingToolBarWidgetI* widget() const;
+	ColorMapSettingToolBarWidget* widget() const;
 
 private slots:
 	virtual void handleWidgetUpdate() = 0;
 
 protected:
-	ColorMapSettingToolBarWidgetI* m_widget;
+	ColorMapSettingToolBarWidget* m_widget;
 };
 
 #endif // COLORMAPSETTINGTOOLBARWIDGETCONTROLLER_H

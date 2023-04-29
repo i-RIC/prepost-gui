@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">skalar</translation>
+        <translation>skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Perbarui Pengaturan Kontur</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Pengaturan skalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Dengan nilai skalar node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Dengan nilai skalar sel</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Warna kustom</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalar (sel)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pilih Hasil Perhitungan</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Bentuk kotak</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Pengaturan Bentuk Kisi</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Pengaturan Tampilan Bentuk Grid</translation>
+        <translation type="vanished">Pengaturan Tampilan Bentuk Grid</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Nilai skalar untuk Ketinggian</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Warna</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Warna kustom</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Dengan nilai skalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Jangkauan</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Warna</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Dengan nilai skalar node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Dengan nilai skalar sel</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Warna kustom</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pilih Hasil Perhitungan</translation>
     </message>
 </context>
 <context>

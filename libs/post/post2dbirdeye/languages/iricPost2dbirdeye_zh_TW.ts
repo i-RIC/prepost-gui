@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">標量</translation>
+        <translation>標量</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">更新輪廓設置</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>標量設置 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>按節點標量值</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>按像元標量值</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>自定義顏色</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範圍</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">最多可以定義四個輪廓。</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>標量（細胞）</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>選擇計算結果</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>網格形狀</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>網格形狀設置</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>網格形狀顯示設置</translation>
+        <translation type="vanished">網格形狀顯示設置</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">高程的標量值</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>對話</translation>
+        <translation type="vanished">對話</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">顏色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">自定義顏色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">按標量值</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">範圍</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>顏色</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>按節點標量值</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>按像元標量值</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>自定義顏色</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>按標量值</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>進口 (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">最多可以定義四個輪廓。</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>選擇計算結果</translation>
     </message>
 </context>
 <context>

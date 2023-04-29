@@ -7,11 +7,12 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <postbase/postsolutionselectdialog.h>
+#include <misc/valueselectdialog.h>
 
 Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
@@ -61,14 +62,6 @@ void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount((unsigned int)m_childItems.size());
 }
 
-void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	for (auto item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		typedi->assignActorZValues(range);
-	}
-}
-
 void Post2dWindowNodeScalarGroupTopDataItem::update()
 {
 	for (auto item : m_childItems) {
@@ -96,8 +89,9 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		solutions.insert({sol, gType->solutionCaption(sol)});
 	}
 
-	auto dialog = new PostSolutionSelectDialog(p);
-	dialog->setSolutions(solutions);
+	auto dialog = new ValueSelectDialog(p);
+	dialog->setValues(solutions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
 }
@@ -111,8 +105,8 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 
 	auto gType = zoneData->gridType();
 
-	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
-	auto sol = dialog->selectedSolution();
+	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowNodeScalarGroupDataItem(sol, iRICLib::H5CgnsZone::SolutionPosition::Node, this);
 	newItem->standardItem()->setText(gType->solutionCaption(sol));

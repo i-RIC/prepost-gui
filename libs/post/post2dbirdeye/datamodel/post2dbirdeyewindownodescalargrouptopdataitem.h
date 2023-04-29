@@ -3,14 +3,13 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-#include <QMap>
-
 class Post2dBirdEyeWindowNodeScalarGroupDataItem;
 class Post2dBirdEyeWindowZoneDataItem;
 
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupTopDataItem();

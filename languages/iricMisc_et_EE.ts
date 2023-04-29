@@ -57,4 +57,11 @@
         <translation>Faili avamine %1 ebaõnnestus.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Valige Väärtus</translation>
+    </message>
+</context>
 </TS>

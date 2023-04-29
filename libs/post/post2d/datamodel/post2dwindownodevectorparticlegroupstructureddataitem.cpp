@@ -1,190 +1,122 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
-#include "post2dwindowparticlestructuredsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h"
+#include "private/post2dwindownodevectorparticlegroupstructureddataitem_impl.h"
+#include "private/post2dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h"
 
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/projectdata.h>
-#include <misc/xmlsupport.h>
 
-#include <QDomElement>
 #include <QSettings>
-#include <QXmlStreamWriter>
 
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-
-Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::Setting() :
-	CompositeContainer ({&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &size}),
-	range {},
-	spaceMode {"spaceMode", smNormal},
-	spaceSamplingRate {"spaceSamplingRate", 2},
-	spaceDivision {"spaceDivision", 2},
-	color {"color"},
-	size {"size", DEFAULT_SIZE}
+Post2dWindowNodeVectorParticleGroupStructuredDataItem::Post2dWindowNodeVectorParticleGroupStructuredDataItem(Post2dWindowDataItem* parent) :
+	Post2dWindowNodeVectorParticleGroupDataItem {parent},
+	impl {new Impl {}}
 {
-	QSettings settings;
-	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
-
-	range.addPrefix("region");
+	setDefaultValues();
 }
 
-Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::Setting(const Setting& s) :
-	Setting()
+Post2dWindowNodeVectorParticleGroupStructuredDataItem::~Post2dWindowNodeVectorParticleGroupStructuredDataItem()
 {
-	CompositeContainer::copyValue(s);
+	delete impl;
 }
 
-Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting& Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::operator=(const Setting& s)
+void Post2dWindowNodeVectorParticleGroupStructuredDataItem::showPropertyDialog()
 {
-	CompositeContainer::copyValue(s);
-	return *this;
+	showPropertyDialogModeless();
+}
+
+int Post2dWindowNodeVectorParticleGroupStructuredDataItem::numberOfActors()
+{
+	return static_cast<int> (impl->m_setting.startPositions.size());
+}
+
+vtkActor* Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupActor(int i)
+{
+	auto view = dataModel()->graphicsView();
+	const auto& pos = impl->m_setting.startPositions.at(i);
+
+	auto actor = vtkActor::New();
+	auto prop = actor->GetProperty();
+
+	prop->SetColor(pos.color);
+	prop->SetPointSize(pos.pointSize * view->devicePixelRatioF());
+
+	return actor;
+}
+
+vtkPolyData* Post2dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
+{
+	auto zoneContainer = zoneDataItem()->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+
+	const auto& pos = impl->m_setting.startPositions.at(i);
+
+	auto grid2 = pos.range.buildNodeFilteredData(grid);
+	auto grid3 = pos.skipOrSubdivide.buildSampledData(grid2, StructuredGridSkipOrSubdivideSettingContainer::Dimension::Two);
+	grid2->Delete();
+	auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
+	filter->SetInputData(grid3);
+	filter->Update();
+
+	auto ret = filter->GetOutput();
+	ret->Register(nullptr);
+	grid3->Delete();
+
+	return ret;
+}
+
+vtkDataSet* Post2dWindowNodeVectorParticleGroupStructuredDataItem::getRegion()
+{
+	auto zoneContainer = zoneDataItem()->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+
+	return impl->m_setting.region.buildNodeFilteredData(grid);
 }
 
 QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
-	Post2dWindowParticleStructuredSettingDialog* dialog = new Post2dWindowParticleStructuredSettingDialog(p);
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0) {
-		delete dialog;
-		return 0;
-	}
-	dialog->setProjectMainFile(projectData()->mainfile());
-	dialog->setZoneData(cont);
-	dialog->setActiveAvailable(cont->IBCExists());
-
-	dialog->setSettings(m_setting, m_stSettings);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Particles Display Setting"));
 
 	return dialog;
 }
 
-void Post2dWindowNodeVectorParticleGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	Post2dWindowParticleStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowParticleStructuredSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->stSettings(), this), this, true);
-}
-
-void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
-{
-	m_stSettings.clear();
-
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
-	int dim[3];
-	grid->GetDimensions(dim);
-
-	Setting s;
-	s.range.iMin = 0;
-	s.range.iMax = 0;
-	s.range.jMin = 0;
-	s.range.jMax = dim[1] - 1;
-
-	m_stSettings.append(s);
-}
-
-void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources()
-{
-	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	for (int i = 0; i < m_extractGrids.count(); ++i) {
-		m_extractGrids[i]->Delete();
-	}
-	m_extractGrids.clear();
-	for (int i = 0; i < m_subdivideGrids.count(); ++i) {
-		m_subdivideGrids[i]->Delete();
-	}
-	m_subdivideGrids.clear();
-	for (int i = 0; i < m_stSettings.count(); ++i) {
-		const Setting& s = m_stSettings[i];
-		vtkExtractGrid* ext = vtkExtractGrid::New();
-		ext->SetInputData(zoneContainer->data()->data());
-		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
-		div->SetInputData(zoneContainer->data()->data());
-
-		auto& r = s.range;
-		ext->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
-		div->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
-		ext->SetSampleRate(1, 1, 1);
-		if (s.spaceMode == Setting::smSkip) {
-			ext->SetSampleRate(s.spaceSamplingRate, s.spaceSamplingRate, 1);
-		}
-		div->SetDivideRate(s.spaceDivision, s.spaceDivision, 1);
-		ext->Modified();
-		div->Modified();
-
-		m_extractGrids.append(ext);
-		m_subdivideGrids.append(div);
-	}
-}
-
-void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
-{
-	auto v = dataModel()->graphicsView();
-	for (int i = 0; i < m_stSettings.count(); ++i) {
-		const Setting& s = m_stSettings[i];
-		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
-		vtkProperty* prop = actor->GetProperty();
-		prop->SetLighting(false);
-		prop->SetColor(s.color);
-		prop->SetPointSize(s.size * v->devicePixelRatioF());
-		actor->SetScale(1, m_zScale, 1);
-
-		renderer()->AddActor(actor);
-		actorCollection()->AddItem(actor);
-
-		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-		actor->SetMapper(mapper);
-
-		m_particleActors.push_back(actor);
-		m_particleMappers.push_back(mapper);
-	}
-}
-
-vtkPointSet* Post2dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
-{
-	vtkStructuredGrid* exGrid = nullptr;
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return nullptr;}
-	const Setting& s = m_stSettings[i];
-	switch (Setting::SpaceMode(s.spaceMode)) {
-	case Setting::smNormal:
-	case Setting::smSkip:
-		m_extractGrids[i]->Update();
-		exGrid = m_extractGrids[i]->GetOutput();
-		break;
-	case Setting::smSubdivide:
-		m_subdivideGrids[i]->Update();
-		exGrid = m_subdivideGrids[i]->GetOutput();
-		break;
-	}
-	return exGrid;
-}
-
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	impl->m_setting.startPositions.clear();
+	impl->m_setting.load(node);
+
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);
-	m_stSettings.clear();
-	QDomNode particlesNode = iRIC::getChildNode(node, "Particles");
-	if (! particlesNode.isNull()) {
-		QDomNodeList particles = particlesNode.childNodes();
-		for (int i = 0; i < particles.length(); ++i) {
-			Setting s;
-			s.load(particles.at(i));
-			m_stSettings.append(s);
-		}
-	}
-	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(writer);
-	writer.writeStartElement("Particles");
-	for (int i = 0; i < m_stSettings.count(); ++i) {
-		const Setting& s = m_stSettings[i];
-		writer.writeStartElement("Particle");
-		s.save(writer);
-		writer.writeEndElement();
-	}
-	writer.writeEndElement();
+
+	impl->m_setting.save(writer);
+}
+
+void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
+{
+	QSettings settings;
+
+	impl->m_setting.startPositions.clear();
+
+	auto cont = zoneDataItem()->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	int dim[3];
+	grid->GetDimensions(dim);
+
+	Setting::StartPosition pos;
+	pos.range.iMin = 0;
+	pos.range.iMax = 0;
+	pos.range.jMin = 0;
+	pos.range.jMax = dim[1] - 1;
+	pos.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();
+	pos.pointSize = settings.value("graphics/particle_size", ParticleSettingContainer::DEFAULT_SIZE).toInt();
+
+	impl->m_setting.startPositions.push_back(pos);
 }

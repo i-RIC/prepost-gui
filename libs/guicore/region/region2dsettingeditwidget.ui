@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>340</width>
-    <height>214</height>
+    <width>313</width>
+    <height>180</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,88 +69,11 @@
       </spacer>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="iMinLabel">
-         <property name="text">
-          <string>I Min:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="SliderWithValue" name="iMinSlider">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="tickPosition">
-          <enum>QSlider::TicksBelow</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="iMaxLabel">
-         <property name="text">
-          <string>I Max:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="SliderWithValue" name="iMaxSlider">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="tickPosition">
-          <enum>QSlider::TicksBelow</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="jMinLabel">
-         <property name="text">
-          <string>J Min:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="SliderWithValue" name="jMinSlider">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="tickPosition">
-          <enum>QSlider::TicksBelow</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="jMaxLabel">
-         <property name="text">
-          <string>J Max:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="SliderWithValue" name="jMaxSlider">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="tickPosition">
-          <enum>QSlider::TicksBelow</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="RegionRange2dSettingEditWidget" name="rangeWidget" native="true">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -158,9 +81,10 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SliderWithValue</class>
-   <extends>QSlider</extends>
-   <header>guibase/widget/sliderwithvalue.h</header>
+   <class>RegionRange2dSettingEditWidget</class>
+   <extends>QWidget</extends>
+   <header>guicore/region/regionrange2dsettingeditwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -168,64 +92,16 @@
   <connection>
    <sender>customRadioButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>iMinSlider</receiver>
+   <receiver>rangeWidget</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>52</x>
-     <y>74</y>
+     <x>29</x>
+     <y>56</y>
     </hint>
     <hint type="destinationlabel">
-     <x>107</x>
-     <y>99</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>customRadioButton</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>iMaxSlider</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>37</x>
-     <y>71</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>93</x>
-     <y>128</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>customRadioButton</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>jMinSlider</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>28</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>85</x>
-     <y>156</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>customRadioButton</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>jMaxSlider</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>14</x>
-     <y>78</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>91</x>
-     <y>179</y>
+     <x>112</x>
+     <y>125</y>
     </hint>
    </hints>
   </connection>

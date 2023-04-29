@@ -15,18 +15,10 @@ class Post2dBirdEyeWindowDataItem : public GraphicsWindowDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post2dBirdEyeWindowDataItem(GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(parent)
-	{}
-	/// Constructor
-	Post2dBirdEyeWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(itemlabel, parent)
-	{}
-	/// Constructor
-	Post2dBirdEyeWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(itemlabel, icon, parent)
-	{}
+	Post2dBirdEyeWindowDataItem(GraphicsWindowDataItem* parent);
+	Post2dBirdEyeWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent);
+	Post2dBirdEyeWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
+
 	Post2dBirdEyeWindow* postProcessorWindow();
 
 protected:

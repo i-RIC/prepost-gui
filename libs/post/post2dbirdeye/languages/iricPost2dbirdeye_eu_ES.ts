@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Eskalarra</translation>
+        <translation>Eskalarra</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ezarpen eskalarra (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Nodoaren balio eskalarraren arabera</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Gelaxka-balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Barrutia</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Eskalar (zelula)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Hautatu Kalkuluaren emaitza</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Sareta forma</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Sare-formaren ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Sarearen forma bistaratzeko ezarpena</translation>
+        <translation type="vanished">Sarearen forma bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Kota-balio eskalarra</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Kolore</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Balio eskalarren arabera</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Barrutia</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Kolore</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Nodoaren balio eskalarraren arabera</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Gelaxka-balio eskalarren arabera</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Kolore pertsonalizatua</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Balio eskalarren arabera</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Hautatu Kalkuluaren emaitza</translation>
     </message>
 </context>
 <context>

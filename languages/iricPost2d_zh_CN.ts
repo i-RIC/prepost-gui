@@ -404,19 +404,34 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>对话</translation>
+        <translation type="vanished">对话</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">颜色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">范围</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>颜色</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>进口 (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -444,6 +459,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">如果导出形状文件, 切换 "显示设置" 到 "轮廓图形", 不是 "颜色条纹" 或者 "等值线".</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -518,12 +537,20 @@
         <source>Scalar (edgeI)</source>
         <translation>标量 (edgeI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>选择计算结果</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>标量 (edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -772,19 +799,34 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>对话</translation>
+        <translation type="vanished">对话</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">颜色</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">范围</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>颜色</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>进口 (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -820,6 +862,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>要导出形状文件，请将颜色设置切换为“离散模式”。</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -898,14 +944,150 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>更新粒子设置</translation>
+        <translation type="vanished">更新粒子设置</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>粒子显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>起始位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地区</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>范围</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation>指定开始粒子的区域</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>通过网格索引范围 (I, J) 指定开始粒子的区域。</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>生成空间间隔</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation>磅值</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>更新粒子设置</translation>
+        <translation type="vanished">更新粒子设置</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>粒子显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>起始位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地区</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>指定两点。粒子从这两点之间等距生成的点开始。</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>鼠标拖动</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>坐标值</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>第 1 点：</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>第 2 点：</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>点数：</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>磅值</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -920,10 +1102,157 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>简化显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>物理价值：</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>起始位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地区</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>范围</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>指定开始流线的区域</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>通过网格索引范围 (I, J) 指定开始流线的区域。</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>生成空间间隔</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>宽度：</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>更新流线设置</translation>
+        <translation type="vanished">更新流线设置</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>简化显示设置</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>物理价值：</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>起始位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>添加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>消除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>地区</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>指定两点。粒子从这两点之间等距生成的点开始。</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>鼠标拖动</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>坐标值</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>第 1 点：</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>第 2 点：</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>点数：</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>宽度：</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -937,23 +1266,23 @@
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>粒子设置</translation>
+        <translation type="vanished">粒子设置</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>常见设置</translation>
+        <translation type="vanished">常见设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值:</translation>
+        <translation type="vanished">物理值:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>定期生成</translation>
+        <translation type="vanished">定期生成</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>生成时间间隔</translation>
+        <translation type="vanished">生成时间间隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -966,7 +1295,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -978,67 +1307,67 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>-</source>
-        <translation>——</translation>
+        <translation type="vanished">——</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>最小</translation>
+        <translation type="vanished">最小</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>最大</translation>
+        <translation type="vanished">最大</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>任意时间生成</translation>
+        <translation type="vanished">任意时间生成</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>编辑...</translation>
+        <translation type="vanished">编辑...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>起始位置</translation>
+        <translation type="vanished">起始位置</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>区间</translation>
+        <translation type="vanished">区间</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>指定生成粒子的区域。</translation>
+        <translation type="vanished">指定生成粒子的区域。</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>通过网格索引范围（I，J）指定生成粒子的区域。</translation>
+        <translation type="vanished">通过网格索引范围（I，J）指定生成粒子的区域。</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I最小</translation>
+        <translation type="vanished">I最小</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I最大</translation>
+        <translation type="vanished">I最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J最小</translation>
+        <translation type="vanished">J最小</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J最大</translation>
+        <translation type="vanished">J最大</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>生成空间间隔</translation>
+        <translation type="vanished">生成空间间隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1050,7 +1379,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -1062,11 +1391,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色:</translation>
+        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大小:</translation>
+        <translation type="vanished">大小:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1074,7 +1403,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1082,38 +1411,38 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;区域设置</translation>
+        <translation type="vanished">&amp;区域设置</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>例子设定</translation>
+        <translation type="vanished">例子设定</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>常见设定</translation>
+        <translation type="vanished">常见设定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值:</translation>
+        <translation type="vanished">物理值:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>定期生成</translation>
+        <translation type="vanished">定期生成</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>生成区间</translation>
+        <translation type="vanished">生成区间</translation>
     </message>
     <message>
         <source>Specify time interval for particles generation.</source>
@@ -1130,7 +1459,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -1142,71 +1471,71 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>-</source>
-        <translation>——</translation>
+        <translation type="vanished">——</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>最小</translation>
+        <translation type="vanished">最小</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>最大</translation>
+        <translation type="vanished">最大</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>任意时间生成</translation>
+        <translation type="vanished">任意时间生成</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>编辑...</translation>
+        <translation type="vanished">编辑...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>起始点</translation>
+        <translation type="vanished">起始点</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
+        <translation type="vanished">指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>鼠标拖动</translation>
+        <translation type="vanished">鼠标拖动</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>坐标值</translation>
+        <translation type="vanished">坐标值</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>点1:</translation>
+        <translation type="vanished">点1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>点2:</translation>
+        <translation type="vanished">点2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>点个数:</translation>
+        <translation type="vanished">点个数:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色:</translation>
+        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大小:</translation>
+        <translation type="vanished">大小:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1214,7 +1543,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1222,15 +1551,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;区域设置</translation>
+        <translation type="vanished">&amp;区域设置</translation>
     </message>
 </context>
 <context>
@@ -1260,15 +1589,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>颜色映射设置</translation>
+        <translation type="vanished">颜色映射设置</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>进口 (&amp;I)...</translation>
+        <translation type="vanished">进口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
+        <translation type="vanished">出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -1277,6 +1606,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色图</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>颜色：</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点大小：</translation>
     </message>
 </context>
 <context>
@@ -1395,47 +1743,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>流线设置</translation>
+        <translation type="vanished">流线设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值:</translation>
+        <translation type="vanished">物理值:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>起始位置</translation>
+        <translation type="vanished">起始位置</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>区间</translation>
+        <translation type="vanished">区间</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>指明开始流线的区域</translation>
+        <translation type="vanished">指明开始流线的区域</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>通过网格索引范围（I，J）指定开始精简线的区域。</translation>
+        <translation type="vanished">通过网格索引范围（I，J）指定开始精简线的区域。</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I最小</translation>
+        <translation type="vanished">I最小</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I最大</translation>
+        <translation type="vanished">I最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J最小</translation>
+        <translation type="vanished">J最小</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J最大</translation>
+        <translation type="vanished">J最大</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>生成空间间隔</translation>
+        <translation type="vanished">生成空间间隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1445,7 +1793,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1455,31 +1803,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>-</source>
-        <translation>——</translation>
+        <translation type="vanished">——</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>最小</translation>
+        <translation type="vanished">最小</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>最大</translation>
+        <translation type="vanished">最大</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色:</translation>
+        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>宽度</translation>
+        <translation type="vanished">宽度</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1487,7 +1835,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1495,66 +1843,66 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;区域设定</translation>
+        <translation type="vanished">&amp;区域设定</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>流线设定</translation>
+        <translation type="vanished">流线设定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值:</translation>
+        <translation type="vanished">物理值:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>起始点</translation>
+        <translation type="vanished">起始点</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
+        <translation type="vanished">指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>鼠标拖动</translation>
+        <translation type="vanished">鼠标拖动</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>坐标值</translation>
+        <translation type="vanished">坐标值</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>点1:</translation>
+        <translation type="vanished">点1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>点2:</translation>
+        <translation type="vanished">点2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>点个数:</translation>
+        <translation type="vanished">点个数:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色:</translation>
+        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>宽度:</translation>
+        <translation type="vanished">宽度:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1562,7 +1910,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1570,15 +1918,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>&amp;区域设定</translation>
+        <translation type="vanished">&amp;区域设定</translation>
     </message>
 </context>
 <context>
@@ -1596,7 +1944,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>更新流线设置</translation>
+        <translation type="vanished">更新流线设置</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

@@ -3,16 +3,16 @@
 
 #include "gridbirdeyewindowsetting.h"
 
-#include <guicore/datamodel/graphicswindowsimpledatamodel.h>
+#include <guicore/datamodel/graphics3dwindowdatamodel.h>
 
 class GridBirdEyeWindow;
-class GridBirdEyeWindowGridDataItem;
 class GridBirdEyeWindowGraphicsView;
+class GridBirdEyeWindowZoneDataItem;
 
 class PreProcessorGridDataItem;
 class PreProcessorGridTypeDataItem;
 
-class GridBirdEyeWindowDataModel : public GraphicsWindowSimpleDataModel
+class GridBirdEyeWindowDataModel : public Graphics3DWindowDataModel
 {
 	Q_OBJECT
 
@@ -28,14 +28,17 @@ public:
 
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 	PreProcessorGridDataItem* gridDataItem() const;
+	GridBirdEyeWindowZoneDataItem* zoneDataItem() const;
 
 	void handleResize(QResizeEvent* event) override;
 
 private:
+	void init(GridBirdEyeWindow* w);
+
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 
-	GridBirdEyeWindowGridDataItem* m_gridDataItem;
+	double m_zScale;
 };
 
 #endif // GRIDBIRDEYEWINDOWDATAMODEL_H

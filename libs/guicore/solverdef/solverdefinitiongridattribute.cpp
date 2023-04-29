@@ -216,7 +216,7 @@ ColorMapSettingEditDialog* SolverDefinitionGridAttribute::createColorMapSettingE
 	return dialog;
 }
 
-ColorMapSettingToolBarWidgetI* SolverDefinitionGridAttribute::createColorMapSettingToolbarWidget(QWidget* parent) const
+ColorMapSettingToolBarWidget* SolverDefinitionGridAttribute::createColorMapSettingToolbarWidget(QWidget* parent) const
 {
 	return impl->m_colorMapFactory->createToolbarWidget(parent);
 }

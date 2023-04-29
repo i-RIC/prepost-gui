@@ -22,8 +22,8 @@
 
 #include <vtkRenderer.h>
 
-Post2dBirdEyeWindow::Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi)
-	: PostProcessorWindow(parent, index, pdi)
+Post2dBirdEyeWindow::Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi) :
+	PostProcessorWindow(parent, index, pdi)
 {
 	init();
 }
@@ -66,7 +66,7 @@ QPixmap Post2dBirdEyeWindow::snapshot()
 	Post2dBirdEyeWindowGraphicsView* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
+	if (m_isTransparent) {makeBackgroundTransparent(view, pixmap);}
 	pixmap.setDevicePixelRatio(devicePixelRatioF());
 
 	return pixmap;

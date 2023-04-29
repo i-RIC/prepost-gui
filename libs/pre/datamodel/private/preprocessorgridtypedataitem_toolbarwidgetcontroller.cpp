@@ -3,9 +3,9 @@
 
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
-#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 
-PreProcessorGridTypeDataItem::ToolBarWidgetController::ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidgetI* widget, PreProcessorGridTypeDataItem* item) :
+PreProcessorGridTypeDataItem::ToolBarWidgetController::ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidget* widget, PreProcessorGridTypeDataItem* item) :
 	ColorMapSettingToolBarWidgetController {widget},
 	m_name {name},
 	m_item {item}

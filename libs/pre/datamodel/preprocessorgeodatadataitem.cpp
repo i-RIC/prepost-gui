@@ -169,7 +169,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 
 void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
 {
-	QStandardItem* parentItem = dynamic_cast<PreProcessorDataItem*>(parent())->standardItem();
+	auto parentItem = dynamic_cast<PreProcessorDataItem*>(parent())->standardItem();
 	bool isFirst = (m_standardItem->index().row() == 0);
 	bool isLast = (m_standardItem->index().row() == parentItem->rowCount() - 1);
 	view->moveUpAction()->setDisabled(isFirst);

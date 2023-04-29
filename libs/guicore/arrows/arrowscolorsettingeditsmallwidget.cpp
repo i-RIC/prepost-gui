@@ -127,6 +127,7 @@ void ArrowsColorSettingEditSmallWidget::handleColorScalarChange(int index)
 
 	auto name = m_colorMapNames.at(index);
 	auto colorSetting = m_pointerColorMapSettings.find(name)->second;
+	colorSetting->legend.copyOtherThanTitle(m_colorMapSetting.legend);
 
 	m_colorMapSetting = *colorSetting;
 }
