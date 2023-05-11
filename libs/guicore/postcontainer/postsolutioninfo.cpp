@@ -469,17 +469,22 @@ int PostSolutionInfo::loadFromCgnsFile()
 	int ier = open();
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	m_currentStep = 0;
+	int newMaxStep = 0;
+
 	if (m_timeSteps != nullptr) {
 		m_timeSteps->blockSignals(true);
 		m_timeSteps->loadFromCgnsFile(*cgnsFile());
 		m_timeSteps->blockSignals(false);
+		newMaxStep = static_cast<int> (m_timeSteps->timesteps().size()) - 1;
 	}
 	if (m_iterationSteps != nullptr) {
 		m_iterationSteps->blockSignals(true);
 		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
 		m_iterationSteps->blockSignals(false);
+		newMaxStep = static_cast<int> (m_iterationSteps->iterationSteps().size()) - 1;
 	}
+	if (m_currentStep > newMaxStep) {m_currentStep = 0;}
+
 	setCurrentStep(currentStep());
 
 	return IRIC_NO_ERROR;
