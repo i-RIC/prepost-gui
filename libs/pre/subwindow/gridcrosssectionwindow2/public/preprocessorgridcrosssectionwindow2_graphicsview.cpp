@@ -30,6 +30,8 @@ using GV = PreProcessorGridCrosssectionWindow2::GraphicsView;
 
 namespace {
 
+const double VERYSMALL = 1E-10;
+
 const int FIT_MARGIN_PIXELS = 20;
 const double FIT_MARGIN_RATIO = 0.15;
 const int MIN_SCALE_COUNT = 3;
@@ -128,9 +130,14 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::cameraFit()
 	m_center.setX((xMin + xMax) * 0.5);
 	m_center.setY((yMin + yMax) * 0.5);
 
+	double xDiff = xMax - xMin;
+	if (xDiff < VERYSMALL) {xDiff = 1;}
+	double yDiff = yMax - yMin;
+	if (yDiff < VERYSMALL) {yDiff = 1;}
+
 	double previousAspectRatio = aspectRatio();
 
-	m_scaleX = (viewport()->width() - 2 * FIT_MARGIN_PIXELS) / ((xMax - xMin) * (1 + FIT_MARGIN_RATIO * 2));
+	m_scaleX = (viewport()->width() - 2 * FIT_MARGIN_PIXELS) / (xDiff * (1 + FIT_MARGIN_RATIO * 2));
 	if (m_scaleX < 0) {m_scaleX = 1;}
 
 	auto height = viewport()->height();
@@ -142,7 +149,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::cameraFit()
 			height -= s.colorMapHeight;
 		}
 	}
-	m_scaleY = (height - 2 * FIT_MARGIN_PIXELS) / ((yMax - yMin) * (1 + FIT_MARGIN_RATIO * 2));
+	m_scaleY = (height - 2 * FIT_MARGIN_PIXELS) / (yDiff * (1 + FIT_MARGIN_RATIO * 2));
 	if (m_scaleY < 0) {m_scaleY = 1;}
 
 	if (m_impl->m_displaySetting.fixAspectRatio) {

@@ -44,6 +44,8 @@ PreProcessorGridCrosssectionWindow2::GridAttributeDisplaySettingContainer::GridA
 	m_attribute {att}
 {
 	colorMapSetting = att->createColorMapSettingContainer();
+	auto cm = dynamic_cast<CompositeContainer*> (colorMapSetting);
+	cm->addPrefix("colorMap");
 }
 
 PreProcessorGridCrosssectionWindow2::GridAttributeDisplaySettingContainer::GridAttributeDisplaySettingContainer(const GridAttributeDisplaySettingContainer& setting) :
